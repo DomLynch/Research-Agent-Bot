@@ -1,0 +1,138 @@
+{
+  "paper_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp",
+  "doi": "10.3389/fpsyt.2018.00690",
+  "extracted_at": "2026-05-05T22:04:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-pct-83",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 83,
+      "sentence": "Schizophrenia is a severe psychiatric disorder with a lifetime prevalence of about 1%.",
+      "context_window": "re psychiatric disorder with a lifetime prevalence of about 1%. People with schizophrenia have a 4-fold higher prevalence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-u-795",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 795,
+      "sentence": "The higher suicide rate and higher rate of cardiac mortality, a consequence of the increased prevalance of cardiovascular diseases, contribute to the reduced life expectancy, which is up to 20 years lower than in the general population.",
+      "context_window": ", contribute to the reduced life expectancy, which is up to 20 years lower than in the general population. Regular physical acti",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-pct-65",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 65,
+      "sentence": "Schizophrenia is a severe neuropsychiatric disease that affects ~1% of the population ( 1 , 2 ).",
+      "context_window": "ophrenia is a severe neuropsychiatric disease that affects ~1% of the population ( 1 , 2 ). It strikes young adults betwee",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-u-136",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 136,
+      "sentence": "It strikes young adults between 20 and 30 years of age ( 3 ), and symptoms persist throughout adult life in 30-50% of affected patients ( 4 , 5 ).",
+      "context_window": "opulation ( 1 , 2 ). It strikes young adults between 20 and 30 years of age ( 3 ), and symptoms persist throughout adult life in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-pct-208",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 208,
+      "sentence": "It strikes young adults between 20 and 30 years of age ( 3 ), and symptoms persist throughout adult life in 30-50% of affected patients ( 4 , 5 ).",
+      "context_window": "age ( 3 ), and symptoms persist throughout adult life in 30-50% of affected patients ( 4 , 5 ). The disease leads to impair",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 312,
+      "sentence": "The disease leads to impaired social functioning; for example, only 20% of patients are able to have a job on the primary market, and only about 30% have a stable relationship ( 5 ).",
+      "context_window": "ase leads to impaired social functioning; for example, only 20% of patients are able to have a job on the primary market, a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp-pct-389",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 389,
+      "sentence": "The disease leads to impaired social functioning; for example, only 20% of patients are able to have a job on the primary market, and only about 30% have a stable relationship ( 5 ).",
+      "context_window": "re able to have a job on the primary market, and only about 30% have a stable relationship ( 5 ). Because of the high hospi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

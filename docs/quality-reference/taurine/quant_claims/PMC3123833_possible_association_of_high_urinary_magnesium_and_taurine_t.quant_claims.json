@@ -1,0 +1,698 @@
+{
+  "paper_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t",
+  "doi": "10.4061/2011/235653",
+  "extracted_at": "2026-05-05T21:41:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 24,
+    "p_value": 8,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-u-302",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 302,
+      "sentence": "The subjects were 84 people aged 16-79 years.",
+      "context_window": "etary custom. Methods . The subjects were 84 people aged 16-79 years. The health examination was conducted according to the basi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-531",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 531,
+      "sentence": "The highest prevalence among MS risks was abdominal obesity (over 60%).",
+      "context_window": "ghest prevalence among MS risks was abdominal obesity (over 60%). After controlling for age and sex, the odds of obesity de",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-690",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 690,
+      "sentence": "After controlling for age and sex, the odds of obesity decreased significantly with high level of urinary magnesium/creatinine ratio (Mg/cre) (OR, 0.11; 95% CI, 0.02-0.57; P < .05).",
+      "context_window": "l of urinary magnesium/creatinine ratio (Mg/cre) (OR, 0.11; 95% CI, 0.02-0.57; P < .05). The significant inverse associatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-709",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 709,
+      "sentence": "After controlling for age and sex, the odds of obesity decreased significantly with high level of urinary magnesium/creatinine ratio (Mg/cre) (OR, 0.11; 95% CI, 0.02-0.57; P < .05).",
+      "context_window": "ium/creatinine ratio (Mg/cre) (OR, 0.11; 95% CI, 0.02-0.57; P < .05). The significant inverse associations of fat intake with M",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-n-44",
+      "claim_type": "sample_size",
+      "raw_text": "n = 84",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 44,
+      "sentence": "Fifty percent of the total study subjects ( n = 84) were men.",
+      "context_window": "Fifty percent of the total study subjects ( n = 84) were men. Two men were excluded from all analyses because",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-u-314",
+      "claim_type": "unit_value",
+      "raw_text": "42 years",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years).",
+      "context_window": "s of study subjects are shown in Table 1 . The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-u-342",
+      "claim_type": "unit_value",
+      "raw_text": "77 years",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 342,
+      "sentence": "The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years).",
+      "context_window": "n in Table 1 . The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years). Men showed si",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-u-356",
+      "claim_type": "unit_value",
+      "raw_text": "37 years",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 356,
+      "sentence": "The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years).",
+      "context_window": "The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years). Men showed significantly hi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 386,
+      "sentence": "The mean age was 42 years for men (range, 16-77 years) and 37 years for women (range, 16-79 years).",
+      "context_window": "men (range, 16-77 years) and 37 years for women (range, 16-79 years). Men showed significantly higher levels in TC, LDL-C and S",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-738",
+      "claim_type": "percentage",
+      "raw_text": "23.3%",
+      "numeric_values": [
+        23.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 738,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-758",
+      "claim_type": "percentage",
+      "raw_text": "21.4%",
+      "numeric_values": [
+        21.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 758,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-770",
+      "claim_type": "percentage",
+      "raw_text": "37.5%",
+      "numeric_values": [
+        37.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 770,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "as shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-858",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 858,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "ncy of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%). The prevalence of increas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-878",
+      "claim_type": "percentage",
+      "raw_text": "67.9%",
+      "numeric_values": [
+        67.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 878,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "sity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%). The prevalence of increased BP rose with age,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-890",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 890,
+      "sentence": "The highest percentage of obesity was shown in the old (young; 23.3%, middle-aged; 21.4%, old; 37.5%) and quite high frequency of abdominal obesity was shown at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%).",
+      "context_window": "wn at any age group (young; 66.7%, middle-aged; 67.9%, old; 66.7%). The prevalence of increased BP rose with age, from 60% of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-949",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 949,
+      "sentence": "The prevalence of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old.",
+      "context_window": "66.7%). The prevalence of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-969",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 969,
+      "sentence": "The prevalence of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old.",
+      "context_window": "nce of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from 20% of the young to",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1013",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1013,
+      "sentence": "The prevalence of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old.",
+      "context_window": "of the young to 75% of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old. On the other hand, the pe",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "62.5%",
+      "numeric_values": [
+        62.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1033,
+      "sentence": "The prevalence of increased BP rose with age, from 60% of the young to 75% of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old.",
+      "context_window": "of the old, as well as high HbA1c, from 20% of the young to 62.5% of the old. On the other hand, the percentages of low HDL-C",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1100",
+      "claim_type": "percentage",
+      "raw_text": "41.7%",
+      "numeric_values": [
+        41.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1100,
+      "sentence": "On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown).",
+      "context_window": "f the old. On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1120",
+      "claim_type": "percentage",
+      "raw_text": "25.0%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1120,
+      "sentence": "On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown).",
+      "context_window": "her hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowes",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1223",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1223,
+      "sentence": "On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown).",
+      "context_window": "resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown). Table 2 sho",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1243",
+      "claim_type": "percentage",
+      "raw_text": "67.9%",
+      "numeric_values": [
+        67.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1243,
+      "sentence": "On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown).",
+      "context_window": "est percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown). Table 2 shows the dietary patte",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1255",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1255,
+      "sentence": "On the other hand, the percentages of low HDL-C (41.7%) and high TG (25.0%) in the old were lowest of all, which resulted in the lowest percentage of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown).",
+      "context_window": "ge of dyslipidaemia (young; 66.7%, middle-aged; 67.9%, old; 50%, data not shown). Table 2 shows the dietary pattern of part",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "P < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1462,
+      "sentence": "The intake frequency of vegetables in the young was lower and that of soft drinks was higher than other age groups ( P < .01 for both).",
+      "context_window": "and that of soft drinks was higher than other age groups ( P < .01 for both). On the other hand, the intake frequencies of mea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-1612",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1612,
+      "sentence": "On the other hand, the intake frequencies of meat and fast food in the old were significantly lower than those in younger groups ( P < .05 and P < .001, resp.).",
+      "context_window": "old were significantly lower than those in younger groups ( P < .05 and P < .001, resp.). Table 3 shows logistic regression re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-1624",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1624,
+      "sentence": "On the other hand, the intake frequencies of meat and fast food in the old were significantly lower than those in younger groups ( P < .05 and P < .001, resp.).",
+      "context_window": "nificantly lower than those in younger groups ( P < .05 and P < .001, resp.). Table 3 shows logistic regression results of obes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1858",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1858,
+      "sentence": "High level of urine Mg/cre was associated with a much lower likelihood of obesity (OR, 0.11; 95% CI, 0.02-0.57; P < .05).",
+      "context_window": "sociated with a much lower likelihood of obesity (OR, 0.11; 95% CI, 0.02-0.57; P < .05). Logistic regression results adjust",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-1877",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1877,
+      "sentence": "High level of urine Mg/cre was associated with a much lower likelihood of obesity (OR, 0.11; 95% CI, 0.02-0.57; P < .05).",
+      "context_window": "h lower likelihood of obesity (OR, 0.11; 95% CI, 0.02-0.57; P < .05). Logistic regression results adjusted with age and sex on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-2050",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2050,
+      "sentence": "Logistic regression results adjusted with age and sex on subjects with dyslipidaemia showed a significantly lower OR in the high level of urine Tau/cre (OR, 0.22; 95% CI, 0.07-0.73).",
+      "context_window": "ntly lower OR in the high level of urine Tau/cre (OR, 0.22; 95% CI, 0.07-0.73). High Tau/cre was associated with low TG ( P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-2112",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2112,
+      "sentence": "High Tau/cre was associated with low TG ( P < .05) and showed a tendency to be related with low WC and BMI ( P = .06 and.09, resp.; Table 4 ).",
+      "context_window": "% CI, 0.07-0.73). High Tau/cre was associated with low TG ( P < .05) and showed a tendency to be related with low WC and BMI (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-2179",
+      "claim_type": "p_value",
+      "raw_text": "P = .06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2179,
+      "sentence": "High Tau/cre was associated with low TG ( P < .05) and showed a tendency to be related with low WC and BMI ( P = .06 and.09, resp.; Table 4 ).",
+      "context_window": ") and showed a tendency to be related with low WC and BMI ( P = .06 and.09, resp.; Table 4 ). Table 5 shows the relationship of",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-2465",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2465,
+      "sentence": "Compared to subjects who eat no fat, those who eat fat had a significantly lower likelihood of high Mg/cre level (OR, 0.12; 95% CI, 0.02-0.59) and a similar relationship was shown between intake frequency of fast food and Tau/cre level (OR, 0.11; 95% CI, 0.02-0.69).",
+      "context_window": "nificantly lower likelihood of high Mg/cre level (OR, 0.12; 95% CI, 0.02-0.59) and a similar relationship was shown between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-2588",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2588,
+      "sentence": "Compared to subjects who eat no fat, those who eat fat had a significantly lower likelihood of high Mg/cre level (OR, 0.12; 95% CI, 0.02-0.59) and a similar relationship was shown between intake frequency of fast food and Tau/cre level (OR, 0.11; 95% CI, 0.02-0.69).",
+      "context_window": "intake frequency of fast food and Tau/cre level (OR, 0.11; 95% CI, 0.02-0.69).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-p-710",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 710,
+      "sentence": "Restriction of magnesium intake decreased urinary loss [ 7 ] and a good correlation was observed between Mg/cre in spot urine and total 24-hour urine excretion ( R = 0.80, P < .05) [ 8 ].",
+      "context_window": "in spot urine and total 24-hour urine excretion ( R = 0.80, P < .05) [ 8 ]. Considering both, low level of Mg/cre in spot urine",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-978",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 978,
+      "sentence": "Considering both, low level of Mg/cre in spot urine would be caused by insufficient Mg intake and our finding is consistent to the previous studies that higher intake of Mg was associated with a marked reduction in the prevalence of obesity (OR, 0.78; 95% CI, 0.72-0.85), abdominal obesity (OR, 0.80; 95% CI, 0.76-0.85), and MS (OR, 0.83; 95% CI, 0.72-0.96) in the US people [ 9 ].",
+      "context_window": "a marked reduction in the prevalence of obesity (OR, 0.78; 95% CI, 0.72-0.85), abdominal obesity (OR, 0.80; 95% CI, 0.76-0",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1027",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1027,
+      "sentence": "Considering both, low level of Mg/cre in spot urine would be caused by insufficient Mg intake and our finding is consistent to the previous studies that higher intake of Mg was associated with a marked reduction in the prevalence of obesity (OR, 0.78; 95% CI, 0.72-0.85), abdominal obesity (OR, 0.80; 95% CI, 0.76-0.85), and MS (OR, 0.83; 95% CI, 0.72-0.96) in the US people [ 9 ].",
+      "context_window": "(OR, 0.78; 95% CI, 0.72-0.85), abdominal obesity (OR, 0.80; 95% CI, 0.76-0.85), and MS (OR, 0.83; 95% CI, 0.72-0.96) in the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3123833_possible_association_of_high_urinary_magnesium_and_taurine_t-pct-1065",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1065,
+      "sentence": "Considering both, low level of Mg/cre in spot urine would be caused by insufficient Mg intake and our finding is consistent to the previous studies that higher intake of Mg was associated with a marked reduction in the prevalence of obesity (OR, 0.78; 95% CI, 0.72-0.85), abdominal obesity (OR, 0.80; 95% CI, 0.76-0.85), and MS (OR, 0.83; 95% CI, 0.72-0.96) in the US people [ 9 ].",
+      "context_window": "al obesity (OR, 0.80; 95% CI, 0.76-0.85), and MS (OR, 0.83; 95% CI, 0.72-0.96) in the US people [ 9 ]. As it is known, Mg i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

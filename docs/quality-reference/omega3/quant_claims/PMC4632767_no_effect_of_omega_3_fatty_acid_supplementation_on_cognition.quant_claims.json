@@ -1,0 +1,319 @@
+{
+  "paper_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition",
+  "doi": "10.3390/ijms161024600",
+  "extracted_at": "2026-05-05T21:47:04+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 13,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-u-654",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 654,
+      "sentence": "Fifty-seven participants with CIND and nineteen with AD were randomised to receive either omega-3 PUFAs (600 mg EPA and 625 mg DHA per day) or placebo (olive oil) over a four month period.",
+      "context_window": "en with AD were randomised to receive either omega-3 PUFAs (600 mg EPA and 625 mg DHA per day) or placebo (olive oil) over a f",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-u-669",
+      "claim_type": "unit_value",
+      "raw_text": "625 mg",
+      "numeric_values": [
+        625.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 669,
+      "sentence": "Fifty-seven participants with CIND and nineteen with AD were randomised to receive either omega-3 PUFAs (600 mg EPA and 625 mg DHA per day) or placebo (olive oil) over a four month period.",
+      "context_window": "randomised to receive either omega-3 PUFAs (600 mg EPA and 625 mg DHA per day) or placebo (olive oil) over a four month perio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-1139",
+      "claim_type": "percentage",
+      "raw_text": "75.6%",
+      "numeric_values": [
+        75.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1139,
+      "sentence": "On average both groups consumed 75.6% (SD 0.8) of their capsules.",
+      "context_window": "fatty acid concentrations. On average both groups consumed 75.6% (SD 0.8) of their capsules. Plasma PC EPA and DHA did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-p-1313",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1313,
+      "sentence": "However, they both increased at month 1 in the omega-3 group (both p < 0.00001 vs. baseline, respectively) ( Figure 1 ).",
+      "context_window": ", they both increased at month 1 in the omega-3 group (both p < 0.00001 vs. baseline, respectively) ( Figure 1 ). There was no furt",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-1585",
+      "claim_type": "percentage",
+      "raw_text": "137.5%",
+      "numeric_values": [
+        137.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1585,
+      "sentence": "The mean increase in EPA in the omega-3 group was 137.5% and for DHA it was 38.1%.",
+      "context_window": "gure 1 ). The mean increase in EPA in the omega-3 group was 137.5% and for DHA it was 38.1%. Plasma phosphatidylcholine EPA a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-1611",
+      "claim_type": "percentage",
+      "raw_text": "38.1%",
+      "numeric_values": [
+        38.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1611,
+      "sentence": "The mean increase in EPA in the omega-3 group was 137.5% and for DHA it was 38.1%.",
+      "context_window": "e in EPA in the omega-3 group was 137.5% and for DHA it was 38.1%. Plasma phosphatidylcholine EPA and DHA in the omega-3 and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-p-2203",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.158",
+      "numeric_values": [
+        0.158
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2203,
+      "sentence": "No differences in baseline performance scores for any of the six primary outcome measures between the omega-3 PUFA and placebo groups were found ( p > 0.158) These scores were subsequently unaffected by omega-3 PUFAs: there was no significant effect of treatment or significant treatment by month interaction for any of the outcomes ( Table 2 ).",
+      "context_window": "es between the omega-3 PUFA and placebo groups were found ( p > 0.158) These scores were subsequently unaffected by omega-3 PUFAs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2566",
+      "claim_type": "percentage",
+      "raw_text": "137.5%",
+      "numeric_values": [
+        137.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2566,
+      "sentence": "Although the supplement used contained similar amounts of EPA and DHA, the relative increase in the content of EPA in plasma PC from baseline was much greater than the relative increase in the content of DHA (mean increases 137.5% and 38.1%, respectively).",
+      "context_window": "the relative increase in the content of DHA (mean increases 137.5% and 38.1%, respectively). However, this reflects an absolut",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2577",
+      "claim_type": "percentage",
+      "raw_text": "38.1%",
+      "numeric_values": [
+        38.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2577,
+      "sentence": "Although the supplement used contained similar amounts of EPA and DHA, the relative increase in the content of EPA in plasma PC from baseline was much greater than the relative increase in the content of DHA (mean increases 137.5% and 38.1%, respectively).",
+      "context_window": "e increase in the content of DHA (mean increases 137.5% and 38.1%, respectively). However, this reflects an absolute increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2661",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2661,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": "wever, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2686",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2686,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": "bsolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2722",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2722,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": "% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2772",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2772,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": "eline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2799",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2799,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": "mentation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-2833",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2833,
+      "sentence": "However, this reflects an absolute increase in EPA content of 2% of fatty acids (from ~1.5% of fatty acids at baseline to ~3.5% after supplementation) and in DHA content of 1.5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation).",
+      "context_window": ".5% of fatty acids (from ~4% of fatty acids at baseline to ~5.5% of fatty acids after supplementation). Nevertheless, EPA se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-3110",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3110,
+      "sentence": "Provision of 3 g of EPA and 3.54 g of DHA per week for one year in healthy volunteers resulted in a mean 85% relative increase in EPA content of plasma PC from baseline and a mean 44% relative increase in DHA content [ 23 ].",
+      "context_window": "week for one year in healthy volunteers resulted in a mean 85% relative increase in EPA content of plasma PC from baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition-pct-3185",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3185,
+      "sentence": "Provision of 3 g of EPA and 3.54 g of DHA per week for one year in healthy volunteers resulted in a mean 85% relative increase in EPA content of plasma PC from baseline and a mean 44% relative increase in DHA content [ 23 ].",
+      "context_window": "crease in EPA content of plasma PC from baseline and a mean 44% relative increase in DHA content [ 23 ]. This greater relat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

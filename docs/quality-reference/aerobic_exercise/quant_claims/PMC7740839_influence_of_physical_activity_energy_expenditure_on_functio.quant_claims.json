@@ -1,0 +1,122 @@
+{
+  "paper_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio",
+  "doi": "10.1093/geroni/igaa057.607",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-msd-562",
+      "claim_type": "mean_sd",
+      "raw_text": "74.0\u00b17.1",
+      "numeric_values": [
+        74.0,
+        7.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 562,
+      "sentence": "A sample of 25 adults (age: 74.0\u00b17.1 years) were recruited from an urban area and divided into two groups.",
+      "context_window": "measures of functional fitness. A sample of 25 adults (age: 74.0\u00b17.1 years) were recruited from an urban area and divided into t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-u-567",
+      "claim_type": "unit_value",
+      "raw_text": "7.1 years",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 567,
+      "sentence": "A sample of 25 adults (age: 74.0\u00b17.1 years) were recruited from an urban area and divided into two groups.",
+      "context_window": "res of functional fitness. A sample of 25 adults (age: 74.0\u00b17.1 years) were recruited from an urban area and divided into two gro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-p-1197",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "There was a statistically significant difference between the groups on GS (F1, 24 = 9.29, p < .01) and CS-30 (F1, 24 = 4.37, p = .05).",
+      "context_window": "ificant difference between the groups on GS (F1, 24 = 9.29, p < .01) and CS-30 (F1, 24 = 4.37, p = .05). The results yielded a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-p-1232",
+      "claim_type": "p_value",
+      "raw_text": "p = .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "There was a statistically significant difference between the groups on GS (F1, 24 = 9.29, p < .01) and CS-30 (F1, 24 = 4.37, p = .05).",
+      "context_window": "ps on GS (F1, 24 = 9.29, p < .01) and CS-30 (F1, 24 = 4.37, p = .05). The results yielded a trend for the GUG (p =.06). However",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-p-1283",
+      "claim_type": "p_value",
+      "raw_text": "p =.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "The results yielded a trend for the GUG (p =.06).",
+      "context_window": "= 4.37, p = .05). The results yielded a trend for the GUG (p =.06). However, there was not a difference between the groups on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio-p-1358",
+      "claim_type": "p_value",
+      "raw_text": "p = .11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1358,
+      "sentence": "However, there was not a difference between the groups on the ST (p = .11).",
+      "context_window": "r, there was not a difference between the groups on the ST (p = .11). These results suggest older adults expending more than 3,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "paper_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas",
+  "doi": "10.3390/nu10070864",
+  "extracted_at": "2026-05-05T21:47:06+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 9,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-u-1081",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/d",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/d",
+      "source_section": "introduction",
+      "source_offset": 1081,
+      "sentence": "Recommendations from various health authorities around the world suggest consumption of the equivalent of at least 1-2 oily fish meals a week, which provides 250-500 mg/d of EPA + DHA [ 3 , 4 , 5 ].",
+      "context_window": "of at least 1-2 oily fish meals a week, which provides 250-500 mg/d of EPA + DHA [ 3 , 4 , 5 ]. Intakes of EPA + DHA in the US",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-u-2026",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg/d",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg/d",
+      "source_section": "introduction",
+      "source_offset": 2026,
+      "sentence": "Subsequently, the results from the Gruppo Italiano per lo Studio della Sopravvivenza nell\u2019Infarto Miocardico (GISSI)-Prevenzione trial, initially published in 1999, showed lower risk of the primary composite endpoint of death, non-fatal myocardial infarction (MI), and stroke in a group of recent survivors of MI randomly assigned to receive treatment with n-3 PUFA (850 mg/d EPA + DHA as ethyl esters) compared with a control group that received no treatment [ 8 ].",
+      "context_window": "of MI randomly assigned to receive treatment with n-3 PUFA (850 mg/d EPA + DHA as ethyl esters) compared with a control group th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-2383",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2383,
+      "sentence": "In a two-way analysis comparing those receiving and not receiving n-3 PUFA (with or without vitamin E), the incidence of the primary outcome was reduced by 10%, although this appeared to have been driven mainly by 20-26% lower rates of deaths from cardiac causes, which included mainly deaths from acute MI, sudden and arrhythmic deaths, and deaths from heart failure.",
+      "context_window": "min E), the incidence of the primary outcome was reduced by 10%, although this appeared to have been driven mainly by 20-26",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-2444",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2444,
+      "sentence": "In a two-way analysis comparing those receiving and not receiving n-3 PUFA (with or without vitamin E), the incidence of the primary outcome was reduced by 10%, although this appeared to have been driven mainly by 20-26% lower rates of deaths from cardiac causes, which included mainly deaths from acute MI, sudden and arrhythmic deaths, and deaths from heart failure.",
+      "context_window": "0%, although this appeared to have been driven mainly by 20-26% lower rates of deaths from cardiac causes, which included m",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-4823",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4823,
+      "sentence": "Even a potential modest reduction in CHD mortality (10%) in this clinical population would justify treatment with a relatively safe therapy.",
+      "context_window": "tients. Even a potential modest reduction in CHD mortality (10%) in this clinical population would justify treatment with a",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-5067",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5067,
+      "sentence": "We now recommend treatment for patients with prevalent heart failure without preserved left ventricular function to reduce mortality and hospitalizations (9%) on the basis of a single, large RCT\u201d.",
+      "context_window": "tricular function to reduce mortality and hospitalizations (9%) on the basis of a single, large RCT\u201d. In contrast, a Medi",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-443",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 443,
+      "sentence": "A modestly lower (6%) incidence of CHD events was reported for the intervention group, which was not statistically significant.",
+      "context_window": "ronary heart disease (CHD) events [ 16 ]. A modestly lower (6%) incidence of CHD events was reported for the intervention",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-581",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 581,
+      "sentence": "A statistically significant 19% reduction in coronary death was reported for a subset of five trials that reported this outcome.",
+      "context_window": "not statistically significant. A statistically significant 19% reduction in coronary death was reported for a subset of fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-761",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 761,
+      "sentence": "Maki et al. reported that the pooled relative risk (RR) for cardiac death was 8% lower ( p = 0.015) for the intervention groups in 14 trials that provided the intervention as a dietary supplement or pharmaceutical n-3 PUFA concentrate [ 17 ].",
+      "context_window": "ed that the pooled relative risk (RR) for cardiac death was 8% lower ( p = 0.015) for the intervention groups in 14 trials",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-p-772",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 772,
+      "sentence": "Maki et al. reported that the pooled relative risk (RR) for cardiac death was 8% lower ( p = 0.015) for the intervention groups in 14 trials that provided the intervention as a dietary supplement or pharmaceutical n-3 PUFA concentrate [ 17 ].",
+      "context_window": "pooled relative risk (RR) for cardiac death was 8% lower ( p = 0.015) for the intervention groups in 14 trials that provided the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-1491",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1491,
+      "sentence": "Their results indicated that there were no statistically significant effects for cardiovascular (CV) death, CV events, CHD death or stroke, but there was a statistically significant 7% risk reduction in CHD events from a group of 28 RCTs.",
+      "context_window": "death or stroke, but there was a statistically significant 7% risk reduction in CHD events from a group of 28 RCTs. A sep",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-p-2121",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2121,
+      "sentence": "However, for CHD death, the pooled effect size showed a marginally significant ( p = 0.05) 7% reduction in CHD death for the n-3 PUFA intervention groups, an outcome which included sudden cardiac death, deaths due to ventricular arrhythmias and heart failure in patients with CHD, as well as deaths occurring after coronary revascularization or heart transplant.",
+      "context_window": "h, the pooled effect size showed a marginally significant ( p = 0.05) 7% reduction in CHD death for the n-3 PUFA intervention gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas-pct-2131",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2131,
+      "sentence": "However, for CHD death, the pooled effect size showed a marginally significant ( p = 0.05) 7% reduction in CHD death for the n-3 PUFA intervention groups, an outcome which included sudden cardiac death, deaths due to ventricular arrhythmias and heart failure in patients with CHD, as well as deaths occurring after coronary revascularization or heart transplant.",
+      "context_window": "led effect size showed a marginally significant ( p = 0.05) 7% reduction in CHD death for the n-3 PUFA intervention groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

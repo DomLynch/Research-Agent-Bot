@@ -1,0 +1,2437 @@
+{
+  "paper_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i",
+  "doi": "10.3389/fnut.2024.1460057",
+  "extracted_at": "2026-05-05T21:38:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "percentage": 28,
+    "confidence_interval": 27,
+    "p_value": 36,
+    "odds_ratio": 22,
+    "sample_size": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-362",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 362,
+      "sentence": "A total of 25,879 participants aged 20 years and older were included, and their medical information, dietary creatine intake, and covariates were collected.",
+      "context_window": "cer in American adults. A total of 25,879 participants aged 20 years and older were included, and their medical information, die",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-947",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "For each standard deviation (SD) increase in dietary creatine intake, cancer risk decreased by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "crease in dietary creatine intake, cancer risk decreased by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-984",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.91-0.99",
+      "numeric_values": [
+        0.91,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 984,
+      "sentence": "For each standard deviation (SD) increase in dietary creatine intake, cancer risk decreased by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "ncer risk decreased by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.025). This negative association was strongest among",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1003",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1003,
+      "sentence": "For each standard deviation (SD) increase in dietary creatine intake, cancer risk decreased by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "by 5% (adjusted odds ratio (OR) = 0.95, 95% CI: 0.91-0.99, p = 0.025). This negative association was strongest among males (adju",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-1077",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1077,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "is negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1088",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88-0.99",
+      "numeric_values": [
+        0.88,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1088,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1107",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "rongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-1156",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1156,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). Interaction results indicat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1167",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.84-0.99",
+      "numeric_values": [
+        0.84,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). Interaction results indicated specific age gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1186",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1186,
+      "sentence": "This negative association was strongest among males (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021) and overweight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "weight participants (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). Interaction results indicated specific age group effects.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-1401",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1401,
+      "sentence": "Further analysis showed that higher dietary creatine intake was significantly inversely associated with cancer risk among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "ly associated with cancer risk among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014). RCS analysis revealed a lin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1412",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.77-0.97",
+      "numeric_values": [
+        0.77,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1412,
+      "sentence": "Further analysis showed that higher dietary creatine intake was significantly inversely associated with cancer risk among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "ed with cancer risk among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014). RCS analysis revealed a linear, positive corre",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1431",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1431,
+      "sentence": "Further analysis showed that higher dietary creatine intake was significantly inversely associated with cancer risk among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "among older adults (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014). RCS analysis revealed a linear, positive correlation betw",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-1600",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.27",
+      "numeric_values": [
+        3.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1600,
+      "sentence": "For each SD increase in age, cancer risk increased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "rease in age, cancer risk increased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). These findings suggest tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1611",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.07-3.48",
+      "numeric_values": [
+        3.07,
+        3.48
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1611,
+      "sentence": "For each SD increase in age, cancer risk increased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "e, cancer risk increased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). These findings suggest that higher dietary cr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1630",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1630,
+      "sentence": "For each SD increase in age, cancer risk increased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "eased by 3.27 times (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). These findings suggest that higher dietary creatine inta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1244,
+      "sentence": "In healthy adults, about 2 g of creatine, roughly 1.7% of the total, is excreted daily as creatinine in urine, necessitating the consumption of about 500 g of raw meat per day to maintain optimal levels.",
+      "context_window": "8 , 9 ). In healthy adults, about 2 g of creatine, roughly 1.7% of the total, is excreted daily as creatinine in urine, nec",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-605",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 605,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-616",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 616,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "pants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88)",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-645",
+      "claim_type": "sample_size",
+      "raw_text": "n = 303",
+      "numeric_values": [
+        303.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 645,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830);",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-675",
+      "claim_type": "sample_size",
+      "raw_text": "n = 88",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 675,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational l",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-702",
+      "claim_type": "sample_size",
+      "raw_text": "n = 830",
+      "numeric_values": [
+        830.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 702,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) inco",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-748",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 748,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 5",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-809",
+      "claim_type": "sample_size",
+      "raw_text": "n = 534",
+      "numeric_values": [
+        534.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 809,
+      "sentence": "Exclusions were made for 18,739 participants based on the following criteria: (1) age < 20 years ( n = 16,956); (2) pregnancy ( n = 303); (3) HIV infection ( n = 88); (4) missing BMI ( n = 830); (5) unspecified educational level ( n = 28); and (6) incomplete information on other variables ( n = 534).",
+      "context_window": "= 28); and (6) incomplete information on other variables ( n = 534). Ultimately, 25,879 participants were included in the fina",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-3136",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3136,
+      "sentence": "Hypertension was defined based on responses to \u201cEver told you had hypertension\u201d and \u201ctaking hypertension prescription.\u201d Diabetes was diagnosed according to \u201cDoctor told you have diabetes,\u201d \u201cGlycohemoglobin >6.5% or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u226511.1 mmol/L.\u201d Smoking status was categorized as never smoker (smoked fewer than 100 cigarettes in a lifetime), current smoker (currently smoking or smoked more than 100 cigarettes in a lifetime), and former smoker (quit smoking and smoked more than 100 cigarettes in a lifetime).",
+      "context_window": "rding to \u201cDoctor told you have diabetes,\u201d \u201cGlycohemoglobin >6.5% or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u2265",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-3161",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mmol",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3161,
+      "sentence": "Hypertension was defined based on responses to \u201cEver told you had hypertension\u201d and \u201ctaking hypertension prescription.\u201d Diabetes was diagnosed according to \u201cDoctor told you have diabetes,\u201d \u201cGlycohemoglobin >6.5% or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u226511.1 mmol/L.\u201d Smoking status was categorized as never smoker (smoked fewer than 100 cigarettes in a lifetime), current smoker (currently smoking or smoked more than 100 cigarettes in a lifetime), and former smoker (quit smoking and smoked more than 100 cigarettes in a lifetime).",
+      "context_window": "have diabetes,\u201d \u201cGlycohemoglobin >6.5% or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u226511.1 mmol/L.\u201d Smoking status",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-3200",
+      "claim_type": "unit_value",
+      "raw_text": "11.1 mmol",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3200,
+      "sentence": "Hypertension was defined based on responses to \u201cEver told you had hypertension\u201d and \u201ctaking hypertension prescription.\u201d Diabetes was diagnosed according to \u201cDoctor told you have diabetes,\u201d \u201cGlycohemoglobin >6.5% or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u226511.1 mmol/L.\u201d Smoking status was categorized as never smoker (smoked fewer than 100 cigarettes in a lifetime), current smoker (currently smoking or smoked more than 100 cigarettes in a lifetime), and former smoker (quit smoking and smoked more than 100 cigarettes in a lifetime).",
+      "context_window": "or Fasting Glucose >7.0 mmol/L or Two Hour Glucose (OGTT) \u226511.1 mmol/L.\u201d Smoking status was categorized as never smoker (smoked",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-87",
+      "claim_type": "percentage",
+      "raw_text": "49.35%",
+      "numeric_values": [
+        49.35
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 87,
+      "sentence": "A total of 25,879 adult participants were included in the analysis, with 12,772 males (49.35%) and 13,107 females (50.65%).",
+      "context_window": "ticipants were included in the analysis, with 12,772 males (49.35%) and 13,107 females (50.65%). The average age was 50.48 yea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-115",
+      "claim_type": "percentage",
+      "raw_text": "50.65%",
+      "numeric_values": [
+        50.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 115,
+      "sentence": "A total of 25,879 adult participants were included in the analysis, with 12,772 males (49.35%) and 13,107 females (50.65%).",
+      "context_window": "he analysis, with 12,772 males (49.35%) and 13,107 females (50.65%). The average age was 50.48 years (standard deviation [SD]",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-144",
+      "claim_type": "unit_value",
+      "raw_text": "50.48 years",
+      "numeric_values": [
+        50.48
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 144,
+      "sentence": "The average age was 50.48 years (standard deviation [SD] = 17.65 years).",
+      "context_window": "s (49.35%) and 13,107 females (50.65%). The average age was 50.48 years (standard deviation [SD] = 17.65 years). Among the particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-183",
+      "claim_type": "unit_value",
+      "raw_text": "17.65 years",
+      "numeric_values": [
+        17.65
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 183,
+      "sentence": "The average age was 50.48 years (standard deviation [SD] = 17.65 years).",
+      "context_window": "The average age was 50.48 years (standard deviation [SD] = 17.65 years). Among the participants, 2,715 individuals were diagnosed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-335",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 335,
+      "sentence": "Among the participants, 2,715 individuals were diagnosed with cancer, resulting in an overall cancer prevalence of 10.50 per 100 persons (95% confidence interval [CI]: 10.10-10.90).",
+      "context_window": "g in an overall cancer prevalence of 10.50 per 100 persons (95% confidence interval [CI]: 10.10-10.90). The average creatin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-660",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 10.10-11.10",
+      "numeric_values": [
+        10.1,
+        11.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 660,
+      "sentence": "The cancer prevalence among female participants was 10.60 per 100 persons (95% CI: 10.10-11.10), and among male participants, it was 10.40 per 100 persons (95% CI: 9.80-10.90).",
+      "context_window": "alence among female participants was 10.60 per 100 persons (95% CI: 10.10-11.10), and among male participants, it was 10.40 per 100 persons",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-741",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 9.80-10.90",
+      "numeric_values": [
+        9.8,
+        10.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 741,
+      "sentence": "The cancer prevalence among female participants was 10.60 per 100 persons (95% CI: 10.10-11.10), and among male participants, it was 10.40 per 100 persons (95% CI: 9.80-10.90).",
+      "context_window": "and among male participants, it was 10.40 per 100 persons (95% CI: 9.80-10.90). Participants were categorized into quartiles based on th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1329",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 9.90-11.41",
+      "numeric_values": [
+        9.9,
+        11.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1329,
+      "sentence": "Participants in the lowest quartile had a cancer prevalence of 10.7 per 100 persons (95% CI: 9.90-11.41), while those in the highest quartile had a prevalence of 9.2 per 100 persons (95% CI: 8.50-9.90) ( p = 0.001).",
+      "context_window": "t quartile had a cancer prevalence of 10.7 per 100 persons (95% CI: 9.90-11.41), while those in the highest quartile had a prevalence of 9",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-1427",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 8.50-9.90",
+      "numeric_values": [
+        8.5,
+        9.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1427,
+      "sentence": "Participants in the lowest quartile had a cancer prevalence of 10.7 per 100 persons (95% CI: 9.90-11.41), while those in the highest quartile had a prevalence of 9.2 per 100 persons (95% CI: 8.50-9.90) ( p = 0.001).",
+      "context_window": "e highest quartile had a prevalence of 9.2 per 100 persons (95% CI: 8.50-9.90) ( p = 0.001). Cancer prevalence rates and 95% confidence",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "Participants in the lowest quartile had a cancer prevalence of 10.7 per 100 persons (95% CI: 9.90-11.41), while those in the highest quartile had a prevalence of 9.2 per 100 persons (95% CI: 8.50-9.90) ( p = 0.001).",
+      "context_window": "d a prevalence of 9.2 per 100 persons (95% CI: 8.50-9.90) ( p = 0.001). Cancer prevalence rates and 95% confidence intervals amo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-1489",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1489,
+      "sentence": "Cancer prevalence rates and 95% confidence intervals among adult participants in NHANES (2007-2018), by quartiles of 2-day average dietary creatine intake and age. (A) Dietary creatine intake and cancer prevalence. (B) Age and cancer prevalence.",
+      "context_window": "% CI: 8.50-9.90) ( p = 0.001). Cancer prevalence rates and 95% confidence intervals among adult participants in NHANES (20",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-1884",
+      "claim_type": "unit_value",
+      "raw_text": "66.01 years",
+      "numeric_values": [
+        66.01
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1884,
+      "sentence": "A total of 2,715 participants reported having cancer, with an average age of 66.01 years (SD = 13.48 years).",
+      "context_window": "participants reported having cancer, with an average age of 66.01 years (SD = 13.48 years). Compared to the healthy population, can",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-1902",
+      "claim_type": "unit_value",
+      "raw_text": "13.48 years",
+      "numeric_values": [
+        13.48
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1902,
+      "sentence": "A total of 2,715 participants reported having cancer, with an average age of 66.01 years (SD = 13.48 years).",
+      "context_window": "ted having cancer, with an average age of 66.01 years (SD = 13.48 years). Compared to the healthy population, cancer participants w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2012",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2012,
+      "sentence": "48.66, p < 0.001), more likely to be obese (44.97% vs.",
+      "context_window": "cancer participants were older on average (66.01 vs. 48.66, p < 0.001), more likely to be obese (44.97% vs. 22.47%, p = 0.010), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2049",
+      "claim_type": "percentage",
+      "raw_text": "44.97%",
+      "numeric_values": [
+        44.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2049,
+      "sentence": "48.66, p < 0.001), more likely to be obese (44.97% vs.",
+      "context_window": "rage (66.01 vs. 48.66, p < 0.001), more likely to be obese (44.97% vs. 22.47%, p = 0.010), and had a higher family income to p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2060",
+      "claim_type": "percentage",
+      "raw_text": "22.47%",
+      "numeric_values": [
+        22.47
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2060,
+      "sentence": "22.47%, p = 0.010), and had a higher family income to poverty ratio (2.77 vs.",
+      "context_window": "vs. 48.66, p < 0.001), more likely to be obese (44.97% vs. 22.47%, p = 0.010), and had a higher family income to poverty rati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2068",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2068,
+      "sentence": "22.47%, p = 0.010), and had a higher family income to poverty ratio (2.77 vs.",
+      "context_window": "66, p < 0.001), more likely to be obese (44.97% vs. 22.47%, p = 0.010), and had a higher family income to poverty ratio (2.77 vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2144",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2144,
+      "sentence": "2.51, p < 0.001), have hypertension (58.60% vs.",
+      "context_window": "had a higher family income to poverty ratio (2.77 vs. 2.51, p < 0.001), have hypertension (58.60% vs. 41.40%, p < 0.001), be smok",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2175",
+      "claim_type": "percentage",
+      "raw_text": "58.60%",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2175,
+      "sentence": "2.51, p < 0.001), have hypertension (58.60% vs.",
+      "context_window": "overty ratio (2.77 vs. 2.51, p < 0.001), have hypertension (58.60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2186",
+      "claim_type": "percentage",
+      "raw_text": "41.40%",
+      "numeric_values": [
+        41.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2186,
+      "sentence": "41.40%, p < 0.001), be smokers (52.45% vs.",
+      "context_window": "o (2.77 vs. 2.51, p < 0.001), have hypertension (58.60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p < 0.001), be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2194",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2194,
+      "sentence": "41.40%, p < 0.001), be smokers (52.45% vs.",
+      "context_window": "vs. 2.51, p < 0.001), have hypertension (58.60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p < 0.001), be alcohol con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2218",
+      "claim_type": "percentage",
+      "raw_text": "52.45%",
+      "numeric_values": [
+        52.45
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2218,
+      "sentence": "41.40%, p < 0.001), be smokers (52.45% vs.",
+      "context_window": "ve hypertension (58.60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p < 0.001), be alcohol consumers (28.18% vs. 11",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2229",
+      "claim_type": "percentage",
+      "raw_text": "47.55%",
+      "numeric_values": [
+        47.55
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2229,
+      "sentence": "47.55%, p < 0.001), be alcohol consumers (28.18% vs.",
+      "context_window": "sion (58.60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p < 0.001), be alcohol consumers (28.18% vs. 11.45%, p < 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2237",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2237,
+      "sentence": "47.55%, p < 0.001), be alcohol consumers (28.18% vs.",
+      "context_window": ".60% vs. 41.40%, p < 0.001), be smokers (52.45% vs. 47.55%, p < 0.001), be alcohol consumers (28.18% vs. 11.45%, p < 0.001), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2271",
+      "claim_type": "percentage",
+      "raw_text": "28.18%",
+      "numeric_values": [
+        28.18
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2271,
+      "sentence": "47.55%, p < 0.001), be alcohol consumers (28.18% vs.",
+      "context_window": "okers (52.45% vs. 47.55%, p < 0.001), be alcohol consumers (28.18% vs. 11.45%, p < 0.001), and have higher blood lead levels (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2282",
+      "claim_type": "percentage",
+      "raw_text": "11.45%",
+      "numeric_values": [
+        11.45
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2282,
+      "sentence": "11.45%, p < 0.001), and have higher blood lead levels (average 0.08 vs.",
+      "context_window": "5% vs. 47.55%, p < 0.001), be alcohol consumers (28.18% vs. 11.45%, p < 0.001), and have higher blood lead levels (average 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2290",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2290,
+      "sentence": "11.45%, p < 0.001), and have higher blood lead levels (average 0.08 vs.",
+      "context_window": "7.55%, p < 0.001), be alcohol consumers (28.18% vs. 11.45%, p < 0.001), and have higher blood lead levels (average 0.08 vs. 0.07,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2360",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2360,
+      "sentence": "0.07, p < 0.001).",
+      "context_window": ", and have higher blood lead levels (average 0.08 vs. 0.07, p < 0.001). Significant statistical differences were identified betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2495",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2495,
+      "sentence": "Significant statistical differences were identified between cancer and non-cancer participants concerning race/ethnicity ( p < 0.001), age groups ( p < 0.001), and the quartiles of average dietary creatine intake over two days ( p = 0.001).",
+      "context_window": "cer and non-cancer participants concerning race/ethnicity ( p < 0.001), age groups ( p < 0.001), and the quartiles of average die",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2520",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2520,
+      "sentence": "Significant statistical differences were identified between cancer and non-cancer participants concerning race/ethnicity ( p < 0.001), age groups ( p < 0.001), and the quartiles of average dietary creatine intake over two days ( p = 0.001).",
+      "context_window": "ipants concerning race/ethnicity ( p < 0.001), age groups ( p < 0.001), and the quartiles of average dietary creatine intake over",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-2601",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2601,
+      "sentence": "Significant statistical differences were identified between cancer and non-cancer participants concerning race/ethnicity ( p < 0.001), age groups ( p < 0.001), and the quartiles of average dietary creatine intake over two days ( p = 0.001).",
+      "context_window": "uartiles of average dietary creatine intake over two days ( p = 0.001). No significant differences were found between the groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-n-2819",
+      "claim_type": "sample_size",
+      "raw_text": "N = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2819,
+      "sentence": "Characteristics of adult NHANES2007-2018 participants with cancer data ( N = 25,879).",
+      "context_window": "cs of adult NHANES2007-2018 participants with cancer data ( N = 25,879). Student t -test. Chi-square test. Table 2 reports",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-3129",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.07",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3129,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remai",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-3140",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.07-1.07",
+      "numeric_values": [
+        1.07,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant afte",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-3159",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3159,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "en age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-3238",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.31",
+      "numeric_values": [
+        3.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3238,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "s relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001). Model 4, which adjusts for",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-3249",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.14-3.50",
+      "numeric_values": [
+        3.14,
+        3.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3249,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "hip remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001). Model 4, which adjusts for potential confounde",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-3268",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3268,
+      "sentence": "The crude model shows a positive relationship between age and cancer prevalence (OR = 1.07, 95% CI: 1.07-1.07, p < 0.001), and this relationship remains significant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001).",
+      "context_window": "cant after standardizing age (OR = 3.31, 95% CI: 3.14-3.50, p < 0.001). Model 4, which adjusts for potential confounders includin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-3603",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.07",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3603,
+      "sentence": "Model 4, which adjusts for potential confounders including sex, education, family income to poverty ratio, BMI, race/ethnicity, hypertension, drinking status, smoking status, diabetes, PHQ-9, moderate exercise, blood cadmium, and blood lead, still shows a stable positive relationship between age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001).",
+      "context_window": "positive relationship between age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001). The standardized age model",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-3614",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.07-1.07",
+      "numeric_values": [
+        1.07,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3614,
+      "sentence": "Model 4, which adjusts for potential confounders including sex, education, family income to poverty ratio, BMI, race/ethnicity, hypertension, drinking status, smoking status, diabetes, PHQ-9, moderate exercise, blood cadmium, and blood lead, still shows a stable positive relationship between age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001).",
+      "context_window": "lationship between age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001). The standardized age model reports a 3.27-fold",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-3633",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3633,
+      "sentence": "Model 4, which adjusts for potential confounders including sex, education, family income to poverty ratio, BMI, race/ethnicity, hypertension, drinking status, smoking status, diabetes, PHQ-9, moderate exercise, blood cadmium, and blood lead, still shows a stable positive relationship between age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001).",
+      "context_window": "age and cancer risk (adjusted OR = 1.07, 95% CI: 1.07-1.07, p < 0.001). The standardized age model reports a 3.27-fold increase i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-3783",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 3.27",
+      "numeric_values": [
+        3.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3783,
+      "sentence": "The standardized age model reports a 3.27-fold increase in cancer risk for each standard deviation increase in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "h standard deviation increase in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). Grouping age into quartiles",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-3794",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.07-3.48",
+      "numeric_values": [
+        3.07,
+        3.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3794,
+      "sentence": "The standardized age model reports a 3.27-fold increase in cancer risk for each standard deviation increase in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "deviation increase in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). Grouping age into quartiles further validates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-3813",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "The standardized age model reports a 3.27-fold increase in cancer risk for each standard deviation increase in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001).",
+      "context_window": "in age (SD = 17.65) (adjusted OR = 3.27, 95% CI: 3.07-3.48, p < 0.001). Grouping age into quartiles further validates our hypothe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-3922",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3922,
+      "sentence": "Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001).",
+      "context_window": "alidates our hypothesis. Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-3994",
+      "claim_type": "unit_value",
+      "raw_text": "36 years",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3994,
+      "sentence": "Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001).",
+      "context_window": "an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001). Figu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-4013",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 18.34",
+      "numeric_values": [
+        18.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4013,
+      "sentence": "Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001).",
+      "context_window": "er cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001). Figure 4 shows the relati",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-4025",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 14.78-22.76",
+      "numeric_values": [
+        14.78,
+        22.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4025,
+      "sentence": "Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001).",
+      "context_window": "sk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001). Figure 4 shows the relationship between differ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-4046",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4046,
+      "sentence": "Particularly, participants aged 66-80 years had an 18.34-fold higher cancer risk compared to those aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001).",
+      "context_window": "aged 20-36 years (adjusted OR = 18.34, 95% CI: 14.78-22.76, p < 0.001). Figure 4 shows the relationship between different age gro",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-4878",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4878,
+      "sentence": "Relationship between age quartiles of NHANES participants (2007-2018) and cancer risk (adjusted odds ratio and 95% confidence interval).",
+      "context_window": "ipants (2007-2018) and cancer risk (adjusted odds ratio and 95% confidence interval). Additionally, in the absence of age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-5046",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5046,
+      "sentence": "Additionally, in the absence of age consideration, the crude model indicates a protective effect of average dietary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "otective effect of average dietary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for potenti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-5057",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.57",
+      "numeric_values": [
+        0.23,
+        0.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5057,
+      "sentence": "Additionally, in the absence of age consideration, the crude model indicates a protective effect of average dietary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "fect of average dietary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for potential confounders, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-5076",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5076,
+      "sentence": "Additionally, in the absence of age consideration, the crude model indicates a protective effect of average dietary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "tary creatine against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for potential confounders, the standardiz",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-5217",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5217,
+      "sentence": "After adjusting for potential confounders, the standardized creatine intake remains a protective factor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001).",
+      "context_window": "intake remains a protective factor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001). We conducted RCS analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-5228",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.87-0.95",
+      "numeric_values": [
+        0.87,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5228,
+      "sentence": "After adjusting for potential confounders, the standardized creatine intake remains a protective factor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001).",
+      "context_window": "ins a protective factor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001). We conducted RCS analysis to better illustrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-5247",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5247,
+      "sentence": "After adjusting for potential confounders, the standardized creatine intake remains a protective factor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001).",
+      "context_window": "ctor against cancer (adjusted OR = 0.91, 95% CI: 0.87-0.95, p < 0.001). We conducted RCS analysis to better illustrate the relat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-7012",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7012,
+      "sentence": "As shown in Table 3 , in the crude model, the average 2-day dietary creatine intake had a protective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "ary creatine intake had a protective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for confoun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-7023",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23-0.57",
+      "numeric_values": [
+        0.23,
+        0.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7023,
+      "sentence": "As shown in Table 3 , in the crude model, the average 2-day dietary creatine intake had a protective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "e intake had a protective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for confounders, including age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-7042",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7042,
+      "sentence": "As shown in Table 3 , in the crude model, the average 2-day dietary creatine intake had a protective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001).",
+      "context_window": "ective effect against cancer (OR = 0.36, 95% CI: 0.23-0.57, p < 0.001). After adjusting for confounders, including age, the assoc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-7194",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.95",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7194,
+      "sentence": "After adjusting for confounders, including age, the association between creatine intake and cancer incidence remained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "intake and cancer incidence remained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025). Specifically, each standard",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-7205",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.91-0.99",
+      "numeric_values": [
+        0.91,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7205,
+      "sentence": "After adjusting for confounders, including age, the association between creatine intake and cancer incidence remained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "cancer incidence remained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025). Specifically, each standard deviation increase",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-7224",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7224,
+      "sentence": "After adjusting for confounders, including age, the association between creatine intake and cancer incidence remained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025).",
+      "context_window": "emained significant (adjusted OR = 0.95, 95% CI: 0.91-0.99, p = 0.025). Specifically, each standard deviation increase in dietary",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-7332",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7332,
+      "sentence": "Specifically, each standard deviation increase in dietary creatine intake was associated with a 5% reduction in cancer risk.",
+      "context_window": "n increase in dietary creatine intake was associated with a 5% reduction in cancer risk. Joint associations between 2-day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-8291",
+      "claim_type": "unit_value",
+      "raw_text": "51 years",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8291,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-8310",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8310,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "lly significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-8321",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.86-1.08",
+      "numeric_values": [
+        0.86,
+        1.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8321,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "cant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-8340",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.508",
+      "numeric_values": [
+        0.508
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8340,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "ts aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.8",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-8368",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8368,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "d OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051). In sex-",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-8387",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8387,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": ": 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051). In sex-stratified models, t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-8398",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.80-1.00",
+      "numeric_values": [
+        0.8,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8398,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": ", p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051). In sex-stratified models, the adjusted odds ra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-8417",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.051",
+      "numeric_values": [
+        0.051
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8417,
+      "sentence": "In the age-stratified model, this protective effect was not statistically significant for participants aged 20-51 years (adjusted OR = 0.96, 95% CI: 0.86-1.08, p = 0.508) or those aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051).",
+      "context_window": "se aged 52-80 years (adjusted OR = 0.89, 95% CI: 0.80-1.00, p = 0.051). In sex-stratified models, the adjusted odds ratio for fem",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-8540",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8540,
+      "sentence": "In sex-stratified models, the adjusted odds ratio for females was also not statistically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817).",
+      "context_window": "or females was also not statistically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817). However, a significant prot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-8551",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.92-1.07",
+      "numeric_values": [
+        0.92,
+        1.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8551,
+      "sentence": "In sex-stratified models, the adjusted odds ratio for females was also not statistically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817).",
+      "context_window": "was also not statistically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817). However, a significant protective association",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-8570",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.817",
+      "numeric_values": [
+        0.817
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8570,
+      "sentence": "In sex-stratified models, the adjusted odds ratio for females was also not statistically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817).",
+      "context_window": "tically significant (adjusted OR = 0.99, 95% CI: 0.92-1.07, p = 0.817). However, a significant protective association was observe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-8795",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8795,
+      "sentence": "For each standard deviation increase in creatine intake, cancer risk decreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021).",
+      "context_window": "in creatine intake, cancer risk decreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-8829",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.93",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8829,
+      "sentence": "For each standard deviation increase in creatine intake, cancer risk decreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021).",
+      "context_window": "ecreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021). Similarly, a significant in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-8840",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.88-0.99",
+      "numeric_values": [
+        0.88,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8840,
+      "sentence": "For each standard deviation increase in creatine intake, cancer risk decreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021).",
+      "context_window": "approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021). Similarly, a significant inverse correlation w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-8859",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8859,
+      "sentence": "For each standard deviation increase in creatine intake, cancer risk decreased by approximately 7% in male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021).",
+      "context_window": "n male participants (adjusted OR = 0.93, 95% CI: 0.88-0.99, p = 0.021). Similarly, a significant inverse correlation was found be",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-9070",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9070,
+      "sentence": "Each standard deviation increase in creatine intake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "dard deviation increase in creatine intake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-9107",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.92",
+      "numeric_values": [
+        0.92
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9107,
+      "sentence": "Each standard deviation increase in creatine intake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "ntake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). In contrast, underweight in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-9118",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.84-0.99",
+      "numeric_values": [
+        0.84,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9118,
+      "sentence": "Each standard deviation increase in creatine intake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "inked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). In contrast, underweight individuals showed an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-9137",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9137,
+      "sentence": "Each standard deviation increase in creatine intake was linked to an 8% decrease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044).",
+      "context_window": "ease in cancer risk (adjusted OR = 0.92, 95% CI: 0.84-0.99, p = 0.044). In contrast, underweight individuals showed an opposite t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-9302",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.81",
+      "numeric_values": [
+        1.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9302,
+      "sentence": "In contrast, underweight individuals showed an opposite trend, with higher dietary creatine intake being associated with increased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014).",
+      "context_window": "ntake being associated with increased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014). In the overall study popul",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-9313",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.13-2.92",
+      "numeric_values": [
+        1.13,
+        2.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9313,
+      "sentence": "In contrast, underweight individuals showed an opposite trend, with higher dietary creatine intake being associated with increased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014).",
+      "context_window": "associated with increased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014). In the overall study population, participants",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-9332",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9332,
+      "sentence": "In contrast, underweight individuals showed an opposite trend, with higher dietary creatine intake being associated with increased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014).",
+      "context_window": "creased cancer risk (adjusted OR = 1.81, 95% CI: 1.13-2.92, p = 0.014). In the overall study population, participants in the fou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-9518",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9518,
+      "sentence": "In the overall study population, participants in the fourth quartile of dietary creatine intake had a lower risk of cancer compared to those in the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005).",
+      "context_window": "of cancer compared to those in the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005). Figure 6 illustrates the re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-9529",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.75-0.95",
+      "numeric_values": [
+        0.75,
+        0.95
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9529,
+      "sentence": "In the overall study population, participants in the fourth quartile of dietary creatine intake had a lower risk of cancer compared to those in the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005).",
+      "context_window": "ompared to those in the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005). Figure 6 illustrates the relationship between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-9548",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9548,
+      "sentence": "In the overall study population, participants in the fourth quartile of dietary creatine intake had a lower risk of cancer compared to those in the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005).",
+      "context_window": "the first quartile (adjusted OR = 0.84, 95% CI: 0.75-0.95, p = 0.005). Figure 6 illustrates the relationship between the quartil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-9952",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9952,
+      "sentence": "Relationship between quartiles of dietary creatine intake and cancer risk among NHANES participants (2007-2018), stratified by gender (adjusted odds ratios and 95% confidence intervals). (A) Dietary creatine intake and cancer risk in all participants. (B) Dietary creatine intake and cancer risk in female participants. (C) Dietary creatine intake and cancer risk in male participants. (D) Forest plot of age, gender, and BMI subgroups.",
+      "context_window": "(2007-2018), stratified by gender (adjusted odds ratios and 95% confidence intervals). (A) Dietary creatine intake and canc",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-10345",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10345,
+      "sentence": "The interaction analysis revealed a significant interaction effect between dietary creatine intake, BMI, and age ( p < 0.001, p = 0.005).",
+      "context_window": "tion effect between dietary creatine intake, BMI, and age ( p < 0.001, p = 0.005). Further analysis suggested that higher dietary",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-10356",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10356,
+      "sentence": "The interaction analysis revealed a significant interaction effect between dietary creatine intake, BMI, and age ( p < 0.001, p = 0.005).",
+      "context_window": "between dietary creatine intake, BMI, and age ( p < 0.001, p = 0.005). Further analysis suggested that higher dietary creatine i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-11391",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11391,
+      "sentence": "Among elderly participants in the fourth quartile of 2-day dietary creatine intake, cancer risk decreased by 13% for every standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017).",
+      "context_window": "of 2-day dietary creatine intake, cancer risk decreased by 13% for every standard deviation increase in creatine intake (O",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-11453",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11453,
+      "sentence": "Among elderly participants in the fourth quartile of 2-day dietary creatine intake, cancer risk decreased by 13% for every standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017).",
+      "context_window": "% for every standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017). After adjusting for potenti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-11464",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.78-0.98",
+      "numeric_values": [
+        0.78,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11464,
+      "sentence": "Among elderly participants in the fourth quartile of 2-day dietary creatine intake, cancer risk decreased by 13% for every standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017).",
+      "context_window": "standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017). After adjusting for potential confounders, the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-11483",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11483,
+      "sentence": "Among elderly participants in the fourth quartile of 2-day dietary creatine intake, cancer risk decreased by 13% for every standard deviation increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017).",
+      "context_window": "increase in creatine intake (OR = 0.87, 95% CI: 0.78-0.98, p = 0.017). After adjusting for potential confounders, the model rema",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-11572",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11572,
+      "sentence": "After adjusting for potential confounders, the model remained robust, with a 14% reduction in cancer risk for every standard deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "or potential confounders, the model remained robust, with a 14% reduction in cancer risk for every standard deviation incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-or-a-11668",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.86",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11668,
+      "sentence": "After adjusting for potential confounders, the model remained robust, with a 14% reduction in cancer risk for every standard deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "ry standard deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-ci-11679",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.77-0.97",
+      "numeric_values": [
+        0.77,
+        0.97
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11679,
+      "sentence": "After adjusting for potential confounders, the model remained robust, with a 14% reduction in cancer risk for every standard deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-p-11698",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11698,
+      "sentence": "After adjusting for potential confounders, the model remained robust, with a 14% reduction in cancer risk for every standard deviation increase in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "context_window": "in creatine intake (adjusted OR = 0.86, 95% CI: 0.77-0.97, p = 0.014).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-458",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 458,
+      "sentence": "After controlling for potential confounders, each one standard deviation increase in dietary creatine intake was associated with an approximately 5% decrease in cancer risk.",
+      "context_window": "ietary creatine intake was associated with an approximately 5% decrease in cancer risk. This association remained signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-741",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 741,
+      "sentence": "Notably, among participants aged 52 and above in the highest quartile of dietary creatine intake, each additional 0.09 g of creatine was linked to a 14% reduction in cancer risk ( Table 4 ).",
+      "context_window": "intake, each additional 0.09 g of creatine was linked to a 14% reduction in cancer risk ( Table 4 ). Creatine, a nitrogen",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2345",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2345,
+      "sentence": "For every 0.09 g increase in creatine intake, the cancer incidence in males decreased by 7%, compared to a 2.2% reduction across all participants.",
+      "context_window": "creatine intake, the cancer incidence in males decreased by 7%, compared to a 2.2% reduction across all participants. Prev",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-2363",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2363,
+      "sentence": "For every 0.09 g increase in creatine intake, the cancer incidence in males decreased by 7%, compared to a 2.2% reduction across all participants.",
+      "context_window": "he cancer incidence in males decreased by 7%, compared to a 2.2% reduction across all participants. Previous studies have al",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-3621",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3621,
+      "sentence": "Notably, cancer incidence is about 2.3% higher in males than females (212.67/100,000 vs.",
+      "context_window": "our initial hypotheses. Notably, cancer incidence is about 2.3% higher in males than females (212.67/100,000 vs. 208.08/100",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-pct-3873",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3873,
+      "sentence": "The National Cancer Institute in the United States found that men have a 20% higher risk of cancer than women ( 25 ).",
+      "context_window": "Cancer Institute in the United States found that men have a 20% higher risk of cancer than women ( 25 ). Evidence suggests",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11757134_the_association_between_dietary_creatine_intake_and_cancer_i-u-5977",
+      "claim_type": "unit_value",
+      "raw_text": "85 years",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5977,
+      "sentence": "Individuals over the age of 66 had a cancer incidence rate 18.34 times higher than those aged 20-36, peaking at 85 years old ( 30 ).",
+      "context_window": "e rate 18.34 times higher than those aged 20-36, peaking at 85 years old ( 30 ). This trend aligns with our findings. Aging is a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

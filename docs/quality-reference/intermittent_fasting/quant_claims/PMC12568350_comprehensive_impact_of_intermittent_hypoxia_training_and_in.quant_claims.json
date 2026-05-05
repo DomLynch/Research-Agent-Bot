@@ -1,0 +1,2324 @@
+{
+  "paper_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in",
+  "doi": "10.3389/fnut.2025.1664600",
+  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 47,
+    "mean_sd": 3,
+    "percentage": 51,
+    "confidence_interval": 19,
+    "p_value": 4,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1394",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1394,
+      "sentence": "The review included 28 studies involving 2,134 participants, followed up for an average of 12 weeks.",
+      "context_window": "involving 2,134 participants, followed up for an average of 12 weeks. Among these, 15 were RCTs and 13 were observational studie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-msd-1500",
+      "claim_type": "mean_sd",
+      "raw_text": "45 \u00b1 12",
+      "numeric_values": [
+        45.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1500,
+      "sentence": "The participants had a mean age of 45 \u00b1 12 years, with 60% being female.",
+      "context_window": "e observational studies. The participants had a mean age of 45 \u00b1 12 years, with 60% being female. The combined IHT and IF inter",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1505",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1505,
+      "sentence": "The participants had a mean age of 45 \u00b1 12 years, with 60% being female.",
+      "context_window": "ervational studies. The participants had a mean age of 45 \u00b1 12 years, with 60% being female. The combined IHT and IF interventio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1520",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1520,
+      "sentence": "The participants had a mean age of 45 \u00b1 12 years, with 60% being female.",
+      "context_window": "ies. The participants had a mean age of 45 \u00b1 12 years, with 60% being female. The combined IHT and IF intervention demonstr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1653",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1653,
+      "sentence": "The combined IHT and IF intervention demonstrated superior benefits, with significant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg).",
+      "context_window": "ior benefits, with significant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg). Cognitive performance showed dom",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-1661",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.2 to -4.5",
+      "numeric_values": [
+        -8.2,
+        -4.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1661,
+      "sentence": "The combined IHT and IF intervention demonstrated superior benefits, with significant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg).",
+      "context_window": "fits, with significant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg). Cognitive performance showed domain-specific improveme",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1678",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1678,
+      "sentence": "The combined IHT and IF intervention demonstrated superior benefits, with significant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg).",
+      "context_window": "icant weight loss (mean reduction: 6.3 kg, 95% CI: -8.2 to -4.5 kg). Cognitive performance showed domain-specific improvements",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-1766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.43-0.77",
+      "numeric_values": [
+        0.43,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1766,
+      "sentence": "Cognitive performance showed domain-specific improvements: memory (SMD = 0.60, 95% CI: 0.43-0.77) and attention (SMD = 0.57, 95% CI: 0.40-0.74), though with significant heterogeneity ( I 2 > 50%).",
+      "context_window": "ce showed domain-specific improvements: memory (SMD = 0.60, 95% CI: 0.43-0.77) and attention (SMD = 0.57, 95% CI: 0.40-0.74), though with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-1812",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.40-0.74",
+      "numeric_values": [
+        0.4,
+        0.74
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1812,
+      "sentence": "Cognitive performance showed domain-specific improvements: memory (SMD = 0.60, 95% CI: 0.43-0.77) and attention (SMD = 0.57, 95% CI: 0.40-0.74), though with significant heterogeneity ( I 2 > 50%).",
+      "context_window": "(SMD = 0.60, 95% CI: 0.43-0.77) and attention (SMD = 0.57, 95% CI: 0.40-0.74), though with significant heterogeneity ( I 2 > 50%). Egger",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1878",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1878,
+      "sentence": "Cognitive performance showed domain-specific improvements: memory (SMD = 0.60, 95% CI: 0.43-0.77) and attention (SMD = 0.57, 95% CI: 0.40-0.74), though with significant heterogeneity ( I 2 > 50%).",
+      "context_window": ": 0.40-0.74), though with significant heterogeneity ( I 2 > 50%). Egger\u2019s test indicated minimal publication bias ( p = 0.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-p-1934",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1934,
+      "sentence": "Egger\u2019s test indicated minimal publication bias ( p = 0.18).",
+      "context_window": "2 > 50%). Egger\u2019s test indicated minimal publication bias ( p = 0.18). Our meta-analysis reveals that IHT and IF may serve as p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-201",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 201,
+      "sentence": "Projections suggest that by 2025, globally, 18% of men and 21% of women will be affected by obesity ( 1 ).",
+      "context_window": "thcare systems. Projections suggest that by 2025, globally, 18% of men and 21% of women will be affected by obesity ( 1 ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-216",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 216,
+      "sentence": "Projections suggest that by 2025, globally, 18% of men and 21% of women will be affected by obesity ( 1 ).",
+      "context_window": "Projections suggest that by 2025, globally, 18% of men and 21% of women will be affected by obesity ( 1 ). This epidemic n",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-653",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 653,
+      "sentence": "Insulin resistance (IR), which affects approximately 40% of individuals with obesity ( 4 ), compromises the body\u2019s ability to efficiently absorb and utilize blood glucose, leading to hyperglycemia and potentially progressing to type 2 diabetes (T2D).",
+      "context_window": "rders. Insulin resistance (IR), which affects approximately 40% of individuals with obesity ( 4 ), compromises the body\u2019s a",
+      "claim_role": "background",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-2072",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2072,
+      "sentence": "IHT involves exposing individuals to controlled, reduced oxygen levels (typically 10-15% O\u2082) that replicate high-altitude conditions.",
+      "context_window": "ividuals to controlled, reduced oxygen levels (typically 10-15% O\u2082) that replicate high-altitude conditions. This method ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-212",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 212,
+      "sentence": "Studies included in this meta-analysis were required to meet the following criteria: (1) publication in English (acknowledged as a potential limitation in Discussion), (2) involvement of adult participants (aged 18 years and above) diagnosed with obesity based on a BMI of 30 or higher (WHO criteria), (3) evaluation of IHT, IF, or both as standalone primary interventions (excluded combined therapies like IHT + exercise), and (4) reporting of metabolic health outcomes (including fasting glucose levels, insulin resistance, changes in body weight, and lipid profiles) and/or cognitive function outcomes using validated tools (e.g., MoCA for global cognition, Stroop test for executive function, Digit Span for memory).",
+      "context_window": "in Discussion), (2) involvement of adult participants (aged 18 years and above) diagnosed with obesity based on a BMI of 30 or h",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-6345",
+      "claim_type": "unit_value",
+      "raw_text": "68 years",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6345,
+      "sentence": "The data extracted from each eligible study encompassed the following aspects:\n\nStudy characteristics were detailed, including the author, publication year, study design, sample size, treatment duration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the start of the intervention.",
+      "context_window": "uration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BM",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-msd-6361",
+      "claim_type": "mean_sd",
+      "raw_text": "45 \u00b1 12",
+      "numeric_values": [
+        45.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6361,
+      "sentence": "The data extracted from each eligible study encompassed the following aspects:\n\nStudy characteristics were detailed, including the author, publication year, study design, sample size, treatment duration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the start of the intervention.",
+      "context_window": "pant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the heal",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-6366",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6366,
+      "sentence": "The data extracted from each eligible study encompassed the following aspects:\n\nStudy characteristics were detailed, including the author, publication year, study design, sample size, treatment duration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the start of the intervention.",
+      "context_window": "characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health sta",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-6390",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6390,
+      "sentence": "The data extracted from each eligible study encompassed the following aspects:\n\nStudy characteristics were detailed, including the author, publication year, study design, sample size, treatment duration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the start of the intervention.",
+      "context_window": "age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-6401",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6401,
+      "sentence": "The data extracted from each eligible study encompassed the following aspects:\n\nStudy characteristics were detailed, including the author, publication year, study design, sample size, treatment duration, participant characteristics such as age (range: 22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the start of the intervention.",
+      "context_window": "22-68 years, mean: 45 \u00b1 12 years), sex (female: 60%, male: 40%), and BMI, and the health status of participants at the sta",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-9344",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9344,
+      "sentence": "Global cognitive function was assessed using the Montreal Cognitive Assessment (MoCA) in 43% of studies, which covers multiple domains including memory, attention, language, and visuospatial skills.",
+      "context_window": "assessed using the Montreal Cognitive Assessment (MoCA) in 43% of studies, which covers multiple domains including memory,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-10212",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10212,
+      "sentence": "Study heterogeneity was assessed using the Cochrane Q statistic and the I 2 statistic, with I 2 values classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ).",
+      "context_window": "and the I 2 statistic, with I 2 values classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ). Model selectio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-10231",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10231,
+      "sentence": "Study heterogeneity was assessed using the Cochrane Q statistic and the I 2 statistic, with I 2 values classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ).",
+      "context_window": "tic, with I 2 values classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ). Model selection followed pre-spec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-10248",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10248,
+      "sentence": "Study heterogeneity was assessed using the Cochrane Q statistic and the I 2 statistic, with I 2 values classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ).",
+      "context_window": "ues classified as low (\u226425%), moderate (26-50%), and high (>50%) ( 13 ). Model selection followed pre-specified thresholds:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-10355",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10355,
+      "sentence": "Model selection followed pre-specified thresholds: fixed-effect model was employed when I 2 \u2264 50%, while random-effects model was applied when I 2 > 50%.",
+      "context_window": "fied thresholds: fixed-effect model was employed when I 2 \u2264 50%, while random-effects model was applied when I 2 > 50%. Thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-10410",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10410,
+      "sentence": "Model selection followed pre-specified thresholds: fixed-effect model was employed when I 2 \u2264 50%, while random-effects model was applied when I 2 > 50%.",
+      "context_window": "2 \u2264 50%, while random-effects model was applied when I 2 > 50%. This selection was guided by the degree of heterogeneity t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-10627",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 10627,
+      "sentence": "Pre-specified subgroup analyses were performed to evaluate:\n\n(1) Intervention duration: short-term (<8 weeks) vs. long-term (\u22658 weeks).\n\n(2) Outcome type: metabolic vs. cognitive.",
+      "context_window": "ormed to evaluate: (1) Intervention duration: short-term (<8 weeks) vs. long-term (\u22658 weeks). (2) Outcome type: metabolic vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-10652",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 10652,
+      "sentence": "Pre-specified subgroup analyses were performed to evaluate:\n\n(1) Intervention duration: short-term (<8 weeks) vs. long-term (\u22658 weeks).\n\n(2) Outcome type: metabolic vs. cognitive.",
+      "context_window": "ntervention duration: short-term (<8 weeks) vs. long-term (\u22658 weeks). (2) Outcome type: metabolic vs. cognitive. These analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-p-11555",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11555,
+      "sentence": "The threshold for statistical significance was set at p < 0.05 using a two-tailed test model.",
+      "context_window": "16 ). The threshold for statistical significance was set at p < 0.05 using a two-tailed test model. The meta-analysis results we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-13161",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13161,
+      "sentence": "Cognitive outcomes were downgraded twice: first for significant heterogeneity ( I 2 > 50%) attributable to diverse assessment tools (e.g., varying use of Digit Span vs.",
+      "context_window": "wngraded twice: first for significant heterogeneity ( I 2 > 50%) attributable to diverse assessment tools (e.g., varying us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-218",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 218,
+      "sentence": "The studies focused on adults with obesity meeting the WHO obesity criteria (BMI \u2265 30 kg/m 2 ) and aged over 18.",
+      "context_window": "adults with obesity meeting the WHO obesity criteria (BMI \u2265 30 kg/m 2 ) and aged over 18. Participants had a mean age of 45 \u00b1",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-msd-279",
+      "claim_type": "mean_sd",
+      "raw_text": "45 \u00b1 12",
+      "numeric_values": [
+        45.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 279,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "0 kg/m 2 ) and aged over 18. Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-284",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 284,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "m 2 ) and aged over 18. Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-304",
+      "claim_type": "unit_value",
+      "raw_text": "68 years",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 304,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "18. Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-327",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 327,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854). The data inc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-n-341",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 341,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "\u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854). The data included 7,312 part",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-356",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 356,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "nge: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854). The data included 7,312 participants from",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-n-368",
+      "claim_type": "sample_size",
+      "raw_text": "n = 854",
+      "numeric_values": [
+        854.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 368,
+      "sentence": "Participants had a mean age of 45 \u00b1 12 years (range: 22-68 years) and included 60% females ( n = 1,280) and 40% males ( n = 854).",
+      "context_window": "ears) and included 60% females ( n = 1,280) and 40% males ( n = 854). The data included 7,312 participants from North America,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-490",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 490,
+      "sentence": "Geographic distribution: 15 studies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from Asia.",
+      "context_window": "ica, Europe, and Asia. Geographic distribution: 15 studies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-511",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 511,
+      "sentence": "Geographic distribution: 15 studies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from Asia.",
+      "context_window": ". Geographic distribution: 15 studies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from Asia. Sample sizes va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-543",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 543,
+      "sentence": "Geographic distribution: 15 studies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from Asia.",
+      "context_window": "udies (54%) from Europe, 8 (29%) from North America, and 5 (18%) from Asia. Sample sizes varied from 30 to 300 participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-920",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 920,
+      "sentence": "Regarding intervention focus, 60% of the studies examined IHT, 30% focused on IF, and 10% explored the combined effects of IHT and IF.",
+      "context_window": "ific intervention mechanisms. Regarding intervention focus, 60% of the studies examined IHT, 30% focused on IF, and 10% exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-953",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 953,
+      "sentence": "Regarding intervention focus, 60% of the studies examined IHT, 30% focused on IF, and 10% explored the combined effects of IHT and IF.",
+      "context_window": "arding intervention focus, 60% of the studies examined IHT, 30% focused on IF, and 10% explored the combined effects of IHT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-976",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 976,
+      "sentence": "Regarding intervention focus, 60% of the studies examined IHT, 30% focused on IF, and 10% explored the combined effects of IHT and IF.",
+      "context_window": "us, 60% of the studies examined IHT, 30% focused on IF, and 10% explored the combined effects of IHT and IF. Cognitive asse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1125",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1125,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "zed tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1175",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1175,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "ognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1305",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1305,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "nt vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1421",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1421,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1526",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1526,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-1635",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1635,
+      "sentence": "Cognitive assessments employed standardized tools with varying frequencies: MoCA (global cognition, 43% of studies), Stroop Test (executive function, 29%-evaluates inhibitory control by measuring response time to congruent vs. incongruent color-word stimuli), Digit Span (memory, 21%-assesses forward and backward span as indicators of working memory), Rey Auditory Verbal Learning Test (memory, 18%-measures verbal learning, retention, and recognition), Trail Making Test Part B (executive function, 15%-assesses cognitive flexibility via visual-motor sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection tasks) ( Table 4 ).",
+      "context_window": "or sequencing), and Continuous Performance Test (attention, 12%-evaluates sustained attention through target detection task",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-2168",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2168,
+      "sentence": "The studies utilized closed-circuit chambers with oxygen content reduced to 10-15% to simulate high-altitude conditions, and significant results were achieved within 8-12 weeks.",
+      "context_window": "d closed-circuit chambers with oxygen content reduced to 10-15% to simulate high-altitude conditions, and significant resul",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-2257",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2257,
+      "sentence": "The studies utilized closed-circuit chambers with oxygen content reduced to 10-15% to simulate high-altitude conditions, and significant results were achieved within 8-12 weeks.",
+      "context_window": "conditions, and significant results were achieved within 8-12 weeks. This approach is grounded in the understanding that IHT en",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-2503",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2503,
+      "sentence": "IF was implemented through three primary methods: the 16:8 fasting schedule (55% of IF studies), the 5:2 diet (30%), and alternate-day fasting (15%).",
+      "context_window": "d through three primary methods: the 16:8 fasting schedule (55% of IF studies), the 5:2 diet (30%), and alternate-day fasti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-2537",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2537,
+      "sentence": "IF was implemented through three primary methods: the 16:8 fasting schedule (55% of IF studies), the 5:2 diet (30%), and alternate-day fasting (15%).",
+      "context_window": "he 16:8 fasting schedule (55% of IF studies), the 5:2 diet (30%), and alternate-day fasting (15%). These protocols varied i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-2570",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2570,
+      "sentence": "IF was implemented through three primary methods: the 16:8 fasting schedule (55% of IF studies), the 5:2 diet (30%), and alternate-day fasting (15%).",
+      "context_window": "IF studies), the 5:2 diet (30%), and alternate-day fasting (15%). These protocols varied in terms of fasting durations and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3193",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3193,
+      "sentence": "The intervention periods for the combined protocols ranged from 4 weeks to 12 months, with significant efficacy observed after 8-12 weeks of treatment.",
+      "context_window": "intervention periods for the combined protocols ranged from 4 weeks to 12 months, with significant efficacy observed after 8-12",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3204",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3204,
+      "sentence": "The intervention periods for the combined protocols ranged from 4 weeks to 12 months, with significant efficacy observed after 8-12 weeks of treatment.",
+      "context_window": "n periods for the combined protocols ranged from 4 weeks to 12 months, with significant efficacy observed after 8-12 weeks of tre",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3258",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3258,
+      "sentence": "The intervention periods for the combined protocols ranged from 4 weeks to 12 months, with significant efficacy observed after 8-12 weeks of treatment.",
+      "context_window": "ks to 12 months, with significant efficacy observed after 8-12 weeks of treatment. This research analysis measured metabolic re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3617",
+      "claim_type": "unit_value",
+      "raw_text": "5.2 kg",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3617,
+      "sentence": "For body weight, both IHT and IF interventions independently achieved an average weight reduction of 5.2 kg (95% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 = 52-58%) over an 8- to 12-week period.",
+      "context_window": "tions independently achieved an average weight reduction of 5.2 kg (95% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 =",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-3625",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.7 to -3.7",
+      "numeric_values": [
+        -6.7,
+        -3.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3625,
+      "sentence": "For body weight, both IHT and IF interventions independently achieved an average weight reduction of 5.2 kg (95% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 = 52-58%) over an 8- to 12-week period.",
+      "context_window": "dependently achieved an average weight reduction of 5.2 kg (95% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 = 52-58%) over an 8- to",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-3686",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3686,
+      "sentence": "For body weight, both IHT and IF interventions independently achieved an average weight reduction of 5.2 kg (95% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 = 52-58%) over an 8- to 12-week period.",
+      "context_window": "5% CI: -6.7 to -3.7) with moderate heterogeneity ( I 2 = 52-58%) over an 8- to 12-week period. The combined IHT + IF interv",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3793",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3793,
+      "sentence": "The combined IHT + IF intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ).",
+      "context_window": "IHT + IF intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ). Forest",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-3801",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.2 to -4.5",
+      "numeric_values": [
+        -8.2,
+        -4.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3801,
+      "sentence": "The combined IHT + IF intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ).",
+      "context_window": "F intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ). Forest plot of body weight re",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3818",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3818,
+      "sentence": "The combined IHT + IF intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ).",
+      "context_window": "sulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ). Forest plot of body weight reduc",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-3832",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3832,
+      "sentence": "The combined IHT + IF intervention resulted in a greater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ).",
+      "context_window": "eater weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg; I 2 = 53%) ( Figure 2 ). Forest plot of body weight reduction by int",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-3973",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3973,
+      "sentence": "This forest plot shows the effect sizes (mean difference) and 95% confidence intervals for body weight reduction across different intervention types.",
+      "context_window": "is forest plot shows the effect sizes (mean difference) and 95% confidence intervals for body weight reduction across diffe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4150",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4150,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "ombined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4158",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.2 to -4.5",
+      "numeric_values": [
+        -8.2,
+        -4.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4158,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4175",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4175,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "tion had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4201",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 kg",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4201,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "t size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4209",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.3 to -3.5",
+      "numeric_values": [
+        -6.3,
+        -3.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4209,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg). The I 2 sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4226",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4226,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "-8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg). The I 2 statis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4244",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 kg",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4244,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg). The I 2 statistic for heterogene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4252",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -5.8 to -2.5",
+      "numeric_values": [
+        -5.8,
+        -2.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg). The I 2 statistic for heterogeneity was 53%, suggestin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4269",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 kg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4269,
+      "sentence": "The plot indicates that the combined IHT + IF intervention had the largest effect size (-6.3 kg, 95% CI: -8.2 to -4.5 kg), followed by IF (-4.9 kg, 95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg).",
+      "context_window": "95% CI: -6.3 to -3.5 kg) and IHT (-4.2 kg, 95% CI: -5.8 to -2.5 kg). The I 2 statistic for heterogeneity was 53%, suggesting m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-4318",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4318,
+      "sentence": "The I 2 statistic for heterogeneity was 53%, suggesting moderate variability in the results across studies.",
+      "context_window": ": -5.8 to -2.5 kg). The I 2 statistic for heterogeneity was 53%, suggesting moderate variability in the results across stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4501",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 mmol",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4501,
+      "sentence": "Fasting glucose levels also demonstrated substantial improvements, with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%).",
+      "context_window": "mprovements, with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%). Subgroup analys",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4513",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.1 to -0.5",
+      "numeric_values": [
+        -1.1,
+        -0.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4513,
+      "sentence": "Fasting glucose levels also demonstrated substantial improvements, with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%).",
+      "context_window": "with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%). Subgroup analyses indicated that IHT wa",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4530",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mmol",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4530,
+      "sentence": "Fasting glucose levels also demonstrated substantial improvements, with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%).",
+      "context_window": "terventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%). Subgroup analyses indicated that IHT was sli",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-4548",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4548,
+      "sentence": "Fasting glucose levels also demonstrated substantial improvements, with combined interventions reducing levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%).",
+      "context_window": "ng levels by 0.8 mmol/L (95% CI: -1.1 to -0.5 mmol/L; I 2 = 37%). Subgroup analyses indicated that IHT was slightly more ef",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4674",
+      "claim_type": "unit_value",
+      "raw_text": "0.9 mmol",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4674,
+      "sentence": "Subgroup analyses indicated that IHT was slightly more effective than IF in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively.",
+      "context_window": "tive than IF in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4686",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.3 to -0.5",
+      "numeric_values": [
+        -1.3,
+        -0.5
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4686,
+      "sentence": "Subgroup analyses indicated that IHT was slightly more effective than IF in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively.",
+      "context_window": "in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively. Lip",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4713",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 mmol",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4713,
+      "sentence": "Subgroup analyses indicated that IHT was slightly more effective than IF in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively.",
+      "context_window": "with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively. Lipid profiles exh",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4725",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.0 to -0.4",
+      "numeric_values": [
+        -1.0,
+        -0.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4725,
+      "sentence": "Subgroup analyses indicated that IHT was slightly more effective than IF in reducing blood glucose, with reductions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively.",
+      "context_window": "ions of -0.9 mmol/L (95% CI: -1.3 to -0.5) and -0.7 mmol/L (95% CI: -1.0 to -0.4), respectively. Lipid profiles exhibited marked improvemen",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4854",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mmol",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4854,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglyceride",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4866",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.4 to -0.2",
+      "numeric_values": [
+        -0.4,
+        -0.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4866,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "s as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4883",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mmol",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4883,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "otal cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-4901",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4901,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "ecreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4927",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mmol",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4927,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "5% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%). Regarding cogn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-4939",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.3 to -0.1",
+      "numeric_values": [
+        -0.3,
+        -0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4939,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%). Regarding cognitive outcomes, the anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-4956",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mmol",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 4956,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%). Regarding cognitive outcomes, the analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-4974",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4974,
+      "sentence": "Lipid profiles exhibited marked improvements as well, with total cholesterol decreasing by 0.3 mmol/L (95% CI: -0.4 to -0.2 mmol/L; I 2 = 62%) and triglycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%).",
+      "context_window": "lycerides by 0.2 mmol/L (95% CI: -0.3 to -0.1 mmol/L; I 2 = 55%). Regarding cognitive outcomes, the analysis showed notabl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-5442",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.43-0.77",
+      "numeric_values": [
+        0.43,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5442,
+      "sentence": "Rey Auditory Verbal Learning Test (verbal episodic memory)] and attention [measured using Continuous Performance Test (sustained attention)], the combined interventions produced higher improvements, with memory showing a standardized mean difference (SMD) of 0.60 (95% CI: 0.43-0.77) and attention an SMD of 0.57 (95% CI: 0.40-0.74) ( Figure 3 ).",
+      "context_window": "emory showing a standardized mean difference (SMD) of 0.60 (95% CI: 0.43-0.77) and attention an SMD of 0.57 (95% CI: 0.40-0.74) ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-5491",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.40-0.74",
+      "numeric_values": [
+        0.4,
+        0.74
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5491,
+      "sentence": "Rey Auditory Verbal Learning Test (verbal episodic memory)] and attention [measured using Continuous Performance Test (sustained attention)], the combined interventions produced higher improvements, with memory showing a standardized mean difference (SMD) of 0.60 (95% CI: 0.43-0.77) and attention an SMD of 0.57 (95% CI: 0.40-0.74) ( Figure 3 ).",
+      "context_window": ") of 0.60 (95% CI: 0.43-0.77) and attention an SMD of 0.57 (95% CI: 0.40-0.74) ( Figure 3 ). Bar plot for cognitive function improvement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-5765",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5765,
+      "sentence": "The plot shows the standardized mean difference (SMD) and 95% confidence intervals for each intervention type.",
+      "context_window": ". The plot shows the standardized mean difference (SMD) and 95% confidence intervals for each intervention type. Combined i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-6208",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38-0.74",
+      "numeric_values": [
+        0.38,
+        0.74
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6208,
+      "sentence": "Executive function showed an SMD of 0.56 (95% CI: 0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.34-0.70) with combined interventions.",
+      "context_window": "ant enhancements. Executive function showed an SMD of 0.56 (95% CI: 0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-6233",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6233,
+      "sentence": "Executive function showed an SMD of 0.56 (95% CI: 0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.34-0.70) with combined interventions.",
+      "context_window": "ve function showed an SMD of 0.56 (95% CI: 0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.34-0.70) wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-6275",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.70",
+      "numeric_values": [
+        0.34,
+        0.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6275,
+      "sentence": "Executive function showed an SMD of 0.56 (95% CI: 0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.34-0.70) with combined interventions.",
+      "context_window": "0.38-0.74; I 2 = 68%) and processing speed an SMD of 0.52 (95% CI: 0.34-0.70) with combined interventions. Sensitivity analyses excludin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-6471",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 kg",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 6471,
+      "sentence": "Sensitivity analyses excluding high-risk-of-bias studies maintained statistical significance for all primary outcomes (e.g., combined weight loss: -6.1 kg, 95% CI: -8.0 to -4.2) ( Table 3 and Figure 4 ).",
+      "context_window": "ance for all primary outcomes (e.g., combined weight loss: -6.1 kg, 95% CI: -8.0 to -4.2) ( Table 3 and Figure 4 ). Funnel pl",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-6479",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.0 to -4.2",
+      "numeric_values": [
+        -8.0,
+        -4.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6479,
+      "sentence": "Sensitivity analyses excluding high-risk-of-bias studies maintained statistical significance for all primary outcomes (e.g., combined weight loss: -6.1 kg, 95% CI: -8.0 to -4.2) ( Table 3 and Figure 4 ).",
+      "context_window": "all primary outcomes (e.g., combined weight loss: -6.1 kg, 95% CI: -8.0 to -4.2) ( Table 3 and Figure 4 ). Funnel plot for executive funct",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-n-7165",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7165,
+      "sentence": "However, several research shortcomings were identified, including small sample sizes (median n = 75), unblinded measurement procedures, and missing baseline information, which may have impacted the reliability of the findings.",
+      "context_window": "mings were identified, including small sample sizes (median n = 75), unblinded measurement procedures, and missing baseline in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-7402",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7402,
+      "sentence": "Regarding heterogeneity, all primary outcomes showed significant heterogeneity: (1) Body weight: I 2 = 53%; (2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2 = 68%.",
+      "context_window": "es showed significant heterogeneity: (1) Body weight: I 2 = 53%; (2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-7433",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7433,
+      "sentence": "Regarding heterogeneity, all primary outcomes showed significant heterogeneity: (1) Body weight: I 2 = 53%; (2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2 = 68%.",
+      "context_window": "eity: (1) Body weight: I 2 = 53%; (2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2 = 68%. These variations are a",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-7468",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7468,
+      "sentence": "Regarding heterogeneity, all primary outcomes showed significant heterogeneity: (1) Body weight: I 2 = 53%; (2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2 = 68%.",
+      "context_window": "2) Lipid profiles: I 2 = 62%; (3) Executive function: I 2 = 68%. These variations are attributable to differences in study",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-p-7832",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7832,
+      "sentence": "Funnel plots revealed publication bias for cognitive outcomes (Egger\u2019s p = 0.04), requiring trim-and-fill imputation of 3 studies.",
+      "context_window": "s revealed publication bias for cognitive outcomes (Egger\u2019s p = 0.04), requiring trim-and-fill imputation of 3 studies. Metaboli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-p-7947",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7947,
+      "sentence": "Metabolic outcomes showed no significant bias (Egger\u2019s p = 0.12).",
+      "context_window": "ies. Metabolic outcomes showed no significant bias (Egger\u2019s p = 0.12).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1040,
+      "sentence": "Importantly, the observed metabolic improvements exceed established minimal clinically important difference (MCID) thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their clinical relevance ( 19 ).",
+      "context_window": "rtant difference (MCID) thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decreas",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1064",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1064,
+      "sentence": "Importantly, the observed metabolic improvements exceed established minimal clinically important difference (MCID) thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their clinical relevance ( 19 ).",
+      "context_window": "thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceed",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1110",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 mmol",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 1110,
+      "sentence": "Importantly, the observed metabolic improvements exceed established minimal clinically important difference (MCID) thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their clinical relevance ( 19 ).",
+      "context_window": "rpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their cl",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mmol",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 1137,
+      "sentence": "Importantly, the observed metabolic improvements exceed established minimal clinically important difference (MCID) thresholds, with weight reduction (-6.3 kg) surpassing the -5 kg benchmark and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their clinical relevance ( 19 ).",
+      "context_window": "k and fasting glucose decrease (-0.8 mmol/L) exceeding the -0.5 mmol/L criterion, confirming their clinical relevance ( 19 ). T",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1571",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1571,
+      "sentence": "The results demonstrate that IHT, IF, and their combination can substantially reduce weight, with the combination yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg).",
+      "context_window": "ht, with the combination yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg). This is particularly promising a",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-ci-1579",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.2 to -4.5",
+      "numeric_values": [
+        -8.2,
+        -4.5
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 1579,
+      "sentence": "The results demonstrate that IHT, IF, and their combination can substantially reduce weight, with the combination yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg).",
+      "context_window": "the combination yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg). This is particularly promising as it suggests a viable",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-1596",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 kg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1596,
+      "sentence": "The results demonstrate that IHT, IF, and their combination can substantially reduce weight, with the combination yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg).",
+      "context_window": "yielding an average weight loss of 6.3 kg (95% CI: -8.2 to -4.5 kg). This is particularly promising as it suggests a viable an",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-3590",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3590,
+      "sentence": "For clinical implementation, we recommend a stepped approach: initiating with IF (preferably 16:8 protocol) for 4-6 weeks to establish metabolic adaptation, followed by gradual introduction of IHT sessions starting at 30 min twice weekly.",
+      "context_window": "proach: initiating with IF (preferably 16:8 protocol) for 4-6 weeks to establish metabolic adaptation, followed by gradual intr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-6608",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6608,
+      "sentence": "Firstly, the short intervention durations, typically ranging from 4 to 12 weeks, are insufficient to evaluate the long-term sustainability of the observed effects.",
+      "context_window": "e short intervention durations, typically ranging from 4 to 12 weeks, are insufficient to evaluate the long-term sustainability",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-7051",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7051,
+      "sentence": "Secondly, substantial heterogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.g., age, sex), intervention protocols (e.g., IHT session frequency, IF fasting type), and cognitive measurement tools (e.g., use of different tests to assess the same cognitive domain) across studies ( 32 , 33 ).",
+      "context_window": "rogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-7149",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7149,
+      "sentence": "Secondly, substantial heterogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.g., age, sex), intervention protocols (e.g., IHT session frequency, IF fasting type), and cognitive measurement tools (e.g., use of different tests to assess the same cognitive domain) across studies ( 32 , 33 ).",
+      "context_window": "was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-11287",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 11287,
+      "sentence": "Based on clinical experience, we recommend allowing 4 weeks of IF adaptation before introducing IHT sessions, beginning with shorter durations (20-30 min) at moderate hypoxia levels (14-15% O\u2082) twice weekly, progressively increasing to protocol targets.",
+      "context_window": "ctices. Based on clinical experience, we recommend allowing 4 weeks of IF adaptation before introducing IHT sessions, beginning",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-11421",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 11421,
+      "sentence": "Based on clinical experience, we recommend allowing 4 weeks of IF adaptation before introducing IHT sessions, beginning with shorter durations (20-30 min) at moderate hypoxia levels (14-15% O\u2082) twice weekly, progressively increasing to protocol targets.",
+      "context_window": "horter durations (20-30 min) at moderate hypoxia levels (14-15% O\u2082) twice weekly, progressively increasing to protocol targ",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-12236",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12236,
+      "sentence": "Future studies must prioritize population diversity, as current cohorts predominantly represent high-income white populations despite metabolic conditions affecting 25% of US adults ( 39 ).",
+      "context_window": "me white populations despite metabolic conditions affecting 25% of US adults ( 39 ). Recruiting ethnically and socioeconomi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-12425",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 12425,
+      "sentence": "Additionally, long-term trials (>12 months) are essential to evaluate intervention sustainability, given current studies\u2019 limited durations (4-12 weeks) ( 40 ).",
+      "context_window": "ify beneficiary subgroups. Additionally, long-term trials (>12 months) are essential to evaluate intervention sustainability, giv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-12535",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 12535,
+      "sentence": "Additionally, long-term trials (>12 months) are essential to evaluate intervention sustainability, given current studies\u2019 limited durations (4-12 weeks) ( 40 ).",
+      "context_window": "sustainability, given current studies\u2019 limited durations (4-12 weeks) ( 40 ). Such research should determine whether metabolic/c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-187",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 187,
+      "sentence": "Firstly, the short intervention durations, typically ranging from 4 to 12 weeks, are insufficient to evaluate the long-term sustainability of the observed effects.",
+      "context_window": "e short intervention durations, typically ranging from 4 to 12 weeks, are insufficient to evaluate the long-term sustainability",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-630",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 630,
+      "sentence": "Secondly, substantial heterogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.g., age, sex), intervention protocols (e.g., IHT session frequency, IF fasting type), and cognitive measurement tools (e.g., use of different tests to assess the same cognitive domain) across studies ( 32 , 33 ).",
+      "context_window": "rogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-pct-728",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 728,
+      "sentence": "Secondly, substantial heterogeneity was observed in the lipid profile results ( I 2 = 62%), and similarly high heterogeneity was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.g., age, sex), intervention protocols (e.g., IHT session frequency, IF fasting type), and cognitive measurement tools (e.g., use of different tests to assess the same cognitive domain) across studies ( 32 , 33 ).",
+      "context_window": "was noted for cognitive outcomes (executive function I 2 = 68%), reflecting variability in participant characteristics (e.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12568350_comprehensive_impact_of_intermittent_hypoxia_training_and_in-u-274",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 kg",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "kg",
+      "source_section": "conclusion",
+      "source_offset": 274,
+      "sentence": "The substantial weight loss (mean reduction 6.3 kg), improved insulin sensitivity, enhanced lipid profiles, and cognitive benefits observed in the studies suggest that these interventions can provide meaningful clinical improvements.",
+      "context_window": "complications. The substantial weight loss (mean reduction 6.3 kg), improved insulin sensitivity, enhanced lipid profiles, an",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

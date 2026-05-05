@@ -1,0 +1,988 @@
+{
+  "paper_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri",
+  "doi": "10.1016/j.xcrm.2025.101968",
+  "extracted_at": "2026-05-05T22:04:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 12,
+    "unit_value": 29,
+    "mean_sd": 1,
+    "sample_size": 1,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-556",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 556,
+      "sentence": "4 , 5 Underscoring the magnitude of the impact of aging-related muscle dysfunction, it is estimated that the prevalence of sarcopenia (i.e., the aging-related loss of muscle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for studies on individuals across the whole adult lifespan.",
+      "context_window": "loss of muscle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of a",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-566",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 566,
+      "sentence": "4 , 5 Underscoring the magnitude of the impact of aging-related muscle dysfunction, it is estimated that the prevalence of sarcopenia (i.e., the aging-related loss of muscle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for studies on individuals across the whole adult lifespan.",
+      "context_window": "scle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscor",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 587,
+      "sentence": "4 , 5 Underscoring the magnitude of the impact of aging-related muscle dysfunction, it is estimated that the prevalence of sarcopenia (i.e., the aging-related loss of muscle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for studies on individuals across the whole adult lifespan.",
+      "context_window": "and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 606,
+      "sentence": "4 , 5 Underscoring the magnitude of the impact of aging-related muscle dysfunction, it is estimated that the prevalence of sarcopenia (i.e., the aging-related loss of muscle mass, strength, and function) increases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for studies on individuals across the whole adult lifespan.",
+      "context_window": "ases from 14% in 65-70 years old to over 50% in those above 80 years of age, 6 underscoring the need for studies on individuals",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-755",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 755,
+      "sentence": "The number of people around the world aged over 60 years was estimated at 1 billion in the year 2020.",
+      "context_window": "t lifespan. The number of people around the world aged over 60 years was estimated at 1 billion in the year 2020. This figure is",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-1059",
+      "claim_type": "unit_value",
+      "raw_text": "30 years",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1059,
+      "sentence": "Even with a conservative estimate of its prevalence, sarcopenia currently affects over 50 million people and will reach over 200 million in the next 30 years.",
+      "context_window": "million people and will reach over 200 million in the next 30 years. 6 Furthermore, the direct healthcare costs attributable to",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-3078",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3078,
+      "sentence": "24 , 25\n\nTo address these gaps in knowledge, we conducted a cross-sectional study in 51 inactive and 88 active men with ages ranging from 20 to 93 years, divided into age groups to tease out when significant changes in parameters may occur.",
+      "context_window": "51 inactive and 88 active men with ages ranging from 20 to 93 years, divided into age groups to tease out when significant chan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-208",
+      "claim_type": "unit_value",
+      "raw_text": "100 years",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 208,
+      "sentence": "To be included, participants had to self-identify as a male and a man aged between 20 and 100 years old, with a BMI between 18 and 35 kg/m 2 .",
+      "context_window": "ad to self-identify as a male and a man aged between 20 and 100 years old, with a BMI between 18 and 35 kg/m 2 . The following ex",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-249",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 249,
+      "sentence": "To be included, participants had to self-identify as a male and a man aged between 20 and 100 years old, with a BMI between 18 and 35 kg/m 2 .",
+      "context_window": "ged between 20 and 100 years old, with a BMI between 18 and 35 kg/m 2 . The following exclusion criteria were used: uncontrol",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-1319",
+      "claim_type": "percentage",
+      "raw_text": "91.4%",
+      "numeric_values": [
+        91.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1319,
+      "sentence": "Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "context_window": "conomic data were not collected. Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-1345",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1345,
+      "sentence": "Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "context_window": "ected. Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-1356",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1356,
+      "sentence": "Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "context_window": "cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial. All proced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-1368",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1368,
+      "sentence": "Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "context_window": "omposed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial. All procedures were ap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-1392",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1392,
+      "sentence": "Our cohort was composed of 91.4% White not Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial.",
+      "context_window": "ot Hispanic, 4.3% Arab, 2.2% Asian, 1.4% White Hispanic and 0.7% multiracial. All procedures were approved by the Ethics Com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-1928",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1928,
+      "sentence": "82 Participants were asked to wear the armband on the non-dominant arm for at least 3 days and ideally for 7 days.",
+      "context_window": "ed to wear the armband on the non-dominant arm for at least 3 days and ideally for 7 days. Data were taken from days where the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1951,
+      "sentence": "82 Participants were asked to wear the armband on the non-dominant arm for at least 3 days and ideally for 7 days.",
+      "context_window": "on the non-dominant arm for at least 3 days and ideally for 7 days. Data were taken from days where the armband was worn at le",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-2021",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2021,
+      "sentence": "Data were taken from days where the armband was worn at least 80% of the time over 24h (\u226519h and 12 min).",
+      "context_window": "ta were taken from days where the armband was worn at least 80% of the time over 24h (\u226519h and 12 min). Data were analyzed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-2439",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2439,
+      "sentence": "83 However, participants were asked to report their usual physical activity representative of the past 5 years and not just their physical activity over 7 days.",
+      "context_window": "rt their usual physical activity representative of the past 5 years and not just their physical activity over 7 days. To be de",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-2489",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2489,
+      "sentence": "83 However, participants were asked to report their usual physical activity representative of the past 5 years and not just their physical activity over 7 days.",
+      "context_window": "the past 5 years and not just their physical activity over 7 days. To be deemed active, participants had to fulfill at least",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-3809",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3809,
+      "sentence": "Acquisition parameters were the following: voxel size: 0.5 mm; speed:10 mm/s p -QCT images were analyzed using ImageJ software (NIH, Bethesda, Maryland, USA, https://imagej.nih.gov/ij/ ) with the plugin p -QCT.",
+      "context_window": "ur). Acquisition parameters were the following: voxel size: 0.5 mm; speed:10 mm/s p -QCT images were analyzed using ImageJ sof",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-3823",
+      "claim_type": "unit_value",
+      "raw_text": "10 mm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3823,
+      "sentence": "Acquisition parameters were the following: voxel size: 0.5 mm; speed:10 mm/s p -QCT images were analyzed using ImageJ software (NIH, Bethesda, Maryland, USA, https://imagej.nih.gov/ij/ ) with the plugin p -QCT.",
+      "context_window": "on parameters were the following: voxel size: 0.5 mm; speed:10 mm/s p -QCT images were analyzed using ImageJ software (NIH, B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-4384",
+      "claim_type": "unit_value",
+      "raw_text": "20 cm",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4384,
+      "sentence": "86 , 87 Participants were placed facing toward a 20 cm height step and instructed to touch the top with the right and left foot, alternatively, as fast as possible during a 20 s period.",
+      "context_window": "step test. 86 , 87 Participants were placed facing toward a 20 cm height step and instructed to touch the top with the right",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-6932",
+      "claim_type": "unit_value",
+      "raw_text": "2 cm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6932,
+      "sentence": "62 Once identified, muscle biopsies were performed along the main axis of the vastus lateralis at least 2 cm away from the site with the highest NMJ density.",
+      "context_window": "formed along the main axis of the vastus lateralis at least 2 cm away from the site with the highest NMJ density. Muscle bio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-8133",
+      "claim_type": "unit_value",
+      "raw_text": "0.05 mg",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 8133,
+      "sentence": "Muscle fiber bundles were incubated into a glass scintillation vial for 30 min at low rocking speed containing buffer A supplemented with 0.05 mg/mL saponin (Sigma-Aldrich) to selectively permeabilize the sarcolemma.",
+      "context_window": "at low rocking speed containing buffer A supplemented with 0.05 mg/mL saponin (Sigma-Aldrich) to selectively permeabilize the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-8985",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 8985,
+      "sentence": "Permeabilized myofibers from muscle biopsy samples were used to assess mitochondrial respiration in an Oroboros O2K high-resolution fluororespirometer (Oroboros Instruments, Austria) at 37\u00b0C in 2 mL of MiR05 buffer.",
+      "context_window": "uororespirometer (Oroboros Instruments, Austria) at 37\u00b0C in 2 mL of MiR05 buffer. Briefly, 3 to 6 mg (wet mass) of permeabil",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-9021",
+      "claim_type": "unit_value",
+      "raw_text": "6 mg",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 9021,
+      "sentence": "Briefly, 3 to 6 mg (wet mass) of permeabilized fiber bundles were weighed and added to the respiration chambers.",
+      "context_window": "ts, Austria) at 37\u00b0C in 2 mL of MiR05 buffer. Briefly, 3 to 6 mg (wet mass) of permeabilized fiber bundles were weighed and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-10242",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 10242,
+      "sentence": "This was performed along with respiration assessment in the Oroboros O2K high-resolution fluororespirometer (Oroboros Instruments, Austria) at 37\u00b0C in 2 mL of MiR05 buffer supplemented with Amplex Ultra Red (10\u03bcM), SOD (5 U/ml), and HRP (1 U/ml).",
+      "context_window": "uororespirometer (Oroboros Instruments, Austria) at 37\u00b0C in 2 mL of MiR05 buffer supplemented with Amplex Ultra Red (10\u03bcM),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-12002",
+      "claim_type": "unit_value",
+      "raw_text": "6 mg",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 12002,
+      "sentence": "17 Briefly, a muscle bundle of 3-6 mg wet mass was added to 600 \u03bcL of CRC buffer containing \u223c30 \u03bcM of Ca 2+ supplemented with 5 mM glutamate, 2.5 mM malate, 10 mM inorganic phosphate (P i ), 1 \u03bcM calcium-green 5 N, and 0.5 \u03bcM oligomycin.",
+      "context_window": "s as previously described. 17 Briefly, a muscle bundle of 3-6 mg wet mass was added to 600 \u03bcL of CRC buffer containing \u223c30 \u03bc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-14209",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14209,
+      "sentence": "The supernatants were collected in a clean Eppendorf and CS activity was measured spectrophotometrically by detecting the increase in absorbance at 412 nm in a 96-well plate, at 30\u00b0C, using 200\u03bcL of a reaction buffer (200 mM Tris, pH 7.4) containing 2\u03bcM acetyl-CoA, 200\u03bcM 5,5\u2032-dithiobis-(2-nitrobenzoic acid) (DTNB), 350 \u03bcM oxaloacetic acid, and 0.1% Triton X-100.",
+      "context_window": "-(2-nitrobenzoic acid) (DTNB), 350 \u03bcM oxaloacetic acid, and 0.1% Triton X-100. The kinetic assay was performed with the M100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-15025",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15025,
+      "sentence": "23 , 92 Briefly, muscle cross sections were allowed to reach room temperature, rehydrated with Phosphate Buffer solution (PBS, Sigma, 4417) and blocked with PBS containing 10% of goat serum (GS) for 45 min at room temperature.",
+      "context_window": "solution (PBS, Sigma, 4417) and blocked with PBS containing 10% of goat serum (GS) for 45 min at room temperature. Muscle s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-15508",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15508,
+      "sentence": "Muscle sections were then incubated for 1 h, at room temperature with the following primary antibodies mix: a mouse IgG2b monoclonal anti-MHC type I (BA-F8, 1:25, DSHB, Iowa, IA, USA), a mouse IgG1 monoclonal anti-MHC type IIa (Sc-71, 1:200, DSHB, Iowa, IA, USA), a mouse IgM monoclonal anti-MHC type IIx (6-H1, 1:25, DSHB, Iowa, IA, USA) and a rabbit IgG polyclonal anti-laminin (Sigma, L9393, 1:750) diluted in PBS containing 10% of GS.",
+      "context_window": "nti-laminin (Sigma, L9393, 1:750) diluted in PBS containing 10% of GS. Muscle cross-sections were then washed 3 times with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-pct-15676",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15676,
+      "sentence": "Muscle cross-sections were then washed 3 times with PBS before being incubated for 1 h with the following secondary antibodies mix diluted in PBS containing 10% of GS: Alexa Fluor 350 IgG2b goat anti-mouse (A21140), Alexa Fluor 594 IgG1 goat anti-mouse (A21125), Alexa Fluor 488 IgM goat anti-mouse (A21042) and Alexa Fluor 488 IgG goat anti-rabbit (A11008).",
+      "context_window": "ollowing secondary antibodies mix diluted in PBS containing 10% of GS: Alexa Fluor 350 IgG2b goat anti-mouse (A21140), Alex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-msd-16287",
+      "claim_type": "mean_sd",
+      "raw_text": "314 \u00b1 86",
+      "numeric_values": [
+        314.0,
+        86.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 16287,
+      "sentence": "At least 200 fibers were manually traced per participant (average \u00b1SD: 314 \u00b1 86) using the ImageJ software (NIH, Bethesda, Maryland, USA, https://imagej.nih.gov/ij/ ).",
+      "context_window": "0 fibers were manually traced per participant (average \u00b1SD: 314 \u00b1 86) using the ImageJ software (NIH, Bethesda, Maryland, USA, h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-16917",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 16917,
+      "sentence": "After centrifugation, the supernatant (serum) was collected and aliquoted into 1.5 mL Eppendorf tubes and immediately stored at -80\u00b0C until use.",
+      "context_window": "n, the supernatant (serum) was collected and aliquoted into 1.5 mL Eppendorf tubes and immediately stored at -80\u00b0C until use.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-19165",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 19165,
+      "sentence": "After centrifugation, the supernatant (plasma) was collected and aliquoted into 1.5 mL Eppendorf tubes and stored at -80\u00b0C until use.",
+      "context_window": ", the supernatant (plasma) was collected and aliquoted into 1.5 mL Eppendorf tubes and stored at -80\u00b0C until use. Plasma GDF15",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-n-19778",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 19778,
+      "sentence": "17 , 23 These estimations retrieved minimal sample sizes required to achieve adequate power of n = 8 to 10 per group.",
+      "context_window": "minimal sample sizes required to achieve adequate power of n = 8 to 10 per group. Group comparisons were performed using two",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-19877",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 19877,
+      "sentence": "Group comparisons were performed using two-way analysis of variance (ANOVA; p < 0.05 were considered significant) with age and physical activity status as factors.",
+      "context_window": "s were performed using two-way analysis of variance (ANOVA; p < 0.05 were considered significant) with age and physical activity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-20091",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 20091,
+      "sentence": "When an age effect was observed, Tukey\u2019s multiple comparisons tests were performed to assess differences between age groups ( p < 0.05 were considered significant).",
+      "context_window": "s were performed to assess differences between age groups ( p < 0.05 were considered significant). To assess whether differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-20411",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 20411,
+      "sentence": "To assess whether differences were present between active and inactive participants in each age group, bilateral Student\u2019s t-tests followed by a correction using the false discovery rate (FDR) (using the two-stage step-up method of Benjamini, Krieger, and Yekutieli) was applied ( p < 0.05 and q < 0.05 were considered significant).",
+      "context_window": "method of Benjamini, Krieger, and Yekutieli) was applied ( p < 0.05 and q < 0.05 were considered significant). For analyses whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-48",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 48,
+      "sentence": "One hundred and thirty-nine men aged from 20 to 93 years old, all living independently in the community and in overall good physical health, were enrolled in the present study.",
+      "context_window": "One hundred and thirty-nine men aged from 20 to 93 years old, all living independently in the community and in overa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-484",
+      "claim_type": "unit_value",
+      "raw_text": "39 year",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 484,
+      "sentence": "For group analyses, participants were divided into the following age groups: young middle age (20-39 year-old[yo]), mature middle age (40-59 yo), young older adults (60-69 yo), and older adults (70+ yo).",
+      "context_window": "divided into the following age groups: young middle age (20-39 year-old[yo]), mature middle age (40-59 yo), young older adults",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-3076",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3076,
+      "sentence": "Data are expressed as mean \u00b1 SD. p < 0.05 was considered statistically significant.",
+      "context_window": "differentiation factor 15. Data are expressed as mean \u00b1 SD. p < 0.05 was considered statistically significant. To further chara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-7555",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7555,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-9533",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 9533,
+      "sentence": "The impact of aging and physical activity status on muscle strength, power, and composition\n\n(A and B) Quantification of the maximal isometric knee extension strength relative to body mass in inactive and active participants.\n\n(C and D) Quantification of the maximal lower limb power relative to body mass in inactive and active participants.\n\n(E) Representative pQCT images of the thigh of young and old inactive and active participants (scale bar: 1 cm).\n\n(F-I) Quantification of the (F and G) muscle cross-sectional area and (H and I) intermuscular fat area in inactive and active participants.",
+      "context_window": "young and old inactive and active participants (scale bar: 1 cm). (F-I) Quantification of the (F and G) muscle cross-secti",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-10454",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10454,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-17101",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17101,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-20432",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20432,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-26889",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26889,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-28176",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 28176,
+      "sentence": "As suggested by our ANOVA and post hoc analyses, further examinations of the relationship between aging and mCRC and the time to mPTP opening revealed that, while both parameters were quite stable from 20 to 60 years of age, both sharply declined after 60 ( Figures S11 A and S11B).",
+      "context_window": "ed that, while both parameters were quite stable from 20 to 60 years of age, both sharply declined after 60 ( Figures S11 A and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-30904",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 30904,
+      "sentence": "For two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant.",
+      "context_window": "r two-way ANOVA, post hoc testing, and regression analyses, p < 0.05 was considered statistically significant. For FDR analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-p-31739",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 31739,
+      "sentence": "As can be seen in Figures S13 A and S13B and Table 1 , plasma GDF15 levels were exponentially and strongly correlated with age (r = 0.83, p < 0.0001) in the whole cohort and in active and inactive individuals separately.",
+      "context_window": "e exponentially and strongly correlated with age (r = 0.83, p < 0.0001) in the whole cohort and in active and inactive individuals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-755",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 755,
+      "sentence": "To disentangle the relationship between aging, multiple aspects of mitochondrial function, and physical activity in humans, we evaluated physical function, muscle mass and performance, muscle phenotype, and various aspects of mitochondrial function in 51 inactive and 88 active men from 20 to 93 years of age.",
+      "context_window": "ndrial function in 51 inactive and 88 active men from 20 to 93 years of age. Our data revealed that physical performance decline",
+      "claim_role": "protocol",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-3098",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3098,
+      "sentence": "Indeed, exercise training for relatively short terms (12 weeks) can substantially increase mitochondrial content 41 and respiration in older adults.",
+      "context_window": "load. Indeed, exercise training for relatively short terms (12 weeks) can substantially increase mitochondrial content 41 and re",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri-u-3240",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3240,
+      "sentence": "15 , 42 , 43 Conversely, short-term disuse (10-14 days of bed rest) results in a significant decrease in mitochondrial content 44 and respiration in older adults 45 , 46 while 1 h of exercise per day can negate the effect of bed rest on mitochondrial bioenergetics in older adults.",
+      "context_window": "lder adults. 15 , 42 , 43 Conversely, short-term disuse (10-14 days of bed rest) results in a significant decrease in mitochond",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

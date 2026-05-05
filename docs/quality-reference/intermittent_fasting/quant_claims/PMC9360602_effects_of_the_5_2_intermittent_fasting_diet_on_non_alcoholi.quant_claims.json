@@ -1,0 +1,2723 @@
+{
+  "paper_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi",
+  "doi": "10.3389/fnut.2022.948655",
+  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 54,
+    "sample_size": 3,
+    "mean_sd": 62,
+    "p_value": 21,
+    "percentage": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-275",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 275,
+      "sentence": "Thus, we aimed to ascertain the overall effects of the 5:2 IF diet (5 days a week of normal food intake and 2 consecutive fasting days) in patients with NAFLD compared to a control group (usual diet).",
+      "context_window": "aimed to ascertain the overall effects of the 5:2 IF diet (5 days a week of normal food intake and 2 consecutive fasting days",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-n-662",
+      "claim_type": "sample_size",
+      "raw_text": "n = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "inflammatory markers in patients with NAFLD. The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), bo",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-693",
+      "claim_type": "mean_sd",
+      "raw_text": "86.65 \u00b1 12.57",
+      "numeric_values": [
+        86.65,
+        12.57
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 693,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "s with NAFLD. The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-707",
+      "claim_type": "mean_sd",
+      "raw_text": "82.94 \u00b1 11.60",
+      "numeric_values": [
+        82.94,
+        11.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 707,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), w",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "11.60 kg",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "roup ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), wais",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-743",
+      "claim_type": "mean_sd",
+      "raw_text": "30.42 \u00b1 2.27",
+      "numeric_values": [
+        30.42,
+        2.27
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "y weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-1",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-756",
+      "claim_type": "mean_sd",
+      "raw_text": "29.13 \u00b1 1.95",
+      "numeric_values": [
+        29.13,
+        1.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 756,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-764",
+      "claim_type": "unit_value",
+      "raw_text": "1.95 kg",
+      "numeric_values": [
+        1.95
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 764,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm)",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-800",
+      "claim_type": "mean_sd",
+      "raw_text": "103.52 \u00b1 6.42",
+      "numeric_values": [
+        103.52,
+        6.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 800,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "x (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg),",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-814",
+      "claim_type": "mean_sd",
+      "raw_text": "100.52 \u00b1 5.64",
+      "numeric_values": [
+        100.52,
+        5.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 814,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "7-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.9",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "5.64 cm",
+      "numeric_values": [
+        5.64
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-843",
+      "claim_type": "mean_sd",
+      "raw_text": "26.64 \u00b1 5.43",
+      "numeric_values": [
+        26.64,
+        5.43
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 843,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "t circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), s",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-856",
+      "claim_type": "mean_sd",
+      "raw_text": "23.85 \u00b1 5.85",
+      "numeric_values": [
+        23.85,
+        5.85
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 856,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "ce (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scor",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "5.85 kg",
+      "numeric_values": [
+        5.85
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 864,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-884",
+      "claim_type": "mean_sd",
+      "raw_text": "6.97 \u00b1 1.94",
+      "numeric_values": [
+        6.97,
+        1.94
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 884,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": ".64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-896",
+      "claim_type": "mean_sd",
+      "raw_text": "5.58 \u00b1 1.07",
+      "numeric_values": [
+        5.58,
+        1.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 896,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 d",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-936",
+      "claim_type": "mean_sd",
+      "raw_text": "313.09 \u00b1 25.45",
+      "numeric_values": [
+        313.09,
+        25.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "brosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-951",
+      "claim_type": "mean_sd",
+      "raw_text": "289.95 \u00b1 22.36",
+      "numeric_values": [
+        289.95,
+        22.36
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.2",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-999",
+      "claim_type": "mean_sd",
+      "raw_text": "41.42 \u00b1 20.98",
+      "numeric_values": [
+        41.42,
+        20.98
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": ".09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1013",
+      "claim_type": "mean_sd",
+      "raw_text": "28.38 \u00b1 15.21",
+      "numeric_values": [
+        28.38,
+        15.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1013,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "9.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.2",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1061",
+      "claim_type": "mean_sd",
+      "raw_text": "34.19 \u00b1 10.88",
+      "numeric_values": [
+        34.19,
+        10.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": ".42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 3",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1075",
+      "claim_type": "mean_sd",
+      "raw_text": "25.95 \u00b1 7.26",
+      "numeric_values": [
+        25.95,
+        7.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1075,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": ".38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl),",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1109",
+      "claim_type": "mean_sd",
+      "raw_text": "171.23 \u00b1 39.88",
+      "numeric_values": [
+        171.23,
+        39.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1109,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "ransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1124",
+      "claim_type": "mean_sd",
+      "raw_text": "128.04 \u00b1 34.88",
+      "numeric_values": [
+        128.04,
+        34.88
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1124,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1133",
+      "claim_type": "unit_value",
+      "raw_text": "34.88 mg",
+      "numeric_values": [
+        34.88
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "8-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1184",
+      "claim_type": "mean_sd",
+      "raw_text": "2.95 \u00b1 0.62",
+      "numeric_values": [
+        2.95,
+        0.62
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1197",
+      "claim_type": "mean_sd",
+      "raw_text": "2.40 \u00b1 0.64",
+      "numeric_values": [
+        2.4,
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "8 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) v",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1204",
+      "claim_type": "unit_value",
+      "raw_text": "0.64 mg",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) valu",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1236",
+      "claim_type": "mean_sd",
+      "raw_text": "1.32 \u00b1 0.06",
+      "numeric_values": [
+        1.32,
+        0.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1236,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "rotein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1248",
+      "claim_type": "mean_sd",
+      "raw_text": "1.19 \u00b1 0.05",
+      "numeric_values": [
+        1.19,
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "\u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the c",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-n-1334",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1334,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant. However, the int",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-1343",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "The IF group ( n = 21) decreased body weight (86.65 \u00b1 12.57-82.94 \u00b1 11.60 kg), body mass index (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), waist circumference (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), fat mass (26.64 \u00b1 5.43-23.85 \u00b1 5.85 kg), fibrosis (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa), steatosis scores/CAP (313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m), alanine aminotransferase (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L), aspartate aminotransferase (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L), triglycerides (171.23 \u00b1 39.88-128.04 \u00b1 34.88 mg/dl), high-sensitivity C-reactive protein (2.95 \u00b1 0.62 -2.40 \u00b1 0.64 mg/L), and cytokeratin-18 (1.32 \u00b1 0.06-1.19 \u00b1 0.05 ng/ml) values compared to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant.",
+      "context_window": "to the baseline and the end of the control group ( n = 23)- p \u2264 0.05 were considered as significant. However, the intervention d",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1321",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1321,
+      "sentence": "The 5:2 diet is an emerging type of periodic fasting in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ).",
+      "context_window": "emerging type of periodic fasting in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ). Time-r",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1354",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1354,
+      "sentence": "The 5:2 diet is an emerging type of periodic fasting in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ).",
+      "context_window": "in which individuals fast 2 days a week and eat freely for 5 days a week ( 18 , 19 ). Time-restricted feeding and the 5:2 die",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-1673",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1673,
+      "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
+      "context_window": "n on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-1835",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1835,
+      "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
+      "context_window": "er restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1912",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1912,
+      "sentence": "More specifically, regarding the adherence to the 5:2 diet, there is substantial energy restriction on the fasting days, in which it is common to prescribe 0-25% of the estimated total daily energy requirements on 2 non-consecutive days of the week without water restriction, while the habitual intake ( ad libitum ) or 100% of estimated total daily energy requirements are used for the remaining 5 days ( 19 ).",
+      "context_window": "total daily energy requirements are used for the remaining 5 days ( 19 ). Randomized controlled trials (RCTs) have examined",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2105",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "introduction",
+      "source_offset": 2105,
+      "sentence": "Fudla et al. reported that participants with obesity on the 5:2 diet for 1 month experienced a reduction in body mass index (BMI) ( 22 ).",
+      "context_window": "reported that participants with obesity on the 5:2 diet for 1 month experienced a reduction in body mass index (BMI) ( 22 ). In",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2492",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2492,
+      "sentence": "Increasing attention has been paid to the effects of IF regimens on the management of NAFLD, as shown by a systematic review and meta-analysis of RCTs supporting reductions in body weight, BMI, as well as liver enzymes in individuals on IF diets (Ramadan fasting, alternate-day fasting, and time-restricted feeding) for 4-12 weeks ( 23 ).",
+      "context_window": ", alternate-day fasting, and time-restricted feeding) for 4-12 weeks ( 23 ). More recently, Holmer et al. ( 7 ) found that adher",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-232",
+      "claim_type": "unit_value",
+      "raw_text": "40 kg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 232,
+      "sentence": "The following inclusion criteria were applied: BMI = 25-40 kg/m 2 , age between 18 and 50 years (as middle-aged and elderly participants are less available for fasting), grade 2 NAFLD, -i.e., a controlled attenuation parameter (CAP) score \u2265 260 dB/m and \u2265 34% fatty change, with liver stiffness measurement (LSM) levels <14 kPa ( 24 )-, willingness to participate in the RCT, and no recent participation in a weight loss diet program.",
+      "context_window": "an. The following inclusion criteria were applied: BMI = 25-40 kg/m 2 , age between 18 and 50 years (as middle-aged and elder",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-263",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 263,
+      "sentence": "The following inclusion criteria were applied: BMI = 25-40 kg/m 2 , age between 18 and 50 years (as middle-aged and elderly participants are less available for fasting), grade 2 NAFLD, -i.e., a controlled attenuation parameter (CAP) score \u2265 260 dB/m and \u2265 34% fatty change, with liver stiffness measurement (LSM) levels <14 kPa ( 24 )-, willingness to participate in the RCT, and no recent participation in a weight loss diet program.",
+      "context_window": "teria were applied: BMI = 25-40 kg/m 2 , age between 18 and 50 years (as middle-aged and elderly participants are less available",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-432",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 432,
+      "sentence": "The following inclusion criteria were applied: BMI = 25-40 kg/m 2 , age between 18 and 50 years (as middle-aged and elderly participants are less available for fasting), grade 2 NAFLD, -i.e., a controlled attenuation parameter (CAP) score \u2265 260 dB/m and \u2265 34% fatty change, with liver stiffness measurement (LSM) levels <14 kPa ( 24 )-, willingness to participate in the RCT, and no recent participation in a weight loss diet program.",
+      "context_window": "ntrolled attenuation parameter (CAP) score \u2265 260 dB/m and \u2265 34% fatty change, with liver stiffness measurement (LSM) levels",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1595",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1595,
+      "sentence": "Regarding medication use, the patients should not have used antibiotics for more than 1 week during the study period or prior to enrollment, and should not have consumed herbal medicines, anti-inflammatory drugs, corticosteroids/any type of hormone, weight-loss drugs, or hepatotoxic drugs, e.g., phenytoin, amoxicillin, and lithium.",
+      "context_window": "the patients should not have used antibiotics for more than 1 week during the study period or prior to enrollment, and should",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-2308",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2308,
+      "sentence": "We applied the following exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that can affect metabolism or liver function (e.g., lipid-lowering or glucose-lowering drugs, drugs used to control blood pressure) or supplements/substances that may interact with the impact of diet during the intervention.",
+      "context_window": "We applied the following exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacolo",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-2329",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2329,
+      "sentence": "We applied the following exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that can affect metabolism or liver function (e.g., lipid-lowering or glucose-lowering drugs, drugs used to control blood pressure) or supplements/substances that may interact with the impact of diet during the intervention.",
+      "context_window": "wing exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that ca",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2344",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2344,
+      "sentence": "We applied the following exclusion criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that can affect metabolism or liver function (e.g., lipid-lowering or glucose-lowering drugs, drugs used to control blood pressure) or supplements/substances that may interact with the impact of diet during the intervention.",
+      "context_window": "criteria: weight loss \u2265 10% or weight gain \u2265 5% in the last 6 months, use of pharmacological agents that can affect metabolism o",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-306",
+      "claim_type": "mean_sd",
+      "raw_text": "45.25 \u00b1 9.84",
+      "numeric_values": [
+        45.25,
+        9.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 306,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 1",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-314",
+      "claim_type": "unit_value",
+      "raw_text": "9.84 years",
+      "numeric_values": [
+        9.84
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 k",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-326",
+      "claim_type": "mean_sd",
+      "raw_text": "30.51 \u00b1 2.7",
+      "numeric_values": [
+        30.51,
+        2.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 326,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "C, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respective",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-334",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 kg",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 334,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "ody weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-347",
+      "claim_type": "mean_sd",
+      "raw_text": "105.59 \u00b1 8.11",
+      "numeric_values": [
+        105.59,
+        8.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 347,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively. The baseline charac",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-356",
+      "claim_type": "unit_value",
+      "raw_text": "8.11 cm",
+      "numeric_values": [
+        8.11
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 356,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "ents were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively. The baseline character",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-369",
+      "claim_type": "mean_sd",
+      "raw_text": "88.05 \u00b1 11.88",
+      "numeric_values": [
+        88.05,
+        11.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 369,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively. The baseline characteristics of the patie",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "11.88 kg",
+      "numeric_values": [
+        11.88
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 377,
+      "sentence": "The mean age, BMI, WC, and body weight of the patients were 45.25 \u00b1 9.84 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively.",
+      "context_window": "4 years, 30.51 \u00b1 2.7 kg/m 2 , 105.59 \u00b1 8.11 cm, and 88.05 \u00b1 11.88 kg, respectively. The baseline characteristics of the patients",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 kg",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1114,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": ":2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1133",
+      "claim_type": "mean_sd",
+      "raw_text": "86.65 \u00b1 12.57",
+      "numeric_values": [
+        86.65,
+        12.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1133,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1141",
+      "claim_type": "unit_value",
+      "raw_text": "12.57 kg",
+      "numeric_values": [
+        12.57
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1141,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "ficant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-sign",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1153",
+      "claim_type": "mean_sd",
+      "raw_text": "82.94 \u00b1 11.60",
+      "numeric_values": [
+        82.94,
+        11.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1153,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "ase in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1161",
+      "claim_type": "unit_value",
+      "raw_text": "11.60 kg",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1161,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "ody weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-1171",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1171,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "(-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the contro",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1250",
+      "claim_type": "unit_value",
+      "raw_text": "1.02 kg",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1250,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "here was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06). M",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1270",
+      "claim_type": "mean_sd",
+      "raw_text": "89.33 \u00b1 18.47",
+      "numeric_values": [
+        89.33,
+        18.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1270,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "ficant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06). Moreover, the individuals o",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1287",
+      "claim_type": "mean_sd",
+      "raw_text": "88.31 \u00b1 11.01",
+      "numeric_values": [
+        88.31,
+        11.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1287,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06). Moreover, the individuals on the 5:2 diet ex",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1295",
+      "claim_type": "unit_value",
+      "raw_text": "11.01 kg",
+      "numeric_values": [
+        11.01
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1295,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "ontrol group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06). Moreover, the individuals on the 5:2 diet exper",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-1305",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1305,
+      "sentence": "Following the intervention, the individuals who underwent a 5:2 diet experienced a significant decrease in body weight (-3.7 kg on average; 86.65 \u00b1 12.57 kg to 82.94 \u00b1 11.60 kg, p < 0.001), while there was a non-significant reduction in the control group (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06).",
+      "context_window": "up (-1.02 kg on average, 89.33 \u00b1 18.47 to 88.31 \u00b1 11.01 kg, p = 0.06). Moreover, the individuals on the 5:2 diet experienced a s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1401",
+      "claim_type": "mean_sd",
+      "raw_text": "30.42 \u00b1 2.27",
+      "numeric_values": [
+        30.42,
+        2.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1401,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm),",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1414",
+      "claim_type": "mean_sd",
+      "raw_text": "29.13 \u00b1 1.95",
+      "numeric_values": [
+        29.13,
+        1.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1414,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "iet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1422",
+      "claim_type": "unit_value",
+      "raw_text": "1.95 kg",
+      "numeric_values": [
+        1.95
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1422,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "rienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (5",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1441",
+      "claim_type": "mean_sd",
+      "raw_text": "103.52 \u00b1 6.42",
+      "numeric_values": [
+        103.52,
+        6.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1441,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "nt decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.3",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1455",
+      "claim_type": "mean_sd",
+      "raw_text": "100.52 \u00b1 5.64",
+      "numeric_values": [
+        100.52,
+        5.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1455,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1464",
+      "claim_type": "unit_value",
+      "raw_text": "5.64 cm",
+      "numeric_values": [
+        5.64
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 1464,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the con",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1488",
+      "claim_type": "mean_sd",
+      "raw_text": "59.97 \u00b1 10.75",
+      "numeric_values": [
+        59.97,
+        10.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1488,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "g/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group. Information on di",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1502",
+      "claim_type": "mean_sd",
+      "raw_text": "59.09 \u00b1 10.37",
+      "numeric_values": [
+        59.09,
+        10.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1502,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "03.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group. Information on dietary intake a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1510",
+      "claim_type": "unit_value",
+      "raw_text": "10.37 kg",
+      "numeric_values": [
+        10.37
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1510,
+      "sentence": "Moreover, the individuals on the 5:2 diet experienced a significant decrease in BMI (30.42 \u00b1 2.27-29.13 \u00b1 1.95 kg/m 2 ), WC (103.52 \u00b1 6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group.",
+      "context_window": "6.42-100.52 \u00b1 5.64 cm), and fat mass (59.97 \u00b1 10.75-59.09 \u00b1 10.37 kg) vs. the control group. Information on dietary intake and",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1730",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1730,
+      "sentence": "Information on dietary intake and physical activity (MET.hr/day) of participants is depicted in Table 2 , where the dietary data at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting.",
+      "context_window": "ta at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting. The intervention and cont",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1752",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1752,
+      "sentence": "Information on dietary intake and physical activity (MET.hr/day) of participants is depicted in Table 2 , where the dietary data at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting.",
+      "context_window": "intervention group were an average of 5 days of feeding and 2 days of fasting. The intervention and control groups had similar",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1913",
+      "claim_type": "mean_sd",
+      "raw_text": "29.48 \u00b1 5.60",
+      "numeric_values": [
+        29.48,
+        5.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1913,
+      "sentence": "The intervention and control groups had similar physical activity levels at the end of intervention vs. the baseline (the intervention group: 29.48 \u00b1 5.60 vs.",
+      "context_window": "d of intervention vs. the baseline (the intervention group: 29.48 \u00b1 5.60 vs. 29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1930",
+      "claim_type": "mean_sd",
+      "raw_text": "29.99 \u00b1 5.15",
+      "numeric_values": [
+        29.99,
+        5.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1930,
+      "sentence": "29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs.",
+      "context_window": "vs. the baseline (the intervention group: 29.48 \u00b1 5.60 vs. 29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs. 3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-1955",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1955,
+      "sentence": "29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs.",
+      "context_window": "tervention group: 29.48 \u00b1 5.60 vs. 29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs. 30.52 \u00b1 5.19 MET.hr/da",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-1984",
+      "claim_type": "mean_sd",
+      "raw_text": "30.38 \u00b1 5.13",
+      "numeric_values": [
+        30.38,
+        5.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1984,
+      "sentence": "29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs.",
+      "context_window": "0 vs. 29.99 \u00b1 5.15 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs. 30.52 \u00b1 5.19 MET.hr/day, p > 0.05). Inter-group differe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2001",
+      "claim_type": "mean_sd",
+      "raw_text": "30.52 \u00b1 5.19",
+      "numeric_values": [
+        30.52,
+        5.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2001,
+      "sentence": "30.52 \u00b1 5.19 MET.hr/day, p > 0.05).",
+      "context_window": "5 MET.hr/day, p > 0.05; the control group: 30.38 \u00b1 5.13 vs. 30.52 \u00b1 5.19 MET.hr/day, p > 0.05). Inter-group differences were not det",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2026",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2026,
+      "sentence": "30.52 \u00b1 5.19 MET.hr/day, p > 0.05).",
+      "context_window": "he control group: 30.38 \u00b1 5.13 vs. 30.52 \u00b1 5.19 MET.hr/day, p > 0.05). Inter-group differences were not detected. Both intervent",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2211",
+      "claim_type": "mean_sd",
+      "raw_text": "862.95 \u00b1 721.60",
+      "numeric_values": [
+        862.95,
+        721.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2211,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": "l energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2229",
+      "claim_type": "mean_sd",
+      "raw_text": "601.57 \u00b1 726.55",
+      "numeric_values": [
+        601.57,
+        726.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2229,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": ". the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2255",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2255,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": "ention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kca",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2287",
+      "claim_type": "mean_sd",
+      "raw_text": "120.91 \u00b1 733.27",
+      "numeric_values": [
+        120.91,
+        733.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2287,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": "2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001). No significant inte",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2305",
+      "claim_type": "mean_sd",
+      "raw_text": "967.30 \u00b1 665.80",
+      "numeric_values": [
+        967.3,
+        665.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2305,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": "kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001). No significant inter-group difference",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2331",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2331,
+      "sentence": "Both intervention and control groups had a significant decrease in total energy intake vs. the baseline (the intervention group: 2,862.95 \u00b1 721.60-2,601.57 \u00b1 726.55 kcal/day, p < 0.001; the control group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001).",
+      "context_window": "ontrol group: 3,120.91 \u00b1 733.27-2,967.30 \u00b1 665.80 kcal/day, p = 0.001). No significant inter-group differences were detected. The",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2469",
+      "claim_type": "mean_sd",
+      "raw_text": "93.38 \u00b1 35.32",
+      "numeric_values": [
+        93.38,
+        35.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2469,
+      "sentence": "The intervention group decreased total protein intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for other dietary variables.",
+      "context_window": "tion group decreased total protein intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for othe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-2483",
+      "claim_type": "mean_sd",
+      "raw_text": "84.67 \u00b1 25.74",
+      "numeric_values": [
+        84.67,
+        25.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "The intervention group decreased total protein intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for other dietary variables.",
+      "context_window": "reased total protein intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for other dietary vari",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2504",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2504,
+      "sentence": "The intervention group decreased total protein intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for other dietary variables.",
+      "context_window": "intake vs. the baseline (93.38 \u00b1 35.32-84.67 \u00b1 25.74 g/day, p < 0.001) but did not change for other dietary variables. Dietary i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2897",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2897,
+      "sentence": "Dietary data at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting .",
+      "context_window": "ta at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting . The results of the asse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2919",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2919,
+      "sentence": "Dietary data at the end for the intervention group were an average of 5 days of feeding and 2 days of fasting .",
+      "context_window": "intervention group were an average of 5 days of feeding and 2 days of fasting . The results of the assessment of liver parame",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3076",
+      "claim_type": "mean_sd",
+      "raw_text": "6.97 \u00b1 1.94",
+      "numeric_values": [
+        6.97,
+        1.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3076,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, res",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3088",
+      "claim_type": "mean_sd",
+      "raw_text": "5.58 \u00b1 1.07",
+      "numeric_values": [
+        5.58,
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3088,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3108",
+      "claim_type": "mean_sd",
+      "raw_text": "313.09 \u00b1 25.45",
+      "numeric_values": [
+        313.09,
+        25.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3108,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "creased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3123",
+      "claim_type": "mean_sd",
+      "raw_text": "289.95 \u00b1 22.36",
+      "numeric_values": [
+        289.95,
+        22.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3123,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "he 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the contr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-3208",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3208,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "ectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively). In addition, the patients on",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-3222",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3222,
+      "sentence": "Fibrosis and steatosis scores decreased after the 5:2 diet (6.97 \u00b1 1.94-5.58 \u00b1 1.07 kPa and 313.09 \u00b1 25.45-289.95 \u00b1 22.36 dB/m, respectively) and reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively).",
+      "context_window": "reached lower levels than the control group ( p = 0.040 and p = 0.042, respectively). In addition, the patients on the 5:2 diet h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3326",
+      "claim_type": "mean_sd",
+      "raw_text": "41.42 \u00b1 20.98",
+      "numeric_values": [
+        41.42,
+        20.98
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3326,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "atients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3340",
+      "claim_type": "mean_sd",
+      "raw_text": "28.38 \u00b1 15.21",
+      "numeric_values": [
+        28.38,
+        15.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3340,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-3359",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3359,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "nificant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3379",
+      "claim_type": "mean_sd",
+      "raw_text": "34.19 \u00b1 10.88",
+      "numeric_values": [
+        34.19,
+        10.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3379,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "n ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-3393",
+      "claim_type": "mean_sd",
+      "raw_text": "25.95 \u00b1 7.26",
+      "numeric_values": [
+        25.95,
+        7.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3393,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05). L",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-3411",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3411,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05). Lipid profile,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-3452",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3452,
+      "sentence": "In addition, the patients on the 5:2 diet had a significant reduction in ALT (41.42 \u00b1 20.98-28.38 \u00b1 15.21 U/L, p = 0.043) and AST (34.19 \u00b1 10.88-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05).",
+      "context_window": "-25.95 \u00b1 7.26 U/L, p = 0.01) levels vs. the control group ( p < 0.05). Lipid profile, glycemic indices, liver enzymes, inflamma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4432",
+      "claim_type": "mean_sd",
+      "raw_text": "171.23 \u00b1 39.88",
+      "numeric_values": [
+        171.23,
+        39.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4432,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "ke, and baseline value of the outcome . TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-4441",
+      "claim_type": "unit_value",
+      "raw_text": "39.88 mg/dL",
+      "numeric_values": [
+        39.88
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 4441,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "aseline value of the outcome . TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4456",
+      "claim_type": "mean_sd",
+      "raw_text": "128.04 \u00b1 34.88",
+      "numeric_values": [
+        128.04,
+        34.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4456,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "f the outcome . TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-4465",
+      "claim_type": "unit_value",
+      "raw_text": "34.88 mg/dL",
+      "numeric_values": [
+        34.88
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 4465,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "come . TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-4478",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4478,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "ncentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-4587",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4587,
+      "sentence": "TG concentrations (171.23 \u00b1 39.88 mg/dL to 128.04 \u00b1 34.88 mg/dL, p < 0.001), but not HDL-C, TC, or LDL-C, decreased significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ).",
+      "context_window": "d significantly in the intervention vs. the control group ( p < 0.001) ( Table 3 ). The decrease in FBS values in the interventi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4666",
+      "claim_type": "mean_sd",
+      "raw_text": "106.31 \u00b1 28.11",
+      "numeric_values": [
+        106.31,
+        28.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4666,
+      "sentence": "The decrease in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control group ( p = 0.52).",
+      "context_window": "3 ). The decrease in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4681",
+      "claim_type": "mean_sd",
+      "raw_text": "101.11 \u00b1 20.46",
+      "numeric_values": [
+        101.11,
+        20.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4681,
+      "sentence": "The decrease in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control group ( p = 0.52).",
+      "context_window": "ase in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-4690",
+      "claim_type": "unit_value",
+      "raw_text": "20.46 mg/dL",
+      "numeric_values": [
+        20.46
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 4690,
+      "sentence": "The decrease in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control group ( p = 0.52).",
+      "context_window": "S values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control group (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-4761",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4761,
+      "sentence": "The decrease in FBS values in the intervention group (106.31 \u00b1 28.11-101.11 \u00b1 20.46 mg/dL) was not statistically significant vs. the control group ( p = 0.52).",
+      "context_window": ") was not statistically significant vs. the control group ( p = 0.52). Moreover, insulin levels and HOMA-IR values did not chang",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4985",
+      "claim_type": "mean_sd",
+      "raw_text": "2.95 \u00b1 0.62",
+      "numeric_values": [
+        2.95,
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4985,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "articipants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-4997",
+      "claim_type": "mean_sd",
+      "raw_text": "2.40 \u00b10.64",
+      "numeric_values": [
+        2.4,
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4997,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml,",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-5003",
+      "claim_type": "unit_value",
+      "raw_text": "0.64 mg",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 5003,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-5014",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5014,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "xhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) leve",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-5036",
+      "claim_type": "mean_sd",
+      "raw_text": "13.23 \u00b1 0.61",
+      "numeric_values": [
+        13.23,
+        0.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5036,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-msd-5049",
+      "claim_type": "mean_sd",
+      "raw_text": "11.92 \u00b10.53",
+      "numeric_values": [
+        11.92,
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5049,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "\u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-5068",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5068,
+      "sentence": "After the intervention, the participants on the 5:2 diet exhibited a decrease in hs-CRP (2.95 \u00b1 0.62-2.40 \u00b10.64 mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ).",
+      "context_window": "mg/L, p < 0.001) and CK-18 (13.23 \u00b1 0.61-11.92 \u00b10.53 ng/ml, p < 0.001) levels vs. the control group ( Table 3 ). On the other han",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-364",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 364,
+      "sentence": "More specifically, we demonstrated significant reductions in body weight, BMI, WC, body fat, ALT, AST, fibrosis and steatosis scores, TG, hs-CRP (mg/L), and CK-18 (ng/ml) after 12 weeks on the 5:2 diet.",
+      "context_window": "teatosis scores, TG, hs-CRP (mg/L), and CK-18 (ng/ml) after 12 weeks on the 5:2 diet. On the other hand, the 5:2 diet did not al",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1280",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1280,
+      "sentence": "Ramadan is a type of IF regimen that can reduce body weight, body fat, BMI, and WC in patients with NAFLD compared to non-fasting ( 38 ), but, overall, our results tend to be better due to the longer length of intervention since Ramadan lasts approximately 4 weeks.",
+      "context_window": "er length of intervention since Ramadan lasts approximately 4 weeks. Our findings are more similar to the study by Holmer et al",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-n-1403",
+      "claim_type": "sample_size",
+      "raw_text": "n = 74",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1403,
+      "sentence": "Our findings are more similar to the study by Holmer et al. ( 7 ), who performed an RCT for patients with NAFLD ( n = 74) and observed a decrease in body weight by 7.4 kg and in BMI by 2.4 kg/m 2 over a 12-week period on a 5:2 diet, whose effect was similar to a low-carbohydrate high-fat diet and better than a standard of care ( 7 ).",
+      "context_window": "t al. ( 7 ), who performed an RCT for patients with NAFLD ( n = 74) and observed a decrease in body weight by 7.4 kg and in BM",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1453",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 kg",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1453,
+      "sentence": "Our findings are more similar to the study by Holmer et al. ( 7 ), who performed an RCT for patients with NAFLD ( n = 74) and observed a decrease in body weight by 7.4 kg and in BMI by 2.4 kg/m 2 over a 12-week period on a 5:2 diet, whose effect was similar to a low-carbohydrate high-fat diet and better than a standard of care ( 7 ).",
+      "context_window": "h NAFLD ( n = 74) and observed a decrease in body weight by 7.4 kg and in BMI by 2.4 kg/m 2 over a 12-week period on a 5:2 die",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1474",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 kg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1474,
+      "sentence": "Our findings are more similar to the study by Holmer et al. ( 7 ), who performed an RCT for patients with NAFLD ( n = 74) and observed a decrease in body weight by 7.4 kg and in BMI by 2.4 kg/m 2 over a 12-week period on a 5:2 diet, whose effect was similar to a low-carbohydrate high-fat diet and better than a standard of care ( 7 ).",
+      "context_window": "observed a decrease in body weight by 7.4 kg and in BMI by 2.4 kg/m 2 over a 12-week period on a 5:2 diet, whose effect was s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1671",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 kg",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1671,
+      "sentence": "We observed a lower decrease in body weight (-3.7 kg) and BMI (-1.3 kg/m 2 ) lower than in the study by Holmer et al.",
+      "context_window": "f care ( 7 ). We observed a lower decrease in body weight (-3.7 kg) and BMI (-1.3 kg/m 2 ) lower than in the study by Holmer e",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-1689",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 kg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1689,
+      "sentence": "We observed a lower decrease in body weight (-3.7 kg) and BMI (-1.3 kg/m 2 ) lower than in the study by Holmer et al.",
+      "context_window": "bserved a lower decrease in body weight (-3.7 kg) and BMI (-1.3 kg/m 2 ) lower than in the study by Holmer et al. This was pro",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "discussion",
+      "source_offset": 2351,
+      "sentence": "Moreover, we observed reductions in WC (-3 cm) and fat mass (-2.8 kg), while, seemingly, Holmer et al. did not assess these parameters.",
+      "context_window": "f individual care. Moreover, we observed reductions in WC (-3 cm) and fat mass (-2.8 kg), while, seemingly, Holmer et al. di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-2372",
+      "claim_type": "unit_value",
+      "raw_text": "2.8 kg",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2372,
+      "sentence": "Moreover, we observed reductions in WC (-3 cm) and fat mass (-2.8 kg), while, seemingly, Holmer et al. did not assess these parameters.",
+      "context_window": "reover, we observed reductions in WC (-3 cm) and fat mass (-2.8 kg), while, seemingly, Holmer et al. did not assess these para",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2643",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2643,
+      "sentence": "It is important to note that both the intervention and control groups had a significant decrease in total energy intake compared to the baseline (the intervention group: ~2,863- ~ 2,602 kcal/day, p < 0.001; the control group: ~3,121-2,967 kcal/day, p = 0.001), but without the inter group differences ( p < 0.05).",
+      "context_window": "baseline (the intervention group: ~2,863- ~ 2,602 kcal/day, p < 0.001; the control group: ~3,121-2,967 kcal/day, p = 0.001), but",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2696",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2696,
+      "sentence": "It is important to note that both the intervention and control groups had a significant decrease in total energy intake compared to the baseline (the intervention group: ~2,863- ~ 2,602 kcal/day, p < 0.001; the control group: ~3,121-2,967 kcal/day, p = 0.001), but without the inter group differences ( p < 0.05).",
+      "context_window": "l/day, p < 0.001; the control group: ~3,121-2,967 kcal/day, p = 0.001), but without the inter group differences ( p < 0.05). In s",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-p-2750",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2750,
+      "sentence": "It is important to note that both the intervention and control groups had a significant decrease in total energy intake compared to the baseline (the intervention group: ~2,863- ~ 2,602 kcal/day, p < 0.001; the control group: ~3,121-2,967 kcal/day, p = 0.001), but without the inter group differences ( p < 0.05).",
+      "context_window": "/day, p = 0.001), but without the inter group differences ( p < 0.05). In summary, there was a modest reduction in calorie intak",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-4789",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4789,
+      "sentence": "Employing an alternate-day fasting, i.e., alternating between an ad libitum feeding day and a 75% energy-restricted fasting day, Cai et al. ( 46 ) found improvement in TC and TG within a relatively short length of intervention (4-12 weeks) in patients with NAFLD, but LDL-C and HDL-C levels did not change ( 46 ).",
+      "context_window": ", i.e., alternating between an ad libitum feeding day and a 75% energy-restricted fasting day, Cai et al. ( 46 ) found impr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-4925",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4925,
+      "sentence": "Employing an alternate-day fasting, i.e., alternating between an ad libitum feeding day and a 75% energy-restricted fasting day, Cai et al. ( 46 ) found improvement in TC and TG within a relatively short length of intervention (4-12 weeks) in patients with NAFLD, but LDL-C and HDL-C levels did not change ( 46 ).",
+      "context_window": "and TG within a relatively short length of intervention (4-12 weeks) in patients with NAFLD, but LDL-C and HDL-C levels did not",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-5083",
+      "claim_type": "unit_value",
+      "raw_text": "14 mg/dL",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 5083,
+      "sentence": "Holmer et al. found a decrease in TG, TC, and LDL-C levels by 35, 19, and 14 mg/dL, respectively, in patients with NAFLD undergoing a 5:2 diet for 12 weeks, while HDL-C did not alter ( 7 ).",
+      "context_window": "found a decrease in TG, TC, and LDL-C levels by 35, 19, and 14 mg/dL, respectively, in patients with NAFLD undergoing a 5:2 diet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-5156",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5156,
+      "sentence": "Holmer et al. found a decrease in TG, TC, and LDL-C levels by 35, 19, and 14 mg/dL, respectively, in patients with NAFLD undergoing a 5:2 diet for 12 weeks, while HDL-C did not alter ( 7 ).",
+      "context_window": "pectively, in patients with NAFLD undergoing a 5:2 diet for 12 weeks, while HDL-C did not alter ( 7 ). In our study, we found a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-5241",
+      "claim_type": "unit_value",
+      "raw_text": "43 mg/dL",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 5241,
+      "sentence": "In our study, we found a decrease in TG (~43 mg/dL), with a clinical magnitude similar to the reduction by Holmer et al., but we did not observe changes in other lipid parameters.",
+      "context_window": "not alter ( 7 ). In our study, we found a decrease in TG (~43 mg/dL), with a clinical magnitude similar to the reduction by Hol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-5739",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5739,
+      "sentence": "Johari et al. ( 47 ), in turn, found a decrease in ALT and AST levels by 25 and 8 U/L, respectively, in patients with NAFLD after 8 weeks of alternate-day calorie restriction ( 47 ).",
+      "context_window": "by 25 and 8 U/L, respectively, in patients with NAFLD after 8 weeks of alternate-day calorie restriction ( 47 ). The authors ex",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-7048",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7048,
+      "sentence": "In our research, the group that underwent a 5:2 diet had lower levels of hs-CRP at the end of the study both compared to the baseline (-0.6 mg/L) and end levels of the control group (-0.4 mg/L).",
+      "context_window": "CRP at the end of the study both compared to the baseline (-0.6 mg/L) and end levels of the control group (-0.4 mg/L). CK-18 i",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-7096",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 mg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7096,
+      "sentence": "In our research, the group that underwent a 5:2 diet had lower levels of hs-CRP at the end of the study both compared to the baseline (-0.6 mg/L) and end levels of the control group (-0.4 mg/L).",
+      "context_window": "baseline (-0.6 mg/L) and end levels of the control group (-0.4 mg/L). CK-18 is another inflammatory marker that circulates as",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-9403",
+      "claim_type": "unit_value",
+      "raw_text": "4.16 mg/dL",
+      "numeric_values": [
+        4.16
+      ],
+      "units": "mg/dL",
+      "source_section": "discussion",
+      "source_offset": 9403,
+      "sentence": "Overall, in a meta-analysis consisting of 12 articles (545 participants), IF diets were associated with a significant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with a control diet ( 60 ).",
+      "context_window": "th a significant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-pct-9415",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9415,
+      "sentence": "Overall, in a meta-analysis consisting of 12 articles (545 participants), IF diets were associated with a significant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with a control diet ( 60 ).",
+      "context_window": "cant decline in FBS (weighted mean difference, -4.16 mg/dL; 95% confidence interval, -6.92- -1.40) when compared with a con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-9814",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 9814,
+      "sentence": "At best, there was a non-statistical decrease in FBS by ~5 mg/dl after the 5:2 diet that nearly corrected mean FBS levels from the pre-diabetic stage to normoglycemia (from ~106 to ~101 mg/dl).",
+      "context_window": "t. At best, there was a non-statistical decrease in FBS by ~5 mg/dl after the 5:2 diet that nearly corrected mean FBS levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9360602_effects_of_the_5_2_intermittent_fasting_diet_on_non_alcoholi-u-9939",
+      "claim_type": "unit_value",
+      "raw_text": "101 mg",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 9939,
+      "sentence": "At best, there was a non-statistical decrease in FBS by ~5 mg/dl after the 5:2 diet that nearly corrected mean FBS levels from the pre-diabetic stage to normoglycemia (from ~106 to ~101 mg/dl).",
+      "context_window": "from the pre-diabetic stage to normoglycemia (from ~106 to ~101 mg/dl). Current guidelines suggest that dietary intervention",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

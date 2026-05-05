@@ -1,0 +1,139 @@
+{
+  "paper_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl",
+  "doi": "10.3389/fnut.2024.1362226",
+  "extracted_at": "2026-05-05T22:17:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 4,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-pct-206",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 206,
+      "sentence": "It is a complex and heterogeneous condition that affects 4 to 20% of women of reproductive age worldwide and relates to reproductive, metabolic, and psychosocial dysfunction.",
+      "context_window": "is a complex and heterogeneous condition that affects 4 to 20% of women of reproductive age worldwide and relates to repro",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-u-3863",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 3863,
+      "sentence": "This fasting pattern is followed consistently for 29-30 days.",
+      "context_window": "ation. This fasting pattern is followed consistently for 29-30 days. Multiple studies, including original research, systematic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-u-916",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 916,
+      "sentence": "Accordingly, the following search criteria were applied: TITLE-ABS-KEY (\u201cintermittent fasting\u201d) OR (\u201cRamadan\u201d) OR (Ramadhan) OR (Ramazan) OR (\u201cIslamic fasting\u201d) OR (\u201cdiurnal fasting\u201d) OR (\u201cRamadan intermittent fasting\u201d) OR (\u201cRamadan diurnal intermittent fasting\u201d) OR (\u201cconsecutive 30 days of fasting\u201d) OR (\u201creligious fasting\u201d) AND (\u201cPCOS\u201d OR \u201cpolycystic ovary syndrome\u201d or \u201cpolycystic ovarian syndrome\u201d).",
+      "context_window": "R (\u201cRamadan diurnal intermittent fasting\u201d) OR (\u201cconsecutive 30 days of fasting\u201d) OR (\u201creligious fasting\u201d) AND (\u201cPCOS\u201d OR \u201cpolyc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-u-1314",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1314,
+      "sentence": "The inclusion criteria for research articles were as follows: (1) experimental and observational studies; (2) adult female participants (>18 years) diagnosed with PCOS; (3) endpoints that included changes in at least one PCOS diagnostic biomarker before and after following the CR or IF regimen.",
+      "context_window": "and observational studies; (2) adult female participants (>18 years) diagnosed with PCOS; (3) endpoints that included changes i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-p-1963",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1963,
+      "sentence": "In terms of the results obtained for the anthropometric parameters, Li et al. ( 25 ) in their study, reported a significant decrease in all anthropometric parameters, i.e., BMI, BW, BFM, BF%, and VFA ( p \u2264 0.001), with the exception of WHR and SMM, which showed no significant association with IF.",
+      "context_window": "thropometric parameters, i.e., BMI, BW, BFM, BF%, and VFA ( p \u2264 0.001), with the exception of WHR and SMM, which showed no signif",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-p-2413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2413,
+      "sentence": "In terms of enzymes, Li et al. ( 25 ) reported no significant effect of IF on enzymes such as UA and AST, while there was a significant decrease in ALT ( p = 0.027).",
+      "context_window": "UA and AST, while there was a significant decrease in ALT ( p = 0.027). In relation to the glycemic control parameters, Li et al.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl-u-4473",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4473,
+      "sentence": "Similar findings have been reported by Jahrami et al. ( 18 ) in their meta-analysis, they reported that RIF improved lipid profile and coagulation parameters, and these improvements persisted for 4 weeks after fasting.",
+      "context_window": "oagulation parameters, and these improvements persisted for 4 weeks after fasting. The effects of RIF on the lipid markers are",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

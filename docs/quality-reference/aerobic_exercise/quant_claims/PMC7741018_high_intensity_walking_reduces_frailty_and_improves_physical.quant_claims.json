@@ -1,0 +1,67 @@
+{
+  "paper_id": "PMC7741018_high_intensity_walking_reduces_frailty_and_improves_physical",
+  "doi": "10.1093/geroni/igaa057.568",
+  "extracted_at": "2026-05-05T22:04:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 1,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7741018_high_intensity_walking_reduces_frailty_and_improves_physical-n-614",
+      "claim_type": "sample_size",
+      "raw_text": "n=11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 614,
+      "sentence": "We enrolled n=11 older adults (>50 years of age and pre-frail or frail on the SHARE-FI).",
+      "context_window": "e-frail and frail older adults living with HIV. We enrolled n=11 older adults (>50 years of age and pre-frail or frail on th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7741018_high_intensity_walking_reduces_frailty_and_improves_physical-u-634",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 634,
+      "sentence": "We enrolled n=11 older adults (>50 years of age and pre-frail or frail on the SHARE-FI).",
+      "context_window": "der adults living with HIV. We enrolled n=11 older adults (>50 years of age and pre-frail or frail on the SHARE-FI). Participant",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7741018_high_intensity_walking_reduces_frailty_and_improves_physical-pct-901",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 901,
+      "sentence": "Participants underwent 16 walking sessions 2x/week consisting of 5 minute intervals of stair climbing, fast walking, weighted walking, balance tasks, and steps ups for a total of 30 minutes of high intensity (>70% of HRmax or >15 Rating of Perceived Exertion) activity.",
+      "context_window": "and steps ups for a total of 30 minutes of high intensity (>70% of HRmax or >15 Rating of Perceived Exertion) activity. All",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

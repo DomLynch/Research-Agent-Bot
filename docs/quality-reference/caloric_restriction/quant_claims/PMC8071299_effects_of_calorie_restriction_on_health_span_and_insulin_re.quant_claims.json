@@ -1,0 +1,139 @@
+{
+  "paper_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re",
+  "doi": "10.3390/nu13041302",
+  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 1,
+    "percentage": 4,
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-p-3527",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 3527,
+      "sentence": "Also, SKMD [ 27 ] is well described with extreme significance ( p < 0.0001) benefits for all the metabolic parameters studied in addition to weight loss.",
+      "context_window": ", SKMD [ 27 ] is well described with extreme significance ( p < 0.0001) benefits for all the metabolic parameters studied in addit",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-pct-4255",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 4255,
+      "sentence": "ADMF diets [ 63 , 64 ] that accumulate the same energy supply at the end, there were no statistical differences between strategies in the time to achieve 5% of weight loss.",
+      "context_window": "tical differences between strategies in the time to achieve 5% of weight loss. Studies have shown an identical reduction i",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-pct-4990",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 4990,
+      "sentence": "Nonetheless, despite observational epidemiological studies revealed a reduction of mortality between 20-34% with CR, there is still insufficient evidence to support long-term nutritionally balanced CR as a safe strategy to increase lifespan [ 6 ].",
+      "context_window": "ogical studies revealed a reduction of mortality between 20-34% with CR, there is still insufficient evidence to support lo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-u-5321",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 5321,
+      "sentence": "An observational study along 15 years of CR showed long-term advantages, but there were no data to evaluate the adverse effects in the long run [ 6 ].",
+      "context_window": "nemia, and other deficiencies. An observational study along 15 years of CR showed long-term advantages, but there were no data t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-pct-7519",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 7519,
+      "sentence": "A recent randomized study with FMD in neoadjuvant cancer chemotherapy, found very positive benefits as 90-100% loss of tumor cells, and prevention of DNA lesion on T cells [ 76 ].",
+      "context_window": "ant cancer chemotherapy, found very positive benefits as 90-100% loss of tumor cells, and prevention of DNA lesion on T cell",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-u-8339",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 8339,
+      "sentence": "As a common idea, ketosis is not recommended for seniors over 65 years old, and this raises a problem as this is the age group where cardiometabolic diseases are more prevalent.",
+      "context_window": "a common idea, ketosis is not recommended for seniors over 65 years old, and this raises a problem as this is the age group whe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re-pct-9159",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 9159,
+      "sentence": "Concluding, with the data from recent studies about metabolic regulation with CR dietary strategies (from the most classic low-calorie diet to the emerging low-carb ketogenic diet approaches), we are convinced that the paradigm that has guided dietary prescriptions and the work of physicians and scientists in the last decades (based on the food pyramid, 50-60% carbohydrates, and lipid restriction) for the prevention of chronic cardiovascular disease, dyslipidemia and diabetes, will have to change and adapt to the newest evidence.",
+      "context_window": "ientists in the last decades (based on the food pyramid, 50-60% carbohydrates, and lipid restriction) for the prevention of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

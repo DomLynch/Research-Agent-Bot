@@ -1,0 +1,83 @@
+{
+  "paper_id": "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis",
+  "doi": "10.3390/cimb47070500",
+  "extracted_at": "2026-05-05T21:50:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis-pct-615",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 615,
+      "sentence": "Sepsis still contributes to almost 20% of all deaths every year in the world, more than 20 deaths every minute [ 4 , 5 ].",
+      "context_window": "ed deaths in 2017 [ 3 ]. Sepsis still contributes to almost 20% of all deaths every year in the world, more than 20 deaths",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis-pct-768",
+      "claim_type": "percentage",
+      "raw_text": "26.7%",
+      "numeric_values": [
+        26.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 768,
+      "sentence": "Furthermore, a recent meta-analysis indicated a mortality rate of 26.7% in sepsis patients, highlighting a 46% rise in incidence since 2008 [ 6 ].",
+      "context_window": "rmore, a recent meta-analysis indicated a mortality rate of 26.7% in sepsis patients, highlighting a 46% rise in incidence si",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis-pct-809",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 809,
+      "sentence": "Furthermore, a recent meta-analysis indicated a mortality rate of 26.7% in sepsis patients, highlighting a 46% rise in incidence since 2008 [ 6 ].",
+      "context_window": "mortality rate of 26.7% in sepsis patients, highlighting a 46% rise in incidence since 2008 [ 6 ]. However, the mechanisms",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis-pct-1244",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 1244,
+      "sentence": "Hemodilution from fluid resuscitation can artificially lower 25(OH)D levels by up to 35%, while immune cell-specific activation of VD may render serum measurements inadequate for assessing tissue-level bioactivity [ 274 ].",
+      "context_window": "esuscitation can artificially lower 25(OH)D levels by up to 35%, while immune cell-specific activation of VD may render ser",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

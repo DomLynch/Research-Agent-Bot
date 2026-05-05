@@ -1,0 +1,899 @@
+{
+  "paper_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_",
+  "doi": "10.1155/2016/1602083",
+  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 18,
+    "sample_size": 2,
+    "percentage": 12,
+    "p_value": 15,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-324",
+      "claim_type": "unit_value",
+      "raw_text": "150 mg/day",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 324,
+      "sentence": "135 patients hospitalized for ACS who had been newly diagnosed with IGT were randomly assigned to acarbose group (150 mg/day, n = 67) or control group (no acarbose, n = 68).",
+      "context_window": "iagnosed with IGT were randomly assigned to acarbose group (150 mg/day, n = 67) or control group (no acarbose, n = 68). All cases",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-n-336",
+      "claim_type": "sample_size",
+      "raw_text": "n = 67",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 336,
+      "sentence": "135 patients hospitalized for ACS who had been newly diagnosed with IGT were randomly assigned to acarbose group (150 mg/day, n = 67) or control group (no acarbose, n = 68).",
+      "context_window": "h IGT were randomly assigned to acarbose group (150 mg/day, n = 67) or control group (no acarbose, n = 68). All cases in each",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-n-375",
+      "claim_type": "sample_size",
+      "raw_text": "n = 68",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 375,
+      "sentence": "135 patients hospitalized for ACS who had been newly diagnosed with IGT were randomly assigned to acarbose group (150 mg/day, n = 67) or control group (no acarbose, n = 68).",
+      "context_window": "e group (150 mg/day, n = 67) or control group (no acarbose, n = 68). All cases in each group were given the same elementary tr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-469",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 years",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 469,
+      "sentence": "Mean follow-up was 2.3 years.",
+      "context_window": "ere given the same elementary treatment. Mean follow-up was 2.3 years. The incidence of major adverse cardiovascular event (MACE)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-650",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 years",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 650,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "tistically analyzed. Results . During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-771",
+      "claim_type": "percentage",
+      "raw_text": "26.67%",
+      "numeric_values": [
+        26.67
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 771,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "ecreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-785",
+      "claim_type": "percentage",
+      "raw_text": "46.88%",
+      "numeric_values": [
+        46.88
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 785,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "ficantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-793",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 793,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-msd-895",
+      "claim_type": "mean_sd",
+      "raw_text": "1.28 \u00b1 0.42",
+      "numeric_values": [
+        1.28,
+        0.42
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 895,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05). Conclusions . Acarb",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-msd-919",
+      "claim_type": "mean_sd",
+      "raw_text": "1.51 \u00b1 0.64",
+      "numeric_values": [
+        1.51,
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 919,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "tly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05). Conclusions . Acarbose can effectively redu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-936",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "During the mean follow-up of 2.3 years, the risk of recurrent MACE in acarbose group was decreased significantly compared with that in control group (26.67% versus 46.88%, P < 0.05); at the same time, thickening of the CIMT was significantly slower than the control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05).",
+      "context_window": "he control group ((1.28 \u00b1 0.42) mm versus (1.51 \u00b1 0.64) mm, P < 0.05). Conclusions . Acarbose can effectively reduce the risk of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-669",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 669,
+      "sentence": "STOP-NIDDM study had proved that acarbose therapy reduced the risk of any CV by 49%, of an acute myocardial infarction (AMI) by 91%, and of developing hypertension by 34% in IGT patients [ 2 ].",
+      "context_window": "proved that acarbose therapy reduced the risk of any CV by 49%, of an acute myocardial infarction (AMI) by 91%, and of dev",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-717",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 717,
+      "sentence": "STOP-NIDDM study had proved that acarbose therapy reduced the risk of any CV by 49%, of an acute myocardial infarction (AMI) by 91%, and of developing hypertension by 34% in IGT patients [ 2 ].",
+      "context_window": "f any CV by 49%, of an acute myocardial infarction (AMI) by 91%, and of developing hypertension by 34% in IGT patients [ 2",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-756",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 756,
+      "sentence": "STOP-NIDDM study had proved that acarbose therapy reduced the risk of any CV by 49%, of an acute myocardial infarction (AMI) by 91%, and of developing hypertension by 34% in IGT patients [ 2 ].",
+      "context_window": "infarction (AMI) by 91%, and of developing hypertension by 34% in IGT patients [ 2 ]. Emerging evidence suggested a high p",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-473",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 ng/mL",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 473,
+      "sentence": "Acute myocardial infarction (AMI) was diagnosed when creatine kinase-MB levels increased to at least twice the upper limit of normal or when troponin T levels were >0.1 ng/mL.",
+      "context_window": "e the upper limit of normal or when troponin T levels were >0.1 ng/mL. Patients without AMI were considered to have unstable angi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-864",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg/dL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 864,
+      "sentence": "Exclusion criteria were as follows: (1) cardiogenic shock or pulmonary edema (Killip classification \u2a7e II) at admission, (2) history of diabetes, (3) history of hepatic diseases or/and renal dysfunction (serum creatinine level >2 mg/dL), (4) severe gastrointestinal disease or malignant tumors, and (5) female patients given sex hormone replacement therapy.",
+      "context_window": "diseases or/and renal dysfunction (serum creatinine level >2 mg/dL), (4) severe gastrointestinal disease or malignant tumors,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-1211",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 mmol",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1211,
+      "sentence": "IGT was defined as having a fasting plasma glucose (FPG) <6.1 mmol/L and a postprandial glucose level at 120 min after the glucose load (2 hPG) \u2a7e7.8 mmol/L but <11.1 mmol/L.",
+      "context_window": ". IGT was defined as having a fasting plasma glucose (FPG) <6.1 mmol/L and a postprandial glucose level at 120 min after the glu",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-1298",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1298,
+      "sentence": "IGT was defined as having a fasting plasma glucose (FPG) <6.1 mmol/L and a postprandial glucose level at 120 min after the glucose load (2 hPG) \u2a7e7.8 mmol/L but <11.1 mmol/L.",
+      "context_window": "al glucose level at 120 min after the glucose load (2 hPG) \u2a7e7.8 mmol/L but <11.1 mmol/L. 135 cases were newly diagnosed with IGT",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-1314",
+      "claim_type": "unit_value",
+      "raw_text": "11.1 mmol",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1314,
+      "sentence": "IGT was defined as having a fasting plasma glucose (FPG) <6.1 mmol/L and a postprandial glucose level at 120 min after the glucose load (2 hPG) \u2a7e7.8 mmol/L but <11.1 mmol/L.",
+      "context_window": "at 120 min after the glucose load (2 hPG) \u2a7e7.8 mmol/L but <11.1 mmol/L. 135 cases were newly diagnosed with IGT. The present stu",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-1951",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1951,
+      "sentence": "Acarbose group was given additional acarbose (Bayer Pharmaceutical Co., Germany, three times/day, 25 mg/time start, and gradually increasing the amount to 50 mg/time in 2 weeks) on the base of fundamental treatment.",
+      "context_window": "arbose (Bayer Pharmaceutical Co., Germany, three times/day, 25 mg/time start, and gradually increasing the amount to 50 mg/ti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2008",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2008,
+      "sentence": "Acarbose group was given additional acarbose (Bayer Pharmaceutical Co., Germany, three times/day, 25 mg/time start, and gradually increasing the amount to 50 mg/time in 2 weeks) on the base of fundamental treatment.",
+      "context_window": "y, 25 mg/time start, and gradually increasing the amount to 50 mg/time in 2 weeks) on the base of fundamental treatment. Caro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2022",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2022,
+      "sentence": "Acarbose group was given additional acarbose (Bayer Pharmaceutical Co., Germany, three times/day, 25 mg/time start, and gradually increasing the amount to 50 mg/time in 2 weeks) on the base of fundamental treatment.",
+      "context_window": "start, and gradually increasing the amount to 50 mg/time in 2 weeks) on the base of fundamental treatment. Carotid intima-media",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2185",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2185,
+      "sentence": "Carotid intima-media thickness (CIMT) was measured using Siemens SEQUOIA512 ultrasonography, taking the point under 1 cm of carotid sinus as detection point and accounting the average of the left and right CIMT as the results.",
+      "context_window": "Siemens SEQUOIA512 ultrasonography, taking the point under 1 cm of carotid sinus as detection point and accounting the aver",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2527",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 years",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2527,
+      "sentence": "All patients were guided to take diet and exercise therapy, and having outpatient clinic or telephone follow-up for 1.0-4.5 years, the mean follow-up was 2.3 years.",
+      "context_window": "and having outpatient clinic or telephone follow-up for 1.0-4.5 years, the mean follow-up was 2.3 years. Incidence of MACE (inclu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2561",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 years",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2561,
+      "sentence": "All patients were guided to take diet and exercise therapy, and having outpatient clinic or telephone follow-up for 1.0-4.5 years, the mean follow-up was 2.3 years.",
+      "context_window": "lephone follow-up for 1.0-4.5 years, the mean follow-up was 2.3 years. Incidence of MACE (including fatal cardiovascular events,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-204",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 204,
+      "sentence": "There was no significant difference in age, gender, profiles for traditional risk factors, and past medication history between the two groups ( P > 0.05).",
+      "context_window": "ctors, and past medication history between the two groups ( P > 0.05). Of the total of 135 cases in the average follow-up of 2.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-269",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 years",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 269,
+      "sentence": "Of the total of 135 cases in the average follow-up of 2.3 years, 11 patients dropped out during the study which was 8.15% of all subjects (7 patients in the acarbose group: 5 male and 2 female; 4 patients in the control group: 2 male and 2 female).",
+      "context_window": ".05). Of the total of 135 cases in the average follow-up of 2.3 years, 11 patients dropped out during the study which was 8.15% o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-331",
+      "claim_type": "percentage",
+      "raw_text": "8.15%",
+      "numeric_values": [
+        8.15
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 331,
+      "sentence": "Of the total of 135 cases in the average follow-up of 2.3 years, 11 patients dropped out during the study which was 8.15% of all subjects (7 patients in the acarbose group: 5 male and 2 female; 4 patients in the control group: 2 male and 2 female).",
+      "context_window": "3 years, 11 patients dropped out during the study which was 8.15% of all subjects (7 patients in the acarbose group: 5 male a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-763",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 763,
+      "sentence": "The cause was severe abdominal distension and diarrhea for 6 cases in the acarbose group, or lost for 1 case in acarbose group and 4 cases in control group, respectively; the incidence of serious gastrointestinal adverse reactions between the two groups was statistically significant ( \u03c7 2 = 6.373, P = 0.012).",
+      "context_window": "the two groups was statistically significant ( \u03c7 2 = 6.373, P = 0.012). Recurrent MACE was observed in the 124 cases that comple",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-1007",
+      "claim_type": "percentage",
+      "raw_text": "26.67%",
+      "numeric_values": [
+        26.67
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "The incidence of total MACE in the acarbose group and control group was 26.67% and 46.88%, respectively; there was significant difference between the two groups ( \u03c7 2 = 5.420, P = 0.020).",
+      "context_window": "e of total MACE in the acarbose group and control group was 26.67% and 46.88%, respectively; there was significant difference",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-1018",
+      "claim_type": "percentage",
+      "raw_text": "46.88%",
+      "numeric_values": [
+        46.88
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1018,
+      "sentence": "The incidence of total MACE in the acarbose group and control group was 26.67% and 46.88%, respectively; there was significant difference between the two groups ( \u03c7 2 = 5.420, P = 0.020).",
+      "context_window": "MACE in the acarbose group and control group was 26.67% and 46.88%, respectively; there was significant difference between the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-1111",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1111,
+      "sentence": "The incidence of total MACE in the acarbose group and control group was 26.67% and 46.88%, respectively; there was significant difference between the two groups ( \u03c7 2 = 5.420, P = 0.020).",
+      "context_window": "ignificant difference between the two groups ( \u03c7 2 = 5.420, P = 0.020). In total MACE, the death of 3 patients in acarbose group",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-1357",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.524",
+      "numeric_values": [
+        0.524
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1357,
+      "sentence": "In total MACE, the death of 3 patients in acarbose group and 5 patients in control group was due to cardiovascular events, and the cardiovascular caused mortality between the two groups was of no significant difference ( \u03c7 2 = 0.406, P = 0.524).",
+      "context_window": "two groups was of no significant difference ( \u03c7 2 = 0.406, P = 0.524). However, the incidence of the secondary end-point events",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-1583",
+      "claim_type": "percentage",
+      "raw_text": "21.67%",
+      "numeric_values": [
+        21.67
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1583,
+      "sentence": "However, the incidence of the secondary end-point events (nonfatal reinfarction, new-onset angina, cerebral stroke, and severe heart failure) of the acarbose group was prominently lower than that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036).",
+      "context_window": "ose group was prominently lower than that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036). Table 3 shows the",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-1597",
+      "claim_type": "percentage",
+      "raw_text": "39.06%",
+      "numeric_values": [
+        39.06
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1597,
+      "sentence": "However, the incidence of the secondary end-point events (nonfatal reinfarction, new-onset angina, cerebral stroke, and severe heart failure) of the acarbose group was prominently lower than that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036).",
+      "context_window": "prominently lower than that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036). Table 3 shows the level of bioch",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-1618",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1618,
+      "sentence": "However, the incidence of the secondary end-point events (nonfatal reinfarction, new-onset angina, cerebral stroke, and severe heart failure) of the acarbose group was prominently lower than that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036).",
+      "context_window": "n that of control group (21.67% versus 39.06%, \u03c7 2 = 4.410, P = 0.036). Table 3 shows the level of biochemical indicators, CIMT,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-1849",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1849,
+      "sentence": "All the indexes were not significantly different between the two groups before treatment ( P > 0.05).",
+      "context_window": "icantly different between the two groups before treatment ( P > 0.05). After treatment, 2 hPG, HbA1c, CIMT, and \u0394CIMT of the aca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-2027",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2027,
+      "sentence": "After treatment, 2 hPG, HbA1c, CIMT, and \u0394CIMT of the acarbose group were significantly lower than control group ( t value was 8.731, 6.198, 2.440, and 18.622, resp., P < 0.05 or 0.01), while FPG, TC, TG, LDL-C, systolic pressure, diastolic pressure, and BMI had no statistical significance between the two groups after treatment ( t value was 1.528, 0.242, 1.102, 0.214, 1.201, 0.883, and 1.866, resp., P > 0.05).",
+      "context_window": "group ( t value was 8.731, 6.198, 2.440, and 18.622, resp., P < 0.05 or 0.01), while FPG, TC, TG, LDL-C, systolic pressure, dias",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-2264",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2264,
+      "sentence": "After treatment, 2 hPG, HbA1c, CIMT, and \u0394CIMT of the acarbose group were significantly lower than control group ( t value was 8.731, 6.198, 2.440, and 18.622, resp., P < 0.05 or 0.01), while FPG, TC, TG, LDL-C, systolic pressure, diastolic pressure, and BMI had no statistical significance between the two groups after treatment ( t value was 1.528, 0.242, 1.102, 0.214, 1.201, 0.883, and 1.866, resp., P > 0.05).",
+      "context_window": "1.528, 0.242, 1.102, 0.214, 1.201, 0.883, and 1.866, resp., P > 0.05).",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-933",
+      "claim_type": "unit_value",
+      "raw_text": "8.9 mmol",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 933,
+      "sentence": "Furthermore, Kitada et al. [ 10 ] showed that postprandial blood glucose above 8.9 mmol/L would increase the risk of recurrent MACE nearly one-fold in patients with AMI.",
+      "context_window": "et al. [ 10 ] showed that postprandial blood glucose above 8.9 mmol/L would increase the risk of recurrent MACE nearly one-fold",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-1131",
+      "claim_type": "percentage",
+      "raw_text": "31.69%",
+      "numeric_values": [
+        31.69
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1131,
+      "sentence": "There is a high prevalence of unrecognized dysglycaemia in patients with ACS; the present study found that 31.69% of the patients with ACS were newly diagnosed IGT; it was similar to previous researches [ 3 , 11 ].",
+      "context_window": "lycaemia in patients with ACS; the present study found that 31.69% of the patients with ACS were newly diagnosed IGT; it was s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-2291",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2291,
+      "sentence": "In the present study, 2 hPG and HbA1c of the acarbose group significantly reduced compared with those of control group ( P < 0.01); this result was not unexpected.",
+      "context_window": "ignificantly reduced compared with those of control group ( P < 0.01); this result was not unexpected. The starting dose of acar",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-2421",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2421,
+      "sentence": "The starting dose of acarbose was semiquantity and gradually increased to normal dose (50 mg/time, three times/day), so only 6 patients (8.96%) withdrew from the trial due to severe gastrointestinal side effects.",
+      "context_window": "se was semiquantity and gradually increased to normal dose (50 mg/time, three times/day), so only 6 patients (8.96%) withdrew",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-pct-2471",
+      "claim_type": "percentage",
+      "raw_text": "8.96%",
+      "numeric_values": [
+        8.96
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2471,
+      "sentence": "The starting dose of acarbose was semiquantity and gradually increased to normal dose (50 mg/time, three times/day), so only 6 patients (8.96%) withdrew from the trial due to severe gastrointestinal side effects.",
+      "context_window": "mal dose (50 mg/time, three times/day), so only 6 patients (8.96%) withdrew from the trial due to severe gastrointestinal sid",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-u-3870",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3870,
+      "sentence": "This notion had been recently reinforced by the finding that 24 weeks of acarbose monotherapy in newly diagnosed patients with T2DM was associated with increased levels of both fasting and postprandial glucagon-like peptide 1 (GLP-1), NO levels, and nitric oxide synthase (NOS) activity [ 21 ].",
+      "context_window": "his notion had been recently reinforced by the finding that 24 weeks of acarbose monotherapy in newly diagnosed patients with T2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-4370",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4370,
+      "sentence": "The present study showed that acarbose could effectively reduce total risk of MACE in ACS patients with newly diagnosed IGT ( P < 0.05).",
+      "context_window": "tal risk of MACE in ACS patients with newly diagnosed IGT ( P < 0.05). This cardiovascular benefit mostly owed to the reduction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-4469",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4469,
+      "sentence": "This cardiovascular benefit mostly owed to the reduction of secondary endpoint events ( P < 0.05), while the decline of cardiovascular disease mortality was not statistically significant ( P > 0.05), which might be related to not long enough follow-up time and not enough number of patients enrolled.",
+      "context_window": "mostly owed to the reduction of secondary endpoint events ( P < 0.05), while the decline of cardiovascular disease mortality was",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-4570",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4570,
+      "sentence": "This cardiovascular benefit mostly owed to the reduction of secondary endpoint events ( P < 0.05), while the decline of cardiovascular disease mortality was not statistically significant ( P > 0.05), which might be related to not long enough follow-up time and not enough number of patients enrolled.",
+      "context_window": "cular disease mortality was not statistically significant ( P > 0.05), which might be related to not long enough follow-up time",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_-p-5416",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.064",
+      "numeric_values": [
+        0.064
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5416,
+      "sentence": "In the present study, BMI in acarbose group had a distinctly downtrend compared with the control group ( P = 0.064); it suggested that moderate loss of weight may be one of the possible reasons for the cardiovascular benefit.",
+      "context_window": "ad a distinctly downtrend compared with the control group ( P = 0.064); it suggested that moderate loss of weight may be one of t",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

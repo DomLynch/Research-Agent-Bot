@@ -1,0 +1,1734 @@
+{
+  "paper_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_",
+  "doi": "10.3390/nu16213665",
+  "extracted_at": "2026-05-05T21:38:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 60,
+    "p_value": 19,
+    "mean_sd": 1,
+    "percentage": 6,
+    "sample_size": 2,
+    "confidence_interval": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-970",
+      "claim_type": "unit_value",
+      "raw_text": "4.43 kg",
+      "numeric_values": [
+        4.43
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 970,
+      "sentence": "Results: In comparison with a placebo, creatine supplementation combined with resistance training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001).",
+      "context_window": "sistance training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-979",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 979,
+      "sentence": "Results: In comparison with a placebo, creatine supplementation combined with resistance training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001).",
+      "context_window": "training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001). Subgr",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-1021",
+      "claim_type": "unit_value",
+      "raw_text": "11.35 kg",
+      "numeric_values": [
+        11.35
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "Results: In comparison with a placebo, creatine supplementation combined with resistance training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001).",
+      "context_window": "y (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001). Subgroup analyses showed a trend for greater u",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-1031",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "Results: In comparison with a placebo, creatine supplementation combined with resistance training significantly increased upper-body (WMD = 4.43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001).",
+      "context_window": ".43 kg, p < 0.001) and lower-body strength (WMD = 11.35 kg, p < 0.001). Subgroup analyses showed a trend for greater upper-body s",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-1179",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.067",
+      "numeric_values": [
+        0.067
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "Subgroup analyses showed a trend for greater upper-body strength improvements for males on creatine compared with females on creatine ( p = 0.067, Q = 3.366).",
+      "context_window": "s for males on creatine compared with females on creatine ( p = 0.067, Q = 3.366). Additionally, males who consumed creatine comb",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-1499",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1499,
+      "sentence": "There was a trend indicating greater lower-body strength gains from high-dose creatine compared with lower doses ( p = 0.068, Q = 3.341).",
+      "context_window": "h gains from high-dose creatine compared with lower doses ( p = 0.068, Q = 3.341). No other variables influenced the effect of cr",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2724",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2724,
+      "sentence": "Moreover, it has been shown that creatine supplementation may be more effective in studies including participants > 50 years of age, as creatine supplementation may counteract the age-related reduction in muscle strength [ 3 , 11 , 12 ].",
+      "context_window": "n may be more effective in studies including participants > 50 years of age, as creatine supplementation may counteract the age-",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2978",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2978,
+      "sentence": "Interestingly, only one recent meta-analysis focused on the effect of creatine supplementation on fat mass in younger adults (under 50 years of age) has been published [ 13 ].",
+      "context_window": "eatine supplementation on fat mass in younger adults (under 50 years of age) has been published [ 13 ]. Consequently, the effect",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3134",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3134,
+      "sentence": "Consequently, the effect of creatine supplementation on strength gains from resistance training in adults under 50 years of age remains unknown to date.",
+      "context_window": "on strength gains from resistance training in adults under 50 years of age remains unknown to date. Another limitation of the",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4038",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4038,
+      "sentence": "Therefore, a more specific systematic review and meta-analysis is needed to update the outcomes of studies on the effect of creatine supplementation and resistance training on muscle strength performance, by using more severe filters to assess the magnitude of the effect on participants < 50 years of age.",
+      "context_window": "ers to assess the magnitude of the effect on participants < 50 years of age. In line with this objective, a systematic review an",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4191",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4191,
+      "sentence": "In line with this objective, a systematic review and meta-analysis were conducted of all RCTs that compared a group of healthy adults < 50 years of age receiving creatine supplementation during a controlled resistance training protocol vs. a comparable group of adults receiving placebo supplementation during the same resistance training protocol.",
+      "context_window": "ucted of all RCTs that compared a group of healthy adults < 50 years of age receiving creatine supplementation during a controll",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4795",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4795,
+      "sentence": "It was hypothesized that creatine supplementation combined with resistance training would enlarge muscle strength gains in comparison with the combination of a placebo and resistance training in adults < 50 years of age.",
+      "context_window": "ombination of a placebo and resistance training in adults < 50 years of age.",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-1962",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1962,
+      "sentence": "Only RCTs with healthy individuals and resistance-trained individuals < 50 years of age were included to help decrease the influence of biological aging on muscle strength (i.e., sarcopenia/dynapenia).",
+      "context_window": "th healthy individuals and resistance-trained individuals < 50 years of age were included to help decrease the influence of biol",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-msd-2772",
+      "claim_type": "mean_sd",
+      "raw_text": "7.00 \u00b1 0.95",
+      "numeric_values": [
+        7.0,
+        0.95
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2772,
+      "sentence": "The score across all studies was 7.00 \u00b1 0.95, indicating that the overall quality of the articles was categorized as \u201cgood\u201d.",
+      "context_window": "poor (score: < 4) [ 16 ]. The score across all studies was 7.00 \u00b1 0.95, indicating that the overall quality of the articles was ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-4563",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4563,
+      "sentence": "For the meta-analyses, weighted mean differences (WMD) were calculated, and 95% confidence interval (CI) estimates were obtained from studies by comparing pre-post-training changes in muscle strength in the creatine and placebo groups.",
+      "context_window": "lyses, weighted mean differences (WMD) were calculated, and 95% confidence interval (CI) estimates were obtained from studi",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-4926",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4926,
+      "sentence": "The I 2 statistic was used to measure the degree of heterogeneity, with values less than 50% indicating low heterogeneity, 50-75% indicating moderate heterogeneity, and values greater than 75% indicating high heterogeneity [ 17 , 18 ].",
+      "context_window": "measure the degree of heterogeneity, with values less than 50% indicating low heterogeneity, 50-75% indicating moderate he",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-4963",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4963,
+      "sentence": "The I 2 statistic was used to measure the degree of heterogeneity, with values less than 50% indicating low heterogeneity, 50-75% indicating moderate heterogeneity, and values greater than 75% indicating high heterogeneity [ 17 , 18 ].",
+      "context_window": "with values less than 50% indicating low heterogeneity, 50-75% indicating moderate heterogeneity, and values greater than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-5026",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5026,
+      "sentence": "The I 2 statistic was used to measure the degree of heterogeneity, with values less than 50% indicating low heterogeneity, 50-75% indicating moderate heterogeneity, and values greater than 75% indicating high heterogeneity [ 17 , 18 ].",
+      "context_window": "indicating moderate heterogeneity, and values greater than 75% indicating high heterogeneity [ 17 , 18 ]. In the subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5467",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5467,
+      "sentence": "In the subgroup analyses, the effects of creatine supplementation on muscle strength were examined, depending on (1) the characteristics of creatine supplementation (low-dose: \u22645 g/day vs. high-dose: >5 g/day [ 19 ]; creatine loading phase vs. no creatine loading loading), (2) the characteristics of resistance training (training \u22643 times per week vs. >3 times per week; intervention period <8 weeks vs. \u22658 weeks), and (3) population characteristics (resistance-trained vs. untrained; males vs. females).",
+      "context_window": "times per week vs. >3 times per week; intervention period <8 weeks vs. \u22658 weeks), and (3) population characteristics (resistan",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5480",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5480,
+      "sentence": "In the subgroup analyses, the effects of creatine supplementation on muscle strength were examined, depending on (1) the characteristics of creatine supplementation (low-dose: \u22645 g/day vs. high-dose: >5 g/day [ 19 ]; creatine loading phase vs. no creatine loading loading), (2) the characteristics of resistance training (training \u22643 times per week vs. >3 times per week; intervention period <8 weeks vs. \u22658 weeks), and (3) population characteristics (resistance-trained vs. untrained; males vs. females).",
+      "context_window": "ek vs. >3 times per week; intervention period <8 weeks vs. \u22658 weeks), and (3) population characteristics (resistance-trained vs",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-5928",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5928,
+      "sentence": "Statistical significance was considered at p < 0.050.",
+      "context_window": "ion bias [ 21 ]. Statistical significance was considered at p < 0.050.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-1885",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1885,
+      "sentence": "The doses of creatine used ranged from 15 to 25 g/day or 0.3 g/kg/day during the creatine loading period (i.e., the first \u2264 7 days of the creatine intervention) and from 2 to 10 g/day or from 0.03 to 0.22 g/kg/day during the remainder of the creatine intervention.",
+      "context_window": "g/day during the creatine loading period (i.e., the first \u2264 7 days of the creatine intervention) and from 2 to 10 g/day or fro",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2083",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2083,
+      "sentence": "The duration of the resistance training ranged from 4 to 12 weeks, with weekly frequencies ranging between two and five sessions.",
+      "context_window": "n. The duration of the resistance training ranged from 4 to 12 weeks, with weekly frequencies ranging between two and five sessi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-n-2222",
+      "claim_type": "sample_size",
+      "raw_text": "n = 433",
+      "numeric_values": [
+        433.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2222,
+      "sentence": "Twenty-one studies provided data on upper-body muscle strength ( n = 433) and nineteen studies provided data on lower-body muscle strength ( n = 395), all of which were measurements of maximal muscle strength.",
+      "context_window": "y-one studies provided data on upper-body muscle strength ( n = 433) and nineteen studies provided data on lower-body muscle st",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-n-2298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 395",
+      "numeric_values": [
+        395.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2298,
+      "sentence": "Twenty-one studies provided data on upper-body muscle strength ( n = 433) and nineteen studies provided data on lower-body muscle strength ( n = 395), all of which were measurements of maximal muscle strength.",
+      "context_window": "eteen studies provided data on lower-body muscle strength ( n = 395), all of which were measurements of maximal muscle strength",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2648",
+      "claim_type": "unit_value",
+      "raw_text": "4.43 kg",
+      "numeric_values": [
+        4.43
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2648,
+      "sentence": "Creatine supplementation combined with resistance training resulted in greater increases in upper-body strength compared with a placebo, with a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ).",
+      "context_window": "ompared with a placebo, with a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ). The test for",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-2657",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [3.12,5.75",
+      "numeric_values": [
+        3.12,
+        5.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2657,
+      "sentence": "Creatine supplementation combined with resistance training resulted in greater increases in upper-body strength compared with a placebo, with a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ).",
+      "context_window": "ith a placebo, with a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ). The test for heterogeneity showe",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-2677",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2677,
+      "sentence": "Creatine supplementation combined with resistance training resulted in greater increases in upper-body strength compared with a placebo, with a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ).",
+      "context_window": "a very high probability (WMD = 4.43 kg, 95% CI [3.12,5.75], p < 0.001) ( Figure 2 ). The test for heterogeneity showed that there",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-2827",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.926",
+      "numeric_values": [
+        0.926
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2827,
+      "sentence": "The test for heterogeneity showed that there was no statistically significant heterogeneity among studies for this outcome ( p = 0.926, I 2 = 0%).",
+      "context_window": "significant heterogeneity among studies for this outcome ( p = 0.926, I 2 = 0%). Six subgroup meta-analyses were performed ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-2844",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2844,
+      "sentence": "The test for heterogeneity showed that there was no statistically significant heterogeneity among studies for this outcome ( p = 0.926, I 2 = 0%).",
+      "context_window": "rogeneity among studies for this outcome ( p = 0.926, I 2 = 0%). Six subgroup meta-analyses were performed ( Figure 3 ) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3383",
+      "claim_type": "unit_value",
+      "raw_text": "4.95 kg",
+      "numeric_values": [
+        4.95
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3383,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in upper-body strength compared with males on a placebo, with a very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001).",
+      "context_window": "ith males on a placebo, with a very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001). However, the effects of c",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-3392",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [3.52, 6.38",
+      "numeric_values": [
+        3.52,
+        6.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3392,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in upper-body strength compared with males on a placebo, with a very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001).",
+      "context_window": "on a placebo, with a very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001). However, the effects of creatine did not reac",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-3413",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3413,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in upper-body strength compared with males on a placebo, with a very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001).",
+      "context_window": "very high probability (WMD = 4.95 kg, 95% CI [3.52, 6.38], p < 0.001). However, the effects of creatine did not reach statistica",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3530",
+      "claim_type": "unit_value",
+      "raw_text": "1.54 kg",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3530,
+      "sentence": "However, the effects of creatine did not reach statistical significance over a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368).",
+      "context_window": "h statistical significance over a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368). There was a trend for gr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-3539",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-1.81, 4.89",
+      "numeric_values": [
+        -1.81,
+        4.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3539,
+      "sentence": "However, the effects of creatine did not reach statistical significance over a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368).",
+      "context_window": "ical significance over a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368). There was a trend for greater upper-body stre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-3561",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.368",
+      "numeric_values": [
+        0.368
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3561,
+      "sentence": "However, the effects of creatine did not reach statistical significance over a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368).",
+      "context_window": "a placebo in females (WMD = 1.54 kg, 95% CI [-1.81, 4.89], p = 0.368). There was a trend for greater upper-body strength gains f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-3666",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.067",
+      "numeric_values": [
+        0.067
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3666,
+      "sentence": "There was a trend for greater upper-body strength gains from creatine in males vs. females ( p = 0.067, Q = 3.366).",
+      "context_window": "er-body strength gains from creatine in males vs. females ( p = 0.067, Q = 3.366). Creatine dosage (\u22645 g/day vs. >5 g/day) and t",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4082",
+      "claim_type": "unit_value",
+      "raw_text": "11.35 kg",
+      "numeric_values": [
+        11.35
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4082,
+      "sentence": "Creatine supplementation combined with resistance training produced greater increases in maximal lower-body strength compared with a placebo, with a very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ).",
+      "context_window": "ompared with a placebo, with a very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ). Heterogeneity",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-4092",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [8.44,14.25",
+      "numeric_values": [
+        8.44,
+        14.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4092,
+      "sentence": "Creatine supplementation combined with resistance training produced greater increases in maximal lower-body strength compared with a placebo, with a very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ).",
+      "context_window": "th a placebo, with a very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ). Heterogeneity tests showed no stat",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4113",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4113,
+      "sentence": "Creatine supplementation combined with resistance training produced greater increases in maximal lower-body strength compared with a placebo, with a very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ).",
+      "context_window": "very high probability (WMD = 11.35 kg, 95% CI [8.44,14.25], p < 0.001; Figure 4 ). Heterogeneity tests showed no statistically si",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4259",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.897",
+      "numeric_values": [
+        0.897
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4259,
+      "sentence": "Heterogeneity tests showed no statistically significant heterogeneity among studies for lower-body muscle strength gains ( p = 0.897, I 2 = 0%).",
+      "context_window": "eneity among studies for lower-body muscle strength gains ( p = 0.897, I 2 = 0%). Similar to upper-body strength, six subgroup m",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-pct-4276",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4276,
+      "sentence": "Heterogeneity tests showed no statistically significant heterogeneity among studies for lower-body muscle strength gains ( p = 0.897, I 2 = 0%).",
+      "context_window": "ies for lower-body muscle strength gains ( p = 0.897, I 2 = 0%). Similar to upper-body strength, six subgroup meta-analys",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4606",
+      "claim_type": "unit_value",
+      "raw_text": "11.68 kg",
+      "numeric_values": [
+        11.68
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4606,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in lower-body strength compared with males on a placebo, with very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001).",
+      "context_window": "with males on a placebo, with very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001). However, creatine did not",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-4616",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [8.60,14.76",
+      "numeric_values": [
+        8.6,
+        14.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4616,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in lower-body strength compared with males on a placebo, with very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001).",
+      "context_window": "s on a placebo, with very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001). However, creatine did not result in greater s",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4637",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4637,
+      "sentence": "Regarding biological sex differences, males on creatine experienced a greater improvement in lower-body strength compared with males on a placebo, with very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001).",
+      "context_window": "very high probability (WMD = 11.68 kg, 95% CI [8.60,14.76], p < 0.001). However, creatine did not result in greater strength impr",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4759",
+      "claim_type": "unit_value",
+      "raw_text": "8.03 kg",
+      "numeric_values": [
+        8.03
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4759,
+      "sentence": "However, creatine did not result in greater strength improvements compared with the placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076).",
+      "context_window": "th improvements compared with the placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076). Strength improvements fr",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-4768",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-0.83,16.90",
+      "numeric_values": [
+        -0.83,
+        16.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4768,
+      "sentence": "However, creatine did not result in greater strength improvements compared with the placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076).",
+      "context_window": "ements compared with the placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076). Strength improvements from creatine were simi",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4790",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.076",
+      "numeric_values": [
+        0.076
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4790,
+      "sentence": "However, creatine did not result in greater strength improvements compared with the placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076).",
+      "context_window": "he placebo in females (WMD = 8.03 kg, 95% CI [-0.83,16.90], p = 0.076). Strength improvements from creatine were similar for male",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4885",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.446",
+      "numeric_values": [
+        0.446
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4885,
+      "sentence": "Strength improvements from creatine were similar for males and females over time ( p = 0.446, Q = 1.056).",
+      "context_window": "rom creatine were similar for males and females over time ( p = 0.446, Q = 1.056). With regard to dose-response differences, it",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4993",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4993,
+      "sentence": "With regard to dose-response differences, it is noteworthy that there was a trend ( p = 0.068, Q = 3.341) indicating greater strength gains with high-dose creatine (>5 g/day) compared with lower-dose creatine (\u22645 g/day) for lower-body strength gains.",
+      "context_window": "onse differences, it is noteworthy that there was a trend ( p = 0.068, Q = 3.341) indicating greater strength gains with high-dos",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-5622",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5622,
+      "sentence": "This was confirmed by Egger\u2019s linear regression test ( t = 2.102, p = 0.048).",
+      "context_window": "as confirmed by Egger\u2019s linear regression test ( t = 2.102, p = 0.048). However, there was no significant change in upper-body mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5712",
+      "claim_type": "unit_value",
+      "raw_text": "3.60 kg",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5712,
+      "sentence": "However, there was no significant change in upper-body muscle strength (WMD = 3.60 kg, 95% CI [2.39, 4.81]) after adjustment for Duval and Tweedie\u2019s trim-and-fill test ( Figure 6 ).",
+      "context_window": "no significant change in upper-body muscle strength (WMD = 3.60 kg, 95% CI [2.39, 4.81]) after adjustment for Duval and Tweedi",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-ci-5721",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [2.39, 4.81",
+      "numeric_values": [
+        2.39,
+        4.81
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5721,
+      "sentence": "However, there was no significant change in upper-body muscle strength (WMD = 3.60 kg, 95% CI [2.39, 4.81]) after adjustment for Duval and Tweedie\u2019s trim-and-fill test ( Figure 6 ).",
+      "context_window": "ficant change in upper-body muscle strength (WMD = 3.60 kg, 95% CI [2.39, 4.81]) after adjustment for Duval and Tweedie\u2019s trim-and-fill te",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-6058",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.90",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6058,
+      "sentence": "The funnel plot for the gains obtained with creatine over the placebo on lower-body muscle strength was symmetrical ( Figure 7 ), indicating no significant publication bias, which was confirmed by Egger\u2019s linear regression test ( t = 0.122, p = 0.90).",
+      "context_window": "as confirmed by Egger\u2019s linear regression test ( t = 0.122, p = 0.90).",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-253",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 253,
+      "sentence": "The most important findings from the meta-analyses were that: (1) the combination of creatine supplementation and resistance training results in greater strength gains in both the upper and lower body compared with resistance training alone in adults < 50 years of age, (2) males on creatine improved muscle strength compared with males on a placebo for both the upper and lower body, and (3) creatine had no significant effect on strength in females.",
+      "context_window": "er body compared with resistance training alone in adults < 50 years of age, (2) males on creatine improved muscle strength comp",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-676",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 676,
+      "sentence": "Collectively, these results suggest that the addition of creatine supplementation to a resistance training program improves training adaptations for upper- and lower-body maximal muscle strength in healthy individuals under 50 years of age, and these effects are likely driven by the inclusion of biological males.",
+      "context_window": "r-body maximal muscle strength in healthy individuals under 50 years of age, and these effects are likely driven by the inclusio",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-912",
+      "claim_type": "unit_value",
+      "raw_text": "4.43 kg",
+      "numeric_values": [
+        4.43
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 912,
+      "sentence": "In the present meta-analysis, creatine supplementation during resistance training induced higher gains in maximal strength than placebo, with a 4.43 kg benefit for upper-body strength and an 11.35 kg benefit for lower-body strength.",
+      "context_window": "duced higher gains in maximal strength than placebo, with a 4.43 kg benefit for upper-body strength and an 11.35 kg benefit for",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-959",
+      "claim_type": "unit_value",
+      "raw_text": "11.35 kg",
+      "numeric_values": [
+        11.35
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 959,
+      "sentence": "In the present meta-analysis, creatine supplementation during resistance training induced higher gains in maximal strength than placebo, with a 4.43 kg benefit for upper-body strength and an 11.35 kg benefit for lower-body strength.",
+      "context_window": "cebo, with a 4.43 kg benefit for upper-body strength and an 11.35 kg benefit for lower-body strength. These results support prev",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2190",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2190,
+      "sentence": "The most rapid way to increase muscle creatine stores is to ingest high doses (~20 g/day for 5-7 days; the creatine-loading phase) [ 51 ].",
+      "context_window": "le creatine stores is to ingest high doses (~20 g/day for 5-7 days; the creatine-loading phase) [ 51 ]. Once intramuscular cre",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2564",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2564,
+      "sentence": "Another supplementation strategy is to refrain from the creatine loading phase and ingest lower daily doses (~3-5 g/day) of creatine monohydrate for longer periods of time (i.e., \u226528 days) [ 52 ].",
+      "context_window": "of creatine monohydrate for longer periods of time (i.e., \u226528 days) [ 52 ]. The results showed no significant difference in st",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2718",
+      "claim_type": "unit_value",
+      "raw_text": "4.17 kg",
+      "numeric_values": [
+        4.17
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2718,
+      "sentence": "The results showed no significant difference in strength gains between lower-dose (\u22645 g/d) vs. high-dose(>5 g/d) creatine, with gains of 4.17 kg vs.",
+      "context_window": "dose (\u22645 g/d) vs. high-dose(>5 g/d) creatine, with gains of 4.17 kg vs. 6.11 kg for upper-body strength, respectively. Although",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2730",
+      "claim_type": "unit_value",
+      "raw_text": "6.11 kg",
+      "numeric_values": [
+        6.11
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2730,
+      "sentence": "6.11 kg for upper-body strength, respectively.",
+      "context_window": ") vs. high-dose(>5 g/d) creatine, with gains of 4.17 kg vs. 6.11 kg for upper-body strength, respectively. Although the lower-d",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-2948",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2948,
+      "sentence": "Although the lower-dose supplementation approach may delay the saturation of intramuscular creatine levels [ 52 ], the intervention cycles of the RCTs analyzed were all \u2265 4 weeks, which may account for the lack of significance between the lower- and high-dose creatine protocols.",
+      "context_window": "], the intervention cycles of the RCTs analyzed were all \u2265 4 weeks, which may account for the lack of significance between the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3235",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3235,
+      "sentence": "Therefore, it is likely that the presence of a creatine loading phase may not be needed if the objective is to increase muscle strength when performing resistance training for \u2265 4 weeks.",
+      "context_window": "e muscle strength when performing resistance training for \u2265 4 weeks. Specifically, the results of this study show that for uppe",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3396",
+      "claim_type": "unit_value",
+      "raw_text": "6.57 kg",
+      "numeric_values": [
+        6.57
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3396,
+      "sentence": "Specifically, the results of this study show that for upper-body strength, the subgroup of studies including a loading phase had an average increase of 6.57 kg, while the subgroup of studies without a loading phase had an increase of 4.07 kg; for lower body strength, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup.",
+      "context_window": "tudies including a loading phase had an average increase of 6.57 kg, while the subgroup of studies without a loading phase had",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3478",
+      "claim_type": "unit_value",
+      "raw_text": "4.07 kg",
+      "numeric_values": [
+        4.07
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3478,
+      "sentence": "Specifically, the results of this study show that for upper-body strength, the subgroup of studies including a loading phase had an average increase of 6.57 kg, while the subgroup of studies without a loading phase had an increase of 4.07 kg; for lower body strength, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup.",
+      "context_window": "group of studies without a loading phase had an increase of 4.07 kg; for lower body strength, the loading subgroup increased by",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3546",
+      "claim_type": "unit_value",
+      "raw_text": "14.82 kg",
+      "numeric_values": [
+        14.82
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3546,
+      "sentence": "Specifically, the results of this study show that for upper-body strength, the subgroup of studies including a loading phase had an average increase of 6.57 kg, while the subgroup of studies without a loading phase had an increase of 4.07 kg; for lower body strength, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup.",
+      "context_window": "for lower body strength, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup. Althou",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3569",
+      "claim_type": "unit_value",
+      "raw_text": "10.44 kg",
+      "numeric_values": [
+        10.44
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3569,
+      "sentence": "Specifically, the results of this study show that for upper-body strength, the subgroup of studies including a loading phase had an average increase of 6.57 kg, while the subgroup of studies without a loading phase had an increase of 4.07 kg; for lower body strength, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup.",
+      "context_window": "h, the loading subgroup increased by 14.82 kg compared with 10.44 kg for the non-loading subgroup. Although the comparison betwe",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3839",
+      "claim_type": "unit_value",
+      "raw_text": "2.50 kg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3839,
+      "sentence": "Although the comparison between the two methods of supplementation with creatine did not report statistically significant differences, the slightly higher muscle strength gains in those studies with loading vs. non-loading phases (2.50 kg for the upper body and 4.38 kg for lower-body strength) may be considered as potentially beneficial by some strength training practitioners, especially if seeking fast strength gains with resistance training programs shorter than 4 weeks.",
+      "context_window": "gains in those studies with loading vs. non-loading phases (2.50 kg for the upper body and 4.38 kg for lower-body strength) may",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-3870",
+      "claim_type": "unit_value",
+      "raw_text": "4.38 kg",
+      "numeric_values": [
+        4.38
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 3870,
+      "sentence": "Although the comparison between the two methods of supplementation with creatine did not report statistically significant differences, the slightly higher muscle strength gains in those studies with loading vs. non-loading phases (2.50 kg for the upper body and 4.38 kg for lower-body strength) may be considered as potentially beneficial by some strength training practitioners, especially if seeking fast strength gains with resistance training programs shorter than 4 weeks.",
+      "context_window": "ding vs. non-loading phases (2.50 kg for the upper body and 4.38 kg for lower-body strength) may be considered as potentially b",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4077",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4077,
+      "sentence": "Although the comparison between the two methods of supplementation with creatine did not report statistically significant differences, the slightly higher muscle strength gains in those studies with loading vs. non-loading phases (2.50 kg for the upper body and 4.38 kg for lower-body strength) may be considered as potentially beneficial by some strength training practitioners, especially if seeking fast strength gains with resistance training programs shorter than 4 weeks.",
+      "context_window": "rength gains with resistance training programs shorter than 4 weeks. Regarding possible creatine dose-response differences, th",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4265",
+      "claim_type": "unit_value",
+      "raw_text": "9.90 kg",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4265,
+      "sentence": "Regarding possible creatine dose-response differences, the results showed that high-dose creatine supplementation (>5 g/day) had a favorable but not significantly larger effect (9.90 kg vs.",
+      "context_window": "g/day) had a favorable but not significantly larger effect (9.90 kg vs. 16.43 kg for the lower body, p = 0.068) on lower-limb m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-4277",
+      "claim_type": "unit_value",
+      "raw_text": "16.43 kg",
+      "numeric_values": [
+        16.43
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4277,
+      "sentence": "16.43 kg for the lower body, p = 0.068) on lower-limb muscle strength, compared with lower-dose creatine (\u22645 g/day).",
+      "context_window": "favorable but not significantly larger effect (9.90 kg vs. 16.43 kg for the lower body, p = 0.068) on lower-limb muscle strengt",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-p-4306",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.068",
+      "numeric_values": [
+        0.068
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4306,
+      "sentence": "16.43 kg for the lower body, p = 0.068) on lower-limb muscle strength, compared with lower-dose creatine (\u22645 g/day).",
+      "context_window": "tly larger effect (9.90 kg vs. 16.43 kg for the lower body, p = 0.068) on lower-limb muscle strength, compared with lower-dose cr",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5414",
+      "claim_type": "unit_value",
+      "raw_text": "4.95 kg",
+      "numeric_values": [
+        4.95
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5414,
+      "sentence": "Regarding biological sex differences, the present meta-analysis showed that creatine supplementation + resistance training demonstrated superior efficacy for improving muscle strength compared with a placebo and resistance training in males only, with average increases of 4.95 kg in upper-body strength and 11.68 kg in lower-body strength.",
+      "context_window": "esistance training in males only, with average increases of 4.95 kg in upper-body strength and 11.68 kg in lower-body strength.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5449",
+      "claim_type": "unit_value",
+      "raw_text": "11.68 kg",
+      "numeric_values": [
+        11.68
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5449,
+      "sentence": "Regarding biological sex differences, the present meta-analysis showed that creatine supplementation + resistance training demonstrated superior efficacy for improving muscle strength compared with a placebo and resistance training in males only, with average increases of 4.95 kg in upper-body strength and 11.68 kg in lower-body strength.",
+      "context_window": "ith average increases of 4.95 kg in upper-body strength and 11.68 kg in lower-body strength. In contrast, the analysis found tha",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5680",
+      "claim_type": "unit_value",
+      "raw_text": "1.54 kg",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5680,
+      "sentence": "In contrast, the analysis found that creatine supplementation combined with resistance training did not result in a significant improvement in muscle strength for females, with average increases of 1.54 kg in upper-body strength and 8.03 kg in lower-body strength, indicating no notable differences compared with the placebo and resistance training alone.",
+      "context_window": "t in muscle strength for females, with average increases of 1.54 kg in upper-body strength and 8.03 kg in lower-body strength,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-5715",
+      "claim_type": "unit_value",
+      "raw_text": "8.03 kg",
+      "numeric_values": [
+        8.03
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5715,
+      "sentence": "In contrast, the analysis found that creatine supplementation combined with resistance training did not result in a significant improvement in muscle strength for females, with average increases of 1.54 kg in upper-body strength and 8.03 kg in lower-body strength, indicating no notable differences compared with the placebo and resistance training alone.",
+      "context_window": "ith average increases of 1.54 kg in upper-body strength and 8.03 kg in lower-body strength, indicating no notable differences c",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6420",
+      "claim_type": "unit_value",
+      "raw_text": "4.08 kg",
+      "numeric_values": [
+        4.08
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6420,
+      "sentence": "Subgroup analyses showed that the duration of training did not influence strength adaptations over time, with average increases of 4.08 kg for upper-body strength in the short-duration subgroup compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-duration subgroup compared with 10.93 kg in the long-duration subgroup for lower-body strength.",
+      "context_window": "e strength adaptations over time, with average increases of 4.08 kg for upper-body strength in the short-duration subgroup comp",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6497",
+      "claim_type": "unit_value",
+      "raw_text": "4.91 kg",
+      "numeric_values": [
+        4.91
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6497,
+      "sentence": "Subgroup analyses showed that the duration of training did not influence strength adaptations over time, with average increases of 4.08 kg for upper-body strength in the short-duration subgroup compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-duration subgroup compared with 10.93 kg in the long-duration subgroup for lower-body strength.",
+      "context_window": "-body strength in the short-duration subgroup compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-du",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6540",
+      "claim_type": "unit_value",
+      "raw_text": "11.79 kg",
+      "numeric_values": [
+        11.79
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6540,
+      "sentence": "Subgroup analyses showed that the duration of training did not influence strength adaptations over time, with average increases of 4.08 kg for upper-body strength in the short-duration subgroup compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-duration subgroup compared with 10.93 kg in the long-duration subgroup for lower-body strength.",
+      "context_window": "up compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-duration subgroup compared with 10.93 kg in th",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6594",
+      "claim_type": "unit_value",
+      "raw_text": "10.93 kg",
+      "numeric_values": [
+        10.93
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6594,
+      "sentence": "Subgroup analyses showed that the duration of training did not influence strength adaptations over time, with average increases of 4.08 kg for upper-body strength in the short-duration subgroup compared with 4.91 kg in the long-duration subgroup, and 11.79 kg in the short-duration subgroup compared with 10.93 kg in the long-duration subgroup for lower-body strength.",
+      "context_window": ", and 11.79 kg in the short-duration subgroup compared with 10.93 kg in the long-duration subgroup for lower-body strength. Thes",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6753",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6753,
+      "sentence": "These results are in contrast to a previous review [ 11 ], which showed that interventions of \u226524 weeks appeared to be more effective in resistance-trained older females.",
+      "context_window": "previous review [ 11 ], which showed that interventions of \u226524 weeks appeared to be more effective in resistance-trained older f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-6915",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6915,
+      "sentence": "Unfortunately, the studies included in this investigation with healthy participants < 50 years or age included resistance training protocols with a duration ranging from 4 to 12 weeks.",
+      "context_window": "included in this investigation with healthy participants < 50 years or age included resistance training protocols with a durati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7004",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7004,
+      "sentence": "Unfortunately, the studies included in this investigation with healthy participants < 50 years or age included resistance training protocols with a duration ranging from 4 to 12 weeks.",
+      "context_window": "stance training protocols with a duration ranging from 4 to 12 weeks. Therefore, it was not possible to determine the optimal du",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7301",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7301,
+      "sentence": "This study reveals the need to experiment with the effects of creatine supplementation during RT for more than 12 weeks in young and healthy adults, as has been carried out in other populations.",
+      "context_window": "effects of creatine supplementation during RT for more than 12 weeks in young and healthy adults, as has been carried out in oth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7585",
+      "claim_type": "unit_value",
+      "raw_text": "4.44 kg",
+      "numeric_values": [
+        4.44
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7585,
+      "sentence": "Additionally, different resistance training frequencies seemed to not affect the adaptation of creatine supplementation combined with resistance training to muscle strength, with average increases of 4.44 kg for upper-body strength in the low-frequency subgroup compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the high-frequency subgroup for lower-body strength.",
+      "context_window": "ance training to muscle strength, with average increases of 4.44 kg for upper-body strength in the low-frequency subgroup compa",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7661",
+      "claim_type": "unit_value",
+      "raw_text": "4.42 kg",
+      "numeric_values": [
+        4.42
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7661,
+      "sentence": "Additionally, different resistance training frequencies seemed to not affect the adaptation of creatine supplementation combined with resistance training to muscle strength, with average increases of 4.44 kg for upper-body strength in the low-frequency subgroup compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the high-frequency subgroup for lower-body strength.",
+      "context_window": "r-body strength in the low-frequency subgroup compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-fre",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7705",
+      "claim_type": "unit_value",
+      "raw_text": "10.35 kg",
+      "numeric_values": [
+        10.35
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7705,
+      "sentence": "Additionally, different resistance training frequencies seemed to not affect the adaptation of creatine supplementation combined with resistance training to muscle strength, with average increases of 4.44 kg for upper-body strength in the low-frequency subgroup compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the high-frequency subgroup for lower-body strength.",
+      "context_window": "p compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-7758",
+      "claim_type": "unit_value",
+      "raw_text": "10.93 kg",
+      "numeric_values": [
+        10.93
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7758,
+      "sentence": "Additionally, different resistance training frequencies seemed to not affect the adaptation of creatine supplementation combined with resistance training to muscle strength, with average increases of 4.44 kg for upper-body strength in the low-frequency subgroup compared with 4.42 kg in the high-frequency subgroup, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the high-frequency subgroup for lower-body strength.",
+      "context_window": "p, and 10.35 kg in the low-frequency subgroup compared with 10.93 kg in the high-frequency subgroup for lower-body strength. The",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-185",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 185,
+      "sentence": "Creatine supplementation combined with resistance training significantly improves upper- and lower-body muscle strength compared with resistance training alone in healthy individuals < 50 years of age.",
+      "context_window": "red with resistance training alone in healthy individuals < 50 years of age. Specifically, the data on this systematic review an",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-284",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 284,
+      "sentence": "Specifically, the data on this systematic review and meta-analysis suggest that 4-12 weeks of 2 to 10 g/day or from 0.03 to 0.22 g/kg/day of creatine supplementation combined with resistance training significantly improves upper-body muscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with resistance training alone in healthy individuals < 50 years of age.",
+      "context_window": "on this systematic review and meta-analysis suggest that 4-12 weeks of 2 to 10 g/day or from 0.03 to 0.22 g/kg/day of creatine",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-455",
+      "claim_type": "unit_value",
+      "raw_text": "4.43 kg",
+      "numeric_values": [
+        4.43
+      ],
+      "units": "kg",
+      "source_section": "conclusion",
+      "source_offset": 455,
+      "sentence": "Specifically, the data on this systematic review and meta-analysis suggest that 4-12 weeks of 2 to 10 g/day or from 0.03 to 0.22 g/kg/day of creatine supplementation combined with resistance training significantly improves upper-body muscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with resistance training alone in healthy individuals < 50 years of age.",
+      "context_window": "aining significantly improves upper-body muscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with re",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-497",
+      "claim_type": "unit_value",
+      "raw_text": "11.35 kg",
+      "numeric_values": [
+        11.35
+      ],
+      "units": "kg",
+      "source_section": "conclusion",
+      "source_offset": 497,
+      "sentence": "Specifically, the data on this systematic review and meta-analysis suggest that 4-12 weeks of 2 to 10 g/day or from 0.03 to 0.22 g/kg/day of creatine supplementation combined with resistance training significantly improves upper-body muscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with resistance training alone in healthy individuals < 50 years of age.",
+      "context_window": "uscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with resistance training alone in healthy individu",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11547435_effects_of_creatine_supplementation_and_resistance_training_-u-571",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 571,
+      "sentence": "Specifically, the data on this systematic review and meta-analysis suggest that 4-12 weeks of 2 to 10 g/day or from 0.03 to 0.22 g/kg/day of creatine supplementation combined with resistance training significantly improves upper-body muscle strength by 4.43 kg and lower-body muscle strength by 11.35 kg compared with resistance training alone in healthy individuals < 50 years of age.",
+      "context_window": "red with resistance training alone in healthy individuals < 50 years of age. The benefits of creatine supplementation combined w",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "paper_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism",
+  "doi": "10.1111/1753-0407.70166",
+  "extracted_at": "2026-05-05T21:41:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "p_value": 1,
+    "confidence_interval": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-pct-4740",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4740,
+      "sentence": "Cells were filtered to exclude those with gene counts < 200 or > 2500 (nFeature_RNA) or mitochondrial gene content (mt_percent) > 5% to ensure data quality.",
+      "context_window": "(nFeature_RNA) or mitochondrial gene content (mt_percent) > 5% to ensure data quality. After normalization, the FindVariab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-p-6141",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6141,
+      "sentence": "Statistical significance was determined at a p < 0.05.",
+      "context_window": "two variables. Statistical significance was determined at a p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-3249",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.8818-1",
+      "numeric_values": [
+        0.8818,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3249,
+      "sentence": "In the training set, each individual feature gene demonstrated excellent discriminatory power, with HMOX1, MAPK3, and TXN having AUC values of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respectively (Figure 4A ).",
+      "context_window": "wer, with HMOX1, MAPK3, and TXN having AUC values of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-3271",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1-1",
+      "numeric_values": [
+        1.0,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3271,
+      "sentence": "In the training set, each individual feature gene demonstrated excellent discriminatory power, with HMOX1, MAPK3, and TXN having AUC values of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respectively (Figure 4A ).",
+      "context_window": ", and TXN having AUC values of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respectively (Figure 4A ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-3296",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.7435-1",
+      "numeric_values": [
+        0.7435,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3296,
+      "sentence": "In the training set, each individual feature gene demonstrated excellent discriminatory power, with HMOX1, MAPK3, and TXN having AUC values of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respectively (Figure 4A ).",
+      "context_window": "es of 0.963 (95% CI: 0.8818-1), 1 (95% CI: 1-1), and 0.901 (95% CI: 0.7435-1), respectively (Figure 4A ). The integrated model exhibited",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-3426",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1-1",
+      "numeric_values": [
+        1.0,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3426,
+      "sentence": "The integrated model exhibited exceptional diagnostic performance with an AUC of 1 (95% CI: 1-1).",
+      "context_window": "ibited exceptional diagnostic performance with an AUC of 1 (95% CI: 1-1). DCA revealed that the predictive model consistently outpe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-4141",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.9359-1",
+      "numeric_values": [
+        0.9359,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4141,
+      "sentence": "These robust findings were consistently replicated in the independent validation cohort: the model maintained strong predictive accuracy in the GSE37265 validation set (AUC = 0.98) (95% CI: 0.9359-1) (Figure 4E ), and achieved reliable performance in the GSE134431 validation set (model AUC = 1) (95% CI: 1-1) (Figure 4F ).",
+      "context_window": "ctive accuracy in the GSE37265 validation set (AUC = 0.98) (95% CI: 0.9359-1) (Figure 4E ), and achieved reliable performance in the GSE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12780969_identify_diagnostic_biomarkers_related_to_taurine_metabolism-ci-4256",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1-1",
+      "numeric_values": [
+        1.0,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4256,
+      "sentence": "These robust findings were consistently replicated in the independent validation cohort: the model maintained strong predictive accuracy in the GSE37265 validation set (AUC = 0.98) (95% CI: 0.9359-1) (Figure 4E ), and achieved reliable performance in the GSE134431 validation set (model AUC = 1) (95% CI: 1-1) (Figure 4F ).",
+      "context_window": "erformance in the GSE134431 validation set (model AUC = 1) (95% CI: 1-1) (Figure 4F ). Diagnostic model development and validation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

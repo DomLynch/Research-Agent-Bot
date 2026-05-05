@@ -1,0 +1,306 @@
+{
+  "paper_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de",
+  "doi": "10.1186/s12937-025-01265-8",
+  "extracted_at": "2026-05-05T21:47:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 8,
+    "confidence_interval": 4,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-u-702",
+      "claim_type": "unit_value",
+      "raw_text": "20 years",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 702,
+      "sentence": "Totally, 6,782 depressed individuals aged 20 years and above in 10 cycles (1999-2018) of the National Health and Nutrition Examination Survey (NHANES) were analyzed.",
+      "context_window": "lity reductions. Totally, 6,782 depressed individuals aged 20 years and above in 10 cycles (1999-2018) of the National Health a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-995",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "Cox proportional hazard models were used to calculated hazard ratios (HRs) and 95% confidence intervals (CIs) for morality risk across omega-3 PUFA quartiles.",
+      "context_window": "zard models were used to calculated hazard ratios (HRs) and 95% confidence intervals (CIs) for morality risk across omega-3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-ci-1466",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.62, 0.94",
+      "numeric_values": [
+        0.62,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1466,
+      "sentence": "The HRs for the highest versus lowest quartile of omega-3 PUFAs were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for other-cause mortality.",
+      "context_window": "highest versus lowest quartile of omega-3 PUFAs were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mor",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-ci-1513",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.50, 1.02",
+      "numeric_values": [
+        0.5,
+        1.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1513,
+      "sentence": "The HRs for the highest versus lowest quartile of omega-3 PUFAs were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for other-cause mortality.",
+      "context_window": "s were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mo",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-ci-1558",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.50, 1.35",
+      "numeric_values": [
+        0.5,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1558,
+      "sentence": "The HRs for the highest versus lowest quartile of omega-3 PUFAs were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for other-cause mortality.",
+      "context_window": "rtality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for ot",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-ci-1610",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.59, 1.00",
+      "numeric_values": [
+        0.59,
+        1.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1610,
+      "sentence": "The HRs for the highest versus lowest quartile of omega-3 PUFAs were 0.76 (95% CI: 0.62, 0.94) for total mortality, 0.72 (95% CI: 0.50, 1.02) for CVD mortality, 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for other-cause mortality.",
+      "context_window": ", 0.82 (95% CI: 0.50, 1.35) for cancer mortality, and 0.77 (95% CI: 0.59, 1.00) for other-cause mortality. DPA showed the strongest associ",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1695",
+      "claim_type": "percentage",
+      "raw_text": "58.40%",
+      "numeric_values": [
+        58.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1695,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "ther-cause mortality. DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-p-1740",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1740,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "t association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1751",
+      "claim_type": "percentage",
+      "raw_text": "59.80%",
+      "numeric_values": [
+        59.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1751,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "on (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-p-1776",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1776,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "al mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality re",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1855",
+      "claim_type": "percentage",
+      "raw_text": "60.4%",
+      "numeric_values": [
+        60.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1855,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "PA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046). Mediation analysis revealed GNRI accounted for",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-p-1862",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1862,
+      "sentence": "DPA showed the strongest association (58.40% weight for total mortality reduction, P = 0.002; 59.80% for other causes, P = 0.011), while EPA contributed most to cardiovascular mortality reductions (60.4%, P = 0.046).",
+      "context_window": "ributed most to cardiovascular mortality reductions (60.4%, P = 0.046). Mediation analysis revealed GNRI accounted for 8.1% of PU",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1921",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1921,
+      "sentence": "Mediation analysis revealed GNRI accounted for 8.1% of PUFA-mortality association (10.5% for DPA), with SII mediating 6.9% of DPA-specific benefit.",
+      "context_window": "P = 0.046). Mediation analysis revealed GNRI accounted for 8.1% of PUFA-mortality association (10.5% for DPA), with SII med",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1957",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1957,
+      "sentence": "Mediation analysis revealed GNRI accounted for 8.1% of PUFA-mortality association (10.5% for DPA), with SII mediating 6.9% of DPA-specific benefit.",
+      "context_window": "aled GNRI accounted for 8.1% of PUFA-mortality association (10.5% for DPA), with SII mediating 6.9% of DPA-specific benefit.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-1992",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1992,
+      "sentence": "Mediation analysis revealed GNRI accounted for 8.1% of PUFA-mortality association (10.5% for DPA), with SII mediating 6.9% of DPA-specific benefit.",
+      "context_window": "A-mortality association (10.5% for DPA), with SII mediating 6.9% of DPA-specific benefit. Higher intake of omega-3 PUFAs, p",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de-pct-4202",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4202,
+      "sentence": "Of note, more than 60% of the depressed participants were the middle-aged and elderly, who may have often suffered from malnutrition due to accelerated catabolism during aging that reduced albumin and muscle mass.",
+      "context_window": "of EPA and DPA in depressed individuals. Of note, more than 60% of the depressed participants were the middle-aged and elde",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

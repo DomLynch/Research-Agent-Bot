@@ -1,0 +1,157 @@
+{
+  "paper_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men",
+  "doi": "10.1002/alz70860_101719",
+  "extracted_at": "2026-05-05T22:04:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 4,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-u-766",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Data was collected weekly for 16 weeks and analyzed using mixed\u2010effects models and repeated measures ANOVA to examine changes over time and between groups.",
+      "context_window": "simulator sickness symptoms. Data was collected weekly for 16 weeks and analyzed using mixed\u2010effects models and repeated measur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-p-1059",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1059,
+      "sentence": "Participants in the VRO group exhibited significantly higher simulator sickness and cognitive workload compared to the VR+C group, with notable increases in nausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01).",
+      "context_window": "pared to the VR+C group, with notable increases in nausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01). Analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-p-1083",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1083,
+      "sentence": "Participants in the VRO group exhibited significantly higher simulator sickness and cognitive workload compared to the VR+C group, with notable increases in nausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01).",
+      "context_window": "with notable increases in nausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01). Analysis of symptom severity t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-p-1111",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1111,
+      "sentence": "Participants in the VRO group exhibited significantly higher simulator sickness and cognitive workload compared to the VR+C group, with notable increases in nausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01).",
+      "context_window": "ausea ( p < 0.001), eyestrain ( p < 0.001), and dizziness ( p < 0.01). Analysis of symptom severity trends revealed that the VRO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-p-1747",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "Correlation analysis showed a significant relationship between physical demand and perceived exertion ( r = 0.64, p < 0.001), suggesting adaptation effects.",
+      "context_window": "between physical demand and perceived exertion ( r = 0.64, p < 0.001), suggesting adaptation effects. Adherence rates were highe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-pct-1837",
+      "claim_type": "percentage",
+      "raw_text": "80.95%",
+      "numeric_values": [
+        80.95
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1837,
+      "sentence": "Adherence rates were highest in the VRO group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicating that physical effort perception plays a role in retention.",
+      "context_window": "ion effects. Adherence rates were highest in the VRO group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicatin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-pct-1862",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1862,
+      "sentence": "Adherence rates were highest in the VRO group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicating that physical effort perception plays a role in retention.",
+      "context_window": "tes were highest in the VRO group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicating that physical effort",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men-pct-1888",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1888,
+      "sentence": "Adherence rates were highest in the VRO group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicating that physical effort perception plays a role in retention.",
+      "context_window": "O group (80.95%), followed by CO (75%), and lowest in VR+C (70%), indicating that physical effort perception plays a role i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "paper_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_",
+  "doi": "10.1093/geroni/igac059.388",
+  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "sample_size": 1,
+    "confidence_interval": 2,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-u-614",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 614,
+      "sentence": "Participants were randomized 2:1 to 24 months of CR (prescribed as 25% reduction in baseline calorie requirements) versus an ad libitum (AL) diet.",
+      "context_window": "Energy (CALERIE) Study. Participants were randomized 2:1 to 24 months of CR (prescribed as 25% reduction in baseline calorie requ",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-pct-645",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 645,
+      "sentence": "Participants were randomized 2:1 to 24 months of CR (prescribed as 25% reduction in baseline calorie requirements) versus an ad libitum (AL) diet.",
+      "context_window": "pants were randomized 2:1 to 24 months of CR (prescribed as 25% reduction in baseline calorie requirements) versus an ad li",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-n-890",
+      "claim_type": "sample_size",
+      "raw_text": "N=133",
+      "numeric_values": [
+        133.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "We quantified plasma A\u03b2-42, A\u03b2-40, and total tau using the ultrasensitive single molecule array (SIMOA) technology at baseline and two years in a subset of CALERIE (N=133).",
+      "context_window": "echnology at baseline and two years in a subset of CALERIE (N=133). We used linear regression to evaluate the impact of CR, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-ci-1329",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI[-27.14, 1.96",
+      "numeric_values": [
+        -27.14,
+        1.96
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1329,
+      "sentence": "As compared to AL, there was a trend towards decreased A\u03b2-40, controlling for age, baseline A\u03b2-40 concentrations, and APOE-\u03b54 carrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR.",
+      "context_window": "A\u03b2-40 concentrations, and APOE-\u03b54 carrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR. The CR*APOE-\u03b54 c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-p-1351",
+      "claim_type": "p_value",
+      "raw_text": "p=0.093",
+      "numeric_values": [
+        0.093
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1351,
+      "sentence": "As compared to AL, there was a trend towards decreased A\u03b2-40, controlling for age, baseline A\u03b2-40 concentrations, and APOE-\u03b54 carrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR.",
+      "context_window": "and APOE-\u03b54 carrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR. The CR*APOE-\u03b54 carrier sta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-pct-1365",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1365,
+      "sentence": "As compared to AL, there was a trend towards decreased A\u03b2-40, controlling for age, baseline A\u03b2-40 concentrations, and APOE-\u03b54 carrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR.",
+      "context_window": "rrier status (\u03b2=-12.59, 95% CI[-27.14, 1.96], p=0.093) with 12% (average achieved) CR. The CR*APOE-\u03b54 carrier status intera",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-p-1485",
+      "claim_type": "p_value",
+      "raw_text": "p<0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1485,
+      "sentence": "The CR*APOE-\u03b54 carrier status interaction term was significant at a pre-defined threshold of p<0.10 (p=0.062).",
+      "context_window": "eraction term was significant at a pre-defined threshold of p<0.10 (p=0.062). Stratified by APOE-\u03b54 carrier status, CR was ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-p-1493",
+      "claim_type": "p_value",
+      "raw_text": "p=0.062",
+      "numeric_values": [
+        0.062
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1493,
+      "sentence": "The CR*APOE-\u03b54 carrier status interaction term was significant at a pre-defined threshold of p<0.10 (p=0.062).",
+      "context_window": "term was significant at a pre-defined threshold of p<0.10 (p=0.062). Stratified by APOE-\u03b54 carrier status, CR was associated w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-ci-1602",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI[-65.16,-2.09",
+      "numeric_values": [
+        -65.16,
+        -2.09
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1602,
+      "sentence": "Stratified by APOE-\u03b54 carrier status, CR was associated with a decrease in plasma A\u03b2-40 (\u03b2=-33.72, 95% CI[-65.16,-2.09], p=0.041).",
+      "context_window": "R was associated with a decrease in plasma A\u03b2-40 (\u03b2=-33.72, 95% CI[-65.16,-2.09], p=0.041). In conclusion, moderate CR in healthy, non-obes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_-p-1624",
+      "claim_type": "p_value",
+      "raw_text": "p=0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1624,
+      "sentence": "Stratified by APOE-\u03b54 carrier status, CR was associated with a decrease in plasma A\u03b2-40 (\u03b2=-33.72, 95% CI[-65.16,-2.09], p=0.041).",
+      "context_window": "a decrease in plasma A\u03b2-40 (\u03b2=-33.72, 95% CI[-65.16,-2.09], p=0.041). In conclusion, moderate CR in healthy, non-obese young an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "paper_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat",
+  "doi": "10.1186/s12889-024-20228-y",
+  "extracted_at": "2026-05-05T22:11:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 16,
+    "sample_size": 10,
+    "percentage": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-665",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "This article outlines the development and feasibility testing of a TRE intervention to inform the design of a TRE randomised controlled trial in women (20-45 years old) living with overweight/obesity and HIV, receiving DTG-based treatment from a resource-limited community in Cape Town, South Africa.",
+      "context_window": "he design of a TRE randomised controlled trial in women (20-45 years old) living with overweight/obesity and HIV, receiving DTG-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1376",
+      "claim_type": "unit_value",
+      "raw_text": "37.1 years",
+      "numeric_values": [
+        37.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1376,
+      "sentence": "Participants included 33 isiXhosa -speaking women (mean age 37.1 years, mean BMI 35.9 kg/m 2 ).",
+      "context_window": "Participants included 33 isiXhosa -speaking women (mean age 37.1 years, mean BMI 35.9 kg/m 2 ). Thematic analysis identified psych",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1397",
+      "claim_type": "unit_value",
+      "raw_text": "35.9 kg",
+      "numeric_values": [
+        35.9
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "Participants included 33 isiXhosa -speaking women (mean age 37.1 years, mean BMI 35.9 kg/m 2 ).",
+      "context_window": "33 isiXhosa -speaking women (mean age 37.1 years, mean BMI 35.9 kg/m 2 ). Thematic analysis identified psychological capabilit",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-1727",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1727,
+      "sentence": "In a 4-week TRE pilot trial ( n = 12), retention was 100%.",
+      "context_window": "of TRE for weight management. In a 4-week TRE pilot trial ( n = 12), retention was 100%. Positive outcomes perceived included",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-1750",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1750,
+      "sentence": "In a 4-week TRE pilot trial ( n = 12), retention was 100%.",
+      "context_window": "ement. In a 4-week TRE pilot trial ( n = 12), retention was 100%. Positive outcomes perceived included improved energy, appe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-51",
+      "claim_type": "percentage",
+      "raw_text": "9.3%",
+      "numeric_values": [
+        9.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 51,
+      "sentence": "In 2021, it was estimated that 537 million people (9.3%) worldwide had diabetes with the prevalence expected to increase over the next two decades, the highest rates projected for sub-Saharan Africa [ 1 ].",
+      "context_window": "In 2021, it was estimated that 537 million people (9.3%) worldwide had diabetes with the prevalence expected to inc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-304",
+      "claim_type": "percentage",
+      "raw_text": "15.3%",
+      "numeric_values": [
+        15.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 304,
+      "sentence": "Within sub-Saharan Africa, South Africa (SA) has the highest prevalence of type 2 diabetes (T2D) (15.3%) [ 2 ], and it has become the leading cause of death in patients with a high body mass index (BMI) [ 3 ].",
+      "context_window": "a (SA) has the highest prevalence of type 2 diabetes (T2D) (15.3%) [ 2 ], and it has become the leading cause of death in pat",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-595",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 595,
+      "sentence": "Furthermore, SA has one of the highest rates of Human Immunodeficiency Virus (HIV) infection globally, with 7.6 million people living with HIV (PLWH) and a national prevalence of 17.8% among adults aged 15 to 49 years [ 4 ].",
+      "context_window": "people living with HIV (PLWH) and a national prevalence of 17.8% among adults aged 15 to 49 years [ 4 ]. In 2019, the World",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-625",
+      "claim_type": "unit_value",
+      "raw_text": "49 years",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 625,
+      "sentence": "Furthermore, SA has one of the highest rates of Human Immunodeficiency Virus (HIV) infection globally, with 7.6 million people living with HIV (PLWH) and a national prevalence of 17.8% among adults aged 15 to 49 years [ 4 ].",
+      "context_window": "and a national prevalence of 17.8% among adults aged 15 to 49 years [ 4 ]. In 2019, the World Health Organisation recommended t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1156",
+      "claim_type": "unit_value",
+      "raw_text": "1.78 kg",
+      "numeric_values": [
+        1.78
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 1156,
+      "sentence": "However, in a more recent study, switching from Efavirenz to DTG-based treatment showed a more modest increase in weight (1.78 kg) over a 12-month period [ 7 ].",
+      "context_window": "TG-based treatment showed a more modest increase in weight (1.78 kg) over a 12-month period [ 7 ]. Regardless, an increase in w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-1538",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1538,
+      "sentence": "Research on strategies to prevent and manage non-communicable diseases (NCDs) has predominantly been conducted in High-Income Countries (HICs), with only 22% of randomised controlled trials (RCTs) on NCDs recruiting participants from Low- and Middle-Income Countries (LMICs) [ 10 ], with, to our knowledge, only one previously being conducted in SA [ 11 ].",
+      "context_window": "y been conducted in High-Income Countries (HICs), with only 22% of randomised controlled trials (RCTs) on NCDs recruiting p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-897",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 897,
+      "sentence": "Khayelitsha is a large, peri-urban informal settlement in Cape Town, SA, of which 99% of the residents are Black South African and isiXhosa speaking [ 23 ].",
+      "context_window": ", peri-urban informal settlement in Cape Town, SA, of which 99% of the residents are Black South African and isiXhosa speak",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1045",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1045,
+      "sentence": "Inclusion criteria across both phases included men and women, between 20-45 years of age, living with HIV and having initiated DTG-based treatment within the previous 1-24 months, and a BMI \u2265 25 kg/m 2 .",
+      "context_window": "teria across both phases included men and women, between 20-45 years of age, living with HIV and having initiated DTG-based trea",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1141",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1141,
+      "sentence": "Inclusion criteria across both phases included men and women, between 20-45 years of age, living with HIV and having initiated DTG-based treatment within the previous 1-24 months, and a BMI \u2265 25 kg/m 2 .",
+      "context_window": "having initiated DTG-based treatment within the previous 1-24 months, and a BMI \u2265 25 kg/m 2 . Participants were recruited from t",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-1164",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1164,
+      "sentence": "Inclusion criteria across both phases included men and women, between 20-45 years of age, living with HIV and having initiated DTG-based treatment within the previous 1-24 months, and a BMI \u2265 25 kg/m 2 .",
+      "context_window": "ased treatment within the previous 1-24 months, and a BMI \u2265 25 kg/m 2 . Participants were recruited from the waiting area of",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-2438",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2438,
+      "sentence": "These guides were pilot tested ( n = 2) and, as no major revisions were required, the pilot interviews were included in the final sample.",
+      "context_window": "oped the interview guides. These guides were pilot tested ( n = 2) and, as no major revisions were required, the pilot interv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-2924",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2924,
+      "sentence": "A combination of semi-structured IDIs ( n = 12) and five FGDs ( n = 21) were conducted to gain different perspectives and greater insights to comprehensively understand the target behaviour, the adoption of TRE [ 19 ].",
+      "context_window": "model and the TDF. A combination of semi-structured IDIs ( n = 12) and five FGDs ( n = 21) were conducted to gain different p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-2948",
+      "claim_type": "sample_size",
+      "raw_text": "n = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2948,
+      "sentence": "A combination of semi-structured IDIs ( n = 12) and five FGDs ( n = 21) were conducted to gain different perspectives and greater insights to comprehensively understand the target behaviour, the adoption of TRE [ 19 ].",
+      "context_window": "mbination of semi-structured IDIs ( n = 12) and five FGDs ( n = 21) were conducted to gain different perspectives and greater",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-4180",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4180,
+      "sentence": "Participants from the development phase with whom IDIs ( n = 12) were conducted, participated in a single arm 4-week TRE pilot trial, which included a further round of IDIs conducted at the end of the trial.",
+      "context_window": ". Participants from the development phase with whom IDIs ( n = 12) were conducted, participated in a single arm 4-week TRE pi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-5008",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 5008,
+      "sentence": "The self-selected eating time was personalised to ensure an 8-10 h eating window and participants were allowed to amend their eating window up to 1 week into the intervention.",
+      "context_window": "articipants were allowed to amend their eating window up to 1 week into the intervention. Participants were provided with a ca",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-168",
+      "claim_type": "unit_value",
+      "raw_text": "25.0 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 168,
+      "sentence": "However, following screening, 33 women and only one man were eligible with a BMI \u2265 25.0 kg/m 2 .",
+      "context_window": "ening, 33 women and only one man were eligible with a BMI \u2265 25.0 kg/m 2 . It was considered inappropriate to present a single m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-482",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "All participants ( n = 33) were female and isiXhosa speaking.",
+      "context_window": "ocus groups and the pilot are presented. All participants ( n = 33) were female and isiXhosa speaking. The majority of partici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-784",
+      "claim_type": "sample_size",
+      "raw_text": "n =33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 784,
+      "sentence": "Table 1 Characteristics of study participants Variables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (4.8) 37.4 (4.1) 36.6 (5.9) Marital status (n, %) Single 20 (60.6) 15 (71.4) 5 (41.6) Married 7 (21.2) 3 (14.3) 4 (33.3) Living with partner 6 (18.2) 3 (14.3) 3 (25.0) Highest level of education (n, %) Primary school (grade 1-7) 1 (3.0) 1 (4.8) High school (grade 8-11) 21 (63.7) 14 (66.6) 7 (58.3) Completed Grade 12 11 (33.3) 6 (28.6) 5 (41.6) Current employment status (n, %) Employed 9 (27.3) 7 (33.3) 2 (16.6) Type of housing (n, %) Formal housing 4 (12.1) 1 (4.8) 3 (25.0) Government housing 9 (27.3) 6 (28.6) 3 (25.0) Informal housing 20 (60.1) 14 (66.6) 6 (50.0) Housing density (number of people in the house/number of rooms in the house) (median, IQR) 1.3 (0.4-4.0) 1.5 (0.4-4.0) 1.2 (1.0-2.0) Household food security (n, %) Mildly food insecure 10 (30.3) 8 (38.1) 2 (16.6) Moderately food insecure 17 (51.5) 11 (52.4) 6 (50.0) Severely food insecure 6 (18.2) 2 (9.5) 4 (33.3) Length of time since HIV diagnosis (years) (mean, SD) 10.1 (6.3) 10.2 (6.2) 9.8 (6.7) Duration on antiretroviral therapy (years) (mean, SD) 8.1 (5.0) 7.9 (4.7) 8.6 (5.7) Current weight (kg) (mean, SD) 91.1 (19.5) 88.9 (14.8) 95.0 (25.8) BMI (kg/m 2 ) (mean, SD) 35.9 (7.5) 35.3 (6.7) 36.7 (8.8) SD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nCharacteristics of study participants\n\nSD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nThe results describe the themes relating to factors influencing the adoption of TRE, categorised by the TDF domains and COM-B constructs.",
+      "context_window": "racteristics of study participants Variables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-806",
+      "claim_type": "sample_size",
+      "raw_text": "n =21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 806,
+      "sentence": "Table 1 Characteristics of study participants Variables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (4.8) 37.4 (4.1) 36.6 (5.9) Marital status (n, %) Single 20 (60.6) 15 (71.4) 5 (41.6) Married 7 (21.2) 3 (14.3) 4 (33.3) Living with partner 6 (18.2) 3 (14.3) 3 (25.0) Highest level of education (n, %) Primary school (grade 1-7) 1 (3.0) 1 (4.8) High school (grade 8-11) 21 (63.7) 14 (66.6) 7 (58.3) Completed Grade 12 11 (33.3) 6 (28.6) 5 (41.6) Current employment status (n, %) Employed 9 (27.3) 7 (33.3) 2 (16.6) Type of housing (n, %) Formal housing 4 (12.1) 1 (4.8) 3 (25.0) Government housing 9 (27.3) 6 (28.6) 3 (25.0) Informal housing 20 (60.1) 14 (66.6) 6 (50.0) Housing density (number of people in the house/number of rooms in the house) (median, IQR) 1.3 (0.4-4.0) 1.5 (0.4-4.0) 1.2 (1.0-2.0) Household food security (n, %) Mildly food insecure 10 (30.3) 8 (38.1) 2 (16.6) Moderately food insecure 17 (51.5) 11 (52.4) 6 (50.0) Severely food insecure 6 (18.2) 2 (9.5) 4 (33.3) Length of time since HIV diagnosis (years) (mean, SD) 10.1 (6.3) 10.2 (6.2) 9.8 (6.7) Duration on antiretroviral therapy (years) (mean, SD) 8.1 (5.0) 7.9 (4.7) 8.6 (5.7) Current weight (kg) (mean, SD) 91.1 (19.5) 88.9 (14.8) 95.0 (25.8) BMI (kg/m 2 ) (mean, SD) 35.9 (7.5) 35.3 (6.7) 36.7 (8.8) SD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nCharacteristics of study participants\n\nSD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nThe results describe the themes relating to factors influencing the adoption of TRE, categorised by the TDF domains and COM-B constructs.",
+      "context_window": "participants Variables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (4.8) 37.4 (4.1) 36.6 (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-821",
+      "claim_type": "sample_size",
+      "raw_text": "n =12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 821,
+      "sentence": "Table 1 Characteristics of study participants Variables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (4.8) 37.4 (4.1) 36.6 (5.9) Marital status (n, %) Single 20 (60.6) 15 (71.4) 5 (41.6) Married 7 (21.2) 3 (14.3) 4 (33.3) Living with partner 6 (18.2) 3 (14.3) 3 (25.0) Highest level of education (n, %) Primary school (grade 1-7) 1 (3.0) 1 (4.8) High school (grade 8-11) 21 (63.7) 14 (66.6) 7 (58.3) Completed Grade 12 11 (33.3) 6 (28.6) 5 (41.6) Current employment status (n, %) Employed 9 (27.3) 7 (33.3) 2 (16.6) Type of housing (n, %) Formal housing 4 (12.1) 1 (4.8) 3 (25.0) Government housing 9 (27.3) 6 (28.6) 3 (25.0) Informal housing 20 (60.1) 14 (66.6) 6 (50.0) Housing density (number of people in the house/number of rooms in the house) (median, IQR) 1.3 (0.4-4.0) 1.5 (0.4-4.0) 1.2 (1.0-2.0) Household food security (n, %) Mildly food insecure 10 (30.3) 8 (38.1) 2 (16.6) Moderately food insecure 17 (51.5) 11 (52.4) 6 (50.0) Severely food insecure 6 (18.2) 2 (9.5) 4 (33.3) Length of time since HIV diagnosis (years) (mean, SD) 10.1 (6.3) 10.2 (6.2) 9.8 (6.7) Duration on antiretroviral therapy (years) (mean, SD) 8.1 (5.0) 7.9 (4.7) 8.6 (5.7) Current weight (kg) (mean, SD) 91.1 (19.5) 88.9 (14.8) 95.0 (25.8) BMI (kg/m 2 ) (mean, SD) 35.9 (7.5) 35.3 (6.7) 36.7 (8.8) SD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nCharacteristics of study participants\n\nSD Standard deviation, IQR Interquartile range, BMI Body mass index\n\nThe results describe the themes relating to factors influencing the adoption of TRE, categorised by the TDF domains and COM-B constructs.",
+      "context_window": "riables Total sample ( n =33) Focus groups ( n =21) Pilot ( n =12) Age (mean, SD) 37.1 (4.8) 37.4 (4.1) 36.6 (5.9) Marital st",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-n-9857",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9857,
+      "sentence": "Those who volunteered in the IDI ( n = 12) went on to participate in a 4-week TRE trial modified according to the main findings of the development phase, where elements of feasibility, namely reach, acceptability, applicability and implementation integrity were explored.",
+      "context_window": "\u201d (FG1, participant 6). Those who volunteered in the IDI ( n = 12) went on to participate in a 4-week TRE trial modified acco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-10107",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10107,
+      "sentence": "There was a 100% retention rate for the 4-week pilot trial.",
+      "context_window": "ty and implementation integrity were explored. There was a 100% retention rate for the 4-week pilot trial. Only one man was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-10207",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10207,
+      "sentence": "Only one man was willing and eligible, with a BMI \u2265 25 kg/m 2 , to participate in the pilot trial.",
+      "context_window": "trial. Only one man was willing and eligible, with a BMI \u2265 25 kg/m 2 , to participate in the pilot trial. As previously note",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-16006",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16006,
+      "sentence": "During week 1, nine participants reported being compliant with TRE for the 7 days, while three participants reported compliance for a range of 3 to 6 days.",
+      "context_window": "nine participants reported being compliant with TRE for the 7 days, while three participants reported compliance for a range o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-16079",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16079,
+      "sentence": "During week 1, nine participants reported being compliant with TRE for the 7 days, while three participants reported compliance for a range of 3 to 6 days.",
+      "context_window": "three participants reported compliance for a range of 3 to 6 days. These less compliant participants changed their eating win",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-16247",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 16247,
+      "sentence": "All participants reported eating in their eating windows for the remaining 3 weeks.",
+      "context_window": "s reported eating in their eating windows for the remaining 3 weeks. Reminders of the eating times, such as the calendar or set",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-16702",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 16702,
+      "sentence": "He was indeed incredibly supportive, he wanted me to always continue following the program .\u201d (IDI, participant 28); \u201cEven during the first 3 days when it was difficult for me, when he called and I explained that I had difficulty with time, he said that I can change the time to that with which I am comfortable\u201d (IDI, participant 27); \u201cI t was the alarm and that thing (calendar) that I hanged on the fridge.",
+      "context_window": "he program .\u201d (IDI, participant 28); \u201cEven during the first 3 days when it was difficult for me, when he called and I explaine",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-722",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 722,
+      "sentence": "South African women present with a higher prevalence of overweight and obesity compared to men, both in the general population (68% vs.",
+      "context_window": "nd obesity compared to men, both in the general population (68% vs. 31%, respectively) [ 30 ] and in PLWH (75% vs. 43%, res",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-730",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 730,
+      "sentence": "31%, respectively) [ 30 ] and in PLWH (75% vs.",
+      "context_window": "ty compared to men, both in the general population (68% vs. 31%, respectively) [ 30 ] and in PLWH (75% vs. 43%, respectivel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-769",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 769,
+      "sentence": "31%, respectively) [ 30 ] and in PLWH (75% vs.",
+      "context_window": "population (68% vs. 31%, respectively) [ 30 ] and in PLWH (75% vs. 43%, respectively) [ 8 ]. Furthermore, women are at hig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-777",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 777,
+      "sentence": "43%, respectively) [ 8 ].",
+      "context_window": "ion (68% vs. 31%, respectively) [ 30 ] and in PLWH (75% vs. 43%, respectively) [ 8 ]. Furthermore, women are at higher risk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-u-7639",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7639,
+      "sentence": "After adopting TRE for 4 weeks, women continued to express a clear desire for weight loss and perceived that TRE would be able to assist with achieving this goal.",
+      "context_window": "a resource-limited community in SA. After adopting TRE for 4 weeks, women continued to express a clear desire for weight loss",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-9853",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9853,
+      "sentence": "While this limits applicability to all PLWH, including men, it's noteworthy that 75% of women living with HIV are overweight or obese compared to 43% of men [ 8 ].",
+      "context_window": "licability to all PLWH, including men, it's noteworthy that 75% of women living with HIV are overweight or obese compared t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11465697_development_and_feasibility_testing_of_a_time_restricted_eat-pct-9918",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9918,
+      "sentence": "While this limits applicability to all PLWH, including men, it's noteworthy that 75% of women living with HIV are overweight or obese compared to 43% of men [ 8 ].",
+      "context_window": "f women living with HIV are overweight or obese compared to 43% of men [ 8 ]. Thus, the study sample reflects the populatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

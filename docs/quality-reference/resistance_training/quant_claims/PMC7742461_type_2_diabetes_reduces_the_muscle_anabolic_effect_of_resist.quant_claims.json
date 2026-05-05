@@ -1,0 +1,159 @@
+{
+  "paper_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist",
+  "doi": "10.1093/geroni/igaa057.1706",
+  "extracted_at": "2026-05-05T21:59:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "p_value": 5,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-msd-869",
+      "claim_type": "mean_sd",
+      "raw_text": "0.7095\u00b10.0381",
+      "numeric_values": [
+        0.7095,
+        0.0381
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 869,
+      "sentence": "Before PRET, BMI-adjusted appendicular lean mass was significantly lower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001).",
+      "context_window": "icular lean mass was significantly lower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001). As a result of PRET, appen",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-msd-890",
+      "claim_type": "mean_sd",
+      "raw_text": "0.8151\u00b10.0439",
+      "numeric_values": [
+        0.8151,
+        0.0439
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 890,
+      "sentence": "Before PRET, BMI-adjusted appendicular lean mass was significantly lower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001).",
+      "context_window": "significantly lower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001). As a result of PRET, appendicular lean mass adj",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-p-905",
+      "claim_type": "p_value",
+      "raw_text": "p<0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 905,
+      "sentence": "Before PRET, BMI-adjusted appendicular lean mass was significantly lower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001).",
+      "context_window": "ower in the T2DM group (0.7095\u00b10.0381 versus 0.8151\u00b10.0439, p<0.0001). As a result of PRET, appendicular lean mass adjusted for",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-p-1080",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0009",
+      "numeric_values": [
+        0.0009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1080,
+      "sentence": "As a result of PRET, appendicular lean mass adjusted for BMI and muscle strength increased significantly in both groups, but to a lesser extent for the T2DM group (p=0.0009) .",
+      "context_window": "in both groups, but to a lesser extent for the T2DM group (p=0.0009) . Preliminary results for FSR (n=25) indicate that subject",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-n-1121",
+      "claim_type": "sample_size",
+      "raw_text": "n=25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "Preliminary results for FSR (n=25) indicate that subjects with T2DM had lower basal FSR prior to PRET (p=0.0197) .",
+      "context_window": "or the T2DM group (p=0.0009) . Preliminary results for FSR (n=25) indicate that subjects with T2DM had lower basal FSR prior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-p-1195",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0197",
+      "numeric_values": [
+        0.0197
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Preliminary results for FSR (n=25) indicate that subjects with T2DM had lower basal FSR prior to PRET (p=0.0197) .",
+      "context_window": "that subjects with T2DM had lower basal FSR prior to PRET (p=0.0197) . Basal FSR increased significantly in the control group a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-p-1274",
+      "claim_type": "p_value",
+      "raw_text": "p=0.0196",
+      "numeric_values": [
+        0.0196
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "Basal FSR increased significantly in the control group after PRET (p=0.0196), while it did not change in the T2DM group (p=0.3537).",
+      "context_window": "SR increased significantly in the control group after PRET (p=0.0196), while it did not change in the T2DM group (p=0.3537). The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7742461_type_2_diabetes_reduces_the_muscle_anabolic_effect_of_resist-p-1328",
+      "claim_type": "p_value",
+      "raw_text": "p=0.3537",
+      "numeric_values": [
+        0.3537
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1328,
+      "sentence": "Basal FSR increased significantly in the control group after PRET (p=0.0196), while it did not change in the T2DM group (p=0.3537).",
+      "context_window": "PRET (p=0.0196), while it did not change in the T2DM group (p=0.3537). These results suggest that in older adults the positive e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

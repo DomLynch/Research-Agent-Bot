@@ -1,0 +1,827 @@
+{
+  "paper_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi",
+  "doi": "10.1186/s12877-017-0634-x",
+  "extracted_at": "2026-05-05T22:04:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 3,
+    "unit_value": 6,
+    "percentage": 28,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-msd-637",
+      "claim_type": "mean_sd",
+      "raw_text": "69 \u00b1 3",
+      "numeric_values": [
+        69.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 637,
+      "sentence": "Twenty-two healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controlled cross-over study.",
+      "context_window": "rs. Twenty-two healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) wer",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-msd-652",
+      "claim_type": "mean_sd",
+      "raw_text": "24.8 \u00b1 2.2",
+      "numeric_values": [
+        24.8,
+        2.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 652,
+      "sentence": "Twenty-two healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controlled cross-over study.",
+      "context_window": "healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-msd-675",
+      "claim_type": "mean_sd",
+      "raw_text": "32 \u00b1 6",
+      "numeric_values": [
+        32.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 675,
+      "sentence": "Twenty-two healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controlled cross-over study.",
+      "context_window": "active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controll",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "6 mL",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 680,
+      "sentence": "Twenty-two healthy and physically active seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controlled cross-over study.",
+      "context_window": "ve seniors (age: 69 \u00b1 3 y, BMI: 24.8 \u00b1 2.2, VO 2peak : 32 \u00b1 6 mL/kg/bodyweight) were enrolled in this randomized controlled",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-998",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 998,
+      "sentence": "A repeated between-day comparison [i.e., day 1 (habituation) vs. day 2 & day 2 vs. day 3] of executive function testing (Eriksen-Flanker-Test, Stroop-Color-Test, Digit-Span, Five-Point-Test) before and after aerobic cycling exercise at 70% of the heart rate reserve [0.7 \u00d7 (HR max - HR rest )] was conducted.",
+      "context_window": "ve-Point-Test) before and after aerobic cycling exercise at 70% of the heart rate reserve [0.7 \u00d7 (HR max - HR rest )] was c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-1331",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "Large between-day differences between day 1 and 2 were found for reaction times (Flanker- and Stroop Color testing) and completed figures (Five-Point test) at pre and post testing (0.002 < p < 0.05, 0.16 < \u0273 p 2 < 0.38).",
+      "context_window": "figures (Five-Point test) at pre and post testing (0.002 < p < 0.05, 0.16 < \u0273 p 2 < 0.38). These differences notably declined w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1485",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1485,
+      "sentence": "Absolute between days variability (CoV) dropped from 10 to 5% when comparing day 2 vs. day 3 instead of day 1 vs. day 2.",
+      "context_window": "Absolute between days variability (CoV) dropped from 10 to 5% when comparing day 2 vs. day 3 instead of day 1 vs. day 2.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-80",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 80,
+      "sentence": "One-third of the global and nearly half of the Western population will be aged >60 years at the end of the twenty-first century [ 1 ].",
+      "context_window": "bal and nearly half of the Western population will be aged >60 years at the end of the twenty-first century [ 1 ]. The process o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-507",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 507,
+      "sentence": "Prior stroke, heart attack, heart failure and surgery, bypass, cardiac dysrhythmia, acute flu or cold, spinal-, joint and headpain, diabetes mellitus, untreated hypertension (>160/>100), acute and chronic inflammatory condition, severe arthrosis, recurrent vertigo, knee- or hipendoprosthesis, trauma within the last 6 month).",
+      "context_window": "vertigo, knee- or hipendoprosthesis, trauma within the last 6 month). None of the included participants reported any of those c",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1351,
+      "sentence": "The sample size of 20 Subjects was based on an at least moderate correlation between pre and post testing during executive function testing and deliver a strong power (1-beta error) of 90% and a very high alpha level of 0.01.",
+      "context_window": "nction testing and deliver a strong power (1-beta error) of 90% and a very high alpha level of 0.01. We recruited more part",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-3151",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3151,
+      "sentence": "Based on health-related exercise recommendations of the American College of Sports Medicine [ 25 ], 30 min of aerobic cycling exercise at 70% of the heart rate reserve (HRR) using the \u201cKarvonen-formula\u201d (0.7 \u00d7 (HR max - HR rest )) was applied in-between cognitive testing [ 26 , 27 ].",
+      "context_window": "orts Medicine [ 25 ], 30 min of aerobic cycling exercise at 70% of the heart rate reserve (HRR) using the \u201cKarvonen-formula",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-3521",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3521,
+      "sentence": "Briefly, the protocol started at a velocity of 6 km/h - 1 and an inclination of 0.1% for a time period of 1 min.",
+      "context_window": "l started at a velocity of 6 km/h - 1 and an inclination of 0.1% for a time period of 1 min. Intensity was increased by 1 km",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-3868",
+      "claim_type": "unit_value",
+      "raw_text": "8 mmol",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3868,
+      "sentence": "Maximal exertion levels have been verified if at least three out of the following 5 criteria were reached: 1) age-predicted maximal heart rates [ 28 ], 2) breathing frequency (>35/min) 3) capillary lactate concentration (>8 mmol/L), 4) ventilator equivalent for oxygen uptake (>35) and 5) respiratory exchange ratio (RER >1.1) [ 29 ].",
+      "context_window": "ng frequency (>35/min) 3) capillary lactate concentration (>8 mmol/L), 4) ventilator equivalent for oxygen uptake (>35) and 5)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-9077",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9077,
+      "sentence": "Data are given as means with standard deviations (SD) and 90% confidence intervals (90% CI), respectively.",
+      "context_window": ". Data are given as means with standard deviations (SD) and 90% confidence intervals (90% CI), respectively. Repeated meas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-9103",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9103,
+      "sentence": "Data are given as means with standard deviations (SD) and 90% confidence intervals (90% CI), respectively.",
+      "context_window": "with standard deviations (SD) and 90% confidence intervals (90% CI), respectively. Repeated measures analyses of variance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-9321",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9321,
+      "sentence": "An \u03b1-level of p < 0.05 was accepted as statistically significant.",
+      "context_window": "ning and at the end of the testing procedure. An \u03b1-level of p < 0.05 was accepted as statistically significant. Effect sizes for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-9945",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9945,
+      "sentence": "We calculated the standard error of measurements (SEM, computed as the SD of the difference divided by the square root of 2) as well as the log-transformed coefficient of variation (CoV) together with 90% confidence limits as measures of absolute reliability [ 18 , 19 ].",
+      "context_window": "og-transformed coefficient of variation (CoV) together with 90% confidence limits as measures of absolute reliability [ 18",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-126",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 126,
+      "sentence": "At pre testing, meaningful differences were observed between 1st and 2nd day of testing for the Eriksen-Flanker- (compatible: p = 0.05, \u0273 p 2 = 0.12) and Five-Point-test (correctly completed figures: p = 0.05, \u0273 p 2 = 0.20).",
+      "context_window": "nd 2nd day of testing for the Eriksen-Flanker- (compatible: p = 0.05, \u0273 p 2 = 0.12) and Five-Point-test (correctly completed fig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-200",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 200,
+      "sentence": "At pre testing, meaningful differences were observed between 1st and 2nd day of testing for the Eriksen-Flanker- (compatible: p = 0.05, \u0273 p 2 = 0.12) and Five-Point-test (correctly completed figures: p = 0.05, \u0273 p 2 = 0.20).",
+      "context_window": "2 = 0.12) and Five-Point-test (correctly completed figures: p = 0.05, \u0273 p 2 = 0.20). The Stroop Color-Word test revealed relevan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-396",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 396,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "e reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-486",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 486,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "(Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-558",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 558,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "nd for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-571",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 571,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "on times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , colu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-600",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 600,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9). Digit-span testing at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-613",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 613,
+      "sentence": "The Stroop Color-Word test revealed relevant differences between 1st and 2nd day for compatible and incompatible reaction time at both pre- and post-testing (pre: 0.002 < p < 0.04, 0.16 < \u0273 p 2 < 0.38) (Table 2 , column 4 and 5) Coefficients of variation below 10% were found for reaction times and accuracy on the Eriksen-Flanker- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9).",
+      "context_window": "er- (0.5% < CoV < 5.5%) and Stroop-Color-test (0.8% < CoV < 8.7%), (Table 2 , column 9). Digit-span testing at pre and post",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-724",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 724,
+      "sentence": "Digit-span testing at pre and post revealed very large CoV ranging between 15 and 43%, particularly for cumulative errors both backward and forward.",
+      "context_window": "pre and post revealed very large CoV ranging between 15 and 43%, particularly for cumulative errors both backward and forwa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-942",
+      "claim_type": "percentage",
+      "raw_text": "0.65%",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 942,
+      "sentence": "ICC values were mainly good to excellent for the Eriksen-Flanker- (0.66 < ICC < 0.84), Five-Point-test (0.71 < ICC < 0.75) and Stroop Color-Word test (0.65% < ICC < 0.87, except for: accuracy, compatible pre: ICC: 0.28 and incompatible post: ICC: 0.25).",
+      "context_window": "-Point-test (0.71 < ICC < 0.75) and Stroop Color-Word test (0.65% < ICC < 0.87, except for: accuracy, compatible pre: ICC: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-1344",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1344,
+      "sentence": "Absolute and relative reliability data of various outcomes obtained from different executive function tests before and after acute aerobic cycling exercise for day 1 and 2 comparison\n\nNotable differences between 2nd and 3rd day were found for the Eriksen-Flanker- (pre, reaction time, incongruent: p = 0.02, \u0273 p 2 = 0.19), Five-point test (correctly completed figures, post: p = 0.03, \u0273 p 2 = 0.20) and Stroop Color-Word test (pre, correct response, compatible: p = 0.03, \u0273 p 2 = 0.22) only.",
+      "context_window": "for the Eriksen-Flanker- (pre, reaction time, incongruent: p = 0.02, \u0273 p 2 = 0.19), Five-point test (correctly completed figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-1421",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1421,
+      "sentence": "Absolute and relative reliability data of various outcomes obtained from different executive function tests before and after acute aerobic cycling exercise for day 1 and 2 comparison\n\nNotable differences between 2nd and 3rd day were found for the Eriksen-Flanker- (pre, reaction time, incongruent: p = 0.02, \u0273 p 2 = 0.19), Five-point test (correctly completed figures, post: p = 0.03, \u0273 p 2 = 0.20) and Stroop Color-Word test (pre, correct response, compatible: p = 0.03, \u0273 p 2 = 0.22) only.",
+      "context_window": "0.19), Five-point test (correctly completed figures, post: p = 0.03, \u0273 p 2 = 0.20) and Stroop Color-Word test (pre, correct res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-p-1508",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1508,
+      "sentence": "Absolute and relative reliability data of various outcomes obtained from different executive function tests before and after acute aerobic cycling exercise for day 1 and 2 comparison\n\nNotable differences between 2nd and 3rd day were found for the Eriksen-Flanker- (pre, reaction time, incongruent: p = 0.02, \u0273 p 2 = 0.19), Five-point test (correctly completed figures, post: p = 0.03, \u0273 p 2 = 0.20) and Stroop Color-Word test (pre, correct response, compatible: p = 0.03, \u0273 p 2 = 0.22) only.",
+      "context_window": "Stroop Color-Word test (pre, correct response, compatible: p = 0.03, \u0273 p 2 = 0.22) only. Coefficients of variation (CoV) for re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1645",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1645,
+      "sentence": "Coefficients of variation (CoV) for reaction times and completed figures were observed to be mainly around 5% for the Eriksen-Flanker-, Stroop Color-Word test and Five-Point test (Table 2 , column 9).",
+      "context_window": "mes and completed figures were observed to be mainly around 5% for the Eriksen-Flanker-, Stroop Color-Word test and Five-P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1822",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1822,
+      "sentence": "Digit-span testing at pre and post revealed very large COVs ranging between 11 and 39%.",
+      "context_window": "re and post revealed very large COVs ranging between 11 and 39%. ICC values were mainly fair to excellent for all tests (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-2791",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2791,
+      "sentence": "Absolute and relative reliability data of various outcomes obtained from different executive function tests before and after acute aerobic cycling exercise for day 2 and 3 comparison\n\nAll values are given with 90% confidence limits.",
+      "context_window": "rcise for day 2 and 3 comparison All values are given with 90% confidence limits. ICC = intraclass correlation coefficient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-288",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 288,
+      "sentence": "The present study assessed absolute (e.g., CoV) and relative (e.g., ICC) between-day variability of executive function (i.e., Eriksen-Flanker-test, Stroop-Color-test, Digit-Span and Five-Point-test) before and after a single bout of moderately intense aerobic cycling exercise (30 min at 70% of the heart rate reserve).",
+      "context_window": "t of moderately intense aerobic cycling exercise (30 min at 70% of the heart rate reserve). The study was applied to health",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-835",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 835,
+      "sentence": "However, our testing and training session were interspersed by 7 days.",
+      "context_window": "ever, our testing and training session were interspersed by 7 days. Thus, also longer during between-trial breaks of up to 7 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-u-898",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 898,
+      "sentence": "Thus, also longer during between-trial breaks of up to 7 days should account for habituation effects.",
+      "context_window": "ays. Thus, also longer during between-trial breaks of up to 7 days should account for habituation effects. As these habituatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1921",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1921,
+      "sentence": "Despite comparatively high accuracy (>90%) on the Flanker Stroop Color-Word test, the percentage of correct responses showed remarkably lower absolute and relative reliability values than time-dependent measures in both testing scenarios.",
+      "context_window": "dividual differences. Despite comparatively high accuracy (>90%) on the Flanker Stroop Color-Word test, the percentage of c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-3328",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3328,
+      "sentence": "Concerning working memory, the Digit-Span testing revealed poor to fair indices for both relative (ICC) and absolute (ICC) reliability, with CoV around 20% for completed stages and 40% for cumulative errors.",
+      "context_window": "ative (ICC) and absolute (ICC) reliability, with CoV around 20% for completed stages and 40% for cumulative errors. These f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-3357",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3357,
+      "sentence": "Concerning working memory, the Digit-Span testing revealed poor to fair indices for both relative (ICC) and absolute (ICC) reliability, with CoV around 20% for completed stages and 40% for cumulative errors.",
+      "context_window": ") reliability, with CoV around 20% for completed stages and 40% for cumulative errors. These findings hold true for pre and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-5964",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5964,
+      "sentence": "Performance tests in athletes mostly require CoV levels below 5% [ 41 ] and recreational settings mostly require CoV values around or below the 10% level [ 18 ].",
+      "context_window": "rformance tests in athletes mostly require CoV levels below 5% [ 41 ] and recreational settings mostly require CoV values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-6046",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6046,
+      "sentence": "Performance tests in athletes mostly require CoV levels below 5% [ 41 ] and recreational settings mostly require CoV values around or below the 10% level [ 18 ].",
+      "context_window": "onal settings mostly require CoV values around or below the 10% level [ 18 ]. Higher CoV values increasingly impede a relia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-6538",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6538,
+      "sentence": "10% levels of variability values are given for time-dependent variables in our group of healthy seniors.",
+      "context_window": "ity of the measuring and biological \u201csystem\u201d, respectively. 10% levels of variability values are given for time-dependent v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-655",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 655,
+      "sentence": "Also absolute (CoV dropped from around 10% to 5% for reaction time) and relative reliability indices improved (ICC values from poor/fair to good/excellent) when comparing between-day reliability for day 2 vs.",
+      "context_window": "are poorly reliable. Also absolute (CoV dropped from around 10% to 5% for reaction time) and relative reliability indices i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-662",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 662,
+      "sentence": "Also absolute (CoV dropped from around 10% to 5% for reaction time) and relative reliability indices improved (ICC values from poor/fair to good/excellent) when comparing between-day reliability for day 2 vs.",
+      "context_window": "rly reliable. Also absolute (CoV dropped from around 10% to 5% for reaction time) and relative reliability indices improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi-pct-1247",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 1247,
+      "sentence": "Overall, Digit-span testing revealed absolute variability between 20 and 40%.",
+      "context_window": "t-span testing revealed absolute variability between 20 and 40%. This testing instrument might impede sufficient detection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,950 @@
+{
+  "paper_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio",
+  "doi": "10.1177/23337214231158476",
+  "extracted_at": "2026-05-05T22:04:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 17,
+    "p_value": 15,
+    "percentage": 18,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-160",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 160,
+      "sentence": "A cross-sectional survey was done to investigate the pathways the physical activity acts in improving physical fitness and functional outcomes of older adults (60 years and above) using 880 community-dwelling older adults in Sri Lanka.",
+      "context_window": "g physical fitness and functional outcomes of older adults (60 years and above) using 880 community-dwelling older adults in Sri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-591",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 591,
+      "sentence": "Strength enhances balance (\u03b2 = .52, p < .01) and reduces the time required to complete physical functions (\u03b2 = -.65, p < .01).",
+      "context_window": "ating a good model fit. Strength enhances balance (\u03b2 = .52, p < .01) and reduces the time required to complete physical functio",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-672",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 672,
+      "sentence": "Strength enhances balance (\u03b2 = .52, p < .01) and reduces the time required to complete physical functions (\u03b2 = -.65, p < .01).",
+      "context_window": "the time required to complete physical functions (\u03b2 = -.65, p < .01). Since strength declines with advancing age, muscle-streng",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-83",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 83,
+      "sentence": "Population aging is a worldwide phenomenon; the global share of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 2050 ( United Nations, 2022 ).",
+      "context_window": "orldwide phenomenon; the global share of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-116",
+      "claim_type": "percentage",
+      "raw_text": "9.2%",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 116,
+      "sentence": "Population aging is a worldwide phenomenon; the global share of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 2050 ( United Nations, 2022 ).",
+      "context_window": "hare of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reachin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-132",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 132,
+      "sentence": "Population aging is a worldwide phenomenon; the global share of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 2050 ( United Nations, 2022 ).",
+      "context_window": "ults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 205",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-185",
+      "claim_type": "percentage",
+      "raw_text": "21.1%",
+      "numeric_values": [
+        21.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 185,
+      "sentence": "Population aging is a worldwide phenomenon; the global share of older adults (aged 60 years or over) increased from 9.2% in 1990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 2050 ( United Nations, 2022 ).",
+      "context_window": "990 to 11.7% in 2013 and will continue to grow, reaching to 21.1% by 2050 ( United Nations, 2022 ). Physical activity is cons",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-979",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 979,
+      "sentence": "It has been shown that physical inactivity reduces the muscle mass and joint motion by about 10% to 40% in older adults ( Tieland et al., 2018 ).",
+      "context_window": "nactivity reduces the muscle mass and joint motion by about 10% to 40% in older adults ( Tieland et al., 2018 ). Losses in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-986",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 986,
+      "sentence": "It has been shown that physical inactivity reduces the muscle mass and joint motion by about 10% to 40% in older adults ( Tieland et al., 2018 ).",
+      "context_window": "ty reduces the muscle mass and joint motion by about 10% to 40% in older adults ( Tieland et al., 2018 ). Losses in muscula",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-1092",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1092,
+      "sentence": "Losses in muscular strength occur at an approximate rate of 12% to 14% per decade after the age of 50 years, and balance disorders increase with aging resulting in accidental falls among older adults ( Volaklis et al., 2015 ).",
+      "context_window": "Losses in muscular strength occur at an approximate rate of 12% to 14% per decade after the age of 50 years, and balance di",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-1099",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1099,
+      "sentence": "Losses in muscular strength occur at an approximate rate of 12% to 14% per decade after the age of 50 years, and balance disorders increase with aging resulting in accidental falls among older adults ( Volaklis et al., 2015 ).",
+      "context_window": "in muscular strength occur at an approximate rate of 12% to 14% per decade after the age of 50 years, and balance disorders",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1131",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1131,
+      "sentence": "Losses in muscular strength occur at an approximate rate of 12% to 14% per decade after the age of 50 years, and balance disorders increase with aging resulting in accidental falls among older adults ( Volaklis et al., 2015 ).",
+      "context_window": "approximate rate of 12% to 14% per decade after the age of 50 years, and balance disorders increase with aging resulting in acc",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-1316",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1316,
+      "sentence": "It was found that there is a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organization, 2007 ).",
+      "context_window": "). It was found that there is a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organizatio",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-1323",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1323,
+      "sentence": "It was found that there is a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organization, 2007 ).",
+      "context_window": "as found that there is a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organization, 2007",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1344",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1344,
+      "sentence": "It was found that there is a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organization, 2007 ).",
+      "context_window": "s a gradual increase of fall by 35% to 40% after the age of 60 years ( World Health Organization, 2007 ). Physical activity enha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-485",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 485,
+      "sentence": "A sample of 880 older adults (aged 60 years and older) was surveyed.",
+      "context_window": "January to March, 2018. A sample of 880 older adults (aged 60 years and older) was surveyed. Multistage cluster sampling method",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1932",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1932,
+      "sentence": "Height: Standing height without shoes was measured to the nearest 0.5 cm.",
+      "context_window": ": Standing height without shoes was measured to the nearest 0.5 cm. Weight: Body weight was measured to the nearest 0.1 kg by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1989",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1989,
+      "sentence": "Weight: Body weight was measured to the nearest 0.1 kg by a beam balance with light clothes, without shoes.",
+      "context_window": "st 0.5 cm. Weight: Body weight was measured to the nearest 0.1 kg by a beam balance with light clothes, without shoes. Body",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-2210",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2210,
+      "sentence": "Waist circumference: Waist circumference was taken by a non-elastic tape to the nearest 0.1 mm.",
+      "context_window": "ircumference was taken by a non-elastic tape to the nearest 0.1 mm. Fat percentage: Fat percentage was tested based on the sk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-2343",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2343,
+      "sentence": "Fat percentage: Fat percentage was tested based on the skinfold thickness using the Harpenden skinfold caliper (precision 0:2 mm, Harpenden skinfold caliper, John Bull British Indictor Ltd, UK).",
+      "context_window": "thickness using the Harpenden skinfold caliper (precision 0:2 mm, Harpenden skinfold caliper, John Bull British Indictor Ltd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-2560",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2560,
+      "sentence": "It was measured to the nearest 0.1 mm.",
+      "context_window": "g the left side of the body. It was measured to the nearest 0.1 mm. Two measurements at each site were taken and the average w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-2939",
+      "claim_type": "unit_value",
+      "raw_text": "3 kg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2939,
+      "sentence": "If the difference was more than 3 kg, the test was repeated once, and the average was taken.",
+      "context_window": "en using the dominant hand. If the difference was more than 3 kg, the test was repeated once, and the average was taken. Le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-5810",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5810,
+      "sentence": "The 95% confidence interval (CI) was calculated as the mean difference \u00b1 1.96 x standard error.",
+      "context_window": "and .81 to 1.0 = near perfect ( Landis & Koch, 1977 ). The 95% confidence interval (CI) was calculated as the mean differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-315",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 315,
+      "sentence": "The majority were female (75%) and only 0.6% of the participants were 90 years or above.",
+      "context_window": "status are presented in Table 1 . The majority were female (75%) and only 0.6% of the participants were 90 years or above.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-329",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 329,
+      "sentence": "The majority were female (75%) and only 0.6% of the participants were 90 years or above.",
+      "context_window": "sented in Table 1 . The majority were female (75%) and only 0.6% of the participants were 90 years or above. Means and stand",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-359",
+      "claim_type": "unit_value",
+      "raw_text": "90 years",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 359,
+      "sentence": "The majority were female (75%) and only 0.6% of the participants were 90 years or above.",
+      "context_window": "ty were female (75%) and only 0.6% of the participants were 90 years or above. Means and standard deviation of the 18 observed v",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-n-570",
+      "claim_type": "sample_size",
+      "raw_text": "n = 880",
+      "numeric_values": [
+        880.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 570,
+      "sentence": "Socio-Demographic Characteristics of Participants ( n = 880).",
+      "context_window": "e 2 ). Socio-Demographic Characteristics of Participants ( n = 880). Mean (Standard Deviation) Values of the Measured Paramet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-n-643",
+      "claim_type": "sample_size",
+      "raw_text": "n = 880",
+      "numeric_values": [
+        880.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 643,
+      "sentence": "Mean (Standard Deviation) Values of the Measured Parameters ( n = 880).",
+      "context_window": "an (Standard Deviation) Values of the Measured Parameters ( n = 880). Note . Physical Activity. BMI = Body Mass Index; ADL = A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-786",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 786,
+      "sentence": "BMI = Body Mass Index; ADL = Activities of Daily Living; IADL = Instrumental Activities of Daily Living.\n\np < .05 considered as significant.",
+      "context_window": "ly Living; IADL = Instrumental Activities of Daily Living. p < .05 considered as significant. The final model is shown in Fig",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-1433",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1433,
+      "sentence": "All coefficients were significant ( p < .05).",
+      "context_window": "egression coefficients. All coefficients were significant ( p < .05). PA = Physical Activity; METVW = Vigorous work MET; METMW",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3208",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3208,
+      "sentence": "The final model significantly predicted the observed variables ( p < .05).",
+      "context_window": "inal model significantly predicted the observed variables ( p < .05). The variances of balance, strength, anthropometric measur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3336",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3336,
+      "sentence": "The variances of balance, strength, anthropometric measures, functional status and error terms were all significant ( p < .05).",
+      "context_window": "s, functional status and error terms were all significant ( p < .05). Estimated standardized regression weight to the tested di",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3570",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3570,
+      "sentence": "The loadings indicate all the effects to the expected directions except for the impact of anthropometric measures on balance (\u03b2 = .18, p < .001).",
+      "context_window": "the impact of anthropometric measures on balance (\u03b2 = .18, p < .001). Effect of the anthropometric measures on balance is weak",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3648",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3648,
+      "sentence": "Effect of the anthropometric measures on balance is weak (\u03b2 = .18, p < .05).",
+      "context_window": "of the anthropometric measures on balance is weak (\u03b2 = .18, p < .05). SEM used in this study illustrated that the effect on phy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3752",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3752,
+      "sentence": "SEM used in this study illustrated that the effect on physical activity on strength (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on strength for controlling balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expected directions.",
+      "context_window": "that the effect on physical activity on strength (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3797",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3797,
+      "sentence": "SEM used in this study illustrated that the effect on physical activity on strength (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on strength for controlling balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expected directions.",
+      "context_window": "ngth (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on strength for controlling balance (\u03b2 = .52, p",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3863",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3863,
+      "sentence": "SEM used in this study illustrated that the effect on physical activity on strength (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on strength for controlling balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expected directions.",
+      "context_window": "5), influence on strength for controlling balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expec",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3905",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3905,
+      "sentence": "SEM used in this study illustrated that the effect on physical activity on strength (\u03b2 = .61, p < .05), anthropometric measures (\u03b2 = -.41, p < .05), influence on strength for controlling balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expected directions.",
+      "context_window": "balance (\u03b2 = .52, p < .05) and physical function (\u03b2 = -.35, p < .05) are on the expected directions. Age was directly influence",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-3998",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3998,
+      "sentence": "Age was directly influenced for strength (\u03b2 = -.36, p < .05) and anthropometric measures (\u03b2 = -.65, p < .05) to the negative direction as predicted.",
+      "context_window": "ctions. Age was directly influenced for strength (\u03b2 = -.36, p < .05) and anthropometric measures (\u03b2 = -.65, p < .05) to the neg",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-4046",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4046,
+      "sentence": "Age was directly influenced for strength (\u03b2 = -.36, p < .05) and anthropometric measures (\u03b2 = -.65, p < .05) to the negative direction as predicted.",
+      "context_window": "(\u03b2 = -.36, p < .05) and anthropometric measures (\u03b2 = -.65, p < .05) to the negative direction as predicted. Estimated Standar",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-p-4169",
+      "claim_type": "p_value",
+      "raw_text": "p \u2265 .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4169,
+      "sentence": "Note. p \u2265 .01 considered as significant.",
+      "context_window": "ndardized Regression Weight for the Validated Model. Note. p \u2265 .01 considered as significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-360",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 360,
+      "sentence": "The majority of the participants (75%) were women.",
+      "context_window": "ere used in the analysis. The majority of the participants (75%) were women. About 87% of the participants had secondary or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-383",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 383,
+      "sentence": "About 87% of the participants had secondary or higher education; consistent with the higher literacy rate (84%) of people in the country ( World Bank, 2017 ).",
+      "context_window": "s. The majority of the participants (75%) were women. About 87% of the participants had secondary or higher education; cons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-484",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 484,
+      "sentence": "About 87% of the participants had secondary or higher education; consistent with the higher literacy rate (84%) of people in the country ( World Bank, 2017 ).",
+      "context_window": "higher education; consistent with the higher literacy rate (84%) of people in the country ( World Bank, 2017 ). This high l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-4175",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4175,
+      "sentence": "According to Milanovi\u0107 et al. (2013) , after the age of 75 years, muscle strength decreases an average of 3.4% annually and this process can be slowed down through physical activity.",
+      "context_window": "h. According to Milanovi\u0107 et al. (2013) , after the age of 75 years, muscle strength decreases an average of 3.4% annually and",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-4225",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4225,
+      "sentence": "According to Milanovi\u0107 et al. (2013) , after the age of 75 years, muscle strength decreases an average of 3.4% annually and this process can be slowed down through physical activity.",
+      "context_window": "he age of 75 years, muscle strength decreases an average of 3.4% annually and this process can be slowed down through physic",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-6618",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6618,
+      "sentence": "Dose-response effect of 3-days balance training activity tested for the group of older adults had shown 62% and 48% improvement of one leg stand in left and right ( Bootsman et al., 2018 ).",
+      "context_window": "ing activity tested for the group of older adults had shown 62% and 48% improvement of one leg stand in left and right ( Bo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-pct-6626",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6626,
+      "sentence": "Dose-response effect of 3-days balance training activity tested for the group of older adults had shown 62% and 48% improvement of one leg stand in left and right ( Bootsman et al., 2018 ).",
+      "context_window": "vity tested for the group of older adults had shown 62% and 48% improvement of one leg stand in left and right ( Bootsman e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-8910",
+      "claim_type": "unit_value",
+      "raw_text": "80.4 years",
+      "numeric_values": [
+        80.4
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8910,
+      "sentence": "Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this target population.",
+      "context_window": "during the day time. Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-8951",
+      "claim_type": "unit_value",
+      "raw_text": "73.8 years",
+      "numeric_values": [
+        73.8
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8951,
+      "sentence": "Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this target population.",
+      "context_window": "pectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1073",
+      "claim_type": "unit_value",
+      "raw_text": "80.4 years",
+      "numeric_values": [
+        80.4
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 1073,
+      "sentence": "Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this target population.",
+      "context_window": "during the day time. Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "73.8 years",
+      "numeric_values": [
+        73.8
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 1114,
+      "sentence": "Further, the life expectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this target population.",
+      "context_window": "pectancy of women (80.4 years) was higher than that of men (73.8 years) in the country and therefore women outnumber men in this t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

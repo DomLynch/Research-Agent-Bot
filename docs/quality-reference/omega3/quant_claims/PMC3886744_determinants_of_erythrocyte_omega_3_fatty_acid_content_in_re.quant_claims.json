@@ -1,0 +1,3202 @@
+{
+  "paper_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re",
+  "doi": "10.1161/JAHA.113.000513",
+  "extracted_at": "2026-05-05T21:47:03+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 46,
+    "p_value": 25,
+    "percentage": 91,
+    "sample_size": 14,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-667",
+      "claim_type": "unit_value",
+      "raw_text": "1800 mg",
+      "numeric_values": [
+        1800.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 667,
+      "sentence": "One of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA was given daily as placebo or fish oil supplements for \u22485 months.",
+      "context_window": "15 healthy men and women. One of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA was given daily as placebo or fish oil suppleme",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-743",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "One of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA was given daily as placebo or fish oil supplements for \u22485 months.",
+      "context_window": "DHA was given daily as placebo or fish oil supplements for \u22485 months. The O3I was measured at baseline and at the end of the stu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-964",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 964,
+      "sentence": "The O3I increased in a dose\u2010dependent manner ( P <0.0001), with the dose of EPA+DHA alone accounting for 68% (quadratic, P <0.0001) of the variability in the O3I response.",
+      "context_window": "at baseline. The O3I increased in a dose\u2010dependent manner ( P <0.0001), with the dose of EPA+DHA alone accounting for 68% (quadra",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1022",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1022,
+      "sentence": "The O3I increased in a dose\u2010dependent manner ( P <0.0001), with the dose of EPA+DHA alone accounting for 68% (quadratic, P <0.0001) of the variability in the O3I response.",
+      "context_window": "( P <0.0001), with the dose of EPA+DHA alone accounting for 68% (quadratic, P <0.0001) of the variability in the O3I respon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-1038",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "The O3I increased in a dose\u2010dependent manner ( P <0.0001), with the dose of EPA+DHA alone accounting for 68% (quadratic, P <0.0001) of the variability in the O3I response.",
+      "context_window": "th the dose of EPA+DHA alone accounting for 68% (quadratic, P <0.0001) of the variability in the O3I response. Dose adjusted per",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1145",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1145,
+      "sentence": "Dose adjusted per unit body weight (g/kg) accounted for 70% (linear, P <0.0001).",
+      "context_window": "se. Dose adjusted per unit body weight (g/kg) accounted for 70% (linear, P <0.0001). Additional factors that improved predi",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-1158",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "Dose adjusted per unit body weight (g/kg) accounted for 70% (linear, P <0.0001).",
+      "context_window": "sted per unit body weight (g/kg) accounted for 70% (linear, P <0.0001). Additional factors that improved prediction of treatment",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1318",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1318,
+      "sentence": "Collectively, these explained 78% of the response variability ( P <0.0001).",
+      "context_window": ", sex, and physical activity. Collectively, these explained 78% of the response variability ( P <0.0001). Our findings val",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-1352",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1352,
+      "sentence": "Collectively, these explained 78% of the response variability ( P <0.0001).",
+      "context_window": "ectively, these explained 78% of the response variability ( P <0.0001). Our findings validate the O3I as a biomarker of EPA+DHA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-704",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 704,
+      "sentence": "8 - 9 An O3I of \u22658% has been recommended as a cardioprotective level 7 on the basis of associations with reduced risk of primary cardiac arrest, 10 sudden cardiac death, 11 coronary atherosclerosis, 12 and acute coronary syndrome.",
+      "context_window": "orrelated with myocardial EPA+DHA content. 8 - 9 An O3I of \u22658% has been recommended as a cardioprotective level 7 on the b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1008",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1008,
+      "sentence": "13 - 14 In studies of Americans not taking n\u20103 FA supplements, mean O3I values range from 4% to 5%.",
+      "context_window": "s not taking n\u20103 FA supplements, mean O3I values range from 4% to 5%. 15 - 18 In 2 larger observational studies of US adul",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1014",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1014,
+      "sentence": "13 - 14 In studies of Americans not taking n\u20103 FA supplements, mean O3I values range from 4% to 5%.",
+      "context_window": "taking n\u20103 FA supplements, mean O3I values range from 4% to 5%. 15 - 18 In 2 larger observational studies of US adults tha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1155",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1155,
+      "sentence": "15 - 18 In 2 larger observational studies of US adults that did not exclude supplement users, O3I values were somewhat higher, averaging 5.3% 19 and 5.6%.",
+      "context_window": "upplement users, O3I values were somewhat higher, averaging 5.3% 19 and 5.6%. 20 Because of limitations in the current evid",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1167",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1167,
+      "sentence": "15 - 18 In 2 larger observational studies of US adults that did not exclude supplement users, O3I values were somewhat higher, averaging 5.3% 19 and 5.6%.",
+      "context_window": "ers, O3I values were somewhat higher, averaging 5.3% 19 and 5.6%. 20 Because of limitations in the current evidence, dietar",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-36",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 36,
+      "sentence": "Healthy, young men and women (20 to 45 years of age) who reported low or no habitual consumption of oily fish (eg, salmon, tuna, and herring; <4 servings per month) and not taking n\u20103 FA supplements or consuming n\u20103 FA supplemented foods were recruited.",
+      "context_window": "Healthy, young men and women (20 to 45 years of age) who reported low or no habitual consumption of oily",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-500",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 500,
+      "sentence": "Exclusion criteria included serious medical conditions, history of diabetes, or smoking; chronic anti\u2010inflammatory medications; consumption of n\u20103 FA supplements and n\u20103 FA\u2010supplemented foods in the past 3 months; pregnant, nursing, or planning a pregnancy; planning to change dietary habits; and body mass index (BMI) <20 or >30 kg/m 2 .",
+      "context_window": "\u20103 FA supplements and n\u20103 FA\u2010supplemented foods in the past 3 months; pregnant, nursing, or planning a pregnancy; planning to ch",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-623",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 623,
+      "sentence": "Exclusion criteria included serious medical conditions, history of diabetes, or smoking; chronic anti\u2010inflammatory medications; consumption of n\u20103 FA supplements and n\u20103 FA\u2010supplemented foods in the past 3 months; pregnant, nursing, or planning a pregnancy; planning to change dietary habits; and body mass index (BMI) <20 or >30 kg/m 2 .",
+      "context_window": "to change dietary habits; and body mass index (BMI) <20 or >30 kg/m 2 . Potential subjects were screened initially via telep",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-1627",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1627,
+      "sentence": "The medical history included questions regarding the participants' self\u2010reported exercise and physical activity habits, which were used to assign participants to 1 of 5 physical activity levels (none, little to no exercise; light, 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week; very heavy, twice per day).",
+      "context_window": "l activity levels (none, little to no exercise; light, 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week;",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-1655",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1655,
+      "sentence": "The medical history included questions regarding the participants' self\u2010reported exercise and physical activity habits, which were used to assign participants to 1 of 5 physical activity levels (none, little to no exercise; light, 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week; very heavy, twice per day).",
+      "context_window": "tle to no exercise; light, 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week; very heavy, twice per day).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-1680",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1680,
+      "sentence": "The medical history included questions regarding the participants' self\u2010reported exercise and physical activity habits, which were used to assign participants to 1 of 5 physical activity levels (none, little to no exercise; light, 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week; very heavy, twice per day).",
+      "context_window": ", 1 to 3 days/week; moderate, 3 to 5 days/week; heavy, 6 to 7 days/week; very heavy, twice per day). The Harris-Benedict equat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-2251",
+      "claim_type": "sample_size",
+      "raw_text": "n=125",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2251,
+      "sentence": "Participants (n=125) were randomized to 1 of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA given daily as fish oil supplements (Nordic Naturals) for 5 months, the approximate time it takes for membrane FA composition to reach a new steady state.",
+      "context_window": "ntrolled, double\u2010blind, parallel\u2010group study. Participants (n=125) were randomized to 1 of 5 doses (0, 300, 600, 900, 1800 mg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2309",
+      "claim_type": "unit_value",
+      "raw_text": "1800 mg",
+      "numeric_values": [
+        1800.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2309,
+      "sentence": "Participants (n=125) were randomized to 1 of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA given daily as fish oil supplements (Nordic Naturals) for 5 months, the approximate time it takes for membrane FA composition to reach a new steady state.",
+      "context_window": "(n=125) were randomized to 1 of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA given daily as fish oil supplements (Nordic Nat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2387",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2387,
+      "sentence": "Participants (n=125) were randomized to 1 of 5 doses (0, 300, 600, 900, 1800 mg) of EPA+DHA given daily as fish oil supplements (Nordic Naturals) for 5 months, the approximate time it takes for membrane FA composition to reach a new steady state.",
+      "context_window": "A given daily as fish oil supplements (Nordic Naturals) for 5 months, the approximate time it takes for membrane FA composition",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3056",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3056,
+      "sentence": "Treatments were matched to a coded alpha identifier with a sealed envelope containing the code break for treatment; bottles were labeled A, B, C, D, or E by the manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg).",
+      "context_window": "e manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg). All researcher",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3066",
+      "claim_type": "unit_value",
+      "raw_text": "1800 mg",
+      "numeric_values": [
+        1800.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3066,
+      "sentence": "Treatments were matched to a coded alpha identifier with a sealed envelope containing the code break for treatment; bottles were labeled A, B, C, D, or E by the manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg).",
+      "context_window": "urer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg). All researchers, clinicia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3077",
+      "claim_type": "unit_value",
+      "raw_text": "900 mg",
+      "numeric_values": [
+        900.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3077,
+      "sentence": "Treatments were matched to a coded alpha identifier with a sealed envelope containing the code break for treatment; bottles were labeled A, B, C, D, or E by the manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg).",
+      "context_window": "ponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg). All researchers, clinicians, and pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3087",
+      "claim_type": "unit_value",
+      "raw_text": "0 mg",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3087,
+      "sentence": "Treatments were matched to a coded alpha identifier with a sealed envelope containing the code break for treatment; bottles were labeled A, B, C, D, or E by the manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg).",
+      "context_window": "different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg). All researchers, clinicians, and participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3099",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3099,
+      "sentence": "Treatments were matched to a coded alpha identifier with a sealed envelope containing the code break for treatment; bottles were labeled A, B, C, D, or E by the manufacturer corresponding to different treatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg).",
+      "context_window": "reatments (ie, A=300 mg, B=1800 mg, C=900 mg, D=0 mg, and E=600 mg). All researchers, clinicians, and participants were blinde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3573",
+      "claim_type": "unit_value",
+      "raw_text": "270 mg",
+      "numeric_values": [
+        270.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3573,
+      "sentence": "For example, a single serving (100 g) of light canned tuna provides \u2248 270 mg of EPA+DHA, whereas the same serving size of wild Atlantic salmon provides \u2248 1840 mg of EPA+DHA.",
+      "context_window": "e, a single serving (100 g) of light canned tuna provides \u2248 270 mg of EPA+DHA, whereas the same serving size of wild Atlantic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3657",
+      "claim_type": "unit_value",
+      "raw_text": "1840 mg",
+      "numeric_values": [
+        1840.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3657,
+      "sentence": "For example, a single serving (100 g) of light canned tuna provides \u2248 270 mg of EPA+DHA, whereas the same serving size of wild Atlantic salmon provides \u2248 1840 mg of EPA+DHA.",
+      "context_window": "as the same serving size of wild Atlantic salmon provides \u2248 1840 mg of EPA+DHA. 31 All participants were instructed to consume",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3944",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3944,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "lysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3965",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3965,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3986",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3986,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "at they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4012",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4012,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "(20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4040",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4040,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4073",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4073,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "4% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4098",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4098,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": ", 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4122",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4122,
+      "sentence": "Analysis of the fish oil capsules verified that they contained 20% EPA (20:5, n\u20103), 13% DHA (22:6, n\u20103), 17% palmitic acid (16:0), 14% oleic acid (18:1, n\u20109), 8% palmitoleic acid (16:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other fatty acids.",
+      "context_window": "6:1, n\u20107), 8% myristic acid (14:0), 4% stearic acid (18:0), 4% eicosadienoic acid (20:2, n\u20106), and small amounts of other",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4240",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4240,
+      "sentence": "The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs.",
+      "context_window": "her fatty acids. The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic aci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4271",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4271,
+      "sentence": "The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs.",
+      "context_window": "l placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4287",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4287,
+      "sentence": "The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs.",
+      "context_window": "es contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4306",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4306,
+      "sentence": "The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs.",
+      "context_window": "noleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4343",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4343,
+      "sentence": "The soybean\u2010oil placebo capsules contained 53% linoleic acid (18:2, n\u20106), 23% oleic acid, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs.",
+      "context_window": "id, 10% palmitic acid, 6% alpha\u2010linolenic acid (18:3, n\u20103), 4% stearic acid (18:0), and small amounts of other FAs. The to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4672",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4672,
+      "sentence": "Fatty Acid Composition (mg/daily dose) of the Study Interventions\n\nValues were calculated from independent analysis of fatty acid composition (only fatty acids detected in \u22651% of total fatty acids for either activate treatment or placebo capsules are shown).",
+      "context_window": "is of fatty acid composition (only fatty acids detected in \u22651% of total fatty acids for either activate treatment or place",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-5266",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5266,
+      "sentence": "Also, participants reported back to the Clinical Research Center after 8 weeks to return log sheets and remaining containers and to receive new supplies.",
+      "context_window": "cipants reported back to the Clinical Research Center after 8 weeks to return log sheets and remaining containers and to receiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-5992",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5992,
+      "sentence": "Total cholesterol and triglycerides (TGs) were measured by enzymatic analysis (Quest Diagnostics; coefficient of variation [CV] <2% for both).",
+      "context_window": "analysis (Quest Diagnostics; coefficient of variation [CV] <2% for both). High\u2010density lipoprotein cholesterol (HDL\u2010C) was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6124",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6124,
+      "sentence": "High\u2010density lipoprotein cholesterol (HDL\u2010C) was estimated according to the modified heparin\u2010manganese procedure (CV <2%).",
+      "context_window": "according to the modified heparin\u2010manganese procedure (CV <2%). The Friedewald equation 32 was used to calculate low\u2010dens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6493",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6493,
+      "sentence": "Serum high\u2010sensitivity C\u2010reactive protein was measured by latex\u2010enhanced immunonephelometry (Quest Diagnostics; assay CV <8%).",
+      "context_window": "x\u2010enhanced immunonephelometry (Quest Diagnostics; assay CV <8%). Red blood cells were isolated from blood samples drawn i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-7259",
+      "claim_type": "percentage",
+      "raw_text": "3.7%",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7259,
+      "sentence": "FA composition was expressed as a percentage of total identified FAs (CV <3.7%).",
+      "context_window": "was expressed as a percentage of total identified FAs (CV <3.7%). High and low O3I controls were included in every analytic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-7648",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7648,
+      "sentence": "Adjusted P <0.05 was considered significant.",
+      "context_window": "used for post hoc comparisons among the 5 groups. Adjusted P <0.05 was considered significant. Continuous data are reported as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1039",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1039,
+      "sentence": "Among study completers, compliance was high (mean, 97%; range, 85% to 100%).",
+      "context_window": "ispanic. Among study completers, compliance was high (mean, 97%; range, 85% to 100%). One participant with a very high O3I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1051",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1051,
+      "sentence": "Among study completers, compliance was high (mean, 97%; range, 85% to 100%).",
+      "context_window": "ng study completers, compliance was high (mean, 97%; range, 85% to 100%). One participant with a very high O3I at baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1058",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1058,
+      "sentence": "Among study completers, compliance was high (mean, 97%; range, 85% to 100%).",
+      "context_window": "y completers, compliance was high (mean, 97%; range, 85% to 100%). One participant with a very high O3I at baseline (ie, 8.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1119",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1119,
+      "sentence": "One participant with a very high O3I at baseline (ie, 8.3%) was identified as an outlier and excluded from the analysis to ensure the sample was representative of individuals who consumed low n\u20103 FA, our target study population.",
+      "context_window": "00%). One participant with a very high O3I at baseline (ie, 8.3%) was identified as an outlier and excluded from the analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-1433",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1433,
+      "sentence": "Baseline Characteristics of the Subjects Who Completed the Study (n=115)\n\nData are mean\u00b1SEM unless otherwise noted.",
+      "context_window": "ne Characteristics of the Subjects Who Completed the Study (n=115) Data are mean\u00b1SEM unless otherwise noted. There were no s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-1597",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1597,
+      "sentence": "There were no significant differences between treatment groups for any of these metrics at baseline (group effect P <0.05).",
+      "context_window": "t groups for any of these metrics at baseline (group effect P <0.05). DHA indicates docosahexaenoic acid; EPA, eicosapentaenoic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-msd-2118",
+      "claim_type": "mean_sd",
+      "raw_text": "4.3\u00b10.1",
+      "numeric_values": [
+        4.3,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2118,
+      "sentence": "The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ).",
+      "context_window": "ilar between groups. The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ). On average, wo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2122",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2122,
+      "sentence": "The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ).",
+      "context_window": "between groups. The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ). On average, wom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2144",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2144,
+      "sentence": "The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ).",
+      "context_window": "ean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ). On average, women had a higher O3I th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2152",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2152,
+      "sentence": "The mean O3I at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ).",
+      "context_window": "at study entry (\u00b1SEM) was 4.3\u00b10.1%, with a range of 2.3% to 6.8% ( Figure 2 ). On average, women had a higher O3I than men (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-2217",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2217,
+      "sentence": "On average, women had a higher O3I than men ( P <0.001).",
+      "context_window": "( Figure 2 ). On average, women had a higher O3I than men ( P <0.001). Body weight, BMI, blood pressure, and heart rate did not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-2466",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2466,
+      "sentence": "Distribution of the percentage of red blood cell (RBC) EPA+DHA values (omega\u20103 index [O3I]) in the study population at baseline (n=115).",
+      "context_window": "(omega\u20103 index [O3I]) in the study population at baseline (n=115). Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2483",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk horizons, respectively, and the dotted line at 4.3% is the population average.",
+      "context_window": "O3I]) in the study population at baseline (n=115). Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk horizons, respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2490",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2490,
+      "sentence": "Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk horizons, respectively, and the dotted line at 4.3% is the population average.",
+      "context_window": "n the study population at baseline (n=115). Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk horizons, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2577",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2577,
+      "sentence": "Lines at 8% and 4% indicate proposed low\u2010 and high\u2010risk horizons, respectively, and the dotted line at 4.3% is the population average.",
+      "context_window": "nd high\u2010risk horizons, respectively, and the dotted line at 4.3% is the population average. DHA indicates docosahexaenoic ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-2920",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2920,
+      "sentence": "Effects of Treatment on General Health Profile (n=115)\n\nData are least\u2010square mean\u00b1SEM (all such values).",
+      "context_window": "Table 3 ). Effects of Treatment on General Health Profile (n=115) Data are least\u2010square mean\u00b1SEM (all such values). Values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-3049",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3049,
+      "sentence": "Values with different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values from post hoc tests).",
+      "context_window": "different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values from post hoc tests). A/G indicates",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-3599",
+      "claim_type": "p_value",
+      "raw_text": "P <0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3599,
+      "sentence": "Significance set at P <0.002 to account for multiple testing.",
+      "context_window": "aseline values included as a covariate. Significance set at P <0.002 to account for multiple testing. Median with interquartile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3862",
+      "claim_type": "percentage",
+      "raw_text": "121%",
+      "numeric_values": [
+        121.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3862,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "th EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 9",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3873",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3873,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3881",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3881,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "lted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59%",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3895",
+      "claim_type": "unit_value",
+      "raw_text": "1800 mg/day",
+      "numeric_values": [
+        1800.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 3895,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "ificant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3913",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3913,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "n O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3925",
+      "claim_type": "unit_value",
+      "raw_text": "900 mg/day",
+      "numeric_values": [
+        900.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 3925,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3942",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3942,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": ".5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3954",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg/day",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 3954,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3975",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3975,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo). Thi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3987",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 3987,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "0 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo). This effect was accomp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-4008",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4008,
+      "sentence": "The increase in both EPA and DHA resulted in a significant increase in O3I of 121% (from 4.3% to 9.5%) for the 1800 mg/day dose, 75% for the 900 mg/day dose, 59% for the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo).",
+      "context_window": "r the 600 mg/day dose, and 44% for the 300 mg/day dose (all P <0.0001 versus placebo). This effect was accompanied by a significa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4206",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 4206,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "ed for the placebo group from baseline. Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4242",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4242,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "ne. Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4253",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4253,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "pants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4261",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4261,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "king 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day ac",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4312",
+      "claim_type": "unit_value",
+      "raw_text": "600 mg/day",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 4312,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ). Participants taking 900",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4342",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4342,
+      "sentence": "Participants taking 300 mg/day achieved a median O3I of 6.1% (IQR, 5.8% to 7.1%); however, no participant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ).",
+      "context_window": "rticipant assigned to a dose \u2264600 mg/day achieved an O3I of 8% ( Figure 3 ). Participants taking 900 mg/day achieved a med",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4379",
+      "claim_type": "unit_value",
+      "raw_text": "900 mg/day",
+      "numeric_values": [
+        900.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 4379,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "day achieved an O3I of 8% ( Figure 3 ). Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4415",
+      "claim_type": "percentage",
+      "raw_text": "7.6%",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4415,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "). Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4426",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4426,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "pants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4434",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4434,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "king 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4453",
+      "claim_type": "unit_value",
+      "raw_text": "1800 mg/day",
+      "numeric_values": [
+        1800.0
+      ],
+      "units": "mg/day",
+      "source_section": "results",
+      "source_offset": 4453,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "ieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4496",
+      "claim_type": "percentage",
+      "raw_text": "9.9%",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4496,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%). Effects of Treatment on Omega\u20103 Inde",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4507",
+      "claim_type": "percentage",
+      "raw_text": "8.9%",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4507,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "s the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%). Effects of Treatment on Omega\u20103 Index (n=115)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4515",
+      "claim_type": "percentage",
+      "raw_text": "10.5%",
+      "numeric_values": [
+        10.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4515,
+      "sentence": "Participants taking 900 mg/day achieved a median O3I of 7.6% (IQR, 6.6% to 8.3%), whereas the 1800 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%).",
+      "context_window": "00 mg/day group achieved a median O3I of 9.9% (IQR, 8.9% to 10.5%). Effects of Treatment on Omega\u20103 Index (n=115) Data are",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-4563",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4563,
+      "sentence": "Effects of Treatment on Omega\u20103 Index (n=115)\n\nData are least\u2010square mean\u00b1SEM.",
+      "context_window": "QR, 8.9% to 10.5%). Effects of Treatment on Omega\u20103 Index (n=115) Data are least\u2010square mean\u00b1SEM. Values with different sup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-4674",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4674,
+      "sentence": "Values with different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values from post hoc tests).",
+      "context_window": "different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values from post hoc tests). P values are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-4874",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4874,
+      "sentence": "Effects of Treatment on Erythrocyte Fatty Acid Profile (n=115)\n\nData are least\u2010square mean\u00b1SEM (all such values).",
+      "context_window": "e. Effects of Treatment on Erythrocyte Fatty Acid Profile (n=115) Data are least\u2010square mean\u00b1SEM (all such values). Values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-5046",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5046,
+      "sentence": "Different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values for post hoc tests).",
+      "context_window": "Different superscript letters are significantly different, P <0.05 (Tukey\u2010adjusted values for post hoc tests). DHA indicates d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-5255",
+      "claim_type": "p_value",
+      "raw_text": "P <0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5255,
+      "sentence": "P <0.002 considered significant after accounting for multiple comparisons.",
+      "context_window": "of treatment. Baseline values are included as a covariate. P <0.002 considered significant after accounting for multiple compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-5420",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5420,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "(O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-5447",
+      "claim_type": "sample_size",
+      "raw_text": "n=23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5447,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "thy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E;",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-5462",
+      "claim_type": "sample_size",
+      "raw_text": "n=23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5462,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-5477",
+      "claim_type": "sample_size",
+      "raw_text": "n=21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5477,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "or 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA. A thr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-5492",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5492,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "h either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA. A through E, Each pa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-5511",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5511,
+      "sentence": "Changes in the omega\u20103 index (O3I) before and after healthy adults were supplemented for 5 months with either 0 (A; n=23), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA.",
+      "context_window": "), 300 (B; n=23), 600 (C; n=21), 900 (D; n=24), or 1800 (E; n=24) mg/day of EPA+DHA. A through E, Each participant is denote",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6106",
+      "claim_type": "percentage",
+      "raw_text": "65.4%",
+      "numeric_values": [
+        65.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6106,
+      "sentence": "A linear regression model demonstrated that the change in O3I was largely determined by the dose of EPA+DHA administered ( R 2 =65.4%, P <0.0001; Table 6 ).",
+      "context_window": "rgely determined by the dose of EPA+DHA administered ( R 2 =65.4%, P <0.0001; Table 6 ). However, the Minitab's Assistant too",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-6113",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6113,
+      "sentence": "A linear regression model demonstrated that the change in O3I was largely determined by the dose of EPA+DHA administered ( R 2 =65.4%, P <0.0001; Table 6 ).",
+      "context_window": "etermined by the dose of EPA+DHA administered ( R 2 =65.4%, P <0.0001; Table 6 ). However, the Minitab's Assistant tool selected",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6272",
+      "claim_type": "percentage",
+      "raw_text": "67.7%",
+      "numeric_values": [
+        67.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6272,
+      "sentence": "However, the Minitab's Assistant tool selected a quadratic fit to model the relationship between treatment dose and change in O3I ( R 2 =67.7%, P <0.0001; Figure 4 ).",
+      "context_window": "elationship between treatment dose and change in O3I ( R 2 =67.7%, P <0.0001; Figure 4 ). Baseline O3I and percent DHA in RBC",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-6279",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6279,
+      "sentence": "However, the Minitab's Assistant tool selected a quadratic fit to model the relationship between treatment dose and change in O3I ( R 2 =67.7%, P <0.0001; Figure 4 ).",
+      "context_window": "ship between treatment dose and change in O3I ( R 2 =67.7%, P <0.0001; Figure 4 ). Baseline O3I and percent DHA in RBCs also inde",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6393",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6393,
+      "sentence": "Baseline O3I and percent DHA in RBCs also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low baseline O3I status experienced a greater percent rise in O3I as a result of the intervention.",
+      "context_window": "RBCs also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-6399",
+      "claim_type": "p_value",
+      "raw_text": "P =0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6399,
+      "sentence": "Baseline O3I and percent DHA in RBCs also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low baseline O3I status experienced a greater percent rise in O3I as a result of the intervention.",
+      "context_window": "also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6413",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6413,
+      "sentence": "Baseline O3I and percent DHA in RBCs also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low baseline O3I status experienced a greater percent rise in O3I as a result of the intervention.",
+      "context_window": "ntly predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low basel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-6419",
+      "claim_type": "p_value",
+      "raw_text": "P =0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6419,
+      "sentence": "Baseline O3I and percent DHA in RBCs also independently predicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low baseline O3I status experienced a greater percent rise in O3I as a result of the intervention.",
+      "context_window": "redicted the change in O3I ( R 2 =4.9%, P =0.02; R 2 =4.5%, P =0.02, respectively); thus, individuals with a low baseline O3I s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-6854",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6854,
+      "sentence": "Regression Models Predicting Change in Omega\u20103 Index (n=115)\n\nO3I indicates omega\u20103 index; PA, physical activity; SE, standard error.",
+      "context_window": "els. Regression Models Predicting Change in Omega\u20103 Index (n=115) O3I indicates omega\u20103 index; PA, physical activity; SE, s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-7068",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7068,
+      "sentence": "Treatment dose significantly predicted changes in omega\u20103 index (O3I; n=115).",
+      "context_window": "dose significantly predicted changes in omega\u20103 index (O3I; n=115). DHA indicates docosahexaenoic acid; EPA, eicosapentaenoic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-7261",
+      "claim_type": "percentage",
+      "raw_text": "69.8%",
+      "numeric_values": [
+        69.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7261,
+      "sentence": "The dose of EPA+DHA adjusted per unit body weight (g/kg) also was a strong univariate predictor of change in O3I ( R 2 =69.8%, P <0.0001; Figure 5 ).",
+      "context_window": "o was a strong univariate predictor of change in O3I ( R 2 =69.8%, P <0.0001; Figure 5 ). Increasing the dose of EPA+DHA per",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-7268",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7268,
+      "sentence": "The dose of EPA+DHA adjusted per unit body weight (g/kg) also was a strong univariate predictor of change in O3I ( R 2 =69.8%, P <0.0001; Figure 5 ).",
+      "context_window": "strong univariate predictor of change in O3I ( R 2 =69.8%, P <0.0001; Figure 5 ). Increasing the dose of EPA+DHA per unit body w",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-n-7644",
+      "claim_type": "sample_size",
+      "raw_text": "n = 115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7644,
+      "sentence": "The amount of EPA+DHA in grams consumed per kilogram of body weight significantly predicted changes in omega\u20103 index (O3I; n = 115).",
+      "context_window": "ight significantly predicted changes in omega\u20103 index (O3I; n = 115). DHA indicates docosahexaenoic acid; EPA, eicosapentaenoic",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-7944",
+      "claim_type": "percentage",
+      "raw_text": "75.4%",
+      "numeric_values": [
+        75.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7944,
+      "sentence": "Adding baseline O3I as a predictor to the body\u2010weight\u2010adjusted model further explained the variability in O3I response ( R 2 =75.4%, P <0.0001; Table 6 ).",
+      "context_window": "el further explained the variability in O3I response ( R 2 =75.4%, P <0.0001; Table 6 ). Additional factors, including age, s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-7951",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7951,
+      "sentence": "Adding baseline O3I as a predictor to the body\u2010weight\u2010adjusted model further explained the variability in O3I response ( R 2 =75.4%, P <0.0001; Table 6 ).",
+      "context_window": "her explained the variability in O3I response ( R 2 =75.4%, P <0.0001; Table 6 ). Additional factors, including age, sex, and phy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-8076",
+      "claim_type": "percentage",
+      "raw_text": "77.9%",
+      "numeric_values": [
+        77.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8076,
+      "sentence": "Additional factors, including age, sex, and physical activity, also predicted change in the O3I ( R 2 =77.9%, P <0.0001; Table 6 ).",
+      "context_window": "physical activity, also predicted change in the O3I ( R 2 =77.9%, P <0.0001; Table 6 ). Lower O3I status ( P <0.0001) and ol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-8083",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8083,
+      "sentence": "Additional factors, including age, sex, and physical activity, also predicted change in the O3I ( R 2 =77.9%, P <0.0001; Table 6 ).",
+      "context_window": "al activity, also predicted change in the O3I ( R 2 =77.9%, P <0.0001; Table 6 ). Lower O3I status ( P <0.0001) and older age ( P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-8124",
+      "claim_type": "p_value",
+      "raw_text": "P <0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8124,
+      "sentence": "Lower O3I status ( P <0.0001) and older age ( P =0.02) each predicted greater increases in O3I.",
+      "context_window": "O3I ( R 2 =77.9%, P <0.0001; Table 6 ). Lower O3I status ( P <0.0001) and older age ( P =0.02) each predicted greater increases",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-8151",
+      "claim_type": "p_value",
+      "raw_text": "P =0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8151,
+      "sentence": "Lower O3I status ( P <0.0001) and older age ( P =0.02) each predicted greater increases in O3I.",
+      "context_window": "1; Table 6 ). Lower O3I status ( P <0.0001) and older age ( P =0.02) each predicted greater increases in O3I. The level of phys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-8434",
+      "claim_type": "p_value",
+      "raw_text": "P =0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8434,
+      "sentence": "The level of physical activity interacted with the effect of dose per unit of body weight on the O3I response; increased physical activity level predicted greater increases in O3I when included in the model of dose per body weight ( P =0.01).",
+      "context_window": "in O3I when included in the model of dose per body weight ( P =0.01). Female sex tended to predict greater increases in O3I, al",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-8549",
+      "claim_type": "p_value",
+      "raw_text": "P =0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8549,
+      "sentence": "Female sex tended to predict greater increases in O3I, although this was not statistically significant ( P =0.08).",
+      "context_window": "s in O3I, although this was not statistically significant ( P =0.08). Including these factors in the model, relative to the uni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-8684",
+      "claim_type": "percentage",
+      "raw_text": "8.1%",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8684,
+      "sentence": "Including these factors in the model, relative to the univariate model of dose per unit body weight, explained an additional 8.1% of the variability in O3I response.",
+      "context_window": "model of dose per unit body weight, explained an additional 8.1% of the variability in O3I response.",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-160",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 160,
+      "sentence": "We found that variations in dose explained 68% of the variability in the response; including body weight, baseline O3I, age, physical activity, and sex in the model explained an additional 10% of the variability in response ( Table 6 ).",
+      "context_window": "he O3I response. We found that variations in dose explained 68% of the variability in the response; including body weight,",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-306",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 306,
+      "sentence": "We found that variations in dose explained 68% of the variability in the response; including body weight, baseline O3I, age, physical activity, and sex in the model explained an additional 10% of the variability in response ( Table 6 ).",
+      "context_window": "ical activity, and sex in the model explained an additional 10% of the variability in response ( Table 6 ). It is estimate",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-395",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg/day",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 395,
+      "sentence": "It is estimated that Americans consume <100 mg/day of EPA+DHA, 33 well below the current recommendations of 250 to 500 mg/day for healthy adults.",
+      "context_window": "ponse ( Table 6 ). It is estimated that Americans consume <100 mg/day of EPA+DHA, 33 well below the current recommendations of 25",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-470",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 470,
+      "sentence": "It is estimated that Americans consume <100 mg/day of EPA+DHA, 33 well below the current recommendations of 250 to 500 mg/day for healthy adults.",
+      "context_window": "PA+DHA, 33 well below the current recommendations of 250 to 500 mg/day for healthy adults. 1 - 4 In the present study, participant",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-573",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 573,
+      "sentence": "1 - 4 In the present study, participants had an average baseline O3I of 4.3%, which is consistent with previous studies of adults reporting low habitual fish intake.",
+      "context_window": "present study, participants had an average baseline O3I of 4.3%, which is consistent with previous studies of adults report",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-802",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 802,
+      "sentence": "19 , 25 Our results suggest that a healthy, normal\u2010weight adult with low fish intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%).",
+      "context_window": "sh intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of ab",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-876",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 876,
+      "sentence": "19 , 25 Our results suggest that a healthy, normal\u2010weight adult with low fish intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%).",
+      "context_window": "EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%). Thus, our results demonstrate th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-882",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 882,
+      "sentence": "19 , 25 Our results suggest that a healthy, normal\u2010weight adult with low fish intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%).",
+      "context_window": "A would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%). Thus, our results demonstrate that inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-891",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 891,
+      "sentence": "19 , 25 Our results suggest that a healthy, normal\u2010weight adult with low fish intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%).",
+      "context_window": "xperience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%). Thus, our results demonstrate that increasing con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-899",
+      "claim_type": "percentage",
+      "raw_text": "6.3%",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 899,
+      "sentence": "19 , 25 Our results suggest that a healthy, normal\u2010weight adult with low fish intake who increased his or her dietary intake by 250 to 500 mg/day of EPA+DHA would experience an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%).",
+      "context_window": "e an increase in O3I values of about 1% to 2% (from 5.3% to 6.3%). Thus, our results demonstrate that increasing consumption",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1436",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1436,
+      "sentence": "10 - 11 , 13 From our findings, we estimate that an average healthy adult with a low O3I (ie, 4.3%) would require at least 1 g/day of EPA+DHA for 5 months to achieve an O3I of 8% ( Table 6 ).",
+      "context_window": "estimate that an average healthy adult with a low O3I (ie, 4.3%) would require at least 1 g/day of EPA+DHA for 5 months to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-1488",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1488,
+      "sentence": "10 - 11 , 13 From our findings, we estimate that an average healthy adult with a low O3I (ie, 4.3%) would require at least 1 g/day of EPA+DHA for 5 months to achieve an O3I of 8% ( Table 6 ).",
+      "context_window": "3I (ie, 4.3%) would require at least 1 g/day of EPA+DHA for 5 months to achieve an O3I of 8% ( Table 6 ). This dose has been sho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-1518",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1518,
+      "sentence": "10 - 11 , 13 From our findings, we estimate that an average healthy adult with a low O3I (ie, 4.3%) would require at least 1 g/day of EPA+DHA for 5 months to achieve an O3I of 8% ( Table 6 ).",
+      "context_window": "least 1 g/day of EPA+DHA for 5 months to achieve an O3I of 8% ( Table 6 ). This dose has been shown to reduce all\u2010cause m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2124",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2124,
+      "sentence": "The response to supplementation that we observed for the highest dose agrees with prior studies that administered EPA+DHA for up to 12 months.",
+      "context_window": "rees with prior studies that administered EPA+DHA for up to 12 months. 16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2179",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2179,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "p to 12 months. 16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2187",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2187,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "months. 16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2205",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2205,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2252",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2252,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "(increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months. In a recent study",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2261",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2261,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months. In a recent study by Browni",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2287",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2287,
+      "sentence": "16 , 29 - 30 On average, O3I increased from 4.3% to 9.5% (increase of 5.2% from baseline) with 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months.",
+      "context_window": "th 1.8 g/day of EPA+DHA (60% EPA, 40% DHA) over a period of 5 months. In a recent study by Browning et al, 30 a similar increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2458",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2458,
+      "sentence": "In a recent study by Browning et al, 30 a similar increase (of 5 percentage points) was observed in older healthy adults supplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months.",
+      "context_window": "lder healthy adults supplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months. In comparison, Katan et al 29",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2467",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2467,
+      "sentence": "In a recent study by Browning et al, 30 a similar increase (of 5 percentage points) was observed in older healthy adults supplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months.",
+      "context_window": "thy adults supplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months. In comparison, Katan et al 29 reported",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2480",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2480,
+      "sentence": "In a recent study by Browning et al, 30 a similar increase (of 5 percentage points) was observed in older healthy adults supplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months.",
+      "context_window": "pplemented with 1.9 g/day of EPA+DHA (46% EPA, 54% DHA) for 12 months. In comparison, Katan et al 29 reported healthy men supplem",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2581",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2581,
+      "sentence": "In comparison, Katan et al 29 reported healthy men supplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percentage points, suggesting that, in addition to duration and dose, the relative proportions of EPA and DHA may influence O3I response.",
+      "context_window": "reported healthy men supplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percenta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-2590",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2590,
+      "sentence": "In comparison, Katan et al 29 reported healthy men supplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percentage points, suggesting that, in addition to duration and dose, the relative proportions of EPA and DHA may influence O3I response.",
+      "context_window": "healthy men supplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percentage points",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-2603",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2603,
+      "sentence": "In comparison, Katan et al 29 reported healthy men supplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percentage points, suggesting that, in addition to duration and dose, the relative proportions of EPA and DHA may influence O3I response.",
+      "context_window": "upplemented with \u22482 g/day of EPA+DHA (85% EPA, 15% DHA) for 12 months increased the O3I by 4 percentage points, suggesting that,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3236",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3236,
+      "sentence": "38 von Schacky et al 12 also used this ratio in a randomized, controlled trial of coronary heart disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months.",
+      "context_window": "ronary heart disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 mon",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3245",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3245,
+      "sentence": "38 von Schacky et al 12 also used this ratio in a randomized, controlled trial of coronary heart disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months.",
+      "context_window": "art disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months. Pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3258",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3258,
+      "sentence": "38 von Schacky et al 12 also used this ratio in a randomized, controlled trial of coronary heart disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months.",
+      "context_window": "atients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months. Patients in the fish o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-3293",
+      "claim_type": "unit_value",
+      "raw_text": "21 months",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3293,
+      "sentence": "38 von Schacky et al 12 also used this ratio in a randomized, controlled trial of coronary heart disease patients consuming 3 g/day of EPA+DHA (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months.",
+      "context_window": "A (62% EPA, 38% DHA) for 3 months followed by 1.5 g/day for 21 months. Patients in the fish oil group increased the O3I by 5.5 pe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3384",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3384,
+      "sentence": "Patients in the fish oil group increased the O3I by 5.5 percentage points (from 3.4% to 8.9%), had less progression and more regression of coronary artery disease as measured by changes on coronary angiography compared with the placebo group.",
+      "context_window": "oil group increased the O3I by 5.5 percentage points (from 3.4% to 8.9%), had less progression and more regression of coron",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-3392",
+      "claim_type": "percentage",
+      "raw_text": "8.9%",
+      "numeric_values": [
+        8.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3392,
+      "sentence": "Patients in the fish oil group increased the O3I by 5.5 percentage points (from 3.4% to 8.9%), had less progression and more regression of coronary artery disease as measured by changes on coronary angiography compared with the placebo group.",
+      "context_window": "up increased the O3I by 5.5 percentage points (from 3.4% to 8.9%), had less progression and more regression of coronary arte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4239",
+      "claim_type": "unit_value",
+      "raw_text": "75 kg",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4239,
+      "sentence": "40 Using the body\u2010weight\u2010adjusted values ( Table 6 , Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per day.",
+      "context_window": "Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4318",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4318,
+      "sentence": "40 Using the body\u2010weight\u2010adjusted values ( Table 6 , Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per day.",
+      "context_window": "about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-4326",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4326,
+      "sentence": "40 Using the body\u2010weight\u2010adjusted values ( Table 6 , Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per day.",
+      "context_window": ".2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the sa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4410",
+      "claim_type": "unit_value",
+      "raw_text": "55 kg",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4410,
+      "sentence": "40 Using the body\u2010weight\u2010adjusted values ( Table 6 , Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per day.",
+      "context_window": "ment would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-4470",
+      "claim_type": "unit_value",
+      "raw_text": "95 kg",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4470,
+      "sentence": "40 Using the body\u2010weight\u2010adjusted values ( Table 6 , Figure 5 ), it can be estimated that an individual weighing 75 kg would require about 1.2 g/day of EPA+DHA to increase his or her O3I from 4.3% to 8%; however, the requirement would only be 0.9 g/day if the same individual weighed 55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per day.",
+      "context_window": "55 kg, or in contrast, 1.5 g/day for an individual weighing 95 kg, a range representing 3 to 5 typical fish oil capsules per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-5927",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5927,
+      "sentence": "Older individuals experienced a greater increase in their O3I as a result of the intervention, although the effect size was small, and individuals in our study were relatively young overall (aged 20 to 45 years).",
+      "context_window": "uals in our study were relatively young overall (aged 20 to 45 years). Nonetheless, aging may cause alterations in n\u20103 FA metabo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-6060",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6060,
+      "sentence": "Vandel et al 42 reported that elderly adults (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids than young adults (average age, 24 years old); EPA incorporation was similar for both groups.",
+      "context_window": "Vandel et al 42 reported that elderly adults (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% h",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-6103",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6103,
+      "sentence": "Vandel et al 42 reported that elderly adults (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids than young adults (average age, 24 years old); EPA incorporation was similar for both groups.",
+      "context_window": "ts (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-6123",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6123,
+      "sentence": "Vandel et al 42 reported that elderly adults (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids than young adults (average age, 24 years old); EPA incorporation was similar for both groups.",
+      "context_window": "years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids than young adul",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-6203",
+      "claim_type": "unit_value",
+      "raw_text": "24 years",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6203,
+      "sentence": "Vandel et al 42 reported that elderly adults (average age, 74 years old) given 1 g/day of EPA+DHA for 3 weeks experienced 42% higher DHA incorporation into plasma lipids than young adults (average age, 24 years old); EPA incorporation was similar for both groups.",
+      "context_window": "poration into plasma lipids than young adults (average age, 24 years old); EPA incorporation was similar for both groups. Reason",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-p-6925",
+      "claim_type": "p_value",
+      "raw_text": "P <0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6925,
+      "sentence": "We also found that women on average had a higher O3I than men at study entry, with a strong trend for sex ( P <0.10) to be a predictor of O3I responses in the multivariable model.",
+      "context_window": "O3I than men at study entry, with a strong trend for sex ( P <0.10) to be a predictor of O3I responses in the multivariable mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-8514",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8514,
+      "sentence": "48\n\nAmong the strengths of this study were the placebo\u2010controlled, double\u2010blind study design that compared 5 doses of EPA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine biomarker response to treatment.",
+      "context_window": "PA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-8561",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8561,
+      "sentence": "48\n\nAmong the strengths of this study were the placebo\u2010controlled, double\u2010blind study design that compared 5 doses of EPA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine biomarker response to treatment.",
+      "context_window": "ropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-9177",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9177,
+      "sentence": "A recent Framingham cross\u2010sectional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was not considered).",
+      "context_window": "ional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intak",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-9280",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9280,
+      "sentence": "A recent Framingham cross\u2010sectional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was not considered).",
+      "context_window": "ietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-175",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 175,
+      "sentence": "Among the strengths of this study were the placebo\u2010controlled, double\u2010blind study design that compared 5 doses of EPA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine biomarker response to treatment.",
+      "context_window": "PA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-u-222",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 222,
+      "sentence": "Among the strengths of this study were the placebo\u2010controlled, double\u2010blind study design that compared 5 doses of EPA+DHA, a relatively large sample size, a low dropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine biomarker response to treatment.",
+      "context_window": "ropout rate (7%), an adequate duration of supplementation (\u22485 months), and the use of validated analytical methods to determine",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-838",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 838,
+      "sentence": "A recent Framingham cross\u2010sectional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was not considered).",
+      "context_window": "ional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intak",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re-pct-941",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 941,
+      "sentence": "A recent Framingham cross\u2010sectional analysis found that pedigree (ie, ancestry) explained 24% of the variability in O3I, 20 whereas dietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was not considered).",
+      "context_window": "ietary EPA+DHA intake and fish oil supplement use explained 40% of the variability (dose or duration of supplement use was",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

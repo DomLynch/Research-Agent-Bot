@@ -1,0 +1,1237 @@
+{
+  "paper_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in",
+  "doi": "10.1097/MD.0000000000003247",
+  "extracted_at": "2026-05-05T22:20:08+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 40,
+    "percentage": 12,
+    "p_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-810",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 810,
+      "sentence": "Included patients were randomized to receive either acarbose or metformin and followed for 48 weeks.",
+      "context_window": "ed to receive either acarbose or metformin and followed for 48 weeks. In addition to change in ACR, the estimated glomerular fil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-985",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 985,
+      "sentence": "Elevated ACR levels (\u226530 mg/g) were present at baseline in 21.9% of all participants.",
+      "context_window": "syndrome (MetS) were also assessed. Elevated ACR levels (\u226530 mg/g) were present at baseline in 21.9% of all participants. A",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-1022",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1022,
+      "sentence": "Elevated ACR levels (\u226530 mg/g) were present at baseline in 21.9% of all participants.",
+      "context_window": "Elevated ACR levels (\u226530 mg/g) were present at baseline in 21.9% of all participants. A significant decline in urine ACR was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1162",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1162,
+      "sentence": "A significant decline in urine ACR was observed in both the acarbose and metformin groups at week 24 and 48 (all P < 0.001).",
+      "context_window": "th the acarbose and metformin groups at week 24 and 48 (all P < 0.001). The proportion of patients with elevated ACRs was also re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1315",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1315,
+      "sentence": "The proportion of patients with elevated ACRs was also reduced in both treatment groups at week 24 and 48 compared with baseline values (all P < 0.05).",
+      "context_window": "groups at week 24 and 48 compared with baseline values (all P < 0.05). The change in urine ACR at week 48 was significantly grea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1456",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1456,
+      "sentence": "The change in urine ACR at week 48 was significantly greater in patients prescribed acarbose than in those prescribed metformin ( P = 0.01).",
+      "context_window": "ts prescribed acarbose than in those prescribed metformin ( P = 0.01). Both acarbose and metformin significantly decreased the f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1565",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1565,
+      "sentence": "Both acarbose and metformin significantly decreased the frequency of MetS at week 24 and 48 (both P < 0.05).",
+      "context_window": "tly decreased the frequency of MetS at week 24 and 48 (both P < 0.05). Neither treatment affected eGFR. In sum, both acarbose a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1820",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1820,
+      "sentence": "After 48 weeks\u2019 intervention, acarbose therapy resulted in a greater reduction in urine ACR compared with metformin.",
+      "context_window": "osed type 2 diabetes mellitus without affecting eGFR. After 48 weeks\u2019 intervention, acarbose therapy resulted in a greater reduc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1799",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1799,
+      "sentence": "13 , 14 We previously reported that acarbose and metformin were similarly efficacious at lowering glycated hemoglobin A1c (HbA1c) and BP, as well as improving insulin sensitivity after 24 and 48 weeks of therapy in the MARCH study.",
+      "context_window": "d BP, as well as improving insulin sensitivity after 24 and 48 weeks of therapy in the MARCH study. 13 , 14 The purpose of this",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1124",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1124,
+      "sentence": "All participants were diagnosed with type 2 diabetes mellitus within the 12 months before study participation.",
+      "context_window": "nts were diagnosed with type 2 diabetes mellitus within the 12 months before study participation. Diagnosis was made based on Wor",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1513",
+      "claim_type": "unit_value",
+      "raw_text": "133 \u03bcmol",
+      "numeric_values": [
+        133.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 1513,
+      "sentence": "13 , 14 Pertinent to the current analysis, the following exclusion criteria should be noted: a history of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive heart failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power field in a standard urine analysis).",
+      "context_window": "of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1525",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg/dL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 1525,
+      "sentence": "13 , 14 Pertinent to the current analysis, the following exclusion criteria should be noted: a history of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive heart failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power field in a standard urine analysis).",
+      "context_window": "ease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1633",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1633,
+      "sentence": "13 , 14 Pertinent to the current analysis, the following exclusion criteria should be noted: a history of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive heart failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power field in a standard urine analysis).",
+      "context_window": "nstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive he",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1761",
+      "claim_type": "unit_value",
+      "raw_text": "160 mmHg",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1761,
+      "sentence": "13 , 14 Pertinent to the current analysis, the following exclusion criteria should be noted: a history of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive heart failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power field in a standard urine analysis).",
+      "context_window": "art failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (uri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1793",
+      "claim_type": "unit_value",
+      "raw_text": "95 mmHg",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1793,
+      "sentence": "13 , 14 Pertinent to the current analysis, the following exclusion criteria should be noted: a history of renal disease with a plasma creatinine concentration of \u2265133 \u03bcmol/L (1.5 mg/dL); cardiac diseases (ie, a history of unstable angina or myocardial infarction within the previous 6 months or New York Heart Association class III or IV congestive heart failure); uncontrolled hypertension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power field in a standard urine analysis).",
+      "context_window": "tension (systolic pressure \u2265160 mmHg or diastolic pressure \u226595 mmHg); and urinary infection (urine leukocytes >5/high-power fie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2074",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2074,
+      "sentence": "Patients were then randomly assigned to receive either 1500 mg/day metformin hydrochloride (Beijing Double Crane Pharma, Beijing, China) or 300 mg/day acarbose (Bayer Healthcare, Beijing, China).",
+      "context_window": "ing. Patients were then randomly assigned to receive either 1500 mg/day metformin hydrochloride (Beijing Double Crane Pharma, Beiji",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2159",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg/day",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2159,
+      "sentence": "Patients were then randomly assigned to receive either 1500 mg/day metformin hydrochloride (Beijing Double Crane Pharma, Beijing, China) or 300 mg/day acarbose (Bayer Healthcare, Beijing, China).",
+      "context_window": "rochloride (Beijing Double Crane Pharma, Beijing, China) or 300 mg/day acarbose (Bayer Healthcare, Beijing, China). The study peri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2236",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2236,
+      "sentence": "The study period was 48 weeks.",
+      "context_window": "se (Bayer Healthcare, Beijing, China). The study period was 48 weeks. The primary endpoints were reduction in ACR after 48 week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2297",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2297,
+      "sentence": "The primary endpoints were reduction in ACR after 48 weeks\u2019 intervention.",
+      "context_window": "8 weeks. The primary endpoints were reduction in ACR after 48 weeks\u2019 intervention. Secondary endpoints included change in eGFR,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2403",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2403,
+      "sentence": "Secondary endpoints included change in eGFR, the proportion of patients with ACR \u226530 mg/g or with MetS, all measured at baseline, 24 weeks, and 48 weeks.",
+      "context_window": "cluded change in eGFR, the proportion of patients with ACR \u226530 mg/g or with MetS, all measured at baseline, 24 weeks, and 48",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2451",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2451,
+      "sentence": "Secondary endpoints included change in eGFR, the proportion of patients with ACR \u226530 mg/g or with MetS, all measured at baseline, 24 weeks, and 48 weeks.",
+      "context_window": "s with ACR \u226530 mg/g or with MetS, all measured at baseline, 24 weeks, and 48 weeks. Serum and urine creatinine concentrations w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2465",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2465,
+      "sentence": "Secondary endpoints included change in eGFR, the proportion of patients with ACR \u226530 mg/g or with MetS, all measured at baseline, 24 weeks, and 48 weeks.",
+      "context_window": "mg/g or with MetS, all measured at baseline, 24 weeks, and 48 weeks. Serum and urine creatinine concentrations were measured e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2865",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2865,
+      "sentence": "The ACR was used to define 3 categories of albuminuria: normal (<30 mg/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265300 mg/g).",
+      "context_window": "CR was used to define 3 categories of albuminuria: normal (<30 mg/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2896",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2896,
+      "sentence": "The ACR was used to define 3 categories of albuminuria: normal (<30 mg/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265300 mg/g).",
+      "context_window": "ies of albuminuria: normal (<30 mg/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265300 mg/g). 17 In this report, th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-2930",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2930,
+      "sentence": "The ACR was used to define 3 categories of albuminuria: normal (<30 mg/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265300 mg/g).",
+      "context_window": "/g), microalbuminuria (30-300 mg/g), and macroalbuminuria (\u2265300 mg/g). 17 In this report, the term \u201celevated ACR\u201d included bot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3561",
+      "claim_type": "unit_value",
+      "raw_text": "90 cm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3561,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "ere assessed. 19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an ant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3578",
+      "claim_type": "unit_value",
+      "raw_text": "80 cm",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3578,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive med",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3602",
+      "claim_type": "unit_value",
+      "raw_text": "85 mmHg",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3602,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "ist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-densit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3709",
+      "claim_type": "unit_value",
+      "raw_text": "1.04 mmol",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3709,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "n; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3732",
+      "claim_type": "unit_value",
+      "raw_text": "1.30 mmol",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3732,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "ipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3827",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 mmol",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3827,
+      "sentence": "19 Those components were waist circumference \u226590 cm in men or \u226580 cm in women; BP \u2265130/85 mmHg or use of an antihypertensive medication; serum high-density lipoprotein (HDL) cholesterol levels <1.04 mmol/L in men or <1.30 mmol/L in women or specific treatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides.",
+      "context_window": "eatment for HDL cholesterol; and serum triglyceride levels \u22651.7 mmol/L or specific treatment for elevated triglycerides. MetS wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-5087",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5087,
+      "sentence": "Spearman correlation was used to analyze the correlation of the changes in ACR and the changes in selected parameters after 48 weeks\u2019 treatment.",
+      "context_window": "changes in ACR and the changes in selected parameters after 48 weeks\u2019 treatment. A value of P < 0.05 was considered to be statis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-5119",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5119,
+      "sentence": "A value of P < 0.05 was considered to be statistically significant.",
+      "context_window": "n selected parameters after 48 weeks\u2019 treatment. A value of P < 0.05 was considered to be statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-487",
+      "claim_type": "unit_value",
+      "raw_text": "11.74 mg",
+      "numeric_values": [
+        11.74
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 487,
+      "sentence": "Among all participants, the median ACR was 11.74 mg/g.",
+      "context_window": "e randomization. Among all participants, the median ACR was 11.74 mg/g. Overall, 78.1% of the study participants had normal ACR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-508",
+      "claim_type": "percentage",
+      "raw_text": "78.1%",
+      "numeric_values": [
+        78.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 508,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "g all participants, the median ACR was 11.74 mg/g. Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-564",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 564,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "ll, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-574",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 574,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbum",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 606,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "rmal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g). Multi-li",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-620",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 620,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "s (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g). Multi-liner regressio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-652",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 652,
+      "sentence": "Overall, 78.1% of the study participants had normal ACR levels (<30 mg/g), 21.9% had elevated ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g).",
+      "context_window": "ACR levels (\u226530 mg/g), and 0.5% had macroalbuminuria (ACR \u2265300 mg/g). Multi-liner regression analysis with Log-transformed AC",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1321",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "There were no significant differences in demographic and clinical characteristics between acarbose and metformin groups (all P > 0.05; Table 1 ).",
+      "context_window": "characteristics between acarbose and metformin groups (all P > 0.05; Table 1 ). Moreover, baseline urine ACR level, eGFR, and m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1648",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1648,
+      "sentence": "Moreover, baseline urine ACR level, eGFR, and metabolic parameters, including body mass index, waist circumference, BP, HbA1c, fasting plasma glucose (FPG), 2 hour post-challenge plasma glucose (PPG), HOMA-IR, HDL-C, LDL-C and triglyceride level showed no significant differences between the 2 groups (all P > 0.05, Table 2 ).",
+      "context_window": "showed no significant differences between the 2 groups (all P > 0.05, Table 2 ). There were also no significant differences in t",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-1805",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "There were also no significant differences in the proportions of patients with MetS and elevated ACR between 2 groups at baseline (both P > 0.05, Table 2 ).",
+      "context_window": "th MetS and elevated ACR between 2 groups at baseline (both P > 0.05, Table 2 ). Baseline Characteristics in 2 Treatment Groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-2283",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2283,
+      "sentence": "A significant decline in urine ACR was observed in both the acarbose and metformin groups at week 24 and 48 (all P < 0.001).",
+      "context_window": "th the acarbose and metformin groups at week 24 and 48 (all P < 0.001). The proportion of patients with elevated ACRs was also re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-2436",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2436,
+      "sentence": "The proportion of patients with elevated ACRs was also reduced in both treatment groups at week 24 and 48 compared with baseline values (all P < 0.05; Table 2 ).",
+      "context_window": "groups at week 24 and 48 compared with baseline values (all P < 0.05; Table 2 ). In comparison between acarbose and metformin g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-2650",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2650,
+      "sentence": "In comparison between acarbose and metformin groups after intervention, urine ACR level in acarbose treatment group was significantly lower than that in metformin treatment group at week 48 ( P < 0.05; Table 2 ).",
+      "context_window": "y lower than that in metformin treatment group at week 48 ( P < 0.05; Table 2 ). Furthermore, the reduction of urine ACR (absolu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-2854",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2854,
+      "sentence": "Furthermore, the reduction of urine ACR (absolute change in ACR from baseline value) was significantly greater in patients taking acarbose than in those taking metformin at week 48 ( P = 0.01; Figure 1 ).",
+      "context_window": "taking acarbose than in those taking metformin at week 48 ( P = 0.01; Figure 1 ). Absolute change in albumin/creatinine ratio (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3183",
+      "claim_type": "percentage",
+      "raw_text": "74.01%",
+      "numeric_values": [
+        74.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3183,
+      "sentence": "The prevalence of MetS in study participants with newly diagnosed type 2 diabetes mellitus was 74.01% at baseline.",
+      "context_window": "ticipants with newly diagnosed type 2 diabetes mellitus was 74.01% at baseline. As showed in Table 2 , both acarbose and metfo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-3334",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3334,
+      "sentence": "As showed in Table 2 , both acarbose and metformin treatments significantly decreased the frequency of MetS at week 24 and 48 (all P < 0.05).",
+      "context_window": "ntly decreased the frequency of MetS at week 24 and 48 (all P < 0.05). Both acarbose and metformin treatments significantly decr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-3519",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3519,
+      "sentence": "Both acarbose and metformin treatments significantly decreased HbA1c, FPG, PPG, HOMA-IR, diastolic BP, LDL-C, body mass index, and waist circumference at week 24 and 48 (all P < 0.05).",
+      "context_window": "mass index, and waist circumference at week 24 and 48 (all P < 0.05). Neither treatment affected HDL-C. The serum triglyceride",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-3692",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3692,
+      "sentence": "The serum triglyceride level was significantly decreased in study patients receiving acarbose treatment at week 24 and 48 (both P < 0.001), but not in patients receiving metformin treatment at week 24 and 48 (both P > 0.05).",
+      "context_window": "tients receiving acarbose treatment at week 24 and 48 (both P < 0.001), but not in patients receiving metformin treatment at week",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-p-3778",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3778,
+      "sentence": "The serum triglyceride level was significantly decreased in study patients receiving acarbose treatment at week 24 and 48 (both P < 0.001), but not in patients receiving metformin treatment at week 24 and 48 (both P > 0.05).",
+      "context_window": "ients receiving metformin treatment at week 24 and 48 (both P > 0.05). In comparisons between acarbose and etformin groups afte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3848",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3848,
+      "sentence": "In comparisons between acarbose and etformin groups after 48 weeks\u2019 intervention, triglyceride and PPG levels in patients taking acarbose were lower than those taking metformin, whereas FPG was higher in patients taking acarbose than those taking metformin.",
+      "context_window": "In comparisons between acarbose and etformin groups after 48 weeks\u2019 intervention, triglyceride and PPG levels in patients taki",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-4395",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4395,
+      "sentence": "There was no difference in eGFR between the acarbose and metformin groups after 48 weeks\u2019 treatment.",
+      "context_window": "nce in eGFR between the acarbose and metformin groups after 48 weeks\u2019 treatment. In acarbose group, there were significant corr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-4567",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4567,
+      "sentence": "In acarbose group, there were significant correlations between the change in urine ACR and the changes in HbA1c, diastolic BP, and triglyceride after 48 weeks of treatment.",
+      "context_window": "the changes in HbA1c, diastolic BP, and triglyceride after 48 weeks of treatment. In contrast, only the changes in HbA1c and di",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1139",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 1139,
+      "sentence": "21 Two other studies demonstrated that metformin (either 500 mg/day or \u2264850 mg/day) was ineffective in changing albuminuria in a shorter time.",
+      "context_window": "d. 21 Two other studies demonstrated that metformin (either 500 mg/day or \u2264850 mg/day) was ineffective in changing albuminuria in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1154",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg/day",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 1154,
+      "sentence": "21 Two other studies demonstrated that metformin (either 500 mg/day or \u2264850 mg/day) was ineffective in changing albuminuria in a shorter time.",
+      "context_window": "studies demonstrated that metformin (either 500 mg/day or \u2264850 mg/day) was ineffective in changing albuminuria in a shorter time.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-1638",
+      "claim_type": "percentage",
+      "raw_text": "78.26%",
+      "numeric_values": [
+        78.26
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1638,
+      "sentence": "It should be noted that: the frequencies of hypertension and either angiotensin-converting enzyme inhibitors (Ace) or angiotensin receptor blockers (ARB) usage at baseline in the ADOPT study were 78.26% and 33.14%, respectively, and both were much lower in the present study; and the duration of diabetes in the ADOPT study was longer than that in the present study.",
+      "context_window": "or blockers (ARB) usage at baseline in the ADOPT study were 78.26% and 33.14%, respectively, and both were much lower in the p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-1649",
+      "claim_type": "percentage",
+      "raw_text": "33.14%",
+      "numeric_values": [
+        33.14
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1649,
+      "sentence": "It should be noted that: the frequencies of hypertension and either angiotensin-converting enzyme inhibitors (Ace) or angiotensin receptor blockers (ARB) usage at baseline in the ADOPT study were 78.26% and 33.14%, respectively, and both were much lower in the present study; and the duration of diabetes in the ADOPT study was longer than that in the present study.",
+      "context_window": "(ARB) usage at baseline in the ADOPT study were 78.26% and 33.14%, respectively, and both were much lower in the present stud",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-1920",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 1920,
+      "sentence": "Specifically, more than half the participants in the ADOPT study had been diagnosed with type 2 diabetes for > 1 year.",
+      "context_window": "e ADOPT study had been diagnosed with type 2 diabetes for > 1 year. Therefore, it is possible that the increased urinary album",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3653",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3653,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "s higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3657,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "gher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3673",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3673,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "ecommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks. 14 Acarb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3690",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3690,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "ernational guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks. 14 Acarbose, as an alpha-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3697",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3697,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "nal guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks. 14 Acarbose, as an alpha-glucosidase",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-pct-3711",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3711,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "(45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks. 14 Acarbose, as an alpha-glucosidase inhibitor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-3718",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3718,
+      "sentence": "It should also be noted that the relative energy proportion of dietary carbohydrates consumed by the participants in MARCH study is higher than that recommended by international guidelines (45%-65%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks.",
+      "context_window": "5%), with mean 67% at baseline, 66% at 24 weeks, and 68% at 48 weeks. 14 Acarbose, as an alpha-glucosidase inhibitor, which redu",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in-u-4928",
+      "claim_type": "unit_value",
+      "raw_text": "48 weeks",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4928,
+      "sentence": "In addition, acarbose monotherapy showed a greater reduction in urine ACR compared with metformin after 48 weeks\u2019 intervention.",
+      "context_window": "reater reduction in urine ACR compared with metformin after 48 weeks\u2019 intervention.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

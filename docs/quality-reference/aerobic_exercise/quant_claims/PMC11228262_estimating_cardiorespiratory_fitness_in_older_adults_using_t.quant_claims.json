@@ -1,0 +1,1186 @@
+{
+  "paper_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t",
+  "doi": "10.3389/fspor.2024.1368262",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 10,
+    "percentage": 38,
+    "mean_sd": 1,
+    "p_value": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-u-733",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 733,
+      "sentence": "Participants were community-dwelling, cognitively unimpaired older adults aged 60-80 years ( n = 92).",
+      "context_window": "unity-dwelling, cognitively unimpaired older adults aged 60-80 years ( n = 92). They completed the IPAQ and underwent maximal ex",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-744",
+      "claim_type": "sample_size",
+      "raw_text": "n = 92",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 744,
+      "sentence": "Participants were community-dwelling, cognitively unimpaired older adults aged 60-80 years ( n = 92).",
+      "context_window": "ing, cognitively unimpaired older adults aged 60-80 years ( n = 92). They completed the IPAQ and underwent maximal exercise te",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-974",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 974,
+      "sentence": "Stepwise linear regression was used to determine the equation in a randomly selected, sex-balanced, derivation subset of participants ( n = 60), and subsequently validated using a second subset of participants ( n = 32).",
+      "context_window": "selected, sex-balanced, derivation subset of participants ( n = 60), and subsequently validated using a second subset of parti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-1050",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1050,
+      "sentence": "Stepwise linear regression was used to determine the equation in a randomly selected, sex-balanced, derivation subset of participants ( n = 60), and subsequently validated using a second subset of participants ( n = 32).",
+      "context_window": "sequently validated using a second subset of participants ( n = 32). The final equation included age, sex, body mass index an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1168",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "The final equation included age, sex, body mass index and leisure time activity from the IPAQ and explained 61% and 55% of the variance in the derivation and validation groups, respectively (standard error of estimates = 3.9, 4.0).",
+      "context_window": "index and leisure time activity from the IPAQ and explained 61% and 55% of the variance in the derivation and validation gr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1176",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "The final equation included age, sex, body mass index and leisure time activity from the IPAQ and explained 61% and 55% of the variance in the derivation and validation groups, respectively (standard error of estimates = 3.9, 4.0).",
+      "context_window": "d leisure time activity from the IPAQ and explained 61% and 55% of the variance in the derivation and validation groups, re",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1310",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1310,
+      "sentence": "Seventy-seven and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg-1.min-1) of measured VO 2peak for the derivation and validation subgroups.",
+      "context_window": "(standard error of estimates = 3.9, 4.0). Seventy-seven and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg-1.min-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-u-1299",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1299,
+      "sentence": "A majority of current equations have been validated in cohorts with a mean age of 40-50 years and are less accurate when implemented in older adults ( 9 , 10 ).",
+      "context_window": "ations have been validated in cohorts with a mean age of 40-50 years and are less accurate when implemented in older adults ( 9",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2343",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2343,
+      "sentence": "Notably, the latter equation explained a high percentage (74%-87%) of the variance in measured cardiorespiratory fitness, yet these type of field tests are not always applicable, particularly for older adults in population-based studies.",
+      "context_window": ". Notably, the latter equation explained a high percentage (74%-87%) of the variance in measured cardiorespiratory fitness,",
+      "claim_role": "population",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2347",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2347,
+      "sentence": "Notably, the latter equation explained a high percentage (74%-87%) of the variance in measured cardiorespiratory fitness, yet these type of field tests are not always applicable, particularly for older adults in population-based studies.",
+      "context_window": "tably, the latter equation explained a high percentage (74%-87%) of the variance in measured cardiorespiratory fitness, yet",
+      "claim_role": "population",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-4486",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4486,
+      "sentence": "Majority of previous studies have validated their equations using a treadmill, and these protocols may produce 5%-10% higher VO 2max values compared to cycling ( 22 ).",
+      "context_window": "quations using a treadmill, and these protocols may produce 5%-10% higher VO 2max values compared to cycling ( 22 ). These",
+      "claim_role": "background",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-4489",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4489,
+      "sentence": "Majority of previous studies have validated their equations using a treadmill, and these protocols may produce 5%-10% higher VO 2max values compared to cycling ( 22 ).",
+      "context_window": "tions using a treadmill, and these protocols may produce 5%-10% higher VO 2max values compared to cycling ( 22 ). These hig",
+      "claim_role": "background",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-u-345",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 345,
+      "sentence": "The IPAC inclusion criteria have been detailed previously ( 25 ); briefly, participants were aged 60-80 years, community-dwelling, and cognitively unimpaired.",
+      "context_window": "ailed previously ( 25 ); briefly, participants were aged 60-80 years, community-dwelling, and cognitively unimpaired. The total",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-442",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 442,
+      "sentence": "The total sample for the IPAC study is n = 99, however 7 participants had incomplete physical activity questionnaire data and were excluded from the current analyses (resulting n = 92).",
+      "context_window": "nitively unimpaired. The total sample for the IPAC study is n = 99, however 7 participants had incomplete physical activity qu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-580",
+      "claim_type": "sample_size",
+      "raw_text": "n = 92",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 580,
+      "sentence": "The total sample for the IPAC study is n = 99, however 7 participants had incomplete physical activity questionnaire data and were excluded from the current analyses (resulting n = 92).",
+      "context_window": "data and were excluded from the current analyses (resulting n = 92). Written informed consent was obtained prior to participa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3325",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3325,
+      "sentence": "VO 2peak was used rather than VO 2max (commonly used in other validation studies) because the occurrence of a plateau in VO 2 which defines the VO 2max is observed in <50% of the general population, and even less so in older adults ( 27 ).",
+      "context_window": "a plateau in VO 2 which defines the VO 2max is observed in <50% of the general population, and even less so in older adults",
+      "claim_role": "background",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3962",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3962,
+      "sentence": "Additional criteria for the assessment of VO 2peak involve participants reaching a maximal heart rate greater than 85% of their age predicted maximum [i.e., (220 - 2 age) \u00d7 0.85] and a respiratory exchange ratio (VCO 2 /VO 2 ) greater than 1.15.",
+      "context_window": "lve participants reaching a maximal heart rate greater than 85% of their age predicted maximum [i.e., (220 - 2 age) \u00d7 0.85]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-4359",
+      "claim_type": "sample_size",
+      "raw_text": "n = 92",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4359,
+      "sentence": "Descriptive statistics were calculated to compare demographic variables between IPAC subgroups (total n = 92; derivation n = 60, validation n = 32).",
+      "context_window": "compare demographic variables between IPAC subgroups (total n = 92; derivation n = 60, validation n = 32). For continuous vari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-4378",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4378,
+      "sentence": "Descriptive statistics were calculated to compare demographic variables between IPAC subgroups (total n = 92; derivation n = 60, validation n = 32).",
+      "context_window": "variables between IPAC subgroups (total n = 92; derivation n = 60, validation n = 32). For continuous variables, t -tests wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-4397",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4397,
+      "sentence": "Descriptive statistics were calculated to compare demographic variables between IPAC subgroups (total n = 92; derivation n = 60, validation n = 32).",
+      "context_window": "IPAC subgroups (total n = 92; derivation n = 60, validation n = 32). For continuous variables, t -tests were conducted to dete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-4680",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4680,
+      "sentence": "To derive our non-exercise cardiorespiratory fitness equation, the sample was randomly split into derivation ( n = 60) and validation ( n = 32) subgroups.",
+      "context_window": "s equation, the sample was randomly split into derivation ( n = 60) and validation ( n = 32) subgroups. These groups were gend",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-n-4705",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4705,
+      "sentence": "To derive our non-exercise cardiorespiratory fitness equation, the sample was randomly split into derivation ( n = 60) and validation ( n = 32) subgroups.",
+      "context_window": "s randomly split into derivation ( n = 60) and validation ( n = 32) subgroups. These groups were gender-balanced and considera",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-7016",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7016,
+      "sentence": "The mean difference between estimated and observed cardiorespiratory fitness and 95% confidence intervals were calculated for these plots.",
+      "context_window": "etween estimated and observed cardiorespiratory fitness and 95% confidence intervals were calculated for these plots.",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-msd-125",
+      "claim_type": "mean_sd",
+      "raw_text": "68.9 \u00b1 5.1",
+      "numeric_values": [
+        68.9,
+        5.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 125,
+      "sentence": "The sample had a mean age of 68.9 \u00b1 5.1 and were 53% female; there were no significant differences in demographics between derivation and validation subgroups.",
+      "context_window": "ups are presented in Table 1 . The sample had a mean age of 68.9 \u00b1 5.1 and were 53% female; there were no significant differences",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-145",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 145,
+      "sentence": "The sample had a mean age of 68.9 \u00b1 5.1 and were 53% female; there were no significant differences in demographics between derivation and validation subgroups.",
+      "context_window": "Table 1 . The sample had a mean age of 68.9 \u00b1 5.1 and were 53% female; there were no significant differences in demographi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-1093",
+      "claim_type": "p_value",
+      "raw_text": "p = .039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1093,
+      "sentence": "Within the derivation subset, only vigorous activity METs and leisure time METs from the IPAQ were correlated with VO 2peak ( r = .28, p = .039; r = .36, p = .005, respectively; Supplementary Table S2 ).",
+      "context_window": "METs from the IPAQ were correlated with VO 2peak ( r = .28, p = .039; r = .36, p = .005, respectively; Supplementary Table S2 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "p = .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1112,
+      "sentence": "Within the derivation subset, only vigorous activity METs and leisure time METs from the IPAQ were correlated with VO 2peak ( r = .28, p = .039; r = .36, p = .005, respectively; Supplementary Table S2 ).",
+      "context_window": "were correlated with VO 2peak ( r = .28, p = .039; r = .36, p = .005, respectively; Supplementary Table S2 ). Age ( r = -.39), s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-1280",
+      "claim_type": "p_value",
+      "raw_text": "p < .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1280,
+      "sentence": "Age ( r = -.39), sex ( r = .43), and body mass index ( r = -.37), all showed significant correlations with VO 2peak ( p < .01; Supplementary Table S2 ).",
+      "context_window": "-.37), all showed significant correlations with VO 2peak ( p < .01; Supplementary Table S2 ). Stepwise regression conducted wi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1614",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1614,
+      "sentence": "The total model explained 59% of the variance in VO 2peak (SEE = 4.0), and the resultant equation was: 67.584 - (0.463 \u00d7 Age) + (6.783 \u00d7 Sex, 0 = Female, 1 = Male) + (0.075 \u00d7 \u221aIPAQ Leisure METs) - (0.692 \u00d7 body mass index) ( Supplementary Table S3 ).",
+      "context_window": "ution ( Supplementary Table S3 ). The total model explained 59% of the variance in VO 2peak (SEE = 4.0), and the resultant",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2059",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2059,
+      "sentence": "Cardiorespiratory fitness estimates derived from Wier ( 16 ), Jackson ( 15 ), Schembre & Riebe ( 21 ) and the derviation and validation samples in the current study were all correlated with directly measured VO 2peak ( p < .001; Table 2 ).",
+      "context_window": "study were all correlated with directly measured VO 2peak ( p < .001; Table 2 ). The Schembre & Riebe ( 21 ) estimate explained",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2127",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2127,
+      "sentence": "The Schembre & Riebe ( 21 ) estimate explained 46% of the variance in measured VO 2peak , the Jackson ( 15 ) estimate explained 42% of variance, while the Wier ( 16 ) equation explained 45% of the variance ( Table 2 ).",
+      "context_window": "; Table 2 ). The Schembre & Riebe ( 21 ) estimate explained 46% of the variance in measured VO 2peak , the Jackson ( 15 ) e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2208",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2208,
+      "sentence": "The Schembre & Riebe ( 21 ) estimate explained 46% of the variance in measured VO 2peak , the Jackson ( 15 ) estimate explained 42% of variance, while the Wier ( 16 ) equation explained 45% of the variance ( Table 2 ).",
+      "context_window": "n measured VO 2peak , the Jackson ( 15 ) estimate explained 42% of variance, while the Wier ( 16 ) equation explained 45% o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2266",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2266,
+      "sentence": "The Schembre & Riebe ( 21 ) estimate explained 46% of the variance in measured VO 2peak , the Jackson ( 15 ) estimate explained 42% of variance, while the Wier ( 16 ) equation explained 45% of the variance ( Table 2 ).",
+      "context_window": "d 42% of variance, while the Wier ( 16 ) equation explained 45% of the variance ( Table 2 ). For the current study, our equ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2345",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2345,
+      "sentence": "For the current study, our equation explained 61% of the variance in the derivation group, and 55% in the validation group.",
+      "context_window": "( Table 2 ). For the current study, our equation explained 61% of the variance in the derivation group, and 55% in the val",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-2394",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2394,
+      "sentence": "For the current study, our equation explained 61% of the variance in the derivation group, and 55% in the validation group.",
+      "context_window": "explained 61% of the variance in the derivation group, and 55% in the validation group. Estimates derived from the Schembr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2551",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2551,
+      "sentence": "Estimates derived from the Schembre & Riebe ( 21 ) and Jackson ( 15 ) equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ).",
+      "context_window": ") equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates deriv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2561",
+      "claim_type": "p_value",
+      "raw_text": "p = .008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2561,
+      "sentence": "Estimates derived from the Schembre & Riebe ( 21 ) and Jackson ( 15 ) equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ).",
+      "context_window": "s significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2654",
+      "claim_type": "p_value",
+      "raw_text": "p = .09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2654,
+      "sentence": "Estimates derived from the Schembre & Riebe ( 21 ) and Jackson ( 15 ) equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ).",
+      "context_window": ", however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2738",
+      "claim_type": "p_value",
+      "raw_text": "p = .99",
+      "numeric_values": [
+        0.99
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2738,
+      "sentence": "Estimates derived from the Schembre & Riebe ( 21 ) and Jackson ( 15 ) equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ).",
+      "context_window": "tion and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ). Comparison of non-exerc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2747",
+      "claim_type": "p_value",
+      "raw_text": "p = .41",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2747,
+      "sentence": "Estimates derived from the Schembre & Riebe ( 21 ) and Jackson ( 15 ) equations significantly differed from measured VO 2peak ( p < .001, p = .008, respectively; Table 2 ), however estimates derived from the Wier ( 16 ) equation ( p = .09), and the derivation and validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ).",
+      "context_window": "validation groups from the current study did not ( p = .99, p = .41, respectively; Table 2 ). Comparison of non-exercise cardi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-2994",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2994,
+      "sentence": "All estimated equations were significantly correlated with, and significant predictors of, VO 2peak at p < .001. t -tests compared measured VO 2peak with values derived from the respective equation.",
+      "context_window": "correlated with, and significant predictors of, VO 2peak at p < .001. t -tests compared measured VO 2peak with values derived fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-3356",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3356,
+      "sentence": "Bolded values indicate significance at p < .05.\n\np < .05.\n\np < .001.",
+      "context_window": "ring peak exercise. Bolded values indicate significance at p < .05. p < .05. p < .001. The Bland-Altman plots ( Figure 1 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-3366",
+      "claim_type": "p_value",
+      "raw_text": "p < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3366,
+      "sentence": "Bolded values indicate significance at p < .05.\n\np < .05.\n\np < .001.",
+      "context_window": "exercise. Bolded values indicate significance at p < .05. p < .05. p < .001. The Bland-Altman plots ( Figure 1 ) showed the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-p-3376",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3376,
+      "sentence": "Bolded values indicate significance at p < .05.\n\np < .05.\n\np < .001.",
+      "context_window": "Bolded values indicate significance at p < .05. p < .05. p < .001. The Bland-Altman plots ( Figure 1 ) showed the Schembre &",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3686",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3686,
+      "sentence": "The Jackson ( 15 ) and Wier ( 16 ) estimates show similar performance, although from the Wier ( 16 ) estimate 75% of the sample fell within \u00b11SD (6.13 ml.kg -1 .min -1 ) of measured VO 2peak , while from the Jackson ( 15 ) equation only 62% of the sample fell within this range.",
+      "context_window": "similar performance, although from the Wier ( 16 ) estimate 75% of the sample fell within \u00b11SD (6.13 ml.kg -1 .min -1 ) of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3813",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "The Jackson ( 15 ) and Wier ( 16 ) estimates show similar performance, although from the Wier ( 16 ) estimate 75% of the sample fell within \u00b11SD (6.13 ml.kg -1 .min -1 ) of measured VO 2peak , while from the Jackson ( 15 ) equation only 62% of the sample fell within this range.",
+      "context_window": "ured VO 2peak , while from the Jackson ( 15 ) equation only 62% of the sample fell within this range. For our derivation an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3900",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3900,
+      "sentence": "For our derivation and validation subgroups, 77% and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg -1 .min -1 ) of measured VO 2peak , respectively.",
+      "context_window": "in this range. For our derivation and validation subgroups, 77% and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3908",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3908,
+      "sentence": "For our derivation and validation subgroups, 77% and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg -1 .min -1 ) of measured VO 2peak , respectively.",
+      "context_window": "range. For our derivation and validation subgroups, 77% and 81% of the sample fell within \u00b11SD (5.96 and 6.28 ml.kg -1 .min",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-4242",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4242,
+      "sentence": "Solid black line represents the mean difference between estimated and observed cardiorespiratory fitness, dashed red lines indicate 95% confidence intervals for the mean difference. ( A ) Schembre & Riebe ( 21 ) ( B ) Jackson ( 15 ) ( C ) Wier ( 16 ) ( D ) Current study derivation group ( E ) current study validation group. ( A ) Mean difference between measured fitness and Schembre (solid black line) = 14.44. ( B ) Mean difference between measured fitness and Jackson estimate (solid black line) = 2.40. ( C ) Mean difference between measured fitness and Wier estimate (solid black line) = 1.38. ( D ) Mean difference between measured fitness and derivation group estimate (solid black line) = -0.01. ( E ) Mean difference between measured fitness and validation group estimate (solid black line) = 1.20.",
+      "context_window": "served cardiorespiratory fitness, dashed red lines indicate 95% confidence intervals for the mean difference. ( A ) Schembr",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 285,
+      "sentence": "Leisure time physical activity from the IPAQ, BMI, age, and sex were significant predictors of CRF, and our equation including these variables explained 61% and 55% of the variance in our derivation and validation subgroups, respectively.",
+      "context_window": "f CRF, and our equation including these variables explained 61% and 55% of the variance in our derivation and validation su",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 293,
+      "sentence": "Leisure time physical activity from the IPAQ, BMI, age, and sex were significant predictors of CRF, and our equation including these variables explained 61% and 55% of the variance in our derivation and validation subgroups, respectively.",
+      "context_window": "nd our equation including these variables explained 61% and 55% of the variance in our derivation and validation subgroups,",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1067",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1067,
+      "sentence": "Within our validation group, only one participant (3% of the sample) fell outside of the 95% confidence interval for our estimate, suggesting reliable estimation not driven by outliers.",
+      "context_window": "5 -.79). Within our validation group, only one participant (3% of the sample) fell outside of the 95% confidence interval",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1105",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1105,
+      "sentence": "Within our validation group, only one participant (3% of the sample) fell outside of the 95% confidence interval for our estimate, suggesting reliable estimation not driven by outliers.",
+      "context_window": "only one participant (3% of the sample) fell outside of the 95% confidence interval for our estimate, suggesting reliable e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1656",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1656,
+      "sentence": "The generally accepted error rate for submaximal exercise testing to estimate VO 2peak is between 10%-20% ( 16 ).",
+      "context_window": "submaximal exercise testing to estimate VO 2peak is between 10%-20% ( 16 ). In the current study, 78% of the individual est",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1660",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1660,
+      "sentence": "The generally accepted error rate for submaximal exercise testing to estimate VO 2peak is between 10%-20% ( 16 ).",
+      "context_window": "aximal exercise testing to estimate VO 2peak is between 10%-20% ( 16 ). In the current study, 78% of the individual estimat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1694",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1694,
+      "sentence": "In the current study, 78% of the individual estimates fell within 20% of the observed VO 2peak , suggesting similar performance to submaximal testing from our eCRF, with lower participant burden.",
+      "context_window": "e VO 2peak is between 10%-20% ( 16 ). In the current study, 78% of the individual estimates fell within 20% of the observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-1738",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1738,
+      "sentence": "In the current study, 78% of the individual estimates fell within 20% of the observed VO 2peak , suggesting similar performance to submaximal testing from our eCRF, with lower participant burden.",
+      "context_window": "current study, 78% of the individual estimates fell within 20% of the observed VO 2peak , suggesting similar performance t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-3976",
+      "claim_type": "percentage",
+      "raw_text": "79%",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3976,
+      "sentence": "These studies have been conducted in younger or middle-aged adults, and because of lifestyle changes which often accompany retirement (i.e., greater leisure time), the leisure time variable may be more accurate for estimating CRF in older adults specifically (indeed, the current sample consisted of 79% retired individuals).",
+      "context_window": "dults specifically (indeed, the current sample consisted of 79% retired individuals). Additionally, our results may differ",
+      "claim_role": "population",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-4110",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4110,
+      "sentence": "Additionally, our results may differ from previous studies examining IPAQ categorizations because majority (62%) of our sample fell into the \u201chigh\u201d physical activity category, resulting in a lack of adequate discrimination between activity levels.",
+      "context_window": "us studies examining IPAQ categorizations because majority (62%) of our sample fell into the \u201chigh\u201d physical activity categ",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-6399",
+      "claim_type": "percentage",
+      "raw_text": "62%",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6399,
+      "sentence": "Since the current project was a secondary analysis from an exercise intervention study, volunteers were healthy, active, and highly motivated, which is reflected in the high percentage (62%) of individuals falling in the \u201chigh\u201d IPAQ category.",
+      "context_window": "ighly motivated, which is reflected in the high percentage (62%) of individuals falling in the \u201chigh\u201d IPAQ category. This m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-7841",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7841,
+      "sentence": "Finally, although our estimation explained an acceptable proportion of the variance in our sample (55%-61%), and can reliably estimate fitness in large samples, it may under- or over-estimate fitness at an individual level.",
+      "context_window": "ned an acceptable proportion of the variance in our sample (55%-61%), and can reliably estimate fitness in large samples, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-7845",
+      "claim_type": "percentage",
+      "raw_text": "61%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7845,
+      "sentence": "Finally, although our estimation explained an acceptable proportion of the variance in our sample (55%-61%), and can reliably estimate fitness in large samples, it may under- or over-estimate fitness at an individual level.",
+      "context_window": "an acceptable proportion of the variance in our sample (55%-61%), and can reliably estimate fitness in large samples, it ma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-8114",
+      "claim_type": "percentage",
+      "raw_text": "74%",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8114,
+      "sentence": "For clinical practice, equations which include field-based measures such as Vel\u00e1zquez-D\u00edaz ( 14 ) and can explain a greater proportion of variance (74%-87%), may be more suitable.",
+      "context_window": "az ( 14 ) and can explain a greater proportion of variance (74%-87%), may be more suitable. The current study derived and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-8118",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8118,
+      "sentence": "For clinical practice, equations which include field-based measures such as Vel\u00e1zquez-D\u00edaz ( 14 ) and can explain a greater proportion of variance (74%-87%), may be more suitable.",
+      "context_window": "14 ) and can explain a greater proportion of variance (74%-87%), may be more suitable. The current study derived and cros",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t-pct-8360",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8360,
+      "sentence": "Our final equation included sex, age, BMI and leisure time activity from the IPAQ, and explained 55% of the variance in our validation sample.",
+      "context_window": "BMI and leisure time activity from the IPAQ, and explained 55% of the variance in our validation sample. The appeal of eCR",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

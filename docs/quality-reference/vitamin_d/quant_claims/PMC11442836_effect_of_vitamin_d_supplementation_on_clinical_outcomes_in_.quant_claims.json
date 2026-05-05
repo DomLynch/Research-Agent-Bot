@@ -1,0 +1,1925 @@
+{
+  "paper_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_",
+  "doi": "10.1002/prp2.70013",
+  "extracted_at": "2026-05-05T21:50:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 29,
+    "p_value": 40,
+    "confidence_interval": 20,
+    "unit_value": 15,
+    "hazard_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-902",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 902,
+      "sentence": "The meta\u2010analysis revealed that vitamin D supplementation significantly reduced hospital length of stay (mean difference = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "y reduced hospital length of stay (mean difference = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-946",
+      "claim_type": "p_value",
+      "raw_text": "p = .033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 946,
+      "sentence": "The meta\u2010analysis revealed that vitamin D supplementation significantly reduced hospital length of stay (mean difference = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "erence = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002). S",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-995",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "The meta\u2010analysis revealed that vitamin D supplementation significantly reduced hospital length of stay (mean difference = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002). Subgroup analysis showed a more pronounced redu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-1002",
+      "claim_type": "p_value",
+      "raw_text": "p = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1002,
+      "sentence": "The meta\u2010analysis revealed that vitamin D supplementation significantly reduced hospital length of stay (mean difference = -1.16; 95% confidence interval [CI]: -2.23, -0.09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "09; p = .033) with significant heterogeneity ( I 2 = 69.2%, p = .002). Subgroup analysis showed a more pronounced reduction in s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-1159",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.96, -0.57",
+      "numeric_values": [
+        -1.96,
+        -0.57
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1159,
+      "sentence": "Subgroup analysis showed a more pronounced reduction in studies with vitamin D dosages \u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001).",
+      "context_window": "\u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean differen",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-1181",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "Subgroup analysis showed a more pronounced reduction in studies with vitamin D dosages \u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001).",
+      "context_window": "units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-1212",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1212,
+      "sentence": "Subgroup analysis showed a more pronounced reduction in studies with vitamin D dosages \u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001).",
+      "context_window": "-1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .00",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-1251",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.53, -1.14",
+      "numeric_values": [
+        -2.53,
+        -1.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1251,
+      "sentence": "Subgroup analysis showed a more pronounced reduction in studies with vitamin D dosages \u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001).",
+      "context_window": "and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001). Additionally, vitamin D significantly reduced C",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-1273",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1273,
+      "sentence": "Subgroup analysis showed a more pronounced reduction in studies with vitamin D dosages \u226410 000 international units (IU) (mean difference = -1.27; 95% CI: -1.96, -0.57; p < .001) and in patients over 60 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001).",
+      "context_window": "0 years old (mean difference = -1.84; 95% CI: -2.53, -1.14; p < .001). Additionally, vitamin D significantly reduced CRP concent",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-1367",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1367,
+      "sentence": "Additionally, vitamin D significantly reduced CRP concentrations in older adults (>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019).",
+      "context_window": "significantly reduced CRP concentrations in older adults (>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019).",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-1403",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.07, -0.18",
+      "numeric_values": [
+        -2.07,
+        -0.18
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "Additionally, vitamin D significantly reduced CRP concentrations in older adults (>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019).",
+      "context_window": "tions in older adults (>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019). No significant changes were found in ferritin,",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-1425",
+      "claim_type": "p_value",
+      "raw_text": "p = .019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Additionally, vitamin D significantly reduced CRP concentrations in older adults (>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019).",
+      "context_window": "(>60 years) (mean difference = -1.13; 95% CI: -2.07, -0.18; p = .019). No significant changes were found in ferritin, D\u2010dimer, H",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-1563",
+      "claim_type": "p_value",
+      "raw_text": "p > .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1563,
+      "sentence": "No significant changes were found in ferritin, D\u2010dimer, Hb concentrations, or in lymphocyte, neutrophil, and platelet counts ( p > .05).",
+      "context_window": "ations, or in lymphocyte, neutrophil, and platelet counts ( p > .05). In conclusion, while vitamin D supplementation did not si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-1469",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 1469,
+      "sentence": "17 Serum concentrations of 25\u2010hydroxyvitamin D [25(OH)D] <20 ng/mL have been shown to increase the risk of pneumonia by over 60%.",
+      "context_window": ". 17 Serum concentrations of 25\u2010hydroxyvitamin D [25(OH)D] <20 ng/mL have been shown to increase the risk of pneumonia by over 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-1536",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1536,
+      "sentence": "17 Serum concentrations of 25\u2010hydroxyvitamin D [25(OH)D] <20 ng/mL have been shown to increase the risk of pneumonia by over 60%.",
+      "context_window": "L have been shown to increase the risk of pneumonia by over 60%. 18 There is an inverse correlation between 25(OH)D concent",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-1955",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1955,
+      "sentence": "The inclusion criteria include: (1) clinical trial studies with a control group conducted on adults over 18 years old; (2) vitamin D supplementation of at least one dose in patients with COVID\u201019; (3) comparison of at least one of the outcomes considered in this study (mortality, length of hospital stay, CRP, ferritin, D\u2010dimer, Hb concentrations, and lymphocyte, neutrophil, and platelet counts) between the intervention and control groups reported at the beginning and end of the intervention.",
+      "context_window": "trial studies with a control group conducted on adults over 18 years old; (2) vitamin D supplementation of at least one dose in",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-4182",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4182,
+      "sentence": "Intervention effects were determined as the mean differences and 95% confidence intervals (CIs) obtained for changes in serum concentrations of CRP and D\u2010dimer, as well as length of hospital stay.",
+      "context_window": "vention effects were determined as the mean differences and 95% confidence intervals (CIs) obtained for changes in serum co",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-4611",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4611,
+      "sentence": "If the I 2 was above 50%, we used the random\u2010effect model, and if the I 2 was below 50%, we used the fixed\u2010effect model.",
+      "context_window": "r evaluation of studies heterogeneity. If the I 2 was above 50%, we used the random\u2010effect model, and if the I 2 was below",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-4674",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4674,
+      "sentence": "If the I 2 was above 50%, we used the random\u2010effect model, and if the I 2 was below 50%, we used the fixed\u2010effect model.",
+      "context_window": ", we used the random\u2010effect model, and if the I 2 was below 50%, we used the fixed\u2010effect model. Also, sensitivity analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-4978",
+      "claim_type": "unit_value",
+      "raw_text": "22 ng/mL",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4978,
+      "sentence": "31 Subgroup analyses were conducted based on participants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international units [IU] and >10 000 IU).",
+      "context_window": "based on participants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-4992",
+      "claim_type": "unit_value",
+      "raw_text": "22 ng/mL",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4992,
+      "sentence": "31 Subgroup analyses were conducted based on participants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international units [IU] and >10 000 IU).",
+      "context_window": "icipants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-5009",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5009,
+      "sentence": "31 Subgroup analyses were conducted based on participants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international units [IU] and >10 000 IU).",
+      "context_window": "e vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-5023",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5023,
+      "sentence": "31 Subgroup analyses were conducted based on participants' baseline vitamin D concentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international units [IU] and >10 000 IU).",
+      "context_window": "ncentrations (\u226422 ng/mL and >22 ng/mL), age (\u226460 years and >60 years), and vitamin D dosage (\u226410 000 international units [IU] an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-2920",
+      "claim_type": "percentage",
+      "raw_text": "26.2%",
+      "numeric_values": [
+        26.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2920,
+      "sentence": "One study showed a non\u2010significant difference between the vitamin D and control group in terms of all\u2010cause mortality on day 60 (26.2% vs.",
+      "context_window": "nd control group in terms of all\u2010cause mortality on day 60 (26.2% vs. 40.6% mortality rate). 24 Similar findings were observe",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-2930",
+      "claim_type": "percentage",
+      "raw_text": "40.6%",
+      "numeric_values": [
+        40.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2930,
+      "sentence": "40.6% mortality rate).",
+      "context_window": "group in terms of all\u2010cause mortality on day 60 (26.2% vs. 40.6% mortality rate). 24 Similar findings were observed in Murai",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3004",
+      "claim_type": "percentage",
+      "raw_text": "7.6%",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3004,
+      "sentence": "24 Similar findings were observed in Murai et al. (7.6% vs.",
+      "context_window": "y rate). 24 Similar findings were observed in Murai et al. (7.6% vs. 5.1%), 40 and Torres et al. studies (2.44% vs. 2.27%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3013",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3013,
+      "sentence": "5.1%), 40 and Torres et al. studies (2.44% vs.",
+      "context_window": "24 Similar findings were observed in Murai et al. (7.6% vs. 5.1%), 40 and Torres et al. studies (2.44% vs. 2.27%). 34 Solima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3050",
+      "claim_type": "percentage",
+      "raw_text": "2.44%",
+      "numeric_values": [
+        2.44
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3050,
+      "sentence": "5.1%), 40 and Torres et al. studies (2.44% vs.",
+      "context_window": "Murai et al. (7.6% vs. 5.1%), 40 and Torres et al. studies (2.44% vs. 2.27%). 34 Soliman et al., in a trial among diabetic el",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3060",
+      "claim_type": "percentage",
+      "raw_text": "2.27%",
+      "numeric_values": [
+        2.27
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3060,
+      "sentence": "2.27%).",
+      "context_window": "l. (7.6% vs. 5.1%), 40 and Torres et al. studies (2.44% vs. 2.27%). 34 Soliman et al., in a trial among diabetic elderly pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3232",
+      "claim_type": "percentage",
+      "raw_text": "17.5%",
+      "numeric_values": [
+        17.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3232,
+      "sentence": "34 Soliman et al., in a trial among diabetic elderly patients, did not find any significant differences in mortality rate between the vitamin D and placebo groups (17.5% vs.",
+      "context_window": "in mortality rate between the vitamin D and placebo groups (17.5% vs. 18.8%). 35 In line with the results of this study, ther",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3242",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3242,
+      "sentence": "18.8%).",
+      "context_window": "ty rate between the vitamin D and placebo groups (17.5% vs. 18.8%). 35 In line with the results of this study, there were no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3442",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3442,
+      "sentence": "35 In line with the results of this study, there were no significant differences between vitamin D and control groups in terms of COVID\u201019 mortality in other studies, including Sarhan et al. (45% vs.",
+      "context_window": "VID\u201019 mortality in other studies, including Sarhan et al. (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .4",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3450",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3450,
+      "sentence": "51%, p = .49), 36 Mariani et al. (4.3% vs.",
+      "context_window": "ortality in other studies, including Sarhan et al. (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .451), 37",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-3455",
+      "claim_type": "p_value",
+      "raw_text": "p = .49",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3455,
+      "sentence": "51%, p = .49), 36 Mariani et al. (4.3% vs.",
+      "context_window": "ity in other studies, including Sarhan et al. (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .451), 37 and Elami",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3484",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3484,
+      "sentence": "51%, p = .49), 36 Mariani et al. (4.3% vs.",
+      "context_window": "ng Sarhan et al. (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .451), 37 and Elamir et al. (three deaths in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-3493",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3493,
+      "sentence": "1.9%, p = .451), 37 and Elamir et al. (three deaths in the control group and none in the vitamin D group, p = .23).",
+      "context_window": "et al. (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .451), 37 and Elamir et al. (three deaths in the contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-3499",
+      "claim_type": "p_value",
+      "raw_text": "p = .451",
+      "numeric_values": [
+        0.451
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3499,
+      "sentence": "1.9%, p = .451), 37 and Elamir et al. (three deaths in the control group and none in the vitamin D group, p = .23).",
+      "context_window": ". (45% vs. 51%, p = .49), 36 Mariani et al. (4.3% vs. 1.9%, p = .451), 37 and Elamir et al. (three deaths in the control group a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-3599",
+      "claim_type": "p_value",
+      "raw_text": "p = .23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3599,
+      "sentence": "1.9%, p = .451), 37 and Elamir et al. (three deaths in the control group and none in the vitamin D group, p = .23).",
+      "context_window": "eaths in the control group and none in the vitamin D group, p = .23). 38 However, in one study conducted among older adult pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-hr-l-3815",
+      "claim_type": "hazard_ratio",
+      "raw_text": "adjusted hazard ratio = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3815,
+      "sentence": "38 However, in one study conducted among older adult patients with COVID\u201019, it was reported that a single oral high dose of cholecalciferol led to a significant improvement in overall mortality at day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049).",
+      "context_window": "o a significant improvement in overall mortality at day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049). 43 Eight trials, includin",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-3845",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16, 0.99",
+      "numeric_values": [
+        0.16,
+        0.99
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3845,
+      "sentence": "38 However, in one study conducted among older adult patients with COVID\u201019, it was reported that a single oral high dose of cholecalciferol led to a significant improvement in overall mortality at day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049).",
+      "context_window": "overall mortality at day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049). 43 Eight trials, including 944 patients (471",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-3866",
+      "claim_type": "p_value",
+      "raw_text": "p = .049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3866,
+      "sentence": "38 However, in one study conducted among older adult patients with COVID\u201019, it was reported that a single oral high dose of cholecalciferol led to a significant improvement in overall mortality at day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049).",
+      "context_window": "day 14 (adjusted hazard ratio = 0.39 [95% CI: 0.16, 0.99], p = .049). 43 Eight trials, including 944 patients (471 treated and",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-4215",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.23, -0.09",
+      "numeric_values": [
+        -2.23,
+        -0.09
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4215,
+      "sentence": "23 , 24 , 34 , 35 , 37 , 38 , 40 , 43 As shown in Figure 2 , vitamin D supplementation led to a significant reduction in hospital length of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "uction in hospital length of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-4238",
+      "claim_type": "p_value",
+      "raw_text": "p = .033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4238,
+      "sentence": "23 , 24 , 34 , 35 , 37 , 38 , 40 , 43 As shown in Figure 2 , vitamin D supplementation led to a significant reduction in hospital length of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "th of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-4290",
+      "claim_type": "percentage",
+      "raw_text": "69.2%",
+      "numeric_values": [
+        69.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4290,
+      "sentence": "23 , 24 , 34 , 35 , 37 , 38 , 40 , 43 As shown in Figure 2 , vitamin D supplementation led to a significant reduction in hospital length of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "-0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002). In the subgroup analysis, we found that vitamin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-4297",
+      "claim_type": "p_value",
+      "raw_text": "p = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4297,
+      "sentence": "23 , 24 , 34 , 35 , 37 , 38 , 40 , 43 As shown in Figure 2 , vitamin D supplementation led to a significant reduction in hospital length of stay (mean difference = -1.16 [95% CI: -2.23, -0.09]; p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002).",
+      "context_window": "p = .033), with a significant heterogeneity ( I 2 = 69.2%, p = .002). In the subgroup analysis, we found that vitamin D supplem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-4489",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.96, -0.57",
+      "numeric_values": [
+        -1.96,
+        -0.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4489,
+      "sentence": "In the subgroup analysis, we found that vitamin D supplementation reduced the length of hospital stay in studies where the vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001).",
+      "context_window": "e vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-4512",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4512,
+      "sentence": "In the subgroup analysis, we found that vitamin D supplementation reduced the length of hospital stay in studies where the vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001).",
+      "context_window": "\u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean differ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-4555",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4555,
+      "sentence": "In the subgroup analysis, we found that vitamin D supplementation reduced the length of hospital stay in studies where the vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001).",
+      "context_window": ": -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-4594",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.53, -1.14",
+      "numeric_values": [
+        -2.53,
+        -1.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4594,
+      "sentence": "In the subgroup analysis, we found that vitamin D supplementation reduced the length of hospital stay in studies where the vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001).",
+      "context_window": "adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001). The results of the subgroup analysis are summa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-4617",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4617,
+      "sentence": "In the subgroup analysis, we found that vitamin D supplementation reduced the length of hospital stay in studies where the vitamin D dosage was \u226410 000 IU (mean difference = -1.27 [95% CI: -1.96, -0.57]; p < .001) and in older adult patients over 60 years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001).",
+      "context_window": "years old (mean difference = -1.84 [95% CI: -2.53, -1.14]; p < .001). The results of the subgroup analysis are summarized in Ta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-4804",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.79, -0.17",
+      "numeric_values": [
+        -1.79,
+        -0.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4804,
+      "sentence": "The leave\u2010one\u2010out sensitivity analysis showed that leaving each of the trials resulted in a range from -0.809 [95% CI: -1.79, -0.17] by Torres et al. to -1.40 [95% CI: -2.58, -0.23] by Mariani et al., with no significant effect on the pooled effect size.",
+      "context_window": "leaving each of the trials resulted in a range from -0.809 [95% CI: -1.79, -0.17] by Torres et al. to -1.40 [95% CI: -2.58, -0.23] by Marian",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-4853",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.58, -0.23",
+      "numeric_values": [
+        -2.58,
+        -0.23
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4853,
+      "sentence": "The leave\u2010one\u2010out sensitivity analysis showed that leaving each of the trials resulted in a range from -0.809 [95% CI: -1.79, -0.17] by Torres et al. to -1.40 [95% CI: -2.58, -0.23] by Mariani et al., with no significant effect on the pooled effect size.",
+      "context_window": "om -0.809 [95% CI: -1.79, -0.17] by Torres et al. to -1.40 [95% CI: -2.58, -0.23] by Mariani et al., with no significant effect on the poole",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-5051",
+      "claim_type": "p_value",
+      "raw_text": "p = .784",
+      "numeric_values": [
+        0.784
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5051,
+      "sentence": "34 , 37 A funnel plot (Figure 3A ) indicated no substantial evidence of publication bias (Egger's test p = .784; Begg's test p = .71).",
+      "context_window": "d no substantial evidence of publication bias (Egger's test p = .784; Begg's test p = .71). Forest plot detailing weighted mean",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-5073",
+      "claim_type": "p_value",
+      "raw_text": "p = .71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5073,
+      "sentence": "34 , 37 A funnel plot (Figure 3A ) indicated no substantial evidence of publication bias (Egger's test p = .784; Begg's test p = .71).",
+      "context_window": "nce of publication bias (Egger's test p = .784; Begg's test p = .71). Forest plot detailing weighted mean difference and 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-5135",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5135,
+      "sentence": "Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on hospital length of stay.",
+      "context_window": "= .71). Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on hospital",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-6213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.30, 0.34",
+      "numeric_values": [
+        -1.3,
+        0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6213,
+      "sentence": "23 , 24 , 32 , 33 , 34 , 35 , 36 , 39 , 40 , 41 , 45 The results showed that vitamin D supplementation did not lead to a significant decrease in CRP concentrations compared to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ).",
+      "context_window": "oncentrations compared to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-6235",
+      "claim_type": "p_value",
+      "raw_text": "p = .255",
+      "numeric_values": [
+        0.255
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6235,
+      "sentence": "23 , 24 , 32 , 33 , 34 , 35 , 36 , 39 , 40 , 41 , 45 The results showed that vitamin D supplementation did not lead to a significant decrease in CRP concentrations compared to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ).",
+      "context_window": "to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001)",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-6287",
+      "claim_type": "percentage",
+      "raw_text": "91.1%",
+      "numeric_values": [
+        91.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6287,
+      "sentence": "23 , 24 , 32 , 33 , 34 , 35 , 36 , 39 , 40 , 41 , 45 The results showed that vitamin D supplementation did not lead to a significant decrease in CRP concentrations compared to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ).",
+      "context_window": "0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ). The subgroup analysis reported that",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-6294",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6294,
+      "sentence": "23 , 24 , 32 , 33 , 34 , 35 , 36 , 39 , 40 , 41 , 45 The results showed that vitamin D supplementation did not lead to a significant decrease in CRP concentrations compared to placebo (mean difference = -0.48 [95% CI: -1.30, 0.34]; p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ).",
+      "context_window": "p = .255), with a significant heterogeneity ( I 2 = 91.1%, p < .001) (Figure 4 ). The subgroup analysis reported that vitamin D",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-6470",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6470,
+      "sentence": "The subgroup analysis reported that vitamin D supplementation led to a significant reduction in serum concentrations of CRP in older adult patients over 60 years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .019).",
+      "context_window": "in serum concentrations of CRP in older adult patients over 60 years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .0",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-6509",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.07, -0.18",
+      "numeric_values": [
+        -2.07,
+        -0.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6509,
+      "sentence": "The subgroup analysis reported that vitamin D supplementation led to a significant reduction in serum concentrations of CRP in older adult patients over 60 years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .019).",
+      "context_window": "adult patients over 60 years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .019). The results of sensitivity analysis showed tha",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-6532",
+      "claim_type": "p_value",
+      "raw_text": "p = .019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6532,
+      "sentence": "The subgroup analysis reported that vitamin D supplementation led to a significant reduction in serum concentrations of CRP in older adult patients over 60 years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .019).",
+      "context_window": "years old (mean difference = -1.13 [95% CI: -2.07, -0.18]; p = .019). The results of sensitivity analysis showed that removing",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-6642",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.1, 0.53",
+      "numeric_values": [
+        -1.1,
+        0.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6642,
+      "sentence": "The results of sensitivity analysis showed that removing each of the trials in a range from -0.28 [95% CI: -1.1, 0.53] by Jaun et al. to -0.67 [95% CI: -1.57, 0.22] by Murai et al., did not change the significance of the results.",
+      "context_window": "wed that removing each of the trials in a range from -0.28 [95% CI: -1.1, 0.53] by Jaun et al. to -0.67 [95% CI: -1.57, 0.22] by Murai et",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-6687",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.57, 0.22",
+      "numeric_values": [
+        -1.57,
+        0.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6687,
+      "sentence": "The results of sensitivity analysis showed that removing each of the trials in a range from -0.28 [95% CI: -1.1, 0.53] by Jaun et al. to -0.67 [95% CI: -1.57, 0.22] by Murai et al., did not change the significance of the results.",
+      "context_window": "ge from -0.28 [95% CI: -1.1, 0.53] by Jaun et al. to -0.67 [95% CI: -1.57, 0.22] by Murai et al., did not change the significance of the re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-6904",
+      "claim_type": "p_value",
+      "raw_text": "p = .132",
+      "numeric_values": [
+        0.132
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6904,
+      "sentence": "23 , 40 There was no substantial evidence of publication bias based on the funnel plot (Figure 3B ) and Egger's test (Egger's test p = .132; Begg's test p = .484).",
+      "context_window": "the funnel plot (Figure 3B ) and Egger's test (Egger's test p = .132; Begg's test p = .484). Forest plot detailing weighted mea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-6926",
+      "claim_type": "p_value",
+      "raw_text": "p = .484",
+      "numeric_values": [
+        0.484
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6926,
+      "sentence": "23 , 40 There was no substantial evidence of publication bias based on the funnel plot (Figure 3B ) and Egger's test (Egger's test p = .132; Begg's test p = .484).",
+      "context_window": "e 3B ) and Egger's test (Egger's test p = .132; Begg's test p = .484). Forest plot detailing weighted mean difference and 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-6989",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6989,
+      "sentence": "Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on CRP concentrations.",
+      "context_window": ".484). Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on CRP conc",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-7405",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.27, 5.80",
+      "numeric_values": [
+        -8.27,
+        5.8
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7405,
+      "sentence": "32 , 33 , 36 , 39 , 41 , 45 According to the meta\u2010analysis, there were no significant effects of vitamin D on ferritin concentrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ).",
+      "context_window": "amin D on ferritin concentrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ). Subgroup an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-7427",
+      "claim_type": "p_value",
+      "raw_text": "p = .730",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7427,
+      "sentence": "32 , 33 , 36 , 39 , 41 , 45 According to the meta\u2010analysis, there were no significant effects of vitamin D on ferritin concentrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ).",
+      "context_window": "centrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ). Subgroup analysis coul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-7443",
+      "claim_type": "percentage",
+      "raw_text": "79.5%",
+      "numeric_values": [
+        79.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7443,
+      "sentence": "32 , 33 , 36 , 39 , 41 , 45 According to the meta\u2010analysis, there were no significant effects of vitamin D on ferritin concentrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ).",
+      "context_window": "n difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ). Subgroup analysis could not identif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-7450",
+      "claim_type": "p_value",
+      "raw_text": "p < .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7450,
+      "sentence": "32 , 33 , 36 , 39 , 41 , 45 According to the meta\u2010analysis, there were no significant effects of vitamin D on ferritin concentrations (mean difference = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ).",
+      "context_window": "rence = -1.24 [95% CI: -8.27, 5.80]; p = .730; I 2 = 79.5%, p < .002) (Figure 5 ). Subgroup analysis could not identify the sour",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-7785",
+      "claim_type": "p_value",
+      "raw_text": "p = .322",
+      "numeric_values": [
+        0.322
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7785,
+      "sentence": "Moreover, based on the publication bias test, there was no substantial evidence of publication bias between studies (Egger's test p = .322; Begg's test p = .851) (Figure 3C ).",
+      "context_window": "evidence of publication bias between studies (Egger's test p = .322; Begg's test p = .851) (Figure 3C ). Forest plot detailing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-7807",
+      "claim_type": "p_value",
+      "raw_text": "p = .851",
+      "numeric_values": [
+        0.851
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7807,
+      "sentence": "Moreover, based on the publication bias test, there was no substantial evidence of publication bias between studies (Egger's test p = .322; Begg's test p = .851) (Figure 3C ).",
+      "context_window": "on bias between studies (Egger's test p = .322; Begg's test p = .851) (Figure 3C ). Forest plot detailing weighted mean differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-7883",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7883,
+      "sentence": "Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on Ferritin concentrations.",
+      "context_window": "e 3C ). Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on Ferritin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-8280",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.15, 0.9",
+      "numeric_values": [
+        -0.15,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8280,
+      "sentence": "24 , 32 , 33 , 35 , 36 , 40 , 41 The results of the pooled analysis showed that vitamin D did not significantly change the D\u2010dimer concentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ).",
+      "context_window": "change the D\u2010dimer concentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-8301",
+      "claim_type": "p_value",
+      "raw_text": "p = .166",
+      "numeric_values": [
+        0.166
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8301,
+      "sentence": "24 , 32 , 33 , 35 , 36 , 40 , 41 The results of the pooled analysis showed that vitamin D did not significantly change the D\u2010dimer concentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ).",
+      "context_window": "oncentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-8351",
+      "claim_type": "percentage",
+      "raw_text": "94.2%",
+      "numeric_values": [
+        94.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8351,
+      "sentence": "24 , 32 , 33 , 35 , 36 , 40 , 41 The results of the pooled analysis showed that vitamin D did not significantly change the D\u2010dimer concentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ).",
+      "context_window": "15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ). Subgroup analysis reported that vit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-8358",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8358,
+      "sentence": "24 , 32 , 33 , 35 , 36 , 40 , 41 The results of the pooled analysis showed that vitamin D did not significantly change the D\u2010dimer concentrations (mean difference = 0.37 [95% CI: -0.15, 0.9]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ).",
+      "context_window": "]; p = .166), with significant heterogeneity ( I 2 = 94.2%, p < .001) (Figure 6 ). Subgroup analysis reported that vitamin D had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-8539",
+      "claim_type": "unit_value",
+      "raw_text": "22 ng/mL",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 8539,
+      "sentence": "Subgroup analysis reported that vitamin D had a significant effect on D\u2010dimer concentrations among patients with baseline 25(OH)D concentrations greater than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038).",
+      "context_window": "patients with baseline 25(OH)D concentrations greater than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038). Se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-8573",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.08, 2.88",
+      "numeric_values": [
+        0.08,
+        2.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8573,
+      "sentence": "Subgroup analysis reported that vitamin D had a significant effect on D\u2010dimer concentrations among patients with baseline 25(OH)D concentrations greater than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038).",
+      "context_window": "ncentrations greater than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038). Sensitivity analysis suggested no difference i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-8594",
+      "claim_type": "p_value",
+      "raw_text": "p = .038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8594,
+      "sentence": "Subgroup analysis reported that vitamin D had a significant effect on D\u2010dimer concentrations among patients with baseline 25(OH)D concentrations greater than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038).",
+      "context_window": "than 22 ng/mL (mean difference = 1.48 [95% CI: 0.08, 2.88]; p = .038). Sensitivity analysis suggested no difference in the resul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-8793",
+      "claim_type": "p_value",
+      "raw_text": "p = .538",
+      "numeric_values": [
+        0.538
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8793,
+      "sentence": "Additionally, no significant evidence of publication bias was found (Egger's test p = .538; Begg's test p = .652).",
+      "context_window": "ficant evidence of publication bias was found (Egger's test p = .538; Begg's test p = .652). Forest plot detailing weighted mea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-8815",
+      "claim_type": "p_value",
+      "raw_text": "p = .652",
+      "numeric_values": [
+        0.652
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8815,
+      "sentence": "Additionally, no significant evidence of publication bias was found (Egger's test p = .538; Begg's test p = .652).",
+      "context_window": "lication bias was found (Egger's test p = .538; Begg's test p = .652). Forest plot detailing weighted mean difference and 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-8878",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8878,
+      "sentence": "Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on D\u2010dimer concentrations.",
+      "context_window": ".652). Forest plot detailing weighted mean difference and 95% CIs for the impact of vitamin D supplementation on D\u2010dimer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-9270",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -61.62, 57.96",
+      "numeric_values": [
+        -61.62,
+        57.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9270,
+      "sentence": "32 , 35 , 40 , 41 There were no significant differences between the vitamin D and control groups in terms of platelets counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001).",
+      "context_window": "oups in terms of platelets counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-9294",
+      "claim_type": "p_value",
+      "raw_text": "p = .952",
+      "numeric_values": [
+        0.952
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9294,
+      "sentence": "32 , 35 , 40 , 41 There were no significant differences between the vitamin D and control groups in terms of platelets counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001).",
+      "context_window": "ts counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-9347",
+      "claim_type": "percentage",
+      "raw_text": "98.1%",
+      "numeric_values": [
+        98.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9347,
+      "sentence": "32 , 35 , 40 , 41 There were no significant differences between the vitamin D and control groups in terms of platelets counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001).",
+      "context_window": "7.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001). No new findings were observed in the sensitivit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-9354",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9354,
+      "sentence": "32 , 35 , 40 , 41 There were no significant differences between the vitamin D and control groups in terms of platelets counts (mean difference = -1.82 [95% CI: -61.62, 57.96]; p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001).",
+      "context_window": "p = .952), with a considerable heterogeneity ( I 2 = 98.1%, p < .001). No new findings were observed in the sensitivity analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-9725",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.26, 0.04",
+      "numeric_values": [
+        -0.26,
+        0.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9725,
+      "sentence": "35 , 40 , 41 , 45 The results showed that vitamin D supplementation did not significantly change Hb concentrations in COVID\u201019 patients (mean difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%).",
+      "context_window": "ncentrations in COVID\u201019 patients (mean difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%). Sensitivity analysis suggests no d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-9747",
+      "claim_type": "p_value",
+      "raw_text": "p = .145",
+      "numeric_values": [
+        0.145
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9747,
+      "sentence": "35 , 40 , 41 , 45 The results showed that vitamin D supplementation did not significantly change Hb concentrations in COVID\u201019 patients (mean difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%).",
+      "context_window": "19 patients (mean difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%). Sensitivity analysis suggests no difference i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-9763",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9763,
+      "sentence": "35 , 40 , 41 , 45 The results showed that vitamin D supplementation did not significantly change Hb concentrations in COVID\u201019 patients (mean difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%).",
+      "context_window": "n difference = -0.11 [95% CI: -0.26, 0.04]; p = .145; I 2 = 0.0%). Sensitivity analysis suggests no difference in the result",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-9957",
+      "claim_type": "p_value",
+      "raw_text": "p = .988",
+      "numeric_values": [
+        0.988
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9957,
+      "sentence": "Additionally, no significant evidence of publication bias was found (Egger's test p = .988; Begg's test p = .734).",
+      "context_window": "ficant evidence of publication bias was found (Egger's test p = .988; Begg's test p = .734). Five studies reported the effect o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-9979",
+      "claim_type": "p_value",
+      "raw_text": "p = .734",
+      "numeric_values": [
+        0.734
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9979,
+      "sentence": "Additionally, no significant evidence of publication bias was found (Egger's test p = .988; Begg's test p = .734).",
+      "context_window": "lication bias was found (Egger's test p = .988; Begg's test p = .734). Five studies reported the effect of vitamin D supplement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-10246",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -930, 390",
+      "numeric_values": [
+        -930.0,
+        390.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10246,
+      "sentence": "35 , 39 , 40 , 41 , 45 It was found that vitamin D supplementation did not significantly change lymphocyte numbers compared to the control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001).",
+      "context_window": "bers compared to the control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-10266",
+      "claim_type": "p_value",
+      "raw_text": "p = .421",
+      "numeric_values": [
+        0.421
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10266,
+      "sentence": "35 , 39 , 40 , 41 , 45 It was found that vitamin D supplementation did not significantly change lymphocyte numbers compared to the control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001).",
+      "context_window": "control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-pct-10318",
+      "claim_type": "percentage",
+      "raw_text": "98.4%",
+      "numeric_values": [
+        98.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10318,
+      "sentence": "35 , 39 , 40 , 41 , 45 It was found that vitamin D supplementation did not significantly change lymphocyte numbers compared to the control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001).",
+      "context_window": ", 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001). The results of the sensitivity analysis showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-10325",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10325,
+      "sentence": "35 , 39 , 40 , 41 , 45 It was found that vitamin D supplementation did not significantly change lymphocyte numbers compared to the control group (mean difference = -270 [95% CI: -930, 390]; p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001).",
+      "context_window": "p = .421), with a significant heterogeneity ( I 2 = 98.4%, p < .001). The results of the sensitivity analysis showed that remov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-10494",
+      "claim_type": "p_value",
+      "raw_text": "p = .806",
+      "numeric_values": [
+        0.806
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10494,
+      "sentence": "Additionally, neither Begg's test ( p = .806) nor Egger's test ( p = .748), nor a visual inspection of the funnel plot showed any publication bias.",
+      "context_window": "effect on the results. Additionally, neither Begg's test ( p = .806) nor Egger's test ( p = .748), nor a visual inspection of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-10523",
+      "claim_type": "p_value",
+      "raw_text": "p = .748",
+      "numeric_values": [
+        0.748
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10523,
+      "sentence": "Additionally, neither Begg's test ( p = .806) nor Egger's test ( p = .748), nor a visual inspection of the funnel plot showed any publication bias.",
+      "context_window": "ionally, neither Begg's test ( p = .806) nor Egger's test ( p = .748), nor a visual inspection of the funnel plot showed any pub",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-ci-10828",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2231.57, 2304.26",
+      "numeric_values": [
+        -2231.57,
+        2304.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10828,
+      "sentence": "39 , 40 , 41 According to the meta\u2010analysis, vitamin D supplementation did not significantly increase neutrophil count (mean difference = 36.39 [95% CI: -2231.57, 2304.26]; p = .976).",
+      "context_window": "icantly increase neutrophil count (mean difference = 36.39 [95% CI: -2231.57, 2304.26]; p = .976). No new findings were observed in the sensitivi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-p-10856",
+      "claim_type": "p_value",
+      "raw_text": "p = .976",
+      "numeric_values": [
+        0.976
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10856,
+      "sentence": "39 , 40 , 41 According to the meta\u2010analysis, vitamin D supplementation did not significantly increase neutrophil count (mean difference = 36.39 [95% CI: -2231.57, 2304.26]; p = .976).",
+      "context_window": "count (mean difference = 36.39 [95% CI: -2231.57, 2304.26]; p = .976). No new findings were observed in the sensitivity analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-2935",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2935,
+      "sentence": "However, in the subgroup analysis, CRP concentrations in individuals over 60 years old were significantly reduced following vitamin D supplementation.",
+      "context_window": "e subgroup analysis, CRP concentrations in individuals over 60 years old were significantly reduced following vitamin D suppleme",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-3780",
+      "claim_type": "unit_value",
+      "raw_text": "1 \u03bcg/L",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "\u03bcg/L",
+      "source_section": "discussion",
+      "source_offset": 3780,
+      "sentence": "It has been reported that D\u2010dimer concentrations >1 \u03bcg/L were an independent predictor of mortality in COVID\u201019 disease.",
+      "context_window": "t counts. It has been reported that D\u2010dimer concentrations >1 \u03bcg/L were an independent predictor of mortality in COVID\u201019 dise",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-365",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 365,
+      "sentence": "The results revealed a significant reduction in hospital length of stay among patients who received vitamin D supplementation, particularly in those who received a dosage of \u226410 000 IU and in older adult patients over 60 years old.",
+      "context_window": "ved a dosage of \u226410 000 IU and in older adult patients over 60 years old. Additionally, we observed a noteworthy decrease in CRP",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_-u-475",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 475,
+      "sentence": "Additionally, we observed a noteworthy decrease in CRP concentrations in older adults aged over 60 years.",
+      "context_window": "hy decrease in CRP concentrations in older adults aged over 60 years. Despite these positive outcomes, no significant effects of",
+      "claim_role": "population",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

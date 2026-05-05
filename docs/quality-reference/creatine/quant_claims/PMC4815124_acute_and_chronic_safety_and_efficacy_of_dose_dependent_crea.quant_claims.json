@@ -1,0 +1,3287 @@
+{
+  "paper_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea",
+  "doi": "10.1186/s12970-016-0124-0",
+  "extracted_at": "2026-05-05T21:38:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 30,
+    "confidence_interval": 16,
+    "p_value": 66,
+    "unit_value": 51,
+    "mean_sd": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-n-303",
+      "claim_type": "sample_size",
+      "raw_text": "N = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 303,
+      "sentence": "Study 1 participants ( N = 13) ingested 1.5 g CrN (CrN-Low), 3 g CrN (CrN-High), 5 g CrM or a placebo in a randomized, crossover study (7d washout) to determine supplement safety (hepatorenal and muscle enzymes, heart rate, blood pressure and side effects) measured at time-0 (unsupplemented), 30-min, and then hourly for 5-h post-ingestion.",
+      "context_window": "tine nitrate (CrN) supplementation. Study 1 participants ( N = 13) ingested 1.5 g CrN (CrN-Low), 3 g CrN (CrN-High), 5 g CrM",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-n-645",
+      "claim_type": "sample_size",
+      "raw_text": "N = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 645,
+      "sentence": "Study 2 participants ( N = 48) received the same CrN treatments vs.",
+      "context_window": "then hourly for 5-h post-ingestion. Study 2 participants ( N = 48) received the same CrN treatments vs. 3 g CrM in a randomiz",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-1014",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1014,
+      "sentence": "Data were analyzed using a GLM and results are reported as mean \u00b1 SD or mean change \u00b1 95 % CI.",
+      "context_window": "GLM and results are reported as mean \u00b1 SD or mean change \u00b1 95 % CI. In both studies we observed several significant, yet s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1623",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 26.3, 226.8",
+      "numeric_values": [
+        26.3,
+        226.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1623,
+      "sentence": "By d-28, there were significant increases in bench press lifting volume (kg) for all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg).",
+      "context_window": "bench press lifting volume (kg) for all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1656",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 89.0, 299.2",
+      "numeric_values": [
+        89.0,
+        299.2
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1656,
+      "sentence": "By d-28, there were significant increases in bench press lifting volume (kg) for all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg).",
+      "context_window": "or all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 %",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1693",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 26.1, 210.5",
+      "numeric_values": [
+        26.1,
+        210.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1693,
+      "sentence": "By d-28, there were significant increases in bench press lifting volume (kg) for all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg).",
+      "context_window": ".3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg). Only the CrN-H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1731",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 175.0, 359.4",
+      "numeric_values": [
+        175.0,
+        359.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1731,
+      "sentence": "By d-28, there were significant increases in bench press lifting volume (kg) for all groups (PLA, 126.6, 95 % CI 26.3, 226.8; CrM, 194.1, 95 % CI 89.0, 299.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg).",
+      "context_window": "99.2; CrN-Low, 118.3, 95 % CI 26.1, 210.5; CrN-High, 267.2, 95 % CI 175.0, 359.4, kg). Only the CrN-High group was significantly greater tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1819",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1819,
+      "sentence": "Only the CrN-High group was significantly greater than PLA ( p < 0.05).",
+      "context_window": "nly the CrN-High group was significantly greater than PLA ( p < 0.05). Similar findings were observed for bench press peak power",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1900",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 4.5, 113.4",
+      "numeric_values": [
+        4.5,
+        113.4
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1900,
+      "sentence": "Similar findings were observed for bench press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power.",
+      "context_window": "ndings were observed for bench press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1931",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 11.4, 125.8",
+      "numeric_values": [
+        11.4,
+        125.8
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1931,
+      "sentence": "Similar findings were observed for bench press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power.",
+      "context_window": "press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-1967",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI -9.2, 91.0",
+      "numeric_values": [
+        -9.2,
+        91.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1967,
+      "sentence": "Similar findings were observed for bench press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power.",
+      "context_window": "4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-2003",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 10.8, 111.1",
+      "numeric_values": [
+        10.8,
+        111.1
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2003,
+      "sentence": "Similar findings were observed for bench press peak power (PLA, 59.0, 95 % CI 4.5, 113.4; CrM, 68.6, 95 % CI 11.4, 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power.",
+      "context_window": ", 125.8; CrN-Low, 40.9, 95 % CI -9.2, 91.0; CrN-High, 60.9, 95 % CI 10.8, 111.1, W) and average power. Creatine nitrate delivered at 3 g w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1544",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mmol",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mmol",
+      "source_section": "introduction",
+      "source_offset": 1544,
+      "sentence": "For example, Larsen et al., reported a reduction in maximal oxygen consumption; yet a trend for improvement in time-to-exhaustion accompanying the ingestion of sodium nitrate intake at 0.1 mmol/kg/day for three days [ 22 ].",
+      "context_window": "tion accompanying the ingestion of sodium nitrate intake at 0.1 mmol/kg/day for three days [ 22 ]. In a similar study by the sam",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1931",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 1931,
+      "sentence": "Bescos et al., (2011) investigated the impact of sodium nitrate in highly trained cyclist and triathletes and found that the consumption of 10 mg/kg prior to a cycle ergometer test reduced VO 2peak without influencing time to exhaustion or maximal power output [ 3 ].",
+      "context_window": "d cyclist and triathletes and found that the consumption of 10 mg/kg prior to a cycle ergometer test reduced VO 2peak without",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2951",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 2951,
+      "sentence": "Study 2 of our trial examined each respective treatment for 28 days.",
+      "context_window": "Study 2 of our trial examined each respective treatment for 28 days. Each CrN condition was compared to a placebo (PLA) and cre",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-971",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 5",
+      "numeric_values": [
+        22.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 971,
+      "sentence": "CONSORT Schematic representation of Study 1 ( a ) and Study 2 ( b )\n\nThirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1.",
+      "context_window": "( b ) Thirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were rec",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-989",
+      "claim_type": "mean_sd",
+      "raw_text": "177.8 \u00b1 7.4",
+      "numeric_values": [
+        177.8,
+        7.4
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 989,
+      "sentence": "CONSORT Schematic representation of Study 1 ( a ) and Study 2 ( b )\n\nThirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1.",
+      "context_window": "althy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-997",
+      "claim_type": "unit_value",
+      "raw_text": "7.4 cm",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 997,
+      "sentence": "CONSORT Schematic representation of Study 1 ( a ) and Study 2 ( b )\n\nThirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1.",
+      "context_window": "d recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in S",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-1013",
+      "claim_type": "mean_sd",
+      "raw_text": "84.1 \u00b1 18.9",
+      "numeric_values": [
+        84.1,
+        18.9
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1013,
+      "sentence": "CONSORT Schematic representation of Study 1 ( a ) and Study 2 ( b )\n\nThirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1.",
+      "context_window": "active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1. Inclusion cri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1020",
+      "claim_type": "unit_value",
+      "raw_text": "18.9 kg",
+      "numeric_values": [
+        18.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1020,
+      "sentence": "CONSORT Schematic representation of Study 1 ( a ) and Study 2 ( b )\n\nThirteen healthy and recreationally active men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1.",
+      "context_window": "men (age: 22 \u00b1 5 y, height: 177.8 \u00b1 7.4 cm, weight: 84.1 \u00b1 18.9 kg) were recruited to participate in Study 1. Inclusion criter",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2433",
+      "claim_type": "unit_value",
+      "raw_text": "20 mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2433,
+      "sentence": "Participants were then fitted with an indwelling catheter for collection of a 20 mL blood sample at time-0 prior to supplement ingestion.",
+      "context_window": "then fitted with an indwelling catheter for collection of a 20 mL blood sample at time-0 prior to supplement ingestion. Upon",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-3673",
+      "claim_type": "mean_sd",
+      "raw_text": "21 \u00b1 3",
+      "numeric_values": [
+        21.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3673,
+      "sentence": "Forty-eight, healthy and recreationally active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg).",
+      "context_window": "ly active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg). Baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-3691",
+      "claim_type": "mean_sd",
+      "raw_text": "176.8 \u00b1 5.8",
+      "numeric_values": [
+        176.8,
+        5.8
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3691,
+      "sentence": "Forty-eight, healthy and recreationally active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg).",
+      "context_window": "lunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg). Baseline testing followed a si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-3699",
+      "claim_type": "unit_value",
+      "raw_text": "5.8 cm",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3699,
+      "sentence": "Forty-eight, healthy and recreationally active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg).",
+      "context_window": "d to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg). Baseline testing followed a simil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-3715",
+      "claim_type": "mean_sd",
+      "raw_text": "77.4 \u00b1 20.9",
+      "numeric_values": [
+        77.4,
+        20.9
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3715,
+      "sentence": "Forty-eight, healthy and recreationally active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg).",
+      "context_window": "in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg). Baseline testing followed a similar pattern to Study 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-3722",
+      "claim_type": "unit_value",
+      "raw_text": "20.9 kg",
+      "numeric_values": [
+        20.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3722,
+      "sentence": "Forty-eight, healthy and recreationally active males volunteered to participate in Study 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg).",
+      "context_window": "dy 2 (age: 21 \u00b1 3 y, height: 176.8 \u00b1 5.8 cm, weight: 77.4 \u00b1 20.9 kg). Baseline testing followed a similar pattern to Study 1. P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-9142",
+      "claim_type": "mean_sd",
+      "raw_text": "0.98 \u00b1 15",
+      "numeric_values": [
+        0.98,
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9142,
+      "sentence": "Test-to-test variability in performing repeated Wingate anaerobic capacity tests in our lab have yielded correlation coefficients of r = 0.98 \u00b1 15 % for mean power.",
+      "context_window": "sts in our lab have yielded correlation coefficients of r = 0.98 \u00b1 15 % for mean power. Following each test, we recorded the seat",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-9149",
+      "claim_type": "percentage",
+      "raw_text": "15 %",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9149,
+      "sentence": "Test-to-test variability in performing repeated Wingate anaerobic capacity tests in our lab have yielded correlation coefficients of r = 0.98 \u00b1 15 % for mean power.",
+      "context_window": "our lab have yielded correlation coefficients of r = 0.98 \u00b1 15 % for mean power. Following each test, we recorded the seat h",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-9688",
+      "claim_type": "percentage",
+      "raw_text": "0.45 %",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9688,
+      "sentence": "Test/retest reliability studies performed on male athletes with DXA yielded mean deviation for total bone miner content and total fat-free/soft tissue mass of 0.31-0.45 %, with a mean intra-class correlation of 0.985 [ 1 ].",
+      "context_window": "e miner content and total fat-free/soft tissue mass of 0.31-0.45 %, with a mean intra-class correlation of 0.985 [ 1 ]. Parti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10030",
+      "claim_type": "unit_value",
+      "raw_text": "20 mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 10030,
+      "sentence": "Approximately 20 mL of whole blood was collected at each time point (i.e., 0 [unsupplemented], 0.5, 1, 2, 3, 4, 5 h) in three, pre-chilled, 10-mL (18 mg K 2 ethylene-diaminetera-acetic acid) tubes (BD Hemogard, Franklin Lakes, New Jersey).",
+      "context_window": "according to standard phlebotomy procedures. Approximately 20 mL of whole blood was collected at each time point (i.e., 0 [u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10163",
+      "claim_type": "unit_value",
+      "raw_text": "18 mg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 10163,
+      "sentence": "Approximately 20 mL of whole blood was collected at each time point (i.e., 0 [unsupplemented], 0.5, 1, 2, 3, 4, 5 h) in three, pre-chilled, 10-mL (18 mg K 2 ethylene-diaminetera-acetic acid) tubes (BD Hemogard, Franklin Lakes, New Jersey).",
+      "context_window": "ented], 0.5, 1, 2, 3, 4, 5 h) in three, pre-chilled, 10-mL (18 mg K 2 ethylene-diaminetera-acetic acid) tubes (BD Hemogard, F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-12693",
+      "claim_type": "percentage",
+      "raw_text": "3.21 %",
+      "numeric_values": [
+        3.21
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12693,
+      "sentence": "These assays yielded mean C V value for plasma nitrate (\u00b13.21 %) and plasma creatine (\u00b16.66 %) with a test/retest correlation of r = 0.98 and r = 0.99 for plasma nitrate and creatine, respectively.",
+      "context_window": "s. These assays yielded mean C V value for plasma nitrate (\u00b13.21 %) and plasma creatine (\u00b16.66 %) with a test/retest correlati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-12723",
+      "claim_type": "percentage",
+      "raw_text": "6.66 %",
+      "numeric_values": [
+        6.66
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12723,
+      "sentence": "These assays yielded mean C V value for plasma nitrate (\u00b13.21 %) and plasma creatine (\u00b16.66 %) with a test/retest correlation of r = 0.98 and r = 0.99 for plasma nitrate and creatine, respectively.",
+      "context_window": "V value for plasma nitrate (\u00b13.21 %) and plasma creatine (\u00b16.66 %) with a test/retest correlation of r = 0.98 and r = 0.99 fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-13547",
+      "claim_type": "percentage",
+      "raw_text": "1 %",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13547,
+      "sentence": "Lidocaine HCl (1 %) was injected underneath the skin, followed by an injection through the fascia and to the epidermis using a 10 mL syringe to anesthetize the biopsy region.",
+      "context_window": "sables International, Inc., Orangeburg, NY). Lidocaine HCl (1 %) was injected underneath the skin, followed by an injection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-13659",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 13659,
+      "sentence": "Lidocaine HCl (1 %) was injected underneath the skin, followed by an injection through the fascia and to the epidermis using a 10 mL syringe to anesthetize the biopsy region.",
+      "context_window": "n injection through the fascia and to the epidermis using a 10 mL syringe to anesthetize the biopsy region. After approximate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-13764",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 13764,
+      "sentence": "After approximately 5 - 10 min a small incision of about 0.5 cm was made at the biopsy site using a sterile scalpel (Aspen Surgical, Caldedonia, MI).",
+      "context_window": "n. After approximately 5 - 10 min a small incision of about 0.5 cm was made at the biopsy site using a sterile scalpel (Aspen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-13928",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 13928,
+      "sentence": "A 5 mm biopsy needle was inserted into the incision and into the \u2018belly\u2019 of the vastus lateralis muscle.",
+      "context_window": "s applied with sterile gauze after the incision was made. A 5 mm biopsy needle was inserted into the incision and into the \u2018",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-14148",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 14148,
+      "sentence": "Once the biopsy needle was pushed through the fascia and settled into the correct location suction was applied using 60 mL syringe, a small muscle sample was collected with the biopsy needle.",
+      "context_window": "settled into the correct location suction was applied using 60 mL syringe, a small muscle sample was collected with the biops",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-16672",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 16672,
+      "sentence": "The reagents were individually added into 1.5 mL cuvettes.",
+      "context_window": "pyruvate kinase. The reagents were individually added into 1.5 mL cuvettes. The assay was then carried out using 200 \u03bcL buffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-17291",
+      "claim_type": "percentage",
+      "raw_text": "3.69 %",
+      "numeric_values": [
+        3.69
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17291,
+      "sentence": "Test-to-test assay variability yielded mean C V values for muscle creatine (\u00b13.69 %) with a test/retest correlation of r = 0.946.",
+      "context_window": "y variability yielded mean C V values for muscle creatine (\u00b13.69 %) with a test/retest correlation of r = 0.946. The side eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-18665",
+      "claim_type": "percentage",
+      "raw_text": "50 %",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18665,
+      "sentence": "Participants warmed-up by performing 10 repetitions at 50 % of their estimated 1RM, 5 repetitions using 70 % of their estimated 1RM, and 1 repetition using 90 % of their estimated 1RM.",
+      "context_window": "1 ]. Participants warmed-up by performing 10 repetitions at 50 % of their estimated 1RM, 5 repetitions using 70 % of their e",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-18714",
+      "claim_type": "percentage",
+      "raw_text": "70 %",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18714,
+      "sentence": "Participants warmed-up by performing 10 repetitions at 50 % of their estimated 1RM, 5 repetitions using 70 % of their estimated 1RM, and 1 repetition using 90 % of their estimated 1RM.",
+      "context_window": "titions at 50 % of their estimated 1RM, 5 repetitions using 70 % of their estimated 1RM, and 1 repetition using 90 % of thei",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-18766",
+      "claim_type": "percentage",
+      "raw_text": "90 %",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18766,
+      "sentence": "Participants warmed-up by performing 10 repetitions at 50 % of their estimated 1RM, 5 repetitions using 70 % of their estimated 1RM, and 1 repetition using 90 % of their estimated 1RM.",
+      "context_window": "s using 70 % of their estimated 1RM, and 1 repetition using 90 % of their estimated 1RM. One RM was determined within 5, one",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-18981",
+      "claim_type": "percentage",
+      "raw_text": "1.1 %",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18981,
+      "sentence": "Our bench press procedures show low day-to-day mean coefficients of variation and high reliability in our lab (1.1 %, intra-class, r = 0.99).",
+      "context_window": "coefficients of variation and high reliability in our lab (1.1 %, intra-class, r = 0.99). Bench press testing was performed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-19172",
+      "claim_type": "percentage",
+      "raw_text": "70 %",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19172,
+      "sentence": "The bench press test, which only took place at baseline and d-28, consisted of three total sets using a 70 % 1RM load.",
+      "context_window": "at baseline and d-28, consisted of three total sets using a 70 % 1RM load. Two sets of ten repetitions followed by one set o",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-23206",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 23206,
+      "sentence": "Data were considered statistically significant when the probability of type I error was 0.05 or less and statistical trends were considered when the probability of error ranged between p > 0.05 to p < 0.10.",
+      "context_window": "ere considered when the probability of error ranged between p > 0.05 to p < 0.10. When a significant group, treatment and/or int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-23218",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 23218,
+      "sentence": "Data were considered statistically significant when the probability of type I error was 0.05 or less and statistical trends were considered when the probability of error ranged between p > 0.05 to p < 0.10.",
+      "context_window": "ed when the probability of error ranged between p > 0.05 to p < 0.10. When a significant group, treatment and/or interaction alp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-23781",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 23781,
+      "sentence": "Data are presented as mean \u00b1 SD, mean change \u00b1 95 % confidence intervals as appropriate and frequency for chi-square analyses.",
+      "context_window": "re analyses. Data are presented as mean \u00b1 SD, mean change \u00b1 95 % confidence intervals as appropriate and frequency for chi-s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-747",
+      "claim_type": "mean_sd",
+      "raw_text": "634.4 \u00b1 1",
+      "numeric_values": [
+        634.4,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 747,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "r acute supplementation. The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-757",
+      "claim_type": "unit_value",
+      "raw_text": "949.8 \u03bcmol",
+      "numeric_values": [
+        949.8
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 757,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "pplementation. The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-809",
+      "claim_type": "mean_sd",
+      "raw_text": "012.4 \u00b1 1",
+      "numeric_values": [
+        12.4,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 809,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "4.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-819",
+      "claim_type": "unit_value",
+      "raw_text": "882.2 \u03bcmol",
+      "numeric_values": [
+        882.2
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 819,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "9.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-833",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 833,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "s significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-Hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-856",
+      "claim_type": "mean_sd",
+      "raw_text": "342.0 \u00b1 3",
+      "numeric_values": [
+        342.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-866",
+      "claim_type": "unit_value",
+      "raw_text": "133.3 \u03bcmol",
+      "numeric_values": [
+        133.3
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 866,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "(1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-880",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 880,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "82.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007). There",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-908",
+      "claim_type": "mean_sd",
+      "raw_text": "761.7 \u00b1 3",
+      "numeric_values": [
+        761.7,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 908,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007). There were no significant differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-918",
+      "claim_type": "unit_value",
+      "raw_text": "408.8 \u03bcmol",
+      "numeric_values": [
+        408.8
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "2.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007). There were no significant differences in pla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-932",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 932,
+      "sentence": "The plasma creatine AUC for CrM (5,634.4 \u00b1 1,949.8 \u03bcmol/L) was significantly greater than PLA (1,012.4 \u00b1 1,882.2 \u03bcmol/L, p = 0.001), CrN-Low (2,342.0 \u00b1 3,133.3 \u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007).",
+      "context_window": "\u03bcmol/L, p = 0.004), and CrN-High (1,761.7 \u00b1 3,408.8 \u03bcmol/L, p = 0.007). There were no significant differences in plasma creatine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-1150",
+      "claim_type": "mean_sd",
+      "raw_text": "988.2 \u00b1 1",
+      "numeric_values": [
+        988.2,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1150,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "ute supplementation. The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1160",
+      "claim_type": "unit_value",
+      "raw_text": "618.8 \u03bcmol",
+      "numeric_values": [
+        618.8
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 1160,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "mentation. The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-1210",
+      "claim_type": "mean_sd",
+      "raw_text": "48.0 \u00b1 73.1",
+      "numeric_values": [
+        48.0,
+        73.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1210,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1217",
+      "claim_type": "unit_value",
+      "raw_text": "73.1 \u03bcmol",
+      "numeric_values": [
+        73.1
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 1217,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1230",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1230,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-1250",
+      "claim_type": "mean_sd",
+      "raw_text": "51.4 \u00b1 83.4",
+      "numeric_values": [
+        51.4,
+        83.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1250,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "y greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than Cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1257",
+      "claim_type": "unit_value",
+      "raw_text": "83.4 \u03bcmol",
+      "numeric_values": [
+        83.4
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 1257,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "er than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1270",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1270,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-msd-1328",
+      "claim_type": "mean_sd",
+      "raw_text": "898.8 \u00b1 1",
+      "numeric_values": [
+        898.8,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1328,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": ", p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10). Although there was a trend towards",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1338",
+      "claim_type": "unit_value",
+      "raw_text": "688.9 \u03bcmol",
+      "numeric_values": [
+        688.9
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 1338,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "1), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10). Although there was a trend towards a greater",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1352",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1352,
+      "sentence": "The plasma nitrate AUC for CrN-High (1,988.2 \u00b1 1,618.8 \u03bcmol/L) was significantly greater than CrM (48.0 \u00b1 73.1 \u03bcmol/L, p = 0.001) and PLA (51.4 \u00b1 83.4 \u03bcmol/L, p = 0.001), but not significantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10).",
+      "context_window": "gnificantly different than CrN-Low (898.8 \u00b1 1,688.9 \u03bcmol/L, p = 0.10). Although there was a trend towards a greater AUC with CrN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1479",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.099",
+      "numeric_values": [
+        0.099
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1479,
+      "sentence": "Although there was a trend towards a greater AUC with CrN-Low there was no significant difference compared to PLA ( p = 0.099) or CrM ( p = 0.091).",
+      "context_window": "N-Low there was no significant difference compared to PLA ( p = 0.099) or CrM ( p = 0.091). Data represent mean \u00b1 SD plasma crea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1499",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.091",
+      "numeric_values": [
+        0.091
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1499,
+      "sentence": "Although there was a trend towards a greater AUC with CrN-Low there was no significant difference compared to PLA ( p = 0.099) or CrM ( p = 0.091).",
+      "context_window": "ignificant difference compared to PLA ( p = 0.099) or CrM ( p = 0.091). Data represent mean \u00b1 SD plasma creatine ( a ) and plasm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1654",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1654,
+      "sentence": "Statistical notations ( p < 0.05 considered significant): (#) denotes a significant difference from PLA, CrN-Low, and CrN-High. (\u00a7) denotes a significant difference from PLA and CrM\n\nFindings for participant hepatorenal muscle enzymes, and lipids are presented in Table 1 .",
+      "context_window": "-the-curve over 5 h post ingestion. Statistical notations ( p < 0.05 considered significant): (#) denotes a significant differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1953",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1953,
+      "sentence": "There were no significant time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40).",
+      "context_window": "Table 1 . There were no significant time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40). However, there were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1969",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1969,
+      "sentence": "There were no significant time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40).",
+      "context_window": "were no significant time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40). However, there were significant time",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-1990",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1990,
+      "sentence": "There were no significant time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40).",
+      "context_window": "time effects for AST ( p = 0.12), CK ( p = 0.06), and LDH ( p = 0.40). However, there were significant time effects for ALP ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2056",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2056,
+      "sentence": "However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009).",
+      "context_window": "40). However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2074",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2074,
+      "sentence": "However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009).",
+      "context_window": "e were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2092",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2092,
+      "sentence": "However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009).",
+      "context_window": "time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2128",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2128,
+      "sentence": "However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009).",
+      "context_window": "ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009). No significant group x time int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2154",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2154,
+      "sentence": "However, there were significant time effects for ALP ( p < 0.001), ALT ( p = 0.001), BUN ( p < 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009).",
+      "context_window": "< 0.001), BUN: Creatinine ratio ( p < 0.001), and glucose ( p = 0.009). No significant group x time interactions were observed fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2231",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2231,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "gnificant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2248",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2248,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2265",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2265,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "s were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2281",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.51",
+      "numeric_values": [
+        0.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2281,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2298",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2298,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "5), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2315",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.76",
+      "numeric_values": [
+        0.76
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2315,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "6), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2350",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2350,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": ", LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12). Significant time ( p = 0.001) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2375",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2375,
+      "sentence": "No significant group x time interactions were observed for ALP ( p = 0.65), ALT ( p = 0.66), AST ( p = 0.64), CK ( p = 0.51), LDH ( p = 0.40), BUN ( p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12).",
+      "context_window": "p = 0.76), BUN: Creatinine ratio ( p = 0.08), and glucose ( p = 0.12). Significant time ( p = 0.001) and group \u00d7 time effects (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2405",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2405,
+      "sentence": "Significant time ( p = 0.001) and group \u00d7 time effects ( p = 0.001) were only observed for creatinine.",
+      "context_window": "io ( p = 0.08), and glucose ( p = 0.12). Significant time ( p = 0.001) and group \u00d7 time effects ( p = 0.001) were only observed f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-2443",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2443,
+      "sentence": "Significant time ( p = 0.001) and group \u00d7 time effects ( p = 0.001) were only observed for creatinine.",
+      "context_window": "). Significant time ( p = 0.001) and group \u00d7 time effects ( p = 0.001) were only observed for creatinine. Specifically, CrN-High",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3239",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3239,
+      "sentence": "No significant time effects were observed for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06).",
+      "context_window": "and 5 h. No significant time effects were observed for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06). While we d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3265",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.09",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3265,
+      "sentence": "No significant time effects were observed for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06).",
+      "context_window": "me effects were observed for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06). While we did observe a significant t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3286",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3286,
+      "sentence": "No significant time effects were observed for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06).",
+      "context_window": "ved for TC ( p = 0.06), or the ratio ( p = 0.09), and LDL ( p = 0.06). While we did observe a significant time effect for HDL-C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3356",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3356,
+      "sentence": "While we did observe a significant time effect for HDL-C ( p = 0.001) and TG ( p = 0.007), no significant group \u00d7 time interactions were noted for any lipid variable.",
+      "context_window": "While we did observe a significant time effect for HDL-C ( p = 0.001) and TG ( p = 0.007), no significant group \u00d7 time interacti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3376",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3376,
+      "sentence": "While we did observe a significant time effect for HDL-C ( p = 0.001) and TG ( p = 0.007), no significant group \u00d7 time interactions were noted for any lipid variable.",
+      "context_window": "e a significant time effect for HDL-C ( p = 0.001) and TG ( p = 0.007), no significant group \u00d7 time interactions were noted for a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-3846",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3846,
+      "sentence": "To convert creatinine to \u03bcmol/L multiply by 88.54. p < 0.05 is considered significant\n\nStatistical notations . a denotes a significant difference from PLA. b denotes a significant difference from CrM. c denotes a significant difference from CrN-Low. d denotes a significant difference from CrM, CrN-Low, and CrN-High\n\nFindings for heart rate (HR), systolic blood pressure (SBP), and diastolic blood pressure (DBP) data are presented in Table 1 .",
+      "context_window": "0.0167. To convert creatinine to \u03bcmol/L multiply by 88.54. p < 0.05 is considered significant Statistical notations . a denote",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-4416",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4416,
+      "sentence": "Overall, we observed a significant trend for time as systolic blood pressure changed throughout the study so that time 0 was greater than 0.5 h and 1 h post supplementation ( p < 0.05).",
+      "context_window": "ime 0 was greater than 0.5 h and 1 h post supplementation ( p < 0.05). Further, the 1 h assessment was significantly lower than",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-4540",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4540,
+      "sentence": "Further, the 1 h assessment was significantly lower than SBP at 0, 2, 3, 4, and 5 h post-supplementation ( all , p < 0.01).",
+      "context_window": "han SBP at 0, 2, 3, 4, and 5 h post-supplementation ( all , p < 0.01). We did not observe any significant trends for DBP and no",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-5625",
+      "claim_type": "percentage",
+      "raw_text": "100 %",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5625,
+      "sentence": "All participants were 100 % compliant with the ingestion of the supplements and 99.4 % were compliant with the proper timing of the supplements.",
+      "context_window": "either creatine nitrate (CrN) group. All participants were 100 % compliant with the ingestion of the supplements and 99.4 %",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-5683",
+      "claim_type": "percentage",
+      "raw_text": "99.4 %",
+      "numeric_values": [
+        99.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5683,
+      "sentence": "All participants were 100 % compliant with the ingestion of the supplements and 99.4 % were compliant with the proper timing of the supplements.",
+      "context_window": "e 100 % compliant with the ingestion of the supplements and 99.4 % were compliant with the proper timing of the supplements.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-5998",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5998,
+      "sentence": "Our analysis of side effects examining the frequency and severity of dizziness, headache, tachycardia, heart skipping or palpitations, shortness of breath, nervousness, blurred vision, and any other unusual or adverse effects demonstrated no time ( p = 0.35) or group \u00d7 time ( p = 0.34) effects for any variable.",
+      "context_window": "any other unusual or adverse effects demonstrated no time ( p = 0.35) or group \u00d7 time ( p = 0.34) effects for any variable. Howe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6026",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6026,
+      "sentence": "Our analysis of side effects examining the frequency and severity of dizziness, headache, tachycardia, heart skipping or palpitations, shortness of breath, nervousness, blurred vision, and any other unusual or adverse effects demonstrated no time ( p = 0.35) or group \u00d7 time ( p = 0.34) effects for any variable.",
+      "context_window": "effects demonstrated no time ( p = 0.35) or group \u00d7 time ( p = 0.34) effects for any variable. However, some participants repor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6488",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6488,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "ed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6508",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6508,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "me effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6538",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6538,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6558",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6558,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6593",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6593,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "ute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6613",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6613,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "ive: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6643",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.41",
+      "numeric_values": [
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6643,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake. There were also no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6663",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6663,
+      "sentence": "We observed no significant time effects for daily caloric (absolute: p = 0.38; relative: p = 0.37), protein (absolute: p = 0.74; relative: p = 0.77), carbohydrate (absolute: p = 0.23; relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake.",
+      "context_window": "relative: p = 0.15), and fat (absolute: p = 0.41; relative: p = 0.57) intake. There were also no significant group \u00d7 time effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6762",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.89",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6762,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "gnificant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6782",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.94",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6782,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "me effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6812",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6812,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; rel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6832",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6832,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6867",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6867,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "ute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6887",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6887,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "ive: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6917",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6917,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake. Results for the plasma lipid,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-6937",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6937,
+      "sentence": "There were also no significant group \u00d7 time effects for daily caloric (absolute: p = 0.89; relative: p = 0.94), protein (absolute: p = 0.40; relative: p = 0.39), carbohydrate (absolute: p = 0.31; relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake.",
+      "context_window": "relative: p = 0.33), and fat (absolute: p = 0.64; relative: p = 0.54) intake. Results for the plasma lipid, glucose, nitrate an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-7384",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7384,
+      "sentence": "There were significant group, time, and group x time interactions for plasma nitrate and plasma and intramuscular creatine concentrations ( all , P < 0.04).",
+      "context_window": "nd plasma and intramuscular creatine concentrations ( all , P < 0.04). After 7-d of supplementation, there was a significant inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7489",
+      "claim_type": "unit_value",
+      "raw_text": "59.5 \u03bcmol",
+      "numeric_values": [
+        59.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7489,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "e was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-7502",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 42.6, 76.4",
+      "numeric_values": [
+        42.6,
+        76.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7502,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "ficant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7536",
+      "claim_type": "unit_value",
+      "raw_text": "76.5 \u03bcmol",
+      "numeric_values": [
+        76.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7536,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-7549",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 50.7, 84.3",
+      "numeric_values": [
+        50.7,
+        84.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7549,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7628",
+      "claim_type": "unit_value",
+      "raw_text": "0.49 \u03bcmol",
+      "numeric_values": [
+        0.49
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7628,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-7641",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI -17.7, 18.6",
+      "numeric_values": [
+        -17.7,
+        18.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7641,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7679",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 \u03bcmol",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7679,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001). By d-28, nitrate levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-7691",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI -19.2, 17.1",
+      "numeric_values": [
+        -19.2,
+        17.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7691,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": "9 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001). By d-28, nitrate levels had dropped for the Cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-7712",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7712,
+      "sentence": "After 7-d of supplementation, there was a significant increase in plasma nitrates in CrN-Low (59.5 \u03bcmol/L, 95 % CI 42.6, 76.4) and CrN-High (76.5 \u03bcmol/L, 95 % CI 50.7, 84.3) groups, with no concomitant increase observed for the PLA (0.49 \u03bcmol/L, 95 % CI -17.7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001).",
+      "context_window": ".7, 18.6) and CrM groups (-1.1 \u03bcmol/L, 95 % CI -19.2, 17.1, p < 0.001). By d-28, nitrate levels had dropped for the CrN-Low group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7831",
+      "claim_type": "unit_value",
+      "raw_text": "8.52 \u03bcmol",
+      "numeric_values": [
+        8.52
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7831,
+      "sentence": "By d-28, nitrate levels had dropped for the CrN-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4).",
+      "context_window": "-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-7844",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7844,
+      "sentence": "By d-28, nitrate levels had dropped for the CrN-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4).",
+      "context_window": "a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-7955",
+      "claim_type": "percentage",
+      "raw_text": "25 %",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7955,
+      "sentence": "By d-28, nitrate levels had dropped for the CrN-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4).",
+      "context_window": "ined elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4). Betwee",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-7978",
+      "claim_type": "unit_value",
+      "raw_text": "17.09 \u03bcmol",
+      "numeric_values": [
+        17.09
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 7978,
+      "sentence": "By d-28, nitrate levels had dropped for the CrN-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4).",
+      "context_window": "to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4). Between group analysis further demo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-7992",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7992,
+      "sentence": "By d-28, nitrate levels had dropped for the CrN-Low group to a non-significant level relative to baseline (8.52 \u03bcmol/L, 95 % CI, -1.9, 18.9), while the CrN-High group remained elevated relative to baseline, but at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4).",
+      "context_window": "ut at a concentration ~25 % of the d-7 value (17.09 \u03bcmol/L, 95 % CI, 6.7, 27.4). Between group analysis further demonstrated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-8144",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8144,
+      "sentence": "Between group analysis further demonstrated that while the CrN-High condition remained significant relative to the CrM treatment ( P < 0.03), it no longer remained significant relative to the PLA treatment (Table 2 ).",
+      "context_window": "dition remained significant relative to the CrM treatment ( P < 0.03), it no longer remained significant relative to the PLA tre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-8794",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8794,
+      "sentence": "To convert creatinine to \u03bcmol/L multiply by 88.54. p < 0.05 considered significant\n\nStatistical notations . a denotes a significant difference from PLA. b denotes a significant difference from CrM. c denotes a significant difference from CrN-Low. d denotes a significant difference from PLA, CrN-Low, and CrN-High\n\nData represent mean \u00b1 SD plasma creatine ( a ) and plasma nitrate ( b ) concentrations following 7 and 28 days supplementation.",
+      "context_window": "0.0555. To convert creatinine to \u03bcmol/L multiply by 88.54. p < 0.05 considered significant Statistical notations . a denotes a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-9161",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 9161,
+      "sentence": "To convert creatinine to \u03bcmol/L multiply by 88.54. p < 0.05 considered significant\n\nStatistical notations . a denotes a significant difference from PLA. b denotes a significant difference from CrM. c denotes a significant difference from CrN-Low. d denotes a significant difference from PLA, CrN-Low, and CrN-High\n\nData represent mean \u00b1 SD plasma creatine ( a ) and plasma nitrate ( b ) concentrations following 7 and 28 days supplementation.",
+      "context_window": "a ) and plasma nitrate ( b ) concentrations following 7 and 28 days supplementation. Statistical notations ( p < 0.05 considere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-9210",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9210,
+      "sentence": "Statistical notations ( p < 0.05 considered significant): (\u00a5) denotes CrM significantly greater than CrN-Low. (\u2020) denotes CrM significantly greater than PLA, CrN-Low, and CrN-High. (\u00a7) denotes CrN-Low and CrN-High significantly greater than PLA and CrM. (\u00d8) denotes CrN-High significantly greater than CrM\n\nHepatorenal and blood cell characteristics of Study 2 participants\n\nData are mean \u00b1 SD\n\nAssessment of blood chemistry changes denoting lipids, glucose, muscle and hepatorenal function concordant to supplementation\n\nData are presented as frequency.",
+      "context_window": "wing 7 and 28 days supplementation. Statistical notations ( p < 0.05 considered significant): (\u00a5) denotes CrM significantly grea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-9869",
+      "claim_type": "unit_value",
+      "raw_text": "312.0 \u03bcmol",
+      "numeric_values": [
+        312.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 9869,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-9883",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 192.1, 432.0",
+      "numeric_values": [
+        192.1,
+        432.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9883,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "cant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-Hig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-9915",
+      "claim_type": "unit_value",
+      "raw_text": "126.5 \u03bcmol",
+      "numeric_values": [
+        126.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 9915,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-9929",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9929,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-9980",
+      "claim_type": "unit_value",
+      "raw_text": "120.9 \u03bcmol",
+      "numeric_values": [
+        120.9
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 9980,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "\u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-9994",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI 14.1, 227.8",
+      "numeric_values": [
+        14.1,
+        227.8
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9994,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10079",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 \u03bcmol",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 10079,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03). By d-28, only the CrN",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10091",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10091,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "ich were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03). By d-28, only the CrN-High pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-10115",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10115,
+      "sentence": "Statistical significance is detailed from chi-square analyses\n\nThere was a significant increase in plasma creatine for the CrM (312.0 \u03bcmol/L, 95 % CI 192.1, 432.0), CrN-Low (126.5 \u03bcmol/L, 95 % CI, 15.1, 238.0), and CrN-High groups at d-7 (120.9 \u03bcmol/L, 95 % CI 14.1, 227.8), all three of which were significant relative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03).",
+      "context_window": "ative to the PLA group (7.7 \u03bcmol/L, 95 % CI, -110.0, 131.7, p < 0.03). By d-28, only the CrN-High plasma creatine remained signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10223",
+      "claim_type": "unit_value",
+      "raw_text": "131.5 \u03bcmol",
+      "numeric_values": [
+        131.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 10223,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "atine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10237",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10237,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10274",
+      "claim_type": "unit_value",
+      "raw_text": "39.0 \u03bcmol",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 10274,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "aseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % C",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10287",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10287,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10323",
+      "claim_type": "unit_value",
+      "raw_text": "103.2 \u03bcmol",
+      "numeric_values": [
+        103.2
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 10323,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "e the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-10337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI -10.5, 216.9",
+      "numeric_values": [
+        -10.5,
+        216.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10337,
+      "sentence": "By d-28, only the CrN-High plasma creatine remained significantly elevated relative to baseline (131.5 \u03bcmol/L, 95 % CI, 22.5, 240.5) while the CrM (39.0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation.",
+      "context_window": "0 \u03bcmol/L, 95 % CI, -83.4, 161.0) and CrN-Low (103.2 \u03bcmol/L, 95 % CI -10.5, 216.9) groups no longer demonstrated a significant elevation. No",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10537",
+      "claim_type": "unit_value",
+      "raw_text": "7.1 mmol",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10537,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "ramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10553",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10553,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "ine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10587",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 mmol",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10587,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decrease",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10603",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10603,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "ol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10680",
+      "claim_type": "unit_value",
+      "raw_text": "4.0 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10680,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": ") groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-ci-10696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95 % CI -7.7, -0.3",
+      "numeric_values": [
+        -7.7,
+        -0.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 10696,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "nificantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-10774",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mmol",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 10774,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": ") while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7). Between group post-hoc comparis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-10790",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10790,
+      "sentence": "Intramuscular creatine was significantly increased in the CrM (7.1 mmol/kg DW, 95 % CI, 3.1, 11.0) and CrN-High (4.6 mmol/kg DW, 95 % CI, 0.8, 8.4) groups and significantly decreased in the CrN-Low group (-4.0 mmol/kg DW, 95 % CI -7.7, -0.3) while no significant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7).",
+      "context_window": "ficant change was noted for the PLA group (-2.5 mmol/kg DW, 95 % CI, -6.7, 1.7). Between group post-hoc comparisons showed t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-10949",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10949,
+      "sentence": "Between group post-hoc comparisons showed that the CrM and CrN-High groups had significantly greater concentrations relative to the PLA ( p = 0.002) and CrN-Low groups ( p = 0.001).",
+      "context_window": "significantly greater concentrations relative to the PLA ( p = 0.002) and CrN-Low groups ( p = 0.001). On d 28, the CrM group re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-10981",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10981,
+      "sentence": "Between group post-hoc comparisons showed that the CrM and CrN-High groups had significantly greater concentrations relative to the PLA ( p = 0.002) and CrN-Low groups ( p = 0.001).",
+      "context_window": "tions relative to the PLA ( p = 0.002) and CrN-Low groups ( p = 0.001). On d 28, the CrM group remained the only group to have si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-11088",
+      "claim_type": "unit_value",
+      "raw_text": "8.8 mmol",
+      "numeric_values": [
+        8.8
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11088,
+      "sentence": "On d 28, the CrM group remained the only group to have significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initial 7-d concentrations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW).",
+      "context_window": "only group to have significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-11104",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11104,
+      "sentence": "On d 28, the CrM group remained the only group to have significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initial 7-d concentrations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW).",
+      "context_window": "ave significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initial 7-d concen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-11215",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11215,
+      "sentence": "On d 28, the CrM group remained the only group to have significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initial 7-d concentrations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW).",
+      "context_window": "al 7-d concentrations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW). Both the CrN-Low and PLA groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-11230",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 mmol",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11230,
+      "sentence": "On d 28, the CrM group remained the only group to have significantly elevated muscle creatine (8.8 mmol/kg DW, 95 % CI, 5.5, 12.2), while the CrN-High group initial 7-d concentrations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW).",
+      "context_window": "ations abated to a lower concentration (1.4, 95 % CI, -1.8, 4.7 mmol/kg DW). Both the CrN-Low and PLA groups remained relatively",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-11574",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11574,
+      "sentence": "Data represent mean \u00b1 95 % CI change in fat free mass ( a ) and lean body mass ( b ) following 28 days of supplementation.",
+      "context_window": "group for both variables (Fig. 5 ). Data represent mean \u00b1 95 % CI change in fat free mass ( a ) and lean body mass ( b ) f",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-11647",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 11647,
+      "sentence": "Data represent mean \u00b1 95 % CI change in fat free mass ( a ) and lean body mass ( b ) following 28 days of supplementation.",
+      "context_window": "e in fat free mass ( a ) and lean body mass ( b ) following 28 days of supplementation. Statistical notations ( p < 0.05 consid",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-11699",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11699,
+      "sentence": "Statistical notations ( p < 0.05 considered significant): (*) denotes significantly greater than PLA\n\nResults for all exercise performance variables are presented in Table 5 .",
+      "context_window": "llowing 28 days of supplementation. Statistical notations ( p < 0.05 considered significant): (*) denotes significantly greater",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-12664",
+      "claim_type": "percentage",
+      "raw_text": "95 %",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12664,
+      "sentence": "Bench press and anaerobic sprint performance characteristics of Study 2 participants\n\nData are mean \u00b1 SD\n\nData represent mean \u00b1 95 % CI change in average Tendo\u2122 bench press power ( a ) and lifting volume based on reps to fatigue during set 3 at 70 % of 1RM bench press ( b ) following 28 days of supplementation.",
+      "context_window": "y 2 participants Data are mean \u00b1 SD Data represent mean \u00b1 95 % CI change in average Tendo\u2122 bench press power ( a ) and lif",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-pct-12781",
+      "claim_type": "percentage",
+      "raw_text": "70 %",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12781,
+      "sentence": "Bench press and anaerobic sprint performance characteristics of Study 2 participants\n\nData are mean \u00b1 SD\n\nData represent mean \u00b1 95 % CI change in average Tendo\u2122 bench press power ( a ) and lifting volume based on reps to fatigue during set 3 at 70 % of 1RM bench press ( b ) following 28 days of supplementation.",
+      "context_window": "and lifting volume based on reps to fatigue during set 3 at 70 % of 1RM bench press ( b ) following 28 days of supplementati",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-12821",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 12821,
+      "sentence": "Bench press and anaerobic sprint performance characteristics of Study 2 participants\n\nData are mean \u00b1 SD\n\nData represent mean \u00b1 95 % CI change in average Tendo\u2122 bench press power ( a ) and lifting volume based on reps to fatigue during set 3 at 70 % of 1RM bench press ( b ) following 28 days of supplementation.",
+      "context_window": "gue during set 3 at 70 % of 1RM bench press ( b ) following 28 days of supplementation. Statistical notations ( p < 0.05 consid",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-p-12873",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12873,
+      "sentence": "Statistical notations ( p < 0.05 considered significant): (^) denotes significantly greater than PLA and CrN-Low. (*) denotes significantly greater than PLA",
+      "context_window": "llowing 28 days of supplementation. Statistical notations ( p < 0.05 considered significant): (^) denotes significantly greater",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-1823",
+      "claim_type": "unit_value",
+      "raw_text": "3 mmHg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mmHg",
+      "source_section": "conclusion",
+      "source_offset": 1823,
+      "sentence": "Though we observed a slight trend for a decrease in systolic blood pressure (SBP) (~3 mmHg) in all treatment groups with no significant difference observed among groups.",
+      "context_window": "ght trend for a decrease in systolic blood pressure (SBP) (~3 mmHg) in all treatment groups with no significant difference obs",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2242",
+      "claim_type": "unit_value",
+      "raw_text": "430 mg",
+      "numeric_values": [
+        430.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 2242,
+      "sentence": "For example, Larsen et al., reported no change in blood pressure following 3-d of ~430 mg nitrate/d [ 23 ].",
+      "context_window": "al., reported no change in blood pressure following 3-d of ~430 mg nitrate/d [ 23 ]. Murphy and colleagues reported similar fi",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2365",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmHg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmHg",
+      "source_section": "conclusion",
+      "source_offset": 2365,
+      "sentence": "To the contrary, Webb et al., observed a ~10 mmHg decrease in SBP 2.5 h after ~1,400 mg of nitrate ingestion [ 31 ].",
+      "context_window": "findings [ 25 ]. To the contrary, Webb et al., observed a ~10 mmHg decrease in SBP 2.5 h after ~1,400 mg of nitrate ingestion",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2404",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "conclusion",
+      "source_offset": 2404,
+      "sentence": "To the contrary, Webb et al., observed a ~10 mmHg decrease in SBP 2.5 h after ~1,400 mg of nitrate ingestion [ 31 ].",
+      "context_window": "et al., observed a ~10 mmHg decrease in SBP 2.5 h after ~1,400 mg of nitrate ingestion [ 31 ]. In Study 1 we provided 0.5 g n",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2667",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "conclusion",
+      "source_offset": 2667,
+      "sentence": "Additionally, no participant had a hypotensive response (SBP < 90 mmHg, DBP < 60 mmHg) to either dose of CrN studied.",
+      "context_window": "itionally, no participant had a hypotensive response (SBP < 90 mmHg, DBP < 60 mmHg) to either dose of CrN studied. It is theref",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4815124_acute_and_chronic_safety_and_efficacy_of_dose_dependent_crea-u-2682",
+      "claim_type": "unit_value",
+      "raw_text": "60 mmHg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mmHg",
+      "source_section": "conclusion",
+      "source_offset": 2682,
+      "sentence": "Additionally, no participant had a hypotensive response (SBP < 90 mmHg, DBP < 60 mmHg) to either dose of CrN studied.",
+      "context_window": "articipant had a hypotensive response (SBP < 90 mmHg, DBP < 60 mmHg) to either dose of CrN studied. It is therefore conceivable",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

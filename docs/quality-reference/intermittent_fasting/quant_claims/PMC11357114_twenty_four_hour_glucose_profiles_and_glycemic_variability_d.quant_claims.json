@@ -1,0 +1,1314 @@
+{
+  "paper_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d",
+  "doi": "10.3390/nu16162663",
+  "extracted_at": "2026-05-05T22:11:26+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 22,
+    "mean_sd": 22,
+    "p_value": 22,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-585",
+      "claim_type": "unit_value",
+      "raw_text": "19 days",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 585,
+      "sentence": "Continuous glucose monitoring and food intake documentation were conducted before and during the 19 days of the intervention, and the 24 h mean glucose and glycemic variability indices were assessed.",
+      "context_window": "d intake documentation were conducted before and during the 19 days of the intervention, and the 24 h mean glucose and glycemic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-869",
+      "claim_type": "mean_sd",
+      "raw_text": "677.8 \u00b1 357.6",
+      "numeric_values": [
+        677.8,
+        357.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 869,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "t composition. Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011),",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-889",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 889,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-915",
+      "claim_type": "mean_sd",
+      "raw_text": "1.92 \u00b1 0.95",
+      "numeric_values": [
+        1.92,
+        0.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 915,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "oric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Highe",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-922",
+      "claim_type": "unit_value",
+      "raw_text": "0.95 kg",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 922,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "take (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Higher m",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-931",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 931,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "7.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Higher maximum gluc",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-953",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.28",
+      "numeric_values": [
+        0.65,
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Higher maximum glucose values were observed",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-960",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 kg",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 960,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Higher maximum glucose values were observed du",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-969",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Only the BF group decreased caloric intake (-677.8 \u00b1 357.6 kcal, p = 0.013), body weight (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006).",
+      "context_window": "ght (-1.92 \u00b1 0.95 kg, p = 0.011), and BMI (-0.65 \u00b1 0.28 kg, p = 0.006). Higher maximum glucose values were observed during BF in",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1057",
+      "claim_type": "mean_sd",
+      "raw_text": "1.41 \u00b1 1.04",
+      "numeric_values": [
+        1.41,
+        1.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "Higher maximum glucose values were observed during BF in the within-group (+1.41 \u00b1 1.04, p = 0.039) and between-group comparisons (BF vs. control: p = 0.010; TRE vs.",
+      "context_window": "lucose values were observed during BF in the within-group (+1.41 \u00b1 1.04, p = 0.039) and between-group comparisons (BF vs. control:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-1070",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1070,
+      "sentence": "Higher maximum glucose values were observed during BF in the within-group (+1.41 \u00b1 1.04, p = 0.039) and between-group comparisons (BF vs. control: p = 0.010; TRE vs.",
+      "context_window": "were observed during BF in the within-group (+1.41 \u00b1 1.04, p = 0.039) and between-group comparisons (BF vs. control: p = 0.010;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-1128",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "Higher maximum glucose values were observed during BF in the within-group (+1.41 \u00b1 1.04, p = 0.039) and between-group comparisons (BF vs. control: p = 0.010; TRE vs.",
+      "context_window": ", p = 0.039) and between-group comparisons (BF vs. control: p = 0.010; TRE vs. BF: p = 0.022). However, there were no alterations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-1151",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1151,
+      "sentence": "BF: p = 0.022).",
+      "context_window": "n-group comparisons (BF vs. control: p = 0.010; TRE vs. BF: p = 0.022). However, there were no alterations of the 24 h mean gluco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-1342",
+      "claim_type": "unit_value",
+      "raw_text": "180 mg/dL",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1342,
+      "sentence": "The proportions of time above and below the range (70-180 mg/dL) remained unchanged.",
+      "context_window": "roup. The proportions of time above and below the range (70-180 mg/dL) remained unchanged. BF and TRE do not exhibit negative eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-875",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 875,
+      "sentence": "Followers of the Bah\u00e1\u2019\u00ed religion observe fasting as a significant spiritual duty, fasting for 19 consecutive days every year in March [ 5 ], whereas RF lasts for 29 or 30 days.",
+      "context_window": "days every year in March [ 5 ], whereas RF lasts for 29 or 30 days. In contrast to RF, where the fasting duration varies based",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "7 day",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 172,
+      "sentence": "After a 5-7 day baseline phase, the intervention groups followed a corresponding fasting regimen for 19 days, whereas the control group did not receive any nutritional recommendations and was advised not to change its habitual food and eating timing ( Figure 1 ).",
+      "context_window": "ious dry BF and TRE, compared to a control group. After a 5-7 day baseline phase, the intervention groups followed a correspo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-263",
+      "claim_type": "unit_value",
+      "raw_text": "19 days",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 263,
+      "sentence": "After a 5-7 day baseline phase, the intervention groups followed a corresponding fasting regimen for 19 days, whereas the control group did not receive any nutritional recommendations and was advised not to change its habitual food and eating timing ( Figure 1 ).",
+      "context_window": "vention groups followed a corresponding fasting regimen for 19 days, whereas the control group did not receive any nutritional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-5941",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5941,
+      "sentence": "The first CGM recording period started 5-7 days before the intervention start (visit 0) and continued for 14 consecutive days.",
+      "context_window": "od glucose values. The first CGM recording period started 5-7 days before the intervention start (visit 0) and continued for 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-7705",
+      "claim_type": "unit_value",
+      "raw_text": "3.9 mmol",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 7705,
+      "sentence": "The time below range (TBR, percentage of glucose values < 3.9 mmol/L) and time above range (TAR, percentage of glucose values > 10 mmol/L), as well as the minimum and maximum glucose levels, were assessed.",
+      "context_window": ". The time below range (TBR, percentage of glucose values < 3.9 mmol/L) and time above range (TAR, percentage of glucose values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-7775",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 7775,
+      "sentence": "The time below range (TBR, percentage of glucose values < 3.9 mmol/L) and time above range (TAR, percentage of glucose values > 10 mmol/L), as well as the minimum and maximum glucose levels, were assessed.",
+      "context_window": ") and time above range (TAR, percentage of glucose values > 10 mmol/L), as well as the minimum and maximum glucose levels, were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-9205",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9205,
+      "sentence": "The significance level was set at p < 0.05.",
+      "context_window": "urement ANOVA (RM-ANOVA). The significance level was set at p < 0.05. The visualization of the data was performed using GraphPad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-107",
+      "claim_type": "mean_sd",
+      "raw_text": "26.4 \u00b1 4.3",
+      "numeric_values": [
+        26.4,
+        4.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 107,
+      "sentence": "A total of 16 participants consisting of 8 men and 8 women with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study.",
+      "context_window": "and 8 women with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study. No pa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-114",
+      "claim_type": "unit_value",
+      "raw_text": "4.3 kg",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 114,
+      "sentence": "A total of 16 participants consisting of 8 men and 8 women with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study.",
+      "context_window": "omen with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study. No parti",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-137",
+      "claim_type": "mean_sd",
+      "raw_text": "5.10 \u00b1 0.29",
+      "numeric_values": [
+        5.1,
+        0.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 137,
+      "sentence": "A total of 16 participants consisting of 8 men and 8 women with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study.",
+      "context_window": "e of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study. No participants with known diabetes",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-pct-144",
+      "claim_type": "percentage",
+      "raw_text": "0.29%",
+      "numeric_values": [
+        0.29
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 144,
+      "sentence": "A total of 16 participants consisting of 8 men and 8 women with an average age of 29 (26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study.",
+      "context_window": "(26-34) years, BMI of 26.4 \u00b1 4.3 kg/m 2 , and HbA1c 5.10 \u00b1 0.29% completed this study. No participants with known diabetes w",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1719",
+      "claim_type": "mean_sd",
+      "raw_text": "49 \u00b1 0",
+      "numeric_values": [
+        49.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1719,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "anged their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1739",
+      "claim_type": "mean_sd",
+      "raw_text": "50 \u00b1 2",
+      "numeric_values": [
+        50.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1739,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "egime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1786",
+      "claim_type": "mean_sd",
+      "raw_text": "27 \u00b1 01",
+      "numeric_values": [
+        27.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1786,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:4",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1806",
+      "claim_type": "mean_sd",
+      "raw_text": "07 \u00b1 00",
+      "numeric_values": [
+        7.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1806,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in acco",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1831",
+      "claim_type": "mean_sd",
+      "raw_text": "32 \u00b1 00",
+      "numeric_values": [
+        32.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1831,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1852",
+      "claim_type": "mean_sd",
+      "raw_text": "48 \u00b1 00",
+      "numeric_values": [
+        48.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1852,
+      "sentence": "During the BF intervention, the subjects markedly changed their eating regime from eating in the daytime from 9:49 \u00b1 0:32 h till 21:50 \u00b1 2:00 h to eating two times per day from 5:27 \u00b1 01:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times ( Figure 2 A).",
+      "context_window": "1:00 h till 6:07 \u00b1 00:47 h and from 18:32 \u00b1 00:45 h till 21:48 \u00b1 00:48 h, in accordance with the specific sunrise-sunset times",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-1990",
+      "claim_type": "mean_sd",
+      "raw_text": "59 \u00b1 2",
+      "numeric_values": [
+        59.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1990,
+      "sentence": "The total eating window duration was restricted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure 3 A).",
+      "context_window": "A). The total eating window duration was restricted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-2007",
+      "claim_type": "mean_sd",
+      "raw_text": "09 \u00b1 1",
+      "numeric_values": [
+        9.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2007,
+      "sentence": "The total eating window duration was restricted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure 3 A).",
+      "context_window": "ing window duration was restricted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure 3 A). During the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-2037",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2037,
+      "sentence": "The total eating window duration was restricted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure 3 A).",
+      "context_window": "cted from 11:59 \u00b1 2:09 h to 4:09 \u00b1 1:41 h in the BF group ( p = 0.008) ( Figure 3 A). During the TRE intervention, the subjects p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-2275",
+      "claim_type": "mean_sd",
+      "raw_text": "17 \u00b1 1",
+      "numeric_values": [
+        17.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2275,
+      "sentence": "The total eating window duration was restricted from 11:17 \u00b1 1:21 h to 7:03 \u00b1 0:35 h in the TRE group ( p = 2.94 \u00d7 10 -4 ) ( Figure 3 A).",
+      "context_window": "B). The total eating window duration was restricted from 11:17 \u00b1 1:21 h to 7:03 \u00b1 0:35 h in the TRE group ( p = 2.94 \u00d7 10 -4 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-2292",
+      "claim_type": "mean_sd",
+      "raw_text": "03 \u00b1 0",
+      "numeric_values": [
+        3.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2292,
+      "sentence": "The total eating window duration was restricted from 11:17 \u00b1 1:21 h to 7:03 \u00b1 0:35 h in the TRE group ( p = 2.94 \u00d7 10 -4 ) ( Figure 3 A).",
+      "context_window": "ing window duration was restricted from 11:17 \u00b1 1:21 h to 7:03 \u00b1 0:35 h in the TRE group ( p = 2.94 \u00d7 10 -4 ) ( Figure 3 A). F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-pct-2540",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2540,
+      "sentence": "In this context, the eating time window of the baseline was considered to be 100%, as there were no time limitations.",
+      "context_window": "the eating time window of the baseline was considered to be 100%, as there were no time limitations. The TRE group shortened",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-2635",
+      "claim_type": "mean_sd",
+      "raw_text": "62.8 \u00b1 2.9",
+      "numeric_values": [
+        62.8,
+        2.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2635,
+      "sentence": "The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B).",
+      "context_window": "ions. The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-pct-2642",
+      "claim_type": "percentage",
+      "raw_text": "2.9%",
+      "numeric_values": [
+        2.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2642,
+      "sentence": "The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B).",
+      "context_window": "he TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-2667",
+      "claim_type": "mean_sd",
+      "raw_text": "36.9 \u00b1 19.0",
+      "numeric_values": [
+        36.9,
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2667,
+      "sentence": "The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B).",
+      "context_window": "e relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B). The BF and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-pct-2674",
+      "claim_type": "percentage",
+      "raw_text": "19.0%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2674,
+      "sentence": "The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B).",
+      "context_window": "ive eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B). The BF and T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-pct-2706",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2706,
+      "sentence": "The TRE group shortened the relative eating window to 62.8 \u00b1 2.9% and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B).",
+      "context_window": "and the BF group to 36.9 \u00b1 19.0% compared to the baseline (100%) ( Figure 3 B). The BF and TRE groups were compliant 100.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-3872",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3872,
+      "sentence": "The data are shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001.",
+      "context_window": "ng the intervention. The data are shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001. The BF group showed a red",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-3885",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3885,
+      "sentence": "The data are shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001.",
+      "context_window": "ention. The data are shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001. The BF group showed a reduction in ene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-3903",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3903,
+      "sentence": "The data are shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001.",
+      "context_window": "re shown as the mean \u00b1 SD. * p < 0.05; ** p < 0.01; and *** p < 0.001. The BF group showed a reduction in energy intake of 677.8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-4018",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4018,
+      "sentence": "The BF group showed a reduction in energy intake of 677.8 kcal \u00b1 357.6 kcal compared to the baseline ( p = 0.013), whereas no changes in the energy intake occurred in the TRE and control groups ( Figure 3 C).",
+      "context_window": "ntake of 677.8 kcal \u00b1 357.6 kcal compared to the baseline ( p = 0.013), whereas no changes in the energy intake occurred in the T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-4373",
+      "claim_type": "unit_value",
+      "raw_text": "1.92 kg",
+      "numeric_values": [
+        1.92
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4373,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "ed to the baseline. BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-4383",
+      "claim_type": "unit_value",
+      "raw_text": "0.95 kg",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4383,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "baseline. BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-4392",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4392,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-4413",
+      "claim_type": "mean_sd",
+      "raw_text": "0.65 \u00b1 0.28",
+      "numeric_values": [
+        0.65,
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4413,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "se in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circ",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-4420",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 kg",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4420,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "ody weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumf",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-4429",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4429,
+      "sentence": "BF induced a decrease in body weight (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Figure 4 C).",
+      "context_window": "t (-1.92 kg \u00b1 0.95 kg, p = 0.011) and BMI (-0.65 \u00b1 0.28 kg, p = 0.006) ( Figure 4 A,B), but no effect on waist circumference ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-4900",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4900,
+      "sentence": "The data are shown as the mean \u00b1 SD. * p < 0.05 and ** p < 0.01 in the within-group comparisons of the parameters (after the intervention vs. before the intervention), assessed by the paired t -test or Wilcoxon test.",
+      "context_window": "waist circumference. The data are shown as the mean \u00b1 SD. * p < 0.05 and ** p < 0.01 in the within-group comparisons of the para",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-4916",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4916,
+      "sentence": "The data are shown as the mean \u00b1 SD. * p < 0.05 and ** p < 0.01 in the within-group comparisons of the parameters (after the intervention vs. before the intervention), assessed by the paired t -test or Wilcoxon test.",
+      "context_window": "nce. The data are shown as the mean \u00b1 SD. * p < 0.05 and ** p < 0.01 in the within-group comparisons of the parameters (after th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-5813",
+      "claim_type": "mean_sd",
+      "raw_text": "1.41 \u00b1 1.04",
+      "numeric_values": [
+        1.41,
+        1.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5813,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "oup during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-5820",
+      "claim_type": "unit_value",
+      "raw_text": "1.04 mmol",
+      "numeric_values": [
+        1.04
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 5820,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "ing the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respective",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-5833",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5833,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "vention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively). The BF-i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-5848",
+      "claim_type": "mean_sd",
+      "raw_text": "0.55 \u00b1 0.19",
+      "numeric_values": [
+        0.55,
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5848,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "d to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively). The BF-induced change dif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-5855",
+      "claim_type": "unit_value",
+      "raw_text": "0.19 mmol",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 5855,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "e baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively). The BF-induced change differed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-5868",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5868,
+      "sentence": "Correspondingly, the maximum glucose values were markedly increased in the BF group ( Supplemental Table S1 ), whereas they were slightly decreased in the control group during the intervention compared to the baseline phase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively).",
+      "context_window": "ase (1.41 \u00b1 1.04 mmol/L, p = 0.039 and -0.55 \u00b1 0.19 mmol/L, p = 0.011, respectively). The BF-induced change differed from both of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-6000",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6000,
+      "sentence": "TRE: p = 0.022; BF vs. control: p = 0.010) ( Table 2 ).",
+      "context_window": "e other groups in the between-group comparison (BF vs. TRE: p = 0.022; BF vs. control: p = 0.010) ( Table 2 ). Changes in glycem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-6027",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6027,
+      "sentence": "TRE: p = 0.022; BF vs. control: p = 0.010) ( Table 2 ).",
+      "context_window": "en-group comparison (BF vs. TRE: p = 0.022; BF vs. control: p = 0.010) ( Table 2 ). Changes in glycemic control and glycemic var",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-6297",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6297,
+      "sentence": "Changes in glycemic control and glycemic variability after the intervention in comparison to the baseline values.\n\na Data are shown as mean \u00b1 SD when normally distributed and median (IQR) when not normally distributed. b Intra-group comparison; p < 0.05 by Student\u2019s t -test for normally distributed data or Wilcoxon test for not normally distributed data. c Inter-group comparison by ANOVA test with Sidak post-hoc for normally distributed data and Kruskal-Wallis test with Dunn post-hoc for not normally distributed data.",
+      "context_window": "R) when not normally distributed. b Intra-group comparison; p < 0.05 by Student\u2019s t -test for normally distributed data or Wilco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-msd-7460",
+      "claim_type": "mean_sd",
+      "raw_text": "0.11 \u00b1 0.06",
+      "numeric_values": [
+        0.11,
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7460,
+      "sentence": "The MAG index decreased in the control group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups.",
+      "context_window": "ex decreased in the control group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups. Furtherm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-7467",
+      "claim_type": "unit_value",
+      "raw_text": "0.06 mmol",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 7467,
+      "sentence": "The MAG index decreased in the control group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups.",
+      "context_window": "eased in the control group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups. Furthermore,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-p-7482",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7482,
+      "sentence": "The MAG index decreased in the control group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups.",
+      "context_window": "ntrol group during the intervention (-0.11 \u00b1 0.06 mmol/L/h, p = 0.036), but not in the other groups. Furthermore, no changes in t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-7590",
+      "claim_type": "unit_value",
+      "raw_text": "10.0 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 7590,
+      "sentence": "Furthermore, no changes in the percentages of the TAR and TIR (3.9-10.0 mmol/L) were observed in the CGM data in any group ( Table 2 , Supplemental Table S1 ).",
+      "context_window": "more, no changes in the percentages of the TAR and TIR (3.9-10.0 mmol/L) were observed in the CGM data in any group ( Table 2 , S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-5392",
+      "claim_type": "unit_value",
+      "raw_text": "2.55 kg",
+      "numeric_values": [
+        2.55
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5392,
+      "sentence": "The study of Koppold-Liebscher et al. [ 8 ] showed that improvements in fasting glucose and HbA1c at the last week of BF were accompanied by weight loss (-2.55 kg) and reductions in the BMI and body fat.",
+      "context_window": "1c at the last week of BF were accompanied by weight loss (-2.55 kg) and reductions in the BMI and body fat. In agreement with",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-6069",
+      "claim_type": "unit_value",
+      "raw_text": "1.92 kg",
+      "numeric_values": [
+        1.92
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6069,
+      "sentence": "Nevertheless, in our study, which was accompanied by a minor decrease in body weight (-1.92 kg), no improvements in the CGM-based parameters of glycemic control were found.",
+      "context_window": "which was accompanied by a minor decrease in body weight (-1.92 kg), no improvements in the CGM-based parameters of glycemic c",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-10468",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 10468,
+      "sentence": "Indeed, Koppold-Liebscher et al. showed that BF markedly advanced the circadian phase of fasting individuals by more than 1 h, which is reversed to normal levels 3 weeks after fasting patterns [ 8 ].",
+      "context_window": "iduals by more than 1 h, which is reversed to normal levels 3 weeks after fasting patterns [ 8 ]. Similarly, TRE was also shown",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11357114_twenty_four_hour_glucose_profiles_and_glycemic_variability_d-u-11740",
+      "claim_type": "unit_value",
+      "raw_text": "25 days",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 11740,
+      "sentence": "Another important strength of this present study is the careful control of timely compliance, energy and macronutrient intakes, and 24 h glucose patterns throughout the baseline and intervention phases, providing a comprehensive assessment over approximately 25 days for each subject.",
+      "context_window": "es, providing a comprehensive assessment over approximately 25 days for each subject. We revealed high timely compliance and un",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

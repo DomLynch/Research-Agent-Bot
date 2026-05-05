@@ -1,0 +1,1328 @@
+{
+  "paper_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk",
+  "doi": "10.1186/1743-7075-9-16",
+  "extracted_at": "2026-05-05T21:50:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 6,
+    "percentage": 26,
+    "p_value": 31,
+    "unit_value": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-392",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 392,
+      "sentence": "Men ( n = 15) and women ( n = 15) received a daily placebo or vitamin D supplement (200 or 4000 IU) for 28-d during the winter.",
+      "context_window": "ory cytokines and muscular strength in young adults. Men ( n = 15) and women ( n = 15) received a daily placebo or vitamin D",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-412",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 412,
+      "sentence": "Men ( n = 15) and women ( n = 15) received a daily placebo or vitamin D supplement (200 or 4000 IU) for 28-d during the winter.",
+      "context_window": "scular strength in young adults. Men ( n = 15) and women ( n = 15) received a daily placebo or vitamin D supplement (200 or 4",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-912",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 912,
+      "sentence": "Upon enrollment, 63% of the subjects were vitamin D sufficient (serum 25(OH)D \u2265 30 ng/ml).",
+      "context_window": "ce to test multiple pairwise comparisons. Upon enrollment, 63% of the subjects were vitamin D sufficient (serum 25(OH)D \u2265",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1035",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1035,
+      "sentence": "Serum 25(OH)D and interleukin (IL)-5 decreased ( P < 0.05) across time in the placebo group.",
+      "context_window": "30 ng/ml). Serum 25(OH)D and interleukin (IL)-5 decreased ( P < 0.05) across time in the placebo group. Supplemental vitamin D a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1173",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "Supplemental vitamin D at 200 IU maintained serum 25(OH)D concentrations and increased IL-5 ( P < 0.05).",
+      "context_window": "aintained serum 25(OH)D concentrations and increased IL-5 ( P < 0.05). Supplemental vitamin D at 4000 IU increased ( P < 0.05) s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1230",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1230,
+      "sentence": "Supplemental vitamin D at 4000 IU increased ( P < 0.05) serum 25(OH)D without altering IL-5 concentrations.",
+      "context_window": "( P < 0.05). Supplemental vitamin D at 4000 IU increased ( P < 0.05) serum 25(OH)D without altering IL-5 concentrations. Althou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1343",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1343,
+      "sentence": "Although serum 25(OH)D concentrations correlated ( P < 0.05) with muscle strength, muscle strength was not changed by supplemental vitamin D.",
+      "context_window": "rations. Although serum 25(OH)D concentrations correlated ( P < 0.05) with muscle strength, muscle strength was not changed by s",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 331,
+      "sentence": "Recreationally active (minimum of 30 minutes of continuous exercise at least 3 time per week for 1 year prior to enrollment), non-smoking males and females between the ages of 18 and 45 years of age were recruited to participate in this study.",
+      "context_window": "minutes of continuous exercise at least 3 time per week for 1 year prior to enrollment), non-smoking males and females between",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-417",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 417,
+      "sentence": "Recreationally active (minimum of 30 minutes of continuous exercise at least 3 time per week for 1 year prior to enrollment), non-smoking males and females between the ages of 18 and 45 years of age were recruited to participate in this study.",
+      "context_window": "), non-smoking males and females between the ages of 18 and 45 years of age were recruited to participate in this study. Subject",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-3022",
+      "claim_type": "unit_value",
+      "raw_text": "7.2 mg",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3022,
+      "sentence": "Fasting blood draw samples were obtained from the antecubital vein into one 4.0 ml purple-top Becton Dickinson (BD) Vacuatainer tube (K2 EDTA 7.2 mg), one 4.5 ml light green-top BD Vacutainer tube (PST Gel and Lithium Heparin, 83 units), and one 6.0 ml red-top serum BD Vacutainer tube.",
+      "context_window": "purple-top Becton Dickinson (BD) Vacuatainer tube (K2 EDTA 7.2 mg), one 4.5 ml light green-top BD Vacutainer tube (PST Gel an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-4151",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4151,
+      "sentence": "Briefly, 100 \u03bcl of serum was added to 400 \u03bcL of a 2:1 methanol:chloroform solution containing dueterated 25(OH)D 3 as an internal standard (10 ng/mL in the stock solution; 40 ng/mL final concentration) in a 2 mL centrifuge tube.",
+      "context_window": "on containing dueterated 25(OH)D 3 as an internal standard (10 ng/mL in the stock solution; 40 ng/mL final concentration) in a 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-4183",
+      "claim_type": "unit_value",
+      "raw_text": "40 ng/mL",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4183,
+      "sentence": "Briefly, 100 \u03bcl of serum was added to 400 \u03bcL of a 2:1 methanol:chloroform solution containing dueterated 25(OH)D 3 as an internal standard (10 ng/mL in the stock solution; 40 ng/mL final concentration) in a 2 mL centrifuge tube.",
+      "context_window": "3 as an internal standard (10 ng/mL in the stock solution; 40 ng/mL final concentration) in a 2 mL centrifuge tube. Samples wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-4218",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4218,
+      "sentence": "Briefly, 100 \u03bcl of serum was added to 400 \u03bcL of a 2:1 methanol:chloroform solution containing dueterated 25(OH)D 3 as an internal standard (10 ng/mL in the stock solution; 40 ng/mL final concentration) in a 2 mL centrifuge tube.",
+      "context_window": "L in the stock solution; 40 ng/mL final concentration) in a 2 mL centrifuge tube. Samples were immediately vortexed and allo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-4398",
+      "claim_type": "unit_value",
+      "raw_text": "2 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4398,
+      "sentence": "Samples were then spun at 15,000 g for 5 min and the supernatant transferred to a new 2 mL centrifuge tube containing 500 \u03bcL chloroform.",
+      "context_window": "15,000 g for 5 min and the supernatant transferred to a new 2 mL centrifuge tube containing 500 \u03bcL chloroform. Samples were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-5118",
+      "claim_type": "unit_value",
+      "raw_text": "4.60 mm",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5118,
+      "sentence": "Analytes were separated by injecting 10 \u03bcL into an Agilent HPLC (series 6410, Model G6410B, Santa Clara, CA USA) and a Phenomenex Inertsil 3 micron, 150 \u00d7 4.60 mm column.",
+      "context_window": "ta Clara, CA USA) and a Phenomenex Inertsil 3 micron, 150 \u00d7 4.60 mm column. Method conditions were: 0-8 min, 90% MeOH/10% (0.03",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5167",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5167,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "ron, 150 \u00d7 4.60 mm column. Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5176",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5176,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "\u00d7 4.60 mm column. Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-prop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5181",
+      "claim_type": "percentage",
+      "raw_text": "0.03%",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5181,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "0 mm column. Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5220",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5220,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5229",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5229,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5256",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5256,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "id in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water). 25(OH)D 2 and 25(OH)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5265",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5265,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "er); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water). 25(OH)D 2 and 25(OH)D 3 were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-5270",
+      "claim_type": "percentage",
+      "raw_text": "0.03%",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5270,
+      "sentence": "Method conditions were: 0-8 min, 90% MeOH/10% (0.03% formic acid in water); 8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water).",
+      "context_window": "8-15 min, 30% MeOH/70% 2-propanol; 15-20 min, 90% MeOH/10% (0.03% formic acid in water). 25(OH)D 2 and 25(OH)D 3 were detecte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-6983",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6983,
+      "sentence": "The intra-assay coefficient of variation was predominantly less than 10%.",
+      "context_window": "-assay coefficient of variation was predominantly less than 10%. The inter-assay coefficient of variation was predominantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-7057",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7057,
+      "sentence": "The inter-assay coefficient of variation was predominantly less than 15% for the medium and high control samples and up to ~30% for the low control sample [ 42 , 43 ].",
+      "context_window": "-assay coefficient of variation was predominantly less than 15% for the medium and high control samples and up to ~30% for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-7112",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7112,
+      "sentence": "The inter-assay coefficient of variation was predominantly less than 15% for the medium and high control samples and up to ~30% for the low control sample [ 42 , 43 ].",
+      "context_window": "than 15% for the medium and high control samples and up to ~30% for the low control sample [ 42 , 43 ]. Plasma parathyroid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-7664",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7664,
+      "sentence": "To assess renal function prior to and following supplementation, the estimated glomerular filtration rate (eGFR; ml/min/1.73 m 2 ) was calculated by the following equation:\n\nSubjects with strength or power output asymmetry (i.e., > 5% difference in peak isometric or power output between legs) were excluded from participation.",
+      "context_window": "Subjects with strength or power output asymmetry (i.e., > 5% difference in peak isometric or power output between legs)",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-9869",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9869,
+      "sentence": "Each test was 20 sec in duration with the weight-stack resistance set at 75% of body mass.",
+      "context_window": "20 sec in duration with the weight-stack resistance set at 75% of body mass. The time-aligned product of the resultant for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-11125",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11125,
+      "sentence": "Statistical significance was set at a P < 0.05.",
+      "context_window": "5, Chicago, IL, USA). Statistical significance was set at a P < 0.05. Data presented as mean (SD) unless otherwise noted.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-99",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 99,
+      "sentence": "For example, there was less than a 6% difference in body mass, and importantly, less than a 1% difference in BMI between vitamin D groups (i.e., 200 vs.",
+      "context_window": "tween groups (Table 1 ). For example, there was less than a 6% difference in body mass, and importantly, less than a 1% di",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-156",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 156,
+      "sentence": "For example, there was less than a 6% difference in body mass, and importantly, less than a 1% difference in BMI between vitamin D groups (i.e., 200 vs.",
+      "context_window": "a 6% difference in body mass, and importantly, less than a 1% difference in BMI between vitamin D groups (i.e., 200 vs. 4",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-623",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 623,
+      "sentence": "Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 25(OH)D \u2264 20 ng/ml), insufficient (serum 25(OH)D 21-29 ng/ml) or sufficient (serum 25(OH)D \u2265 30 ng/ml), respectively.",
+      "context_window": "ions were 32.2 (10.0) ng/ml. Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-638",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 638,
+      "sentence": "Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 25(OH)D \u2264 20 ng/ml), insufficient (serum 25(OH)D 21-29 ng/ml) or sufficient (serum 25(OH)D \u2265 30 ng/ml), respectively.",
+      "context_window": "(10.0) ng/ml. Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-649",
+      "claim_type": "percentage",
+      "raw_text": "63.3%",
+      "numeric_values": [
+        63.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 649,
+      "sentence": "Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 25(OH)D \u2264 20 ng/ml), insufficient (serum 25(OH)D 21-29 ng/ml) or sufficient (serum 25(OH)D \u2265 30 ng/ml), respectively.",
+      "context_window": "l. Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-657",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 657,
+      "sentence": "Prior to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 25(OH)D \u2264 20 ng/ml), insufficient (serum 25(OH)D 21-29 ng/ml) or sufficient (serum 25(OH)D \u2265 30 ng/ml), respectively.",
+      "context_window": "to randomization, 13.3 ( n = 4), 23.3 ( n = 7) and 63.3% ( n = 19) of the subjects were vitamin D deficient (serum 25(OH)D \u2264",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-868",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 868,
+      "sentence": "Following randomization, 30, 20 and 50% of the subjects in the placebo group started study participation vitamin D deficient, insufficient or sufficient, respectively.",
+      "context_window": "ng/ml), respectively. Following randomization, 30, 20 and 50% of the subjects in the placebo group started study particip",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1021,
+      "sentence": "In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation.",
+      "context_window": "ufficient or sufficient, respectively. In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1041",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1041,
+      "sentence": "In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation.",
+      "context_window": "ent, respectively. In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1067",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1067,
+      "sentence": "In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation.",
+      "context_window": "200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insuffi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1114",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1114,
+      "sentence": "In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation.",
+      "context_window": "fficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1140",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1140,
+      "sentence": "In the 200 IU group, 10% were deficient, 20% were insufficient and 70% were sufficient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation.",
+      "context_window": "icient, and in the 4000 IU group, 30% were insufficient and 70% were sufficient when starting study participation. Based on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1477",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1477,
+      "sentence": "Serum 25(OH)D concentrations progressively and significantly ( P < 0.05) increased in 4000 IU group and compared to those in the placebo and 200 IU groups (Figure 1 ).",
+      "context_window": "um 25(OH)D concentrations progressively and significantly ( P < 0.05) increased in 4000 IU group and compared to those in the pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1779",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1779,
+      "sentence": "Serum 25(OH)D concentrations (ng/ml) were significantly ( P < 0.001, treatment, time interaction) modified following supplementation .",
+      "context_window": "Serum 25(OH)D concentrations (ng/ml) were significantly ( P < 0.001, treatment, time interaction) modified following supplement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-1989",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1989,
+      "sentence": "Although there were no significant differences in the placebo or 200 IU groups, serum 25(OH)D concentrations increased after 7-d ( 1 P < 0.001 vs.",
+      "context_window": "roups, serum 25(OH)D concentrations increased after 7-d ( 1 P < 0.001 vs. Pre) and continued to increase thereafter ( 2 P < 0.001",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-2049",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2049,
+      "sentence": "Pre) and continued to increase thereafter ( 2 P < 0.001 vs.",
+      "context_window": "P < 0.001 vs. Pre) and continued to increase thereafter ( 2 P < 0.001 vs. Pre and 7-d; 3 P < 0.001 vs. Pre, 7-d, 14-d and 21-d) i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-2078",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2078,
+      "sentence": "Pre and 7-d; 3 P < 0.001 vs.",
+      "context_window": "ued to increase thereafter ( 2 P < 0.001 vs. Pre and 7-d; 3 P < 0.001 vs. Pre, 7-d, 14-d and 21-d) in the 4000 IU group. Serum 25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-2283",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2283,
+      "sentence": "However, serum 25(OH)D concentrations were significantly (* P < 0.05 vs. placebo) increased in the 200 and 4000 IU groups compared to those in the placebo group after supplementation.",
+      "context_window": "However, serum 25(OH)D concentrations were significantly (* P < 0.05 vs. placebo) increased in the 200 and 4000 IU groups compar",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-2468",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2468,
+      "sentence": "By 28-d, serum 25(OH)D concentrations were significantly ( # P < 0.05 vs.",
+      "context_window": "y 28-d, serum 25(OH)D concentrations were significantly ( # P < 0.05 vs. 200 IU) increased in the 4000 IU compared to those in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-2958",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2958,
+      "sentence": "In contrast, serum 25(OH)D concentration changes significantly ( P < 0.05) increased in the 4000 IU group and compared to those in placebo and 200 IU groups (Figure 2 ).",
+      "context_window": "ntrast, serum 25(OH)D concentration changes significantly ( P < 0.05) increased in the 4000 IU group and compared to those in pl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3138,
+      "sentence": "At 21-d and 28-d, serum 25(OH)D concentration changes were significantly ( P < 0.05) different between the placebo and 200 IU groups (Figure 2 ).",
+      "context_window": "d, serum 25(OH)D concentration changes were significantly ( P < 0.05) different between the placebo and 200 IU groups (Figure 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3284",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3284,
+      "sentence": "Serum 25(OH)D concentration (ng/ml) changes from Pre were significantly ( P < 0.005, treatment, time interaction) modulated following supplemental vitamin D .",
+      "context_window": "concentration (ng/ml) changes from Pre were significantly ( P < 0.005, treatment, time interaction) modulated following supplemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3421",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3421,
+      "sentence": "Serum 25(OH)D changes from Pre were significant ( 1 P < 0.05 vs.",
+      "context_window": "min D . Serum 25(OH)D changes from Pre were significant ( 1 P < 0.05 vs. 7-d) in the 4000 IU group and compared to the correspon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3505",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3505,
+      "sentence": "7-d) in the 4000 IU group and compared to the corresponding placebo (* P < 0.05 vs. placebo) and 200 IU ( # P < 0.05 vs.",
+      "context_window": "4000 IU group and compared to the corresponding placebo (* P < 0.05 vs. placebo) and 200 IU ( # P < 0.05 vs. 200 IU) changes. S",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3542",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3542,
+      "sentence": "7-d) in the 4000 IU group and compared to the corresponding placebo (* P < 0.05 vs. placebo) and 200 IU ( # P < 0.05 vs.",
+      "context_window": "rresponding placebo (* P < 0.05 vs. placebo) and 200 IU ( # P < 0.05 vs. 200 IU) changes. Serum 25(OH)D concentration changes we",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-3635",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3635,
+      "sentence": "Serum 25(OH)D concentration changes were also significantly (* P < 0.05 vs. placebo) different between the placebo and 200 IU groups at 21-d and 28-d.",
+      "context_window": "um 25(OH)D concentration changes were also significantly (* P < 0.05 vs. placebo) different between the placebo and 200 IU group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-4933",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4933,
+      "sentence": "In contrast, there was a transient and significant ( P < 0.05) IL-5 decrease in the placebo group (Figure 3C ).",
+      "context_window": "erent. In contrast, there was a transient and significant ( P < 0.05) IL-5 decrease in the placebo group (Figure 3C ). Furthermo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-5026",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5026,
+      "sentence": "Furthermore, IL-5 significantly ( P < 0.05) increased in the 200 IU group and compared to that in the placebo group at 28-d (Figure 3C ).",
+      "context_window": "acebo group (Figure 3C ). Furthermore, IL-5 significantly ( P < 0.05) increased in the 200 IU group and compared to that in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-5775",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5775,
+      "sentence": "However, IL-5 ( C ) displayed a significant ( P < 0.05) treatment, time interaction.",
+      "context_window": "tween groups. However, IL-5 ( C ) displayed a significant ( P < 0.05) treatment, time interaction. Although no significant diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-5957",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5957,
+      "sentence": "Although no significant differences were observed within the 4000 IU group, there was a significant and transient decrease in IL-5 at 14-d ( 1 P < 0.05 vs.",
+      "context_window": "as a significant and transient decrease in IL-5 at 14-d ( 1 P < 0.05 vs. 7-d) in the placebo and increase at 28-d ( 2 P < 0.05 v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-6015",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6015,
+      "sentence": "7-d) in the placebo and increase at 28-d ( 2 P < 0.05 vs.",
+      "context_window": "1 P < 0.05 vs. 7-d) in the placebo and increase at 28-d ( 2 P < 0.05 vs. 7-d and 14-d) in 200 IU group. At 28-d, IL-5 changes we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-6108",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6108,
+      "sentence": "At 28-d, IL-5 changes were also significantly (* P < 0.05) different between the placebo and 200 IU groups.",
+      "context_window": "IU group. At 28-d, IL-5 changes were also significantly (* P < 0.05) different between the placebo and 200 IU groups. Figure le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-6689",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6689,
+      "sentence": "However, there was a significant main effect of time on peak ( P < 0.05; Figure 5A ) and average ( P < 0.05; Figure 5B ) power outputs, thereby indicating a learning effect.",
+      "context_window": "ever, there was a significant main effect of time on peak ( P < 0.05; Figure 5A ) and average ( P < 0.05; Figure 5B ) power outp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-6725",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6725,
+      "sentence": "However, there was a significant main effect of time on peak ( P < 0.05; Figure 5A ) and average ( P < 0.05; Figure 5B ) power outputs, thereby indicating a learning effect.",
+      "context_window": "ffect of time on peak ( P < 0.05; Figure 5A ) and average ( P < 0.05; Figure 5B ) power outputs, thereby indicating a learning e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-7119",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7119,
+      "sentence": "Single-leg peak ( A ) and average ( B ) displayed significant (both P < 0.05) main effects of time.",
+      "context_window": "eg peak ( A ) and average ( B ) displayed significant (both P < 0.05) main effects of time. Specifically, peak ( A ) and average",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-7231",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7231,
+      "sentence": "Specifically, peak ( A ) and average ( B ) power outputs were significantly ( 1 P < 0.05) greater at 28-d vs.",
+      "context_window": "A ) and average ( B ) power outputs were significantly ( 1 P < 0.05) greater at 28-d vs. Pre. Data presented as mean (SD). Alt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-7392",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7392,
+      "sentence": "Although supplemental vitamin D did not significantly change isometric forces, peak ( r = 0.27, P < 0.05) and average ( r = 0.29, P < 0.05) isometric forces correlated with serum 25(OH)D concentrations.",
+      "context_window": "not significantly change isometric forces, peak ( r = 0.27, P < 0.05) and average ( r = 0.29, P < 0.05) isometric forces correla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-p-7426",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7426,
+      "sentence": "Although supplemental vitamin D did not significantly change isometric forces, peak ( r = 0.27, P < 0.05) and average ( r = 0.29, P < 0.05) isometric forces correlated with serum 25(OH)D concentrations.",
+      "context_window": "forces, peak ( r = 0.27, P < 0.05) and average ( r = 0.29, P < 0.05) isometric forces correlated with serum 25(OH)D concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1318",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1318,
+      "sentence": "Compared to serum 25(OH)D concentrations prior to supplementation, we observed a 15% increase after 7-d, which progressively inflated by ~50% after 28-d of supplemental vitamin D at 4000 IU/d.",
+      "context_window": "OH)D concentrations prior to supplementation, we observed a 15% increase after 7-d, which progressively inflated by ~50% af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-1375",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1375,
+      "sentence": "Compared to serum 25(OH)D concentrations prior to supplementation, we observed a 15% increase after 7-d, which progressively inflated by ~50% after 28-d of supplemental vitamin D at 4000 IU/d.",
+      "context_window": "a 15% increase after 7-d, which progressively inflated by ~50% after 28-d of supplemental vitamin D at 4000 IU/d. Thus, in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-2690",
+      "claim_type": "unit_value",
+      "raw_text": "22 weeks",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2690,
+      "sentence": "The more Northern geographical latitudes (51\u00b0 and 55\u00b0N) and plausibly the longer supplementation duration (22 weeks) in the study by Barnes et al. [ 38 ] could be contributing factors for the discrepancy in maintaining serum 25(OH)D concentration between studies that were conducted at the same reported supplemental dose of vitamin D.",
+      "context_window": "nd 55\u00b0N) and plausibly the longer supplementation duration (22 weeks) in the study by Barnes et al. [ 38 ] could be contributing",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-u-5797",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5797,
+      "sentence": "Regarding no change in IL-5, Yusupov et al. [ 48 ] demonstrated that vitamin D (cholecalciferol) supplementation at 2000 IU/d for 3 months was ineffective at altering circulating IL-5 concentrations in young, healthy adults.",
+      "context_window": "itamin D (cholecalciferol) supplementation at 2000 IU/d for 3 months was ineffective at altering circulating IL-5 concentrations",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-pct-10049",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10049,
+      "sentence": "In contrast to our hypothesis, supplemental vitamin D did not increase muscular strength (Figure 4A and 4B ) or power (Figure 5A and 5B ) despite serum 25(OH)D concentrations increasing by ~50% in the 4000 IU group (Figure 1 ).",
+      "context_window": "nd 5B ) despite serum 25(OH)D concentrations increasing by ~50% in the 4000 IU group (Figure 1 ). This finding extends prev",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk-n-13881",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 13881,
+      "sentence": "Third, this study consisted of thirty subjects total ( n = 10/group).",
+      "context_window": "ded. Third, this study consisted of thirty subjects total ( n = 10/group). Future studies investigating the influence of diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

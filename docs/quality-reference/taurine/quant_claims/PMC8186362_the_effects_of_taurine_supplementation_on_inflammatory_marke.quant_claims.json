@@ -1,0 +1,755 @@
+{
+  "paper_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke",
+  "doi": "10.1186/s12937-021-00712-6",
+  "extracted_at": "2026-05-05T21:41:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "p_value": 23,
+    "sample_size": 1,
+    "percentage": 4,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/day",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "abstract",
+      "source_offset": 459,
+      "sentence": "The treatment group received 30 mg/kg/day of taurine in addition to the Standard Entera Meal and the control group received Standard Entera Meal for 14 days.",
+      "context_window": "re randomized into two groups. The treatment group received 30 mg/kg/day of taurine in addition to the Standard Entera Meal and the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "The treatment group received 30 mg/kg/day of taurine in addition to the Standard Entera Meal and the control group received Standard Entera Meal for 14 days.",
+      "context_window": "eal and the control group received Standard Entera Meal for 14 days. Prior to and following the intervention, the patients were",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1032",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1032,
+      "sentence": "Taurine significantly decreased the serum levels of IL-6 ( p = 0.04) and marginally APACHEII score ( p = 0.05).",
+      "context_window": "Taurine significantly decreased the serum levels of IL-6 ( p = 0.04) and marginally APACHEII score ( p = 0.05). In addition, we",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1074",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1074,
+      "sentence": "Taurine significantly decreased the serum levels of IL-6 ( p = 0.04) and marginally APACHEII score ( p = 0.05).",
+      "context_window": "levels of IL-6 ( p = 0.04) and marginally APACHEII score ( p = 0.05). In addition, weight loss was significantly lower in tauri",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1153",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1153,
+      "sentence": "In addition, weight loss was significantly lower in taurine group ( p = 0.03).",
+      "context_window": "ion, weight loss was significantly lower in taurine group ( p = 0.03). Furthermore, taurine significantly increased the GCS (p =",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1218",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1218,
+      "sentence": "Furthermore, taurine significantly increased the GCS (p = 0.03).",
+      "context_window": ".03). Furthermore, taurine significantly increased the GCS (p = 0.03). The groups were not different significantly in terms of l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-n-689",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 689,
+      "sentence": "The patients ( n = 22) were divided into two groups via randomization (ratio, 1:1).",
+      "context_window": "their families for inclusion in the study. The patients ( n = 22) were divided into two groups via randomization (ratio, 1:1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-1385",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1385,
+      "sentence": "The inclusion criteria were TBI patients over the age of 18 years, receiving enteral nutrition, with a Glasgow Coma Scale (GCS) score of 6-12.",
+      "context_window": ". The inclusion criteria were TBI patients over the age of 18 years, receiving enteral nutrition, with a Glasgow Coma Scale (GC",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-pct-1856",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1856,
+      "sentence": "Also, patients were excluded if more than 60% of their energy requirements were not provided by enteral nutrition in the first week.",
+      "context_window": "acid metabolism. Also, patients were excluded if more than 60% of their energy requirements were not provided by enteral n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-2147",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg/kg/day",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 2147,
+      "sentence": "The control group received an Standard Entera Meal (Karen Pharma and Food Supplement Co., Iran), and the taurine group received 30 mg/kg/day of taurine powder (Nutricost, USA) at a maximum dose of 3 g/day for 14 days, in addition to the Standard Entera Meal.",
+      "context_window": "Food Supplement Co., Iran), and the taurine group received 30 mg/kg/day of taurine powder (Nutricost, USA) at a maximum dose of 3 g",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-2228",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2228,
+      "sentence": "The control group received an Standard Entera Meal (Karen Pharma and Food Supplement Co., Iran), and the taurine group received 30 mg/kg/day of taurine powder (Nutricost, USA) at a maximum dose of 3 g/day for 14 days, in addition to the Standard Entera Meal.",
+      "context_window": "ne powder (Nutricost, USA) at a maximum dose of 3 g/day for 14 days, in addition to the Standard Entera Meal. This dosage of ta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-4406",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4406,
+      "sentence": "To measure the serum levels of IL-6, IL-10, TNF-\u03b1, and hs-CRP on the 1st and 14th days, 10 mL of venous blood was taken from each patient, and after centrifugation and serum detachment, the serum was kept at - 70 \u00b0C until further analysis.",
+      "context_window": "of IL-6, IL-10, TNF-\u03b1, and hs-CRP on the 1st and 14th days, 10 mL of venous blood was taken from each patient, and after cent",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-pct-5065",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5065,
+      "sentence": "Considering the probability of 30% dropout of patients during the study, the final sample size was considered 44 patients.",
+      "context_window": "ed on \u03b1 = 0.01 and \u03b2 = 0.1. Considering the probability of 30% dropout of patients during the study, the final sample size",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-pct-5823",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5823,
+      "sentence": "Outcomes were reported at 95% confidence intervals.",
+      "context_window": "parametric equivalent (Wilcoxon). Outcomes were reported at 95% confidence intervals. The significance level was considered",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-5897",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5897,
+      "sentence": "The significance level was considered two-sided p < 0.05.",
+      "context_window": "intervals. The significance level was considered two-sided p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1135",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1135,
+      "sentence": "Weight loss in the taurine group was significantly lower than the control group ( p = 0.03).",
+      "context_window": "rine group was significantly lower than the control group ( p = 0.03). The changes of NUTRIC score showed no significant differe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1228,
+      "sentence": "The changes of NUTRIC score showed no significant difference between the groups ( p = 0.40), but it was decreased significantly in taurine group ( p = 0.01).",
+      "context_window": "score showed no significant difference between the groups ( p = 0.40), but it was decreased significantly in taurine group ( p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-1293",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1293,
+      "sentence": "The changes of NUTRIC score showed no significant difference between the groups ( p = 0.40), but it was decreased significantly in taurine group ( p = 0.01).",
+      "context_window": ".40), but it was decreased significantly in taurine group ( p = 0.01). Nutritional variables of the study participants Values",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-msd-1975",
+      "claim_type": "mean_sd",
+      "raw_text": "70.75 \u00b1 71.89",
+      "numeric_values": [
+        70.75,
+        71.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1975,
+      "sentence": "The mean changes of serum IL-6 between the groups were significantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04).",
+      "context_window": "rum IL-6 between the groups were significantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04). There were no significant di",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-msd-1994",
+      "claim_type": "mean_sd",
+      "raw_text": "20.09 \u00b1 59.51",
+      "numeric_values": [
+        20.09,
+        59.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1994,
+      "sentence": "The mean changes of serum IL-6 between the groups were significantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04).",
+      "context_window": "e groups were significantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04). There were no significant differences between t",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2009",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2009,
+      "sentence": "The mean changes of serum IL-6 between the groups were significantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04).",
+      "context_window": "ignificantly different (- 70.75 \u00b1 71.89 vs. -20.09 \u00b1 59.51, p = 0.04). There were no significant differences between the groups",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2117",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.81",
+      "numeric_values": [
+        0.81
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2117,
+      "sentence": "There were no significant differences between the groups in levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively).",
+      "context_window": "between the groups in levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively). However, the increas",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2127",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.24",
+      "numeric_values": [
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2127,
+      "sentence": "There were no significant differences between the groups in levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively).",
+      "context_window": "he groups in levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively). However, the increase in TNF-\u03b1",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2140",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2140,
+      "sentence": "There were no significant differences between the groups in levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively).",
+      "context_window": "levels of IL-10, hs-CRP, and TNF-\u03b1 ( p = 0.81, p = 0.24 and p = 0.07, respectively). However, the increase in TNF-\u03b1 in the contr",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-2287",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2287,
+      "sentence": "However, the increase in TNF-\u03b1 in the control group and the decrease in hs-CRP in the taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively).",
+      "context_window": "crease in hs-CRP in the taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively). Serum levels of i",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2297",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2297,
+      "sentence": "However, the increase in TNF-\u03b1 in the control group and the decrease in hs-CRP in the taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively).",
+      "context_window": "hs-CRP in the taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively). Serum levels of inflammatory",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2311",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2311,
+      "sentence": "However, the increase in TNF-\u03b1 in the control group and the decrease in hs-CRP in the taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively).",
+      "context_window": "taurine group was significant after 14 days ( p = 0.004 and p = 0.02, respectively). Serum levels of inflammatory markers. IL-6",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2618",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2618,
+      "sentence": "A group comparison was made using a paired-samples t-test for IL-6; this was made by Wilcoxon for the others. * P < 0.05, # P < 0.01\n\nClinical outcomes are presented in Table 3 .",
+      "context_window": "-test for IL-6; this was made by Wilcoxon for the others. * P < 0.05, # P < 0.01 Clinical outcomes are presented in Table 3 . O",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2630",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2630,
+      "sentence": "A group comparison was made using a paired-samples t-test for IL-6; this was made by Wilcoxon for the others. * P < 0.05, # P < 0.01\n\nClinical outcomes are presented in Table 3 .",
+      "context_window": "-6; this was made by Wilcoxon for the others. * P < 0.05, # P < 0.01 Clinical outcomes are presented in Table 3 . On the 1st da",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2866",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2866,
+      "sentence": "The mean changes of GCS significantly increased by taurine supplementation ( p = 0.03).",
+      "context_window": "of GCS significantly increased by taurine supplementation ( p = 0.03). The changes of APACHEll score showed marginal differences",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-2956",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2956,
+      "sentence": "The changes of APACHEll score showed marginal differences between two groups ( p = 0.05).",
+      "context_window": "HEll score showed marginal differences between two groups ( p = 0.05). In other words, taurine decreased it. The SOFA score, mor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-3149",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3149,
+      "sentence": "The SOFA score, mortality rate, duration on mechanical ventilation, and length of ICU stay were not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively).",
+      "context_window": "U stay were not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively). However th",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-3159",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3159,
+      "sentence": "The SOFA score, mortality rate, duration on mechanical ventilation, and length of ICU stay were not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively).",
+      "context_window": "e not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively). However the SOFA sco",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-3169",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3169,
+      "sentence": "The SOFA score, mortality rate, duration on mechanical ventilation, and length of ICU stay were not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively).",
+      "context_window": "erent considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively). However the SOFA score decreas",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-3182",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.96",
+      "numeric_values": [
+        0.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3182,
+      "sentence": "The SOFA score, mortality rate, duration on mechanical ventilation, and length of ICU stay were not different considerably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively).",
+      "context_window": "rably between the groups ( p = 0.06, p = 0.33, p = 0.26 and p = 0.96, respectively). However the SOFA score decreased significan",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-p-3273",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3273,
+      "sentence": "However the SOFA score decreased significantly in Taurine group ( p = 0.003).",
+      "context_window": "r the SOFA score decreased significantly in Taurine group ( p = 0.003). The clinical outcomes of study participants Values are",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-pct-1036",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1036,
+      "sentence": "In this regard, Vermeulen et al., in an observational study, found that in patients admitted to the ICU, the plasma concentration of taurine decreased by more than 50% in the first 5 days of admission, which was associated with a high lactate level and a longer duration of mechanical ventilation and ICU stay [ 25 ].",
+      "context_window": "the plasma concentration of taurine decreased by more than 50% in the first 5 days of admission, which was associated with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-1053",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1053,
+      "sentence": "In this regard, Vermeulen et al., in an observational study, found that in patients admitted to the ICU, the plasma concentration of taurine decreased by more than 50% in the first 5 days of admission, which was associated with a high lactate level and a longer duration of mechanical ventilation and ICU stay [ 25 ].",
+      "context_window": "ntration of taurine decreased by more than 50% in the first 5 days of admission, which was associated with a high lactate leve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-2828",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg/kg/day",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 2828,
+      "sentence": "Also, in a study on rats with TBI, 200 mg/kg/day of taurine for 1 week reduced the levels of IL-6, IL-10, and TNF-\u03b1 [ 45 ].",
+      "context_window": "septic patients [ 29 ]. Also, in a study on rats with TBI, 200 mg/kg/day of taurine for 1 week reduced the levels of IL-6, IL-10, an",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-2857",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "discussion",
+      "source_offset": 2857,
+      "sentence": "Also, in a study on rats with TBI, 200 mg/kg/day of taurine for 1 week reduced the levels of IL-6, IL-10, and TNF-\u03b1 [ 45 ].",
+      "context_window": ", in a study on rats with TBI, 200 mg/kg/day of taurine for 1 week reduced the levels of IL-6, IL-10, and TNF-\u03b1 [ 45 ]. Simila",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8186362_the_effects_of_taurine_supplementation_on_inflammatory_marke-u-5575",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg/kg/day",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 5575,
+      "sentence": "Similar to our findings, an experimental model of head injury showed that taurine supplementation at 15 and 50 mg/kg/day decreased weight loss [ 60 ].",
+      "context_window": "f head injury showed that taurine supplementation at 15 and 50 mg/kg/day decreased weight loss [ 60 ]. Since limited studies have be",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

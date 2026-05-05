@@ -1,0 +1,101 @@
+{
+  "paper_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status",
+  "doi": "10.3390/nu13010221",
+  "extracted_at": "2026-05-05T22:11:14+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status-pct-37",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 37,
+      "sentence": "Metabolic syndrome (MetS) occurs in ~30% of adults and is associated with increased risk of cardiovascular disease and diabetes mellitus.",
+      "context_window": "Metabolic syndrome (MetS) occurs in ~30% of adults and is associated with increased risk of cardiova",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status-pct-50",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 50,
+      "sentence": "Metabolic syndrome (MetS) occurs in approximately 30% of adults and is associated with increased cardiometabolic morbidity and mortality [ 1 , 2 , 3 , 4 ].",
+      "context_window": "Metabolic syndrome (MetS) occurs in approximately 30% of adults and is associated with increased cardiometabolic",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status-pct-1084",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1084,
+      "sentence": "It has been shown that over 50% of people eat during a period >15 h every day, only ~10% of adults habitually maintain fasting of \u226512 h per day [ 7 , 9 , 10 ].",
+      "context_window": "and CVD [ 12 , 13 , 14 , 15 ]. It has been shown that over 50% of people eat during a period >15 h every day, only ~10% of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status-pct-1141",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1141,
+      "sentence": "It has been shown that over 50% of people eat during a period >15 h every day, only ~10% of adults habitually maintain fasting of \u226512 h per day [ 7 , 9 , 10 ].",
+      "context_window": "er 50% of people eat during a period >15 h every day, only ~10% of adults habitually maintain fasting of \u226512 h per day [ 7",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7828812_time_restricted_eating_and_metabolic_syndrome_current_status-pct-1335",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1335,
+      "sentence": "In an American population of patients with MetS, the eating window, defined as the time interval during a day in which 95% of all calorie-containing ingestion events occur, was ~15 h [ 16 ].",
+      "context_window": "window, defined as the time interval during a day in which 95% of all calorie-containing ingestion events occur, was ~15 h",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,973 @@
+{
+  "paper_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_",
+  "doi": "10.3390/ijerph18126431",
+  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 4,
+    "unit_value": 19,
+    "p_value": 19,
+    "percentage": 9,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-msd-623",
+      "claim_type": "mean_sd",
+      "raw_text": "27 \u00b1 6",
+      "numeric_values": [
+        27.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 623,
+      "sentence": "The main purpose of this research was to use a cross-over design to study the effects of HIIT, with or without intermittent fasting, on muscular and anaerobic performance in 14 active women (27 \u00b1 6 y).",
+      "context_window": ", on muscular and anaerobic performance in 14 active women (27 \u00b1 6 y). To assess performance, body composition (anthropometry)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-840",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 840,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "te test was completed assessed. HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-846",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 846,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "t was completed assessed. HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-865",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 865,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "essed. HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-871",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-916",
+      "claim_type": "unit_value",
+      "raw_text": "6.2 cm",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 916,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8). In addition, the change in CMJ height",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-924",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 924,
+      "sentence": "HIIT + IF reduced fat mass (1 kg, p < 0.05, d = 1.1; 1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8).",
+      "context_window": "1.5%, p < 0.01, d = 1.0) and increased CMJ height (6.2 cm, p < 0.001, d = 1.8). In addition, the change in CMJ height in HIIT +",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-1018",
+      "claim_type": "unit_value",
+      "raw_text": "5.2 cm",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1018,
+      "sentence": "In addition, the change in CMJ height in HIIT + IF was higher over HIIT (5.2 cm, p < 0.001, d = 1.9).",
+      "context_window": "the change in CMJ height in HIIT + IF was higher over HIIT (5.2 cm, p < 0.001, d = 1.9). In conclusion, intermittent fasting c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1026",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "In addition, the change in CMJ height in HIIT + IF was higher over HIIT (5.2 cm, p < 0.001, d = 1.9).",
+      "context_window": "ge in CMJ height in HIIT + IF was higher over HIIT (5.2 cm, p < 0.001, d = 1.9). In conclusion, intermittent fasting could be a n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-1474",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1474,
+      "sentence": "Alternate-day fasting involves alternating between days of ad libitum feeding and fasting days, which usually consist of a single meal containing approximately 25% of daily caloric needs.",
+      "context_window": "h usually consist of a single meal containing approximately 25% of daily caloric needs. Full-day fasting is perhaps the sim",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-2159",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2159,
+      "sentence": "High-intensity interval training (HIIT) is defined as repeated, intense efforts performed at an intensity eliciting >85% of maximal hear rate, interspersed with periods of recovery from low- or moderate-intensity exercise (active recovery) or complete rest [ 2 , 8 , 9 ].",
+      "context_window": "eated, intense efforts performed at an intensity eliciting >85% of maximal hear rate, interspersed with periods of recovery",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-59",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 59,
+      "sentence": "A cross-over design was used to compare the effects of 2 \u00d7 8 weeks of high-intensity interval training, without (HIIT) or with (HIIT + IF) intermittent fasting, on body composition and performance.",
+      "context_window": "A cross-over design was used to compare the effects of 2 \u00d7 8 weeks of high-intensity interval training, without (HIIT) or with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-n-737",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 737,
+      "sentence": "In a first phase, participants were assigned either to the HIIT ( n = 7) or HIIT + IF ( n = 7) group.",
+      "context_window": "irst phase, participants were assigned either to the HIIT ( n = 7) or HIIT + IF ( n = 7) group. In the second phase, particip",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-n-759",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 759,
+      "sentence": "In a first phase, participants were assigned either to the HIIT ( n = 7) or HIIT + IF ( n = 7) group.",
+      "context_window": "ts were assigned either to the HIIT ( n = 7) or HIIT + IF ( n = 7) group. In the second phase, participants carried out the t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-msd-1156",
+      "claim_type": "mean_sd",
+      "raw_text": "27 \u00b1 6",
+      "numeric_values": [
+        27.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1156,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": "r study design. Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) parti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-1161",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1161,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": "dy design. Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-msd-1182",
+      "claim_type": "mean_sd",
+      "raw_text": "167 \u00b1 6",
+      "numeric_values": [
+        167.0,
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1182,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": "active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study. Inclu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-1188",
+      "claim_type": "unit_value",
+      "raw_text": "6 cm",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1188,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": ", normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study. Inclusio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-msd-1202",
+      "claim_type": "mean_sd",
+      "raw_text": "58.9 \u00b1 6.2",
+      "numeric_values": [
+        58.9,
+        6.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1202,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": "t women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study. Inclusion criteria were: (1)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-1209",
+      "claim_type": "unit_value",
+      "raw_text": "6.2 kg",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1209,
+      "sentence": "Fourteen active, normal-weight women (age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study.",
+      "context_window": "(age: 27 \u00b1 6 years old, height: 167 \u00b1 6 cm, weight: 58.9 \u00b1 6.2 kg) participated in the study. Inclusion criteria were: (1) no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-1470",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1470,
+      "sentence": "Inclusion criteria were: (1) no muscular, ligamentous, bone, nerve, or joint pathology incompatible with the training program; (2) no present cardiovascular or cardiorespiratory problems; and (3) physically active in the last 5 years, according to the American College of Sports Medicine (ACSM) definition [ 20 ].",
+      "context_window": "respiratory problems; and (3) physically active in the last 5 years, according to the American College of Sports Medicine (ACSM",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3228",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3228,
+      "sentence": "Body mass and height measurements were performed using a digital scale with 0.1 kg accuracy (Tanita BC-545, Tokyo, Japan) and 0.1 cm accuracy stadiometer (SECA 213, Hamburg, Germany).",
+      "context_window": "ight measurements were performed using a digital scale with 0.1 kg accuracy (Tanita BC-545, Tokyo, Japan) and 0.1 cm accuracy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3278",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3278,
+      "sentence": "Body mass and height measurements were performed using a digital scale with 0.1 kg accuracy (Tanita BC-545, Tokyo, Japan) and 0.1 cm accuracy stadiometer (SECA 213, Hamburg, Germany).",
+      "context_window": "cale with 0.1 kg accuracy (Tanita BC-545, Tokyo, Japan) and 0.1 cm accuracy stadiometer (SECA 213, Hamburg, Germany). Skinfold",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3882",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3882,
+      "sentence": "This test was conducted using a hydraulic hand-held dynamometer (Jamar, Preston, Jackson, Cape Girardeau County, MO, USA) with a 0.1 kg accuracy.",
+      "context_window": "r, Preston, Jackson, Cape Girardeau County, MO, USA) with a 0.1 kg accuracy. During the test, subjects kept a standardized pos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-8089",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8089,
+      "sentence": "The HIIT intervention lasted for 2 \u00d7 8 weeks [ 38 , 39 , 40 ] and was interspersed by more than 2 weeks without training.",
+      "context_window": "of body mass [ 37 ]. The HIIT intervention lasted for 2 \u00d7 8 weeks [ 38 , 39 , 40 ] and was interspersed by more than 2 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-8148",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8148,
+      "sentence": "The HIIT intervention lasted for 2 \u00d7 8 weeks [ 38 , 39 , 40 ] and was interspersed by more than 2 weeks without training.",
+      "context_window": "8 weeks [ 38 , 39 , 40 ] and was interspersed by more than 2 weeks without training. In all sessions, subjects chose their own",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-75",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 75,
+      "sentence": "Nutritional assessment of energy intake reported a caloric restriction (10-20% reduction in weekly energy intake) during the IF period.",
+      "context_window": "essment of energy intake reported a caloric restriction (10-20% reduction in weekly energy intake) during the IF period. Th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 413,
+      "sentence": "A significant main effect for the training*group was observed in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005).",
+      "context_window": "for the training*group was observed in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-444",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 444,
+      "sentence": "A significant main effect for the training*group was observed in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005).",
+      "context_window": "erved in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-487",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 487,
+      "sentence": "A significant main effect for the training*group was observed in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005).",
+      "context_window": "ceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005). C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-542",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 542,
+      "sentence": "A significant main effect for the training*group was observed in triceps (F = 7.407; p = 0.017), biceps (F = 4.937; p = 0.045), and leg skinfolds (F = 15.369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005).",
+      "context_window": "369; p = 0.002) and main group effect in waist (F = 11.220; p = 0.005). Changes in anthropometric variables. Pre, pre-intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1087",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1087,
+      "sentence": "Effects of training on skinfolds (mm; mean difference post-training vs. pre-training: mean \u00b1 standard deviation). d, effect size; significant differences between pre- and post-training, * = p < 0.05; ** = p < 0.01.",
+      "context_window": "significant differences between pre- and post-training, * = p < 0.05; ** = p < 0.01. Effects of training on girths (cm; mean di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1102",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1102,
+      "sentence": "Effects of training on skinfolds (mm; mean difference post-training vs. pre-training: mean \u00b1 standard deviation). d, effect size; significant differences between pre- and post-training, * = p < 0.05; ** = p < 0.01.",
+      "context_window": "ferences between pre- and post-training, * = p < 0.05; ** = p < 0.01. Effects of training on girths (cm; mean difference post-t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1398",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1398,
+      "sentence": "Concerning the body composition results, the significant main effect in the training * group was observed on fat mass (%, F = 14.084, p = 0.002; kg, F = 26.421, p < 0.001) ( Table 2 ).",
+      "context_window": "e training * group was observed on fat mass (%, F = 14.084, p = 0.002; kg, F = 26.421, p < 0.001) ( Table 2 ). Changes in body c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1425",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1425,
+      "sentence": "Concerning the body composition results, the significant main effect in the training * group was observed on fat mass (%, F = 14.084, p = 0.002; kg, F = 26.421, p < 0.001) ( Table 2 ).",
+      "context_window": "rved on fat mass (%, F = 14.084, p = 0.002; kg, F = 26.421, p < 0.001) ( Table 2 ). Changes in body composition. Pre, pre-inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1830",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1830,
+      "sentence": "Additionally, the analysis of the pair comparison showed a significant decrease in the fat mass of the HIIT + IF group (%, p = 0.006, d = 1.0; kg, p = 0.003, d = 1.1) ( Figure 4 ).",
+      "context_window": "ificant decrease in the fat mass of the HIIT + IF group (%, p = 0.006, d = 1.0; kg, p = 0.003, d = 1.1) ( Figure 4 ). However, no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-1854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1854,
+      "sentence": "Additionally, the analysis of the pair comparison showed a significant decrease in the fat mass of the HIIT + IF group (%, p = 0.006, d = 1.0; kg, p = 0.003, d = 1.1) ( Figure 4 ).",
+      "context_window": "fat mass of the HIIT + IF group (%, p = 0.006, d = 1.0; kg, p = 0.003, d = 1.1) ( Figure 4 ). However, no differences were observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-2136",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2136,
+      "sentence": "Effects of training on body composition (mean difference post-training vs. pre-training: mean \u00b1 standard deviation). d, effect size, significant differences between pre- and post-training, * = p < 0.05.",
+      "context_window": "significant differences between pre- and post-training, * = p < 0.05. Finally, significant interactions were observed in the st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-2686",
+      "claim_type": "percentage",
+      "raw_text": "35.43%",
+      "numeric_values": [
+        35.43
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2686,
+      "sentence": "The HIIT + IF group showed a significant increase in CMJ jump height (35.43%, p < 0.001, d = 1.8).",
+      "context_window": "IF group showed a significant increase in CMJ jump height (35.43%, p < 0.001, d = 1.8). In addition, significant differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-2694",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2694,
+      "sentence": "The HIIT + IF group showed a significant increase in CMJ jump height (35.43%, p < 0.001, d = 1.8).",
+      "context_window": "p showed a significant increase in CMJ jump height (35.43%, p < 0.001, d = 1.8). In addition, significant differences were observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-2805",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2805,
+      "sentence": "In addition, significant differences were observed between groups after training on CMJ ( p < 0.001; d = 1.9) in favour of the HIIT + IF group and power in favour of the HIIT + IF group.",
+      "context_window": "rences were observed between groups after training on CMJ ( p < 0.001; d = 1.9) in favour of the HIIT + IF group and power in fav",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-3155",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3155,
+      "sentence": "Effects of training on performance (mean difference post-training vs. pre-training: mean \u00b1 standard deviation). d, effect size, *** = p < 0.001 significant differences between pre- and post-training; ### = p < 0.001 significant differences between groups after training.",
+      "context_window": "training: mean \u00b1 standard deviation). d, effect size, *** = p < 0.001 significant differences between pre- and post-training; ###",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-p-3227",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3227,
+      "sentence": "Effects of training on performance (mean difference post-training vs. pre-training: mean \u00b1 standard deviation). d, effect size, *** = p < 0.001 significant differences between pre- and post-training; ### = p < 0.001 significant differences between groups after training.",
+      "context_window": "gnificant differences between pre- and post-training; ### = p < 0.001 significant differences between groups after training.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-1031",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1031,
+      "sentence": "The only variation was the timing of the intakes where the HIIT + IF group performed intermittent fasting, for which the participants developed a decreased energy intake by themselves (10-20% of total energy intake).",
+      "context_window": "pants developed a decreased energy intake by themselves (10-20% of total energy intake). Fasting strategies, with a greate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-1627",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1627,
+      "sentence": "In this sense, studies with fasting interventions and without caloric restriction have observed significant differences in the decrease of fat mass (2-3%) in the study population [ 49 ].",
+      "context_window": "rved significant differences in the decrease of fat mass (2-3%) in the study population [ 49 ]. In our case, the results o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-1806",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1806,
+      "sentence": "In our case, the results of the present study show a reduction in the percentage of body fat at the end of HIIT and HIIT + IF intervention of -0.3% and 1.0%, respectively.",
+      "context_window": "body fat at the end of HIIT and HIIT + IF intervention of -0.3% and 1.0%, respectively. Although no significant changes we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-pct-1815",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1815,
+      "sentence": "In our case, the results of the present study show a reduction in the percentage of body fat at the end of HIIT and HIIT + IF intervention of -0.3% and 1.0%, respectively.",
+      "context_window": "at the end of HIIT and HIIT + IF intervention of -0.3% and 1.0%, respectively. Although no significant changes were observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-2960",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2960,
+      "sentence": "The absence of significant changes could be due to the fact that the interventions in which a significant reduction in fat mass was observed were of longer duration (>12 weeks) than those used in the present study (8 weeks) [ 49 , 55 ].",
+      "context_window": "eduction in fat mass was observed were of longer duration (>12 weeks) than those used in the present study (8 weeks) [ 49 , 55 ]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3008",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3008,
+      "sentence": "The absence of significant changes could be due to the fact that the interventions in which a significant reduction in fat mass was observed were of longer duration (>12 weeks) than those used in the present study (8 weeks) [ 49 , 55 ].",
+      "context_window": "duration (>12 weeks) than those used in the present study (8 weeks) [ 49 , 55 ]. Although scientific publications present evid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3168",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3168,
+      "sentence": "Although scientific publications present evidence of changes in body composition regarding fasting as a nutritional strategy in less than 8 weeks for elite male athletes (4-weeeks) [ 56 ], an 8-week duration does not appear to be a sufficient stimulus to promote metabolic flexibility in our study population (active women).",
+      "context_window": "on regarding fasting as a nutritional strategy in less than 8 weeks for elite male athletes (4-weeeks) [ 56 ], an 8-week durati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3363",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3363,
+      "sentence": "Indeed, 4 weeks for active males are not enough to improve the body composition [ 57 ], but 6 weeks was enough to find positive changes in women over 60 years [ 58 ].",
+      "context_window": "flexibility in our study population (active women). Indeed, 4 weeks for active males are not enough to improve the body composi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3447",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3447,
+      "sentence": "Indeed, 4 weeks for active males are not enough to improve the body composition [ 57 ], but 6 weeks was enough to find positive changes in women over 60 years [ 58 ].",
+      "context_window": "are not enough to improve the body composition [ 57 ], but 6 weeks was enough to find positive changes in women over 60 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8296247_effect_of_high_intensity_interval_training_and_intermittent_-u-3505",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3505,
+      "sentence": "Indeed, 4 weeks for active males are not enough to improve the body composition [ 57 ], but 6 weeks was enough to find positive changes in women over 60 years [ 58 ].",
+      "context_window": "t 6 weeks was enough to find positive changes in women over 60 years [ 58 ]. Thus, it appears that changes in body composition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

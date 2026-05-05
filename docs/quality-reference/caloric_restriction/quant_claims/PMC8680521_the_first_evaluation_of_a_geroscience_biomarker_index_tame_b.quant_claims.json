@@ -1,0 +1,123 @@
+{
+  "paper_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b",
+  "doi": "10.1093/geroni/igab046.299",
+  "extracted_at": "2026-05-05T22:17:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "unit_value": 1,
+    "p_value": 1,
+    "correlation": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-msd-480",
+      "claim_type": "mean_sd",
+      "raw_text": "67\u00b15",
+      "numeric_values": [
+        67.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 480,
+      "sentence": "We measured IL-6, TNF-\u03b1-receptor-I, growth differentiating factor-15, cystatin C, and N-terminal pro-B-type natriuretic peptide in a 20-week randomized trial of caloric restriction (CR), aerobic exercise (EX), CR+EX, or attention-control in 88 patients (67\u00b15years) with heart failure with preserved ejection fraction (HFpEF).",
+      "context_window": "exercise (EX), CR+EX, or attention-control in 88 patients (67\u00b15years) with heart failure with preserved ejection fraction (",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-u-483",
+      "claim_type": "unit_value",
+      "raw_text": "5years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 483,
+      "sentence": "We measured IL-6, TNF-\u03b1-receptor-I, growth differentiating factor-15, cystatin C, and N-terminal pro-B-type natriuretic peptide in a 20-week randomized trial of caloric restriction (CR), aerobic exercise (EX), CR+EX, or attention-control in 88 patients (67\u00b15years) with heart failure with preserved ejection fraction (HFpEF).",
+      "context_window": "ercise (EX), CR+EX, or attention-control in 88 patients (67\u00b15years) with heart failure with preserved ejection fraction (HFpEF",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-p-709",
+      "claim_type": "p_value",
+      "raw_text": "p\u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 709,
+      "sentence": "We calculated TAME-BI (analyte levels ranked, binned by quintile, and summed) and found a time\u00d7treatment interaction for improved TAME-BI with intervention (p\u22640.05) and detected associations between change in TAME-BI and change in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative wall thickness (r= 0.31).",
+      "context_window": "eatment interaction for improved TAME-BI with intervention (p\u22640.05) and detected associations between change in TAME-BI and ch",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-corr-808",
+      "claim_type": "correlation",
+      "raw_text": "(r= -0.24)",
+      "numeric_values": [
+        -0.24
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "We calculated TAME-BI (analyte levels ranked, binned by quintile, and summed) and found a time\u00d7treatment interaction for improved TAME-BI with intervention (p\u22640.05) and detected associations between change in TAME-BI and change in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative wall thickness (r= 0.31).",
+      "context_window": "en change in TAME-BI and change in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-corr-837",
+      "claim_type": "correlation",
+      "raw_text": "(r= -0.23)",
+      "numeric_values": [
+        -0.23
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 837,
+      "sentence": "We calculated TAME-BI (analyte levels ranked, binned by quintile, and summed) and found a time\u00d7treatment interaction for improved TAME-BI with intervention (p\u22640.05) and detected associations between change in TAME-BI and change in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative wall thickness (r= 0.31).",
+      "context_window": "ge in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative wall thickness (r= 0.31). In",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b-corr-894",
+      "claim_type": "correlation",
+      "raw_text": "(r= 0.31)",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 894,
+      "sentence": "We calculated TAME-BI (analyte levels ranked, binned by quintile, and summed) and found a time\u00d7treatment interaction for improved TAME-BI with intervention (p\u22640.05) and detected associations between change in TAME-BI and change in six-minute walk distance (r= -0.24), usual walk speed (r= -0.23), and left ventricular relative wall thickness (r= 0.31).",
+      "context_window": "ed (r= -0.23), and left ventricular relative wall thickness (r= 0.31). In sum, CR+EX intervention improved TAME-BI and changes in",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

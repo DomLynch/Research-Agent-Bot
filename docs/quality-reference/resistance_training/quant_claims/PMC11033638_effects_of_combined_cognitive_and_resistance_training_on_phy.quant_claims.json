@@ -1,0 +1,121 @@
+{
+  "paper_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy",
+  "doi": "10.1136/bmjopen-2023-082192",
+  "extracted_at": "2026-05-05T21:59:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "sample_size": 1,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-u-396",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 396,
+      "sentence": "This study aims to investigate the impact of three distinct interventions: cognitive training, resistance training and a combination of both, compared with an inactive control group, on cognitive performance, mobility and quality of life in adults aged \u226565 years.",
+      "context_window": "e performance, mobility and quality of life in adults aged \u226565 years. This trial will investigate healthy older adults aged \u226565",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-u-462",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 462,
+      "sentence": "This trial will investigate healthy older adults aged \u226565 years living independently without cognitive impairments.",
+      "context_window": "rs. This trial will investigate healthy older adults aged \u226565 years living independently without cognitive impairments. Partici",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-n-705",
+      "claim_type": "sample_size",
+      "raw_text": "n=136",
+      "numeric_values": [
+        136.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 705,
+      "sentence": "Participants will be randomly assigned to one of four groups: (1) cognitive training, (2) resistance training, (3) combined cognitive and resistance training, and (4) control group (n=136 participants with 34 participants per group).",
+      "context_window": "d cognitive and resistance training, and (4) control group (n=136 participants with 34 participants per group). The intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-u-798",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 798,
+      "sentence": "The interventions will be conducted over 12 weeks.",
+      "context_window": "ipants per group). The interventions will be conducted over 12 weeks. The cognitive training group will receive group-based acti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-pct-660",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 660,
+      "sentence": "5\n\nThe observed decrease in muscle strength in older adults ranges from 2% to 4% per year with higher declines observed with increasing age.",
+      "context_window": "ved decrease in muscle strength in older adults ranges from 2% to 4% per year with higher declines observed with increasin",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11033638_effects_of_combined_cognitive_and_resistance_training_on_phy-pct-666",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 666,
+      "sentence": "5\n\nThe observed decrease in muscle strength in older adults ranges from 2% to 4% per year with higher declines observed with increasing age.",
+      "context_window": "crease in muscle strength in older adults ranges from 2% to 4% per year with higher declines observed with increasing age.",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

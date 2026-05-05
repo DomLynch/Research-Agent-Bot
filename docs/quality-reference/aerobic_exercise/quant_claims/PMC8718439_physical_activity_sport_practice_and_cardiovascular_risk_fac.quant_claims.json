@@ -1,0 +1,721 @@
+{
+  "paper_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac",
+  "doi": "10.3389/fcvm.2021.740442",
+  "extracted_at": "2026-05-05T22:04:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 1,
+    "percentage": 22,
+    "unit_value": 8,
+    "mean_sd": 4,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-p-1060",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1060,
+      "sentence": "Results: The results shows the association between participation in sports activities in youth and current physical activity and trajectories of cardiovascular risk, adjusted for sex and age ( p < 0.05).",
+      "context_window": "ectories of cardiovascular risk, adjusted for sex and age ( p < 0.05). Adults who reported having played sports in their youth a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-227",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 227,
+      "sentence": "In Brazil, NCDs are also a public health problem, being responsible for 72% of deaths, most of which are caused by diseases of the circulatory system and neoplasms ( 2 , 3 ).",
+      "context_window": "CDs are also a public health problem, being responsible for 72% of deaths, most of which are caused by diseases of the circ",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-486",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 486,
+      "sentence": "Data from the World Health Organization ( 1 ), point out that 23% of adults are insufficiently active.",
+      "context_window": "ta from the World Health Organization ( 1 ), point out that 23% of adults are insufficiently active. Insufficient physical",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-825",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 825,
+      "sentence": "Physically inactive individuals with excess weight can reduce the risk of disability at work by 20% when they become active ( 4 ).",
+      "context_window": "excess weight can reduce the risk of disability at work by 20% when they become active ( 4 ). Experiences in different ty",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-3419",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3419,
+      "sentence": "Participants who reached \u22655 days of physical activity per week and added \u2265150 min of practice during the week will be considered physically active, otherwise they were considered insufficiently active.",
+      "context_window": "ants' level of physical activity. Participants who reached \u22655 days of physical activity per week and added \u2265150 min of practic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-5155",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5155,
+      "sentence": "To classify obesity, the Body Mass Index (BMI) measure above 30 kg/m 2 was used.",
+      "context_window": "o classify obesity, the Body Mass Index (BMI) measure above 30 kg/m 2 was used. Blood pressure values were taken after the i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-msd-5579",
+      "claim_type": "mean_sd",
+      "raw_text": "1.15 \u00b1 5.7",
+      "numeric_values": [
+        1.15,
+        5.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5579,
+      "sentence": "This instrument was validated by Coleman et al. ( 14 ), who reported a mean (standard deviation) difference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure.",
+      "context_window": "on) difference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-5586",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 mmHg",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 5586,
+      "sentence": "This instrument was validated by Coleman et al. ( 14 ), who reported a mean (standard deviation) difference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure.",
+      "context_window": "ference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-msd-5622",
+      "claim_type": "mean_sd",
+      "raw_text": "1.61 \u00b1 4.7",
+      "numeric_values": [
+        1.61,
+        4.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5622,
+      "sentence": "This instrument was validated by Coleman et al. ( 14 ), who reported a mean (standard deviation) difference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure.",
+      "context_window": "measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure. The device was calibrated and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-5629",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 mmHg",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 5629,
+      "sentence": "This instrument was validated by Coleman et al. ( 14 ), who reported a mean (standard deviation) difference between observer and device measurements of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure.",
+      "context_window": "ments of -1.15 \u00b1 5.7 mmHg for systolic pressure and -1.61 \u00b1 4.7 mmHg for diastolic pressure. The device was calibrated and compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-6304",
+      "claim_type": "unit_value",
+      "raw_text": "190 mg",
+      "numeric_values": [
+        190.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6304,
+      "sentence": "The cutoff point for dyslepidemic used to prevent atherosclerosis was: total cholesterol <190 mg/dl, HDL >40 mg/dl triglyceride mg/dl <150.",
+      "context_window": "mic used to prevent atherosclerosis was: total cholesterol <190 mg/dl, HDL >40 mg/dl triglyceride mg/dl <150. In all analyses,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-6320",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6320,
+      "sentence": "The cutoff point for dyslepidemic used to prevent atherosclerosis was: total cholesterol <190 mg/dl, HDL >40 mg/dl triglyceride mg/dl <150.",
+      "context_window": "ent atherosclerosis was: total cholesterol <190 mg/dl, HDL >40 mg/dl triglyceride mg/dl <150. In all analyses, the highest ca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-6947",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6947,
+      "sentence": "Different statistical methods were applied and for all hypotheses tests we established the criterion of statistical significance at \u03b1 = 5%.",
+      "context_window": "stablished the criterion of statistical significance at \u03b1 = 5%. Descriptive statistics were displayed as mean values and 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-7008",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7008,
+      "sentence": "Descriptive statistics were displayed as mean values and 95% confidence intervals to characterize the population.",
+      "context_window": "%. Descriptive statistics were displayed as mean values and 95% confidence intervals to characterize the population. The pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-7658",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7658,
+      "sentence": "The relative risk (RR) for the cardiovascular risk trajectory was obtained by the exponential of the regression coefficient and its 95% confidence interval performed using Poisson regression with robust variance, adjusted for sex and age.",
+      "context_window": "ed by the exponential of the regression coefficient and its 95% confidence interval performed using Poisson regression with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-9192",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9192,
+      "sentence": "As a diagnosis of the model, four measures were used to assess the fit of the trajectory model, as suggested by Nagin ( 18 ): (i) the mean posterior probability of designation for each group is 0.7 or higher; (ii) the probabilities of correct classification are 5.0 or higher; (iii) the proportion of a sample attributed to a certain group is close to the proportion estimated from the model; and (iv) confidence intervals of 99% of the estimated proportion are reasonably narrow.",
+      "context_window": "estimated from the model; and (iv) confidence intervals of 99% of the estimated proportion are reasonably narrow. To esti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-32",
+      "claim_type": "percentage",
+      "raw_text": "65.50%",
+      "numeric_values": [
+        65.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 32,
+      "sentence": "Of the 417 workers interviewed, 65.50% ( n = 273) were female.",
+      "context_window": "Of the 417 workers interviewed, 65.50% ( n = 273) were female. Regarding education, 69.9% had comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-n-41",
+      "claim_type": "sample_size",
+      "raw_text": "n = 273",
+      "numeric_values": [
+        273.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 41,
+      "sentence": "Of the 417 workers interviewed, 65.50% ( n = 273) were female.",
+      "context_window": "Of the 417 workers interviewed, 65.50% ( n = 273) were female. Regarding education, 69.9% had completed high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-84",
+      "claim_type": "percentage",
+      "raw_text": "69.9%",
+      "numeric_values": [
+        69.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 84,
+      "sentence": "Regarding education, 69.9% had completed higher education.",
+      "context_window": "viewed, 65.50% ( n = 273) were female. Regarding education, 69.9% had completed higher education. The average age was 48.43 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-msd-142",
+      "claim_type": "mean_sd",
+      "raw_text": "48.43 \u00b1 7.55",
+      "numeric_values": [
+        48.43,
+        7.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 142,
+      "sentence": "The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.67 \u00b1 7.08 years.",
+      "context_window": ", 69.9% had completed higher education. The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-150",
+      "claim_type": "unit_value",
+      "raw_text": "7.55 years",
+      "numeric_values": [
+        7.55
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 150,
+      "sentence": "The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.67 \u00b1 7.08 years.",
+      "context_window": "had completed higher education. The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.67 \u00b1 7.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-msd-210",
+      "claim_type": "mean_sd",
+      "raw_text": "18.67 \u00b1 7.08",
+      "numeric_values": [
+        18.67,
+        7.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 210,
+      "sentence": "The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.67 \u00b1 7.08 years.",
+      "context_window": "7.55 years and the average working time in the hospital was 18.67 \u00b1 7.08 years. For the physical activity levels, 24.94% of the work",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-u-218",
+      "claim_type": "unit_value",
+      "raw_text": "7.08 years",
+      "numeric_values": [
+        7.08
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 218,
+      "sentence": "The average age was 48.43 \u00b1 7.55 years and the average working time in the hospital was 18.67 \u00b1 7.08 years.",
+      "context_window": "rs and the average working time in the hospital was 18.67 \u00b1 7.08 years. For the physical activity levels, 24.94% of the workers we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-264",
+      "claim_type": "percentage",
+      "raw_text": "24.94%",
+      "numeric_values": [
+        24.94
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 264,
+      "sentence": "For the physical activity levels, 24.94% of the workers were considered physically active and 49.16% reported having practiced sports in their youth.",
+      "context_window": "l was 18.67 \u00b1 7.08 years. For the physical activity levels, 24.94% of the workers were considered physically active and 49.16%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-324",
+      "claim_type": "percentage",
+      "raw_text": "49.16%",
+      "numeric_values": [
+        49.16
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 324,
+      "sentence": "For the physical activity levels, 24.94% of the workers were considered physically active and 49.16% reported having practiced sports in their youth.",
+      "context_window": "24.94% of the workers were considered physically active and 49.16% reported having practiced sports in their youth. Table 1 sh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-1108",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1108,
+      "sentence": "For each cardiovascular risk factor, two to three groups were created according to the longitudinal characteristics presented ( Figure 2 ).\n\n(A-H) Average and Confidence Interval (95% CI) of the trajectory of cardiovascular risk factors of workers in a public hospital.",
+      "context_window": "ented ( Figure 2 ). (A-H) Average and Confidence Interval (95% CI) of the trajectory of cardiovascular risk factors of wor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-2640",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2640,
+      "sentence": "Trajectories of cardiovascular risk factors according to participation in sports activities in youth and current physical activity (%, 95% IC), separated according to sex.\n\n(0-0) Youth who did not engage in sports and an insufficiently active adult; (1-0) Youth who practiced sports activities and Insufficiently Active Adult; (0-1) Youth who did not practice sports and Active Adult; (1-1) Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressure; High P.D., High Diastolic Blood Pressure; linear association; *association in the chi-square; High TC, High Total Cholesterol; Trigli.",
+      "context_window": "ports activities in youth and current physical activity (%, 95% IC), separated according to sex. (0-0) Youth who did not e",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-2956",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2956,
+      "sentence": "Trajectories of cardiovascular risk factors according to participation in sports activities in youth and current physical activity (%, 95% IC), separated according to sex.\n\n(0-0) Youth who did not engage in sports and an insufficiently active adult; (1-0) Youth who practiced sports activities and Insufficiently Active Adult; (0-1) Youth who did not practice sports and Active Adult; (1-1) Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressure; High P.D., High Diastolic Blood Pressure; linear association; *association in the chi-square; High TC, High Total Cholesterol; Trigli.",
+      "context_window": "Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-2964",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2964,
+      "sentence": "Trajectories of cardiovascular risk factors according to participation in sports activities in youth and current physical activity (%, 95% IC), separated according to sex.\n\n(0-0) Youth who did not engage in sports and an insufficiently active adult; (1-0) Youth who practiced sports activities and Insufficiently Active Adult; (0-1) Youth who did not practice sports and Active Adult; (1-1) Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressure; High P.D., High Diastolic Blood Pressure; linear association; *association in the chi-square; High TC, High Total Cholesterol; Trigli.",
+      "context_window": "o practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressur",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-4162",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4162,
+      "sentence": "Adjusted association between participation in sports activities in youth and current physical activity and the trajectory of cardiovascular risk factors of public workers.\n\n(0-0) Youth who did not engage in sports and an insufficiently active adult; (1-0) Youth who practiced sports activities and Insufficiently Active Adult; (0-1) Youth who did not practice sports and Active Adult; (1-1) Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressure; High P.D., High Diastolic Blood Pressure; High TC, High Total Cholesterol; Trigli.",
+      "context_window": "Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-4170",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4170,
+      "sentence": "Adjusted association between participation in sports activities in youth and current physical activity and the trajectory of cardiovascular risk factors of public workers.\n\n(0-0) Youth who did not engage in sports and an insufficiently active adult; (1-0) Youth who practiced sports activities and Insufficiently Active Adult; (0-1) Youth who did not practice sports and Active Adult; (1-1) Youth who practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressure; High P.D., High Diastolic Blood Pressure; High TC, High Total Cholesterol; Trigli.",
+      "context_window": "o practiced sports and Active Adult; %, percentage; 95% CI, 95% Confidence Interval; High P.S., High Systolic Blood Pressur",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-4658",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4658,
+      "sentence": "In females for variable obesity, the classification (1-1) Young people who practice sports and Active Adult was associated with a value of 0.690 representing a cardiovascular risk protection value of 31%.",
+      "context_window": ".690 representing a cardiovascular risk protection value of 31%. Also in females, the Low HDL variable presented an associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-4776",
+      "claim_type": "percentage",
+      "raw_text": "40.2%",
+      "numeric_values": [
+        40.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4776,
+      "sentence": "Also in females, the Low HDL variable presented an association value of 0.598 representing a protection value of 40.2% for cardiovascular risk .",
+      "context_window": "sociation value of 0.598 representing a protection value of 40.2% for cardiovascular risk .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-221",
+      "claim_type": "percentage",
+      "raw_text": "49.16%",
+      "numeric_values": [
+        49.16
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 221,
+      "sentence": "49.16% ( n = 205) of the participants reported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity.",
+      "context_window": "not having practiced sports in youth. Of the participants. 49.16% ( n = 205) of the participants reported playing sports in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-n-230",
+      "claim_type": "sample_size",
+      "raw_text": "n = 205",
+      "numeric_values": [
+        205.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 230,
+      "sentence": "49.16% ( n = 205) of the participants reported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity.",
+      "context_window": "g practiced sports in youth. Of the participants. 49.16% ( n = 205) of the participants reported playing sports in their youth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "13.43%",
+      "numeric_values": [
+        13.43
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 312,
+      "sentence": "49.16% ( n = 205) of the participants reported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity.",
+      "context_window": "ipants reported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity. A reduction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-n-321",
+      "claim_type": "sample_size",
+      "raw_text": "n = 56",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 321,
+      "sentence": "49.16% ( n = 205) of the participants reported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity.",
+      "context_window": "ported playing sports in their youth. however only 13.43% ( n = 56) currently perform physical activity. A reduction of 72.27%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-pct-381",
+      "claim_type": "percentage",
+      "raw_text": "72.27%",
+      "numeric_values": [
+        72.27
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 381,
+      "sentence": "A reduction of 72.27% ( n = 149) of those who performed sports activities in youth.",
+      "context_window": "n = 56) currently perform physical activity. A reduction of 72.27% ( n = 149) of those who performed sports activities in yout",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac-n-390",
+      "claim_type": "sample_size",
+      "raw_text": "n = 149",
+      "numeric_values": [
+        149.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 390,
+      "sentence": "A reduction of 72.27% ( n = 149) of those who performed sports activities in youth.",
+      "context_window": "urrently perform physical activity. A reduction of 72.27% ( n = 149) of those who performed sports activities in youth. The lit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

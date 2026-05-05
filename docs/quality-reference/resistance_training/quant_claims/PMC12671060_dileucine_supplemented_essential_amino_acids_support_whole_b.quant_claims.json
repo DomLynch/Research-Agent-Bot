@@ -1,0 +1,2241 @@
+{
+  "paper_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b",
+  "doi": "10.1080/15502783.2025.2590090",
+  "extracted_at": "2026-05-05T21:59:21+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 10,
+    "unit_value": 17,
+    "sample_size": 11,
+    "p_value": 44,
+    "percentage": 40,
+    "confidence_interval": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-1064",
+      "claim_type": "mean_sd",
+      "raw_text": "24 \u00b1 3",
+      "numeric_values": [
+        24.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1064,
+      "sentence": "In a randomized, double-blind, crossover design, 12 healthy adults (8 M, 4F, aged 24 \u00b1 3 y) performed a 60 min bout of whole-body resistance exercise, after which they ingested DIEAA, BCAA, or COL protein beverages containing 100 mg L-[1- 13 C]leucine (# NCT05754125 ).",
+      "context_window": "e-blind, crossover design, 12 healthy adults (8 M, 4F, aged 24 \u00b1 3 y) performed a 60 min bout of whole-body resistance exercis",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-1208",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "In a randomized, double-blind, crossover design, 12 healthy adults (8 M, 4F, aged 24 \u00b1 3 y) performed a 60 min bout of whole-body resistance exercise, after which they ingested DIEAA, BCAA, or COL protein beverages containing 100 mg L-[1- 13 C]leucine (# NCT05754125 ).",
+      "context_window": "y ingested DIEAA, BCAA, or COL protein beverages containing 100 mg L-[1- 13 C]leucine (# NCT05754125 ). Total exogenous leucin",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-1721",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1721,
+      "sentence": "To further assess the anabolic potential of nutrients, C2C12 myotubes were treated with a subset ( n = 7) of human serum-conditioned media for 4 h to measure downstream mTORC1 substrate phosphorylation, protein synthesis (puromycin and L- ring -[D 5 ]phenylalanine incorporation) and breakdown (ubiquitinated protein), and myotube hypertrophy.",
+      "context_window": "l of nutrients, C2C12 myotubes were treated with a subset ( n = 7) of human serum-conditioned media for 4 h to measure downst",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2016",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.68",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2016,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "ertrophy. Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA condit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2041",
+      "claim_type": "mean_sd",
+      "raw_text": "215.72 \u00b1 42.45",
+      "numeric_values": [
+        215.72,
+        42.45
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2041,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "s leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-2050",
+      "claim_type": "unit_value",
+      "raw_text": "42.45 \u03bcmol",
+      "numeric_values": [
+        42.45
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 2050,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2090",
+      "claim_type": "mean_sd",
+      "raw_text": "219.15 \u00b1 45.26",
+      "numeric_values": [
+        219.15,
+        45.26
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2090,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "een DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-2099",
+      "claim_type": "unit_value",
+      "raw_text": "45.26 \u03bcmol",
+      "numeric_values": [
+        45.26
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 2099,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "(215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.000",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2160",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2160,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "5.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ). There were no differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2182",
+      "claim_type": "mean_sd",
+      "raw_text": "37.25 \u00b1 8.16",
+      "numeric_values": [
+        37.25,
+        8.16
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2182,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "h both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ). There were no differences ( p = 0.58) in 3MH:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-2190",
+      "claim_type": "unit_value",
+      "raw_text": "8.16 \u03bcmol",
+      "numeric_values": [
+        8.16
+      ],
+      "units": "\u03bcmol",
+      "source_section": "abstract",
+      "source_offset": 2190,
+      "sentence": "Total exogenous leucine retention were similar ( p = 0.68) between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA conditions (219.15 \u00b1 45.26 \u03bcmol.kg -1 ), with both DIEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ).",
+      "context_window": "IEAA and BCAA being greater ( p < 0.0001) than COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ). There were no differences ( p = 0.58) in 3MH:Cr be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2237",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.58",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2237,
+      "sentence": "There were no differences ( p = 0.58) in 3MH:Cr between supplement conditions.",
+      "context_window": "COL (37.25 \u00b1 8.16 \u03bcmol.kg -1 ). There were no differences ( p = 0.58) in 3MH:Cr between supplement conditions. There was no effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2380",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2380,
+      "sentence": "There was no effect of condition ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55).",
+      "context_window": "ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein br",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2458",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2458,
+      "sentence": "There was no effect of condition ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55).",
+      "context_window": "rotein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2536",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2536,
+      "sentence": "There was no effect of condition ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55).",
+      "context_window": "rylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2568",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2568,
+      "sentence": "There was no effect of condition ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55).",
+      "context_window": "bstrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55). Stable isotope-derived",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2602",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2602,
+      "sentence": "There was no effect of condition ex vivo on puromycin incorporation into nascent peptides ( p = 0.31), total protein ubiquitination as an estimate of protein breakdown ( p = 0.59), phosphorylation of downstream mTORC1 substrates p -RPS6 S240/244 ( p = 0.39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55).",
+      "context_window": "39) or p -4E-BP1 T37/46 ( p = 0.50), and myotube diameter ( p = 0.55). Stable isotope-derived rates of mixed muscle protein synt",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2726",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.086",
+      "numeric_values": [
+        0.086
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2726,
+      "sentence": "Stable isotope-derived rates of mixed muscle protein synthesis (MPS) demonstrated a trend toward a main effect ( p = 0.086) with pairwise comparisons revealing a large effect of DIEAA compared to COL (dz = 1.47), a medium effect of DIEAA compared to BCAA (dz = 0.81), and a trivial effect of BCAA comapred to COL (dz = 0.002).",
+      "context_window": "synthesis (MPS) demonstrated a trend toward a main effect ( p = 0.086) with pairwise comparisons revealing a large effect of DIEA",
+      "claim_role": "unknown",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-360",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 360,
+      "sentence": "Participants were recruited through postings at the University of Toronto and were deemed eligible to participate if they were (i) recreationally active (i.e. performed structured exercise \u22652\u00d7 per week for the previous 6 months); (ii) considered physically fit to perform strength tests based on the responses to a Physical Activity Readiness Questionnaire [ 25 ] and an International Physical Activity Questionnaire [ 26 ]; and (iii) not taking oral contraceptives.",
+      "context_window": "performed structured exercise \u22652\u00d7 per week for the previous 6 months); (ii) considered physically fit to perform strength tests",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-797",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 797,
+      "sentence": "Individuals were excluded if they were (i) currently using tobacco products; (ii) currently using or had a history of anabolic steroid use; (iii) unable to abstain from supplement use for \u22653 weeks prior to metabolic trials (e.g. creatine, BCAA); (iv) diagnosed with a medical condition (e.g. type 2 diabetes, heart disease, and cancer); (v) amenorrheic (females only); and (vi) currently using medications known to affect protein metabolism (e.g. statins, prescription anti-inflammatories).",
+      "context_window": "eroid use; (iii) unable to abstain from supplement use for \u22653 weeks prior to metabolic trials (e.g. creatine, BCAA); (iv) diagn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-1644",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1644,
+      "sentence": "The participants reported to the laboratory \u22654 days prior to the first metabolic trial for baseline testing, which included a body composition assessment and exercise familiarization.",
+      "context_window": "ty of Toronto. The participants reported to the laboratory \u22654 days prior to the first metabolic trial for baseline testing, wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-3147",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3147,
+      "sentence": "Upon arrival, after an overnight fast, baseline ( t = -60 min) breath and urine samples were collected in 10 mL Vacutainers (BD, Franklin Lakes, NJ, USA) and spot urine containers, respectively, before participants began the whole-body bout of resistance exercise (described below).",
+      "context_window": "e ( t = -60 min) breath and urine samples were collected in 10 mL Vacutainers (BD, Franklin Lakes, NJ, USA) and spot urine co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-3612",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3612,
+      "sentence": "Immediately following resistance exercise, an intravenous catheter was inserted into an antecubital vein by a trained phlebotomist, and two baseline serum samples were collected into 10 mL serum separator tube incubators (BD; #367988), alongside a final baseline breath sample.",
+      "context_window": "otomist, and two baseline serum samples were collected into 10 mL serum separator tube incubators (BD; #367988), alongside a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-5093",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5093,
+      "sentence": "Following a 5-min warm-up on a cycle ergometer, participants completed four working sets of 8-12 repetitions at 75% 1RM for each exercise with ~90 s of rest between sets.",
+      "context_window": "icipants completed four working sets of 8-12 repetitions at 75% 1RM for each exercise with ~90 s of rest between sets. Duri",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-6776",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6776,
+      "sentence": "All the supplements were enriched by the addition of 100 mg of 99% [1- 13 C]leucine (Cambridge Isotope Laboratories Inc., Tewksbury, MA, USA) to measure exogenous leucine oxidation at each time point.",
+      "context_window": "23 ]. All the supplements were enriched by the addition of 100 mg of 99% [1- 13 C]leucine (Cambridge Isotope Laboratories Inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-6786",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6786,
+      "sentence": "All the supplements were enriched by the addition of 100 mg of 99% [1- 13 C]leucine (Cambridge Isotope Laboratories Inc., Tewksbury, MA, USA) to measure exogenous leucine oxidation at each time point.",
+      "context_window": "the supplements were enriched by the addition of 100 mg of 99% [1- 13 C]leucine (Cambridge Isotope Laboratories Inc., Tewk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-7453",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 7453,
+      "sentence": "Breath samples were collected into sterile 10 mL vacutainers and stored at room temperature before analysis of 13 CO 2 enrichment by isotope ratio mass spectrometry (Compact Science Systems, Newcastle, UK), as previously described [ 24 ].",
+      "context_window": "ward, CA, USA). Breath samples were collected into sterile 10 mL vacutainers and stored at room temperature before analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-8921",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8921,
+      "sentence": "C2C12 myoblasts (CRL-1772) were obtained from the American Type Culture Collection and expanded in growth media consisting of high-glucose Dulbecco's modified Eagle's medium (DMEM; #D5796--500ML, Sigma-Aldrich) supplemented with 10% fetal bovine serum (FBS; #F1051--500ML, Sigma-Aldrich) and 1% penicillin-streptomycin (PS; #15140122, Gibco) at 37 \u00b0C with 5% CO 2 in a humidified environment.",
+      "context_window": "dium (DMEM; #D5796--500ML, Sigma-Aldrich) supplemented with 10% fetal bovine serum (FBS; #F1051--500ML, Sigma-Aldrich) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-8984",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8984,
+      "sentence": "C2C12 myoblasts (CRL-1772) were obtained from the American Type Culture Collection and expanded in growth media consisting of high-glucose Dulbecco's modified Eagle's medium (DMEM; #D5796--500ML, Sigma-Aldrich) supplemented with 10% fetal bovine serum (FBS; #F1051--500ML, Sigma-Aldrich) and 1% penicillin-streptomycin (PS; #15140122, Gibco) at 37 \u00b0C with 5% CO 2 in a humidified environment.",
+      "context_window": "fetal bovine serum (FBS; #F1051--500ML, Sigma-Aldrich) and 1% penicillin-streptomycin (PS; #15140122, Gibco) at 37 \u00b0C wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-9048",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9048,
+      "sentence": "C2C12 myoblasts (CRL-1772) were obtained from the American Type Culture Collection and expanded in growth media consisting of high-glucose Dulbecco's modified Eagle's medium (DMEM; #D5796--500ML, Sigma-Aldrich) supplemented with 10% fetal bovine serum (FBS; #F1051--500ML, Sigma-Aldrich) and 1% penicillin-streptomycin (PS; #15140122, Gibco) at 37 \u00b0C with 5% CO 2 in a humidified environment.",
+      "context_window": "enicillin-streptomycin (PS; #15140122, Gibco) at 37 \u00b0C with 5% CO 2 in a humidified environment. Prior to the experiments,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-9204",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9204,
+      "sentence": "Once cells reached >90% confluence, the medium was changed to differentiation media comprised of low-glucose DMEM (#D6046-500ML, Sigma-Aldrich) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differentiation into myotubes for 5 days.",
+      "context_window": "tissue culture plates in growth media. Once cells reached >90% confluence, the medium was changed to differentiation media",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-9346",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9346,
+      "sentence": "Once cells reached >90% confluence, the medium was changed to differentiation media comprised of low-glucose DMEM (#D6046-500ML, Sigma-Aldrich) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differentiation into myotubes for 5 days.",
+      "context_window": "lucose DMEM (#D6046-500ML, Sigma-Aldrich) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-9384",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9384,
+      "sentence": "Once cells reached >90% confluence, the medium was changed to differentiation media comprised of low-glucose DMEM (#D6046-500ML, Sigma-Aldrich) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differentiation into myotubes for 5 days.",
+      "context_window": "ch) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differentiation into myotubes for 5 days. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-9434",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 9434,
+      "sentence": "Once cells reached >90% confluence, the medium was changed to differentiation media comprised of low-glucose DMEM (#D6046-500ML, Sigma-Aldrich) supplemented with 2% horse serum (#16050122, Gibco) and 1% PS to induce differentiation into myotubes for 5 days.",
+      "context_window": "ibco) and 1% PS to induce differentiation into myotubes for 5 days. The differentiation media was changed every 48 h, and all",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-9555",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 9555,
+      "sentence": "After 5 days of differentiation, 24 h after the most recent media were changed, the myotubes were washed once in Dulbecco's phosphate-buffered saline (DPBS; #D8537--500ML, Sigma-Aldrich) and then starved of amino acids and serum in amino acid-free DMEM (#D9800-13, United States Biological) supplemented with 3.7 g/L sodium bicarbonate (#SOB308, BioShop), 1 mM sodium pyruvate (#11360070; Gibco), and 1% penicillin-streptomycin (#2503008; Gibco) for 1 h [ 37 , 38 ].",
+      "context_window": "all experiments were performed prior to passage 10. After 5 days of differentiation, 24 h after the most recent media were c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-9950",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9950,
+      "sentence": "After 5 days of differentiation, 24 h after the most recent media were changed, the myotubes were washed once in Dulbecco's phosphate-buffered saline (DPBS; #D8537--500ML, Sigma-Aldrich) and then starved of amino acids and serum in amino acid-free DMEM (#D9800-13, United States Biological) supplemented with 3.7 g/L sodium bicarbonate (#SOB308, BioShop), 1 mM sodium pyruvate (#11360070; Gibco), and 1% penicillin-streptomycin (#2503008; Gibco) for 1 h [ 37 , 38 ].",
+      "context_window": "308, BioShop), 1 mM sodium pyruvate (#11360070; Gibco), and 1% penicillin-streptomycin (#2503008; Gibco) for 1 h [ 37 , 38",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-10101",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10101,
+      "sentence": "Following starvation, the cells were refed in amino acid-free DMEM supplemented with 20% (v/v) human serum, pooled with fasted serum from all three metabolic trials, or combined with 15 and 30 min of postprandial serum from each metabolic trial (i.e.",
+      "context_window": "cells were refed in amino acid-free DMEM supplemented with 20% (v/v) human serum, pooled with fasted serum from all three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-10634",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10634,
+      "sentence": "At 4 h of refeeding, the plates were placed on an ice block, rinsed twice in ice-cold DPBS and collected in ice-cold RIPA buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemented with a 1x protease inhibitor tablet (#11836170001, Roche) and a 1x phosphatase inhibitor tablet (#A32957, Thermo-Scientific) per 10 mL of RIPA buffer.",
+      "context_window": "n ice-cold RIPA buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-10650",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10650,
+      "sentence": "At 4 h of refeeding, the plates were placed on an ice block, rinsed twice in ice-cold DPBS and collected in ice-cold RIPA buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemented with a 1x protease inhibitor tablet (#11836170001, Roche) and a 1x phosphatase inhibitor tablet (#A32957, Thermo-Scientific) per 10 mL of RIPA buffer.",
+      "context_window": "buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-10676",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10676,
+      "sentence": "At 4 h of refeeding, the plates were placed on an ice block, rinsed twice in ice-cold DPBS and collected in ice-cold RIPA buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemented with a 1x protease inhibitor tablet (#11836170001, Roche) and a 1x phosphatase inhibitor tablet (#A32957, Thermo-Scientific) per 10 mL of RIPA buffer.",
+      "context_window": "7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemented with a 1x protease inh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-10847",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 10847,
+      "sentence": "At 4 h of refeeding, the plates were placed on an ice block, rinsed twice in ice-cold DPBS and collected in ice-cold RIPA buffer (50 mM Tris-HCl pH 7.5; 150 mM NaCl; 1% Triton-X100; 0.5% sodium deoxycholate; 0.1% sodium dodecyl sulfate) supplemented with a 1x protease inhibitor tablet (#11836170001, Roche) and a 1x phosphatase inhibitor tablet (#A32957, Thermo-Scientific) per 10 mL of RIPA buffer.",
+      "context_window": "osphatase inhibitor tablet (#A32957, Thermo-Scientific) per 10 mL of RIPA buffer. Two wells per condition were pooled, and ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-11664",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11664,
+      "sentence": "C2C12 myoblasts were seeded into 24-well plates and allowed to proliferate until >90% confluent prior to being differentiated in low glucose differentiation medium.",
+      "context_window": "eeded into 24-well plates and allowed to proliferate until >90% confluent prior to being differentiated in low glucose diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-11945",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 11945,
+      "sentence": "Following refeeding, the myotubes were washed 1\u00d7 in ice-cold DPBS and fixed in 4% paraformaldehyde for 15 min at room temperature (RT).",
+      "context_window": ", the myotubes were washed 1\u00d7 in ice-cold DPBS and fixed in 4% paraformaldehyde for 15 min at room temperature (RT). Fixed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-12084",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12084,
+      "sentence": "Fixed cells were rinsed twice in DPBS, permeabilized and blocked in 0.3 M glycine/0.3% Triton X-100/5% normal goat serum (#16210064, Gibco) diluted in DPBS for 60 min.",
+      "context_window": "d twice in DPBS, permeabilized and blocked in 0.3 M glycine/0.3% Triton X-100/5% normal goat serum (#16210064, Gibco) dilute",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-12102",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12102,
+      "sentence": "Fixed cells were rinsed twice in DPBS, permeabilized and blocked in 0.3 M glycine/0.3% Triton X-100/5% normal goat serum (#16210064, Gibco) diluted in DPBS for 60 min.",
+      "context_window": "ermeabilized and blocked in 0.3 M glycine/0.3% Triton X-100/5% normal goat serum (#16210064, Gibco) diluted in DPBS for 60",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-12271",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12271,
+      "sentence": "The myotubes were then incubated with anti-Desmin primary antibody (1:100, #D8281, Sigma-Aldrich) in 0.3% Triton X-100/1% bovine serum albumin (BSA) in DPBS for 1 h at RT.",
+      "context_window": "i-Desmin primary antibody (1:100, #D8281, Sigma-Aldrich) in 0.3% Triton X-100/1% bovine serum albumin (BSA) in DPBS for 1 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-12289",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12289,
+      "sentence": "The myotubes were then incubated with anti-Desmin primary antibody (1:100, #D8281, Sigma-Aldrich) in 0.3% Triton X-100/1% bovine serum albumin (BSA) in DPBS for 1 h at RT.",
+      "context_window": "ntibody (1:100, #D8281, Sigma-Aldrich) in 0.3% Triton X-100/1% bovine serum albumin (BSA) in DPBS for 1 h at RT. The myotu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-12509",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12509,
+      "sentence": "The myotubes were subsequently rinsed twice in DPBS and incubated with secondary antibody (1:300; Alexa Fluor 488 goat anti-rabbit IgG H + L; #A-11008, Invitrogen) in 1% BSA/DPBS in the dark.",
+      "context_window": "or 488 goat anti-rabbit IgG H + L; #A-11008, Invitrogen) in 1% BSA/DPBS in the dark. The cells were then rinsed once in DP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-13716",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13716,
+      "sentence": "Equal amounts of protein (20 \u03bcg) from each sample were loaded onto precast 8%-16% gradient Criterion\u2122 TGX Stain-Free\u2122 gels (#5678105, Bio-Rad) and separated by SDS\u2012PAGE for ~40 min at 200 V.",
+      "context_window": "f protein (20 \u03bcg) from each sample were loaded onto precast 8%-16% gradient Criterion\u2122 TGX Stain-Free\u2122 gels (#5678105, Bio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-13719",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13719,
+      "sentence": "Equal amounts of protein (20 \u03bcg) from each sample were loaded onto precast 8%-16% gradient Criterion\u2122 TGX Stain-Free\u2122 gels (#5678105, Bio-Rad) and separated by SDS\u2012PAGE for ~40 min at 200 V.",
+      "context_window": "rotein (20 \u03bcg) from each sample were loaded onto precast 8%-16% gradient Criterion\u2122 TGX Stain-Free\u2122 gels (#5678105, Bio-Rad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-14132",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14132,
+      "sentence": "The membranes were then blocked in 5% skim milk in Tris-buffered saline with 0.1% Tween-20 (TBST) for 1 h at RT prior to incubation with primary antibodies overnight at 4 \u00b0C.",
+      "context_window": "d) using a wet transfer. The membranes were then blocked in 5% skim milk in Tris-buffered saline with 0.1% Tween-20 (TBST)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-14174",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14174,
+      "sentence": "The membranes were then blocked in 5% skim milk in Tris-buffered saline with 0.1% Tween-20 (TBST) for 1 h at RT prior to incubation with primary antibodies overnight at 4 \u00b0C.",
+      "context_window": "e then blocked in 5% skim milk in Tris-buffered saline with 0.1% Tween-20 (TBST) for 1 h at RT prior to incubation with prim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-14332",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14332,
+      "sentence": "The primary antibodies were all diluted 1:1000 in TBST with 5% BSA and were purchased from Cell Signaling Technology (CST; Danvers, MA), unless stated otherwise.",
+      "context_window": "The primary antibodies were all diluted 1:1000 in TBST with 5% BSA and were purchased from Cell Signaling Technology (CST;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-15376",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15376,
+      "sentence": "The resulting protein pellet was gently rinsed once in ice-cold 70% ethanol before centrifugation at 1500 g for 15 min, and the ethanol supernatant was discarded.",
+      "context_window": "resulting protein pellet was gently rinsed once in ice-cold 70% ethanol before centrifugation at 1500 g for 15 min, and the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-15748",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 15748,
+      "sentence": "Subsequently, 750 \u03bcL of 0.1 M HCl and 750 \u03bcL of Dowex resin (#Dowex50W-X8-200; Sigma-Aldrich) in 1 M HCl were added to the protein pellet, and the proteins were hydrolyzed for 36 h at 110 \u00b0C before being purified over cation exchange columns constructed from glass wool in 5 mL syringes.",
+      "context_window": "over cation exchange columns constructed from glass wool in 5 mL syringes. Purified amino acids were dried down under a stea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-15859",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15859,
+      "sentence": "Purified amino acids were dried down under a steady stream of nitrogen at 80 \u00b0C, resuspended in 0.1% Formic acid, and analyzed at the Analytic Facility for Bioactive Molecules at SickKids (Toronto, Canada) by liquid chromatography tandem mass spectrometry (LC-MS/MS) monitored at mass to charge ratios (m/z) of 171.1/125 for L-[ ring - 2 H 5 ]phenylalanine and 166.1/131 for natural phenylalanine, as previously described for human skeletal muscle [ 40 ].",
+      "context_window": "under a steady stream of nitrogen at 80 \u00b0C, resuspended in 0.1% Formic acid, and analyzed at the Analytic Facility for Bioa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-16537",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16537,
+      "sentence": "Fractional synthetic rates (FSR) for a mixed fraction were calculated as previously described [ 41 ] using the equation:\n\nwhere E incorp is the enrichment of protein-bound L-[ ring - 2 H 5 ]phenylalanine, E medium is the enrichment of the media calculated from serum phenylalanine concentrations (above), adjusted to 20% to account for the volume of serum used during the refeeding period, and t is time (4 h).",
+      "context_window": "rom serum phenylalanine concentrations (above), adjusted to 20% to account for the volume of serum used during the refeedin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-16951",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16951,
+      "sentence": "An a priori power analysis, with \u03b1 = 0.05 and 1- \u03b2 = 0.80, was performed using previous methods [ 12 ], which revealed that a sample size of 12 is sufficient to detect a 23% lower postexercise 3MH:Cr concentration following the ingestion of EAA compared with BCAA.",
+      "context_window": "revealed that a sample size of 12 is sufficient to detect a 23% lower postexercise 3MH:Cr concentration following the inges",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-17169",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 17169,
+      "sentence": "The data were analyzed via GraphPad Prism (version 9.3.0, GraphPad Software, San Diego, CA, USA), with significance set at P < 0.05.",
+      "context_window": "Pad Software, San Diego, CA, USA), with significance set at P < 0.05. Values were classified as outliers if they exceeded both t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-17479",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 17479,
+      "sentence": "The final sample size for serum dileucine analysis was n = 6, as indicated in the figure legend.",
+      "context_window": "sis. The final sample size for serum dileucine analysis was n = 6, as indicated in the figure legend. Urinary 3MH:Cr, serum a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-79",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.584",
+      "numeric_values": [
+        0.584
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 79,
+      "sentence": "There were no differences in urinary 3MH:Cr across the supplement conditions ( P = 0.584; Figure 1 ).",
+      "context_window": "rences in urinary 3MH:Cr across the supplement conditions ( P = 0.584; Figure 1 ). Pooled 8 h urinary 3-methylhistidine (3MH) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-257",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.584",
+      "numeric_values": [
+        0.584
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 257,
+      "sentence": "There was no main effect of supplement condition ( P = 0.584).",
+      "context_window": "h trial. There was no main effect of supplement condition ( P = 0.584). Data are expressed as the 3MH:Cr ratio and presented as t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-534",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 534,
+      "sentence": "There was a main effect of the supplement condition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001).",
+      "context_window": "f the supplement condition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-553",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 553,
+      "sentence": "There was a main effect of the supplement condition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001).",
+      "context_window": "ndition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001). Tukey's p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-575",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 575,
+      "sentence": "There was a main effect of the supplement condition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001).",
+      "context_window": "ntrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001). Tukey's post hoc testing reveal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-601",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 601,
+      "sentence": "There was a main effect of the supplement condition on serum concentrations of EAA ( P = 0.003), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001).",
+      "context_window": "03), BCAA ( P < 0.001), non-EAA ( P = 0.011), and leucine ( P < 0.001). Tukey's post hoc testing revealed that serum concentratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-916",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 916,
+      "sentence": "Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD.",
+      "context_window": "ure 2 ). Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-955",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 955,
+      "sentence": "Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD.",
+      "context_window": "tial amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-992",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 992,
+      "sentence": "Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD.",
+      "context_window": "-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-1012",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD.",
+      "context_window": "B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD. Da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-1038",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1038,
+      "sentence": "Serum concentrations of essential amino acids (A; n = 7), branched-chain amino acids (B; n = 7), nonessential amino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD.",
+      "context_window": "ino acids (C; n = 7), leucine (D; n = 7), and dileucine (E; n = 6), expressed as the means \u00b1 SD. Data are presented for the f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1282",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1282,
+      "sentence": "EAA main effect, P = 0.003.",
+      "context_window": "m each metabolic trial (COL, DIEAA, BCAA). EAA main effect, P = 0.003. BCAA main effect, P < 0.001. NEAA main effect, P = 0.011.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1311",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1311,
+      "sentence": "BCAA main effect, P < 0.001.",
+      "context_window": "DIEAA, BCAA). EAA main effect, P = 0.003. BCAA main effect, P < 0.001. NEAA main effect, P = 0.011. Leucine main effect, P < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1340",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1340,
+      "sentence": "NEAA main effect, P = 0.011.",
+      "context_window": ", P = 0.003. BCAA main effect, P < 0.001. NEAA main effect, P = 0.011. Leucine main effect, P < 0.001. Dileucine main effect, P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1372",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1372,
+      "sentence": "Leucine main effect, P < 0.001.",
+      "context_window": "< 0.001. NEAA main effect, P = 0.011. Leucine main effect, P < 0.001. Dileucine main effect, P = 0.011. Conditions that do not s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1406",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1406,
+      "sentence": "Dileucine main effect, P = 0.011.",
+      "context_window": "011. Leucine main effect, P < 0.001. Dileucine main effect, P = 0.011. Conditions that do not share a letter are significantly di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1485",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1485,
+      "sentence": "Conditions that do not share a letter are significantly different ( P < 0.05).",
+      "context_window": "ns that do not share a letter are significantly different ( P < 0.05). COL, Collagen; DIEAA, Dileucine-containing essential amin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1710",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.079",
+      "numeric_values": [
+        0.079
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1710,
+      "sentence": "For the serum dileucine concentrations, there was a trend towards a main effect of supplement condition ( P = 0.079).",
+      "context_window": "was a trend towards a main effect of supplement condition ( P = 0.079). However, after removing a potential outlier ( n = 6), the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-1768",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1768,
+      "sentence": "However, after removing a potential outlier ( n = 6), the main effect was statistically significant ( P = 0.011).",
+      "context_window": "( P = 0.079). However, after removing a potential outlier ( n = 6), the main effect was statistically significant ( P = 0.011",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1824",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1824,
+      "sentence": "However, after removing a potential outlier ( n = 6), the main effect was statistically significant ( P = 0.011).",
+      "context_window": "r ( n = 6), the main effect was statistically significant ( P = 0.011). As shown in panel E of Figure 2 , post hoc testing reveal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-1997",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1997,
+      "sentence": "As shown in panel E of Figure 2 , post hoc testing revealed that dileucine concentrations were significantly greater in the DIEAA condition compared to fasted ( P = 0.003) and COL ( P = 0.002) conditions.",
+      "context_window": "icantly greater in the DIEAA condition compared to fasted ( P = 0.003) and COL ( P = 0.002) conditions. Furthermore, the dileucin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2018",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2018,
+      "sentence": "As shown in panel E of Figure 2 , post hoc testing revealed that dileucine concentrations were significantly greater in the DIEAA condition compared to fasted ( P = 0.003) and COL ( P = 0.002) conditions.",
+      "context_window": "e DIEAA condition compared to fasted ( P = 0.003) and COL ( P = 0.002) conditions. Furthermore, the dileucine concentrations in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2160",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2160,
+      "sentence": "Furthermore, the dileucine concentrations in the BCAA condition were significantly greater compared to COL condition ( P = 0.047).",
+      "context_window": "tion were significantly greater compared to COL condition ( P = 0.047). There were significant time, condition, and interaction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2266",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2266,
+      "sentence": "There were significant time, condition, and interaction effects for Exo Ox ( Figure 3A ; all P < 0.0001).",
+      "context_window": "ition, and interaction effects for Exo Ox ( Figure 3A ; all P < 0.0001). Exo Ox was greater in both DIEAA and BCAA compared with C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2364",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2364,
+      "sentence": "Exo Ox was greater in both DIEAA and BCAA compared with COL between t = 20-240 min ( P < 0.05), with no difference between DIEAA and BCAA.",
+      "context_window": "h DIEAA and BCAA compared with COL between t = 20-240 min ( P < 0.05), with no difference between DIEAA and BCAA. There was a si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2518",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2518,
+      "sentence": "There was a significant main effect of supplement condition for total exogenous leucine oxidation ( P < 0.0001; Figure 3B ).",
+      "context_window": "upplement condition for total exogenous leucine oxidation ( P < 0.0001; Figure 3B ). Total exogenous leucine oxidation was similar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2604",
+      "claim_type": "mean_sd",
+      "raw_text": "130.36 \u00b1 48.24",
+      "numeric_values": [
+        130.36,
+        48.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2604,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "otal exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-2613",
+      "claim_type": "unit_value",
+      "raw_text": "48.24 \u03bcmol",
+      "numeric_values": [
+        48.24
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 2613,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "enous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2642",
+      "claim_type": "mean_sd",
+      "raw_text": "126.93 \u00b1 53.74",
+      "numeric_values": [
+        126.93,
+        53.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2642,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "imilar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2658",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.678",
+      "numeric_values": [
+        0.678
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2658,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "IEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of CO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-2730",
+      "claim_type": "mean_sd",
+      "raw_text": "7.98 \u00b1 4.51",
+      "numeric_values": [
+        7.98,
+        4.51
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2730,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001). When expressed as a percentage of the in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2748",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2748,
+      "sentence": "Total exogenous leucine oxidation was similar between DIEAA (130.36 \u00b1 48.24 \u03bcmol.kg -1 ) and BCAA (126.93 \u00b1 53.74; P = 0.678), whereas DIEAA and BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001).",
+      "context_window": "BCAA were both greater than those of COL (7.98 \u00b1 4.51; both P < 0.0001). When expressed as a percentage of the ingested leucine (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2892",
+      "claim_type": "percentage",
+      "raw_text": "36.94%",
+      "numeric_values": [
+        36.94
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2892,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "otal exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2901",
+      "claim_type": "percentage",
+      "raw_text": "5.23%",
+      "numeric_values": [
+        5.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2901,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "enous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2918",
+      "claim_type": "percentage",
+      "raw_text": "35.84%",
+      "numeric_values": [
+        35.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2918,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "dation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2927",
+      "claim_type": "percentage",
+      "raw_text": "7.21%",
+      "numeric_values": [
+        7.21
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2927,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "s similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-2934",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.583",
+      "numeric_values": [
+        0.583
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2934,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "ar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2990",
+      "claim_type": "percentage",
+      "raw_text": "16.92%",
+      "numeric_values": [
+        16.92
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2990,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "1%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001). Leucine retention (leucine intake",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-2999",
+      "claim_type": "percentage",
+      "raw_text": "6.92%",
+      "numeric_values": [
+        6.92
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2999,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": ".583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001). Leucine retention (leucine intake-total e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-3011",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3011,
+      "sentence": "When expressed as a percentage of the ingested leucine ( Figure 3C ), total exogenous leucine oxidation was similar between DIEAA (36.94% \u00b1 5.23%) and BCAA (35.84% \u00b1 7.21%; P = 0.583) and greater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001).",
+      "context_window": "eater for DIEAA and BCAA than for COL (16.92% \u00b1 6.92%; both P < 0.001). Leucine retention (leucine intake-total exogenous leucine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-3131",
+      "claim_type": "mean_sd",
+      "raw_text": "215.72 \u00b1 42.45",
+      "numeric_values": [
+        215.72,
+        42.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3131,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "s leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and great",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-u-3140",
+      "claim_type": "unit_value",
+      "raw_text": "42.45 \u03bcmol",
+      "numeric_values": [
+        42.45
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-3169",
+      "claim_type": "mean_sd",
+      "raw_text": "219.15 \u00b1 45.26",
+      "numeric_values": [
+        219.15,
+        45.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3169,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "imilar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-3185",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.678",
+      "numeric_values": [
+        0.678
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3185,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "IEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-msd-3245",
+      "claim_type": "mean_sd",
+      "raw_text": "37.35 \u00b1 8.16",
+      "numeric_values": [
+        37.35,
+        8.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3245,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001). Exogenous leucine oxidation over the 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-3264",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3264,
+      "sentence": "Leucine retention (leucine intake-total exogenous leucine oxidation; Figure 3D ) was similar between DIEAA (215.72 \u00b1 42.45 \u03bcmol.kg -1 ) and BCAA (219.15 \u00b1 45.26; P = 0.678) and greater in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001).",
+      "context_window": "ter in DIEAA and BCAA compared with COL (37.35 \u00b1 8.16; both P < 0.0001). Exogenous leucine oxidation over the 6 h postprandial pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-3653",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3653,
+      "sentence": "P < 0.0001 for all main effects of condition, time, or condition \u00d7 time interaction.",
+      "context_window": "Total exogenous leucine letention area under the curve (D). P < 0.0001 for all main effects of condition, time, or condition \u00d7 tim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-3810",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3810,
+      "sentence": "The conditions that do not share a letter are significantly different ( P < 0.0001).",
+      "context_window": "ns that do not share a letter are significantly different ( P < 0.0001). COL, Collagen; DIEAA, Dileucine-containing essential amin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-4034",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4034,
+      "sentence": "There was no effect of supplement condition ex vivo on puromycin incorporation into nascent peptides ( P = 0.31; Figure 4A ) or total protein ubiquitination ( P = 0.59; Figure 4B ), as determined by immunoblot.",
+      "context_window": "ex vivo on puromycin incorporation into nascent peptides ( P = 0.31; Figure 4A ) or total protein ubiquitination ( P = 0.59; Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-4090",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4090,
+      "sentence": "There was no effect of supplement condition ex vivo on puromycin incorporation into nascent peptides ( P = 0.31; Figure 4A ) or total protein ubiquitination ( P = 0.59; Figure 4B ), as determined by immunoblot.",
+      "context_window": "s ( P = 0.31; Figure 4A ) or total protein ubiquitination ( P = 0.59; Figure 4B ), as determined by immunoblot. There was no eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-4253",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4253,
+      "sentence": "There was no effect of condition on the phosphorylation of the downstream mTORC1 substrates P -RPS6 S240/244 ( P = 0.39; Figure 4C ) or P -4E-BP1 T37/46 ( P = 0.50; Figure 4D ).",
+      "context_window": "tion of the downstream mTORC1 substrates P -RPS6 S240/244 ( P = 0.39; Figure 4C ) or P -4E-BP1 T37/46 ( P = 0.50; Figure 4D ). A",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-4297",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4297,
+      "sentence": "There was no effect of condition on the phosphorylation of the downstream mTORC1 substrates P -RPS6 S240/244 ( P = 0.39; Figure 4C ) or P -4E-BP1 T37/46 ( P = 0.50; Figure 4D ).",
+      "context_window": "RPS6 S240/244 ( P = 0.39; Figure 4C ) or P -4E-BP1 T37/46 ( P = 0.50; Figure 4D ). Additionally, there was no effect of suppleme",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-4400",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4400,
+      "sentence": "Additionally, there was no effect of supplement condition on myotube diameter ( P = 0.55; Figure 5D ).",
+      "context_window": "was no effect of supplement condition on myotube diameter ( P = 0.55; Figure 5D ). Ex vivo immunoblot analysis. Following 1 h o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-4548",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4548,
+      "sentence": "Following 1 h of amino acid deprivation, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM for 4 h before collection and analysis via immunoblotting.",
+      "context_window": "tion, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM for 4 h before col",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-4900",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4900,
+      "sentence": "E) Representative blots. ( n = 7).",
+      "context_window": "osphorylation of 4E-BP1 T37/46 . E) Representative blots. ( n = 7). COL, Collagen; DIEAA, Dileucine-containing essential amin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-5137",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5137,
+      "sentence": "Following 1 h of amino acid deprivation, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM for 4 h before being fixed and stained for desmin and DAPI.",
+      "context_window": "tion, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM for 4 h before bei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-5322",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5322,
+      "sentence": "D) Myotube diameter ( n = 10).",
+      "context_window": "images obtained with a 10\u00d7 objective. D) Myotube diameter ( n = 10). COL, Collagen; DIEAA, Dileucine-containing essential amin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-p-5506",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.086",
+      "numeric_values": [
+        0.086
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5506,
+      "sentence": "Mixed FSR ( Figure 6 ) demonstrated a trend toward a main effect ( P = 0.086).",
+      "context_window": "SR ( Figure 6 ) demonstrated a trend toward a main effect ( P = 0.086). Pairwise comparisons revealed a large effect of DIEAA com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-ci-5600",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.08, 2.85",
+      "numeric_values": [
+        0.08,
+        2.85
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5600,
+      "sentence": "Pairwise comparisons revealed a large effect of DIEAA compared to COL (dz = 1.47 [95% CI: 0.08, 2.85]), a medium effect of DIEAA compared to BCAA (dz = 0.81 [-0.28, 1.89]), and a trivial effect of BCAA comapred to COL (dz = 0.002 [-0.92, 0.93]).",
+      "context_window": "evealed a large effect of DIEAA compared to COL (dz = 1.47 [95% CI: 0.08, 2.85]), a medium effect of DIEAA compared to BCAA (dz = 0.81 [-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-n-5888",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5888,
+      "sentence": "Ex vivo stable-isotope derived measurements of mixed-protein fractional synthetic rate (FSR) samples expressed in %/hour ( n = 7).",
+      "context_window": "actional synthetic rate (FSR) samples expressed in %/hour ( n = 7). Following 1 h of amino acid deprivation, C2C12 myotubes w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-5991",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5991,
+      "sentence": "Following 1 h of amino acid deprivation, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM supplemented with 200 \u00b5M [ 2 H 5 ]phenylalanine for 4 h to measure protein synthesis.",
+      "context_window": "tion, C2C12 myotubes were treated with ex vivo human serum (20% v/v) in low-glucose amino acid-free DMEM supplemented with",
+      "claim_role": "dose",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-6263",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6263,
+      "sentence": "There were no statistical differences in puromycin incorporation across all conditions despite ~25% higher puromycin incorporation in DIEAA compraed to COL and BCAA.",
+      "context_window": "s in puromycin incorporation across all conditions despite ~25% higher puromycin incorporation in DIEAA compraed to COL and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12671060_dileucine_supplemented_essential_amino_acids_support_whole_b-pct-7721",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7721,
+      "sentence": "Overall, while confirmatory experiments with larger sample sizes and a true control are needed, our minimally invasive ex vivo approach suggests that DIEAA-containing serum may have an anabolic effect when supplemented into amino acid-free media at a 20% concentration.",
+      "context_window": "ic effect when supplemented into amino acid-free media at a 20% concentration. These experiments provide proof-of-principle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

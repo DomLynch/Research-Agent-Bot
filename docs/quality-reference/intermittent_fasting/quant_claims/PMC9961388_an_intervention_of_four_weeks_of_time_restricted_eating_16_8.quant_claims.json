@@ -1,0 +1,942 @@
+{
+  "paper_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8",
+  "doi": "10.3390/nu15040985",
+  "extracted_at": "2026-05-05T22:11:12+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3,
+    "mean_sd": 9,
+    "unit_value": 19,
+    "percentage": 16,
+    "sample_size": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-p-926",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "blood pressure. Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-963",
+      "claim_type": "mean_sd",
+      "raw_text": "0.8 \u00b1 1.3",
+      "numeric_values": [
+        0.8,
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 963,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-969",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 kg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-990",
+      "claim_type": "mean_sd",
+      "raw_text": "0.1 \u00b1 4.3",
+      "numeric_values": [
+        0.1,
+        4.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 990,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "4.3 kg",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 996,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-1028",
+      "claim_type": "mean_sd",
+      "raw_text": "0.3 \u00b1 0.5",
+      "numeric_values": [
+        0.3,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fa",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1034,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "g with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-1055",
+      "claim_type": "mean_sd",
+      "raw_text": "0.1 \u00b1 0.4",
+      "numeric_values": [
+        0.1,
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1061,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "g with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-1101",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 1.5",
+      "numeric_values": [
+        1.0,
+        1.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TR",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1107",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1107,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "RE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-1126",
+      "claim_type": "mean_sd",
+      "raw_text": "0.1 \u00b1 1.3",
+      "numeric_values": [
+        0.1,
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "g with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no c",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1132",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1132,
+      "sentence": "Body composition did change significantly ( p < 0.05) with whole body fat mass (-0.8 \u00b1 1.3 kg with TRE vs. +0.1 \u00b1 4.3 kg with ND), leg fat mass (-0.3 \u00b1 0.5 kg with TRE vs. +0.1 \u00b1 0.4 kg with ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no change in fat-free mass.",
+      "context_window": "ND), and percent body fat (-1.0 \u00b1 1.5% with TRE vs. +0.1 \u00b1 1.3% with ND) declining more in the TRE intervention, with no ch",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1359",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1359,
+      "sentence": "Moro and associates investigated the effects of 8 weeks of an isocaloric, 16/8 diet in resistance-trained males and reported a significant decrease in fat mass, despite no change in fat-free mass and no significant changes in resting energy expenditure and blood total and LDL cholesterol.",
+      "context_window": "ers [ 11 ]. Moro and associates investigated the effects of 8 weeks of an isocaloric, 16/8 diet in resistance-trained males and",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1665",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1665,
+      "sentence": "However, in the TRE group, blood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ].",
+      "context_window": "ver, in the TRE group, blood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and tri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1690",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1690,
+      "sentence": "However, in the TRE group, blood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ].",
+      "context_window": "ood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1716",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1716,
+      "sentence": "However, in the TRE group, blood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ].",
+      "context_window": "eased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ]. Tinsley et al. [ 9",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1751",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1751,
+      "sentence": "However, in the TRE group, blood HDL significantly increased by 7%, glucose decreased by 11%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ].",
+      "context_window": "1%, insulin decreased by 36% and triglycerides decreased by 7% [ 8 ]. Tinsley et al. [ 9 ]. conducted a similar study with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1814",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1814,
+      "sentence": "Tinsley et al. [ 9 ]. conducted a similar study with 8 weeks of an isocaloric, 16/8 diet in resistance-trained females and also found a significant decrease in body mass and fat mass with no change in fat-free mass.",
+      "context_window": "[ 8 ]. Tinsley et al. [ 9 ]. conducted a similar study with 8 weeks of an isocaloric, 16/8 diet in resistance-trained females a",
+      "claim_role": "duration",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2060",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 kg",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 2060,
+      "sentence": "Brady et al. [ 11 ]. reported that middle- and long-distance runners experienced a 1.9 kg reduction in body mass after 8 weeks of TRE but had no change in body composition and no change in fasting blood glucose, insulin or triglyceride concentrations.",
+      "context_window": "ported that middle- and long-distance runners experienced a 1.9 kg reduction in body mass after 8 weeks of TRE but had no chan",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2096",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2096,
+      "sentence": "Brady et al. [ 11 ]. reported that middle- and long-distance runners experienced a 1.9 kg reduction in body mass after 8 weeks of TRE but had no change in body composition and no change in fasting blood glucose, insulin or triglyceride concentrations.",
+      "context_window": "e runners experienced a 1.9 kg reduction in body mass after 8 weeks of TRE but had no change in body composition and no change",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2455",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2455,
+      "sentence": "In our companion paper, which examined the effects of 4 weeks of 16/8 time-restricted eating in endurance-trained male runners, we found a significant decrease in fat mass with no change in 10 km time trial running performance [ 12 ].",
+      "context_window": "ions. In our companion paper, which examined the effects of 4 weeks of 16/8 time-restricted eating in endurance-trained male ru",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1317",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1317,
+      "sentence": "A 2-week washout period was the original intent, but a washout period of 3 or 4 weeks was used for some subjects to accommodate injury, sickness or subject schedule.",
+      "context_window": "eriod was the original intent, but a washout period of 3 or 4 weeks was used for some subjects to accommodate injury, sickness",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2504",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2504,
+      "sentence": "To be included, subjects were required to be born male, have been actively training for the past 3 years, run \u2265 32 km/wk, have competed in a race \u2265 5 km within the last 12 mo, have a maximal oxygen consumption (VO 2 max) \u2265 40 mL/kg/min and be weight-stable for the past 6 mo.",
+      "context_window": "d to be born male, have been actively training for the past 3 years, run \u2265 32 km/wk, have competed in a race \u2265 5 km within the",
+      "claim_role": "population",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2630",
+      "claim_type": "unit_value",
+      "raw_text": "40 mL",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2630,
+      "sentence": "To be included, subjects were required to be born male, have been actively training for the past 3 years, run \u2265 32 km/wk, have competed in a race \u2265 5 km within the last 12 mo, have a maximal oxygen consumption (VO 2 max) \u2265 40 mL/kg/min and be weight-stable for the past 6 mo.",
+      "context_window": "last 12 mo, have a maximal oxygen consumption (VO 2 max) \u2265 40 mL/kg/min and be weight-stable for the past 6 mo. Subjects wer",
+      "claim_role": "population",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-3052",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3052,
+      "sentence": "Subjects were excluded if they were currently taking prescription medications or dietary supplements that caused any metabolic alterations, had any injuries that limited their ability to train or perform the exercise testing regimen, were smokers or had been consistently smoking during the last 6 mo or were adhering to any form of a restrictive diet as defined by a >20% deviation from the suggested macronutrient ranges for endurance athletes by the American College of Sports Medicine [ 23 ].",
+      "context_window": "adhering to any form of a restrictive diet as defined by a >20% deviation from the suggested macronutrient ranges for endur",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-4180",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4180,
+      "sentence": "The cart was calibrated before each test (flow rates 50-400 l*min -1 and at room air and with a standard gas mixture of 16% O 2 and 4% CO 2 ).",
+      "context_window": "l*min -1 and at room air and with a standard gas mixture of 16% O 2 and 4% CO 2 ). A watch (5410, Polar, Woodbury, NY, USA)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-4192",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4192,
+      "sentence": "The cart was calibrated before each test (flow rates 50-400 l*min -1 and at room air and with a standard gas mixture of 16% O 2 and 4% CO 2 ).",
+      "context_window": "at room air and with a standard gas mixture of 16% O 2 and 4% CO 2 ). A watch (5410, Polar, Woodbury, NY, USA) was used t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-4508",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4508,
+      "sentence": "Speed increased by 0.8 kmph every 2 min with a constant 1% grade.",
+      "context_window": "in. Speed increased by 0.8 kmph every 2 min with a constant 1% grade. Rate of perceived exertion (RPE) was asked every 2 m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-4745",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4745,
+      "sentence": "Criteria for a maximal test included at least 2 of the following, a plateau in VO 2 peak with increasing speed, a maximal heart rate exceeding 90% of predicted (220-age), the rate of perceived exertion > 9 and a respiratory exchange ratio (RER) > 1.10.",
+      "context_window": "peak with increasing speed, a maximal heart rate exceeding 90% of predicted (220-age), the rate of perceived exertion > 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-8585",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8585,
+      "sentence": "The plate was then washed with phosphate-buffered saline plus 0.05% Tween-20 (PBS-T), and 50 uL of the sample and standard were added to each well.",
+      "context_window": "e plate was then washed with phosphate-buffered saline plus 0.05% Tween-20 (PBS-T), and 50 uL of the sample and standard were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-p-9693",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9693,
+      "sentence": "Significance was set at p \u2264 0.05.",
+      "context_window": "as performed with the Tukey\u2019s test. Significance was set at p \u2264 0.05. All values are presented as means \u00b1 SD unless indicated ot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-9915",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9915,
+      "sentence": "Briefly, power analysis determined a total of 16 subjects were needed to achieve 80% power with an alpha error probability of 0.05.",
+      "context_window": "is determined a total of 16 subjects were needed to achieve 80% power with an alpha error probability of 0.05.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-n-41",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 41,
+      "sentence": "Healthy, endurance-trained male runners, n = 27, provided consent.",
+      "context_window": "Healthy, endurance-trained male runners, n = 27, provided consent. Three subjects were disqualified after c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-n-355",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 355,
+      "sentence": "Five subjects did not complete both arms of the study due to personal commitments (n = 4) or early cessation of data collection related to COVID-19 restrictions (n =1).",
+      "context_window": "omplete both arms of the study due to personal commitments (n = 4) or early cessation of data collection related to COVID-19",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-n-434",
+      "claim_type": "sample_size",
+      "raw_text": "n =1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 434,
+      "sentence": "Five subjects did not complete both arms of the study due to personal commitments (n = 4) or early cessation of data collection related to COVID-19 restrictions (n =1).",
+      "context_window": "sation of data collection related to COVID-19 restrictions (n =1). Baseline characteristics of the final completers (n=15) c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-n-491",
+      "claim_type": "sample_size",
+      "raw_text": "n=15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 491,
+      "sentence": "Baseline characteristics of the final completers (n=15) can be found in Table 1 .",
+      "context_window": "s (n =1). Baseline characteristics of the final completers (n=15) can be found in Table 1 . Baseline Characteristics 1 . 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-786",
+      "claim_type": "mean_sd",
+      "raw_text": "11.1 \u00b1 1.95",
+      "numeric_values": [
+        11.1,
+        1.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 786,
+      "sentence": "For the TRE arm, the average time to begin eating was 11.1 \u00b1 1.95 h.",
+      "context_window": "lity. For the TRE arm, the average time to begin eating was 11.1 \u00b1 1.95 h. Likewise, during the normal diet, most subjects began ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-865",
+      "claim_type": "mean_sd",
+      "raw_text": "7.8 \u00b1 1.4",
+      "numeric_values": [
+        7.8,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 865,
+      "sentence": "Likewise, during the normal diet, most subjects began eating at 7.8 \u00b1 1.4 h.",
+      "context_window": "wise, during the normal diet, most subjects began eating at 7.8 \u00b1 1.4 h. Table 2 reflects dietary intake from the 3-day food log",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-1213",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1213,
+      "sentence": "After 4 weeks, there was no significant difference between the TRE and ND interventions for resting energy expenditure, resting respiratory exchange ratio, resting energy expenditure by body mass and resting energy expenditure by fat-free mass ( Table 3 ).",
+      "context_window": "bjects. ND, normal Diet; TRE Time Restricted Eating. After 4 weeks, there was no significant difference between the TRE and ND",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1797",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1797,
+      "sentence": "We have previously reported [ 12 ] that fat mass significantly decreased by 7% and body fat percentage by 6% in the TRE group compared to no change in the ND group.",
+      "context_window": "ly reported [ 12 ] that fat mass significantly decreased by 7% and body fat percentage by 6% in the TRE group compared to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-1827",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1827,
+      "sentence": "We have previously reported [ 12 ] that fat mass significantly decreased by 7% and body fat percentage by 6% in the TRE group compared to no change in the ND group.",
+      "context_window": "ss significantly decreased by 7% and body fat percentage by 6% in the TRE group compared to no change in the ND group. The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-p-2011",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2011,
+      "sentence": "Leg fat mass decreased significantly ( p = 0.03) in the TRE group, but there were no significant differences for arm fat mass, arm fat-free mass, leg fat-free mass, trunk fat mass, trunk fat-free mass or the android/gynoid ratio between interventions.",
+      "context_window": "rted in ( Table 4 ). Leg fat mass decreased significantly ( p = 0.03) in the TRE group, but there were no significant difference",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-986",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 986,
+      "sentence": "Brady et al. [ 11 ] studied the 16/8 diet in runners who were randomly assigned to either the TRE intervention or a control diet for 8 weeks.",
+      "context_window": "signed to either the TRE intervention or a control diet for 8 weeks. In contrast to our study, calorie and macronutrient conten",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-2489",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2489,
+      "sentence": "There was a slight observed decrease in RER with TRE, and it is conceivable that RER would have decreased significantly if the study duration was longer than 4 weeks or if the present study employed more subjects.",
+      "context_window": "creased significantly if the study duration was longer than 4 weeks or if the present study employed more subjects. Future stud",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-3918",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3918,
+      "sentence": "In contrast, in resistance-trained males, 8 weeks of the 16/8 TRE diet resulted in increases in HDL cholesterol and decreases in blood glucose, insulin and triglycerides.",
+      "context_window": "distance runners. In contrast, in resistance-trained males, 8 weeks of the 16/8 TRE diet resulted in increases in HDL cholester",
+      "claim_role": "duration",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-4670",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4670,
+      "sentence": "The present study suggests that adhering to TRE for 4 weeks does not significantly affect insulin resistance, insulin sensitivity or glucose metabolism.",
+      "context_window": "[ 32 ]. The present study suggests that adhering to TRE for 4 weeks does not significantly affect insulin resistance, insulin s",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-msd-6631",
+      "claim_type": "mean_sd",
+      "raw_text": "2.1 \u00b1 0.7",
+      "numeric_values": [
+        2.1,
+        0.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6631,
+      "sentence": "Another potential limitation to this study is the duration of the washout, which was planned to be four weeks but fluctuated between subjects because of availability (mean 2.1 \u00b1 0.7 weeks).",
+      "context_window": "t fluctuated between subjects because of availability (mean 2.1 \u00b1 0.7 weeks). Finally, the present study does have a small subjec",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-6637",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 weeks",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6637,
+      "sentence": "Another potential limitation to this study is the duration of the washout, which was planned to be four weeks but fluctuated between subjects because of availability (mean 2.1 \u00b1 0.7 weeks).",
+      "context_window": "tuated between subjects because of availability (mean 2.1 \u00b1 0.7 weeks). Finally, the present study does have a small subject numb",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-pct-6878",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6878,
+      "sentence": "COVID-19 restrictions were implemented before we could complete 16 subjects and thus our power only reached 76%, which introduces low statistical power for each outcome variable.",
+      "context_window": "could complete 16 subjects and thus our power only reached 76%, which introduces low statistical power for each outcome va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9961388_an_intervention_of_four_weeks_of_time_restricted_eating_16_8-u-101",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 101,
+      "sentence": "These results suggest that endurance athletes adhering to an isocaloric 16/8 TRE dietary pattern for 4 weeks experienced no identifiable adverse changes in the cardiometabolic risk factors.",
+      "context_window": "etes adhering to an isocaloric 16/8 TRE dietary pattern for 4 weeks experienced no identifiable adverse changes in the cardiome",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC6518405_effectiveness_of_creatine_supplementation_on_aging_muscle_an",
+  "doi": "10.3390/jcm8040488",
+  "extracted_at": "2026-05-05T21:38:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6518405_effectiveness_of_creatine_supplementation_on_aging_muscle_an-pct-477",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 477,
+      "sentence": "Sarcopenia typically occurs in 6-22% of adults \u226565 years of age [ 3 ] and is associated with reduced bone mass [ 4 ] and elevated low-grade inflammation (i.e., \u201cinflamm-aging\u201d; [ 5 ]).",
+      "context_window": "hysical performance [ 2 ]. Sarcopenia typically occurs in 6-22% of adults \u226565 years of age [ 3 ] and is associated with red",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6518405_effectiveness_of_creatine_supplementation_on_aging_muscle_an-u-492",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 492,
+      "sentence": "Sarcopenia typically occurs in 6-22% of adults \u226565 years of age [ 3 ] and is associated with reduced bone mass [ 4 ] and elevated low-grade inflammation (i.e., \u201cinflamm-aging\u201d; [ 5 ]).",
+      "context_window": "ance [ 2 ]. Sarcopenia typically occurs in 6-22% of adults \u226565 years of age [ 3 ] and is associated with reduced bone mass [ 4 ]",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

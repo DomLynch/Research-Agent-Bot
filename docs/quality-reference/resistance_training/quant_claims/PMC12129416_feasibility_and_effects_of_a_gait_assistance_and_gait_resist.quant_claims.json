@@ -1,0 +1,968 @@
+{
+  "paper_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist",
+  "doi": "10.2196/58142",
+  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 23,
+    "percentage": 15,
+    "p_value": 13,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-26",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 26,
+      "sentence": "Two-thirds of people aged 65 years and older may require help with daily activities such as eating, bathing, and getting in and out of bed or a chair.",
+      "context_window": "Two-thirds of people aged 65 years and older may require help with daily activities such as ea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-527",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 527,
+      "sentence": "A total of 23 community-dwelling older adults aged 65 years and older (30 participants recruited, 7 dropped out) enrolled in a 12-session, 6-week gait assistance and gait resistance training program using a walking-assist wearable robot.",
+      "context_window": "adults. A total of 23 community-dwelling older adults aged 65 years and older (30 participants recruited, 7 dropped out) enroll",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1091",
+      "claim_type": "percentage",
+      "raw_text": "97.8%",
+      "numeric_values": [
+        97.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1091,
+      "sentence": "Regarding the feasibility, the average number of sessions attended was 11.7 out of 12, indicating a mean adherence rate of 97.8%.",
+      "context_window": "ded was 11.7 out of 12, indicating a mean adherence rate of 97.8%. Linear mixed model analysis revealed significant improveme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1433",
+      "claim_type": "p_value",
+      "raw_text": "P <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1433,
+      "sentence": "Specifically, the walking speed measured using the 10-Meter Walk Test, which includes self-selected velocity and fastest safe velocity, improved by a mean of 0.15 (SD 0.13) m/s ( P <.001) and 0.15 (SD 0.17) m/s ( P <.001), respectively.",
+      "context_window": "t safe velocity, improved by a mean of 0.15 (SD 0.13) m/s ( P <.001) and 0.15 (SD 0.17) m/s ( P <.001), respectively. Functiona",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1467",
+      "claim_type": "p_value",
+      "raw_text": "P <.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1467,
+      "sentence": "Specifically, the walking speed measured using the 10-Meter Walk Test, which includes self-selected velocity and fastest safe velocity, improved by a mean of 0.15 (SD 0.13) m/s ( P <.001) and 0.15 (SD 0.17) m/s ( P <.001), respectively.",
+      "context_window": "n of 0.15 (SD 0.13) m/s ( P <.001) and 0.15 (SD 0.17) m/s ( P <.001), respectively. Functional performance also improved, with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1596",
+      "claim_type": "p_value",
+      "raw_text": "P =.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "Functional performance also improved, with faster performance in Timed Up-and-Go (mean -0.63, SD 0.92 s; P =.003) and Four Square Step Test (mean -1.71, SD 1.64 s; P \u2264.001).",
+      "context_window": "ster performance in Timed Up-and-Go (mean -0.63, SD 0.92 s; P =.003) and Four Square Step Test (mean -1.71, SD 1.64 s; P \u2264.001)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1655",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1655,
+      "sentence": "Functional performance also improved, with faster performance in Timed Up-and-Go (mean -0.63, SD 0.92 s; P =.003) and Four Square Step Test (mean -1.71, SD 1.64 s; P \u2264.001).",
+      "context_window": "P =.003) and Four Square Step Test (mean -1.71, SD 1.64 s; P \u2264.001). Leg muscle strength increased across all measured domains",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1771",
+      "claim_type": "p_value",
+      "raw_text": "P =.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1771,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": "red domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extensi",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1817",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1817,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": ".29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extens",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1863",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1863,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": ".03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexi",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1910",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1910,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": "63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1955",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1955,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": "2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abductio",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-2000",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2000,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": "2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip fle",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-2046",
+      "claim_type": "p_value",
+      "raw_text": "P =.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2046,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": ".10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001). This stu",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-2094",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2094,
+      "sentence": "Leg muscle strength increased across all measured domains, including plantarflexion (mean +7.29, SD 4.92; P =.004), hip adduction (mean +3.03, SD 2.73; P \u2264.001), hip extension (mean +2.63, SD 2.50; P \u2264.001), knee extension (mean +2.33, SD 3.12; P \u2264.001), knee flexion (mean +2.19, SD 2.17; P \u2264.001), dorsiflexion (mean +2.10, SD 3.06; P \u2264.001), hip abduction (mean +1.59, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001).",
+      "context_window": "9, SD 1.92; P =.002), and hip flexion (mean +0.90, SD 1.56; P \u2264.001). This study stands out for applying gait assistance and r",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-52",
+      "claim_type": "unit_value",
+      "raw_text": "66.8 years",
+      "numeric_values": [
+        66.8
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 52,
+      "sentence": "Global life expectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ].",
+      "context_window": "Global life expectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted lif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-74",
+      "claim_type": "unit_value",
+      "raw_text": "73.4 years",
+      "numeric_values": [
+        73.4
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 74,
+      "sentence": "Global life expectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ].",
+      "context_window": "pectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted life expectancy (HALE) wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-151",
+      "claim_type": "unit_value",
+      "raw_text": "63.7 years",
+      "numeric_values": [
+        63.7
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 151,
+      "sentence": "Global life expectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ].",
+      "context_window": "9, although health-adjusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ]. In other words, H",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-171",
+      "claim_type": "percentage",
+      "raw_text": "86.3%",
+      "numeric_values": [
+        86.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 171,
+      "sentence": "Global life expectancy has gradually increased from 66.8 years in 2000 to 73.4 years in 2019, although health-adjusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ].",
+      "context_window": "djusted life expectancy (HALE) was only 63.7 years in 2019 (86.3% of life expectancy) [ 1 ]. In other words, HALE significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-772",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 772,
+      "sentence": "According to a recent report by the World Health Organization [ 3 ], approximately two-thirds of people aged 65 years and older may require help with daily activities such as eating, bathing, and getting in and out of bed or a chair.",
+      "context_window": "Organization [ 3 ], approximately two-thirds of people aged 65 years and older may require help with daily activities such as ea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-914",
+      "claim_type": "unit_value",
+      "raw_text": "90 years",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 914,
+      "sentence": "Among those aged 90 years and older, 96% may require assistance to maintain their daily functioning.",
+      "context_window": "and getting in and out of bed or a chair. Among those aged 90 years and older, 96% may require assistance to maintain their dai",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-934",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 934,
+      "sentence": "Among those aged 90 years and older, 96% may require assistance to maintain their daily functioning.",
+      "context_window": "out of bed or a chair. Among those aged 90 years and older, 96% may require assistance to maintain their daily functioning.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "41.3%",
+      "numeric_values": [
+        41.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1351,
+      "sentence": "In 2018, 41.3% of older adults were found to be physically active, and the target was set at 51%, which is managed as a national health policy indicator.",
+      "context_window": "ealth problems as a Healthy People 2030 indicator. In 2018, 41.3% of older adults were found to be physically active, and the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1435",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1435,
+      "sentence": "In 2018, 41.3% of older adults were found to be physically active, and the target was set at 51%, which is managed as a national health policy indicator.",
+      "context_window": "re found to be physically active, and the target was set at 51%, which is managed as a national health policy indicator. Ph",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-3161",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3161,
+      "sentence": "Wearing a robot can increase walking efficiency by more than 7% [ 11 ].",
+      "context_window": "earing a robot can increase walking efficiency by more than 7% [ 11 ]. Furthermore, it can be used without restrictions wh",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-478",
+      "claim_type": "unit_value",
+      "raw_text": "90 years",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 478,
+      "sentence": "The participants were older adults living in the community, aged 65-90 years old, who were able to walk independently for more than 30 minutes, who understood the contents of the study, and who voluntarily agreed to participate.",
+      "context_window": "icipants were older adults living in the community, aged 65-90 years old, who were able to walk independently for more than 30 m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1014",
+      "claim_type": "unit_value",
+      "raw_text": "140 cm",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1014,
+      "sentence": "Second, individuals with body types that prevent them from wearing the robot, such as a height of 4.59 feet (140 cm) or less or 5.91 feet (185 cm) or more, or severe obesity with a BMI of 35 or more.",
+      "context_window": "them from wearing the robot, such as a height of 4.59 feet (140 cm) or less or 5.91 feet (185 cm) or more, or severe obesity w",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1044",
+      "claim_type": "unit_value",
+      "raw_text": "185 cm",
+      "numeric_values": [
+        185.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1044,
+      "sentence": "Second, individuals with body types that prevent them from wearing the robot, such as a height of 4.59 feet (140 cm) or less or 5.91 feet (185 cm) or more, or severe obesity with a BMI of 35 or more.",
+      "context_window": "uch as a height of 4.59 feet (140 cm) or less or 5.91 feet (185 cm) or more, or severe obesity with a BMI of 35 or more. Third",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1344",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1344,
+      "sentence": "Fourth, individuals at a high risk of falling during walking training, owing to severe dizziness and having experienced a fall within the preceding 2 months.",
+      "context_window": "izziness and having experienced a fall within the preceding 2 months. The sample size was calculated using the G*Power 3.1 prog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-p-1465",
+      "claim_type": "p_value",
+      "raw_text": "P =.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1465,
+      "sentence": "The sample size was calculated using the G*Power 3.1 program for a paired t test with a significance level of P =.05, power of 0.80, and effect size of 0.59 [ 20 ], specifically based on the primary outcome of this study, which is walking speed.",
+      "context_window": ".1 program for a paired t test with a significance level of P =.05, power of 0.80, and effect size of 0.59 [ 20 ], specificall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1734",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1734,
+      "sentence": "The minimum sample size required was 25, and a total of 30 participants underwent convenience sampling to accommodate an approximate 20% dropout rate.",
+      "context_window": "nderwent convenience sampling to accommodate an approximate 20% dropout rate. During the 6 weeks of the program, 7 particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1763",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1763,
+      "sentence": "During the 6 weeks of the program, 7 participants withdrew from the study for reasons such as lagging behind in pace and feeling overwhelmed by the group exercise, leaving 23 participants in the final analysis.",
+      "context_window": "to accommodate an approximate 20% dropout rate. During the 6 weeks of the program, 7 participants withdrew from the study for",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-3075",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3075,
+      "sentence": "The gait assistance and gait resistance training program lasted 6 weeks and consisted of biweekly group exercise sessions.",
+      "context_window": "gait assistance and gait resistance training program lasted 6 weeks and consisted of biweekly group exercise sessions. The gait",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-4663",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4663,
+      "sentence": "The first 3 weeks focused on improving walking speed and correcting walking posture using only the wearable robot\u2019s gait assistance function, while the fourth week included 10 minutes of walking exercises with added gait resistance, increasing by 5 minutes per week to 15 minutes in the fifth week and 20 minutes in the sixth week.",
+      "context_window": "ilitates engagement in group exercise activities. The first 3 weeks focused on improving walking speed and correcting walking p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-8399",
+      "claim_type": "unit_value",
+      "raw_text": "90 cm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8399,
+      "sentence": "The Four Square Step Test (FSST) is a quadrant step test that uses 4 cylindrical rods 90 cm long and 1 cm in diameter to create a cross-shaped square on the floor.",
+      "context_window": "(FSST) is a quadrant step test that uses 4 cylindrical rods 90 cm long and 1 cm in diameter to create a cross-shaped square o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-8414",
+      "claim_type": "unit_value",
+      "raw_text": "1 cm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 8414,
+      "sentence": "The Four Square Step Test (FSST) is a quadrant step test that uses 4 cylindrical rods 90 cm long and 1 cm in diameter to create a cross-shaped square on the floor.",
+      "context_window": "drant step test that uses 4 cylindrical rods 90 cm long and 1 cm in diameter to create a cross-shaped square on the floor. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-9720",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 9720,
+      "sentence": "The program intervention spanned 6 weeks, from September 20 to October 27, 2023, at the community service center and from September 18 to October 25, 2023, at the senior living community.",
+      "context_window": "r strength of the muscle. The program intervention spanned 6 weeks, from September 20 to October 27, 2023, at the community se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-138",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 138,
+      "sentence": "They included 18 (78%) women and 5 (22%) men.",
+      "context_window": "Their mean age was 75.87 (SD 4.70) years. They included 18 (78%) women and 5 (22%) men. Their mean height was 156.00 (SD 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-156",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 156,
+      "sentence": "They included 18 (78%) women and 5 (22%) men.",
+      "context_window": "75.87 (SD 4.70) years. They included 18 (78%) women and 5 (22%) men. Their mean height was 156.00 (SD 10.69) cm, mean weig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-336",
+      "claim_type": "percentage",
+      "raw_text": "97.8%",
+      "numeric_values": [
+        97.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 336,
+      "sentence": "Regarding the feasibility, the mean adherence rate was 97.8%, with participants attending an average of 11.7 out of 12 exercise sessions (range 10\u201012 sessions).",
+      "context_window": "32). Regarding the feasibility, the mean adherence rate was 97.8%, with participants attending an average of 11.7 out of 12 e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-n-538",
+      "claim_type": "sample_size",
+      "raw_text": "n=4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 538,
+      "sentence": "The reasons for missed sessions were primarily scheduling conflicts with personal appointments (n=4), followed by confusion regarding the session time or location (n=2).",
+      "context_window": "primarily scheduling conflicts with personal appointments (n=4), followed by confusion regarding the session time or locat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-n-606",
+      "claim_type": "sample_size",
+      "raw_text": "n=2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 606,
+      "sentence": "The reasons for missed sessions were primarily scheduling conflicts with personal appointments (n=4), followed by confusion regarding the session time or location (n=2).",
+      "context_window": "llowed by confusion regarding the session time or location (n=2). The results of the linear mixed model analysis adjusted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-913",
+      "claim_type": "unit_value",
+      "raw_text": "0.15 m/s",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 913,
+      "sentence": "The participants in the program showed a significant increase in walking speed of 0.15 m/s.",
+      "context_window": "e program showed a significant increase in walking speed of 0.15 m/s. This is consistent with previous studies that also showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1161",
+      "claim_type": "unit_value",
+      "raw_text": "0.14 m/s",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 1161,
+      "sentence": "Previous research [ 28 ] has established that a change in walking speed ranging from 0.10 to 0.14 m/s represents a minimal important change with a medium effect size.",
+      "context_window": "blished that a change in walking speed ranging from 0.10 to 0.14 m/s represents a minimal important change with a medium effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1800",
+      "claim_type": "percentage",
+      "raw_text": "15.7%",
+      "numeric_values": [
+        15.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1800,
+      "sentence": "For instance, using the device for walking assistance reduced energy expenditure by 15.7% on inclines and 10.6% on flat surfaces in young adults, which is equivalent to lowering the payload by approximately 9 kg [ 21 , 29 ].",
+      "context_window": "device for walking assistance reduced energy expenditure by 15.7% on inclines and 10.6% on flat surfaces in young adults, whi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-1822",
+      "claim_type": "percentage",
+      "raw_text": "10.6%",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1822,
+      "sentence": "For instance, using the device for walking assistance reduced energy expenditure by 15.7% on inclines and 10.6% on flat surfaces in young adults, which is equivalent to lowering the payload by approximately 9 kg [ 21 , 29 ].",
+      "context_window": "istance reduced energy expenditure by 15.7% on inclines and 10.6% on flat surfaces in young adults, which is equivalent to lo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1923",
+      "claim_type": "unit_value",
+      "raw_text": "9 kg",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1923,
+      "sentence": "For instance, using the device for walking assistance reduced energy expenditure by 15.7% on inclines and 10.6% on flat surfaces in young adults, which is equivalent to lowering the payload by approximately 9 kg [ 21 , 29 ].",
+      "context_window": "hich is equivalent to lowering the payload by approximately 9 kg [ 21 , 29 ]. In this study, the robot operates by applying",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-2654",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2654,
+      "sentence": "Given that aging is associated with decreased lower limb strength and reduced ankle propulsion, older adults tend to compensate by generating more power at the hip, resulting in about 17% higher metabolic energy consumption during walking compared with younger individuals [ 31 , 32 ].",
+      "context_window": "ate by generating more power at the hip, resulting in about 17% higher metabolic energy consumption during walking compared",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-4021",
+      "claim_type": "percentage",
+      "raw_text": "7.59%",
+      "numeric_values": [
+        7.59
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4021,
+      "sentence": "The results also revealed statistically significant improvements in the TUG and FSST, with the time required for each test reducing by an average of 0.63 (SD 0.92) seconds (7.59%) and 1.71 (SD 1.64) seconds (18.33%), respectively.",
+      "context_window": "each test reducing by an average of 0.63 (SD 0.92) seconds (7.59%) and 1.71 (SD 1.64) seconds (18.33%), respectively. These r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-pct-4056",
+      "claim_type": "percentage",
+      "raw_text": "18.33%",
+      "numeric_values": [
+        18.33
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4056,
+      "sentence": "The results also revealed statistically significant improvements in the TUG and FSST, with the time required for each test reducing by an average of 0.63 (SD 0.92) seconds (7.59%) and 1.71 (SD 1.64) seconds (18.33%), respectively.",
+      "context_window": "0.63 (SD 0.92) seconds (7.59%) and 1.71 (SD 1.64) seconds (18.33%), respectively. These results are similar to previous studi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-6165",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6165,
+      "sentence": "A previous study [ 19 ] also identified progressive resistance training programs as an effective strategy for increasing muscle strength and bone formation in older adults aged more than 75 years.",
+      "context_window": "strength and bone formation in older adults aged more than 75 years. Although this study used progressive training with gradual",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-10357",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 10357,
+      "sentence": "Finally, during the 6 weeks of the program, 7 participants dropped out because of the burden of group exercise, lowering the statistical power of the study, as only 23 participants in total were analyzed.",
+      "context_window": "roving the reliability of the findings. Finally, during the 6 weeks of the program, 7 participants dropped out because of the b",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12129416_feasibility_and_effects_of_a_gait_assistance_and_gait_resist-u-1359",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 1359,
+      "sentence": "Finally, during the 6 weeks of the program, 7 participants dropped out because of the burden of group exercise, lowering the statistical power of the study, as only 23 participants in total were analyzed.",
+      "context_window": "roving the reliability of the findings. Finally, during the 6 weeks of the program, 7 participants dropped out because of the b",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

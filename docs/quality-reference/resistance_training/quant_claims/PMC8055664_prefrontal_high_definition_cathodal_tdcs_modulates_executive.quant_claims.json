@@ -1,0 +1,912 @@
+{
+  "paper_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive",
+  "doi": "10.1038/s41598-021-87914-4",
+  "extracted_at": "2026-05-05T21:59:32+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 9,
+    "percentage": 11,
+    "sample_size": 1,
+    "p_value": 13,
+    "mean_sd": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-866",
+      "claim_type": "unit_value",
+      "raw_text": "35 cm",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "cm",
+      "source_section": "introduction",
+      "source_offset": 866,
+      "sentence": "Previous studies have shown a single application of conventional tDCS (e.g., using two sponge electrodes, typically with a size of 35 cm 2 ) over the dorsolateral prefrontal cortex (DLPFC) 14 , but also over multiple sessions 15 can modulate cognitive abilities such as core executive functions (EF) 14 .",
+      "context_window": "e.g., using two sponge electrodes, typically with a size of 35 cm 2 ) over the dorsolateral prefrontal cortex (DLPFC) 14 , bu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-4922",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4922,
+      "sentence": "However, AE-induced alterations of cognitive functions seem to be reliable and most effective both during (between 20 and 60 min) and following AE (up to 60 min) with moderate AE intensities (e.g., in the range of 55-75% of maximal individual heart rate, or 40 to 60% of maximal oxygen uptake) in young, healthy persons 38 , 39 , 46 .",
+      "context_window": "min) with moderate AE intensities (e.g., in the range of 55-75% of maximal individual heart rate, or 40 to 60% of maximal o",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-4969",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4969,
+      "sentence": "However, AE-induced alterations of cognitive functions seem to be reliable and most effective both during (between 20 and 60 min) and following AE (up to 60 min) with moderate AE intensities (e.g., in the range of 55-75% of maximal individual heart rate, or 40 to 60% of maximal oxygen uptake) in young, healthy persons 38 , 39 , 46 .",
+      "context_window": "range of 55-75% of maximal individual heart rate, or 40 to 60% of maximal oxygen uptake) in young, healthy persons 38 , 39",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-n-529",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 529,
+      "sentence": "Considerations of sample size included comparing average sample sizes of recent studies on acute tDCS and AE effects on executive functions (78 studies with an average of n = 22 in 14 , 45 ), and statistical power was additionally calculated post-hoc for significant interaction effects.",
+      "context_window": "fects on executive functions (78 studies with an average of n = 22 in 14 , 45 ), and statistical power was additionally calcul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-1795",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 cm",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1795,
+      "sentence": "The montage comprised five high-definition (HD) stimulation electrodes (Ag/AgCl, 3.14 cm 2 ) in a 4 \u00d7 1 ring configuration targeting the left DLPFC ( 56 see Fig.",
+      "context_window": "five high-definition (HD) stimulation electrodes (Ag/AgCl, 3.14 cm 2 ) in a 4 \u00d7 1 ring configuration targeting the left DLPFC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-5419",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 cm",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5419,
+      "sentence": "Parameters a-tDCS c-tDCS s-tDCS Duration ~ 25 min ~ 25 min ~ 25 min Ram-up/down 30 s 30 s 30 s CI stim. electrode (CD) 1 mA (0.318 mA/cm 2 ) - 1 mA (- 0.318 mA/cm 2 ) - CI return electrodes (CD) - 0.250 m (- 0.08 mA/cm 2 ) 0.250 mA (0.08 mA/cm 2 ) - Electric field ||E|| 0.23 V/m 0.23 V/m - Impedance cut-off < 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag/AgCl Dosage of applied current 1530 mC 1530 mC 35 mC Applied in EXP.",
+      "context_window": "- Impedance cut-off < 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-5429",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 cm",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5429,
+      "sentence": "Parameters a-tDCS c-tDCS s-tDCS Duration ~ 25 min ~ 25 min ~ 25 min Ram-up/down 30 s 30 s 30 s CI stim. electrode (CD) 1 mA (0.318 mA/cm 2 ) - 1 mA (- 0.318 mA/cm 2 ) - CI return electrodes (CD) - 0.250 m (- 0.08 mA/cm 2 ) 0.250 mA (0.08 mA/cm 2 ) - Electric field ||E|| 0.23 V/m 0.23 V/m - Impedance cut-off < 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag/AgCl Dosage of applied current 1530 mC 1530 mC 35 mC Applied in EXP.",
+      "context_window": "ce cut-off < 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag/AgCl Dosa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-5439",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 cm",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5439,
+      "sentence": "Parameters a-tDCS c-tDCS s-tDCS Duration ~ 25 min ~ 25 min ~ 25 min Ram-up/down 30 s 30 s 30 s CI stim. electrode (CD) 1 mA (0.318 mA/cm 2 ) - 1 mA (- 0.318 mA/cm 2 ) - CI return electrodes (CD) - 0.250 m (- 0.08 mA/cm 2 ) 0.250 mA (0.08 mA/cm 2 ) - Electric field ||E|| 0.23 V/m 0.23 V/m - Impedance cut-off < 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag/AgCl Dosage of applied current 1530 mC 1530 mC 35 mC Applied in EXP.",
+      "context_window": "< 10 k\u03a9 < 10 k\u03a9 < 10 k\u03a9 Electrode size 3.14 cm 2 3.14 cm 2 3.14 cm 2 Electrode material Ag/AgCl Ag/AgCl Ag/AgCl Dosage of appl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-7325",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7325,
+      "sentence": "Participants cycled on a stationary ergometer (Lode, Netherlands) for approximately 25 min between 70 and 75% of maximum heart rate (HR max ).",
+      "context_window": "(Lode, Netherlands) for approximately 25 min between 70 and 75% of maximum heart rate (HR max ). HR max was calculated usin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-7550",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7550,
+      "sentence": "The intensity range was chosen based on the guidelines of the American College of Sports Medicine 100 (moderate intensity = 65% and 75% of HR max ).",
+      "context_window": "erican College of Sports Medicine 100 (moderate intensity = 65% and 75% of HR max ). HR was measured using a chest belt (H3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-7558",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7558,
+      "sentence": "The intensity range was chosen based on the guidelines of the American College of Sports Medicine 100 (moderate intensity = 65% and 75% of HR max ).",
+      "context_window": "ollege of Sports Medicine 100 (moderate intensity = 65% and 75% of HR max ). HR was measured using a chest belt (H3 heart r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-10413",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 10413,
+      "sentence": "Each of the five experiments was divided into two randomized, counterbalanced sessions (i.e., treatments) separated by at least 2 days and a maximum of 7 days.",
+      "context_window": "rbalanced sessions (i.e., treatments) separated by at least 2 days and a maximum of 7 days. There are currently no standardize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-10437",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 10437,
+      "sentence": "Each of the five experiments was divided into two randomized, counterbalanced sessions (i.e., treatments) separated by at least 2 days and a maximum of 7 days.",
+      "context_window": ", treatments) separated by at least 2 days and a maximum of 7 days. There are currently no standardized guidelines on the amou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-131",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 131,
+      "sentence": "There were no baseline differences between conditions in cognitive performance in any of the variables and across experiments (all p > 0.05, for descriptive values, see Table A.3 in the supplementary material).",
+      "context_window": "ormance in any of the variables and across experiments (all p > 0.05, for descriptive values, see Table A.3 in the supplementary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-682",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 682,
+      "sentence": "1 j) ( F (1,23) = 4.58, p = 0.043, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\eta_{p}^{2}$$\\end{document} \u03b7 p 2 = 0.17, post-hoc power 1 - \u03b2 = 0.98).",
+      "context_window": "with a large effect size (see Fig. 1 j) ( F (1,23) = 4.58, p = 0.043, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-1061",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1061,
+      "sentence": "Bonferroni corrected post-hoc tests yielded only a significant ( p = 0.045) performance decrease between Baseline c-tDCS-AE compared to online c-tDCS-AE, but no other significant pairwise comparison (all p > 0.05).",
+      "context_window": "rroni corrected post-hoc tests yielded only a significant ( p = 0.045) performance decrease between Baseline c-tDCS-AE compared t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-1200",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1200,
+      "sentence": "Bonferroni corrected post-hoc tests yielded only a significant ( p = 0.045) performance decrease between Baseline c-tDCS-AE compared to online c-tDCS-AE, but no other significant pairwise comparison (all p > 0.05).",
+      "context_window": "-tDCS-AE, but no other significant pairwise comparison (all p > 0.05). For all other possible Time \u00d7 Condition effects, no signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-1300",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1300,
+      "sentence": "For all other possible Time \u00d7 Condition effects, no significant interaction emerged (all p > 0.05, see Table 1 ).",
+      "context_window": "Condition effects, no significant interaction emerged (all p > 0.05, see Table 1 ). However, one statistical trend ( p = 0.066)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-1358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1358,
+      "sentence": "However, one statistical trend ( p = 0.066) with a high effect size emerged for the flanker effects in EXP.",
+      "context_window": "l p > 0.05, see Table 1 ). However, one statistical trend ( p = 0.066) with a high effect size emerged for the flanker effects in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-1529",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1529,
+      "sentence": "3, indicating a slight performance increase during AE compared to that of AC ( F (1,22) = 3.74, p = 0.066, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\eta_{p}^{2}$$\\end{document} \u03b7 p 2 = 0.15, see Fig.",
+      "context_window": "ncrease during AE compared to that of AC ( F (1,22) = 3.74, p = 0.066, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-4023",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4023,
+      "sentence": "Statistical data are reported in the Result section. *asterisk displays a sig. ( p < 0.05) interaction effect.",
+      "context_window": "reported in the Result section. *asterisk displays a sig. ( p < 0.05) interaction effect. AE = active control, AE = aerobic exer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-4834",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4834,
+      "sentence": "Statistical data are reported in the Result section. *asterisk displays a sig. ( p < 0.05) interaction effect.",
+      "context_window": "reported in the Result section. *asterisk displays a sig. ( p < 0.05) interaction effect. AE = active control, AE = aerobic exer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-5447",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.072",
+      "numeric_values": [
+        0.072
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5447,
+      "sentence": "4, under the influence of a-tDCS, the participants seemed to be slightly more capable of cycling with elevated pedal resistance (W) than they did under the influence of s-tDCS ( F (2.14,36.39) = 2.78, p = 0.072, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\eta_{p}^{2}$$\\end{document} \u03b7 p 2 = 0.14, see Fig.",
+      "context_window": "did under the influence of s-tDCS ( F (2.14,36.39) = 2.78, p = 0.072, \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6449",
+      "claim_type": "mean_sd",
+      "raw_text": "25.7 \u00b1 2.2",
+      "numeric_values": [
+        25.7,
+        2.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6449,
+      "sentence": "1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP.",
+      "context_window": "eight (kg) a-tDCS vs. s-tDCS during AC (EXP. 1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6460",
+      "claim_type": "mean_sd",
+      "raw_text": "173.9 \u00b1 11.7",
+      "numeric_values": [
+        173.9,
+        11.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6460,
+      "sentence": "1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP.",
+      "context_window": "a-tDCS vs. s-tDCS during AC (EXP. 1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP. 2) 24 (12, 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6473",
+      "claim_type": "mean_sd",
+      "raw_text": "72.5 \u00b1 15.5",
+      "numeric_values": [
+        72.5,
+        15.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6473,
+      "sentence": "1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP.",
+      "context_window": "tDCS during AC (EXP. 1) 21 (10, 11) 25.7 \u00b1 2.2 173.9 \u00b1 11.7 72.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP. 2) 24 (12, 12) 25.2 \u00b1 1.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6534",
+      "claim_type": "mean_sd",
+      "raw_text": "25.2 \u00b1 1.7",
+      "numeric_values": [
+        25.2,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6534,
+      "sentence": "2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs.",
+      "context_window": "2.5 \u00b1 15.5 c-tDCS vs. s-tDCS during AC (EXP. 2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6545",
+      "claim_type": "mean_sd",
+      "raw_text": "176.9 \u00b1 9.7",
+      "numeric_values": [
+        176.9,
+        9.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6545,
+      "sentence": "2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs.",
+      "context_window": "c-tDCS vs. s-tDCS during AC (EXP. 2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6557",
+      "claim_type": "mean_sd",
+      "raw_text": "70.0 \u00b1 9.6",
+      "numeric_values": [
+        70.0,
+        9.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6557,
+      "sentence": "2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs.",
+      "context_window": "-tDCS during AC (EXP. 2) 24 (12, 12) 25.2 \u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6598",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 2.5",
+      "numeric_values": [
+        25.0,
+        2.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6598,
+      "sentence": "3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": "\u00b1 1.7 176.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP. 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6607",
+      "claim_type": "mean_sd",
+      "raw_text": "175.5 \u00b1 9.4",
+      "numeric_values": [
+        175.5,
+        9.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6607,
+      "sentence": "3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": "6.9 \u00b1 9.7 70.0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP. 4) 22 (11, 11",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6619",
+      "claim_type": "mean_sd",
+      "raw_text": "69.6 \u00b1 11.0",
+      "numeric_values": [
+        69.6,
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6619,
+      "sentence": "3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": ".0 \u00b1 9.6 AE vs. AC (EXP. 3) 24 (15, 9) 25 \u00b1 2.5 175.5 \u00b1 9.4 69.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP. 4) 22 (11, 11) 25.5 \u00b1 2.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6680",
+      "claim_type": "mean_sd",
+      "raw_text": "25.5 \u00b1 2.1",
+      "numeric_values": [
+        25.5,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6680,
+      "sentence": "4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": "9.6 \u00b1 11.0 a-tDCS vs. s-tDCS during AE (EXP. 4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP. 5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6691",
+      "claim_type": "mean_sd",
+      "raw_text": "172.9 \u00b1 9.6",
+      "numeric_values": [
+        172.9,
+        9.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6691,
+      "sentence": "4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": "a-tDCS vs. s-tDCS during AE (EXP. 4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP. 5) 24 (15, 9)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6703",
+      "claim_type": "mean_sd",
+      "raw_text": "70.2 \u00b1 12.4",
+      "numeric_values": [
+        70.2,
+        12.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6703,
+      "sentence": "4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP.",
+      "context_window": "-tDCS during AE (EXP. 4) 22 (11, 11) 25.5 \u00b1 2.1 172.9 \u00b1 9.6 70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP. 5) 24 (15, 9) 24.9 \u00b1 1.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6763",
+      "claim_type": "mean_sd",
+      "raw_text": "24.9 \u00b1 1.5",
+      "numeric_values": [
+        24.9,
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6763,
+      "sentence": "5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4\n\nExercise-related parameters RPE, HR, and Watt for EXP.",
+      "context_window": "70.2 \u00b1 12.4 c-tDCS vs. s-tDCS during AE (EXP. 5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4 Exercise-related parameters RPE, H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6774",
+      "claim_type": "mean_sd",
+      "raw_text": "177.6 \u00b1 9.2",
+      "numeric_values": [
+        177.6,
+        9.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6774,
+      "sentence": "5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4\n\nExercise-related parameters RPE, HR, and Watt for EXP.",
+      "context_window": "c-tDCS vs. s-tDCS during AE (EXP. 5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4 Exercise-related parameters RPE, HR, and Watt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-msd-6786",
+      "claim_type": "mean_sd",
+      "raw_text": "74.3 \u00b1 11.4",
+      "numeric_values": [
+        74.3,
+        11.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6786,
+      "sentence": "5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4\n\nExercise-related parameters RPE, HR, and Watt for EXP.",
+      "context_window": "s-tDCS during AE (EXP. 5) 24 (15, 9) 24.9 \u00b1 1.5 177.6 \u00b1 9.2 74.3 \u00b1 11.4 Exercise-related parameters RPE, HR, and Watt for EXP. 4 a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-649",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 649,
+      "sentence": "Three critical results emerged: First, neither a-tDCS nor c-tDCS nor AE applied in isolation had any clear significant effect on flanker test performance when tested during AE, except for a trend ( p = 0.066; \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\eta_{{\\text{p}}}^{{2}}$$\\end{document} \u03b7 p 2 = 0.15) for AE with a slightly decreased flanker effect.",
+      "context_window": "est performance when tested during AE, except for a trend ( p = 0.066; \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-5785",
+      "claim_type": "unit_value",
+      "raw_text": "3.14 cm",
+      "numeric_values": [
+        3.14
+      ],
+      "units": "cm",
+      "source_section": "discussion",
+      "source_offset": 5785,
+      "sentence": "But, Dubreuil-Vall et al. (2019) used HD-tDCS (electrode size = 3.14 cm 2 ) and Angius et al. (2019) conventional tDCS (electrode size = 35 cm 2 ).",
+      "context_window": "Dubreuil-Vall et al. (2019) used HD-tDCS (electrode size = 3.14 cm 2 ) and Angius et al. (2019) conventional tDCS (electrode s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-u-5858",
+      "claim_type": "unit_value",
+      "raw_text": "35 cm",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "cm",
+      "source_section": "discussion",
+      "source_offset": 5858,
+      "sentence": "But, Dubreuil-Vall et al. (2019) used HD-tDCS (electrode size = 3.14 cm 2 ) and Angius et al. (2019) conventional tDCS (electrode size = 35 cm 2 ).",
+      "context_window": "nd Angius et al. (2019) conventional tDCS (electrode size = 35 cm 2 ). These results suggest that our used current intensity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-7666",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7666,
+      "sentence": "However, in the current approach, we used almost the same exercise intensity (i.e., moderate AE with a slight increase in the HR range by 5%).",
+      "context_window": "i.e., moderate AE with a slight increase in the HR range by 5%). Still, we changed the exercise modality (cycling instead",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-7839",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.066",
+      "numeric_values": [
+        0.066
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7839,
+      "sentence": "However, here we observed a significant trend (i.e., p = 0.066) indicating that AE improved inhibition, including a high effect size ( \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$\\eta_{p}^{2}$$\\end{document} \u03b7 p 2 = 0.15), which would confirm the well-known positive effects of moderate AE intensity on cognition reported in the literature 38 , 39 .",
+      "context_window": "r AE). However, here we observed a significant trend (i.e., p = 0.066) indicating that AE improved inhibition, including a high e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-8798",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8798,
+      "sentence": "For example, in a study by Davranche et al. (2009), the reaction times during moderate aerobic exercise (cycling at 50% of maximal aerobic power) decreased significantly compared to inactivity 77 .",
+      "context_window": "reaction times during moderate aerobic exercise (cycling at 50% of maximal aerobic power) decreased significantly compared",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-9275",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9275,
+      "sentence": "In the present study, the majority of the participants rated the intensity as \"moderate \u201c (59%) , but there were also participants who rated the intensity as \"high\" (27%) or even \"low\" (7%) at the same percentage HR max.",
+      "context_window": "ity of the participants rated the intensity as \"moderate \u201c (59%) , but there were also participants who rated the intensity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-9350",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9350,
+      "sentence": "In the present study, the majority of the participants rated the intensity as \"moderate \u201c (59%) , but there were also participants who rated the intensity as \"high\" (27%) or even \"low\" (7%) at the same percentage HR max.",
+      "context_window": "e were also participants who rated the intensity as \"high\" (27%) or even \"low\" (7%) at the same percentage HR max. Davranch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-9370",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9370,
+      "sentence": "In the present study, the majority of the participants rated the intensity as \"moderate \u201c (59%) , but there were also participants who rated the intensity as \"high\" (27%) or even \"low\" (7%) at the same percentage HR max.",
+      "context_window": "ants who rated the intensity as \"high\" (27%) or even \"low\" (7%) at the same percentage HR max. Davranche et al. (2009) det",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-p-10925",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10925,
+      "sentence": "Only a slight non-significant ( p < 0.10) elevation of inhibition by AE in our Exp-3 and the non-significant combined a-tDCS-AE effects do not provide compelling evidence that AE with a-tDCS interacted comparably (e.g., dopamine overshoot or metaplasticity).",
+      "context_window": "ot the case for a-tDCS 26 . Only a slight non-significant ( p < 0.10) elevation of inhibition by AE in our Exp-3 and the non-sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive-pct-12450",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12450,
+      "sentence": "Cortical thickness of the left (but not right) PFC accounted for almost 35% of the variance in stimulation efficacy across participants providing evidence that cortical morphology is related to an individual's behavioral response to tDCS.",
+      "context_window": "ckness of the left (but not right) PFC accounted for almost 35% of the variance in stimulation efficacy across participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

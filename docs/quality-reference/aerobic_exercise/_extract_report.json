@@ -1,0 +1,4390 @@
+{
+  "topic": "aerobic_exercise",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 545,
+  "n_selected_for_fetch": 545,
+  "n_pmcid_resolved": 188,
+  "n_extracted": 151,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10021534",
+    "PMC10068966",
+    "PMC10136585",
+    "PMC10315841",
+    "PMC10498829",
+    "PMC10503347",
+    "PMC10554155",
+    "PMC10592558",
+    "PMC10594526",
+    "PMC10673924",
+    "PMC10735953",
+    "PMC10737352",
+    "PMC10813950",
+    "PMC10853417",
+    "PMC10860251",
+    "PMC10878414",
+    "PMC10891480",
+    "PMC10896057",
+    "PMC10913308",
+    "PMC10943751",
+    "PMC11062412",
+    "PMC11228262",
+    "PMC11272887",
+    "PMC11425455",
+    "PMC11426414",
+    "PMC11435948",
+    "PMC11477409",
+    "PMC11483784",
+    "PMC11521514",
+    "PMC11521540",
+    "PMC11629943",
+    "PMC11709058",
+    "PMC11747632",
+    "PMC11839656",
+    "PMC11866497",
+    "PMC11940659",
+    "PMC11943667",
+    "PMC11994594",
+    "PMC12052383",
+    "PMC12305631",
+    "PMC12306318",
+    "PMC12321335",
+    "PMC12404940",
+    "PMC12418184",
+    "PMC12488968",
+    "PMC12526070",
+    "PMC12611892",
+    "PMC12725166",
+    "PMC12726261",
+    "PMC12759527",
+    "PMC12761053",
+    "PMC12762726",
+    "PMC12763510",
+    "PMC12965812",
+    "PMC12985029",
+    "PMC13056862",
+    "PMC13069175",
+    "PMC1524938",
+    "PMC1780022",
+    "PMC2117100",
+    "PMC2579905",
+    "PMC2584841",
+    "PMC2659066",
+    "PMC2882898",
+    "PMC2885312",
+    "PMC2913907",
+    "PMC3004766",
+    "PMC3049111",
+    "PMC3056436",
+    "PMC3130631",
+    "PMC3133958",
+    "PMC3167824",
+    "PMC3206413",
+    "PMC3225299",
+    "PMC3320564",
+    "PMC3335448",
+    "PMC3355468",
+    "PMC3362060",
+    "PMC3446656",
+    "PMC3491006",
+    "PMC3616215",
+    "PMC3656426",
+    "PMC3665513",
+    "PMC3695025",
+    "PMC3786463",
+    "PMC3825180",
+    "PMC3888599",
+    "PMC3968823",
+    "PMC4037310",
+    "PMC4078552",
+    "PMC4167864",
+    "PMC4266388",
+    "PMC4315444",
+    "PMC4363791",
+    "PMC4451435",
+    "PMC4453303",
+    "PMC4497726",
+    "PMC4846072",
+    "PMC4889622",
+    "PMC5289530",
+    "PMC5408452",
+    "PMC5493126",
+    "PMC5547528",
+    "PMC5647357",
+    "PMC5657086",
+    "PMC5837781",
+    "PMC5871585",
+    "PMC6032764",
+    "PMC6089204",
+    "PMC6188740",
+    "PMC6193839",
+    "PMC6225578",
+    "PMC6266893",
+    "PMC6303992",
+    "PMC6308154",
+    "PMC6351883",
+    "PMC6359596",
+    "PMC6399418",
+    "PMC6416923",
+    "PMC6464851",
+    "PMC6497785",
+    "PMC6527136",
+    "PMC6527141",
+    "PMC6555975",
+    "PMC6592407",
+    "PMC6635278",
+    "PMC6683051",
+    "PMC6699591",
+    "PMC6878603",
+    "PMC6980536",
+    "PMC6981592",
+    "PMC7036831",
+    "PMC7055745",
+    "PMC7079516",
+    "PMC7092494",
+    "PMC7116237",
+    "PMC7197501",
+    "PMC7198911",
+    "PMC7236180",
+    "PMC7357295",
+    "PMC7358077",
+    "PMC7369812",
+    "PMC7463807",
+    "PMC7508031",
+    "PMC7617045",
+    "PMC7691077",
+    "PMC7718708",
+    "PMC7719906",
+    "PMC7740839",
+    "PMC7741018",
+    "PMC7773656",
+    "PMC7794827",
+    "PMC7815450",
+    "PMC7885232",
+    "PMC8027230",
+    "PMC8055664",
+    "PMC8205209",
+    "PMC8233830",
+    "PMC8295234",
+    "PMC8295266",
+    "PMC8307148",
+    "PMC8308714",
+    "PMC8478976",
+    "PMC8637860",
+    "PMC8681447",
+    "PMC8718439",
+    "PMC8793839",
+    "PMC8984013",
+    "PMC9003762",
+    "PMC9095946",
+    "PMC9244357",
+    "PMC9301546",
+    "PMC9369066",
+    "PMC9389096",
+    "PMC9392339",
+    "PMC9436240",
+    "PMC9455017",
+    "PMC9536321",
+    "PMC9567740",
+    "PMC9582631",
+    "PMC9723844",
+    "PMC9765831",
+    "PMC9766705",
+    "PMC9860959",
+    "PMC9870626",
+    "PMC9876872",
+    "PMC9969476",
+    "PMC9987118"
+  ],
+  "active_paper_ids": [
+    "PMC10021534_physical_activity_and_functional_disability_among_older_adul",
+    "PMC10068966_aging_aerobic_exercise_and_cardiovascular_health_barriers_al",
+    "PMC10136585_perceived_physical_literacy_is_associated_with_cardiorespira",
+    "PMC10315841_bidirectional_associations_between_adiposity_and_physical_ac",
+    "PMC10498829_physical_activity_interventions_in_older_adults_with_a_cogni",
+    "PMC10503347_detailed_descriptions_of_physical_activity_patterns_among_in",
+    "PMC10594526_the_effects_of_pilates_exercise_training_combined_with_walki",
+    "PMC10673924_prospective_association_of_occupational_and_leisure_time_phy",
+    "PMC10735953_high_intensity_walking_exercise_reduces_frailty_among_prefra",
+    "PMC10737352_cardiorespiratory_fitness_is_associated_with_circadian_behav",
+    "PMC10813950_the_relationship_of_the_promis_pediatric_physical_activity_m",
+    "PMC10853417_relationship_between_addictions_and_obesity_physical_activit",
+    "PMC10860251_changes_in_physical_activity_and_sedentary_behavior_during_t",
+    "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le",
+    "PMC10891480_cardiorespiratory_fitness_and_physical_activity_in_pediatric",
+    "PMC10896057_association_between_digital_health_literacy_and_physical_act",
+    "PMC10913308_revisiting_the_physical_activity_paradox_the_role_of_cardior",
+    "PMC10943751_mhealth_intervention_including_text_messaging_and_behaviour_",
+    "PMC11228262_estimating_cardiorespiratory_fitness_in_older_adults_using_t",
+    "PMC11272887_association_of_accelerometer_measured_sedentary_time_and_phy",
+    "PMC11425455_212_multi_trajectory_analysis_of_changes_in_physical_activit",
+    "PMC11426414_aerobic_exercise_training_dose_and_cardiorespiratory_fitness",
+    "PMC11435948_longitudinal_relationships_of_physical_activity_sedentary_ti",
+    "PMC11477409_are_fibrous_cortical_defects_fcds_and_non_ossifying_fibromas",
+    "PMC11483784_the_effectiveness_of_digital_health_interventions_for_the_ma",
+    "PMC11521514_physical_activity_cardiorespiratory_fitness_and_atherosclero",
+    "PMC11521540_physical_activity_cardiorespiratory_fitness_and_atherosclero",
+    "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_",
+    "PMC11709058_unsupported_walking_with_only_half_of_the_brain_due_to_sever",
+    "PMC11747632_effects_of_an_exercise_program_with_augmented_reality_on_fun",
+    "PMC11839656_the_association_of_physical_activity_and_carotid_intima_medi",
+    "PMC11866497_impact_of_physical_activity_on_physical_function_mitochondri",
+    "PMC11940659_physical_activity_and_functional_preservation_in_older_adult",
+    "PMC11943667_stay_active_stay_healthy_a_cross_sectional_view_of_the_impac",
+    "PMC11994594_bajiquan_martial_arts_training_as_physical_activity_for_enha",
+    "PMC12052383_physical_activity_sedentary_behavior_cardiorespiratory_fitne",
+    "PMC12305631_the_effects_of_toe_only_rocker_sole_shoes_on_static_balance_",
+    "PMC12306318_association_between_e_cigarette_use_physical_activity_and_ca",
+    "PMC12404940_association_between_accelerometer_measured_physical_activity",
+    "PMC12488968_the_mediating_role_of_coping_styles_between_physical_activit",
+    "PMC12526070_eating_habits_physical_activity_body_composition_and_cardior",
+    "PMC12611892_acute_effect_of_school_based_active_breaks_on_physical_activ",
+    "PMC12725166_combined_virtual_reality_and_physical_activity_mitigates_men",
+    "PMC12726261_combined_virtual_reality_and_physical_activity_mitigates_men",
+    "PMC12759527_physical_activity_and_cognition_in_older_adults",
+    "PMC12761053_predictors_of_physical_frailty_transitions_in_chinese_older_",
+    "PMC12762726_network_analysis_of_how_different_physical_activity_domains_",
+    "PMC12763510_self_rated_health_physical_activity_measures_of_physical_fun",
+    "PMC12965812_longitudinal_tracking_of_objective_measures_of_cardiorespira",
+    "PMC12985029_graded_versus_constant_load_aerobic_exercise_in_pediatric_le",
+    "PMC13056862_effects_of_physical_activity_on_cardiorespiratory_fitness_an",
+    "PMC13069175_associations_between_the_gut_microbiota_and_physical_activit",
+    "PMC1524938_physical_activity_is_related_to_quality_of_life_in_older_adu",
+    "PMC2882898_physical_activity_and_functional_limitations_in_older_adults",
+    "PMC2885312_systematic_review_of_the_health_benefits_of_physical_activit",
+    "PMC3130631_how_many_days_of_monitoring_predict_physical_activity_and_se",
+    "PMC3206413_measuring_enjoyment_of_physical_activity_in_older_adults_inv",
+    "PMC3225299_barriers_to_physical_activity_in_older_adults_in_germany_a_c",
+    "PMC3320564_determinants_of_physical_activity_and_exercise_in_healthy_ol",
+    "PMC3355468_effects_of_physical_activity_and_inactivity_on_muscle_fatigu",
+    "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas",
+    "PMC3446656_sedentary_behavior_and_physical_activity_are_independent_pre",
+    "PMC3491006_leisure_time_physical_activity_of_moderate_to_vigorous_inten",
+    "PMC3616215_intermittent_moderate_intensity_aerobic_exercise_for_only_ei",
+    "PMC3665513_age_related_decrease_in_physical_activity_and_functional_fit",
+    "PMC3786463_a_review_of_the_effects_of_physical_activity_and_exercise_on",
+    "PMC3825180_shorter_term_aerobic_exercise_improves_brain_cognition_and_c",
+    "PMC3888599_physical_activity_is_medicine_for_older_adults",
+    "PMC4078552_walkability_is_only_part_of_the_story_walking_for_transporta",
+    "PMC4167864_physical_activity_and_cardiorespiratory_fitness_are_benefici",
+    "PMC4363791_physical_activity_enhances_metabolic_fitness_independently_o",
+    "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b",
+    "PMC4846072_twelve_weeks_of_sprint_interval_training_improves_indices_of",
+    "PMC4889622_physical_activity_in_older_age_perspectives_for_healthy_agei",
+    "PMC5289530_physical_activity_and_trajectories_of_frailty_among_older_ad",
+    "PMC5408452_the_association_between_social_support_and_physical_activity",
+    "PMC5493126_descriptive_analysis_of_preschool_physical_activity_and_sede",
+    "PMC5547528_built_environmental_correlates_of_older_adults_total_physica",
+    "PMC5647357_the_metabolic_equivalents_of_one_mile_walking_by_older_adult",
+    "PMC5657086_absolute_and_relative_reliability_of_acute_effects_of_aerobi",
+    "PMC6032764_physical_activity_to_improve_cognition_in_older_adults_can_p",
+    "PMC6089204_ten_year_change_in_sedentary_behaviour_moderate_to_vigorous_",
+    "PMC6188740_physical_activity_sedentary_behavior_and_long_term_cardiovas",
+    "PMC6225578_protocol_for_evaluating_the_impact_of_a_national_school_poli",
+    "PMC6266893_effects_of_royal_jelly_administration_on_endurance_training_",
+    "PMC6303992_validity_of_the_international_physical_activity_questionnair",
+    "PMC6308154_effects_of_aerobic_exercise_on_metabolic_syndrome_cardioresp",
+    "PMC6351883_metformin_inhibits_mitochondrial_adaptations_to_aerobic_exer",
+    "PMC6359596_promoting_stair_climbing_as_an_exercise_routine_among_health",
+    "PMC6399418_long_term_aerobic_exercise_improves_vascular_function_into_o",
+    "PMC6416923_workplace_physical_activity_program_wopap_study_protocol_a_f",
+    "PMC6497785_effect_of_aerobic_exercise_on_inflammatory_markers_in_health",
+    "PMC6555975_association_between_frailty_and_the_combination_of_physical_",
+    "PMC6592407_physical_activity_trajectories_and_mortality_population_base",
+    "PMC6635278_physical_activity_programs_for_balance_and_fall_prevention_i",
+    "PMC6683051_physical_activity_cardiorespiratory_fitness_and_the_metaboli",
+    "PMC6699591_dose_response_associations_between_accelerometry_measured_ph",
+    "PMC6878603_reduced_physical_activity_in_young_and_older_adults_metaboli",
+    "PMC6980536_accelerometer_assessed_outdoor_physical_activity_is_associat",
+    "PMC6981592_increased_physical_activity_in_preparation_for_a_women_only_",
+    "PMC7036831_a_gamification_based_intervention_program_that_encourages_ph",
+    "PMC7055745_the_effect_of_smartphone_apps_versus_supervised_exercise_on_",
+    "PMC7079516_variations_in_accelerometry_measured_physical_activity_and_s",
+    "PMC7092494_short_term_efficacy_of_reducing_screen_media_use_on_physical",
+    "PMC7198911_get_moving_increases_in_physical_activity_are_associated_wit",
+    "PMC7236180_association_between_parent_and_child_physical_activity_a_sys",
+    "PMC7369812_the_relationships_between_physical_activity_and_life_satisfa",
+    "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes",
+    "PMC7508031_preserving_mobility_in_older_adults_with_physical_frailty_an",
+    "PMC7617045_intensity_and_duration_of_physical_activity_and_cardiorespir",
+    "PMC7691077_2020_who_guidelines_on_physical_activity_and_sedentary_behav",
+    "PMC7718708_resemblance_in_accelerometer_assessed_physical_activity_in_f",
+    "PMC7719906_world_health_organization_2020_guidelines_on_physical_activi",
+    "PMC7740839_influence_of_physical_activity_energy_expenditure_on_functio",
+    "PMC7741018_high_intensity_walking_reduces_frailty_and_improves_physical",
+    "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele",
+    "PMC7794827_effects_of_individualized_aerobic_exercise_training_on_physi",
+    "PMC7815450_effects_of_activity_tracker_use_with_health_professional_sup",
+    "PMC7885232_longitudinal_association_between_leisure_time_physical_activ",
+    "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal",
+    "PMC8055664_prefrontal_high_definition_cathodal_tdcs_modulates_executive",
+    "PMC8205209_do_assessments_of_cardiorespiratory_and_muscular_fitness_inf",
+    "PMC8233830_classification_of_walking_environments_using_deep_learning_a",
+    "PMC8295266_smartphone_recorded_physical_activity_for_estimating_cardior",
+    "PMC8307148_children_of_smoking_and_non_smoking_households_perceptions_o",
+    "PMC8308714_eating_speed_physical_activity_and_cardiorespiratory_fitness",
+    "PMC8478976_vigorous_physical_activity_is_important_in_maintaining_a_fav",
+    "PMC8637860_5_years_of_exercise_intervention_did_not_benefit_cognition_c",
+    "PMC8681447_biomechanism_and_exercise_effect_of_fitness_walking_using_tw",
+    "PMC8718439_physical_activity_sport_practice_and_cardiovascular_risk_fac",
+    "PMC8793839_regulation_of_mitochondrial_dynamics_by_aerobic_exercise_in_",
+    "PMC8984013_maintenance_of_physical_activity_after_cardiac_rehabilitatio",
+    "PMC9003762_intensity_dependent_effects_of_exercise_therapy_on_walking_p",
+    "PMC9095946_whole_body_and_muscle_responses_to_aerobic_exercise_training",
+    "PMC9244357_associations_between_children_s_physical_literacy_and_well_b",
+    "PMC9301546_estimating_cardiorespiratory_fitness_without_exercise_testin",
+    "PMC9369066_effect_of_physical_activity_exercise_on_oxidative_stress_and",
+    "PMC9389096_determinants_of_physical_activity_among_6856_individuals_wit",
+    "PMC9392339_association_of_physical_activity_with_vascular_aging_in_a_po",
+    "PMC9436240_p03_06_longitudinal_associations_among_cardiorespiratory_fit",
+    "PMC9455017_practical_guidance_for_firefighter_applicants_preparing_for_",
+    "PMC9536321_effects_of_quarantine_on_physical_activity_prevalence_in_ita",
+    "PMC9567740_cardiorespiratory_fitness_and_self_reported_physical_activit",
+    "PMC9723844_role_of_physical_activity_and_cardiorespiratory_fitness_in_m",
+    "PMC9765831_effect_of_a_6_month_home_based_walking_program_on_cognitive_",
+    "PMC9766705_effects_of_a_six_month_exercise_program_on_physical_activity",
+    "PMC9860959_effect_of_physical_activity_exercise_on_cardiorespiratory_fi",
+    "PMC9870626_outdoor_walking_better_environmental_elements_of_cardiorespi",
+    "PMC9876872_effects_of_concurrent_strength_and_endurance_training_on_mea",
+    "PMC9969476_effects_of_physical_activity_on_physical_fitness_and_functio",
+    "PMC9987118_positive_impacts_of_leisure_time_physical_activity_on_cardio"
+  ],
+  "failures": [
+    {
+      "title": "Assessment of the Benefits of Adapted Physical Activity in Pediatric Hemodialysi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Optimizing a Remote-based Physical Activity Intervention for Adults With Total K",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of 24-Weeks Community-based Brisk Walking in People With Parkinson's",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synergy Between Physical Activity and Outdoor Green Environments to Reduce the I",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Contribution of the Evaluation of Body Composition by Connected Scale in the Eff",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute Cardiovascular and Neuromuscular Responses to Walking With Blood Flow Rest",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a 12-Week Recreational Football Program on Physical Activity Determin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Online Physical Activity Coaching Intervention for People With PD in Qatar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Tumour Cell Response to Acute Aerobic Exercise in Breast Cancer Survivors: Modul",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "At-home Walking Cadence Functional Assessment and Recovery Trajectory for Older ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Motor Competence and Physical Activity in Children Aged 4-6: Associations With P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u201cI Can Only Participate in Free Sports\u201d: Leisure-Time Physical Activity of Low-I",
+      "doi": "10.24834/sssf.17.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A280: Physical Activity, Social Support, and Stress Among High School Students, ",
+      "doi": "10.18122/ijpah.5.1.280.boisestate",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Only Light Physical Activity is Associated With Good Perceived Health and Fitnes",
+      "doi": "10.33607/bjshs.v5isupplement.1871",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of a 10-week aerobic exercise program on cardiorespiratory endurance ",
+      "doi": "10.15561/20755279.2026.0201",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Water-Based Aerobic Exercises on Physical Fitness in Older Adults: A ",
+      "doi": "10.1123/japa.2024-0182",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Big-Amplitude Calisthenic Group Exercises With Music on Balance, Cogn",
+      "doi": "10.1123/japa.2025-0196",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Association Between Multidimensional Frailty and Perceived Physical Activity",
+      "doi": "10.1123/japa.2025-0296",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy on Walking Ability of Electroacupuncture Therapy in Elderly Patients Wi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increasing Physical Activity Through Personalised Motivational Messaging to Impr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Goal Attainment and Physical Activity in People With Hemophilia A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral 'Breath Test' to Measure Anabolic Sensitivity to a Protein Meal Across the ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preliminary results of a randomized controlled trail: Effects of remotely superv",
+      "doi": "10.1101/2025.06.26.25330386",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Nutrition, Sleep and Physical Activity on Cognitive Function in Older ",
+      "doi": "10.1101/2025.03.14.25323203",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Walking-Only Intervention on Physical Function, Fall-Related Outcomes",
+      "doi": "10.1123/japa.2023-0183",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE EFFECT OF LOW IMPACT AEROBIC EXERCISE ON WEIGHT REDUCTION IN PROGESTIN ONLY ",
+      "doi": "10.20473/imhsj.v9i4.2025.424-433",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Variability in inter-segmental coordination of the lower limb in older adults du",
+      "doi": "10.1177/09544119251375767",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Instructor\u2019s Manual for Physical Activity Towards Health and Fitn",
+      "doi": "10.64339/usfd-ax9hhv20",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Walking Behavior Modeling in Urban Pedestrian-Only Spaces for Analysing Multiple",
+      "doi": "10.3390/buildings15213930",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Artefact Removal and Physical Activity Algorithm",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mindful Walking Program for Older African Americans",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating the Effectiveness of an Individualized Nutrition and Physical Activit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Alzheimer's Disease and Cognition Relative to APOE Genotype",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomarkers of Physical Activity/health in Children and Adolescents",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Walking in visit forty and effect on some variables device league respiratory fo",
+      "doi": "10.62540/mjss.2019.01.03.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mengeksplorasi Hubungan Antara Aerobic Exercise Dan Cardiorespiratory Fitness Pa",
+      "doi": "10.59734/ijpa.v4i1.63",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A134: The Effect of Aerobic Exercise on Cardiorespiratory Fitness in Obese Adole",
+      "doi": "10.18122/ijpah.3.3.134.boisestate",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact Of Walking And The OTAGO Exercise Program On Improving Balance Parameters",
+      "doi": "10.62591/ajpa.2023.12.01",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Association Between Physical Activity, Obesity, and Cognition in Middle-Aged",
+      "doi": "10.1123/japa.2022-0243",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessing Physical Therapists\u2019 Outdoor Walking Recommendations and Neighborhood ",
+      "doi": "10.1123/japa.2023-0404",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Art Therapy and Physical Activity in Improving Quality of Sleep",
+      "doi": "10.7860/jcdr/2024/63759.19541",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Scoping Review of Digitally Delivered Physical Activity and Exercise Programs fo",
+      "doi": "10.3390/socsci13120663",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Structured Home-based Exercise Versus Walking Advice in Claudication Patients: a",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Assess a Physical Activity Program in Children, Adolescents and Young",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise in Persons With Multiple Sclerosis With Restless Legs Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise Training in Patients With Chronic Hepatitis B and Hepatic Steat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Forward and Backward Walking Exercise on Physical and Cognitive Functions",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Physical Activity Level on Lumbar Movement Control",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Description of Physical Activity Effect on Neuromuscular Fatigue of Older People",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immigrant Girls\u2019 Experiences with Physical Activity: A Focus on Female Only Fitn",
+      "doi": "10.29173/mm14",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "&lsquo;It Was Only When I Came Here that I Learned about Walking&rsquo;: Creatin",
+      "doi": "10.33134/njmr.552",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Physical Activity, Exercise Barriers, Physical Performance, and Fa",
+      "doi": "10.1097/tgr.0000000000000386",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Higher levels of physical activity is associated with better walking ability and",
+      "doi": "10.22514/jomh.2023.028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Investigation of the Effect of 8-Week Walking Football Activity on Life Sati",
+      "doi": "10.25307/jssr.1271937",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Body Mass Index, Physical Activity Status and Sleep Duration of Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aerobic Exercises on Sex Hormones and Coagulation Factors in Postmenop",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Non-exercise Physical Activity Intervention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adapted Physical Activity for Breast Cancer HER2 Positive Patient",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility of a High-intensity Interval Training Program in Persons With Multip",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Program Implementation in Hospitalized Positive COVID-19 Older",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Construction of Physical ACtivity Enhancement Scheme (PACES) in Hemodialysis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Obesity Awareness, Physical Activity Level and Sedentary Behavior in Obese Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Walking Promotes Physical Fitness of Community-Dwelling Older Adults",
+      "doi": "10.1097/tgr.0000000000000351",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Influence of a New Intervention Model of Community-Based Physical Fitness Ex",
+      "doi": "10.1097/tgr.0000000000000355",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Concurrent Aerobic Exercise and Cognitive Training to Prevent Alzheimer's in At-",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Predicting Real World Physical Activity and Upper Limb Use After Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Physical Activity for Acute Exacerbations of COPD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Only limited correlations between patient-reported outcomes and objectively moni",
+      "doi": "10.52628/87.4.03",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bicycling Exercise Helps Maintain a Youthful Metabolic Cost of Walking in Older ",
+      "doi": "10.1123/japa.2019-0327",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "705-P: \"Going for a Walk as the Only Option\": Are Medical Diabetes Guidelines Re",
+      "doi": "10.2337/db20-705-p",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Comparison of Cardiopulmonary Exercise Testing and Field Walking Tests in Comm",
+      "doi": "10.1123/japa.2019-0387",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Physiological, Physical, and Biomechanical Demands of Walking Football: Impl",
+      "doi": "10.1123/japa.2019-0330",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beneficial Influence of Mindfulness Training Promoted by Text Messages on Self-R",
+      "doi": "10.1123/japa.2019-0002",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring Active Travel and Leisure-Time Physical Activity Relationships With Co",
+      "doi": "10.1123/japa.2019-0125",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of life\u2010behavior\u2010promoting mobilization care with walking\u2010only mobili",
+      "doi": "10.1111/jjns.12348",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sitting Time, Physical Activity, and Risk of Mortality in Adults",
+      "doi": "10.1016/j.jacc.2019.02.031",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Barriers and Motivators of Physical Activity Participation in Middle-Aged and Ol",
+      "doi": "10.1123/japa.2018-0343",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of a Physical Activity Intervention for Pre-frail Older Adults Wit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity In Gastrointestinal Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combining Plant Sterols With Walking Lowers Postprandial Triacylglycerol More Th",
+      "doi": "10.1123/ijsnem.2018-0398",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise-induced cardio-pulmonary remodelling in endurance athletes: Not only th",
+      "doi": "10.1177/2047487319868545",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Benefits of a Pole Walking Program Offered by Community Organizations on Physica",
+      "doi": "10.1123/japa.2018-0055",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association between diabetes, hypertension, activities of daily living and physi",
+      "doi": "10.1590/1980-0037.2019v21e55149",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Tracking in Paediatric Elective Tonsillectomy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of Aerobic Exercise for Adolescents With Subthreshold Mood Syndromes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Stepping up Aerobic Exercise to Improve Health Outcomes After Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Various Aerobic Exercises on Abdominal Obesity in Women With Metabol",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a 6-Week Aquatic Treadmill Exercise Program on Cardiorespiratory Fitn",
+      "doi": "10.1097/hcr.0000000000000243",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity in promoting health of the elderly",
+      "doi": "10.5114/hpc.2018.77840",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "How does academic achievement relate to cardiorespiratory fitness, self-reported",
+      "doi": "10.1136/bjsports-2016-097361",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Program in Children and Adolescents With Cancer : Assessment o",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intervention to Increase Physical Activity in Older Adults Using Citizen-science",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Neuromuscular Exercises Training on Physical Activity, Functional",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of the Aerobic Exercise Versus Exercise of Force on the Hemodynamic, Lipi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility and Impact of High-Intensity Walking Training in Frail Older Adults",
+      "doi": "10.1123/japa.2016-0305",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interval Walking Training Can Increase Physical Fitness in Middle-Aged and Older",
+      "doi": "10.1249/jes.0000000000000113",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Daily Life Physical Activity Modulates the Effects of an Exercise Program on Low",
+      "doi": "10.1519/jpt.0000000000000087",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Walking Cadence Prescription to Reach the Global Physical Activity Rec",
+      "doi": "10.1123/japa.2016-0079",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The facilitators and barriers of physical activity among Aboriginal and Torres S",
+      "doi": "10.1111/1753-6405.12701",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Systematic review of the relationships between objectively measured physical act",
+      "doi": "10.1139/apnm-2015-0663",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute effects of moderate aerobic exercise on specific aspects of executive func",
+      "doi": "10.1111/psyp.12736",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Updating the Evidence for Physical Activity: Summative Reviews of the Epidemiolo",
+      "doi": "10.1093/geront/gnw031",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic exercise ameliorates cognitive function in older adults with mild cognit",
+      "doi": "10.1136/bjsports-2015-095699",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Physical Activity on Successful Aging",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Ranolazine and Exercise on Daily Physical Activity Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DISSEMINATING A CLINICALLY EFFECTIVE PHYSICAL ACTIVITY PROGRAM TO PRESERVE MOBIL",
+      "doi": "10.14283/jfa.2016.94",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Maximal, Not Habitual, Walking Velocity is More Highly Correlated to Functional ",
+      "doi": "10.1123/japa.2015-0078",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Older Adults\u2019 Neighborhood Perceptions on Walking Behavior",
+      "doi": "10.1123/japa.2014-0278",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of a ten-week Nordic Walking exercise program on serum electrolyte concen",
+      "doi": "10.5281/zenodo.201929",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose\u2013response relationship of cardiorespiratory fitness adaptation to controlled",
+      "doi": "10.1177/2047487315582322",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Even a low-dose of moderate-to-vigorous physical activity reduces mortality by 2",
+      "doi": "10.1136/bjsports-2014-094306",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Recommendations for physical activity in older adults",
+      "doi": "10.1136/bmj.h100",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise Park Equipment for Improving Physical Function and Physical Activity Le",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Aerobic Exercise on Cognitive Function and Sleep Quality in Indivi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of endurance training only versus same-session combined endurance and st",
+      "doi": "10.1139/apnm-2014-0262",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Steps per Day, Daily Peak Stepping Cadence, and Walking Performance in Older Adu",
+      "doi": "10.1123/japa.2014-0049",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Do Older Adults\u2019 Beliefs About Their Community Mobility Predict Walking Performa",
+      "doi": "10.1123/japa.2013-0235",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Which Behaviour Change Techniques Are Most Effective at Increasing Older Adults\u2019",
+      "doi": "10.1007/s12160-014-9593-z",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relation of Childhood Physical Activity and Aerobic Fitness to Brain Functio",
+      "doi": "10.1123/pes.2013-0125",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u201cThe Only Man of Nature That Ever Appeared in the World\u201d: \u201cWalking\u201d John Stewart",
+      "doi": "10.1017/jbr.2014.54",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Implementation of precedence walking assistance mechanism in exoskeleton with on",
+      "doi": "10.1049/el.2013.3830",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low Intensity Aerobic Exercise and Oxidative Stress Markers in Older Adults",
+      "doi": "10.1123/japa.2013-0037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dual-task Performance in Young and Older Adults: Speed-Accuracy Tradeoffs in Cho",
+      "doi": "10.1123/japa.2012-0241",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Braking Force in Walking: Age-Related Differences and Improvement in Older A",
+      "doi": "10.1123/japa.2013-0001",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise in Early Subacute Stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Fitness and Physical Activity in Children",
+      "doi": "10.1123/pes.25.4.548",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Be Active Together: Supporting Physical Activity in Public Housing Communities T",
+      "doi": "10.1353/cpr.2013.0003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity in Community\u2010Dwelling Stroke Survivors and a Healthy Populatio",
+      "doi": "10.1016/j.pmrj.2013.08.593",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Older Adults Recently Discharged from the Hospital: Effect of Aerobic Interval E",
+      "doi": "10.1111/jgs.12400",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise to Improve Executive Language Function In Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mental disorder prevention and physical activity in Iranian elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Domains of physical activity and all-cause mortality: systematic review and dose",
+      "doi": "10.1093/ije/dyr112",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic fitness and its relationship to sport, exercise training and habitual ph",
+      "doi": "10.1136/bjsports-2011-090200",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparisons of leisure-time physical activity and cardiorespiratory fitness as p",
+      "doi": "10.1136/bjsm.2009.066209",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity guidelines for older adults.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise and Physical Activity for Older Adults",
+      "doi": "10.1249/mss.0b013e3181a0c95c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acute Effects of Aerobic Exercise on Cognitive Function in Older Adults",
+      "doi": "10.1093/geronb/gbp030",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Accelerometer Assessment of Physical Activity in Active, Healthy Older Adults",
+      "doi": "10.1123/japa.17.1.17",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Upper Body Aerobic Exercise on Arterial Stiffness in Older Adults",
+      "doi": "10.1123/japa.17.4.468",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The evaluation of body composition in relation to physical activity in 56\u201373 yea",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Physical Activity on Cognitive Function in Older Adults at Risk for Al",
+      "doi": "10.1001/jama.300.9.1027",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of physical activity with all-cause and cardiovascular mortality: a ",
+      "doi": "10.1097/hjr.0b013e3282f55e09",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and enhanced fitness to improve cognitive function in older pe",
+      "doi": "10.1002/14651858.cd005381.pub3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate-to-Vigorous Physical Activity From Ages 9 to 15 Years",
+      "doi": "10.1001/jama.300.3.295",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity in the United States Measured by Accelerometer",
+      "doi": "10.1249/mss.0b013e31815a51b3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Walking in Older Adults With Knee Osteoarthritis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Focusing your walking intervention\u2019s message",
+      "doi": "10.32398/cjhp.v6i1.1294",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Public Health in Older Adults",
+      "doi": "10.1161/circulationaha.107.185650",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Public Health in Older Adults",
+      "doi": "10.1249/mss.0b013e3180616aa2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ageing and physical activity: evidence to develop exercise recommendations for o",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Public Health",
+      "doi": "10.1161/circulationaha.107.185649",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Recommendations and Decreased Risk of Mortality",
+      "doi": "10.1001/archinte.167.22.2453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Affective and Self-Efficacy Responses to Acute Aerobic Exercise in Sedentary Old",
+      "doi": "10.1123/japa.15.2.123",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise Training Increases Brain Volume in Aging Humans",
+      "doi": "10.1093/gerona/61.11.1166",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Rapid Assessment of Physical Activity (RAPA) among older adults.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Aerobic Fitness, and Causality: Reflections from Complex Adap",
+      "doi": "10.1123/pes.18.2.182",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Psychological Well-Being in Advanced Age: A Meta-Analysis ",
+      "doi": "10.1037/0882-7974.20.2.272",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, APOE Genotype, and Dementia Risk: Findings from the Cardiovas",
+      "doi": "10.1093/aje/kwi092",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity enhances long-term quality of life in older adults: Efficacy, ",
+      "doi": "10.1207/s15324796abm3002_6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of overweight and obesity prevalence in school\u2010aged youth from 34 cou",
+      "doi": "10.1111/j.1467-789x.2005.00176.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adiposity as Compared with Physical Activity in Predicting Mortality among Women",
+      "doi": "10.1056/nejmoa042135",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and older adults: a review of health benefits and the effectiv",
+      "doi": "10.1080/02640410410001712421",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aging and Physical Activity on Left Ventricular Compliance",
+      "doi": "10.1161/01.cir.0000142863.71285.74",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Exercise, and Inflammatory Markers in Older Adults: Findings ",
+      "doi": "10.1111/j.1532-5415.2004.52307.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Older adult perspectives on physical activity and exercise: voices from multiple",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Only Some Are Dead Men Walking: Teaching About Race Discrimination and the Death",
+      "doi": "10.1177/0092055x0403200402",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "International Physical Activity Questionnaire: 12-Country Reliability and Validi",
+      "doi": "10.1249/01.mss.0000078924.61453.fb",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship between Physical Activity and Cognition in Children: A Meta-Ana",
+      "doi": "10.1123/pes.15.3.243",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Aerobic Exercise Training on Age-Related Changes in Insulin Sensitivit",
+      "doi": "10.2337/diabetes.52.8.1888",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Home\u2010Based Pedometer\u2010Driven Walking Program to Increase Physical Activity in O",
+      "doi": "10.1046/j.1532-5415.2003.51113.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ambulatory system for human motion analysis using a kinematic sensor: monitoring",
+      "doi": "10.1109/tbme.2003.812189",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Reduces the Risk of Subsequent Depression for Older Adults",
+      "doi": "10.1093/aje/kwf047",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Quality of Life in Older Adults",
+      "doi": "10.1093/gerona/56.suppl_2.23",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CHAMPS Physical Activity Questionnaire for Older Adults: outcomes for interventi",
+      "doi": "10.1097/00005768-200107000-00010",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Risk of Cognitive Impairment and Dementia in Elderly Perso",
+      "doi": "10.1001/archneur.58.3.498",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Prospective Study of Physical Activity and Cognitive Decline in Elderly Women",
+      "doi": "10.1001/archinte.161.14.1703",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutrition, Physical Activity, and Quality of Life in Older Adults: Summary",
+      "doi": "10.1093/gerona/56.suppl_2.89",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An evaluation of three self-report physical activity instruments for older adult",
+      "doi": "10.1097/00005768-200106000-00016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and all-cause mortality: what is the dose-response relation?",
+      "doi": "10.1097/00005768-200106001-00016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interventions to Promote Physical Activity by Older Adults",
+      "doi": "10.1093/gerona/56.suppl_2.36",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity in Aging: Changes in Patterns and Their Relationship to Health",
+      "doi": "10.1093/gerona/56.suppl_2.13",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association between Physical Activity and Markers of Inflammation in a Healthy E",
+      "doi": "10.1093/aje/153.3.242",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "All-Cause Mortality Associated With Physical Activity During Leisure Time, Work,",
+      "doi": "10.1001/archinte.160.11.1621",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regular Aerobic Exercise Prevents and Restores Age-Related Declines in Endotheli",
+      "doi": "10.1161/01.cir.102.12.1351",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Associations of Light, Moderate, and Vigorous Intensity Physical Activity with L",
+      "doi": "10.1093/oxfordjournals.aje.a010205",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in physical activity patterns in the United States, by sex and cross-sec",
+      "doi": "10.1097/00005768-200009000-00013",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Age-related decline in physical activity: a synthesis of human and animal studie",
+      "doi": "10.1097/00005768-200009000-00012",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Falls, and Fractures Among Older Adults: A Review of the Epid",
+      "doi": "10.1111/j.1532-5415.2000.tb06884.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Prevents Age-Related Impairment in Nitric Oxide Availability i",
+      "doi": "10.1161/01.cir.101.25.2896",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Functional Limitations, and Disability in Older Adults",
+      "doi": "10.1111/j.1532-5415.2000.tb02600.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise Training and Cardiorespiratory Fitness in Older Adults: A Rando",
+      "doi": "10.1123/japa.7.4.374",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ACSM Position Stand: Exercise and Physical Activity for Older Adults",
+      "doi": "10.1097/00005768-199806000-00033",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "American College of Sports Medicine Position Stand. Exercise and physical activi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship of Leisure-Time Physical Activity and Mortality",
+      "doi": "10.1001/jama.279.6.440",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity patterns associated with cardiorespiratory fitness and reduced",
+      "doi": "10.2105/ajph.88.12.1807",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Trial Comparing Aerobic Exercise and Resistance Exercise With a Hea",
+      "doi": "10.1001/jama.1997.03540250033028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Strength and Endurance Training on Gait, Balance, Fall Risk, and H",
+      "doi": "10.1093/gerona/52a.4.m218",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise and Self-Reported Sleep Quality in Elderly Individuals",
+      "doi": "10.1123/japa.3.2.120",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High versus Moderate Intensity Aerobic Exercise in Older Adults: Psychological a",
+      "doi": "10.1123/japa.2.4.293",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship between Habitual Physical Activity and Aerobic Fitness in Adolescen",
+      "doi": "10.1123/pes.6.4.315",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A survey for assessing physical activity among older adults",
+      "doi": "10.1249/00005768-199305000-00016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Endurance training does not enhance total energy expenditure in healthy elderly ",
+      "doi": "10.1152/ajpendo.1992.263.5.e950",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A physical activity questionnaire for the elderly",
+      "doi": "10.1249/00005768-199108000-00015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "After Reaching Retirement Age Physical Activity Sustains Cerebral Perfusion and ",
+      "doi": "10.1111/j.1532-5415.1990.tb03472.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, All-Cause Mortality, and Longevity of College Alumni",
+      "doi": "10.1056/nejm198603063141003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Muscle Training in the Elderly",
+      "doi": "10.1111/j.0954-6820.1986.tb08956.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u2018Only Connect \u2026 \u2019: tightrope walking and joint working in the care of the elderl",
+      "doi": "10.1332/030557386782628163",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Aerobic Walking Program to Promote Physical Fitness in Older Blind Adults",
+      "doi": "10.1177/0145482x8507900301",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anaerobic threshold alterations caused by endurance training in middle-aged men",
+      "doi": "10.1152/jappl.1979.46.6.1039",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u201cI'm not physically active \u2010 I only go for walks\u201d: Physical activity in patients",
+      "doi": "10.1002/eat.20753",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and markers of glycation in older individuals: data from a com",
+      "doi": "10.1042/cs20200255",
+      "pmid": "32356559",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensity of Physical Activity and Depressive Symptoms in College Students: Fitn",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of curcumin intake and aerobic exercise training on arterial compliance ",
+      "doi": "10.1016/j.artres.2012.09.003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Habitual physical activity and vascular aging in a young to middle-age populatio",
+      "doi": "10.1161/strokeaha.107.484949",
+      "pmid": "17656659",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Physical Activity With Aortic Stiffness in the Jackson Heart Stud",
+      "doi": "10.1093/ajh/hpaf230",
+      "pmid": "41273767",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Combination of Resistance and Aerobic Exercise on Cardiorespiratory",
+      "doi": "10.20473/spmrj.v8i1.52276",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory Kinetics: Importance of Age, Physical Activity, and Exercise M",
+      "doi": "10.5960/dzsm.2026.661",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A106: School-Based Physical Activity Interventions on Cardiorespiratory Fitness ",
+      "doi": "10.18122/ijpah.5.1.106.boisestate",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of 8-Week Inspiratory Muscle Training on Inspiratory Function, Walking A",
+      "doi": "10.32337/kacpt.2026.14.1.61",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Low-Impact Aerobic Exercise to Improve Cardiorespiratory Fitnes",
+      "doi": "10.15850/amj.v12n1.3756",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aquatic aerobic exercise and physical fitness: from scientific foundations to pr",
+      "doi": "10.12820/rbafs.30e0390i",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory Fitness, Physical Activity, Sedentary Behavior, and Diabetes R",
+      "doi": "10.1249/mss.0000000000003849",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship of Physical Activity Intensity with Cardiorespiratory Fitness a",
+      "doi": "10.29408/porkes.v8i2.30303",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Dose-Response Relationship of Aerobic Exercise on Cardiorespiratory Fitness ",
+      "doi": "10.1097/hcr.0000000000000963",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Physical Activity on Cardiorespiratory Fitness and Markers of Cardiova",
+      "doi": "10.1007/s42978-025-00343-x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of aerobic exercise and strength training programme on performance relat",
+      "doi": "10.4314/ajosi.v8i1.52",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise and Subsequent Venoconstrictive Thigh Cuffs Preserve Cardioresp",
+      "doi": "10.1249/mss.0000000000003803",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Exoskeletal Robotic Gait Training on Physical Activity and Cardioresp",
+      "doi": "10.32337/kacpt.2025.13.2.13",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Power, cardiorespiratory fitness and physical activity in young people with cere",
+      "doi": "10.1515/teb-2025-0007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Eight Weeks of Aerobic Exercise and Spirulina Supplementation on S",
+      "doi": "10.1177/10998004251340024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of strength and/or endurance training on cardiorespiratory characteristi",
+      "doi": "10.1163/17552559-00001083",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SIXMINUTE WALKING TEST: A MARKER OF OUTCOME AND PHYSICAL CAPACITY IN CARDIACREHA",
+      "doi": "10.1093/eurheartjsupp/suaf076.404",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory fitness, physical activity and sports eligibility in patients ",
+      "doi": "10.1093/eurjpc/zwaf236.102",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aerobic and Muscular Endurance Training On Physical Fitness, Physiolog",
+      "doi": "10.32628/ijsrhss252230",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring physical literacy, physical activity levels, and cardiorespiratory fit",
+      "doi": "10.26582/k.57.2.3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Integrative effects of resistance training and endurance training on mitochondri",
+      "doi": "10.1007/s00421-024-05549-5",
+      "pmid": "38981937",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Accelerometer-based sedentary time, light physical activity, and moderate-to-vig",
+      "doi": "10.1111/apha.14132",
+      "pmid": "38509836",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The impact of physical activity on physical performance, mitochondrial bioenerge",
+      "doi": "10.1101/2024.07.09.602758",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect Aerobic Exercise On Cardiorespiratory Fitness In Athlete",
+      "doi": "10.35451/jkf.v6i2.2044",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Different Intensities of Aerobic Exercise on Cardiorespiratory Fitnes",
+      "doi": "10.15758/ajk.2024.26.3.3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Exercise Training for the Aging Brain: Effective Dosing and Vascular Mec",
+      "doi": "10.1249/jes.0000000000000349",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Encouraging New Moms to Move More\u2014Are We Missing the Mark? A Systematic Review W",
+      "doi": "10.2519/jospt.2024.12666",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Could Nasal Breathing During Exercise Inhibit the Development of Cardiac Fibrosi",
+      "doi": "10.54392/ijpefs2442",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Arm-Ergometry Versus Treadmill Supervised Exercise on Cardiorespirator",
+      "doi": "10.1097/hcr.0000000000000878",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity Levels, Cardiorespiratory Fitness, and Physical Literacy in Ch",
+      "doi": "10.1097/pep.0000000000001157",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resistance Training Diminishes Mitochondrial Adaptations to Subsequent Endurance",
+      "doi": "10.1101/2023.04.06.535919",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Recess Provision With Elementary School-Aged Children\u2019s Physical ",
+      "doi": "10.1123/pes.2021-0190",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Motor Competence Profiles on Adolescents\u2019 Physical Activity and Cardio",
+      "doi": "10.1249/mss.0000000000003196",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of exercise training on cardiorespiratory fitness, quality of life and ob",
+      "doi": "10.1093/eurheartj/ehad655.2403",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Arterial Structure in 18-Year-Old Males Is Dependent on Physical Activity at 12 ",
+      "doi": "10.1123/pes.2022-0002",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE RELATIONSHIP BETWEEN SMOKING HABITS AND PHYSICAL ACTIVITY ON CARDIORESPIRATO",
+      "doi": "10.63520/pprj.v2i2.473",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preliminary Effects of Aerobic Exercise, Training Dose, and Cardiorespiratory Fi",
+      "doi": "10.1002/alz.077032",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Echocardiographic Parameters Associated With Cardiorespiratory Fitness and Physi",
+      "doi": "10.1123/jpah.2023-0100",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Between Stress Level, Sleep Quality, Physical Activity With Cardiore",
+      "doi": "10.18860/jim.v7i1.20429",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immediate Effects of Aerobic Exercise on Arterial Stiffness in a Male Population",
+      "doi": "10.12114/j.issn.1007-9572.2023.0029",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Roles of Physical Activity and Cardiorespiratory Fitness on the Relationship",
+      "doi": "10.15857/ksep.2022.00528",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ADAPTATION OF CARDIORESPIRATORY ENDURANCE IN OBESE PEOPLE BY AEROBIC EXERCISE",
+      "doi": "10.1590/1517-8692202228062022_0024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessment of Physical Activity and Cardiorespiratory Fitness in Medical Student",
+      "doi": "10.3126/medphoenix.v7i1.47202",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Developing a Home-Based Body Weight Physical Activity/Exercise Program",
+      "doi": "10.1249/fit.0000000000000746",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity on cardiorespiratory fitness and cardiovascular risk in premen",
+      "doi": "10.1097/gme.0000000000002037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of physical activity, the Mediterranean diet and sociodemographic vari",
+      "doi": "10.3233/mnm-211537",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Children\u2019s Actual and Perceived Motor Competence, Cardiorespirato",
+      "doi": "10.1249/mss.0000000000002749",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Skipping Rope Exercise, Brisk Walking Exercise, and Weight Traini",
+      "doi": "10.26911/theijmed.2021.6.4.453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Skipping Rope Exercise, Brisk Walking Exercise, and Weight Traini",
+      "doi": "10.26911/theijmed.v6i4.453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE IMPORTANCE OF CARDIORESPIRATORY FITNESS AND PHYSICAL ACTIVITY AMONG ADULTHOO",
+      "doi": "10.24193/subbeag.66(4).35",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Regular Aerobic Exercise in the Reduced Liver Function on the Impr",
+      "doi": "10.35159/kjss.2020.12.29.6.989",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory Fitness, Physical Activity, Walking Speed, Lack of Participati",
+      "doi": "10.1097/ncc.0000000000000847",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECTS OF AEROBIC EXERCISE TRAINING ON CARDIOVASCULAR AND MUSCULOSKELETAL FITNE",
+      "doi": "10.36106/gjra/9806904",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and cardiorespiratory fitness\u2014A ten\u2010year follow\u2010up",
+      "doi": "10.1111/sms.13882",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory fitness, physical activity, sedentary behavior, and circulatin",
+      "doi": "10.1111/sms.13845",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association between Self Reported Questionnaire-determined Physical Activity Lev",
+      "doi": "10.36803/ijpmr.v8i01.178",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Decreased plasma clusterin is associated with increased cardiorespiratory fitnes",
+      "doi": "10.1002/alz.045989",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Motor Competence, Physical Activity, and Fitness across Early Childhood",
+      "doi": "10.1249/mss.0000000000002388",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory Fitness and Physical Activity following Lung Transplantation: ",
+      "doi": "10.1159/000506883",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Associations Between Anthropometric Indicators in Early Life and Cardiorespirato",
+      "doi": "10.1123/jpah.2019-0527",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of cardiorespiratory fitness, physical activity level, and sedentary",
+      "doi": "10.1590/1980-0037.2020v22e60449",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Breath acetone change during aerobic exercise is moderated by cardiorespiratory ",
+      "doi": "10.1088/1752-7163/abba6c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity as an Effect Modifier of the Association Between Obesity and V",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sprint Interval Training and the School Curriculum: Benefits Upon Cardiorespirat",
+      "doi": "10.1123/pes.2018-0155",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of aerobic exercise and strengthening on the cardiorespiratory end",
+      "doi": "10.31459/turkjkin.529212",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Association Between Neighborhood Socioeconomic Deprivation, Cardiorespirator",
+      "doi": "10.1123/jpah.2019-0039",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calculation the intensity of aerobic exercise in fitness",
+      "doi": "10.31392/npu-nc.series15.2019.12(120)19.21",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association between physical activity, cardiorespiratory fitness, and body compo",
+      "doi": "10.1097/gme.0000000000001441",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Physical Activity, Exercise, and Fitness on Obesity-Related Morbidity",
+      "doi": "10.1249/jsr.0000000000000623",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P320: Validation of Smartphone-Recorded Physical Activity for Predictin",
+      "doi": "10.1161/circ.139.suppl_1.p320",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Domain-specific physical activity patterns and cardiorespiratory fitness among a",
+      "doi": "10.1093/eurpub/ckz185.639",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Achieving Canadian physical activity guidelines is associated with better vascul",
+      "doi": "10.1139/apnm-2018-0033",
+      "pmid": "29671330",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "What is the effect of aerobic exercise intensity on cardiorespiratory fitness in",
+      "doi": "10.1136/bjsports-2018-099153",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory fitness, physical activity, and indicators of adiposity in Bra",
+      "doi": "10.1515/humo-2015-0028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Higher cardiorespiratory and muscular fitness in males could not be attributed t",
+      "doi": "10.5007/1980-0037.2018v20n1p43",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise Training and Physical Activity in Patients with Heart Failure",
+      "doi": "10.34045/ssem/2018/18",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "PHYSICAL ACTIVITY, CARDIORESPIRATORY FITNESS AND METABOLIC SYNDROME IN ADOLESCEN",
+      "doi": "10.1590/1517-869220182404174502",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and cardiovascular aging: Physiological and molecular insights",
+      "doi": "10.1016/j.exger.2017.05.016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Adiponectin Levels and Cardiorespiratory Fitness in Nonoverweight and Over",
+      "doi": "10.1123/pes.2016-0162",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Latin Dance on Physical Activity, Cardiorespiratory Fitness, and Seden",
+      "doi": "10.1177/0898264317733206",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects Of 10,000 Steps Walking Program In Cardiorespiratory Endurance Of Obese ",
+      "doi": "10.36803/ijpmr.v6i02.160",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic Fitness and Moderate to Vigorous Physical Activity in Children and Adole",
+      "doi": "10.1123/pes.2017-0036",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Perceived and Actual Motor Competency on Children\u2019s Physical Activit",
+      "doi": "10.1123/jtpe.2016-0192",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Motor competence and cardiorespiratory fitness have greater influence on body fa",
+      "doi": "10.1111/sms.12850",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of school-based physical activity programmes on cardiorespiratory ",
+      "doi": "10.1136/bjsports-2017-097600",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity in Adolescent with Mental Retardation: Is Adapted Basketball T",
+      "doi": "10.1515/afmnai-2017-0018",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sitting Time, Physical Activity, and Cardiorespiratory Fitness: Cooper Center Lo",
+      "doi": "10.1123/jpah.2014-0430",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acute aerobic exercise on a task\u2010switching protocol and brain\u2010derived",
+      "doi": "10.1113/ep085682",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationships Among Goal Contents, Exercise Motivations, Physical Activity, and ",
+      "doi": "10.1177/0031512516639802",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is physical education an effective way to increase physical activity in children",
+      "doi": "10.1111/sms.12740",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity and exercise training in preventive cardiology",
+      "doi": "10.34045/ssem/2016/7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Three-month endurance training improves functional fitness and knee muscle perfo",
+      "doi": "10.3233/ies-160623",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High Levels of Physical Activity and Cardiorespiratory Fitness are Associated Wi",
+      "doi": "10.1123/jpah.2013-0062",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory fitness in 16 025 adults aged 18\u201391 years and associations wit",
+      "doi": "10.1111/sms.12608",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiorespiratory fitness in groups with different physical activity levels",
+      "doi": "10.1111/sms.12425",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Sedentary Behavior on Metabolic Syndrome Independent of Physical ",
+      "doi": "10.1123/jpah.2013-0186",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Valoraci\u00f3n del programa Escuelas Deportivas: Composici\u00f3n corporal, actividad f\u00eds",
+      "doi": "10.47197/retos.v0i27.34357",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P270: Effects of Exercise Training on Cardiorespiratory Fitness and Bio",
+      "doi": "10.1161/circ.131.suppl_1.p270",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Metabolites Related to Cardiorespiratory Fitness, Physical Activity Energy",
+      "doi": "10.1123/ijsnem.2013-0048",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Leisure-Time Physical Activity With Cardiorespiratory Fitness in ",
+      "doi": "10.1123/jpah.2012-0029",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Self-Reported and Objective Physical Activity in Postgastric Bypass Surgery, Obe",
+      "doi": "10.1123/jpah.2012-0048",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Longitudinal Association Between the Daily Step Count and the Functional Age in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship Between Physical Activity and Physical Self-Esteem in Adolescen",
+      "doi": "10.1123/pes.25.1.138",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The independent associations of sedentary behaviour and physical activity on car",
+      "doi": "10.1136/bjsports-2012-091610",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P425: Associations between Physical Activity, Cardiorespiratory Fitness",
+      "doi": "10.1161/circ.127.suppl_12.ap425",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Tracking of physical activity and cardiorespiratory fitness from childhood to ad",
+      "doi": "10.13112/pc.725",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Similar qualitative and quantitative changes of mitochondrial respiration follow",
+      "doi": "10.1152/ajpregu.00285.2011",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship Between the Change in Daily Step Count and Brachial-Ankle Wave Velo",
+      "doi": "10.3793/jaam.8.35",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Associations of Cardiorespiratory Fitness in Children and Adolescents With Physi",
+      "doi": "10.1123/jpah.8.s2.s198",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a 2\u2010year school\u2010based daily physical activity intervention on cardior",
+      "doi": "10.1111/j.1600-0838.2009.01028.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of regular aerobic exercise on endothelium\u2010dependent vasodilation and ",
+      "doi": "10.1111/j.1447-0756.2011.01582.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of a Health Promotion Program with Anti-Aging Medical Checkup and Instr",
+      "doi": "10.3793/jaam.7.73",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The relationship of cardiorespiratory fitness with some of the anthropometry cha",
+      "doi": "10.1136/bjsm.2010.078725.107",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intensity of Physical Activity, Cardiorespiratory Fitness, and Body Mass Index i",
+      "doi": "10.1123/jpah.7.1.54",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Time course and mechanisms of adaptations in cardiorespiratory fitness with endu",
+      "doi": "10.1152/japplphysiol.01152.2009",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of aerobic exercise programme on health related physical fitness componen",
+      "doi": "10.1136/bjsm.2010.078725.60",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lifetime Vigorous But Not Light-To-Moderate Habitual Physical Activity Impacts F",
+      "doi": "10.1161/hypertensionaha.109.138289",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is Fitness Level in Childhood Associated with Physical Activity Level as an Adul",
+      "doi": "10.1123/pes.21.3.329",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity, cardiorespiratory fitness and the incidence of type 2 diabete",
+      "doi": "10.1136/bjsm.2009.062117",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Skin Microvascular Reactivity in Children and Adolescents with Type 1 Diabetes i",
+      "doi": "10.1123/pes.20.4.426",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aerobic exercise training increases fitness and fat oxidation in elderly",
+      "doi": "10.1096/fasebj.22.1_supplement.685.9",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Perceived Competence and Enjoyment in Predicting Students' Physical Activity and",
+      "doi": "10.2466/pms.107.2.365-372",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Physical Activity and Weight Loss on Skeletal Muscle Mitochondria and",
+      "doi": "10.2337/db07-0141",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular Fitness and Vascular Inflammatory Markers after Acute Aerobic Exe",
+      "doi": "10.1123/ijsnem.17.2.152",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Linking Physical Activity and Aerobic Fitness: Are We Active Because We Are Fit,",
+      "doi": "10.1123/pes.18.2.173",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Fitness, and Affective Responses of Normal-Weight and Overwei",
+      "doi": "10.1123/pes.18.1.53",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Fitness, and Physical Self-Concept in Adolescent Females",
+      "doi": "10.1123/pes.18.2.240",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Theory of Planned Behavior: Predicting Physical Activity and Cardiorespirato",
+      "doi": "10.1123/jsep.27.4.456",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Health: Becoming Mainstream",
+      "doi": "10.1177/1076167503254905",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity and Physical Fitness in Children Schooled at Home and in Publi",
+      "doi": "10.1123/pes.16.4.310",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Fitness, Physical Activity, and Self-Reported Back and Neck Pain in Ele",
+      "doi": "10.1123/pes.16.2.147",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Girls\u2019 Physical Activity during High School Physical Education: Influences of Bo",
+      "doi": "10.1123/jtpe.22.4.382",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Importance of Physical Activity and Cardiorespiratory Fitness for Patients W",
+      "doi": "10.2337/diaspect.16.4.236",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increasing Children\u2019s School Time Physical Activity Using Structured Fitness Bre",
+      "doi": "10.1123/pes.15.2.156",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anthropometry, Fitness and Physical Activity of Urban and Rural South Australian",
+      "doi": "10.1123/pes.14.3.297",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Children\u2019s and Adolescents\u2019 Physical Self-Perceptions as Related to Moderate to ",
+      "doi": "10.1123/pes.14.1.97",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relation of Academic Performance to Physical Activity and Fitness in Children",
+      "doi": "10.1123/pes.13.3.225",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in Physical Fitness and Physical Activity during Puberty Do Not Predict ",
+      "doi": "10.1123/pes.12.3.232",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Measuring physical activity and energy expenditure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical Activity, Fitness, and Adiposity of Prepubertal Girls",
+      "doi": "10.1123/pes.8.3.259",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship between Cardiorespiratory Fitness, Physical Activity, and Dieta",
+      "doi": "10.1123/ijsn.4.3.289",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Physical activity, cardiorespiratory fitness, motor performance, and growth of s",
+      "doi": "10.1002/ajhb.1310050608",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC13069175": {
+      "title": "Associations Between the Gut Microbiota and Physical Activity, Sedentary Behaviour and Physical Function in Community-Dwelling Older Adults",
+      "doi": "10.1155/jare/8981398",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Journal of Aging Research",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12321335": {
+      "title": "Rest Activity Rhythms and Their Association with Cardiorespiratory Fitness and Walking Energetics in Older Adults: Study of Muscle, Mobility, and Aging",
+      "doi": "10.1249/mss.0000000000003730",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12726261": {
+      "title": "Combined Virtual Reality and Physical Activity Mitigates Mental Workload, Physical Exertion, and Simulator Sickness Compared to Virtual Reality Only in Older Adults",
+      "doi": "10.1002/alz70860_101719",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Alzheimer's & Dementia",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12725166": {
+      "title": "Combined Virtual Reality and Physical Activity Mitigates Mental Workload, Physical Exertion, and Simulator Sickness Compared to Virtual Reality Only in Older Adults",
+      "doi": "10.1002/alz70863_110518",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Alzheimer's & Dementia",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12759527": {
+      "title": "Physical Activity and Cognition in Older Adults",
+      "doi": "10.1093/geroni/igaf122.266",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11747632": {
+      "title": "Effects of an exercise program with augmented reality on functional fitness and physical activity of community-dwelling older adults",
+      "doi": "10.3389/fspor.2024.1447866",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12761053": {
+      "title": "Predictors of Physical Frailty Transitions in Chinese Older Adults: The Role of Physical Activity and Function",
+      "doi": "10.1093/geroni/igaf122.2376",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12763510": {
+      "title": "Self-rated health, physical activity, measures of physical functioning and mortality among older U.S. adults",
+      "doi": "10.1093/geroni/igaf122.4005",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12418184": {
+      "title": "Comparing Adapted Small-Sided Team Sports and Aerobic Exercise with or without Cognitive Games: Effects on Fitness and Cognition in Older Men",
+      "doi": "10.52082/jssm.2025.589",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Sports Science and Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12762726": {
+      "title": "Network Analysis of How Different Physical Activity Domains Relate to Cognition in Older Adults",
+      "doi": "10.1093/geroni/igaf122.3979",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12611892": {
+      "title": "Acute effect of school-based active breaks on physical activity level and on-task classroom behavior in primary schoolchildren",
+      "doi": "10.3389/fpubh.2025.1644819",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11940659": {
+      "title": "Physical activity and functional preservation in older adults with hip osteoarthritis: A comparative analysis of age cohorts in the SHARE study.",
+      "doi": "10.1371/journal.pone.0317578",
+      "pmid": null,
+      "year": 2025,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12404940": {
+      "title": "Association between accelerometer-measured physical activity volume and sleep duration in older adults: a cross-sectional interpretable machine learning analysis",
+      "doi": "10.3389/fpubh.2025.1635020",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11943667": {
+      "title": "Stay Active, Stay Healthy: A Cross-Sectional View of the Impact of Physical Activity Levels on Health Parameters of Older Adults Institutionalized in Nursing Homes of Barcelona",
+      "doi": "10.3390/life15030412",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Life",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12305631": {
+      "title": "The effects of toe-only rocker sole shoes on static balance and kinematics during walking in the elderly",
+      "doi": "10.5606/tftrd.2024.14876",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Turkish Journal of Physical Medicine and Rehabilitation",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11709058": {
+      "title": "Unsupported walking with only half of the brain due to severe porencephaly",
+      "doi": "10.4103/jfmpc.jfmpc_1839_23",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Family Medicine and Primary Care",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11228262": {
+      "title": "Estimating cardiorespiratory fitness in older adults using the international physical activity questionnaire",
+      "doi": "10.3389/fspor.2024.1368262",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11477409": {
+      "title": "Are Fibrous Cortical Defects (FCDs) and Non-Ossifying Fibromas (NOFs) Only Radiological Findings? The Relationship between Radiological/Clinical Findings and Physical Activity in Children and Adolescents: A Cross-Sectional Study",
+      "doi": "10.3390/jcm13195751",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10860251": {
+      "title": "Changes in physical activity and sedentary behavior during the first COVID-19 pandemic- restrictions in Germany: a nationwide survey",
+      "doi": "10.1186/s12889-024-17675-y",
+      "pmid": null,
+      "year": 2024,
+      "venue": "BMC Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10853417": {
+      "title": "Relationship between addictions and obesity, physical activity and vascular aging in young adults (EVA-Adic study): a research protocol of a cross-sectional study",
+      "doi": "10.3389/fpubh.2024.1322437",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10737352": {
+      "title": "CARDIORESPIRATORY FITNESS IS ASSOCIATED WITH CIRCADIAN BEHAVIORAL PARAMETERS OF PHYSICAL ACTIVITY IN OLDER ADULTS",
+      "doi": "10.1093/geroni/igad104.1257",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10735953": {
+      "title": "HIGH-INTENSITY WALKING EXERCISE REDUCES FRAILTY AMONG PREFRAIL AND FRAIL OLDER ADULTS",
+      "doi": "10.1093/geroni/igad104.1655",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9969476": {
+      "title": "Effects of Physical Activity on Physical Fitness and Functional Ability in Older Adults",
+      "doi": "10.1177/23337214231158476",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Gerontology and Geriatric Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10021534": {
+      "title": "Physical activity and functional disability among older adults in Ghana: The moderating role of multi-morbidity.",
+      "doi": "10.1371/journal.pgph.0001014",
+      "pmid": null,
+      "year": 2023,
+      "venue": "PLOS Global Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10068966": {
+      "title": "Aging, aerobic exercise, and cardiovascular health: Barriers, alternative strategies and future directions",
+      "doi": "10.1016/j.exger.2023.112105",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Experimental Gerontology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10673924": {
+      "title": "Prospective association of occupational and leisure-time physical activity with orthostatic blood pressure changes in older adults",
+      "doi": "10.1038/s41598-023-46947-7",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10498829": {
+      "title": "Physical activity interventions in older adults with a cognitive impairment: A critical review of reviews",
+      "doi": "10.1002/agm2.12256",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Aging Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9876872": {
+      "title": "Effects of Concurrent Strength and Endurance Training on Measures of Physical Fitness in Healthy Middle-Aged and Older Adults: A Systematic Review with Meta-Analysis",
+      "doi": "10.1007/s40279-022-01764-2",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9765831": {
+      "title": "EFFECT OF A 6-MONTH HOME-BASED WALKING PROGRAM ON COGNITIVE FITNESS IN OLDER ADULTS WITH CHRONIC KIDNEY DISEASE",
+      "doi": "10.1093/geroni/igac059.1553",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9766705": {
+      "title": "EFFECTS OF A SIX-MONTH EXERCISE PROGRAM ON PHYSICAL ACTIVITY AMONG OLDER ADULTS WITH CHRONIC CONDITIONS",
+      "doi": "10.1093/geroni/igac059.2891",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8793839": {
+      "title": "Regulation of Mitochondrial Dynamics by Aerobic Exercise in Cardiovascular Diseases",
+      "doi": "10.3389/fcvm.2021.788505",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Cardiovascular Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9536321": {
+      "title": "Effects of quarantine on Physical Activity prevalence in Italian Adults: a pilot study",
+      "doi": "10.7717/peerj.14123",
+      "pmid": null,
+      "year": 2022,
+      "venue": "PeerJ",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8637860": {
+      "title": "5 Years of Exercise Intervention Did Not Benefit Cognition Compared to the Physical Activity Guidelines in Older Adults, but Higher Cardiorespiratory Fitness Did. A Generation 100 Substudy",
+      "doi": "10.3389/fnagi.2021.742587",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8055664": {
+      "title": "Prefrontal high definition cathodal tDCS modulates executive functions only when coupled with moderate aerobic exercise in healthy persons",
+      "doi": "10.1038/s41598-021-87914-4",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8233830": {
+      "title": "Classification of Walking Environments Using Deep Learning Approach Based on Surface EMG Sensors Only",
+      "doi": "10.3390/s21124204",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Sensors",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8027230": {
+      "title": "Objectively Measured Physical Activity Increases Only in Males During a Summer Camp for Obese Children",
+      "doi": "10.3389/fspor.2021.624449",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7815450": {
+      "title": "Effects of Activity Tracker Use With Health Professional Support or Telephone Counseling on Maintenance of Physical Activity and Health Outcomes in Older Adults: Randomized Controlled Trial",
+      "doi": "10.2196/18686",
+      "pmid": null,
+      "year": 2021,
+      "venue": "JMIR mHealth and uHealth",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7719906": {
+      "title": "World Health Organization 2020 guidelines on physical activity and sedentary behaviour",
+      "doi": "10.1136/bjsports-2020-102955",
+      "pmid": null,
+      "year": 2020,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7691077": {
+      "title": "2020 WHO guidelines on physical activity and sedentary behaviour for children and adolescents aged 5\u201317 years: summary of the evidence",
+      "doi": "10.1186/s12966-020-01037-z",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7369812": {
+      "title": "The Relationships between Physical Activity and Life Satisfaction and Happiness among Young, Middle-Aged, and Older Adults",
+      "doi": "10.3390/ijerph17134817",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7357295": {
+      "title": "Aerobic exercise improves cognition and cerebrovascular regulation in older adults",
+      "doi": "10.1212/wnl.0000000000009478",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7508031": {
+      "title": "<p>Preserving Mobility in Older Adults with Physical Frailty and Sarcopenia: Opportunities, Challenges, and Recommendations for Physical Activity Interventions</p>",
+      "doi": "10.2147/cia.s253535",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Clinical Interventions in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7794827": {
+      "title": "Effects of Individualized Aerobic Exercise Training on Physical Activity and Health-Related Physical Fitness among Middle-Aged and Older Adults with Multimorbidity: A Randomized Controlled Trial",
+      "doi": "10.3390/ijerph18010101",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7741018": {
+      "title": "High Intensity Walking Reduces Frailty and Improves Physical Function Among Older Adults Living With HIV",
+      "doi": "10.1093/geroni/igaa057.568",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7740839": {
+      "title": "Influence of Physical Activity Energy Expenditure on Functional Fitness Among Older Adults",
+      "doi": "10.1093/geroni/igaa057.607",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6980536": {
+      "title": "Accelerometer-assessed outdoor physical activity is associated with meteorological conditions among older adults: Cross-sectional results from the OUTDOOR ACTIVE study.",
+      "doi": "10.1371/journal.pone.0228053",
+      "pmid": null,
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7198911": {
+      "title": "Get Moving! Increases in Physical Activity Are Associated With Increasing Functional Connectivity Trajectories in Typically Aging Adults",
+      "doi": "10.3389/fnagi.2020.00104",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6699591": {
+      "title": "Dose-response associations between accelerometry measured physical activity and sedentary time and all cause mortality: systematic review and harmonised meta-analysis",
+      "doi": "10.1136/bmj.l4570",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6527141": {
+      "title": "Physical Activity, Cognition, and Brain Outcomes: A Review of the 2018 Physical Activity Guidelines",
+      "doi": "10.1249/mss.0000000000001936",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6635278": {
+      "title": "Physical activity programs for balance and fall prevention in elderly",
+      "doi": "10.1097/md.0000000000016218",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6878603": {
+      "title": "Reduced physical activity in young and older adults: metabolic and musculoskeletal implications",
+      "doi": "10.1177/2042018819888824",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Therapeutic Advances in Endocrinology and Metabolism",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6592407": {
+      "title": "Physical activity trajectories and mortality: population based cohort study",
+      "doi": "10.1136/bmj.l2323",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6555975": {
+      "title": "Association between frailty and the combination of physical activity level and sedentary behavior in older adults",
+      "doi": "10.1186/s12889-019-7062-0",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMC Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6527136": {
+      "title": "Physical Activity, All-Cause and Cardiovascular Mortality, and Cardiovascular Disease",
+      "doi": "10.1249/mss.0000000000001939",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6497785": {
+      "title": "Effect of Aerobic Exercise on Inflammatory Markers in Healthy Middle-Aged and Older Adults: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.3389/fnagi.2019.00098",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7116237": {
+      "title": "How are we measuring physical activity and sedentary behaviour in the four home nations of the UK? A narrative review of current surveillance measures and future directions",
+      "doi": "10.1136/bjsports-2018-100355",
+      "pmid": null,
+      "year": 2019,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6981592": {
+      "title": "Increased Physical Activity in Preparation for a Women-Only Mass Participation Sport Event: A Framework for Estimating the Health Impact",
+      "doi": "10.3390/ijerph17010098",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6359596": {
+      "title": "Promoting Stair Climbing as an Exercise Routine among Healthy Older Adults Attending a Community-Based Physical Activity Program",
+      "doi": "10.3390/sports7010023",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9582631": {
+      "title": "The Physical Activity Guidelines for Americans",
+      "doi": "10.1001/jama.2018.14854",
+      "pmid": null,
+      "year": 2018,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6032764": {
+      "title": "Physical activity to improve cognition in older adults: can physical activity programs enriched with cognitive challenges enhance the effects? A systematic review and meta-analysis",
+      "doi": "10.1186/s12966-018-0697-x",
+      "pmid": null,
+      "year": 2018,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6303992": {
+      "title": "Validity of the International Physical Activity Questionnaire (IPAQ) for assessing moderate-to-vigorous physical activity and sedentary behaviour of older adults in the United Kingdom",
+      "doi": "10.1186/s12874-018-0642-3",
+      "pmid": null,
+      "year": 2018,
+      "venue": "BMC Medical Research Methodology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6308154": {
+      "title": "Effects of Aerobic Exercise on Metabolic Syndrome, Cardiorespiratory Fitness, and Symptoms in Schizophrenia Include Decreased Mortality",
+      "doi": "10.3389/fpsyt.2018.00690",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Frontiers in Psychiatry",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5871585": {
+      "title": "Variability in Individual Response to Aerobic Exercise Interventions Among Older Adults",
+      "doi": "10.1123/japa.2017-0054",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Journal of Aging and Physical Activity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6193839": {
+      "title": "Physical Activity, Cardiorespiratory Fitness, and Incident Glaucoma",
+      "doi": "10.1249/mss.0000000000001692",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5408452": {
+      "title": "The association between social support and physical activity in older adults: a systematic review",
+      "doi": "10.1186/s12966-017-0509-8",
+      "pmid": null,
+      "year": 2017,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5547528": {
+      "title": "Built environmental correlates of older adults\u2019 total physical activity and walking: a systematic review and meta-analysis",
+      "doi": "10.1186/s12966-017-0558-z",
+      "pmid": null,
+      "year": 2017,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5289530": {
+      "title": "Physical activity and trajectories of frailty among older adults: Evidence from the English Longitudinal Study of Ageing",
+      "doi": "10.1371/journal.pone.0170878",
+      "pmid": null,
+      "year": 2017,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5647357": {
+      "title": "The metabolic equivalents of one-mile walking by older adults; implications for health promotion",
+      "doi": "10.15171/hpp.2017.38",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Health Promotion Perspectives",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5657086": {
+      "title": "Absolute and relative reliability of acute effects of aerobic exercise on executive function in seniors",
+      "doi": "10.1186/s12877-017-0634-x",
+      "pmid": null,
+      "year": 2017,
+      "venue": "BMC Geriatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4889622": {
+      "title": "Physical activity in older age: perspectives for healthy ageing and frailty",
+      "doi": "10.1007/s10522-016-9641-0",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Biogerontology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5837781": {
+      "title": "The association between physical activity and risk of mortality is modulated by grip strength and cardiorespiratory fitness: evidence from 498 135 UK-Biobank participants",
+      "doi": "10.1093/eurheartj/ehw249",
+      "pmid": null,
+      "year": 2016,
+      "venue": "European Heart Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4451435": {
+      "title": "Leisure Time Physical Activity and Mortality",
+      "doi": "10.1001/jamainternmed.2015.0533",
+      "pmid": null,
+      "year": 2015,
+      "venue": "JAMA Internal Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10554155": {
+      "title": "Aerobic exercise to improve cognitive function in older people without known cognitive impairment",
+      "doi": "10.1002/14651858.cd005381.pub4",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4497726": {
+      "title": "Dose-Response of Aerobic Exercise on Cognition: A Community-Based, Pilot Randomized Controlled Trial",
+      "doi": "10.1371/journal.pone.0131647",
+      "pmid": null,
+      "year": 2015,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4266388": {
+      "title": "Effect of Structured Physical Activity on Prevention of Major Mobility Disability in Older Adults",
+      "doi": "10.1001/jama.2014.5616",
+      "pmid": null,
+      "year": 2014,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4037310": {
+      "title": "Strength and Endurance Training Prescription in Healthy and Frail Elderly",
+      "doi": "10.14336/ad.2014.0500183",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Aging and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4167864": {
+      "title": "Physical Activity and Cardiorespiratory Fitness Are Beneficial for White Matter in Low-Fit Older Adults",
+      "doi": "10.1371/journal.pone.0107413",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4453303": {
+      "title": "Barriers to and Facilitators of Physical Activity Program Use Among Older Adults",
+      "doi": "10.3121/cmr.2013.1171",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Clinical Medicine & Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4078552": {
+      "title": "Walkability is Only Part of the Story: Walking for Transportation in Stuttgart, Germany",
+      "doi": "10.3390/ijerph110605849",
+      "pmid": null,
+      "year": 2014,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3786463": {
+      "title": "A Review of the Effects of Physical Activity and Exercise on Cognitive and Brain Functions in Older Adults",
+      "doi": "10.1155/2013/657508",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of Aging Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3888599": {
+      "title": "Physical activity is medicine for older adults",
+      "doi": "10.1136/postgradmedj-2012-131366",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Postgraduate Medical Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3665513": {
+      "title": "Age-related decrease in physical activity and functional fitness among elderly men and women",
+      "doi": "10.2147/cia.s44112",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Clinical Interventions in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7197501": {
+      "title": "School-based physical activity programs for promoting physical activity and fitness in children and adolescents aged 6 to 18",
+      "doi": "10.1002/14651858.cd007651.pub2",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3825180": {
+      "title": "Shorter term aerobic exercise improves brain, cognition, and cardiovascular fitness in aging",
+      "doi": "10.3389/fnagi.2013.00075",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3335448": {
+      "title": "Total daily physical activity and the risk of AD and cognitive decline in older adults",
+      "doi": "10.1212/wnl.0b013e3182535d35",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3491006": {
+      "title": "Leisure Time Physical Activity of Moderate to Vigorous Intensity and Mortality: A Large Pooled Cohort Analysis",
+      "doi": "10.1371/journal.pmed.1001335",
+      "pmid": null,
+      "year": 2012,
+      "venue": "PLoS Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3446656": {
+      "title": "Sedentary Behavior and Physical Activity Are Independent Predictors of Successful Aging in Middle-Aged and Older Adults",
+      "doi": "10.1155/2012/190654",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Journal of Aging Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3616215": {
+      "title": "Intermittent, moderate-intensity aerobic exercise for only eight weeks reduces arterial stiffness: evaluation by measurement of stiffness parameter and pressure\u2013strain elastic modulus by use of ultrasonic echo tracking",
+      "doi": "10.1007/s10396-012-0408-1",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Journal of Medical Ultrasonics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3225299": {
+      "title": "Barriers to physical activity in older adults in Germany: a cross-sectional study",
+      "doi": "10.1186/1479-5868-8-121",
+      "pmid": null,
+      "year": 2011,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3130631": {
+      "title": "How many days of monitoring predict physical activity and sedentary behaviour in older adults?",
+      "doi": "10.1186/1479-5868-8-62",
+      "pmid": null,
+      "year": 2011,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3320564": {
+      "title": "Determinants of physical activity and exercise in healthy older adults: A systematic review",
+      "doi": "10.1186/1479-5868-8-142",
+      "pmid": null,
+      "year": 2011,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3206413": {
+      "title": "Measuring enjoyment of physical activity in older adults: invariance of the physical activity enjoyment scale (paces) across groups and time",
+      "doi": "10.1186/1479-5868-8-103",
+      "pmid": null,
+      "year": 2011,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2885312": {
+      "title": "Systematic review of the health benefits of physical activity and fitness in school-aged children and youth",
+      "doi": "10.1186/1479-5868-7-40",
+      "pmid": null,
+      "year": 2010,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2882898": {
+      "title": "Physical activity and functional limitations in older adults: a systematic review related to Canada's Physical Activity Guidelines",
+      "doi": "10.1186/1479-5868-7-38",
+      "pmid": null,
+      "year": 2010,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3049111": {
+      "title": "Aerobic Exercise Improves Cognition for Older Adults with Glucose Intolerance, A Risk Factor for Alzheimer's Disease",
+      "doi": "10.3233/jad-2010-100768",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of Alzheimer s Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3004766": {
+      "title": "Objective Light-Intensity Physical Activity Associations With Rated Health in Older Adults",
+      "doi": "10.1093/aje/kwq249",
+      "pmid": null,
+      "year": 2010,
+      "venue": "American Journal of Epidemiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3056436": {
+      "title": "Effects of Aerobic Exercise on Mild Cognitive Impairment",
+      "doi": "10.1001/archneurol.2009.307",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Archives of Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2913907": {
+      "title": "Physical Activity as a Preventative Factor for Frailty: The Health, Aging, and Body Composition Study",
+      "doi": "10.1093/gerona/gln001",
+      "pmid": null,
+      "year": 2009,
+      "venue": "The Journals of Gerontology Series A",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3133958": {
+      "title": "Physical Activity and Incidence of Atrial Fibrillation in Older Adults",
+      "doi": "10.1161/circulationaha.108.785626",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Circulation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3167824": {
+      "title": "Older Adults, Chronic Disease and Leisure-Time Physical Activity",
+      "doi": "10.1159/000141518",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Gerontology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2584841": {
+      "title": "Effects of physical activity on strength and skeletal muscle fat infiltration in older adults: a randomized controlled trial",
+      "doi": "10.1152/japplphysiol.90425.2008",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Journal of Applied Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2579905": {
+      "title": "Comparison of Combined Aerobic and High-Force Eccentric Resistance Exercise With Aerobic Exercise Only for People With Type 2 Diabetes Mellitus",
+      "doi": "10.2522/ptj.20080124",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Physical Therapy",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2117100": {
+      "title": "Regular physical activity reduces hospital admission and mortality in chronic obstructive pulmonary disease: a population based cohort study",
+      "doi": "10.1136/thx.2006.060145",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Thorax",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1524938": {
+      "title": "Physical activity is related to quality of life in older adults",
+      "doi": "10.1186/1477-7525-4-37",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Health and Quality of Life Outcomes",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6464851": {
+      "title": "Home versus center based physical activity programs in older adults",
+      "doi": "10.1002/14651858.cd004017.pub2",
+      "pmid": null,
+      "year": 2005,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1780022": {
+      "title": "Physical Activity Outcomes of CHAMPS II: A Physical Activity Promotion Program for Older Adults",
+      "doi": "10.1093/gerona/56.8.m465",
+      "pmid": null,
+      "year": 2001,
+      "venue": "The Journals of Gerontology Series A",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9392339": {
+      "title": "Association of physical activity with vascular aging in a population with intermediate cardiovascular risk, analysis by sex: MARK study.",
+      "doi": "10.1186/s13293-022-00456-w",
+      "pmid": "35987700",
+      "year": 2022,
+      "venue": "Biol Sex Differ",
+      "sources": [
+        "doaj",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC11272887": {
+      "title": "Association of Accelerometer-Measured Sedentary Time and Physical Activity with Arterial Stiffness and Vascular Aging in the General Spanish Population, Analyzed by Sex",
+      "doi": "10.31083/j.rcm2411318",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Reviews in Cardiovascular Medicine",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC9369066": {
+      "title": "Effect of Physical Activity/Exercise on Oxidative Stress and Inflammation in Muscle and Vascular Aging.",
+      "doi": "10.3390/ijms23158713",
+      "pmid": "35955849",
+      "year": 2022,
+      "venue": "Int J Mol Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC9095946": {
+      "title": "Whole-body and muscle responses to aerobic exercise training and withdrawal in ageing and COPD.",
+      "doi": "10.1183/13993003.01507-2021",
+      "pmid": "34588196",
+      "year": 2022,
+      "venue": "Eur Respir J",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC7885232": {
+      "title": "Longitudinal association between leisure-time physical activity and vascular elasticity indices.",
+      "doi": "10.1186/s12872-021-01911-z",
+      "pmid": "33593279",
+      "year": 2021,
+      "venue": "BMC Cardiovasc Disord",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC7773656": {
+      "title": "Blood Pressure Increase and Microvascular Dysfunction Accelerate Arterial Stiffening in Children: Modulation by Physical Activity",
+      "doi": "10.3389/fphys.2020.613003",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC4315444": {
+      "title": "Aerobic exercise and other healthy lifestyle factors that influence vascular aging.",
+      "doi": "10.1152/advan.00088.2014",
+      "pmid": "25434012",
+      "year": 2014,
+      "venue": "Adv Physiol Educ",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12985029": {
+      "title": "Graded Versus Constant-Load Aerobic Exercise in Pediatric Leukemia Survivors: A 12-Week RCT on Cardiorespiratory Fitness and Functional Performance",
+      "doi": "10.3390/healthcare14050608",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Healthcare",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC13056862": {
+      "title": "Effects of physical activity on cardiorespiratory fitness and vascular function in adults aged 50\u201360 years",
+      "doi": "10.3389/fpubh.2026.1800039",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11866497": {
+      "title": "Impact of physical activity on physical function, mitochondrial energetics, ROS production, and Ca2+ handling across the adult lifespan in men",
+      "doi": "10.1016/j.xcrm.2025.101968",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Cell Reports Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12965812": {
+      "title": "Longitudinal Tracking of Objective Measures of Cardiorespiratory Fitness, Body Composition, and Physical Activity in Children",
+      "doi": "10.1249/mss.0000000000003902",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11994594": {
+      "title": "Bajiquan martial arts training as physical activity for enhancing physical fitness, body composition, and perceived exercise benefits: a quasi-experimental study",
+      "doi": "10.3389/fspor.2025.1545481",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12052383": {
+      "title": "Physical activity, sedentary behavior, cardiorespiratory fitness with cardiac adiposity: A narrative review",
+      "doi": "10.1159/000544804",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Pulse",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12526070": {
+      "title": "Eating Habits, Physical Activity, Body Composition and Cardiorespiratory Fitness in University Students: A Cross- Sectional Study",
+      "doi": "10.3390/nu17193166",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12306318": {
+      "title": "Association between e-cigarette use, physical activity and cardiorespiratory fitness: protocol for a systematic review",
+      "doi": "10.1136/bmjopen-2025-101489",
+      "pmid": null,
+      "year": 2025,
+      "venue": "BMJ Open",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11839656": {
+      "title": "The association of physical activity and carotid intima-media-thickness in adolescents\u2014data of the prospective early vascular ageing-tyrol cohort study",
+      "doi": "10.3389/fped.2025.1527132",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Pediatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12488968": {
+      "title": "The mediating role of coping styles between physical activity and sense of meaning in life among Chinese college students",
+      "doi": "10.1038/s41598-025-16472-w",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11435948": {
+      "title": "Longitudinal Relationships of Physical Activity, Sedentary Time, Cardiorespiratory Fitness, and Muscular Fitness with Body Fatness in Preschoolers",
+      "doi": "10.3390/sports12090237",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Sports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11629943": {
+      "title": "Cardiorespiratory fitness response to endurance training in athletes post-COVID-19 compared to unaffected athletes",
+      "doi": "10.17159/2078-516x/2024/v36i1a18872",
+      "pmid": null,
+      "year": 2024,
+      "venue": "South African Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11521540": {
+      "title": "Physical Activity, Cardiorespiratory Fitness, and Atherosclerotic Cardiovascular Disease: Part 2",
+      "doi": "10.1159/000541166",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Pulse",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11521514": {
+      "title": "Physical Activity, Cardiorespiratory Fitness and Atherosclerotic Cardiovascular Disease: Part 1",
+      "doi": "10.1159/000541165",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Pulse",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10891480": {
+      "title": "Cardiorespiratory Fitness and Physical Activity in Pediatric Diabetes",
+      "doi": "10.1001/jamanetworkopen.2024.0235",
+      "pmid": null,
+      "year": 2024,
+      "venue": "JAMA Network Open",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11425455": {
+      "title": "212 Multi-trajectory analysis of changes in physical activity, BMI and cardiorespiratory fitness in adolescence",
+      "doi": "10.1093/eurpub/ckae114.089",
+      "pmid": null,
+      "year": 2024,
+      "venue": "European Journal of Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10878414": {
+      "title": "Comparing cardiorespiratory fitness and physical activity levels between third- and fifth-year medical students in a South African university",
+      "doi": "10.17159/2078-516x/2024/v36i1a15245",
+      "pmid": null,
+      "year": 2024,
+      "venue": "South African Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11483784": {
+      "title": "The effectiveness of digital health interventions for the maintenance of physical activity following cardiac rehabilitation: A systematic review and meta-analysis",
+      "doi": "10.1177/20552076241286641",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Digital Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10943751": {
+      "title": "mHealth intervention including text messaging and behaviour change techniques to support maintenance of physical activity after cardiac rehabilitation: A single-arm feasibility study",
+      "doi": "10.1177/20552076241239243",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Digital Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10896057": {
+      "title": "Association between digital health literacy and physical activity levels among individuals with and without long-term health conditions: Data from a cross-sectional survey of 19,231 individuals",
+      "doi": "10.1177/20552076241233158",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Digital Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11062412": {
+      "title": "Resistance training diminishes mitochondrial adaptations to subsequent endurance training in healthy untrained men",
+      "doi": "10.1113/jp284822",
+      "pmid": null,
+      "year": 2023,
+      "venue": "The Journal of Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9870626": {
+      "title": "Outdoor walking better? environmental elements of cardiorespiratory fitness training trails",
+      "doi": "10.3389/fspor.2022.1036777",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Sports and Active Living",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10594526": {
+      "title": "The Effects of Pilates Exercise Training Combined with Walking on Cardiorespiratory Fitness, Functional Capacity, and Disease Activity in Patients with Non-Radiologically Confirmed Axial Spondylitis",
+      "doi": "10.3390/jfmk8040140",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Functional Morphology and Kinesiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10592558": {
+      "title": "Thirteen-Year Associations of Occupational and Leisure-Time Physical Activity with Cardiorespiratory Fitness in CARDIA",
+      "doi": "10.1249/mss.0000000000003237",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10813950": {
+      "title": "The Relationship of the PROMIS\u00ae Pediatric Physical Activity Measure with Cardiorespiratory Fitness",
+      "doi": "10.3390/children11010022",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Children",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9860959": {
+      "title": "Effect of Physical Activity/Exercise on Cardiorespiratory Fitness in Children and Adolescents with Type 1 Diabetes: A Scoping Review",
+      "doi": "10.3390/ijerph20021407",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11426414": {
+      "title": "Aerobic Exercise, Training Dose, and Cardiorespiratory Fitness: Effects and Relationships with Resting Plasma Neurotrophic Factors in Alzheimer\u2019s Dementia",
+      "doi": "10.3390/jvd2030027",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Vascular Diseases",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10136585": {
+      "title": "Perceived Physical Literacy Is Associated with Cardiorespiratory Fitness, Body Composition and Physical Activity Levels in Secondary School Students",
+      "doi": "10.3390/children10040712",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Children",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10913308": {
+      "title": "Revisiting the physical activity paradox: the role of cardiorespiratory fitness in workers with high aerobic demands",
+      "doi": "10.1177/14034948221151137",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Scandinavian Journal of Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9987118": {
+      "title": "Positive impacts of leisure-time physical activity on cardiorespiratory fitness, co-morbidity level, cardiovascular health and quality of life among midlife adults: a cross-sectional study of a Nigerian population",
+      "doi": "10.1186/s13102-023-00622-6",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BMC Sports Science, Medicine and Rehabilitation",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10503347": {
+      "title": "Detailed descriptions of physical activity patterns among individuals with diabetes and prediabetes: the Lolland-Falster Health Study",
+      "doi": "10.1136/bmjdrc-2023-003493",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BMJ Open Diabetes Research & Care",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10315841": {
+      "title": "Bidirectional associations between adiposity and physical activity: a longitudinal study from pre-puberty to early adulthood",
+      "doi": "10.3389/fendo.2023.1135852",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Endocrinology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9301546": {
+      "title": "Estimating Cardiorespiratory Fitness Without Exercise Testing or Physical Activity Status in Healthy Adults: Regression Model Development and Validation",
+      "doi": "10.2196/34717",
+      "pmid": null,
+      "year": 2022,
+      "venue": "JMIR Public Health and Surveillance",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9723844": {
+      "title": "Role of physical activity and cardiorespiratory fitness in metabolically healthy obesity: a narrative review",
+      "doi": "10.1136/bmjsem-2022-001458",
+      "pmid": null,
+      "year": 2022,
+      "venue": "BMJ Open Sport & Exercise Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9567740": {
+      "title": "Cardiorespiratory fitness and self-reported physical activity levels of referring mental healthcare professionals, and their attitudes and referral practices related to exercise and somatic care",
+      "doi": "10.1192/j.eurpsy.2022.1592",
+      "pmid": null,
+      "year": 2022,
+      "venue": "European Psychiatry",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7617045": {
+      "title": "Intensity and Duration of Physical Activity and Cardiorespiratory Fitness",
+      "doi": "10.1542/peds.2021-056003",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Pediatrics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9455017": {
+      "title": "Practical guidance for firefighter applicants preparing for cardiorespiratory fitness testing: a secondary analysis of self-reported physical activity levels",
+      "doi": "10.7717/peerj.13832",
+      "pmid": null,
+      "year": 2022,
+      "venue": "PeerJ",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9436240": {
+      "title": "P03-06 Longitudinal associations among cardiorespiratory fitness and objectively measured moderate-to-vigorous physical activity of Finnish schoolchildren",
+      "doi": "10.1093/eurpub/ckac095.042",
+      "pmid": null,
+      "year": 2022,
+      "venue": "European Journal of Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8984013": {
+      "title": "Maintenance of physical activity after cardiac rehabilitation (FAIR): study protocol for a feasibility trial",
+      "doi": "10.1136/bmjopen-2021-060157",
+      "pmid": null,
+      "year": 2022,
+      "venue": "BMJ Open",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9244357": {
+      "title": "Associations between children\u2019s physical literacy and well-being: is physical activity a mediator?",
+      "doi": "10.1186/s12889-022-13517-x",
+      "pmid": null,
+      "year": 2022,
+      "venue": "BMC Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9389096": {
+      "title": "Determinants of physical activity among 6856 individuals with diabetes: a nationwide cross-sectional study",
+      "doi": "10.1136/bmjdrc-2022-002935",
+      "pmid": null,
+      "year": 2022,
+      "venue": "BMJ Open Diabetes Research & Care",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8307148": {
+      "title": "Children of Smoking and Non-Smoking Households\u2019 Perceptions of Physical Activity, Cardiorespiratory Fitness, and Exercise",
+      "doi": "10.3390/children8070552",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Children",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8205209": {
+      "title": "Do assessments of cardiorespiratory and muscular fitness influence subsequent reported physical activity? A randomized controlled trial",
+      "doi": "10.1186/s13102-021-00295-z",
+      "pmid": null,
+      "year": 2021,
+      "venue": "BMC Sports Science, Medicine and Rehabilitation",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9003762": {
+      "title": "Intensity-dependent effects of exercise therapy on walking performance and aerobic fitness in symptomatic patients with lower-extremity peripheral artery disease: A systematic review and meta-analysis",
+      "doi": "10.1177/1358863x211034577",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Vascular Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8295266": {
+      "title": "Smartphone-recorded physical activity for estimating cardiorespiratory fitness",
+      "doi": "10.1038/s41598-021-94164-x",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8681447": {
+      "title": "Biomechanism and exercise effect of fitness walking using twin walking sticks",
+      "doi": "10.1093/geroni/igab046.3244",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8295234": {
+      "title": "Aerobic exercise, cardiorespiratory fitness, and the human hippocampus",
+      "doi": "10.1002/hipo.23337",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Hippocampus",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8308714": {
+      "title": "Eating Speed, Physical Activity, and Cardiorespiratory Fitness Are Independent Predictors of Metabolic Syndrome in Korean University Students",
+      "doi": "10.3390/nu13072420",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8478976": {
+      "title": "Vigorous physical activity is important in maintaining a favourable health trajectory in active children: the CHAMPS Study-DK",
+      "doi": "10.1038/s41598-021-98731-0",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Scientific Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8718439": {
+      "title": "Physical Activity, Sport Practice and Cardiovascular Risk Factors in Workers From a Public Hospital: A Trajectory Analysis",
+      "doi": "10.3389/fcvm.2021.740442",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Cardiovascular Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7055745": {
+      "title": "The Effect of Smartphone Apps Versus Supervised Exercise on Physical Activity, Cardiorespiratory Fitness, and Body Composition Among Individuals With Mild-to-Moderate Mobility Disability: Randomized Controlled Trial",
+      "doi": "10.2196/14615",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JMIR mHealth and uHealth",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7463807": {
+      "title": "Aerobic Exercise-Induced Changes in Cardiorespiratory Fitness in Breast Cancer Patients Receiving Chemotherapy: A Systematic Review and Meta-Analysis",
+      "doi": "10.3390/cancers12082240",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Cancers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7036831": {
+      "title": "A Gamification-Based Intervention Program that Encourages Physical Activity Improves Cardiorespiratory Fitness of College Students: \u2018The Matrix rEFvolution Program\u2019",
+      "doi": "10.3390/ijerph17030877",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7079516": {
+      "title": "Variations in accelerometry measured physical activity and sedentary time across Europe \u2013 harmonized analyses of 47,497 children and adolescents",
+      "doi": "10.1186/s12966-020-00930-x",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7718708": {
+      "title": "Resemblance in accelerometer-assessed physical activity in families with children: the Lolland-Falster Health Study",
+      "doi": "10.1186/s12966-020-01067-7",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7236180": {
+      "title": "Association between parent and child physical activity: a systematic review",
+      "doi": "10.1186/s12966-020-00966-z",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7092494": {
+      "title": "Short-term efficacy of reducing screen media use on physical activity, sleep, and physiological stress in families with children aged 4\u201314: study protocol for the SCREENS randomized controlled trial",
+      "doi": "10.1186/s12889-020-8458-6",
+      "pmid": null,
+      "year": 2020,
+      "venue": "BMC Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6416923": {
+      "title": "\u201cWorkplace Physical Activity Program\u201d (WOPAP) study protocol: a four-arm randomized controlled trial on preventing burnout and promoting vigor",
+      "doi": "10.1186/s12889-019-6598-3",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMC Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7358077": {
+      "title": "Cardiorespiratory Fitness, Physical Activity, and Insulin Resistance in Children",
+      "doi": "10.1249/mss.0000000000002216",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Medicine & Science in Sports & Exercise",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6683051": {
+      "title": "Physical Activity, Cardiorespiratory Fitness, and the Metabolic Syndrome",
+      "doi": "10.3390/nu11071652",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6399418": {
+      "title": "Long-Term Aerobic Exercise Improves Vascular Function Into Old Age: A Systematic Review, Meta-Analysis and Meta Regression of Observational and Interventional Studies",
+      "doi": "10.3389/fphys.2019.00031",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6351883": {
+      "title": "Metformin inhibits mitochondrial adaptations to aerobic exercise training in older adults",
+      "doi": "10.1111/acel.12880",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6266893": {
+      "title": "Effects of Royal Jelly Administration on Endurance Training-Induced Mitochondrial Adaptations in Skeletal Muscle",
+      "doi": "10.3390/nu10111735",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6225578": {
+      "title": "Protocol for evaluating the impact of a national school policy on physical activity levels in Danish children and adolescents: the PHASAR study - a natural experiment",
+      "doi": "10.1186/s12889-018-6144-8",
+      "pmid": null,
+      "year": 2018,
+      "venue": "BMC Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5493126": {
+      "title": "Descriptive analysis of preschool physical activity and sedentary behaviors \u2013 a cross sectional study of 3-year-olds nested in the SKOT cohort",
+      "doi": "10.1186/s12889-017-4521-3",
+      "pmid": null,
+      "year": 2017,
+      "venue": "BMC Public Health",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4846072": {
+      "title": "Twelve Weeks of Sprint Interval Training Improves Indices of Cardiometabolic Health Similar to Traditional Endurance Training despite a Five-Fold Lower Exercise Volume and Time Commitment",
+      "doi": "10.1371/journal.pone.0154075",
+      "pmid": null,
+      "year": 2016,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6089204": {
+      "title": "Ten-year change in sedentary behaviour, moderate-to-vigorous physical activity, cardiorespiratory fitness and cardiometabolic risk: independent associations and mediation analysis",
+      "doi": "10.1136/bjsports-2016-096083",
+      "pmid": null,
+      "year": 2016,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6188740": {
+      "title": "Physical activity, sedentary behavior, and long-term cardiovascular risk in young people: A review and discussion of methodology in prospective studies",
+      "doi": "10.1016/j.jshs.2016.03.004",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Journal of Sport and Health Science",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4363791": {
+      "title": "Physical Activity Enhances Metabolic Fitness Independently of Cardiorespiratory Fitness in Marathon Runners",
+      "doi": "10.1155/2015/806418",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Disease Markers",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3968823": {
+      "title": "Markers of Human Skeletal Muscle Mitochondrial Biogenesis and Quality Control: Effects of Age and Aerobic Exercise Training",
+      "doi": "10.1093/gerona/glt107",
+      "pmid": null,
+      "year": 2013,
+      "venue": "The Journals of Gerontology Series A",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3695025": {
+      "title": "Life\u2010long aerobic exercise preserved baseline cerebral blood flow but reduced vascular reactivity to CO2",
+      "doi": "10.1002/jmri.24090",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of Magnetic Resonance Imaging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3656426": {
+      "title": "Racial differences in the response of cardiorespiratory fitness to aerobic exercise training in Caucasian and African American postmenopausal women",
+      "doi": "10.1152/japplphysiol.01077.2012",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3355468": {
+      "title": "Effects of Physical Activity and Inactivity on Muscle Fatigue",
+      "doi": "10.3389/fphys.2012.00142",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3362060": {
+      "title": "Physical Activity Is Associated with Weight Loss and Increased Cardiorespiratory Fitness in Severely Obese Men and Women Undergoing Lifestyle Treatment",
+      "doi": "10.1155/2012/810594",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Journal of Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2659066": {
+      "title": "Relationship between the intensity of physical activity, inactivity, cardiorespiratory fitness and body composition in 7\u201310-year-old Dublin children",
+      "doi": "10.1136/bjsm.2006.032045",
+      "pmid": null,
+      "year": 2007,
+      "venue": "British Journal of Sports Medicine",
+      "sources": [
+        "crossref"
+      ]
+    }
+  }
+}

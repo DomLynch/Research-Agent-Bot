@@ -1,0 +1,1536 @@
+{
+  "paper_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele",
+  "doi": "10.3389/fphys.2020.613003",
+  "extracted_at": "2026-05-05T22:04:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 37,
+    "percentage": 23,
+    "p_value": 13,
+    "mean_sd": 9,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-446",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 446,
+      "sentence": "We aimed to investigate the association of changes in body mass index (BMI), blood pressure (BP), PA behavior and retinal microvascular diameters with large artery pulse wave velocity (PWV) in prepubertal children over 4 years.",
+      "context_window": "tery pulse wave velocity (PWV) in prepubertal children over 4 years. The school-based prospective cohort study included 262 ch",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-537",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 537,
+      "sentence": "The school-based prospective cohort study included 262 children initially aged 6-8 years, assessing the above CV risk factors and retinal vessels by standardized procedures at baseline (2014) and follow-up (2018).",
+      "context_window": "pective cohort study included 262 children initially aged 6-8 years, assessing the above CV risk factors and retinal vessels by",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-770",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 770,
+      "sentence": "Children with increased systolic BP over 4 years showed higher PWV at follow-up (\u03b2 [95% CI] 0.006 [0.002 to 0.011] mmHg per unit, P = 0.002).",
+      "context_window": "ice at follow-up. Children with increased systolic BP over 4 years showed higher PWV at follow-up (\u03b2 [95% CI] 0.006 [0.002 to",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-813",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 813,
+      "sentence": "Children with increased systolic BP over 4 years showed higher PWV at follow-up (\u03b2 [95% CI] 0.006 [0.002 to 0.011] mmHg per unit, P = 0.002).",
+      "context_window": "systolic BP over 4 years showed higher PWV at follow-up (\u03b2 [95% CI] 0.006 [0.002 to 0.011] mmHg per unit, P = 0.002). In co",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-859",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 859,
+      "sentence": "Children with increased systolic BP over 4 years showed higher PWV at follow-up (\u03b2 [95% CI] 0.006 [0.002 to 0.011] mmHg per unit, P = 0.002).",
+      "context_window": "follow-up (\u03b2 [95% CI] 0.006 [0.002 to 0.011] mmHg per unit, P = 0.002). In contrast, increased vigorous PA corresponded to a lowe",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 951,
+      "sentence": "In contrast, increased vigorous PA corresponded to a lower PWV at follow-up (\u03b2 [95% CI] -0.009 [-0.018 to <0-0.001] 10 min/day per unit, P = 0.047).",
+      "context_window": "ed vigorous PA corresponded to a lower PWV at follow-up (\u03b2 [95% CI] -0.009 [-0.018 to <0-0.001] 10 min/day per unit, P = 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-1008",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1008,
+      "sentence": "In contrast, increased vigorous PA corresponded to a lower PWV at follow-up (\u03b2 [95% CI] -0.009 [-0.018 to <0-0.001] 10 min/day per unit, P = 0.047).",
+      "context_window": "\u03b2 [95% CI] -0.009 [-0.018 to <0-0.001] 10 min/day per unit, P = 0.047). Progression of retinal arteriolar narrowing and venular w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1119",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "Progression of retinal arteriolar narrowing and venular widening were linked to a higher PWV after 4 years (\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit, P = 0.003).",
+      "context_window": "wing and venular widening were linked to a higher PWV after 4 years (\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1131",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1131,
+      "sentence": "Progression of retinal arteriolar narrowing and venular widening were linked to a higher PWV after 4 years (\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit, P = 0.003).",
+      "context_window": "ular widening were linked to a higher PWV after 4 years (\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit, P = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-1188",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "Progression of retinal arteriolar narrowing and venular widening were linked to a higher PWV after 4 years (\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit, P = 0.003).",
+      "context_window": "\u03b2 [95% CI] -0.014 [-0.023 to -0.004] 0.01 changes per unit, P = 0.003). Increase in systolic BP and progression of microvascular",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1308",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1308,
+      "sentence": "Increase in systolic BP and progression of microvascular dysfunction were associated with higher PWV after 4 years.",
+      "context_window": "ovascular dysfunction were associated with higher PWV after 4 years. Children with increasing levels of vigorous PA were found",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-330",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 330,
+      "sentence": "150 min of moderate PA per week are recommended in adults ( World Health Organization, 2010 ) and attributed to a reduced risk of CV morbidity and mortality by 22% ( Lear et al., 2017 ).",
+      "context_window": "tributed to a reduced risk of CV morbidity and mortality by 22% ( Lear et al., 2017 ). However, physical inactivity is prev",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-968",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 968,
+      "sentence": "An increase in 1 kg/m 2 body mass index (BMI) accounts for 1.4 mmHg higher systolic BP in prepubertal children ( Falaschetti et al., 2010 ).",
+      "context_window": "iated CV risk factors ( Ayer et al., 2015 ). An increase in 1 kg/m 2 body mass index (BMI) accounts for 1.4 mmHg higher syst",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1012",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 mmHg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "mmHg",
+      "source_section": "introduction",
+      "source_offset": 1012,
+      "sentence": "An increase in 1 kg/m 2 body mass index (BMI) accounts for 1.4 mmHg higher systolic BP in prepubertal children ( Falaschetti et al., 2010 ).",
+      "context_window": "An increase in 1 kg/m 2 body mass index (BMI) accounts for 1.4 mmHg higher systolic BP in prepubertal children ( Falaschetti et",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1745",
+      "claim_type": "unit_value",
+      "raw_text": "1 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "introduction",
+      "source_offset": 1745,
+      "sentence": "An increase in 1 m/s pulse wave velocity (PWV) is associated with a 15% higher risk for CV mortality ( Vlachopoulos et al., 2010 ).",
+      "context_window": "risk factors ( Vlachopoulos et al., 2010 ). An increase in 1 m/s pulse wave velocity (PWV) is associated with a 15% higher r",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1798",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1798,
+      "sentence": "An increase in 1 m/s pulse wave velocity (PWV) is associated with a 15% higher risk for CV mortality ( Vlachopoulos et al., 2010 ).",
+      "context_window": "ase in 1 m/s pulse wave velocity (PWV) is associated with a 15% higher risk for CV mortality ( Vlachopoulos et al., 2010 ).",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-3827",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3827,
+      "sentence": "We aimed to investigate the association of changes in BMI, BP, PA, and CRF as well as retinal microvascular diameters with large artery PWV as outcome after 4 years of follow-up in a prospective cohort study of prepubertal children.",
+      "context_window": "rovascular diameters with large artery PWV as outcome after 4 years of follow-up in a prospective cohort study of prepubertal c",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-182",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 182,
+      "sentence": "The children were between 6-8 years old at baseline and were reexamined 4 years later in 2018.",
+      "context_window": "baseline measurements in 2014. The children were between 6-8 years old at baseline and were reexamined 4 years later in 2018.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-226",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 226,
+      "sentence": "The children were between 6-8 years old at baseline and were reexamined 4 years later in 2018.",
+      "context_window": "were between 6-8 years old at baseline and were reexamined 4 years later in 2018. The measurements took place in school settin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1182",
+      "claim_type": "percentage",
+      "raw_text": "6.3%",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1182,
+      "sentence": "The technique represents a simple and valid method ( Franssen and Imholz, 2010 ; Wassertheurer et al., 2010 ; Weiss et al., 2012 ; Elmenhorst et al., 2015 ) with good inter- and intraobserver variability (6.3% variation; Wassertheurer et al., 2010 ) to monitor PWV.",
+      "context_window": "al., 2015 ) with good inter- and intraobserver variability (6.3% variation; Wassertheurer et al., 2010 ) to monitor PWV. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-5414",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5414,
+      "sentence": "The change of the dependent variable over 4 years was calculated as the difference from baseline to follow-up.",
+      "context_window": "ameters with PWV. The change of the dependent variable over 4 years was calculated as the difference from baseline to follow-up",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-5557",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5557,
+      "sentence": "The regression models were presented in \u03b2 coefficients and its associated 95% CIs.",
+      "context_window": "models were presented in \u03b2 coefficients and its associated 95% CIs. A sample size calculation was conducted a priori based",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-5735",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5735,
+      "sentence": "A power of about 95% was estimated with a sample of 250 children ( Lona et al., 2020 ).",
+      "context_window": "al vessel diameters ( Lona et al., 2020 ). A power of about 95% was estimated with a sample of 250 children ( Lona et al.,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-56",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 56,
+      "sentence": "In total, 391 children were included at baseline aged 6-8 years and, 4 years later, 262 children were reexamined.",
+      "context_window": "In total, 391 children were included at baseline aged 6-8 years and, 4 years later, 262 children were reexamined. 50 childr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-69",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 69,
+      "sentence": "In total, 391 children were included at baseline aged 6-8 years and, 4 years later, 262 children were reexamined.",
+      "context_window": "391 children were included at baseline aged 6-8 years and, 4 years later, 262 children were reexamined. 50 children were ill o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-215",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 215,
+      "sentence": "The lost to follow-up rate accounts for 33%.",
+      "context_window": "day of examination. The lost to follow-up rate accounts for 33%. Participants demographics at baseline and follow-up are pr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-315",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 315,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "ne and follow-up are presented in Table 1 . The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-369",
+      "claim_type": "mean_sd",
+      "raw_text": "2.0 \u00b1 1.7",
+      "numeric_values": [
+        2.0,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 369,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "en at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-375",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 kg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 375,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-407",
+      "claim_type": "mean_sd",
+      "raw_text": "4.0 \u00b1 8.3",
+      "numeric_values": [
+        4.0,
+        8.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 407,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "icantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-413",
+      "claim_type": "unit_value",
+      "raw_text": "8.3 mmHg",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 413,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "y higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stage",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-438",
+      "claim_type": "mean_sd",
+      "raw_text": "1.7 \u00b1 7.6",
+      "numeric_values": [
+        1.7,
+        7.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 438,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood develo",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-444",
+      "claim_type": "unit_value",
+      "raw_text": "7.6 mmHg",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 444,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-466",
+      "claim_type": "mean_sd",
+      "raw_text": "1.8 \u00b1 1.7",
+      "numeric_values": [
+        1.8,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 466,
+      "sentence": "The children at 4 years follow-up evolved significantly higher BMI (\u0394 2.0 \u00b1 1.7 kg/m 2 ), BP (\u0394 systolic BP 4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development.",
+      "context_window": "4.0 \u00b1 8.3 mmHg; \u0394 diastolic BP 1.7 \u00b1 7.6 mmHg), and CRF (\u0394 1.8 \u00b1 1.7 stages) within childhood development. Regarding daily PA, t",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-584",
+      "claim_type": "mean_sd",
+      "raw_text": "45.1 \u00b1 83.3",
+      "numeric_values": [
+        45.1,
+        83.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 584,
+      "sentence": "Regarding daily PA, the participants were less engaged in total PA (\u0394 45.1 \u00b1 83.3 min/day) and spent more time sedentary (\u0394 32.7 \u00b1 50.3 stages) at follow-up.",
+      "context_window": "daily PA, the participants were less engaged in total PA (\u0394 45.1 \u00b1 83.3 min/day) and spent more time sedentary (\u0394 32.7 \u00b1 50.3 stage",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-638",
+      "claim_type": "mean_sd",
+      "raw_text": "32.7 \u00b1 50.3",
+      "numeric_values": [
+        32.7,
+        50.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 638,
+      "sentence": "Regarding daily PA, the participants were less engaged in total PA (\u0394 45.1 \u00b1 83.3 min/day) and spent more time sedentary (\u0394 32.7 \u00b1 50.3 stages) at follow-up.",
+      "context_window": "PA (\u0394 45.1 \u00b1 83.3 min/day) and spent more time sedentary (\u0394 32.7 \u00b1 50.3 stages) at follow-up. However, the time spent in vigorous P",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-833",
+      "claim_type": "mean_sd",
+      "raw_text": "6.3 \u00b1 8.6",
+      "numeric_values": [
+        6.3,
+        8.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 833,
+      "sentence": "In comparison to baseline, narrower CRAE (\u0394-6.3 \u00b1 8.6 \u03bcm) and no significant changes in CRVE (\u0394-0.2 \u00b1 7.9 \u03bcm) were detected at follow-up.",
+      "context_window": "55 min per day. In comparison to baseline, narrower CRAE (\u0394-6.3 \u00b1 8.6 \u03bcm) and no significant changes in CRVE (\u0394-0.2 \u00b1 7.9 \u03bcm) wer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-885",
+      "claim_type": "mean_sd",
+      "raw_text": "0.2 \u00b1 7.9",
+      "numeric_values": [
+        0.2,
+        7.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 885,
+      "sentence": "In comparison to baseline, narrower CRAE (\u0394-6.3 \u00b1 8.6 \u03bcm) and no significant changes in CRVE (\u0394-0.2 \u00b1 7.9 \u03bcm) were detected at follow-up.",
+      "context_window": "CRAE (\u0394-6.3 \u00b1 8.6 \u03bcm) and no significant changes in CRVE (\u0394-0.2 \u00b1 7.9 \u03bcm) were detected at follow-up. A mean PWV of 4.7 \u00b1 0.3 m/s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-msd-941",
+      "claim_type": "mean_sd",
+      "raw_text": "4.7 \u00b1 0.3",
+      "numeric_values": [
+        4.7,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 941,
+      "sentence": "A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years.",
+      "context_window": "(\u0394-0.2 \u00b1 7.9 \u03bcm) were detected at follow-up. A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years. Population cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-947",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 m/s",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 947,
+      "sentence": "A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years.",
+      "context_window": "2 \u00b1 7.9 \u03bcm) were detected at follow-up. A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years. Population charact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-985",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 985,
+      "sentence": "A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years.",
+      "context_window": ". A mean PWV of 4.7 \u00b1 0.3 m/s was observed at the age of 10-12 years. Population characteristics. Table 2 presents the associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1115",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1115,
+      "sentence": "Table 2 presents the association of changes in BMI, BP, and retinal vessel diameters over 4 years with arterial stiffness at follow-up.",
+      "context_window": "on of changes in BMI, BP, and retinal vessel diameters over 4 years with arterial stiffness at follow-up. Increases in BMI over",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1183",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1183,
+      "sentence": "Increases in BMI over 4 years were not significantly related to a higher PWV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860).",
+      "context_window": "with arterial stiffness at follow-up. Increases in BMI over 4 years were not significantly related to a higher PWV at follow-up",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1255",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1255,
+      "sentence": "Increases in BMI over 4 years were not significantly related to a higher PWV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860).",
+      "context_window": "not significantly related to a higher PWV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P =",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1295",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1295,
+      "sentence": "Increases in BMI over 4 years were not significantly related to a higher PWV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860).",
+      "context_window": "WV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860). The comparison of weight categori",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-1314",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.860",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1314,
+      "sentence": "Increases in BMI over 4 years were not significantly related to a higher PWV at follow-up (\u03b2 [95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860).",
+      "context_window": "[95% CI] 0.002 [-0.019 to 0.023] m/s per 1 kg/m 2 increase, P = 0.860). The comparison of weight categories also revealed little",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1484",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1484,
+      "sentence": "The comparison of weight categories also revealed little evidence ( p -value of an independent t -test: 0.29) that children with overweight or obesity (mean [95% CI] 4.72, [4.6-4.8] m/s) at baseline had a higher PWV at follow-up compared to their lean peers (mean [95% CI] 4.7 [4.6-4.7] m/s; Supplementary Figure 1 ).",
+      "context_window": "test: 0.29) that children with overweight or obesity (mean [95% CI] 4.72, [4.6-4.8] m/s) at baseline had a higher PWV at fo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1591",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1591,
+      "sentence": "The comparison of weight categories also revealed little evidence ( p -value of an independent t -test: 0.29) that children with overweight or obesity (mean [95% CI] 4.72, [4.6-4.8] m/s) at baseline had a higher PWV at follow-up compared to their lean peers (mean [95% CI] 4.7 [4.6-4.7] m/s; Supplementary Figure 1 ).",
+      "context_window": "higher PWV at follow-up compared to their lean peers (mean [95% CI] 4.7 [4.6-4.7] m/s; Supplementary Figure 1 ). Increase i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1714",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1714,
+      "sentence": "Increase in systolic BP was significantly related to a higher PWV (\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.002) at follow-up.",
+      "context_window": "n systolic BP was significantly related to a higher PWV (\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.0",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1753",
+      "claim_type": "unit_value",
+      "raw_text": "1 mmHg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 1753,
+      "sentence": "Increase in systolic BP was significantly related to a higher PWV (\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.002) at follow-up.",
+      "context_window": "to a higher PWV (\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.002) at follow-up. A 0.01 unit decrease of",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-1770",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1770,
+      "sentence": "Increase in systolic BP was significantly related to a higher PWV (\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.002) at follow-up.",
+      "context_window": "(\u03b2 [95% CI] 0.006 [0.002 to 0.011] m/s per 1 mmHg increase, P = 0.002) at follow-up. A 0.01 unit decrease of retinal AVR over 4 y",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1836",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1836,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "002) at follow-up. A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-1880",
+      "claim_type": "unit_value",
+      "raw_text": "0.014 m/s",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1880,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "etinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-1894",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1894,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "r 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-1958",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1958,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-2019",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2019,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "= 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-2077",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2077,
+      "sentence": "A 0.01 unit decrease of retinal AVR over 4 years was associated with a higher PWV by 0.014 m/s (\u03b2 [95% CI] 0.014 [-0.023 to -0.004] per 0.01 unit decrease in AVR, P = 0.003), reflected by microvascular narrowing of CRAE (\u03b2 [95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007).",
+      "context_window": "[95% CI] -0.055 [-0.094 to -0.015] m/s per 10 \u03bcm decrease, P = 0.007). Association of changes in body mass index, blood pressur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-2397",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2397,
+      "sentence": "In contrast, increase of time spent with vigorous PA was associated with decreased PWV (\u03b2 [95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0.010).",
+      "context_window": "pent with vigorous PA was associated with decreased PWV (\u03b2 [95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-2457",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2457,
+      "sentence": "In contrast, increase of time spent with vigorous PA was associated with decreased PWV (\u03b2 [95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0.010).",
+      "context_window": "95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-2502",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2502,
+      "sentence": "In contrast, increase of time spent with vigorous PA was associated with decreased PWV (\u03b2 [95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0.010).",
+      "context_window": "min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-2560",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2560,
+      "sentence": "In contrast, increase of time spent with vigorous PA was associated with decreased PWV (\u03b2 [95% CI] -0.009 [-0.018 to <-0.001] m/s per 10 min increase, P = 0.047), independent of BP and weight (\u03b2 [95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0.010).",
+      "context_window": "[95% CI] -0.021[-0.021 to -0.003] m/s per 10 min increase, P = 0.010). However, increase in CRF levels over 4 years did not corr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-2609",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2609,
+      "sentence": "However, increase in CRF levels over 4 years did not correlate with lower PWV (\u03b2 [95% CI] 0.005 [-0.017 to 0.027] m/s per 1 stage increase, P = 0.665) at follow-up.",
+      "context_window": "increase, P = 0.010). However, increase in CRF levels over 4 years did not correlate with lower PWV (\u03b2 [95% CI] 0.005 [-0.017",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-2654",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2654,
+      "sentence": "However, increase in CRF levels over 4 years did not correlate with lower PWV (\u03b2 [95% CI] 0.005 [-0.017 to 0.027] m/s per 1 stage increase, P = 0.665) at follow-up.",
+      "context_window": "RF levels over 4 years did not correlate with lower PWV (\u03b2 [95% CI] 0.005 [-0.017 to 0.027] m/s per 1 stage increase, P = 0",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-2712",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.665",
+      "numeric_values": [
+        0.665
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2712,
+      "sentence": "However, increase in CRF levels over 4 years did not correlate with lower PWV (\u03b2 [95% CI] 0.005 [-0.017 to 0.027] m/s per 1 stage increase, P = 0.665) at follow-up.",
+      "context_window": "[95% CI] 0.005 [-0.017 to 0.027] m/s per 1 stage increase, P = 0.665) at follow-up. Interestingly, the subgroup analysis of chil",
+      "claim_role": "duration",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-n-2834",
+      "claim_type": "sample_size",
+      "raw_text": "n = 62",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2834,
+      "sentence": "Interestingly, the subgroup analysis of children with elevated or high systolic BP at baseline ( n = 62) revealed a significant lower PWV at follow-up in those children who increased their total PA (\u03b2 [95% CI] -0.010 [-0.021 to -<0.001] m/s per 10 min increase, P = 0.048) and not vigorous PA.",
+      "context_window": "of children with elevated or high systolic BP at baseline ( n = 62) revealed a significant lower PWV at follow-up in those chi",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-2939",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2939,
+      "sentence": "Interestingly, the subgroup analysis of children with elevated or high systolic BP at baseline ( n = 62) revealed a significant lower PWV at follow-up in those children who increased their total PA (\u03b2 [95% CI] -0.010 [-0.021 to -<0.001] m/s per 10 min increase, P = 0.048) and not vigorous PA.",
+      "context_window": "ollow-up in those children who increased their total PA (\u03b2 [95% CI] -0.010 [-0.021 to -<0.001] m/s per 10 min increase, P =",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-2999",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2999,
+      "sentence": "Interestingly, the subgroup analysis of children with elevated or high systolic BP at baseline ( n = 62) revealed a significant lower PWV at follow-up in those children who increased their total PA (\u03b2 [95% CI] -0.010 [-0.021 to -<0.001] m/s per 10 min increase, P = 0.048) and not vigorous PA.",
+      "context_window": "95% CI] -0.010 [-0.021 to -<0.001] m/s per 10 min increase, P = 0.048) and not vigorous PA. No association between increases in t",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-3080",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3080,
+      "sentence": "No association between increases in total PA (\u03b2 [95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0.843) and PWV at follow-up was found in children with overweight or obesity.",
+      "context_window": "gorous PA. No association between increases in total PA (\u03b2 [95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P =",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-3139",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.910",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3139,
+      "sentence": "No association between increases in total PA (\u03b2 [95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0.843) and PWV at follow-up was found in children with overweight or obesity.",
+      "context_window": "[95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s pe",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-3169",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3169,
+      "sentence": "No association between increases in total PA (\u03b2 [95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0.843) and PWV at follow-up was found in children with overweight or obesity.",
+      "context_window": "001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-p-3227",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.843",
+      "numeric_values": [
+        0.843
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3227,
+      "sentence": "No association between increases in total PA (\u03b2 [95% CI] <-0.001 [-0.001 to 0.001] m/s per 10 min increase, P = 0.910) or vigorous PA (\u03b2 [95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0.843) and PWV at follow-up was found in children with overweight or obesity.",
+      "context_window": "[95% CI] -0.002 [-0.002 to 0.001] m/s per 10 min increase, P = 0.843) and PWV at follow-up was found in children with overweight",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-35",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 35,
+      "sentence": "We investigated the association of 4 years changes in BMI, BP, PA behavior and CRF as well as retinal microvascular diameters with large artery PWV at follow-up in 262 prepubertal children.",
+      "context_window": "We investigated the association of 4 years changes in BMI, BP, PA behavior and CRF as well as retinal",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-306",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 306,
+      "sentence": "A lower AVR over 4 years, reflected by retinal arteriolar narrowing was related to a higher PWV.",
+      "context_window": "s associated with higher PWV at follow-up. A lower AVR over 4 years, reflected by retinal arteriolar narrowing was related to a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 431,
+      "sentence": "In contrast, an increase in vigorous PA over 4 years contributed to a favorably lower PWV at follow-up.",
+      "context_window": "a higher PWV. In contrast, an increase in vigorous PA over 4 years contributed to a favorably lower PWV at follow-up. The res",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-2091",
+      "claim_type": "unit_value",
+      "raw_text": "9 years",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2091,
+      "sentence": "In 9 years old children, body fat but not BMI was related to increased arterial stiffness in mid-adolescence ( Dangardt et al., 2019 ).",
+      "context_window": "ssociation between BMI at baseline and PWV at follow-up. In 9 years old children, body fat but not BMI was related to increased",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-3010",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3010,
+      "sentence": "With respect to the cross-talk between the macro- and microvascular beds, narrowing of CRAE and widening of CRVE over 4 years, resulting in an unfavorable lower AVR, were related to a higher PWV at follow-up.",
+      "context_window": "ovascular beds, narrowing of CRAE and widening of CRVE over 4 years, resulting in an unfavorable lower AVR, were related to a h",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-4372",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4372,
+      "sentence": "On the other hand, increase in vigorous PA over 4 years was related to lower arterial stiffness at follow-up independent of weight and blood pressure.",
+      "context_window": "childhood. On the other hand, increase in vigorous PA over 4 years was related to lower arterial stiffness at follow-up indepe",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-6133",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6133,
+      "sentence": "Heritability might explain the lack of association between CRF and arterial stiffness over 4 years and is supported by the findings of the large Amsterdam Growth and Health Longitudinal Study.",
+      "context_window": "lack of association between CRF and arterial stiffness over 4 years and is supported by the findings of the large Amsterdam Gro",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-6310",
+      "claim_type": "unit_value",
+      "raw_text": "36 years",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6310,
+      "sentence": "The study investigated whether CRF from adolescence to young adulthood (13-36 years) determined arterial stiffness in 36 years old individuals ( Ferreira et al., 2012 ).",
+      "context_window": "tigated whether CRF from adolescence to young adulthood (13-36 years) determined arterial stiffness in 36 years old individuals",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-6353",
+      "claim_type": "unit_value",
+      "raw_text": "36 years",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 6353,
+      "sentence": "The study investigated whether CRF from adolescence to young adulthood (13-36 years) determined arterial stiffness in 36 years old individuals ( Ferreira et al., 2012 ).",
+      "context_window": "ng adulthood (13-36 years) determined arterial stiffness in 36 years old individuals ( Ferreira et al., 2012 ). Significant diff",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-6627",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6627,
+      "sentence": "33% of the included participants did not participate in the follow-up measurements due to illness at the day of examination, relocation or personal reasons.",
+      "context_window": "ira et al., 2012 ). Some limitations need to be addressed. 33% of the included participants did not participate in the fol",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-u-7055",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7055,
+      "sentence": "PWV was only assessed at follow-up and in children age 10-12 years and, therefore, adverse causality cannot be ruled out.",
+      "context_window": ". PWV was only assessed at follow-up and in children age 10-12 years and, therefore, adverse causality cannot be ruled out. Furt",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-pct-8251",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8251,
+      "sentence": "Nevertheless, the chosen method allowed to measure a large sample size and we achieved a relatively high response rate of 80% ( n = 235).",
+      "context_window": "ple size and we achieved a relatively high response rate of 80% ( n = 235). Two retinal vessel images of each eye were semi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7773656_blood_pressure_increase_and_microvascular_dysfunction_accele-n-8257",
+      "claim_type": "sample_size",
+      "raw_text": "n = 235",
+      "numeric_values": [
+        235.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8257,
+      "sentence": "Nevertheless, the chosen method allowed to measure a large sample size and we achieved a relatively high response rate of 80% ( n = 235).",
+      "context_window": "ze and we achieved a relatively high response rate of 80% ( n = 235). Two retinal vessel images of each eye were semi-automatic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

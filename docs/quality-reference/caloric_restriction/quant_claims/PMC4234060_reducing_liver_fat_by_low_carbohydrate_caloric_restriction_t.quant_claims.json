@@ -1,0 +1,1222 @@
+{
+  "paper_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t",
+  "doi": "10.3390/jcm3031050",
+  "extracted_at": "2026-05-05T22:17:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 24,
+    "unit_value": 22,
+    "p_value": 19,
+    "sample_size": 1,
+    "mean_sd": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-623",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 623,
+      "sentence": "Methods: eight non-diabetic obese adults were restricted for daily energy intake (800 kcal) and low carbohydrate (<10%) for 8 weeks.",
+      "context_window": "d for daily energy intake (800 kcal) and low carbohydrate (<10%) for 8 weeks. Body compositions, liver fat and hepatic gluc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-632",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 632,
+      "sentence": "Methods: eight non-diabetic obese adults were restricted for daily energy intake (800 kcal) and low carbohydrate (<10%) for 8 weeks.",
+      "context_window": "ly energy intake (800 kcal) and low carbohydrate (<10%) for 8 weeks. Body compositions, liver fat and hepatic glucose productio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-858",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 858,
+      "sentence": "Results: the caloric restriction reduced liver fat content by 2/3 ( p = 0.004).",
+      "context_window": "the caloric restriction reduced liver fat content by 2/3 ( p = 0.004). Abdominal subcutaneous and visceral fat, body weight, BMI",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1046,
+      "sentence": "Abdominal subcutaneous and visceral fat, body weight, BMI, waist circumference and fasting plasma triglyceride and free fatty acid concentrations all significantly decreased ( p < 0.05).",
+      "context_window": "ree fatty acid concentrations all significantly decreased ( p < 0.05). The suppression of post-load HGP was improved by 22% ( p",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-1106",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1106,
+      "sentence": "The suppression of post-load HGP was improved by 22% ( p = 0.002) whereas glucose disposal was not affected ( p = 0.3).",
+      "context_window": "p < 0.05). The suppression of post-load HGP was improved by 22% ( p = 0.002) whereas glucose disposal was not affected ( p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "The suppression of post-load HGP was improved by 22% ( p = 0.002) whereas glucose disposal was not affected ( p = 0.3).",
+      "context_window": "05). The suppression of post-load HGP was improved by 22% ( p = 0.002) whereas glucose disposal was not affected ( p = 0.3). Fast",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1167,
+      "sentence": "The suppression of post-load HGP was improved by 22% ( p = 0.002) whereas glucose disposal was not affected ( p = 0.3).",
+      "context_window": "2% ( p = 0.002) whereas glucose disposal was not affected ( p = 0.3). Fasting glucose remained unchanged and the changes in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1329",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1329,
+      "sentence": "Fasting glucose remained unchanged and the changes in the 2-hour plasma glucose and insulin concentration were modest and statistically insignificant ( p > 0.05).",
+      "context_window": "concentration were modest and statistically insignificant ( p > 0.05). Liver fat is the only independent variable highly correla",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-39",
+      "claim_type": "unit_value",
+      "raw_text": "52 years",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 39,
+      "sentence": "Eight participants (3 men, 5 women, 21-52 years old, BMI 32 kg/m 2 ) participated the study at the Department of Endocrinology and Metabolism, Shanghai Jiaotong University Affiliated Sixth People\u2019s Hospital.",
+      "context_window": "Eight participants (3 men, 5 women, 21-52 years old, BMI 32 kg/m 2 ) participated the study at the Departme",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-57",
+      "claim_type": "unit_value",
+      "raw_text": "32 kg",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 57,
+      "sentence": "Eight participants (3 men, 5 women, 21-52 years old, BMI 32 kg/m 2 ) participated the study at the Department of Endocrinology and Metabolism, Shanghai Jiaotong University Affiliated Sixth People\u2019s Hospital.",
+      "context_window": "Eight participants (3 men, 5 women, 21-52 years old, BMI 32 kg/m 2 ) participated the study at the Department of Endocrino",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-366",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 366,
+      "sentence": "Individuals who are obese (BMI >30 kg/m 2 ), non-diabetic with a liver fat content of >5.6%, with or without impaired fasting glucose or impaired glucose tolerance were selected to participate in this study.",
+      "context_window": "ntent measurements (below). Individuals who are obese (BMI >30 kg/m 2 ), non-diabetic with a liver fat content of >5.6%, with",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-421",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 421,
+      "sentence": "Individuals who are obese (BMI >30 kg/m 2 ), non-diabetic with a liver fat content of >5.6%, with or without impaired fasting glucose or impaired glucose tolerance were selected to participate in this study.",
+      "context_window": "BMI >30 kg/m 2 ), non-diabetic with a liver fat content of >5.6%, with or without impaired fasting glucose or impaired gluco",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-699",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 699,
+      "sentence": "Exclusion criteria include women in pregnancy or to-be-pregnant, in lactation or post-menopausal, in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hypertension history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or chronic liver, kidney or gastrointestinal or other organ diseases.",
+      "context_window": "in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the pas",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-769",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 769,
+      "sentence": "Exclusion criteria include women in pregnancy or to-be-pregnant, in lactation or post-menopausal, in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hypertension history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or chronic liver, kidney or gastrointestinal or other organ diseases.",
+      "context_window": "on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 mon",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-832",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "methods",
+      "source_offset": 832,
+      "sentence": "Exclusion criteria include women in pregnancy or to-be-pregnant, in lactation or post-menopausal, in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hypertension history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or chronic liver, kidney or gastrointestinal or other organ diseases.",
+      "context_window": "onths, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hyperten",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-964",
+      "claim_type": "unit_value",
+      "raw_text": "150 mm",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 964,
+      "sentence": "Exclusion criteria include women in pregnancy or to-be-pregnant, in lactation or post-menopausal, in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hypertension history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or chronic liver, kidney or gastrointestinal or other organ diseases.",
+      "context_window": "history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chr",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-992",
+      "claim_type": "unit_value",
+      "raw_text": "90 mm",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 992,
+      "sentence": "Exclusion criteria include women in pregnancy or to-be-pregnant, in lactation or post-menopausal, in use of any prescription medications within the previous 2 months, on weight loss programs by dieting or pills during the past 6 months, consuming alcohol of >20 g a day, tobacco use within 6 month, with cardiovascular or endocrine disease history, hypertension history or current elevated blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or chronic liver, kidney or gastrointestinal or other organ diseases.",
+      "context_window": "blood pressure (systolic blood \u2265150 mm Hg, diastolic blood \u226590 mm Hg), with diabetes, acute or chronic infections, acute or c",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-2010",
+      "claim_type": "unit_value",
+      "raw_text": "200 mL",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2010,
+      "sentence": "The daily meals were as follows: a cup of soybean milk (200 mL) and a boiled egg at breakfast; a nutrition bar (106 kcal: 2.8 g carbohydrate, 11.2 g protein, 5.6 g fat; Nutriease Health Technology Co., Ltd., Hangzhou, China), non-starch vegetables (<200 kcal), and 50 g protein (beef, lean pork, skinned chicken, fish) for lunch and dinner.",
+      "context_window": "y). The daily meals were as follows: a cup of soybean milk (200 mL) and a boiled egg at breakfast; a nutrition bar (106 kcal:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-4116",
+      "claim_type": "unit_value",
+      "raw_text": "8 mm",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4116,
+      "sentence": "Breath-hold images were centered on the L4-L5 intervertebral disc using standard localizer images with the following parameters: TR 4 ms, TE 2 ms, number of slices 12, slice thickness 8 mm, image matrix 256 \u00d7 256, and field-of-view 500 \u00d7 500 mm.",
+      "context_window": "ers: TR 4 ms, TE 2 ms, number of slices 12, slice thickness 8 mm, image matrix 256 \u00d7 256, and field-of-view 500 \u00d7 500 mm. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-4170",
+      "claim_type": "unit_value",
+      "raw_text": "500 mm",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4170,
+      "sentence": "Breath-hold images were centered on the L4-L5 intervertebral disc using standard localizer images with the following parameters: TR 4 ms, TE 2 ms, number of slices 12, slice thickness 8 mm, image matrix 256 \u00d7 256, and field-of-view 500 \u00d7 500 mm.",
+      "context_window": "kness 8 mm, image matrix 256 \u00d7 256, and field-of-view 500 \u00d7 500 mm. The four slices that were best aligned with the L4-L5 disc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-5002",
+      "claim_type": "unit_value",
+      "raw_text": "21 cm",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5002,
+      "sentence": "Anatomical T1-weighted spin-echo MR images were obtained using the following parameters: repetition time (TR) 550 ms; echo time (TE) 10 ms; flip angle 60; field of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm.",
+      "context_window": "s; echo time (TE) 10 ms; flip angle 60; field of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm. 1 H-MRS was us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-5025",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5025,
+      "sentence": "Anatomical T1-weighted spin-echo MR images were obtained using the following parameters: repetition time (TR) 550 ms; echo time (TE) 10 ms; flip angle 60; field of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm.",
+      "context_window": "; flip angle 60; field of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm. 1 H-MRS was used to measure hepatic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-5045",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 mm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5045,
+      "sentence": "Anatomical T1-weighted spin-echo MR images were obtained using the following parameters: repetition time (TR) 550 ms; echo time (TE) 10 ms; flip angle 60; field of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm.",
+      "context_window": "ld of view (FOV) 21 cm; slice thickness 3 mm; slice spacing 0.1 mm. 1 H-MRS was used to measure hepatic metabolites. 2D-Spin-e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-5417",
+      "claim_type": "unit_value",
+      "raw_text": "15 mm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5417,
+      "sentence": "Then, single-voxel MRS was performed by a stimulated echo acquisition mode sequence using the following parameters: TE 20 ms; TR 1500 ms; VOX 15 \u00d7 15 \u00d7 15 mm; total number of points 128; total number of average 64.",
+      "context_window": "e following parameters: TE 20 ms; TR 1500 ms; VOX 15 \u00d7 15 \u00d7 15 mm; total number of points 128; total number of average 64. Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5750",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5750,
+      "sentence": "Liver fat % (LFP) is then calculated: S f/( S f + S w) \u00d7 100% [ 11 ].",
+      "context_window": "d. Liver fat % (LFP) is then calculated: S f/( S f + S w) \u00d7 100% [ 11 ]. A liver fat of 5.56% is used as cutoff value for di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5778",
+      "claim_type": "percentage",
+      "raw_text": "5.56%",
+      "numeric_values": [
+        5.56
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5778,
+      "sentence": "A liver fat of 5.56% is used as cutoff value for diagnosing non-alcoholic fatty liver disease [ 12 ].",
+      "context_window": "calculated: S f/( S f + S w) \u00d7 100% [ 11 ]. A liver fat of 5.56% is used as cutoff value for diagnosing non-alcoholic fatty",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-212",
+      "claim_type": "unit_value",
+      "raw_text": "6.8 kg",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 212,
+      "sentence": "At the end of the 8-week intervention, body weight was reduced by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001).",
+      "context_window": "end of the 8-week intervention, body weight was reduced by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001)",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-234",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 234,
+      "sentence": "At the end of the 8-week intervention, body weight was reduced by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001).",
+      "context_window": "ervention, body weight was reduced by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001). The effects of",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-268",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 268,
+      "sentence": "At the end of the 8-week intervention, body weight was reduced by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001).",
+      "context_window": "by 6.8 kg on average, or 7% of the pre-treatment weights ( p = 0.001). The effects of very low carbohydrate-based caloric restr",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-n-384",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 384,
+      "sentence": "Values are mean \u00b1 SE; n = 8 (3/5, m/f), age 37 \u00b1 3; ASQ, abdominal subcutaneous; FPG, fasting plasma glucose; 2hPG, 2-hour-plasma glucose; FINS, fasting plasma insulin; 2hINS, 2-hour-plasma insulin.",
+      "context_window": "caloric restriction in obese adults. Values are mean \u00b1 SE; n = 8 (3/5, m/f), age 37 \u00b1 3; ASQ, abdominal subcutaneous; FPG, f",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-msd-406",
+      "claim_type": "mean_sd",
+      "raw_text": "37 \u00b1 3",
+      "numeric_values": [
+        37.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 406,
+      "sentence": "Values are mean \u00b1 SE; n = 8 (3/5, m/f), age 37 \u00b1 3; ASQ, abdominal subcutaneous; FPG, fasting plasma glucose; 2hPG, 2-hour-plasma glucose; FINS, fasting plasma insulin; 2hINS, 2-hour-plasma insulin.",
+      "context_window": "obese adults. Values are mean \u00b1 SE; n = 8 (3/5, m/f), age 37 \u00b1 3; ASQ, abdominal subcutaneous; FPG, fasting plasma glucose;",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-686",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 686,
+      "sentence": "The body weight changes were mainly a result of shrinking in body fat, especially the visceral fat which decreased by 1/3 ( p = 0.007).",
+      "context_window": "y fat, especially the visceral fat which decreased by 1/3 ( p = 0.007). The abdominal subcutaneous fat was also decreased (24%, p",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-749",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 749,
+      "sentence": "The abdominal subcutaneous fat was also decreased (24%, p = 0.005).",
+      "context_window": "0.007). The abdominal subcutaneous fat was also decreased (24%, p = 0.005). These changes were accompanied by a shortening",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-754",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 754,
+      "sentence": "The abdominal subcutaneous fat was also decreased (24%, p = 0.005).",
+      "context_window": "7). The abdominal subcutaneous fat was also decreased (24%, p = 0.005). These changes were accompanied by a shortening of the wai",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-834",
+      "claim_type": "unit_value",
+      "raw_text": "5 cm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 834,
+      "sentence": "These changes were accompanied by a shortening of the waist line by 5 cm ( p = 0.04).",
+      "context_window": "anges were accompanied by a shortening of the waist line by 5 cm ( p = 0.04). Due to these changes in body composition, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-841",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 841,
+      "sentence": "These changes were accompanied by a shortening of the waist line by 5 cm ( p = 0.04).",
+      "context_window": "ere accompanied by a shortening of the waist line by 5 cm ( p = 0.04). Due to these changes in body composition, the classificat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-1019",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1019,
+      "sentence": "Due to these changes in body composition, the classification of the group as a whole improved from obesity to overweight based on the universal cutoff value of BMI at 30 kg/m 2 ( p = 0.0004).",
+      "context_window": "to overweight based on the universal cutoff value of BMI at 30 kg/m 2 ( p = 0.0004). Plasma TG ( p = 0.04) and FFA ( p = 0.0",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1031",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0004",
+      "numeric_values": [
+        0.0004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1031,
+      "sentence": "Due to these changes in body composition, the classification of the group as a whole improved from obesity to overweight based on the universal cutoff value of BMI at 30 kg/m 2 ( p = 0.0004).",
+      "context_window": "t based on the universal cutoff value of BMI at 30 kg/m 2 ( p = 0.0004). Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1057",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1057,
+      "sentence": "Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations decreased significantly whereas HDL and LDL did not ( p > 0.05).",
+      "context_window": "utoff value of BMI at 30 kg/m 2 ( p = 0.0004). Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations decreased significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1077",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1077,
+      "sentence": "Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations decreased significantly whereas HDL and LDL did not ( p > 0.05).",
+      "context_window": "t 30 kg/m 2 ( p = 0.0004). Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations decreased significantly whereas HDL and LDL",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1156",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1156,
+      "sentence": "Plasma TG ( p = 0.04) and FFA ( p = 0.01) concentrations decreased significantly whereas HDL and LDL did not ( p > 0.05).",
+      "context_window": "tions decreased significantly whereas HDL and LDL did not ( p > 0.05). Fasting plasma glucose remained the same as before the tr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1322",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1322,
+      "sentence": "The 2-hour plasma glucose decreased modestly without reaching statistical significance ( p = 0.1).",
+      "context_window": "reased modestly without reaching statistical significance ( p = 0.1). Fasting and 2-hour insulin concentrations were lowered by",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-1390",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1390,
+      "sentence": "Fasting and 2-hour insulin concentrations were lowered by 20%-34%, suggesting improved insulin sensitivity.",
+      "context_window": ". Fasting and 2-hour insulin concentrations were lowered by 20%-34%, suggesting improved insulin sensitivity. The most rem",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-1394",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1394,
+      "sentence": "Fasting and 2-hour insulin concentrations were lowered by 20%-34%, suggesting improved insulin sensitivity.",
+      "context_window": "sting and 2-hour insulin concentrations were lowered by 20%-34%, suggesting improved insulin sensitivity. The most remarka",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1566",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1566,
+      "sentence": "The most remarkable change after the very low carbohydrate caloric restriction was a reduction of liver fat content by 2/3 ( p = 0.004) ( Table 2 ).",
+      "context_window": "c restriction was a reduction of liver fat content by 2/3 ( p = 0.004) ( Table 2 ). The liver fat decreased continuously as measu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-1908",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1908,
+      "sentence": "At the end of the period (8th week), the decrease in liver fat was associated with a significant decrease in HGP during the oral glucose tolerance test ( p = 0.002), suggesting improved sensitivity of HGP to insulin suppression.",
+      "context_window": "nt decrease in HGP during the oral glucose tolerance test ( p = 0.002), suggesting improved sensitivity of HGP to insulin suppres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-2041",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.3",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2041,
+      "sentence": "In contrast, peripheral glucose uptake was not affected ( p = 0.3, Table 2 ), indicating that the peripheral insulin sensitivity was not improved.",
+      "context_window": ". In contrast, peripheral glucose uptake was not affected ( p = 0.3, Table 2 ), indicating that the peripheral insulin sensitiv",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-3679",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 3679,
+      "sentence": "Correlations between liver fat % and post-load HGP in obese adults before ( A ) and after ( B ) the 8 week caloric restriction, and the correlation between their changes at the end of the intervention ( C ); liver fat is measured by MRS.",
+      "context_window": "t-load HGP in obese adults before ( A ) and after ( B ) the 8 week caloric restriction, and the correlation between their chan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5459",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5459,
+      "sentence": "Their liver fat content was 36% on average.",
+      "context_window": "ype (impaired HGP) ( Table 3 ). Their liver fat content was 36% on average. The intervention reduced it to 9.2%, a level sl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5506",
+      "claim_type": "percentage",
+      "raw_text": "9.2%",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5506,
+      "sentence": "The intervention reduced it to 9.2%, a level slightly higher than the normal value of 5.6% [ 12 ].",
+      "context_window": "content was 36% on average. The intervention reduced it to 9.2%, a level slightly higher than the normal value of 5.6% [ 12",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5561",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5561,
+      "sentence": "The intervention reduced it to 9.2%, a level slightly higher than the normal value of 5.6% [ 12 ].",
+      "context_window": "t to 9.2%, a level slightly higher than the normal value of 5.6% [ 12 ]. This large drop in liver fat is accompanied by a 27",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-5623",
+      "claim_type": "percentage",
+      "raw_text": "27%",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5623,
+      "sentence": "This large drop in liver fat is accompanied by a 27% decrease in HGP which led to the reclassification for three of these four participants ( i.e. , no longer hepatic insulin resistant), except ZT who remained liver type.",
+      "context_window": "6% [ 12 ]. This large drop in liver fat is accompanied by a 27% decrease in HGP which led to the reclassification for three",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-6538",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6538,
+      "sentence": "IFG, impaired fasting glucose; IGT, impaired glucose tolerance; post-load insulin is the sum of plasma insulin for all the sampling time points (arrows: increase or decrease compared to pre-treatment: -, p > 0.1; \u2020 , p < 0.01); -, No change.",
+      "context_window": "(arrows: increase or decrease compared to pre-treatment: -, p > 0.1; \u2020 , p < 0.01); -, No change. Even though not reclassified",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-p-6551",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6551,
+      "sentence": "IFG, impaired fasting glucose; IGT, impaired glucose tolerance; post-load insulin is the sum of plasma insulin for all the sampling time points (arrows: increase or decrease compared to pre-treatment: -, p > 0.1; \u2020 , p < 0.01); -, No change.",
+      "context_window": "ease or decrease compared to pre-treatment: -, p > 0.1; \u2020 , p < 0.01); -, No change. Even though not reclassified, like the oth",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-6672",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6672,
+      "sentence": "Even though not reclassified, like the others, participant ZT had large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP.",
+      "context_window": "the others, participant ZT had large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP. However, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-6679",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6679,
+      "sentence": "Even though not reclassified, like the others, participant ZT had large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP.",
+      "context_window": "ers, participant ZT had large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP. However, the HGP rem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-6701",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6701,
+      "sentence": "Even though not reclassified, like the others, participant ZT had large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP.",
+      "context_window": "d large decrease in liver fat (59% to 18%) coincided with a 25% decrease in HGP. However, the HGP remained too high to be r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-7077",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7077,
+      "sentence": "The post-load plasma insulin reduced to 53% of the pre-treatment level.",
+      "context_window": "n this participant. The post-load plasma insulin reduced to 53% of the pre-treatment level. So, it is unclear whether the h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-7430",
+      "claim_type": "percentage",
+      "raw_text": "15.3%",
+      "numeric_values": [
+        15.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7430,
+      "sentence": "Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP.",
+      "context_window": "IFG or IGT, before or after. Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP. Based on these observa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-7439",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7439,
+      "sentence": "Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP.",
+      "context_window": "T, before or after. Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP. Based on these observations, i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-7451",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7451,
+      "sentence": "Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP.",
+      "context_window": "after. Their liver fat decreased from 15.3% to 4.3% with a 14% reduction in HGP. Based on these observations, it appears t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-113",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 113,
+      "sentence": "It occurs in 20%-30% of Americans, approaching the prevalence rate of obesity, consistent with the fact that the occurrence of NAFLD in obesity is high.",
+      "context_window": "t form of liver diseases in the United States. It occurs in 20%-30% of Americans, approaching the prevalence rate of obesit",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-117",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 117,
+      "sentence": "It occurs in 20%-30% of Americans, approaching the prevalence rate of obesity, consistent with the fact that the occurrence of NAFLD in obesity is high.",
+      "context_window": "rm of liver diseases in the United States. It occurs in 20%-30% of Americans, approaching the prevalence rate of obesity, c",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-1000",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1000,
+      "sentence": "The most remarkable change is the 2/3 reduction in liver fat content accompanied by a 40% decrease in fasting plasma TG concentration, likely a result of reduced VLDL secretion.",
+      "context_window": "is the 2/3 reduction in liver fat content accompanied by a 40% decrease in fasting plasma TG concentration, likely a resul",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-pct-1570",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1570,
+      "sentence": "In healthy individuals, the contribution of de novo lipogenesis (DNL) to tissue triglycerides is <5% [ 16 , 17 ], even in obese humans [ 18 ].",
+      "context_window": "on of de novo lipogenesis (DNL) to tissue triglycerides is <5% [ 16 , 17 ], even in obese humans [ 18 ]. NAFLD [ 19 ] may",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-8371",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 8371,
+      "sentence": "The highly elevated liver fat contents in these obese individuals (BMI > 30 mg/m 2 ) are consistent with that of an earlier study on similar ethnic groups (Northeast Asians) where BMI is identified as the strongest predictor of liver fat content [ 26 ].",
+      "context_window": "evated liver fat contents in these obese individuals (BMI > 30 mg/m 2 ) are consistent with that of an earlier study on simil",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t-u-134",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 134,
+      "sentence": "The finding from this investigation confirmed that low carbohydrate-based caloric restriction, even for a relatively short duration (~2 months), is effective in reducing liver fat in obesity with non-alcoholic fatty liver disease.",
+      "context_window": "caloric restriction, even for a relatively short duration (~2 months), is effective in reducing liver fat in obesity with non-al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

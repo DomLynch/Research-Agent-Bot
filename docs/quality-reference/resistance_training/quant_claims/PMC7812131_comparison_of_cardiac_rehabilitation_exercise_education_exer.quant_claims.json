@@ -1,0 +1,2201 @@
+{
+  "paper_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer",
+  "doi": "10.1002/prp2.711",
+  "extracted_at": "2026-05-05T21:59:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 72,
+    "sample_size": 6,
+    "p_value": 30,
+    "percentage": 5,
+    "mean_sd": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "73 years",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "A total of 492 male and female patients (age range: 45-73 years) with coronary artery disease after myocardial infarction or underwent percutaneous coronary intervention or coronary artery bypass grafting surgeries referred to cardiac rehabilitation were included in the study.",
+      "context_window": "ase. A total of 492 male and female patients (age range: 45-73 years) with coronary artery disease after myocardial infarction o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-867",
+      "claim_type": "sample_size",
+      "raw_text": "n = 125",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 867,
+      "sentence": "Patients were participating in a cardiac rehabilitation program (exercise + education, CRP cohort, n = 125), exercise only (USC cohort, n = 182), or usual care (NCR cohort, n = 185).",
+      "context_window": "c rehabilitation program (exercise + education, CRP cohort, n = 125), exercise only (USC cohort, n = 182), or usual care (NCR c",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-904",
+      "claim_type": "sample_size",
+      "raw_text": "n = 182",
+      "numeric_values": [
+        182.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "Patients were participating in a cardiac rehabilitation program (exercise + education, CRP cohort, n = 125), exercise only (USC cohort, n = 182), or usual care (NCR cohort, n = 185).",
+      "context_window": "education, CRP cohort, n = 125), exercise only (USC cohort, n = 182), or usual care (NCR cohort, n = 185). Data regarding incre",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-941",
+      "claim_type": "sample_size",
+      "raw_text": "n = 185",
+      "numeric_values": [
+        185.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 941,
+      "sentence": "Patients were participating in a cardiac rehabilitation program (exercise + education, CRP cohort, n = 125), exercise only (USC cohort, n = 182), or usual care (NCR cohort, n = 185).",
+      "context_window": "cise only (USC cohort, n = 182), or usual care (NCR cohort, n = 185). Data regarding incremental shuttle walk test, lipid profi",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-1154",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1154,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program ( p < 0.0001, q = 20.939) and exercise ( p < 0.0001, q = 6.059) were successfully increased incremental shuttle walk test.",
+      "context_window": "retrospectively collected and analyzed. After completion of 1 year, cardiac rehabilitation program ( p < 0.0001, q = 20.939) a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1195",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program ( p < 0.0001, q = 20.939) and exercise ( p < 0.0001, q = 6.059) were successfully increased incremental shuttle walk test.",
+      "context_window": "fter completion of 1 year, cardiac rehabilitation program ( p < 0.0001, q = 20.939) and exercise ( p < 0.0001, q = 6.059) were suc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1234",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1234,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program ( p < 0.0001, q = 20.939) and exercise ( p < 0.0001, q = 6.059) were successfully increased incremental shuttle walk test.",
+      "context_window": "bilitation program ( p < 0.0001, q = 20.939) and exercise ( p < 0.0001, q = 6.059) were successfully increased incremental shuttle",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-1336",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1336,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program reduced low\u2010density lipoprotein ( p = 0.007, q = 3.349) and depressive symptoms ( p < 0.0001, q = 5.649).",
+      "context_window": "ncreased incremental shuttle walk test. After completion of 1 year, cardiac rehabilitation program reduced low\u2010density lipopro",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1409",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1409,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program reduced low\u2010density lipoprotein ( p = 0.007, q = 3.349) and depressive symptoms ( p < 0.0001, q = 5.649).",
+      "context_window": "ac rehabilitation program reduced low\u2010density lipoprotein ( p = 0.007, q = 3.349) and depressive symptoms ( p < 0.0001, q = 5.649",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1457",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program reduced low\u2010density lipoprotein ( p = 0.007, q = 3.349) and depressive symptoms ( p < 0.0001, q = 5.649).",
+      "context_window": "poprotein ( p = 0.007, q = 3.349) and depressive symptoms ( p < 0.0001, q = 5.649). Morbidities were reported fewer in the patient",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1563",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1563,
+      "sentence": "Morbidities were reported fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR ( p = 0.003, q = 4.822) cohorts after completion of 1 year of program.",
+      "context_window": "ted fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR ( p = 0.003, q = 4.822) cohorts after c",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1595",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1595,
+      "sentence": "Morbidities were reported fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR ( p = 0.003, q = 4.822) cohorts after completion of 1 year of program.",
+      "context_window": "cohort than those of USC ( p = 0.003, q = 3.427) and NCR ( p = 0.003, q = 4.822) cohorts after completion of 1 year of program.",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-1645",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 1645,
+      "sentence": "Morbidities were reported fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR ( p = 0.003, q = 4.822) cohorts after completion of 1 year of program.",
+      "context_window": "and NCR ( p = 0.003, q = 4.822) cohorts after completion of 1 year of program. Cardiac rehabilitation program (exercise +educa",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-652",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 652,
+      "sentence": "Patients (aged \u226518 years) with coronary artery disease after myocardial infarction or underwent percutaneous coronary intervention or coronary artery bypass grafting surgeries referred to a cardiac rehabilitation program were included in the analysis.",
+      "context_window": "f Hainan Medical University) review board. Patients (aged \u226518 years) with coronary artery disease after myocardial infarction o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-pct-1069",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1069,
+      "sentence": "The sample size was calculated according to the 80% ( \u03b2 = 0.1) power calculation and a 5% significance level ( \u03b1 = 0.05).",
+      "context_window": "analysis. The sample size was calculated according to the 80% ( \u03b2 = 0.1) power calculation and a 5% significance level (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-pct-1108",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1108,
+      "sentence": "The sample size was calculated according to the 80% ( \u03b2 = 0.1) power calculation and a 5% significance level ( \u03b1 = 0.05).",
+      "context_window": "ted according to the 80% ( \u03b2 = 0.1) power calculation and a 5% significance level ( \u03b1 = 0.05). The minimum patient require",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2097",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2097,
+      "sentence": "It was for 1 year.",
+      "context_window": "ducation. They were included in the NCR cohort. It was for 1 year. This included 48 sessions (once in a week). Each session i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2370",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2370,
+      "sentence": "2 Physiotherapists (a minimum of 3 years of experiences) of institutes were involved in the exercise.",
+      "context_window": "the exercise (10 minutes). 2 Physiotherapists (a minimum of 3 years of experiences) of institutes were involved in the exercise",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3514",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 m/s",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3514,
+      "sentence": "The test began with a walking speed of 0.5 m/s, with an increase in the speed of 0.17 m/s each min for a maximum of 12 minutes.",
+      "context_window": "rt the next shuttle. The test began with a walking speed of 0.5 m/s, with an increase in the speed of 0.17 m/s each min for a m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3556",
+      "claim_type": "unit_value",
+      "raw_text": "0.17 m/s",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3556,
+      "sentence": "The test began with a walking speed of 0.5 m/s, with an increase in the speed of 0.17 m/s each min for a maximum of 12 minutes.",
+      "context_window": "walking speed of 0.5 m/s, with an increase in the speed of 0.17 m/s each min for a maximum of 12 minutes. 12 The test was perfo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3667",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 3667,
+      "sentence": "12 The test was performed at the start of the program and after 1 year of completion of the program by a trained instructor of institutes.",
+      "context_window": "he test was performed at the start of the program and after 1 year of completion of the program by a trained instructor of ins",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3786",
+      "claim_type": "unit_value",
+      "raw_text": "140 mmHg",
+      "numeric_values": [
+        140.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3786,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "of institutes. Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure con",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3818",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 3818,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid pr",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3912",
+      "claim_type": "unit_value",
+      "raw_text": "170 mg",
+      "numeric_values": [
+        170.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3912,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "onsidered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3969",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 3969,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "(<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4027",
+      "claim_type": "unit_value",
+      "raw_text": "45 mg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4027,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4072",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4072,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl consid",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4122",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4122,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "cerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4179",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 4179,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "(< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4244",
+      "claim_type": "unit_value",
+      "raw_text": "100 cm",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4244,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4273",
+      "claim_type": "unit_value",
+      "raw_text": "85 cm",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4273,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (C",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4478",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 4478,
+      "sentence": "Blood pressure in resting stage (less than 140 mmHg systolic and less than 90 mmHg diastolic blood pressure considered as normal), 13 lipid profile (total cholesterol (<170 mg/dl considered normal), low\u2010density lipoprotein (< 100 mg/dl considered normal), high\u2010density lipoprotein (> 45 mg/dl considered normal), triglycerides (<200 mg/dl considered normal)), fasting glucose (< 100 mg/dl considered normal), body mass index (less than 30 kg/ m 2 considered as normal), waist circumference (less than 100 cm for men and less than 85 cm for women considered normal), 14 and depressive symptoms (Chinese version of Patient Health Questionnaire 2 15 ; scores <9 considered normal) were evaluated at the start of program and at the end of 1 year of completion of program.",
+      "context_window": "l) were evaluated at the start of program and at the end of 1 year of completion of program. These parameters were measured by",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4570",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4570,
+      "sentence": "These parameters were measured by physicians (a minimum of 3 years of experiences) of institutes and pathologist (a minimum of 3 years of experiences) of institutes.",
+      "context_window": "These parameters were measured by physicians (a minimum of 3 years of experiences) of institutes and pathologist (a minimum of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4638",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4638,
+      "sentence": "These parameters were measured by physicians (a minimum of 3 years of experiences) of institutes and pathologist (a minimum of 3 years of experiences) of institutes.",
+      "context_window": "of experiences) of institutes and pathologist (a minimum of 3 years of experiences) of institutes. At the start and the end of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4706",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 4706,
+      "sentence": "At the start and the end of 1 year of program, Coronary Artery Disease Education Questionnaire\u2010II (version: Chinese) was administered by trained instructors of institutes.",
+      "context_window": "of experiences) of institutes. At the start and the end of 1 year of program, Coronary Artery Disease Education Questionnaire",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5554",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5554,
+      "sentence": "Trained instructors of institutes evaluated these parameters at the start of the program and after 1 year of completion of the program.",
+      "context_window": "ated these parameters at the start of the program and after 1 year of completion of the program. Data regarding morbidity acc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5896",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 5896,
+      "sentence": "Data regarding morbidity according to normal pathological and the other tests value (emergency department hospitalization, re\u2010admission, non\u2010fatal myocardial infarction, angina, percutaneous coronary intervention, and coronary artery bypass grafting surgeries) and mortality due to cardiac causes during 1 year were collected from medical records of patients.",
+      "context_window": "fting surgeries) and mortality due to cardiac causes during 1 year were collected from medical records of patients. SPSS v25.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-pct-6480",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6480,
+      "sentence": "1 \u2018 q \u2010value\u2019 is threshold for post hoc test and 3.315 is threshold for 95% significance.",
+      "context_window": "\u2019 is threshold for post hoc test and 3.315 is threshold for 95% significance. Univariate following multivariate analysis wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-72",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 72,
+      "sentence": "From 13 January 2018 to 1 December 2018, a total of 523 patients (aged \u226518 years) with coronary artery disease after myocardial infarction or underwent percutaneous coronary intervention or coronary artery bypass grafting surgeries were referred to a cardiac rehabilitation program at the Hainan General Hospital (Hainan Affiliated Hospital of Hainan Medical University), Hainan, China and the referring hospitals.",
+      "context_window": "ary 2018 to 1 December 2018, a total of 523 patients (aged \u226518 years) with coronary artery disease after myocardial infarction o",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-pct-464",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 464,
+      "sentence": "Among them, five patients had ejection fraction <45%, and seven patients had complex ventricular dysrhythmia (unable to take part in program).",
+      "context_window": "hospitals. Among them, five patients had ejection fraction <45%, and seven patients had complex ventricular dysrhythmia (un",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-835",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 835,
+      "sentence": "Therefore, data of these patients (n = 31) were excluded from the analysis.",
+      "context_window": "serious mental illness. Therefore, data of these patients (n = 31) were excluded from the analysis. Data regarding functional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-1269",
+      "claim_type": "unit_value",
+      "raw_text": "73 years",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1269,
+      "sentence": "Flow diagram of the study\n\nFrom 45 to 73 years male and female patients with coronary artery disease after myocardial infarction or underwent percutaneous coronary intervention or coronary artery bypass grafting surgeries referred to a cardiac rehabilitation program were included in the study.",
+      "context_window": "nalyzed (Figure 1 ). Flow diagram of the study From 45 to 73 years male and female patients with coronary artery disease after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-1655",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1655,
+      "sentence": "At the start of the cardiac rehabilitation program or exercise or education sessions, the included patients had no differences ( p > 0.05 for all characters) for sociodemographic and clinical conditions among cohorts.",
+      "context_window": "cation sessions, the included patients had no differences ( p > 0.05 for all characters) for sociodemographic and clinical condi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-2225",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2225,
+      "sentence": "Results were considered significant if p < 0.05.",
+      "context_window": "or continuous data. Results were considered significant if p < 0.05. Clinical conditions of patients at the start of the cardi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-2610",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2610,
+      "sentence": "Results were considered significant if p < 0.05.",
+      "context_window": "s and ordinal data. Results were considered significant if p < 0.05. There was no significant improvement in systolic and dias",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2792",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2792,
+      "sentence": "There was no significant improvement in systolic and diastolic blood pressure, waist circumference, total cholesterol, triglycerides, sleep apnea, and smoking habit after 1 year of program.",
+      "context_window": "sterol, triglycerides, sleep apnea, and smoking habit after 1 year of program. After 1 year of program, the triglycerides leve",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2817",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 2817,
+      "sentence": "After 1 year of program, the triglycerides level was significantly lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "context_window": "eep apnea, and smoking habit after 1 year of program. After 1 year of program, the triglycerides level was significantly lower",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-2938",
+      "claim_type": "mean_sd",
+      "raw_text": "175.23 \u00b1 25.31",
+      "numeric_values": [
+        175.23,
+        25.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2938,
+      "sentence": "After 1 year of program, the triglycerides level was significantly lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "context_window": "lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2947",
+      "claim_type": "unit_value",
+      "raw_text": "25.31 mg",
+      "numeric_values": [
+        25.31
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2947,
+      "sentence": "After 1 year of program, the triglycerides level was significantly lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "context_window": "patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ). F",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-2971",
+      "claim_type": "mean_sd",
+      "raw_text": "182.41 \u00b1 21.32",
+      "numeric_values": [
+        182.41,
+        21.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2971,
+      "sentence": "After 1 year of program, the triglycerides level was significantly lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "context_window": "than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ). Fewer successful or unsuccessfu",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2980",
+      "claim_type": "unit_value",
+      "raw_text": "21.32 mg",
+      "numeric_values": [
+        21.32
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 2980,
+      "sentence": "After 1 year of program, the triglycerides level was significantly lower for patients of CRP cohort than those for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ).",
+      "context_window": "e for NCR cohort (175.23 \u00b1 25.31 mg/dl/ patient vs 182.41 \u00b1 21.32 mg/dl/ patient, Table 3 ). Fewer successful or unsuccessful o",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3500",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 3500,
+      "sentence": "BL: Before the start of the program, EL: After completion of 1 year of program.",
+      "context_window": "L: Before the start of the program, EL: After completion of 1 year of program. Significantly lower than NCR cohort. After co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3578",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "Significantly lower than NCR cohort. After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3618",
+      "claim_type": "mean_sd",
+      "raw_text": "335.15 \u00b1 25.47",
+      "numeric_values": [
+        335.15,
+        25.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3618,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3638",
+      "claim_type": "mean_sd",
+      "raw_text": "384.24 \u00b1 41.12",
+      "numeric_values": [
+        384.24,
+        41.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3638,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m v",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-3656",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3656,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "habilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3694",
+      "claim_type": "mean_sd",
+      "raw_text": "341.42 \u00b1 27.85",
+      "numeric_values": [
+        341.42,
+        27.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3694,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3714",
+      "claim_type": "mean_sd",
+      "raw_text": "355.19 \u00b1 31.45",
+      "numeric_values": [
+        355.19,
+        31.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3714,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": ", p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle wal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-3732",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3732,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3897",
+      "claim_type": "mean_sd",
+      "raw_text": "339.52 \u00b1 32.45",
+      "numeric_values": [
+        339.52,
+        32.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3897,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "ntal shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year. Also, patie",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-msd-3917",
+      "claim_type": "mean_sd",
+      "raw_text": "343.18 \u00b1 33.14",
+      "numeric_values": [
+        343.18,
+        33.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3917,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "st value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year. Also, patients of CRP cohort ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-3935",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.284",
+      "numeric_values": [
+        0.284
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3935,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "tients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year. Also, patients of CRP cohort had significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3952",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 3952,
+      "sentence": "After completion of 1 year, cardiac rehabilitation program (335.15 \u00b1 25.47 m vs 384.24 \u00b1 41.12 m, p < 0.0001, q = 20.939) and exercise (341.42 \u00b1 27.85 m vs 355.19 \u00b1 31.45 m, p < 0.0001, q = 6.059) increased incremental shuttle walk test value but there was no increase in incremental shuttle walk test value in the patients of NCR cohort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year.",
+      "context_window": "ort (339.52 \u00b1 32.45 m vs 343.18 \u00b1 33.14 m, p = 0.284) after 1 year. Also, patients of CRP cohort had significant improvement i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-4083",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4083,
+      "sentence": "Also, patients of CRP cohort had significant improvement in incremental shuttle walk test value than those of USC cohort ( p < 0.0001, q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after 1 year.",
+      "context_window": "remental shuttle walk test value than those of USC cohort ( p < 0.0001, q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-4124",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4124,
+      "sentence": "Also, patients of CRP cohort had significant improvement in incremental shuttle walk test value than those of USC cohort ( p < 0.0001, q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after 1 year.",
+      "context_window": "se of USC cohort ( p < 0.0001, q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after 1 year. Patients of USC cohort had signi",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4154",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4154,
+      "sentence": "Also, patients of CRP cohort had significant improvement in incremental shuttle walk test value than those of USC cohort ( p < 0.0001, q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after 1 year.",
+      "context_window": "q = 10.175) and NCR cohort ( p < 0.0001, q = 14.429) after 1 year. Patients of USC cohort had significantly improved incremen",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-4275",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4275,
+      "sentence": "Patients of USC cohort had significantly improved incremental shuttle walk test value than those of NCR cohort ( p < 0.0001, q = 4.679) after completion of 1 year (Figure 2 ).",
+      "context_window": "remental shuttle walk test value than those of NCR cohort ( p < 0.0001, q = 4.679) after completion of 1 year (Figure 2 ). Increm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4318",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4318,
+      "sentence": "Patients of USC cohort had significantly improved incremental shuttle walk test value than those of NCR cohort ( p < 0.0001, q = 4.679) after completion of 1 year (Figure 2 ).",
+      "context_window": "of NCR cohort ( p < 0.0001, q = 4.679) after completion of 1 year (Figure 2 ). Incremental shuttle walk test analysis. BL: B",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4423",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4423,
+      "sentence": "BL: Before program, EL: After completion of 1 year of program\n\nAfter completion of 1 year, patients who received cardiac rehabilitation program, USC cohort's patients, and NCR cohort's patients were significantly decreased body mass index.",
+      "context_window": "test analysis. BL: Before program, EL: After completion of 1 year of program After completion of 1 year, patients who receiv",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4462",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4462,
+      "sentence": "BL: Before program, EL: After completion of 1 year of program\n\nAfter completion of 1 year, patients who received cardiac rehabilitation program, USC cohort's patients, and NCR cohort's patients were significantly decreased body mass index.",
+      "context_window": "After completion of 1 year of program After completion of 1 year, patients who received cardiac rehabilitation program, USC",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-4849",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 4849,
+      "sentence": "After completion of 1 year, low\u2010density lipoproteins were reduced for patients of CRP cohort, whereas patients of USC and NCR cohort did not report reduction in low\u2010density lipoprotein.",
+      "context_window": "y mass index than those of NCR cohort. After completion of 1 year, low\u2010density lipoproteins were reduced for patients of CRP",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5036",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5036,
+      "sentence": "After completion of 1 year, patients of CRP and USC cohort reported higher high\u2010density lipoprotein but those of NCR cohort did not report higher high\u2010density lipoprotein.",
+      "context_window": "reduction in low\u2010density lipoprotein. After completion of 1 year, patients of CRP and USC cohort reported higher high\u2010densit",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5239",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5239,
+      "sentence": "The increase in the high\u2010density lipoprotein after 1 year in patients of CRP cohort was not significantly higher than those of USC cohort but significantly higher than those of NCR cohort.",
+      "context_window": "protein. The increase in the high\u2010density lipoprotein after 1 year in patients of CRP cohort was not significantly higher than",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5453",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5453,
+      "sentence": "Also, patients of USC cohort reported higher high\u2010density lipoprotein after 1 year than those of NCR cohort.",
+      "context_window": "f USC cohort reported higher high\u2010density lipoprotein after 1 year than those of NCR cohort. After completion of 1 year, pati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5507",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5507,
+      "sentence": "After completion of 1 year, patients of CRP cohort and USC cohort reported significant decrease in fasting glucose level but the same was not decreased in patients of NCR cohort.",
+      "context_window": "after 1 year than those of NCR cohort. After completion of 1 year, patients of CRP cohort and USC cohort reported significant",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5779",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5779,
+      "sentence": "Patients of CRP cohort had significantly decreased fasting glucose level than those of USC and NCR cohorts after 1 year of program.",
+      "context_window": "sting glucose level than those of USC and NCR cohorts after 1 year of program. Patients of USC cohort had significantly decrea",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5902",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5902,
+      "sentence": "Patients of USC cohort had significantly decreased fasting glucose level than those of NCR cohort after 1 year of program.",
+      "context_window": "reased fasting glucose level than those of NCR cohort after 1 year of program. After 1 year of detection of coronary artery d",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-5928",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5928,
+      "sentence": "After 1 year of detection of coronary artery disease, the patients of CRP, USC, and NCR reported significantly higher score of Coronary Artery Disease Education Questionnaire\u2010II (version: Chinese).",
+      "context_window": "el than those of NCR cohort after 1 year of program. After 1 year of detection of coronary artery disease, the patients of CR",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6232",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6232,
+      "sentence": "Patients of CRP cohort reported higher amount of increase in such score than those of USC and NCR cohorts after 1 year of program.",
+      "context_window": "rease in such score than those of USC and NCR cohorts after 1 year of program. Also, Patients of USC cohort reported significa",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6347",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6347,
+      "sentence": "Also, Patients of USC cohort reported significantly higher score than those of NCR cohort after 1 year of program.",
+      "context_window": "d significantly higher score than those of NCR cohort after 1 year of program. After 1 year of coronary artery disease detect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6373",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6373,
+      "sentence": "After 1 year of coronary artery disease detection and completion of program, patients of CRP and USC cohorts reported higher score for diet but those of NCR cohort did not report higher score for diet.",
+      "context_window": "re than those of NCR cohort after 1 year of program. After 1 year of coronary artery disease detection and completion of prog",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6662",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6662,
+      "sentence": "Patients of CRP cohort reported higher score of diet than those of USC and NCR cohorts after 1 year of program.",
+      "context_window": "igher score of diet than those of USC and NCR cohorts after 1 year of program. The International Physical Activity Questionna",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6785",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6785,
+      "sentence": "The International Physical Activity Questionnaire (version: Chinese) for Pedometer reported that after 1 year of coronary artery disease detection, patients of CRP, USC, and NCR cohort had higher steps per day.",
+      "context_window": "nnaire (version: Chinese) for Pedometer reported that after 1 year of coronary artery disease detection, patients of CRP, USC,",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6992",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6992,
+      "sentence": "Patients of CRP cohort reported higher steps per day than those of USC cohort and NCR cohort after 1 year of program.",
+      "context_window": "steps per day than those of USC cohort and NCR cohort after 1 year of program. Also, patients of USC cohort reported higher st",
+      "claim_role": "dose",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-7092",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7092,
+      "sentence": "Also, patients of USC cohort reported higher steps per day than NCR cohort after 1 year of program.",
+      "context_window": "cohort reported higher steps per day than NCR cohort after 1 year of program. After 1 year only, patients of CRP cohort had",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-7118",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7118,
+      "sentence": "After 1 year only, patients of CRP cohort had decreased depressive symptoms (Figure 3 ).",
+      "context_window": "eps per day than NCR cohort after 1 year of program. After 1 year only, patients of CRP cohort had decreased depressive sympt",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-7406",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7406,
+      "sentence": "BL, Before program; EL, After completion of 1 year of program\n\nThe results of the successful outcome measures are reported in Table 4 .",
+      "context_window": "sidered normal. BL, Before program; EL, After completion of 1 year of program The results of the successful outcome measures",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-7909",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7909,
+      "sentence": "N/A: Not applicable, BL: Before start of program, EL: After completion of 1 year of program.",
+      "context_window": "cable, BL: Before start of program, EL: After completion of 1 year of program. Coronary Artery Disease Education Questionnair",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-8406",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.145",
+      "numeric_values": [
+        0.145
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8406,
+      "sentence": "There was no significant difference between mortality due to cardiac causes among cohorts ( p = 0.145).",
+      "context_window": "nce between mortality due to cardiac causes among cohorts ( p = 0.145). Morbidity was fewer in the patients of CRP cohort than th",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-8488",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8488,
+      "sentence": "Morbidity was fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1 year of follow\u2010up.",
+      "context_window": "was fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-8527",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8527,
+      "sentence": "Morbidity was fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1 year of follow\u2010up.",
+      "context_window": "than those of USC ( p = 0.003, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1 year of follow\u2010up. The details of mort",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-8556",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8556,
+      "sentence": "Morbidity was fewer in the patients of CRP cohort than those of USC ( p = 0.003, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1 year of follow\u2010up.",
+      "context_window": "3, q = 3.427) and NCR cohort ( p = 0.003, q = 4.822) during 1 year of follow\u2010up. The details of mortality due to cardiac cause",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-8647",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8647,
+      "sentence": "The details of mortality due to cardiac causes and morbidities during 1 year of follow\u2010up among the patients are reported in Table 5 .",
+      "context_window": "s of mortality due to cardiac causes and morbidities during 1 year of follow\u2010up among the patients are reported in Table 5 .",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-8768",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8768,
+      "sentence": "Mortality due to cardiac causes and morbidities during 1 year of follow\u2010up after coronary artery disease detection\n\nData are presented as number (frequency).",
+      "context_window": "5 . Mortality due to cardiac causes and morbidities during 1 year of follow\u2010up after coronary artery disease detection Data",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9018",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9018,
+      "sentence": "Results were considered significant if p < 0.05 and q > 3.315.",
+      "context_window": "omparisons of data. Results were considered significant if p < 0.05 and q > 3.315. N/A: Not applicable. Significant value. U",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9135",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9135,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "t value. Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction t",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-9159",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9159,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "lysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous corona",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9169",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9169,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "rted that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary interven",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9290",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9290,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass inde",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9328",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9328,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9363",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9363,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "ne or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehab",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9392",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9392,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9452",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9452,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-9501",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9501,
+      "sentence": "Univariate analysis reported that male patients ( p = 0.041), older age (>50 years, p = 0.042), myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.034), one or more comorbidity ( p = 0.025), high body mass index ( p = 0.022), unhealthy diet ( p = 0.042), and absence of cardiac rehabilitation program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients.",
+      "context_window": "program ( p = 0.021) were associated with morbidity during 1 year of follow\u2010up of enrolled patients. A multivariate analysis",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9690",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.048",
+      "numeric_values": [
+        0.048
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9690,
+      "sentence": "A multivariate analysis reported that myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up of enrolled patients (Table 6 ).",
+      "context_window": "intervention or coronary artery bypass grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of card",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9728",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9728,
+      "sentence": "A multivariate analysis reported that myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up of enrolled patients (Table 6 ).",
+      "context_window": "grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-9788",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9788,
+      "sentence": "A multivariate analysis reported that myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up of enrolled patients (Table 6 ).",
+      "context_window": "p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-9837",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9837,
+      "sentence": "A multivariate analysis reported that myocardial infarction than percutaneous coronary intervention or coronary artery bypass grafting surgeries ( p = 0.048), one or more comorbidity ( p = 0.041), and absence of cardiac rehabilitation program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up of enrolled patients (Table 6 ).",
+      "context_window": "program ( p = 0.039) were associated with morbidity during 1 year of follow\u2010up of enrolled patients (Table 6 ). Association",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-9946",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9946,
+      "sentence": "Association of parameters for risk of morbidity during 1 year of follow\u2010up of the patients\n\nMultivariate analysis.",
+      "context_window": "). Association of parameters for risk of morbidity during 1 year of follow\u2010up of the patients Multivariate analysis. An od",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-10124",
+      "claim_type": "sample_size",
+      "raw_text": "n = 416",
+      "numeric_values": [
+        416.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10124,
+      "sentence": "Patients without morbidity (n = 416) were considered as the reference standard.",
+      "context_window": "5 were considered significant. Patients without morbidity (n = 416) were considered as the reference standard. Significant pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-10259",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 10259,
+      "sentence": "During 1 year of follow\u2010up, no adverse effects due to exercise or cardiac rehabilitation program or education were reported in any of the patient.",
+      "context_window": "responsible for the morbidity of enrolled patients. During 1 year of follow\u2010up, no adverse effects due to exercise or cardiac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 991,
+      "sentence": "The study showed that Coronary Artery Disease Education Questionnaire\u2010II (version: Chinese) score, diet score, lipid profile, blood glucose level, and pedometer were superior in patients who received cardiac rehabilitation program than those who received exercise only or did not receive exercise and education after 1 year.",
+      "context_window": "ercise only or did not receive exercise and education after 1 year. The results of the Cardiovascular disease knowledge of pat",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-1599",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 1599,
+      "sentence": "The study did not report significant improvement in systolic and diastolic blood pressure, waist circumference, and presence of sleep apnea in patients after 1 year among patients who received a cardiac rehabilitation program.",
+      "context_window": "ircumference, and presence of sleep apnea in patients after 1 year among patients who received a cardiac rehabilitation progra",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-p-2204",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.145",
+      "numeric_values": [
+        0.145
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2204,
+      "sentence": "Mortality due to cardiac causes was fewer for patients who received cardiac rehabilitation program but no significant difference among cohorts ( p = 0.145).",
+      "context_window": "ation program but no significant difference among cohorts ( p = 0.145). Improvement of the functional capacity of patients reduce",
+      "claim_role": "dose",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2602",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 2602,
+      "sentence": "7 The insufficient follow\u2010up period (1 year) is responsible for such decremental results.",
+      "context_window": "ids (the OMEGA study). 7 The insufficient follow\u2010up period (1 year) is responsible for such decremental results. 1 The study i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-2944",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 2944,
+      "sentence": "Patients who received cardiac rehabilitation program had less morbidity after 1 year of cardiac rehabilitation program than those who received exercise only or did not receive exercise and education.",
+      "context_window": "ved cardiac rehabilitation program had less morbidity after 1 year of cardiac rehabilitation program than those who received e",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-3599",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3599,
+      "sentence": "23 Also, in the RAMIT trial, 11 rehabilitation sessions averaged to 20 hours over 6-8 weeks.",
+      "context_window": "ial, 11 rehabilitation sessions averaged to 20 hours over 6-8 weeks. However, current study had a minimum of 30 exercise sessio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-pct-6160",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6160,
+      "sentence": "Patients with ejection fraction <45% (n = 5) as result of sequela of the myocardial infarction were excluded but the International guidelines recommended the cardiac rehabilitation program with Class I level recommendation among them.",
+      "context_window": "atients are not discussed. Patients with ejection fraction <45% (n = 5) as result of sequela of the myocardial infarction w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-n-6165",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6165,
+      "sentence": "Patients with ejection fraction <45% (n = 5) as result of sequela of the myocardial infarction were excluded but the International guidelines recommended the cardiac rehabilitation program with Class I level recommendation among them.",
+      "context_window": "ts are not discussed. Patients with ejection fraction <45% (n = 5) as result of sequela of the myocardial infarction were exc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-6733",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 6733,
+      "sentence": "The protocol of exercise training included only one session per week for 1 year.",
+      "context_window": "of exercise training included only one session per week for 1 year. Therefore, it cannot be presumed for the other physical ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7812131_comparison_of_cardiac_rehabilitation_exercise_education_exer-u-7066",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 7066,
+      "sentence": "The modifications, adaptation, and/or optimization of treatment(s) during the long term (1 year) are not discussed.",
+      "context_window": ", and/or optimization of treatment(s) during the long term (1 year) are not discussed.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,1661 @@
+{
+  "paper_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_",
+  "doi": "10.3390/biomedicines11051403",
+  "extracted_at": "2026-05-05T21:43:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "percentage": 23,
+    "p_value": 36,
+    "sample_size": 5,
+    "odds_ratio": 7,
+    "confidence_interval": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-334",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 334,
+      "sentence": "Subjects were Japanese patients >70 years of age who visited outpatient clinics or resided in nursing homes.",
+      "context_window": "biomarker for sarcopenia. Subjects were Japanese patients >70 years of age who visited outpatient clinics or resided in nursing",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-618",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 618,
+      "sentence": "The analysis included 182 patients (male: 38%, age: 83 [76-90] years).",
+      "context_window": "arcopenia (2019). The analysis included 182 patients (male: 38%, age: 83 [76-90] years). Spermidine levels were higher ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-679",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 679,
+      "sentence": "Spermidine levels were higher ( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
+      "context_window": "8%, age: 83 [76-90] years). Spermidine levels were higher ( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) i",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-736",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Spermidine levels were higher ( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
+      "context_window": "( p = 0.002) and the spermine/spermidine ratio was lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-64",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 64,
+      "sentence": "In this cross-sectional study, we included elderly persons aged 70 years or older who visited outpatient clinics affiliated with Minamiuonuma City Hospital (Minamiuonuma City, Japan) or who resided in nursing homes for the elderly (Minami-en and Maiko-en, Minamiuonuma, Japan).",
+      "context_window": "his cross-sectional study, we included elderly persons aged 70 years or older who visited outpatient clinics affiliated with Min",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-626",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 626,
+      "sentence": "Since neoplasms have a significant impact on polyamine levels, patients with cancer and those with a history of cancer treatment within 3 months were excluded.",
+      "context_window": "cancer and those with a history of cancer treatment within 3 months were excluded. Flow diagram of the patient selection proce",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2339",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2339,
+      "sentence": "Thus, a diagnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s.",
+      "context_window": "gnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus e",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2355",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 kg",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2355,
+      "sentence": "Thus, a diagnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s.",
+      "context_window": "enia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS val",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2428",
+      "claim_type": "unit_value",
+      "raw_text": "28 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2428,
+      "sentence": "Thus, a diagnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s.",
+      "context_window": "r men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2439",
+      "claim_type": "unit_value",
+      "raw_text": "18 kg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2439,
+      "sentence": "Thus, a diagnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s.",
+      "context_window": "omen, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s. P",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-2494",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 2494,
+      "sentence": "Thus, a diagnosis of sarcopenia was made based on the following: SMI < 7.0 kg/m 2 and <5.7 kg/m 2 for men and women, respectively, plus either an HGS value of <28 kg and <18 kg for men and women, respectively, or WS less than 1.0 m/s.",
+      "context_window": "and <18 kg for men and women, respectively, or WS less than 1.0 m/s. Participants who did not meet the criteria for sarcopenia",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-4727",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4727,
+      "sentence": "For polyamine extraction, whole blood was diluted fivefold with 5% trichloroacetic acid (TCA) and incubated at 95 \u00b0C for 45 min.",
+      "context_window": "polyamine extraction, whole blood was diluted fivefold with 5% trichloroacetic acid (TCA) and incubated at 95 \u00b0C for 45 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-4933",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4933,
+      "sentence": "After centrifugation at 13,000\u00d7 g for 20 min at 4 \u00b0C, the supernatant was collected and deproteinized by increasing the TCA concentration to 10% and incubating at 95 \u00b0C for 45 min, followed by centrifugation at 13,000\u00d7 g for 20 min at 4 \u00b0C.",
+      "context_window": "ed and deproteinized by increasing the TCA concentration to 10% and incubating at 95 \u00b0C for 45 min, followed by centrifugat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5196",
+      "claim_type": "unit_value",
+      "raw_text": "4.6 mm",
+      "numeric_values": [
+        4.6
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5196,
+      "sentence": "Polyamines in 20 \u00b5L of the TCA supernatant were separated with an HPLC system (Shimadzu Corporation, Kyoto, Japan) using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan) at 50 \u00b0C.",
+      "context_window": "oto, Japan) using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, To",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5208",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5208,
+      "sentence": "Polyamines in 20 \u00b5L of the TCA supernatant were separated with an HPLC system (Shimadzu Corporation, Kyoto, Japan) using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan) at 50 \u00b0C.",
+      "context_window": "using a TSKgel Polyaminepak column (column size 4.6 mm ID \u00d7 50 mm length, particle size 7 \u00b5m, TOSOH Bioscience, Tokyo, Japan)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5309",
+      "claim_type": "unit_value",
+      "raw_text": "0.42 mL/min",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 5309,
+      "sentence": "The flow rate was set at 0.42 mL/min and the composition of the separation buffer adjusted to pH 5.10 was 0.09 M citric acid (NACALAI TESQUE, INC., Kyoto, Japan), 2 M NaCl (NACALAI TESQUE, INC., Kyoto, Japan), 0.64 mM n-capric acid (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan).",
+      "context_window": "ioscience, Tokyo, Japan) at 50 \u00b0C. The flow rate was set at 0.42 mL/min and the composition of the separation buffer adjusted to pH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5554",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5554,
+      "sentence": "The flow rate was set at 0.42 mL/min and the composition of the separation buffer adjusted to pH 5.10 was 0.09 M citric acid (NACALAI TESQUE, INC., Kyoto, Japan), 2 M NaCl (NACALAI TESQUE, INC., Kyoto, Japan), 0.64 mM n-capric acid (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan).",
+      "context_window": "0.64 mM n-capric acid (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5604",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5604,
+      "sentence": "The flow rate was set at 0.42 mL/min and the composition of the separation buffer adjusted to pH 5.10 was 0.09 M citric acid (NACALAI TESQUE, INC., Kyoto, Japan), 2 M NaCl (NACALAI TESQUE, INC., Kyoto, Japan), 0.64 mM n-capric acid (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan).",
+      "context_window": ", Japan), 0.1% Brij-35 (Sigma-Aldrich Japan, Tokyo, Japan), 20% methanol (FUJIFILM Corporation, Osaka, Japan). Polyamines w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5841",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5841,
+      "sentence": "Polyamines were detected via fluorescence intensity after the column effluent was reacted with the solution containing 0.4 M boric buffer (pH 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), and 0.06% o-phthalaldehyde (NACALAI TESQUE, INC., Kyoto, Japan) at 50 \u00b0C.",
+      "context_window": "oric buffer (pH 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC.,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-5855",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5855,
+      "sentence": "Polyamines were detected via fluorescence intensity after the column effluent was reacted with the solution containing 0.4 M boric buffer (pH 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), and 0.06% o-phthalaldehyde (NACALAI TESQUE, INC., Kyoto, Japan) at 50 \u00b0C.",
+      "context_window": "H 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5924",
+      "claim_type": "percentage",
+      "raw_text": "0.06%",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5924,
+      "sentence": "Polyamines were detected via fluorescence intensity after the column effluent was reacted with the solution containing 0.4 M boric buffer (pH 10.4) (NACALAI TESQUE, INC., Kyoto, Japan), 0.1% Brij-35, 2.0 mL/L 2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), and 0.06% o-phthalaldehyde (NACALAI TESQUE, INC., Kyoto, Japan) at 50 \u00b0C.",
+      "context_window": "2-mercaptoethanol (NACALAI TESQUE, INC., Kyoto, Japan), and 0.06% o-phthalaldehyde (NACALAI TESQUE, INC., Kyoto, Japan) at 50",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-u-6041",
+      "claim_type": "unit_value",
+      "raw_text": "0.42 mL/min",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 6041,
+      "sentence": "The flow rate of o-phthalaldehyde solution was 0.42 mL/min and fluorescence was measured at an excitation wavelength of 340 nm and an emission wavelength of 455 nm.",
+      "context_window": "n) at 50 \u00b0C. The flow rate of o-phthalaldehyde solution was 0.42 mL/min and fluorescence was measured at an excitation wavelength o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-6474",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6474,
+      "sentence": "The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio.",
+      "context_window": "ulated as the %CV (coefficient of variation). The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-6488",
+      "claim_type": "percentage",
+      "raw_text": "3.6%",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6488,
+      "sentence": "The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio.",
+      "context_window": "%CV (coefficient of variation). The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio. The Shapiro-Wilk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-6506",
+      "claim_type": "percentage",
+      "raw_text": "6.7%",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6506,
+      "sentence": "The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio.",
+      "context_window": "f variation). The %CVs were 4.3% for SPD, 3.6% for SPM, and 6.7% for the SPM/SPD ratio. The Shapiro-Wilk test was used to d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-7534",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7534,
+      "sentence": "Results of the comparison between groups were considered significantly different at p < 0.05.",
+      "context_window": "n between groups were considered significantly different at p < 0.05. The Kruskal-Wallis test was used for multiple comparisons",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-8062",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8062,
+      "sentence": "Multivariate logistic regression models were used to calculate adjusted odds ratios (ORs) with 95% confidence intervals (CIs) for the risk of sarcopenia associated with the SPD and SPM concentrations or the SPM/SPD ratio.",
+      "context_window": "dels were used to calculate adjusted odds ratios (ORs) with 95% confidence intervals (CIs) for the risk of sarcopenia assoc",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 823,
+      "sentence": "The remaining 71 comprised the sarcopenia group (16 men and 55 women), which had a higher proportion of women (77% vs.",
+      "context_window": "men and 55 women), which had a higher proportion of women (77% vs. 53%, p < 0.001) than the non-sarcopenia group. In addit",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-831",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 831,
+      "sentence": "53%, p < 0.001) than the non-sarcopenia group.",
+      "context_window": "55 women), which had a higher proportion of women (77% vs. 53%, p < 0.001) than the non-sarcopenia group. In addition, par",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-836",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 836,
+      "sentence": "53%, p < 0.001) than the non-sarcopenia group.",
+      "context_window": "omen), which had a higher proportion of women (77% vs. 53%, p < 0.001) than the non-sarcopenia group. In addition, participants i",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-980",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 980,
+      "sentence": "In addition, participants in the sarcopenia group were older than those in the non-sarcopenia group ( p < 0.001).",
+      "context_window": "a group were older than those in the non-sarcopenia group ( p < 0.001). The percentage of nursing home admissions was higher in t",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-1108",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1108,
+      "sentence": "The percentage of nursing home admissions was higher in the sarcopenia group than that in the non-sarcopenia group (80% vs.",
+      "context_window": "the sarcopenia group than that in the non-sarcopenia group (80% vs. 5%, p < 0.001). Fifty-six (89%) of the nursing home par",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-1116",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1116,
+      "sentence": "5%, p < 0.001).",
+      "context_window": "openia group than that in the non-sarcopenia group (80% vs. 5%, p < 0.001). Fifty-six (89%) of the nursing home participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-1120",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1120,
+      "sentence": "5%, p < 0.001).",
+      "context_window": "ia group than that in the non-sarcopenia group (80% vs. 5%, p < 0.001). Fifty-six (89%) of the nursing home participants had diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-1143",
+      "claim_type": "percentage",
+      "raw_text": "89%",
+      "numeric_values": [
+        89.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1143,
+      "sentence": "Fifty-six (89%) of the nursing home participants had difficulty walking.",
+      "context_window": "he non-sarcopenia group (80% vs. 5%, p < 0.001). Fifty-six (89%) of the nursing home participants had difficulty walking. P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-1547",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1547,
+      "sentence": "SMI, WS, and HGS, which are the diagnostic elements of sarcopenia and its associated indices, as well as BMI, were all significantly lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
+      "context_window": "ted indices, as well as BMI, were all significantly lower ( p < 0.001) in the sarcopenia group than in the non-sarcopenia group.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-n-2443",
+      "claim_type": "sample_size",
+      "raw_text": "n = 110",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2443,
+      "sentence": "No. of N.H. residents-number of nursing home residents; CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SD-standard deviation; SMI-skeletal muscle mass index; WS-walking speed; HGS-hand grip strength; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride. # n = 110 due to missing measurements.",
+      "context_window": "-C-high-density lipoprotein cholesterol; TG-triglyceride. # n = 110 due to missing measurements. The results showed higher SPD",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-2528",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2528,
+      "sentence": "The results showed higher SPD concentrations ( p = 0.002) in the sarcopenia group than in the non-sarcopenia group, but SPM concentrations were not significantly different ( p = 0.701), and the SPM/SPD ratio was lower ( p < 0.001) in the sarcopenia group.",
+      "context_window": "asurements. The results showed higher SPD concentrations ( p = 0.002) in the sarcopenia group than in the non-sarcopenia group,",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-2655",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.701",
+      "numeric_values": [
+        0.701
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2655,
+      "sentence": "The results showed higher SPD concentrations ( p = 0.002) in the sarcopenia group than in the non-sarcopenia group, but SPM concentrations were not significantly different ( p = 0.701), and the SPM/SPD ratio was lower ( p < 0.001) in the sarcopenia group.",
+      "context_window": ", but SPM concentrations were not significantly different ( p = 0.701), and the SPM/SPD ratio was lower ( p < 0.001) in the sarco",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-2701",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2701,
+      "sentence": "The results showed higher SPD concentrations ( p = 0.002) in the sarcopenia group than in the non-sarcopenia group, but SPM concentrations were not significantly different ( p = 0.701), and the SPM/SPD ratio was lower ( p < 0.001) in the sarcopenia group.",
+      "context_window": "y different ( p = 0.701), and the SPM/SPD ratio was lower ( p < 0.001) in the sarcopenia group. Hemoglobin, Alb, TG, and HbA1c we",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-2842",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2842,
+      "sentence": "Hemoglobin, Alb, TG, and HbA1c were all lower in the sarcopenia group than in the non-sarcopenia group ( p < 0.001), but eGFR was higher in the sarcopenia group ( p = 0.046).",
+      "context_window": "in the sarcopenia group than in the non-sarcopenia group ( p < 0.001), but eGFR was higher in the sarcopenia group ( p = 0.046).",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-2900",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2900,
+      "sentence": "Hemoglobin, Alb, TG, and HbA1c were all lower in the sarcopenia group than in the non-sarcopenia group ( p < 0.001), but eGFR was higher in the sarcopenia group ( p = 0.046).",
+      "context_window": "( p < 0.001), but eGFR was higher in the sarcopenia group ( p = 0.046). SPD and SPM concentrations and the SPM/SPD ratios were c",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-3146",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3146,
+      "sentence": "The SPD concentration was significantly higher in the sarcopenia group than in the non-sarcopenia group ( p = 0.002), and the SPM/SPD ratio was significantly lower in the sarcopenia group than in the non-sarcopenia group ( p < 0.001).",
+      "context_window": "in the sarcopenia group than in the non-sarcopenia group ( p = 0.002), and the SPM/SPD ratio was significantly lower in the sarc",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-3263",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3263,
+      "sentence": "The SPD concentration was significantly higher in the sarcopenia group than in the non-sarcopenia group ( p = 0.002), and the SPM/SPD ratio was significantly lower in the sarcopenia group than in the non-sarcopenia group ( p < 0.001).",
+      "context_window": "in the sarcopenia group than in the non-sarcopenia group ( p < 0.001). In addition, SPM concentrations were not significantly di",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-3391",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.701",
+      "numeric_values": [
+        0.701
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3391,
+      "sentence": "In addition, SPM concentrations were not significantly different between the sarcopenia and non-sarcopenia groups ( p = 0.701).",
+      "context_window": "ifferent between the sarcopenia and non-sarcopenia groups ( p = 0.701). Comparison of blood polyamine concentrations in particip",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4215",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.070",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4215,
+      "sentence": "A non-significant association ( p = 0.070) between increased SPD levels and age was observed in the sarcopenia group, but not in the non-sarcopenia group ( p = 0.339).",
+      "context_window": "and non-sarcopenia groups. A non-significant association ( p = 0.070) between increased SPD levels and age was observed in the s",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4339",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.339",
+      "numeric_values": [
+        0.339
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4339,
+      "sentence": "A non-significant association ( p = 0.070) between increased SPD levels and age was observed in the sarcopenia group, but not in the non-sarcopenia group ( p = 0.339).",
+      "context_window": "the sarcopenia group, but not in the non-sarcopenia group ( p = 0.339). A trend of increasing SPD levels with age was observed in",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4441",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.070",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4441,
+      "sentence": "A trend of increasing SPD levels with age was observed in the sarcopenia group (\u03c1= 0.216, p = 0.070), but not in the non-sarcopenia group (\u03c1 = -0.092, p = 0.339).",
+      "context_window": "ls with age was observed in the sarcopenia group (\u03c1= 0.216, p = 0.070), but not in the non-sarcopenia group (\u03c1 = -0.092, p = 0.33",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4502",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.339",
+      "numeric_values": [
+        0.339
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4502,
+      "sentence": "A trend of increasing SPD levels with age was observed in the sarcopenia group (\u03c1= 0.216, p = 0.070), but not in the non-sarcopenia group (\u03c1 = -0.092, p = 0.339).",
+      "context_window": "= 0.070), but not in the non-sarcopenia group (\u03c1 = -0.092, p = 0.339). SPM concentrations showed no relationship with age in bot",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4645",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.979",
+      "numeric_values": [
+        0.979
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4645,
+      "sentence": "SPM concentrations showed no relationship with age in both groups and remained almost unchanged (non-sarcopenia group (\u03c1 = -0.003, p = 0.979), and sarcopenia group (\u03c1 = 0.030, p = 0.802)).",
+      "context_window": "emained almost unchanged (non-sarcopenia group (\u03c1 = -0.003, p = 0.979), and sarcopenia group (\u03c1 = 0.030, p = 0.802)). In the sarc",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4690",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.802",
+      "numeric_values": [
+        0.802
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4690,
+      "sentence": "SPM concentrations showed no relationship with age in both groups and remained almost unchanged (non-sarcopenia group (\u03c1 = -0.003, p = 0.979), and sarcopenia group (\u03c1 = 0.030, p = 0.802)).",
+      "context_window": "p (\u03c1 = -0.003, p = 0.979), and sarcopenia group (\u03c1 = 0.030, p = 0.802)). In the sarcopenia group, the SPM/SPD ratio had a non-sig",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4817",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.106",
+      "numeric_values": [
+        0.106
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4817,
+      "sentence": "In the sarcopenia group, the SPM/SPD ratio had a non-significant negative correlation value with age (\u03c1 = -0.194, p = 0.106).",
+      "context_window": "ignificant negative correlation value with age (\u03c1 = -0.194, p = 0.106). However, in the non-sarcopenia group, no such trend in ag",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-4950",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.495",
+      "numeric_values": [
+        0.495
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4950,
+      "sentence": "However, in the non-sarcopenia group, no such trend in age-related changes was observed in the SPM/SPD ratio (\u03c1 = 0.065, p = 0.495).",
+      "context_window": "lated changes was observed in the SPM/SPD ratio (\u03c1 = 0.065, p = 0.495). Aging-associated changes in SPD and SPM concentrations a",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-5631",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5631,
+      "sentence": "The non-sarcopenia group was used as the reference for the analysis, and ORs (95% confidence intervals) were calculated for each explanatory variable.",
+      "context_window": "group was used as the reference for the analysis, and ORs (95% confidence intervals) were calculated for each explanatory",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-5962",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.481",
+      "numeric_values": [
+        1.481
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5962,
+      "sentence": "SPD concentration was associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]).",
+      "context_window": "entration was associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associate",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-5974",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.073-2.044",
+      "numeric_values": [
+        1.073,
+        2.044
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5974,
+      "sentence": "SPD concentration was associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]).",
+      "context_window": "s associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associated with decreased risk",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-6069",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.502",
+      "numeric_values": [
+        0.502
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6069,
+      "sentence": "SPD concentration was associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]).",
+      "context_window": "entration was associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]). Other factors associated with incre",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-6081",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.299-0.842",
+      "numeric_values": [
+        0.299,
+        0.842
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6081,
+      "sentence": "SPD concentration was associated with increased risk of sarcopenia (OR = 1.481 [95% CI: 1.073-2.044]), and SPM concentration was associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]).",
+      "context_window": "s associated with decreased risk of sarcopenia (OR = 0.502 [95% CI: 0.299-0.842]). Other factors associated with increased risk of sarcopen",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-6507",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6507,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of sarcopenia (OR = 0.033 [95% CI: 0.002-0.557]).",
+      "context_window": "SPD ratio was associated with a reduced risk of sarcopenia (OR = 0.033 [95% CI: 0.002-0.557]). Other factors associated with incre",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-6519",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.002-0.557",
+      "numeric_values": [
+        0.002,
+        0.557
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6519,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of sarcopenia (OR = 0.033 [95% CI: 0.002-0.557]).",
+      "context_window": "s associated with a reduced risk of sarcopenia (OR = 0.033 [95% CI: 0.002-0.557]). Other factors associated with increased risk of sarcopen",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-7293",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7293,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval.",
+      "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. Binomial multivariate logistic",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-7300",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7300,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval.",
+      "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. Binomial multivariate logistic regres",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8061",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8061,
+      "sentence": "Compared to the healthy group, there were significantly more women in the semi-sarcopenia and sarcopenia groups ( p < 0.05).",
+      "context_window": "y more women in the semi-sarcopenia and sarcopenia groups ( p < 0.05). As sarcopenia progressed, i.e., from normal to semi-sarco",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8176",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8176,
+      "sentence": "As sarcopenia progressed, i.e., from normal to semi-sarcopenia, and then to sarcopenia, age increased ( p < 0.001), nursing home placement and the preexisting CeVD and dementia were more common ( p < 0.05), and SMI, HGS, WS, and Alb were lower ( p < 0.001).",
+      "context_window": "to semi-sarcopenia, and then to sarcopenia, age increased ( p < 0.001), nursing home placement and the preexisting CeVD and demen",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8268",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8268,
+      "sentence": "As sarcopenia progressed, i.e., from normal to semi-sarcopenia, and then to sarcopenia, age increased ( p < 0.001), nursing home placement and the preexisting CeVD and dementia were more common ( p < 0.05), and SMI, HGS, WS, and Alb were lower ( p < 0.001).",
+      "context_window": "nt and the preexisting CeVD and dementia were more common ( p < 0.05), and SMI, HGS, WS, and Alb were lower ( p < 0.001). BMI wa",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8318",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8318,
+      "sentence": "As sarcopenia progressed, i.e., from normal to semi-sarcopenia, and then to sarcopenia, age increased ( p < 0.001), nursing home placement and the preexisting CeVD and dementia were more common ( p < 0.05), and SMI, HGS, WS, and Alb were lower ( p < 0.001).",
+      "context_window": "common ( p < 0.05), and SMI, HGS, WS, and Alb were lower ( p < 0.001). BMI was not significantly different between the healthy a",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8415",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.915",
+      "numeric_values": [
+        0.915
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8415,
+      "sentence": "BMI was not significantly different between the healthy and semi-sarcopenia groups ( p = 0.915); however, the differences were significant between the healthy and sarcopenia groups and between the semi-sarcopenia and sarcopenia groups ( p < 0.001).",
+      "context_window": "different between the healthy and semi-sarcopenia groups ( p = 0.915); however, the differences were significant between the hea",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8567",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8567,
+      "sentence": "BMI was not significantly different between the healthy and semi-sarcopenia groups ( p = 0.915); however, the differences were significant between the healthy and sarcopenia groups and between the semi-sarcopenia and sarcopenia groups ( p < 0.001).",
+      "context_window": "ups and between the semi-sarcopenia and sarcopenia groups ( p < 0.001). SPD concentration was significantly higher in the sarcope",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8674",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8674,
+      "sentence": "SPD concentration was significantly higher in the sarcopenia group than in the healthy group ( p < 0.001), but there were no significant differences between the healthy and semi-sarcopenia groups ( p = 0.087) or between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "higher in the sarcopenia group than in the healthy group ( p < 0.001), but there were no significant differences between the hea",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8777",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.087",
+      "numeric_values": [
+        0.087
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8777,
+      "sentence": "SPD concentration was significantly higher in the sarcopenia group than in the healthy group ( p < 0.001), but there were no significant differences between the healthy and semi-sarcopenia groups ( p = 0.087) or between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "ifferences between the healthy and semi-sarcopenia groups ( p = 0.087) or between the semi-sarcopenia and sarcopenia groups ( p =",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8843",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.087",
+      "numeric_values": [
+        0.087
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8843,
+      "sentence": "SPD concentration was significantly higher in the sarcopenia group than in the healthy group ( p < 0.001), but there were no significant differences between the healthy and semi-sarcopenia groups ( p = 0.087) or between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "087) or between the semi-sarcopenia and sarcopenia groups ( p = 0.087). The SPM/SPD ratio was significantly lower in the sarcopen",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-8949",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8949,
+      "sentence": "The SPM/SPD ratio was significantly lower in the sarcopenia group than in the healthy group ( p = 0.010), but not significantly different between the healthy and semi-sarcopenia groups ( p = 0.772) and between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "y lower in the sarcopenia group than in the healthy group ( p = 0.010), but not significantly different between the healthy and s",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-9042",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.772",
+      "numeric_values": [
+        0.772
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9042,
+      "sentence": "The SPM/SPD ratio was significantly lower in the sarcopenia group than in the healthy group ( p = 0.010), but not significantly different between the healthy and semi-sarcopenia groups ( p = 0.772) and between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "different between the healthy and semi-sarcopenia groups ( p = 0.772) and between the semi-sarcopenia and sarcopenia groups ( p",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-9109",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.087",
+      "numeric_values": [
+        0.087
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9109,
+      "sentence": "The SPM/SPD ratio was significantly lower in the sarcopenia group than in the healthy group ( p = 0.010), but not significantly different between the healthy and semi-sarcopenia groups ( p = 0.772) and between the semi-sarcopenia and sarcopenia groups ( p = 0.087).",
+      "context_window": "72) and between the semi-sarcopenia and sarcopenia groups ( p = 0.087). Characteristics of the healthy, semi-sarcopenia, and sar",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-p-9726",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9726,
+      "sentence": "The results of group comparisons judged to be significantly different at p\u2019 were noted as p < 0.05 and are listed.",
+      "context_window": "ns judged to be significantly different at p\u2019 were noted as p < 0.05 and are listed. The Kruskal-Wallis test was used for multip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-n-10726",
+      "claim_type": "sample_size",
+      "raw_text": "n = 55",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10726,
+      "sentence": "Criteria for the classification of healthy, semi-sarcopenia, and sarcopenia groups are listed in the text. a n = 55 and b n = 54 due to missing measurements.",
+      "context_window": "sarcopenia, and sarcopenia groups are listed in the text. a n = 55 and b n = 54 due to missing measurements. Because SMI, HGS",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-n-10739",
+      "claim_type": "sample_size",
+      "raw_text": "n = 54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10739,
+      "sentence": "Criteria for the classification of healthy, semi-sarcopenia, and sarcopenia groups are listed in the text. a n = 55 and b n = 54 due to missing measurements.",
+      "context_window": "nd sarcopenia groups are listed in the text. a n = 55 and b n = 54 due to missing measurements. Because SMI, HGS, and WS are",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-11356",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 1.625",
+      "numeric_values": [
+        1.625
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11356,
+      "sentence": "Whole blood SPD concentrations increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia.",
+      "context_window": "D concentrations increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [9",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-11368",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.110-2.379",
+      "numeric_values": [
+        1.11,
+        2.379
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11368,
+      "sentence": "Whole blood SPD concentrations increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia.",
+      "context_window": "ions increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] f",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-11413",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 2.218",
+      "numeric_values": [
+        2.218
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11413,
+      "sentence": "Whole blood SPD concentrations increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia.",
+      "context_window": "a; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia. Several other factors",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-11425",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.393-3.533",
+      "numeric_values": [
+        1.393,
+        3.533
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11425,
+      "sentence": "Whole blood SPD concentrations increased with the severity of sarcopenia; OR = 1.625 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia.",
+      "context_window": "5 [95% CI: 1.110-2.379] for semi-sarcopenia and OR = 2.218 [95% CI: 1.393-3.533] for sarcopenia. Several other factors were also associated",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-12557",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12557,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measu",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-12564",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12564,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-n-12591",
+      "claim_type": "sample_size",
+      "raw_text": "n = 54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12591,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "glyceride; OR-odds ratio; 95% CI-95% confidence interval. a n = 54 due to a missing measurement of HbA1c. Table 6 shows the r",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-12977",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.057",
+      "numeric_values": [
+        0.057
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12977,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]).",
+      "context_window": "atio was associated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI:",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-12989",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.004-0.796",
+      "numeric_values": [
+        0.004,
+        0.796
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12989,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]).",
+      "context_window": "ociated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]). Severa",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-or-a-13027",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13027,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]).",
+      "context_window": "rcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]). Several other factors were also ass",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-ci-13039",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.001-0.091",
+      "numeric_values": [
+        0.001,
+        0.091
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 13039,
+      "sentence": "The SPM/SPD ratio was associated with a reduced risk of semi-sarcopenia (OR = 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]).",
+      "context_window": "= 0.057 [95% CI: 0.004-0.796]) and sarcopenia (OR = 0.002 [95% CI: 0.001-0.091]). Several other factors were also associated with an incre",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-14192",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14192,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "ty lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measur",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-pct-14199",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14199,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "protein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement o",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_-n-14225",
+      "claim_type": "sample_size",
+      "raw_text": "n = 54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14225,
+      "sentence": "CVDs-cardiovascular diseases; CeVDs-cerebrovascular diseases; BMI-body mass index; SPD-spermidine; SPM-spermine; Hb-hemoglobin; Alb-albumin; eGFR-estimated glomerular filtration rate; LDL-C-low-density lipoprotein cholesterol; HDL-C-high-density lipoprotein cholesterol; TG-triglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement of HbA1c.",
+      "context_window": "iglyceride; OR-odds ratio; 95% CI-95% confidence interval a n = 54 due to a missing measurement of HbA1c.",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

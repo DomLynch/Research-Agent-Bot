@@ -1,0 +1,1530 @@
+{
+  "paper_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_",
+  "doi": "10.1002/jcsm.13322",
+  "extracted_at": "2026-05-05T21:38:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 10,
+    "unit_value": 22,
+    "mean_sd": 12,
+    "percentage": 23,
+    "confidence_interval": 7,
+    "p_value": 6,
+    "correlation": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1083",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1083,
+      "sentence": "A convenience sample of 24 participants ( n = 8/arm) are included in this analysis.",
+      "context_window": "ing with obesity. A convenience sample of 24 participants ( n = 8/arm) are included in this analysis. At baseline and 6 month",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1141",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1141,
+      "sentence": "At baseline and 6 months, participants were weighed, ingested a 30 mg D 3 Cr tracer dose, provided a fasted urine sample 3-6 days post\u2010dosage, underwent DXA (total body fat and lean masses, appendicular lean mass) and computed tomography (mid\u2010thigh and trunk muscle/intermuscular fat areas) scans, and performed 400\u2010m walk, stair climb, knee extensor strength, and grip strength tests.",
+      "context_window": "( n = 8/arm) are included in this analysis. At baseline and 6 months, participants were weighed, ingested a 30 mg D 3 Cr tracer",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1189",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1189,
+      "sentence": "At baseline and 6 months, participants were weighed, ingested a 30 mg D 3 Cr tracer dose, provided a fasted urine sample 3-6 days post\u2010dosage, underwent DXA (total body fat and lean masses, appendicular lean mass) and computed tomography (mid\u2010thigh and trunk muscle/intermuscular fat areas) scans, and performed 400\u2010m walk, stair climb, knee extensor strength, and grip strength tests.",
+      "context_window": "aseline and 6 months, participants were weighed, ingested a 30 mg D 3 Cr tracer dose, provided a fasted urine sample 3-6 days",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1248",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1248,
+      "sentence": "At baseline and 6 months, participants were weighed, ingested a 30 mg D 3 Cr tracer dose, provided a fasted urine sample 3-6 days post\u2010dosage, underwent DXA (total body fat and lean masses, appendicular lean mass) and computed tomography (mid\u2010thigh and trunk muscle/intermuscular fat areas) scans, and performed 400\u2010m walk, stair climb, knee extensor strength, and grip strength tests.",
+      "context_window": "30 mg D 3 Cr tracer dose, provided a fasted urine sample 3-6 days post\u2010dosage, underwent DXA (total body fat and lean masses,",
+      "claim_role": "dose",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-1537",
+      "claim_type": "mean_sd",
+      "raw_text": "68.0 \u00b1 4.4",
+      "numeric_values": [
+        68.0,
+        4.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1537,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": "trength, and grip strength tests. Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%),",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1544",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 years",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1544,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": ", and grip strength tests. Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and l",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1570",
+      "claim_type": "percentage",
+      "raw_text": "75.0%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1570,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (bo",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1600,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": "0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-1650",
+      "claim_type": "mean_sd",
+      "raw_text": "33.8 \u00b1 2.7",
+      "numeric_values": [
+        33.8,
+        2.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1650,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": "y female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ). Six month total body WL was -10.3 (95% confidence",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1657",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 kg",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1657,
+      "sentence": "Participants were older (68.0 \u00b1 4.4 years), mostly White (75.0%), predominantly female (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ).",
+      "context_window": "e (66.7%), and living with obesity (body mass index: 33.8 \u00b1 2.7 kg/m 2 ). Six month total body WL was -10.3 (95% confidence in",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1706",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1706,
+      "sentence": "Six month total body WL was -10.3 (95% confidence interval, CI: -12.7, -7.9) kg.",
+      "context_window": "ex: 33.8 \u00b1 2.7 kg/m 2 ). Six month total body WL was -10.3 (95% confidence interval, CI: -12.7, -7.9) kg. All DXA and compu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-1907",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.0, 3.0",
+      "numeric_values": [
+        -2.0,
+        3.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1907,
+      "sentence": "All DXA and computed tomography\u2010derived body composition measures were significantly decreased from baseline, yet D 3 Cr muscle mass did not change [+0.5 (95% CI: -2.0, 3.0) kg].",
+      "context_window": "from baseline, yet D 3 Cr muscle mass did not change [+0.5 (95% CI: -2.0, 3.0) kg]. Of muscle function and strength measures, only grip s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-2021",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.0, 4.0",
+      "numeric_values": [
+        1.0,
+        4.0
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 2021,
+      "sentence": "Of muscle function and strength measures, only grip strength significantly changed [+2.5 (95% CI: 1.0, 4.0) kg] from baseline.",
+      "context_window": "h measures, only grip strength significantly changed [+2.5 (95% CI: 1.0, 4.0) kg] from baseline. Among 24 older adults, significant WL",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-136",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 136,
+      "sentence": "The number of older adults living with obesity has steadily increased over the past four decades, with recent estimates indicating over 40% of adults aged 60 and older currently live with the condition.",
+      "context_window": "he past four decades, with recent estimates indicating over 40% of adults aged 60 and older currently live with the conditi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-1811",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 1811,
+      "sentence": "15 , 16 , 17 Whole body D 3 Cr muscle mass has been shown to closely align with validated methods of measuring muscle volume, such as whole body magnetic resonance imaging ( r = 0.87; P < 0.01), 18 and importantly, measures a muscle parameter (i.e., the creatine pool), which is associated with skeletal muscle function.",
+      "context_window": ", such as whole body magnetic resonance imaging ( r = 0.87; P < 0.01), 18 and importantly, measures a muscle parameter (i.e., th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-2795",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2795,
+      "sentence": "The INVEST in Bone Health trial ( NCT04076618 ) 26 provides an ideal parent study to examine and interpret WL\u2010related changes in D 3 Cr muscle mass, as all participants in this study are following a similar dietary prescription (i.e., a higher protein, nutritionally complete, hypocaloric meal plan, designed to elicit 8-10% WL loss over a 6\u2010month period 6 ).",
+      "context_window": "nally complete, hypocaloric meal plan, designed to elicit 8-10% WL loss over a 6\u2010month period 6 ). Additionally, this study",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-992",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 992,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm r",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1032",
+      "claim_type": "sample_size",
+      "raw_text": "n = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1032,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1197",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1197,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1244",
+      "claim_type": "sample_size",
+      "raw_text": "n = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1244,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "trated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1373",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1373,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "d is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eigh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1467",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1467,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "ts of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50). A convenience sampl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1502",
+      "claim_type": "sample_size",
+      "raw_text": "n = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1502,
+      "sentence": "26 Briefly, the INVEST in Bone Health trial utilizes a three\u2010arm randomized design in which one arm receives a higher protein, nutritionally complete, hypocaloric meal plan 6 targeting 8-10% WL over a 12\u2010month period (WL only; n = 50); a second arm receives the same dietary WL intervention and is also asked to wear a weighted vest 8 h/day with weight replacement in the vest titrated up to 10% of an individual's lost weight (WL + VEST; n = 50); and a third arm receives the same dietary WL intervention and is also asked to participate in a structured RT programme 3 days/week consisting of three sets of 10-12 repetitions for eight different exercises at 70-75% 1 repetition maximum (WL + RT; n = 50).",
+      "context_window": "ifferent exercises at 70-75% 1 repetition maximum (WL + RT; n = 50). A convenience sample of 24 participants ( n = 8/arm) with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1553",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1553,
+      "sentence": "A convenience sample of 24 participants ( n = 8/arm) with complete baseline and 6\u2010month D 3 Cr, DXA, CT, 400\u2010m walk, stair climb, and grip strength data ascertained by 12 May 2022 was included in this ancillary pilot study, with n = 20 also presenting with completed knee extension strength data.",
+      "context_window": "WL + RT; n = 50). A convenience sample of 24 participants ( n = 8/arm) with complete baseline and 6\u2010month D 3 Cr, DXA, CT, 40",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-1740",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1740,
+      "sentence": "A convenience sample of 24 participants ( n = 8/arm) with complete baseline and 6\u2010month D 3 Cr, DXA, CT, 400\u2010m walk, stair climb, and grip strength data ascertained by 12 May 2022 was included in this ancillary pilot study, with n = 20 also presenting with completed knee extension strength data.",
+      "context_window": "2 May 2022 was included in this ancillary pilot study, with n = 20 also presenting with completed knee extension strength data",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1979",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1979,
+      "sentence": "As previously described, 27 participants were instructed to ingest a 30 mg oral dose of deuterated creatine and provide a fasted urine sample (but not the first morning void) 3 to 6 days post\u2010dose.",
+      "context_window": "usly described, 27 participants were instructed to ingest a 30 mg oral dose of deuterated creatine and provide a fasted urine",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-2090",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2090,
+      "sentence": "As previously described, 27 participants were instructed to ingest a 30 mg oral dose of deuterated creatine and provide a fasted urine sample (but not the first morning void) 3 to 6 days post\u2010dose.",
+      "context_window": "a fasted urine sample (but not the first morning void) 3 to 6 days post\u2010dose. This dosing/sampling time course allows for isot",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-3062",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3062,
+      "sentence": "Weight was measured to the nearest 0.1 kg using a calibrated and certified balance beam scale (Tanita #WB\u20103000PLUS).",
+      "context_window": "e in whole wet muscle). Weight was measured to the nearest 0.1 kg using a calibrated and certified balance beam scale (Tanita",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-3370",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3370,
+      "sentence": "Coefficients of variation from repeated scans at our institution are 1.3% for total body fat mass and 0.9% for total body lean mass.",
+      "context_window": "nts of variation from repeated scans at our institution are 1.3% for total body fat mass and 0.9% for total body lean mass.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-3403",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3403,
+      "sentence": "Coefficients of variation from repeated scans at our institution are 1.3% for total body fat mass and 0.9% for total body lean mass.",
+      "context_window": "ans at our institution are 1.3% for total body fat mass and 0.9% for total body lean mass. When appropriate (i.e., based on",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-5804",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5804,
+      "sentence": "Likewise, to assess muscular strength, grip strength dynamometry was measured in both hands using a Jamar hydraulic hand dynamometer (Performance Health, Warrenville, IL), with the mean value from the two trials (unless an excess of 4 kg was observed between trials, in which case a third trial was completed) in the dominant hand was included for analysis.",
+      "context_window": "ith the mean value from the two trials (unless an excess of 4 kg was observed between trials, in which case a third trial wa",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-6254",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6254,
+      "sentence": "Standing height without shoes was measured to the nearest 0.1 cm using a stadiometer and body mass index (BMI) was calculated as dividing weight in kg by height in m 2 .",
+      "context_window": ". Standing height without shoes was measured to the nearest 0.1 cm using a stadiometer and body mass index (BMI) was calculate",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-6917",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6917,
+      "sentence": "Baseline and 6\u2010month body weight, D 3 Cr muscle mass, DXA/CT\u2010acquired body composition, and muscle function/strength measures are presented as mean \u00b1 SD, with unadjusted 6\u2010month change values presented as means and 95% confidence intervals (95% CI) obtained from paired t \u2010tests.",
+      "context_window": "ith unadjusted 6\u2010month change values presented as means and 95% confidence intervals (95% CI) obtained from paired t \u2010tests",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-6943",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6943,
+      "sentence": "Baseline and 6\u2010month body weight, D 3 Cr muscle mass, DXA/CT\u2010acquired body composition, and muscle function/strength measures are presented as mean \u00b1 SD, with unadjusted 6\u2010month change values presented as means and 95% confidence intervals (95% CI) obtained from paired t \u2010tests.",
+      "context_window": "nge values presented as means and 95% confidence intervals (95% CI) obtained from paired t \u2010tests. Per cent change over 6 m",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-7003",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 7003,
+      "sentence": "Per cent change over 6 months is also presented as means and 95% CIs, obtained from one\u2010sample t \u2010tests.",
+      "context_window": "95% CI) obtained from paired t \u2010tests. Per cent change over 6 months is also presented as means and 95% CIs, obtained from one\u2010s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-7043",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7043,
+      "sentence": "Per cent change over 6 months is also presented as means and 95% CIs, obtained from one\u2010sample t \u2010tests.",
+      "context_window": "er cent change over 6 months is also presented as means and 95% CIs, obtained from one\u2010sample t \u2010tests. Partial Pearson cor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-53",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 53,
+      "sentence": "Baseline characteristics of the convenience sample ( n = 24) of participants included in this ancillary pilot project are summarized in Table 1 .",
+      "context_window": "Baseline characteristics of the convenience sample ( n = 24) of participants included in this ancillary pilot project a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-191",
+      "claim_type": "mean_sd",
+      "raw_text": "68.0 \u00b1 4.4",
+      "numeric_values": [
+        68.0,
+        4.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 191,
+      "sentence": "Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino).",
+      "context_window": "d in Table 1 . Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-198",
+      "claim_type": "unit_value",
+      "raw_text": "4.4 years",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 198,
+      "sentence": "Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino).",
+      "context_window": "ble 1 . Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino).",
+      "context_window": "of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino). BMI was 33",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-297",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 297,
+      "sentence": "Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino).",
+      "context_window": "ants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino). BMI was 33.8 \u00b1 2.7 kg/",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-312",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 312,
+      "sentence": "Overall, average age of the study sample was 68.0 \u00b1 4.4 years, and the majority of participants were non\u2010Hispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino).",
+      "context_window": "ispanic, Caucasian/White, women (67% female, 75% Caucasian, 96% non\u2010Hispanic/Latino). BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-346",
+      "claim_type": "mean_sd",
+      "raw_text": "33.8 \u00b1 2.7",
+      "numeric_values": [
+        33.8,
+        2.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 346,
+      "sentence": "BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010reported physical activity expenditure was 2805 \u00b1 2022 calories per week, indicative of a moderately active sample, living with class 1 obesity.",
+      "context_window": "7% female, 75% Caucasian, 96% non\u2010Hispanic/Latino). BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010reported physical activity expenditure wa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-353",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 kg",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 353,
+      "sentence": "BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010reported physical activity expenditure was 2805 \u00b1 2022 calories per week, indicative of a moderately active sample, living with class 1 obesity.",
+      "context_window": "le, 75% Caucasian, 96% non\u2010Hispanic/Latino). BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010reported physical activity expenditure was 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-418",
+      "claim_type": "mean_sd",
+      "raw_text": "2805 \u00b1 2022",
+      "numeric_values": [
+        2805.0,
+        2022.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 418,
+      "sentence": "BMI was 33.8 \u00b1 2.7 kg/m 2 , and self\u2010reported physical activity expenditure was 2805 \u00b1 2022 calories per week, indicative of a moderately active sample, living with class 1 obesity.",
+      "context_window": "g/m 2 , and self\u2010reported physical activity expenditure was 2805 \u00b1 2022 calories per week, indicative of a moderately active sample",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-576",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 576,
+      "sentence": "Baseline descriptive characteristics of study sample ( n = 24)\n\nBaseline and 6\u2010month unadjusted values of total body weight (mass), body composition, and muscle strength and function are presented in Table 2 .",
+      "context_window": "ty. Baseline descriptive characteristics of study sample ( n = 24) Baseline and 6\u2010month unadjusted values of total body weig",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-805",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -12.7, -7.9",
+      "numeric_values": [
+        -12.7,
+        -7.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 805,
+      "sentence": "Total body weight was significantly reduced in all participants by -10.3 (95% CI: -12.7, -7.9) kg, with the majority of lost weight coming from fat mass [-8.4 (95% CI: -10.5, -6.3) kg].",
+      "context_window": "ght was significantly reduced in all participants by -10.3 (95% CI: -12.7, -7.9) kg, with the majority of lost weight coming from fat mass",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-891",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -10.5, -6.3",
+      "numeric_values": [
+        -10.5,
+        -6.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 891,
+      "sentence": "Total body weight was significantly reduced in all participants by -10.3 (95% CI: -12.7, -7.9) kg, with the majority of lost weight coming from fat mass [-8.4 (95% CI: -10.5, -6.3) kg].",
+      "context_window": "ith the majority of lost weight coming from fat mass [-8.4 (95% CI: -10.5, -6.3) kg]. Likewise, DXA\u2010acquired total body lean mass [-0.7 (95",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-968",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.2, -0.1",
+      "numeric_values": [
+        -1.2,
+        -0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 968,
+      "sentence": "Likewise, DXA\u2010acquired total body lean mass [-0.7 (95% CI: -1.2, -0.1) kg] and appendicular lean mass [-0.9 (95% CI): -1.4, -0.4) kg] decreased significantly (though modestly); however, whole body muscle mass, as measured via the D 3 Cr dilution method, did not significantly change [+0.5 (95% CI: -2.0, 3.0) kg].",
+      "context_window": ".3) kg]. Likewise, DXA\u2010acquired total body lean mass [-0.7 (95% CI: -1.2, -0.1) kg] and appendicular lean mass [-0.9 (95% CI): -1.4, -0.4)",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-1026",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1026,
+      "sentence": "Likewise, DXA\u2010acquired total body lean mass [-0.7 (95% CI: -1.2, -0.1) kg] and appendicular lean mass [-0.9 (95% CI): -1.4, -0.4) kg] decreased significantly (though modestly); however, whole body muscle mass, as measured via the D 3 Cr dilution method, did not significantly change [+0.5 (95% CI: -2.0, 3.0) kg].",
+      "context_window": "(95% CI: -1.2, -0.1) kg] and appendicular lean mass [-0.9 (95% CI): -1.4, -0.4) kg] decreased significantly (though modest",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-1207",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.0, 3.0",
+      "numeric_values": [
+        -2.0,
+        3.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1207,
+      "sentence": "Likewise, DXA\u2010acquired total body lean mass [-0.7 (95% CI: -1.2, -0.1) kg] and appendicular lean mass [-0.9 (95% CI): -1.4, -0.4) kg] decreased significantly (though modestly); however, whole body muscle mass, as measured via the D 3 Cr dilution method, did not significantly change [+0.5 (95% CI: -2.0, 3.0) kg].",
+      "context_window": "D 3 Cr dilution method, did not significantly change [+0.5 (95% CI: -2.0, 3.0) kg]. CT\u2010acquired muscle and IMAT areas obtained from the m",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-ci-1601",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.0, 4.0",
+      "numeric_values": [
+        1.0,
+        4.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1601,
+      "sentence": "CT\u2010acquired muscle and IMAT areas obtained from the mid\u2010thigh [muscle: -6.8 (-9.4, -4.3) cm 2 ; IMAT: -1.9 (-3.4, -0.5) cm 2 ] and trunk [muscle: -6.1 (-8.5, -3.6) cm 2 ; IMAT: -1.2 (-2.1, -0.2) cm 2 ] declined significantly from baseline; and, of muscle function and strength measures, only grip strength significantly changed (notably, increased) from baseline [+2.5 (95% CI: 1.0, 4.0) kg].",
+      "context_window": "ificantly changed (notably, increased) from baseline [+2.5 (95% CI: 1.0, 4.0) kg]. Baseline and 6\u2010month unadjusted values of relevant b",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-1769",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "Baseline and 6\u2010month unadjusted values of relevant body weight, composition and muscle function/strength variables\n\nStatistical significance at P < 0.05.",
+      "context_window": "le function/strength variables Statistical significance at P < 0.05. Partial Pearson correlations (adjusted for age and sex) b",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-2255",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2255,
+      "sentence": "No significant associations were observed between changes in D 3 Cr muscle mass and changes in total body weight or DXA\u2010acquired lean body mass or total body fat mass; however, change in D 3 Cr muscle mass was modestly and directly correlated with change in appendicular lean mass ( r = 0.46; P = 0.03).",
+      "context_window": "orrelated with change in appendicular lean mass ( r = 0.46; P = 0.03). These data are displayed graphically by sex in Figure 1 ,",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-2697",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2697,
+      "sentence": "That said, the interaction term for sex was non\u2010significant; however, few men were included in these analyses ( n = 8).",
+      "context_window": "ificant; however, few men were included in these analyses ( n = 8). No significant correlations were observed between change",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-3005",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3005,
+      "sentence": "Adjusted correlations (for age and sex), between 6\u2010month change in D 3 Cr muscle mass and changes in body weight and composition\n\nDenotes statistical significance P < 0.05.",
+      "context_window": "dy weight and composition Denotes statistical significance P < 0.05. Scatterplots of 6\u2010month change in D 3 Cr muscle mass and",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-3523",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3523,
+      "sentence": "Only one significant association was observed between change in body composition and change in muscle function, with change in CT\u2010derived IMAT fat area for the trunk inversely associated with gait speed ( r = -0.44; P = 0.04).",
+      "context_window": "the trunk inversely associated with gait speed ( r = -0.44; P = 0.04). No significant associations were observed between any D 3",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-p-3870",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3870,
+      "sentence": "Adjusted correlations (for age and sex), between 6\u2010month change in D 3 Cr muscle mass and body weight and composition measures with change in muscle function and strength\n\nDenotes statistical significance P < 0.05.",
+      "context_window": "cle function and strength Denotes statistical significance P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-546",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 546,
+      "sentence": "Herein, we report that ~11% loss of total body weight was accompanied by a ~1.5% reduction in DXA\u2010acquired total body lean mass (coming predominantly from the appendicular region) and a ~4-5% loss in muscle area at the mid\u2010thigh and trunk.",
+      "context_window": "ng mobility and strength) measures. Herein, we report that ~11% loss of total body weight was accompanied by a ~1.5% reduct",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-598",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 598,
+      "sentence": "Herein, we report that ~11% loss of total body weight was accompanied by a ~1.5% reduction in DXA\u2010acquired total body lean mass (coming predominantly from the appendicular region) and a ~4-5% loss in muscle area at the mid\u2010thigh and trunk.",
+      "context_window": "t that ~11% loss of total body weight was accompanied by a ~1.5% reduction in DXA\u2010acquired total body lean mass (coming pred",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-711",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 711,
+      "sentence": "Herein, we report that ~11% loss of total body weight was accompanied by a ~1.5% reduction in DXA\u2010acquired total body lean mass (coming predominantly from the appendicular region) and a ~4-5% loss in muscle area at the mid\u2010thigh and trunk.",
+      "context_window": "coming predominantly from the appendicular region) and a ~4-5% loss in muscle area at the mid\u2010thigh and trunk. However, wh",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-corr-1008",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.46)",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1008,
+      "sentence": "Change in D 3 Cr muscle mass was moderately correlated with changes in DXA\u2010acquired appendicular lean mass ( r = 0.46), a finding which may be more evident in women than men.",
+      "context_window": "related with changes in DXA\u2010acquired appendicular lean mass ( r = 0.46), a finding which may be more evident in women than men. Fin",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-1574",
+      "claim_type": "mean_sd",
+      "raw_text": "25.7 \u00b1 8.3",
+      "numeric_values": [
+        25.7,
+        8.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1574,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "seline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1581",
+      "claim_type": "unit_value",
+      "raw_text": "8.3 kg",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1581,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-h",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-1631",
+      "claim_type": "mean_sd",
+      "raw_text": "23.3 \u00b1 5.6",
+      "numeric_values": [
+        23.3,
+        5.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1631,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "e (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1638",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 kg",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1638,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "\u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (4",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-1703",
+      "claim_type": "mean_sd",
+      "raw_text": "49.0 \u00b1 10.0",
+      "numeric_values": [
+        49.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1703,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "g)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, simil",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-1710",
+      "claim_type": "unit_value",
+      "raw_text": "10.0 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1710,
+      "sentence": "The baseline amount of D 3 Cr muscle mass reported in our sample (25.7 \u00b1 8.3 kg) is similar to DXA appendicular lean mass (23.3 \u00b1 5.6 kg)-half of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar to what has been previously reported among older adults.",
+      "context_window": "of what is estimated with DXA total body lean mass (49.0 \u00b1 10.0 kg) and approximately one quarter of total body mass, similar",
+      "claim_role": "population",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-2384",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2384,
+      "sentence": "34 Although stable or increasing muscle mass in older adults experiencing >10% WL would generally be unexpected, because of the higher protein nature of our dietary prescription (which all participants received) and the fact that two\u2010thirds of our sample was also engaged in some type of exercise programme (i.e., weighted vest use or structured RT), concomitant uptake of these anabolic stimuli may help to explain our findings.",
+      "context_window": "ble or increasing muscle mass in older adults experiencing >10% WL would generally be unexpected, because of the higher pro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-n-3447",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3447,
+      "sentence": "Specifically, in a convenience sample ( n = 40) of older men from the MrOS cohort who were followed for 1.6 years, Duchowny et al. reported correlations of 0.50 and 0.58 between changes in D 3 Cr muscle mass and total body lean and appendicular lean mass, respectively.",
+      "context_window": "acquired lean mass. Specifically, in a convenience sample ( n = 40) of older men from the MrOS cohort who were followed for 1.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-3511",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 years",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3511,
+      "sentence": "Specifically, in a convenience sample ( n = 40) of older men from the MrOS cohort who were followed for 1.6 years, Duchowny et al. reported correlations of 0.50 and 0.58 between changes in D 3 Cr muscle mass and total body lean and appendicular lean mass, respectively.",
+      "context_window": "40) of older men from the MrOS cohort who were followed for 1.6 years, Duchowny et al. reported correlations of 0.50 and 0.58 bet",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-4032",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4032,
+      "sentence": "Although reasons for this discrepancy are not readily apparent, it may be due to potential error introduced as muscle mass is only about 50% of DXA lean mass (in older men 36 ) with the remainder of lean mass consisting of body water and organ weights, which would more heavily influence total body lean mass, as compared with appendicular lean mass, measurement.",
+      "context_window": "to potential error introduced as muscle mass is only about 50% of DXA lean mass (in older men 36 ) with the remainder of l",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-4668",
+      "claim_type": "mean_sd",
+      "raw_text": "16.9 \u00b1 1.3",
+      "numeric_values": [
+        16.9,
+        1.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4668,
+      "sentence": "Authors report that higher levels of tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs.",
+      "context_window": "ors report that higher levels of tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs. Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-4675",
+      "claim_type": "unit_value",
+      "raw_text": "1.3 mg",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4675,
+      "sentence": "Authors report that higher levels of tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs.",
+      "context_window": "ort that higher levels of tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs. Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-4695",
+      "claim_type": "mean_sd",
+      "raw_text": "5.8 \u00b1 3.5",
+      "numeric_values": [
+        5.8,
+        3.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4695,
+      "sentence": "Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs.",
+      "context_window": "ls of tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs. Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-4701",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4701,
+      "sentence": "Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs.",
+      "context_window": "tibial muscle density (Q4: 16.9 \u00b1 1.3 mg/cm 3 vs. Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-4789",
+      "claim_type": "mean_sd",
+      "raw_text": "25.3 \u00b1 3.5",
+      "numeric_values": [
+        25.3,
+        3.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4789,
+      "sentence": "Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs.",
+      "context_window": "with a higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs. Q1: 22.5 \u00b1 3.7 kg); however, measures were not found",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-4796",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4796,
+      "sentence": "Q1: 5.8 \u00b1 3.5 mg/cm 3 ) are associated with a higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs.",
+      "context_window": "higher amount of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs. Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-msd-4811",
+      "claim_type": "mean_sd",
+      "raw_text": "22.5 \u00b1 3.7",
+      "numeric_values": [
+        22.5,
+        3.7
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4811,
+      "sentence": "Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to be strongly correlated ( r = -0.12).",
+      "context_window": "of whole body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs. Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to be strongly correl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-u-4818",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 kg",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4818,
+      "sentence": "Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to be strongly correlated ( r = -0.12).",
+      "context_window": "e body D 3 Cr muscle mass (Q4: 25.3 \u00b1 3.5 kg vs. Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to be strongly correlate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-corr-4886",
+      "claim_type": "correlation",
+      "raw_text": "( r = -0.12)",
+      "numeric_values": [
+        -0.12
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4886,
+      "sentence": "Q1: 22.5 \u00b1 3.7 kg); however, measures were not found to be strongly correlated ( r = -0.12).",
+      "context_window": "however, measures were not found to be strongly correlated ( r = -0.12). Unfortunately, as our study acquired axial CT scans, resul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-corr-6573",
+      "claim_type": "correlation",
+      "raw_text": "( r = -0.44)",
+      "numeric_values": [
+        -0.44
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6573,
+      "sentence": "Conversely, the lone significant association observed between change in body composition and change in muscle function was a modest ( r = -0.44) inverse association between regional fat and gait speed, which has been shown before.",
+      "context_window": "body composition and change in muscle function was a modest ( r = -0.44) inverse association between regional fat and gait speed, wh",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10570063_application_of_the_d_3_creatine_muscle_mass_assessment_tool_-pct-8351",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8351,
+      "sentence": "We report that significant, clinically meaningful, loss in total body weight (11% of baseline weight) was accompanied by significant loss in several DXA and CT\u2010derived body composition measures, yet preservation of D 3 Cr muscle mass and muscle function.",
+      "context_window": "nificant, clinically meaningful, loss in total body weight (11% of baseline weight) was accompanied by significant loss in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

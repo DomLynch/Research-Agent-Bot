@@ -1,0 +1,878 @@
+{
+  "paper_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon",
+  "doi": "10.1111/acel.70254",
+  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 15,
+    "percentage": 20,
+    "sample_size": 2,
+    "p_value": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-2297",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2297,
+      "sentence": "Adult rhesus monkeys ( Macaca mulatta ) were enrolled in the study between 8 and 14 years of age and were fed a semi\u2010purified, nutritionally\u2010fortified, low\u2010fat diet containing 15% protein and 10% fat.",
+      "context_window": "( Macaca mulatta ) were enrolled in the study between 8 and 14 years of age and were fed a semi\u2010purified, nutritionally\u2010fortifie",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2392",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2392,
+      "sentence": "Adult rhesus monkeys ( Macaca mulatta ) were enrolled in the study between 8 and 14 years of age and were fed a semi\u2010purified, nutritionally\u2010fortified, low\u2010fat diet containing 15% protein and 10% fat.",
+      "context_window": "\u2010purified, nutritionally\u2010fortified, low\u2010fat diet containing 15% protein and 10% fat. All animals were housed in enclosures",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2408",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2408,
+      "sentence": "Adult rhesus monkeys ( Macaca mulatta ) were enrolled in the study between 8 and 14 years of age and were fed a semi\u2010purified, nutritionally\u2010fortified, low\u2010fat diet containing 15% protein and 10% fat.",
+      "context_window": "tionally\u2010fortified, low\u2010fat diet containing 15% protein and 10% fat. All animals were housed in enclosures with automatic w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2821",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2821,
+      "sentence": "The CR diet was gradually implemented to 30% restriction based on individual baseline food intake.",
+      "context_window": "fed) or CR diets. The CR diet was gradually implemented to 30% restriction based on individual baseline food intake. For t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-3060",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3060,
+      "sentence": "For the purpose of this study, animal assessments include body weight, body composition (via dual energy X\u2010ray absorptiometry) and blood draws were collected for each animal within 6 months of necropsy.",
+      "context_window": "etry) and blood draws were collected for each animal within 6 months of necropsy. Body weight of each individual was assessed t",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-4181",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 4181,
+      "sentence": "Greater than 300 mg of each adipose sample was homogenized in 1.5 mL of TRI Reagent (Sigma #T9424).",
+      "context_window": "l samples were processed for transcriptomics. Greater than 300 mg of each adipose sample was homogenized in 1.5 mL of TRI Rea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-4230",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4230,
+      "sentence": "Greater than 300 mg of each adipose sample was homogenized in 1.5 mL of TRI Reagent (Sigma #T9424).",
+      "context_window": "eater than 300 mg of each adipose sample was homogenized in 1.5 mL of TRI Reagent (Sigma #T9424). RNA was then purified using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-193",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 193,
+      "sentence": "A 30% caloric restriction (CR) diet was introduced in adulthood (age 8-14 years) for one half of the monkeys and was maintained throughout the lifespan.",
+      "context_window": "nal Primate Research Center (Colman et al. 2009 , 2014 ). A 30% caloric restriction (CR) diet was introduced in adulthood (",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-262",
+      "claim_type": "unit_value",
+      "raw_text": "14 years",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 262,
+      "sentence": "A 30% caloric restriction (CR) diet was introduced in adulthood (age 8-14 years) for one half of the monkeys and was maintained throughout the lifespan.",
+      "context_window": "ic restriction (CR) diet was introduced in adulthood (age 8-14 years) for one half of the monkeys and was maintained throughout",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-642",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 642,
+      "sentence": "Samples of subcutaneous adipose tissue (SAT) and visceral adipose tissue (VAT) were collected at necropsy from age\u2010matched (~25 years of age) adult male rhesus monkeys ( n = 4 per diet, both depots).",
+      "context_window": "tissue (VAT) were collected at necropsy from age\u2010matched (~25 years of age) adult male rhesus monkeys ( n = 4 per diet, both de",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-n-687",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 687,
+      "sentence": "Samples of subcutaneous adipose tissue (SAT) and visceral adipose tissue (VAT) were collected at necropsy from age\u2010matched (~25 years of age) adult male rhesus monkeys ( n = 4 per diet, both depots).",
+      "context_window": "age\u2010matched (~25 years of age) adult male rhesus monkeys ( n = 4 per diet, both depots). For this small cohort, the CR monke",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-801",
+      "claim_type": "unit_value",
+      "raw_text": "13 kg",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 801,
+      "sentence": "For this small cohort, the CR monkeys had significantly lower body weight (~10 vs. ~13 kg for Controls), fat mass, and lower percentage fat (18% vs. ~35% for Controls), with numerically lower circulating levels of basal insulin and cholesterol, and higher insulin sensitivity (Figure S1 ).",
+      "context_window": "he CR monkeys had significantly lower body weight (~10 vs. ~13 kg for Controls), fat mass, and lower percentage fat (18% vs.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-858",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 858,
+      "sentence": "For this small cohort, the CR monkeys had significantly lower body weight (~10 vs. ~13 kg for Controls), fat mass, and lower percentage fat (18% vs. ~35% for Controls), with numerically lower circulating levels of basal insulin and cholesterol, and higher insulin sensitivity (Figure S1 ).",
+      "context_window": ". ~13 kg for Controls), fat mass, and lower percentage fat (18% vs. ~35% for Controls), with numerically lower circulating",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-867",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 867,
+      "sentence": "For this small cohort, the CR monkeys had significantly lower body weight (~10 vs. ~13 kg for Controls), fat mass, and lower percentage fat (18% vs. ~35% for Controls), with numerically lower circulating levels of basal insulin and cholesterol, and higher insulin sensitivity (Figure S1 ).",
+      "context_window": "for Controls), fat mass, and lower percentage fat (18% vs. ~35% for Controls), with numerically lower circulating levels of",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-1091",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/dL",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 1091,
+      "sentence": "Glucose levels were not different between diets and were within the healthy range (~80 mg/dL).",
+      "context_window": "different between diets and were within the healthy range (~80 mg/dL). Diet did not impact blood cell count (red and white blood",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-1727",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1727,
+      "sentence": "Previous studies in mice did not detect overt baseline transcriptional differences between depots (epididymal vs. inguinal; ~3%) (Gesta et al.",
+      "context_window": "ional differences between depots (epididymal vs. inguinal; ~3%) (Gesta et al. 2006 ), and similar modest differences have",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-1846",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1846,
+      "sentence": "2006 ), and similar modest differences have been reported for obese men (visceral vs. subcutaneous; ~7%) (Vohl et al.",
+      "context_window": "ve been reported for obese men (visceral vs. subcutaneous; ~7%) (Vohl et al. 2004 ). Here we investigated the differences",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2384",
+      "claim_type": "percentage",
+      "raw_text": "99%",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2384,
+      "sentence": "Focusing only on Control monkeys, that is, in the absence of dietary manipulation, the majority (99%) of SAT and VAT genes detected were not differentially expressed (DE) between the two depots (Figure 1A ).",
+      "context_window": "t is, in the absence of dietary manipulation, the majority (99%) of SAT and VAT genes detected were not differentially expr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-2539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2539,
+      "sentence": "DE analysis detected 30 genes with adjusted p < 0.05 and 482 genes with unadjusted p < 0.05.",
+      "context_window": "s (Figure 1A ). DE analysis detected 30 genes with adjusted p < 0.05 and 482 genes with unadjusted p < 0.05. Among those reachin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-2578",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2578,
+      "sentence": "DE analysis detected 30 genes with adjusted p < 0.05 and 482 genes with unadjusted p < 0.05.",
+      "context_window": "genes with adjusted p < 0.05 and 482 genes with unadjusted p < 0.05. Among those reaching significance there were several evolu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-3447",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3447,
+      "sentence": "2013 ) overall was not different between SAT and VAT at the transcriptional level, with only MMP11 reaching significance (adjusted p < 0.05), while angiogenesis regulators ANGPT1 and MMP15 were numerically distinct but not significant (Figure S2 ).",
+      "context_window": "onal level, with only MMP11 reaching significance (adjusted p < 0.05), while angiogenesis regulators ANGPT1 and MMP15 were numer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-4233",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4233,
+      "sentence": "Inset heat maps depict the top and bottom 20% of DE genes (Log2FC SAT/VAT) for both depots. (B) Dot plot depicting KEGG pathway enrichment via GSEA ( q < 0.1) for SAT (top) and VAT (bottom).",
+      "context_window": ") and VAT (blue). Inset heat maps depict the top and bottom 20% of DE genes (Log2FC SAT/VAT) for both depots. (B) Dot plot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-6521",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6521,
+      "sentence": "The monkeys in this study were genetically heterogeneous and were at advanced age (~25 years of age, ~75 years human equivalent) so that variance among individuals at the transcriptional level was quite high.",
+      "context_window": "y were genetically heterogeneous and were at advanced age (~25 years of age, ~75 years human equivalent) so that variance among",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-6539",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6539,
+      "sentence": "The monkeys in this study were genetically heterogeneous and were at advanced age (~25 years of age, ~75 years human equivalent) so that variance among individuals at the transcriptional level was quite high.",
+      "context_window": "heterogeneous and were at advanced age (~25 years of age, ~75 years human equivalent) so that variance among individuals at the",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-6900",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6900,
+      "sentence": "The response to CR independent of depot (i.e., depots combined) involved 118 (< 1%) DE genes ( q < 0.05) and 1322 (9.2%) using unadjusted p values ( p < 0.05) (Figure 2A ).",
+      "context_window": "ndependent of depot (i.e., depots combined) involved 118 (< 1%) DE genes ( q < 0.05) and 1322 (9.2%) using unadjusted p va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-6935",
+      "claim_type": "percentage",
+      "raw_text": "9.2%",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6935,
+      "sentence": "The response to CR independent of depot (i.e., depots combined) involved 118 (< 1%) DE genes ( q < 0.05) and 1322 (9.2%) using unadjusted p values ( p < 0.05) (Figure 2A ).",
+      "context_window": "ombined) involved 118 (< 1%) DE genes ( q < 0.05) and 1322 (9.2%) using unadjusted p values ( p < 0.05) (Figure 2A ). Limiti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-6969",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6969,
+      "sentence": "The response to CR independent of depot (i.e., depots combined) involved 118 (< 1%) DE genes ( q < 0.05) and 1322 (9.2%) using unadjusted p values ( p < 0.05) (Figure 2A ).",
+      "context_window": "nes ( q < 0.05) and 1322 (9.2%) using unadjusted p values ( p < 0.05) (Figure 2A ). Limiting analysis to SAT only identified 100",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-8691",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8691,
+      "sentence": "Genes differentially expressed are highlighted for each comparison (A) both depots (red/blue), (B) SAT (yellow), and (C) VAT (blue). (D) Heatmaps of the CR/C log2FC for the top 25% of most significant DE genes by the absolute value of the log2FC for both depots (shown for each comparison-30 genes).",
+      "context_window": "(C) VAT (blue). (D) Heatmaps of the CR/C log2FC for the top 25% of most significant DE genes by the absolute value of the l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-9035",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9035,
+      "sentence": "Dot denotes FDR < 0.05. (G) xCell transcriptome analysis identifying enrichment of individual cell types within each depot on the respective diets (* p < 0.05).",
+      "context_window": "ual cell types within each depot on the respective diets (* p < 0.05). Adipokine gene expression was somewhat sensitive to CR.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-13205",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13205,
+      "sentence": "Genes where multiple isoforms are detected are denoted for both depots (red/blue), SAT (yellow), and VAT (blue). (C) Bar plots showing the number of genes and corresponding exons (passing q < 0.1) that present exon\u2010switching by DEX\u2010seq analysis in response to CR for both SAT and VAT. (D) Dot plot of KEGG pathways enriched via ORA ( q < 0.05) for genes with exon\u2010switching from SAT in (C). (E) Dot plot of KEGG pathways enriched via ORA ( q < 0.05) for top\u2010spliced genes ( p < 0.05) in SAT.",
+      "context_window": "thways enriched via ORA ( q < 0.05) for top\u2010spliced genes ( p < 0.05) in SAT. Whole transcriptome analysis showed positive enri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-13594",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13594,
+      "sentence": "Using the \u201ccombined\u201d approach with CR responsive transcript isoforms (unadjusted p < 0.05), 11% of those genes responding to CR were associated with multiple isoforms (Figure 3B ), with roughly the same percentage identified in SAT only or VAT only analysis.",
+      "context_window": "approach with CR responsive transcript isoforms (unadjusted p < 0.05), 11% of those genes responding to CR were associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-13605",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13605,
+      "sentence": "Using the \u201ccombined\u201d approach with CR responsive transcript isoforms (unadjusted p < 0.05), 11% of those genes responding to CR were associated with multiple isoforms (Figure 3B ), with roughly the same percentage identified in SAT only or VAT only analysis.",
+      "context_window": "th CR responsive transcript isoforms (unadjusted p < 0.05), 11% of those genes responding to CR were associated with multip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-13951",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13951,
+      "sentence": "To orthogonally measure diet\u2010induced RNA processing, exon usage independent of total transcript levels was quantified using DEXseq with a relaxed significance threshold (adjusted p < 0.1).",
+      "context_window": "sing DEXseq with a relaxed significance threshold (adjusted p < 0.1). In SAT, 156 exons corresponding to 129 genes that had dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-18361",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18361,
+      "sentence": "Variables correlation plot represents the relationship between each variable and the first two principal components (left), and individuals plot represents the principal component scores for both the Control and CR individuals (right). (B) Selected module\u2010trait associations depicting correlations (top number) and pvalue (bottom number). (C) Dot plot of KEGG pathways enriched via ORA ( q < 0.01) for genes contained within each module. (D) Venn diagram depicting the overlap of genes significantly associated ( p < 0.05) with each trait. (E) Heatmap of the gene significance (correlation between the gene and the trait) for the KEGG oxidative phosphorylation genes significantly associated ( p < 0.05) with each trait. (F) Heatmap of the Log2FC (CR/C) for the genes contained in the KEGG ribosome pathway for both depots, SAT and VAT.",
+      "context_window": "m depicting the overlap of genes significantly associated ( p < 0.05) with each trait. (E) Heatmap of the gene significance (cor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-18542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18542,
+      "sentence": "Variables correlation plot represents the relationship between each variable and the first two principal components (left), and individuals plot represents the principal component scores for both the Control and CR individuals (right). (B) Selected module\u2010trait associations depicting correlations (top number) and pvalue (bottom number). (C) Dot plot of KEGG pathways enriched via ORA ( q < 0.01) for genes contained within each module. (D) Venn diagram depicting the overlap of genes significantly associated ( p < 0.05) with each trait. (E) Heatmap of the gene significance (correlation between the gene and the trait) for the KEGG oxidative phosphorylation genes significantly associated ( p < 0.05) with each trait. (F) Heatmap of the Log2FC (CR/C) for the genes contained in the KEGG ribosome pathway for both depots, SAT and VAT.",
+      "context_window": "oxidative phosphorylation genes significantly associated ( p < 0.05) with each trait. (F) Heatmap of the Log2FC (CR/C) for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-p-19119",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19119,
+      "sentence": "Within each module, genes highly significantly associated with each trait individually were identified and filtered by significance value ( p < 0.05) to determine the extent of overlap among traits (Figure 4D ).",
+      "context_window": "dually were identified and filtered by significance value ( p < 0.05) to determine the extent of overlap among traits (Figure 4D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-19900",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19900,
+      "sentence": "Interestingly, the bulk of cytoplasmic ribosomal genes included in this pathway (69%) were assigned to one WGCNA module (saddle brown), indicating that the impact of CR on these genes was coordinated.",
+      "context_window": "lk of cytoplasmic ribosomal genes included in this pathway (69%) were assigned to one WGCNA module (saddle brown), indicati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-23211",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 23211,
+      "sentence": "The impact of CR on transcriptional profiles from baseline to 12 months, and 24 months from the human study were compared to the impact of CR on SAT transcriptome in monkeys (Figure 5B ).",
+      "context_window": "e impact of CR on transcriptional profiles from baseline to 12 months, and 24 months from the human study were compared to the im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-23226",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 23226,
+      "sentence": "The impact of CR on transcriptional profiles from baseline to 12 months, and 24 months from the human study were compared to the impact of CR on SAT transcriptome in monkeys (Figure 5B ).",
+      "context_window": "on transcriptional profiles from baseline to 12 months, and 24 months from the human study were compared to the impact of CR on S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-23361",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23361,
+      "sentence": "Overall congruence was ~72% at the pathway level.",
+      "context_window": "nscriptome in monkeys (Figure 5B ). Overall congruence was ~72% at the pathway level. This conservation in outcomes at the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-23593",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 23593,
+      "sentence": "This conservation in outcomes at the transcriptional level was striking, especially given that the monkeys were aged and on lifelong CR while CALERIE participants were middle\u2010aged and only on the study for 2 years.",
+      "context_window": "RIE participants were middle\u2010aged and only on the study for 2 years. Furthermore, the monkeys were restricted by 30% which is c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-23646",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23646,
+      "sentence": "Furthermore, the monkeys were restricted by 30% which is considerably greater than the 12% reported for the human study (Ravussin et al.",
+      "context_window": "dy for 2 years. Furthermore, the monkeys were restricted by 30% which is considerably greater than the 12% reported for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-23689",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23689,
+      "sentence": "Furthermore, the monkeys were restricted by 30% which is considerably greater than the 12% reported for the human study (Ravussin et al.",
+      "context_window": "re restricted by 30% which is considerably greater than the 12% reported for the human study (Ravussin et al. 2015 ). Signa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2680",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2680,
+      "sentence": "Since the restricted animals consumed 30% less of the diet, they were also had 30% lower absolute intake of cysteine and methionine.",
+      "context_window": "tical in composition. Since the restricted animals consumed 30% less of the diet, they were also had 30% lower absolute int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-pct-2721",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2721,
+      "sentence": "Since the restricted animals consumed 30% less of the diet, they were also had 30% lower absolute intake of cysteine and methionine.",
+      "context_window": "d animals consumed 30% less of the diet, they were also had 30% lower absolute intake of cysteine and methionine. Cysteine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-n-7650",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7650,
+      "sentence": "Limitations of the study: The number of monkeys ( n = 4 per diet group) is on the lower end; however, the fact that both depots were taken from the same animals for which there are extensive biometrics and clinical measures offsets this concern somewhat.",
+      "context_window": "e to CR. Limitations of the study: The number of monkeys ( n = 4 per diet group) is on the lower end; however, the fact that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-8834",
+      "claim_type": "unit_value",
+      "raw_text": "26.4 years",
+      "numeric_values": [
+        26.4
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8834,
+      "sentence": "The larger cohort of 76 animals is comprised of both males and females with median age at death of 26.4 years (IQR: 7.2 years).",
+      "context_window": "rised of both males and females with median age at death of 26.4 years (IQR: 7.2 years). Associated longitudinal medical records,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon-u-8851",
+      "claim_type": "unit_value",
+      "raw_text": "7.2 years",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 8851,
+      "sentence": "The larger cohort of 76 animals is comprised of both males and females with median age at death of 26.4 years (IQR: 7.2 years).",
+      "context_window": "es and females with median age at death of 26.4 years (IQR: 7.2 years). Associated longitudinal medical records, data, and tissue",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

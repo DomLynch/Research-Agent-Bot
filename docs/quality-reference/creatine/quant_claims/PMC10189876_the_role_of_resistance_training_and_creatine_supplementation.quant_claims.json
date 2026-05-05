@@ -1,0 +1,1351 @@
+{
+  "paper_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation",
+  "doi": "10.3389/fpubh.2023.1062832",
+  "extracted_at": "2026-05-05T21:38:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 5,
+    "unit_value": 24,
+    "p_value": 37,
+    "percentage": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-545",
+      "claim_type": "mean_sd",
+      "raw_text": "68.1 \u00b1 7.2",
+      "numeric_values": [
+        68.1,
+        7.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "We examined 45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three groups of 15: RT with creatine supplementation (RT + CS), RT with placebo (RT + P) and control group.",
+      "context_window": "xamined 45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-552",
+      "claim_type": "unit_value",
+      "raw_text": "7.2 years",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 552,
+      "sentence": "We examined 45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three groups of 15: RT with creatine supplementation (RT + CS), RT with placebo (RT + P) and control group.",
+      "context_window": "45 non-athlete volunteer older men and women (mean, 68.1 \u00b1 7.2 years old), were randomly selected and divided into three groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-746",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 746,
+      "sentence": "RT protocol was performed for 10 weeks, three sessions per week.",
+      "context_window": "o (RT + P) and control group. RT protocol was performed for 10 weeks, three sessions per week. Creatine supplement was taken dai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1040",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1040,
+      "sentence": "In the training groups, after 10 weeks of RT, a significant decrease in MDA and 8 - OHDG as well as a significant increase in serum levels of GPX and TAC were observed (in all cases, p = 0.001).",
+      "context_window": "at the end of the RT period. In the training groups, after 10 weeks of RT, a significant decrease in MDA and 8 - OHDG as well a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1193",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1193,
+      "sentence": "In the training groups, after 10 weeks of RT, a significant decrease in MDA and 8 - OHDG as well as a significant increase in serum levels of GPX and TAC were observed (in all cases, p = 0.001).",
+      "context_window": "in serum levels of GPX and TAC were observed (in all cases, p = 0.001). In addition, creatinine levels were enhanced in the RT +",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1267",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1267,
+      "sentence": "In addition, creatinine levels were enhanced in the RT + CS ( p = 0.014).",
+      "context_window": "addition, creatinine levels were enhanced in the RT + CS ( p = 0.014). Training intervention also improved quality of life and m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1380",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1380,
+      "sentence": "Training intervention also improved quality of life and muscle strength in the experimental groups ( p = 0.001), although muscle strength changes were more visible in the RT + CS group than in the RT + P group ( p < 0/05).",
+      "context_window": "ty of life and muscle strength in the experimental groups ( p = 0.001), although muscle strength changes were more visible in the",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-651",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 651,
+      "sentence": "Muscle mass forms more than 50% of the body weight of young people, while this amount reaches approximately 25% in older adults ( 6 ).",
+      "context_window": "uscle mass or sarcopenia ( 5 ). Muscle mass forms more than 50% of the body weight of young people, while this amount reach",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-731",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 731,
+      "sentence": "Muscle mass forms more than 50% of the body weight of young people, while this amount reaches approximately 25% in older adults ( 6 ).",
+      "context_window": "ht of young people, while this amount reaches approximately 25% in older adults ( 6 ). Cumulative damage to skeletal muscl",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-4594",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 4594,
+      "sentence": "Additionally, Rahimi stated that consuming 20 g of creatine per day for 7 days reduces MDA and 8-hydroxy-20 -deoxyguanosine (8-OHdG) after resistance training.",
+      "context_window": ", Rahimi stated that consuming 20 g of creatine per day for 7 days reduces MDA and 8-hydroxy-20 -deoxyguanosine (8-OHdG) after",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-685",
+      "claim_type": "mean_sd",
+      "raw_text": "61.5 \u00b1 5.7",
+      "numeric_values": [
+        61.5,
+        5.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 685,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-707",
+      "claim_type": "mean_sd",
+      "raw_text": "165.9 \u00b1 11.1",
+      "numeric_values": [
+        165.9,
+        11.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 707,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "onsisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Ker",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "11.1 cm",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 715,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kerman",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-732",
+      "claim_type": "mean_sd",
+      "raw_text": "75.6 \u00b1 19.8",
+      "numeric_values": [
+        75.6,
+        19.8
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 732,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran. Afte",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-739",
+      "claim_type": "unit_value",
+      "raw_text": "19.8 kg",
+      "numeric_values": [
+        19.8
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 739,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "(age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran. After a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-msd-753",
+      "claim_type": "mean_sd",
+      "raw_text": "27.8 \u00b1 1.6",
+      "numeric_values": [
+        27.8,
+        1.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 753,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": ".7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran. After announcing the res",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-760",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 kg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 760,
+      "sentence": "The statistical population of the present study consisted of older men and women (age: 61.5 \u00b1 5.7 y; height: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran.",
+      "context_window": "eight: 165.9 \u00b1 11.1 cm; weight: 75.6 \u00b1 19.8 kg; BMI: 27.8 \u00b1 1.6 kg/m 2 ) in Kermanshah city, Iran. After announcing the resear",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1368",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1368,
+      "sentence": "People ranging in age from 60 to 70 years were considered.",
+      "context_window": "Flowchart of the study. People ranging in age from 60 to 70 years were considered. According to the information in the health",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1602",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1602,
+      "sentence": "They also did not have a history of taking dietary supplements or regular exercise training 3 months prior to the start of the study.",
+      "context_window": "of taking dietary supplements or regular exercise training 3 months prior to the start of the study. Exclusion criteria include",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1898",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1898,
+      "sentence": "Resistance training program was performed for 10 weeks, three sessions per week (1 day in between).",
+      "context_window": "Figure 1 ). Resistance training program was performed for 10 weeks, three sessions per week (1 day in between). Each workout l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1933",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 1933,
+      "sentence": "Resistance training program was performed for 10 weeks, three sessions per week (1 day in between).",
+      "context_window": "rogram was performed for 10 weeks, three sessions per week (1 day in between). Each workout lasted approximately 70 mins and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-2372",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2372,
+      "sentence": "Resistance movements were performed in three sets with 10 repetitions and an intensity of 75% of one repetition maximum (1-RM).",
+      "context_window": "ormed in three sets with 10 repetitions and an intensity of 75% of one repetition maximum (1-RM). Rest intervals between se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2559",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2559,
+      "sentence": "To maintain training intensity, 1-RM test was measured once every 2 weeks in all movements and for all subjects.",
+      "context_window": "ntain training intensity, 1-RM test was measured once every 2 weeks in all movements and for all subjects. The one repetition m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-5191",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5191,
+      "sentence": "Data was analyzed with IBM SPSS software (version 23; IBM Corporation, Armonk, NY, United States), and the statistical significance level was set at p \u2264 0.05.",
+      "context_window": "States), and the statistical significance level was set at p \u2264 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-38",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 38,
+      "sentence": "There was no significant difference ( p > 0.05) between the three groups regarding any of the research variables in the pre-test.",
+      "context_window": "There was no significant difference ( p > 0.05) between the three groups regarding any of the research var",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-188",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 188,
+      "sentence": "There were significant main effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyde (MDA) and 8-hydroxydeoxyguanosine (8-OHdG).",
+      "context_window": ". There were significant main effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-215",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 215,
+      "sentence": "There were significant main effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyde (MDA) and 8-hydroxydeoxyguanosine (8-OHdG).",
+      "context_window": "ain effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-268",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 268,
+      "sentence": "There were significant main effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyde (MDA) and 8-hydroxydeoxyguanosine (8-OHdG).",
+      "context_window": "68.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyd",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-295",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 295,
+      "sentence": "There were significant main effect of time ( F = 127.38, p = 0.001, and F = 468.47, p = 0.001) and group \u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyde (MDA) and 8-hydroxydeoxyguanosine (8-OHdG).",
+      "context_window": "\u00d7 time interaction ( F = 21.98, p = 0.001, and F = 106.21, p = 0.001) respectively for malondialdehyde (MDA) and 8-hydroxydeoxyg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-505",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 505,
+      "sentence": "These serum indices of oxidative damage were significantly reduced in both experimental groups (RT + CS and RT + P) after 10 weeks of RT (in all cases, p = 0.001) and there was no difference between the training groups ( p > 0.05; Figures 2A,B ).",
+      "context_window": "uced in both experimental groups (RT + CS and RT + P) after 10 weeks of RT (in all cases, p = 0.001) and there was no difference",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-535",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 535,
+      "sentence": "These serum indices of oxidative damage were significantly reduced in both experimental groups (RT + CS and RT + P) after 10 weeks of RT (in all cases, p = 0.001) and there was no difference between the training groups ( p > 0.05; Figures 2A,B ).",
+      "context_window": "ps (RT + CS and RT + P) after 10 weeks of RT (in all cases, p = 0.001) and there was no difference between the training groups (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-604",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 604,
+      "sentence": "These serum indices of oxidative damage were significantly reduced in both experimental groups (RT + CS and RT + P) after 10 weeks of RT (in all cases, p = 0.001) and there was no difference between the training groups ( p > 0.05; Figures 2A,B ).",
+      "context_window": ") and there was no difference between the training groups ( p > 0.05; Figures 2A,B ). Changes in oxidative and antioxidant indi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1212",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1212,
+      "sentence": "In relation to the glutathione peroxidase (GPX), there was a significant main effect of time ( F = 155.32, p = 0.001), group \u00d7 time interaction ( F = 37.47, p = 0.001) and main effect of group ( F = 5.39, p = 0.009).",
+      "context_window": ", there was a significant main effect of time ( F = 155.32, p = 0.001), group \u00d7 time interaction ( F = 37.47, p = 0.001) and main",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1262",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1262,
+      "sentence": "In relation to the glutathione peroxidase (GPX), there was a significant main effect of time ( F = 155.32, p = 0.001), group \u00d7 time interaction ( F = 37.47, p = 0.001) and main effect of group ( F = 5.39, p = 0.009).",
+      "context_window": "= 155.32, p = 0.001), group \u00d7 time interaction ( F = 37.47, p = 0.001) and main effect of group ( F = 5.39, p = 0.009). Serum con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1310",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1310,
+      "sentence": "In relation to the glutathione peroxidase (GPX), there was a significant main effect of time ( F = 155.32, p = 0.001), group \u00d7 time interaction ( F = 37.47, p = 0.001) and main effect of group ( F = 5.39, p = 0.009).",
+      "context_window": "F = 37.47, p = 0.001) and main effect of group ( F = 5.39, p = 0.009). Serum concentrations of GPX was higher in both training g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1457",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1457,
+      "sentence": "Serum concentrations of GPX was higher in both training groups (RT + CS and RT + P) compared with the control group in the post-test ( p = 0.001 and p = 0.006, respectively).",
+      "context_window": "RT + P) compared with the control group in the post-test ( p = 0.001 and p = 0.006, respectively). Indeed, in the post-test, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1471",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1471,
+      "sentence": "Serum concentrations of GPX was higher in both training groups (RT + CS and RT + P) compared with the control group in the post-test ( p = 0.001 and p = 0.006, respectively).",
+      "context_window": "red with the control group in the post-test ( p = 0.001 and p = 0.006, respectively). Indeed, in the post-test, the levels of thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1599",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1599,
+      "sentence": "Indeed, in the post-test, the levels of this enzyme in the RT + CS was higher than the RT + P group ( p = 0.004).",
+      "context_window": "is enzyme in the RT + CS was higher than the RT + P group ( p = 0.004). GPX substantially increased in the RT + CS and RT + P gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1732",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1732,
+      "sentence": "GPX substantially increased in the RT + CS and RT + P groups after the 10-week intervention compared with the pre-test ( p = 0.001, eta = 0.87 and p = 0.001, eta = 0.86; Figure 2C ).",
+      "context_window": "after the 10-week intervention compared with the pre-test ( p = 0.001, eta = 0.87 and p = 0.001, eta = 0.86; Figure 2C ). In reg",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1758",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1758,
+      "sentence": "GPX substantially increased in the RT + CS and RT + P groups after the 10-week intervention compared with the pre-test ( p = 0.001, eta = 0.87 and p = 0.001, eta = 0.86; Figure 2C ).",
+      "context_window": "tion compared with the pre-test ( p = 0.001, eta = 0.87 and p = 0.001, eta = 0.86; Figure 2C ). In regards total antioxidant cap",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1897",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1897,
+      "sentence": "In regards total antioxidant capacity (TAC), there was a significant main effect of time ( F = 41.77, p = 0.001) and group \u00d7 time interaction ( F = 15.51, p = 0.001).",
+      "context_window": "), there was a significant main effect of time ( F = 41.77, p = 0.001) and group \u00d7 time interaction ( F = 15.51, p = 0.001). This",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-1950",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1950,
+      "sentence": "In regards total antioxidant capacity (TAC), there was a significant main effect of time ( F = 41.77, p = 0.001) and group \u00d7 time interaction ( F = 15.51, p = 0.001).",
+      "context_window": "41.77, p = 0.001) and group \u00d7 time interaction ( F = 15.51, p = 0.001). This index of antioxidant capacity also had an interestin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2056",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2056,
+      "sentence": "This index of antioxidant capacity also had an interesting rise in both training groups after 10 weeks (in both cases, p = 0.001), while no significant difference was observed between the groups in the post-test ( p > 0.05; Figure 2D ).",
+      "context_window": "also had an interesting rise in both training groups after 10 weeks (in both cases, p = 0.001), while no significant difference",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2081",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2081,
+      "sentence": "This index of antioxidant capacity also had an interesting rise in both training groups after 10 weeks (in both cases, p = 0.001), while no significant difference was observed between the groups in the post-test ( p > 0.05; Figure 2D ).",
+      "context_window": "rise in both training groups after 10 weeks (in both cases, p = 0.001), while no significant difference was observed between the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2176",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2176,
+      "sentence": "This index of antioxidant capacity also had an interesting rise in both training groups after 10 weeks (in both cases, p = 0.001), while no significant difference was observed between the groups in the post-test ( p > 0.05; Figure 2D ).",
+      "context_window": "fference was observed between the groups in the post-test ( p > 0.05; Figure 2D ). Regarding body mass index (BMI), there was a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2289",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2289,
+      "sentence": "Regarding body mass index (BMI), there was a significant main effect of time ( F = 3.68, p = 0.049) and group \u00d7 time interaction ( F = 23.93, p = 0.001).",
+      "context_window": "I), there was a significant main effect of time ( F = 3.68, p = 0.049) and group \u00d7 time interaction ( F = 23.93, p = 0.001). Intr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2342",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2342,
+      "sentence": "Regarding body mass index (BMI), there was a significant main effect of time ( F = 3.68, p = 0.049) and group \u00d7 time interaction ( F = 23.93, p = 0.001).",
+      "context_window": "3.68, p = 0.049) and group \u00d7 time interaction ( F = 23.93, p = 0.001). Intragroup changes showed that the body mass index decrea",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2417",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2417,
+      "sentence": "Intragroup changes showed that the body mass index decreased ( p = 0.001) only in the RT + P group in comparison with the pre-test ( Figure 2E ).",
+      "context_window": "ragroup changes showed that the body mass index decreased ( p = 0.001) only in the RT + P group in comparison with the pre-test (",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2599",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2599,
+      "sentence": "However, with regard to creatinine, the interaction of time and group was significant ( F = 6.40, p = 0.004).",
+      "context_window": "e interaction of time and group was significant ( F = 6.40, p = 0.004). Creatinine levels elevated only in the RT + CS group afte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2670",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2670,
+      "sentence": "Creatinine levels elevated only in the RT + CS group after 10 weeks of supplementation ( p = 0.014).",
+      "context_window": "Creatinine levels elevated only in the RT + CS group after 10 weeks of supplementation ( p = 0.014). No significant difference",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2700",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2700,
+      "sentence": "Creatinine levels elevated only in the RT + CS group after 10 weeks of supplementation ( p = 0.014).",
+      "context_window": "ly in the RT + CS group after 10 weeks of supplementation ( p = 0.014). No significant difference was observed between the groups",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2789",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2789,
+      "sentence": "No significant difference was observed between the groups in the post-test ( p > 0.05; Figure 2F ).",
+      "context_window": "fference was observed between the groups in the post-test ( p > 0.05; Figure 2F ). There was also a significant main effect of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2877",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2877,
+      "sentence": "There was also a significant main effect of time ( F = 1831.58, p = 0.001), group \u00d7 time interaction ( F = 441.69, p = 0.001) and main effect of group ( F = 111.97, p = 0.001) for quality of life ( Figure 2G ).",
+      "context_window": "e was also a significant main effect of time ( F = 1831.58, p = 0.001), group \u00d7 time interaction ( F = 441.69, p = 0.001) and mai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2928",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2928,
+      "sentence": "There was also a significant main effect of time ( F = 1831.58, p = 0.001), group \u00d7 time interaction ( F = 441.69, p = 0.001) and main effect of group ( F = 111.97, p = 0.001) for quality of life ( Figure 2G ).",
+      "context_window": "1831.58, p = 0.001), group \u00d7 time interaction ( F = 441.69, p = 0.001) and main effect of group ( F = 111.97, p = 0.001) for qual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-2978",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2978,
+      "sentence": "There was also a significant main effect of time ( F = 1831.58, p = 0.001), group \u00d7 time interaction ( F = 441.69, p = 0.001) and main effect of group ( F = 111.97, p = 0.001) for quality of life ( Figure 2G ).",
+      "context_window": "= 441.69, p = 0.001) and main effect of group ( F = 111.97, p = 0.001) for quality of life ( Figure 2G ). This index in the exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-3098",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3098,
+      "sentence": "This index in the experimental groups (RT + CS and RT + P) improved after 10 weeks of intervention (in both groups, p = 0.001).",
+      "context_window": "the experimental groups (RT + CS and RT + P) improved after 10 weeks of intervention (in both groups, p = 0.001). Indeed, there",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-3140",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "This index in the experimental groups (RT + CS and RT + P) improved after 10 weeks of intervention (in both groups, p = 0.001).",
+      "context_window": "P) improved after 10 weeks of intervention (in both groups, p = 0.001). Indeed, there was a difference between the groups in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-3591",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "Significant difference at p < 0.05.",
+      "context_window": "esistance training with placebo. Significant difference at p < 0.05. Changes in muscle strength in all seven resistance moveme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-3912",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3912,
+      "sentence": "Changes in muscle strength in all seven resistance movements including leg extension and leg curl machine, barbell bench press, lateral pulldown, barbell curl, overhead press, and triceps extension machine indicated that the training groups (RT + CS and RT + P) had a sharp increase compared to the pre-test ( p < 0.05) as well as compared to the control groups in the post-test ( p < 0.05).",
+      "context_window": "and RT + P) had a sharp increase compared to the pre-test ( p < 0.05) as well as compared to the control groups in the post-test",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-3983",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3983,
+      "sentence": "Changes in muscle strength in all seven resistance movements including leg extension and leg curl machine, barbell bench press, lateral pulldown, barbell curl, overhead press, and triceps extension machine indicated that the training groups (RT + CS and RT + P) had a sharp increase compared to the pre-test ( p < 0.05) as well as compared to the control groups in the post-test ( p < 0.05).",
+      "context_window": "s well as compared to the control groups in the post-test ( p < 0.05). In addition, the increase in muscle strength of the RT +",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-p-4104",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4104,
+      "sentence": "In addition, the increase in muscle strength of the RT + CS group was greater than that of the RT + P group ( p < 0.05; Table 2 ).",
+      "context_window": "e RT + CS group was greater than that of the RT + P group ( p < 0.05; Table 2 ).",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-42",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 42,
+      "sentence": "Findings of the present study showed that 10 weeks of RT reduced the oxidative damage indices in older adults by strengthening the antioxidant defense system.",
+      "context_window": "Findings of the present study showed that 10 weeks of RT reduced the oxidative damage indices in older adults",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-174",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 174,
+      "sentence": "In fact, after 10 weeks of regular RT, MDA and 8-hydroxydeoxyguanosine (8-OHdG) in the training groups decreased, while the amount of GPX and total antioxidant capacity (TAC) increased.",
+      "context_window": "trengthening the antioxidant defense system. In fact, after 10 weeks of regular RT, MDA and 8-hydroxydeoxyguanosine (8-OHdG) in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-806",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 806,
+      "sentence": "Alikhani and colleagues in line with the present study illustrated an improvement in MDA and TAC in older and younger people after 12 weeks of RT. ( 30 ) Consistent with the current findings, two other studies also confirmed the positive effects of regular exercise training on improving the activity of antioxidant enzymes such as catalase, superoxide dismutase and glutathione peroxidase in the older adults ( 31 , 32 ).",
+      "context_window": "mprovement in MDA and TAC in older and younger people after 12 weeks of RT. ( 30 ) Consistent with the current findings, two oth",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-1491",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1491,
+      "sentence": "Ghahramani Moghadam \u2019 s study also demonstrated a reduction in 8-OHdG levels in older women after 8 weeks of exercise training ( 34 ).",
+      "context_window": "onstrated a reduction in 8-OHdG levels in older women after 8 weeks of exercise training ( 34 ). In another study by Padilha, t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-1733",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1733,
+      "sentence": "In a research conducted by Koechlin, the effect of RT with an intensity of 40% of 1-RM with N-acetylcystein supplementation on the older adults with chronic obstructive pulmonary disease was evaluated and indicated that the TAC index did not change ( 36 ).",
+      "context_window": "onducted by Koechlin, the effect of RT with an intensity of 40% of 1-RM with N-acetylcystein supplementation on the older a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2453",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2453,
+      "sentence": "However, in a study conducted on young subjects stated that 7 days of creatine supplementation reduced MDA and 8-OHdG following acute RT.",
+      "context_window": "However, in a study conducted on young subjects stated that 7 days of creatine supplementation reduced MDA and 8-OHdG followin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-2920",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2920,
+      "sentence": "In addition, Deminice et al. stated that short-term creatine supplementation (for 7 days) had no effect on catalase and superoxide dismutase activity after an anaerobic test ( 39 ).",
+      "context_window": "et al. stated that short-term creatine supplementation (for 7 days) had no effect on catalase and superoxide dismutase activit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-3372",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3372,
+      "sentence": "As mentioned, in the present study, 10 weeks of creatine monohydrate supplementation doubled the activity of GPX enzyme, while no synergistic effect of this supplement on TAC were observed.",
+      "context_window": "l conclusion difficult. As mentioned, in the present study, 10 weeks of creatine monohydrate supplementation doubled the activit",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-u-3916",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3916,
+      "sentence": "The finding of the present study regarding changes in muscle strength showed that after 10 weeks of RT and creatine supplementation, the average increase in muscle strength (mean of the seven muscle groups studied) in the training-placebo group was 35.9% and in the training-creatine group was equal to 57%.",
+      "context_window": "tudy regarding changes in muscle strength showed that after 10 weeks of RT and creatine supplementation, the average increase in",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4077",
+      "claim_type": "percentage",
+      "raw_text": "35.9%",
+      "numeric_values": [
+        35.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4077,
+      "sentence": "The finding of the present study regarding changes in muscle strength showed that after 10 weeks of RT and creatine supplementation, the average increase in muscle strength (mean of the seven muscle groups studied) in the training-placebo group was 35.9% and in the training-creatine group was equal to 57%.",
+      "context_window": "en muscle groups studied) in the training-placebo group was 35.9% and in the training-creatine group was equal to 57%. These",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4131",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4131,
+      "sentence": "The finding of the present study regarding changes in muscle strength showed that after 10 weeks of RT and creatine supplementation, the average increase in muscle strength (mean of the seven muscle groups studied) in the training-placebo group was 35.9% and in the training-creatine group was equal to 57%.",
+      "context_window": "p was 35.9% and in the training-creatine group was equal to 57%. These findings generally indicate the positive effect of R",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4803",
+      "claim_type": "percentage",
+      "raw_text": "79.9%",
+      "numeric_values": [
+        79.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4803,
+      "sentence": "The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo and training-creatine groups, respectively.",
+      "context_window": "dults ( 27 ). The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10189876_the_role_of_resistance_training_and_creatine_supplementation-pct-4813",
+      "claim_type": "percentage",
+      "raw_text": "89.2%",
+      "numeric_values": [
+        89.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4813,
+      "sentence": "The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo and training-creatine groups, respectively.",
+      "context_window": "). The present results showed an improvement of 79.9% and 89.2% of quality of life index in the training-placebo and traini",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1415 @@
+{
+  "paper_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli",
+  "doi": "10.3389/fnut.2025.1664811",
+  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 13,
+    "p_value": 35,
+    "confidence_interval": 14,
+    "sample_size": 2,
+    "unit_value": 13
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-987",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 987,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1031",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "(SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) an",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1065",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.52, -0.03",
+      "numeric_values": [
+        -0.52,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "erval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Re",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1087",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1087,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (H",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1178",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.65, -0.12",
+      "numeric_values": [
+        -0.65,
+        -0.12
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1178,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "l Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02;",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1200",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1200,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "in Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034)",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1236",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.49, -0.02",
+      "numeric_values": [
+        -0.49,
+        -0.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1236,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels. Moreover, the regimen successfully exer",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1258",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1258,
+      "sentence": "The combined effect of various types of fasting significantly reduced fasting blood sugar (FBS) [standard mean difference (SMD) = -0.51; 95% confidence interval (CI): -0.81, -0.20; p = 0.001], insulin (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) and Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) (SMD = -0.39; 95% CI: -0.65, -0.12; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels.",
+      "context_window": "; p = 0.004), and HbA1c (SMD = -0.25; 95% CI: -0.49, -0.02; p = 0.034) levels. Moreover, the regimen successfully exerted its ben",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1403",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.53, -0.14",
+      "numeric_values": [
+        -0.53,
+        -0.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1403,
+      "sentence": "Moreover, the regimen successfully exerted its beneficial effect on low-density lipoprotein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well.",
+      "context_window": "n low-density lipoprotein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1425",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1425,
+      "sentence": "Moreover, the regimen successfully exerted its beneficial effect on low-density lipoprotein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well.",
+      "context_window": "ein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.0",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1475",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.57, -0.03",
+      "numeric_values": [
+        -0.57,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1475,
+      "sentence": "Moreover, the regimen successfully exerted its beneficial effect on low-density lipoprotein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well.",
+      "context_window": "3, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well. The sensitivity analysis indica",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1497",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1497,
+      "sentence": "Moreover, the regimen successfully exerted its beneficial effect on low-density lipoprotein cholesterol (LDL-C) (SMD = -0.34; 95% CI: -0.53, -0.14; p = 0.001) and interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well.",
+      "context_window": "nd interleukin-6 (IL-6) (SMD = -0.30; 95% CI: -0.57, -0.03; p = 0.029) levels as well. The sensitivity analysis indicated that ex",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2004",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2004,
+      "sentence": "No evidence of publication bias was detected using Egger\u2019s and Begg\u2019s test ( p > 0.05).",
+      "context_window": "blication bias was detected using Egger\u2019s and Begg\u2019s test ( p > 0.05). The findings suggest that intermittent fasting may have",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-n-301",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 301,
+      "sentence": "Subsequently, 13 studies were screened using full-texts, and 3 articles that had no control group ( n = 2) and a review ( n = 1) were excluded.",
+      "context_window": "sing full-texts, and 3 articles that had no control group ( n = 2) and a review ( n = 1) were excluded. Finally, 10 studies w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-n-323",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 323,
+      "sentence": "Subsequently, 13 studies were screened using full-texts, and 3 articles that had no control group ( n = 2) and a review ( n = 1) were excluded.",
+      "context_window": "articles that had no control group ( n = 2) and a review ( n = 1) were excluded. Finally, 10 studies were included for the m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-669",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 669,
+      "sentence": "The total sample size of the included RCTs comprised 701 individuals, with an age range of 25-75 years.",
+      "context_window": "ded RCTs comprised 701 individuals, with an age range of 25-75 years. The included trials were published between 2017 and 2025.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-914",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 914,
+      "sentence": "The intervention duration ranged from 1 to 16 weeks.",
+      "context_window": "weight or obese. The intervention duration ranged from 1 to 16 weeks. The majority of the participants were diagnosed with metab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-1766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.81, -0.20",
+      "numeric_values": [
+        -0.81,
+        -0.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1766,
+      "sentence": "The pooled analysis of five studies encompassing 393 individuals evaluating the effect of fasting regimen on fasting blood sugar (FBS) indicated a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ).",
+      "context_window": "sugar (FBS) indicated a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ). The subg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1788",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1788,
+      "sentence": "The pooled analysis of five studies encompassing 393 individuals evaluating the effect of fasting regimen on fasting blood sugar (FBS) indicated a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ).",
+      "context_window": "a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ). The subgroup analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-1805",
+      "claim_type": "percentage",
+      "raw_text": "53.3%",
+      "numeric_values": [
+        53.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "The pooled analysis of five studies encompassing 393 individuals evaluating the effect of fasting regimen on fasting blood sugar (FBS) indicated a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ).",
+      "context_window": "uction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ). The subgroup analysis revealed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-1812",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.073",
+      "numeric_values": [
+        0.073
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1812,
+      "sentence": "The pooled analysis of five studies encompassing 393 individuals evaluating the effect of fasting regimen on fasting blood sugar (FBS) indicated a significant reduction (SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ).",
+      "context_window": "(SMD = -0.51; 95% CI: -0.81, -0.20, p = 0.001; I 2 = 53.3%, p = 0.073) ( Figure 2A ). The subgroup analysis revealed that the fas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-1947",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1947,
+      "sentence": "The subgroup analysis revealed that the fasting approach has a significant reducing effect on older adults (>50 years old) with a higher BMI (>30 kg/m 2 ) and in short-term treatment ( p < 0.05).",
+      "context_window": "pproach has a significant reducing effect on older adults (>50 years old) with a higher BMI (>30 kg/m 2 ) and in short-term trea",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-1981",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1981,
+      "sentence": "The subgroup analysis revealed that the fasting approach has a significant reducing effect on older adults (>50 years old) with a higher BMI (>30 kg/m 2 ) and in short-term treatment ( p < 0.05).",
+      "context_window": "effect on older adults (>50 years old) with a higher BMI (>30 kg/m 2 ) and in short-term treatment ( p < 0.05). In addition,",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2023",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2023,
+      "sentence": "The subgroup analysis revealed that the fasting approach has a significant reducing effect on older adults (>50 years old) with a higher BMI (>30 kg/m 2 ) and in short-term treatment ( p < 0.05).",
+      "context_window": "th a higher BMI (>30 kg/m 2 ) and in short-term treatment ( p < 0.05). In addition, it has demonstrated that most of this benefi",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2167",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2167,
+      "sentence": "In addition, it has demonstrated that most of this beneficial effect is related to TRF treatment rather than other fasting methods ( p < 0.05) ( Table 2 ).\n\n(A) Forest plot of intermittent fasting vs. control on FBS level. (B) Forest plot of intermittent fasting vs. control on the BS level. (C) Forest plot of intermittent fasting vs. control on insulin level. (D) Forest plot of intermittent fasting vs. control on HOMA-IR level. (E) Forest plot of intermittent fasting vs. control on HbA1c level.",
+      "context_window": "elated to TRF treatment rather than other fasting methods ( p < 0.05) ( Table 2 ). (A) Forest plot of intermittent fasting vs.",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-2781",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.66, 0.55",
+      "numeric_values": [
+        -0.66,
+        0.55
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2781,
+      "sentence": "However, the combined effect of studies which have evaluated the effects of fasting regimen on BS illustrated a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ).",
+      "context_window": "en on BS illustrated a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ). Similarl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2802",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.849",
+      "numeric_values": [
+        0.849
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2802,
+      "sentence": "However, the combined effect of studies which have evaluated the effects of fasting regimen on BS illustrated a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ).",
+      "context_window": "a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ). Similarly, subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-2819",
+      "claim_type": "percentage",
+      "raw_text": "85.4%",
+      "numeric_values": [
+        85.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2819,
+      "sentence": "However, the combined effect of studies which have evaluated the effects of fasting regimen on BS illustrated a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ).",
+      "context_window": "effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ). Similarly, subgroup analysis sho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2826",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2826,
+      "sentence": "However, the combined effect of studies which have evaluated the effects of fasting regimen on BS illustrated a non-significant effect (SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ).",
+      "context_window": "(SMD = -0.06; 95% CI: -0.66, 0.55, p = 0.849; I 2 = 85.4%, p < 0.001) ( Figure 2B ). Similarly, subgroup analysis showed that in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-2973",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2973,
+      "sentence": "Similarly, subgroup analysis showed that individuals with higher BMI had reduced BS levels following a fasting regimen ( p < 0.05) ( Table 2 ).",
+      "context_window": "her BMI had reduced BS levels following a fasting regimen ( p < 0.05) ( Table 2 ). In total, eight studies including 628 indivi",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-3233",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.52, -0.03",
+      "numeric_values": [
+        -0.52,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3233,
+      "sentence": "It has been demonstrated that a fasting regimen could have a significant and beneficial reducing effect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ).",
+      "context_window": "beneficial reducing effect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3255",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3255,
+      "sentence": "It has been demonstrated that a fasting regimen could have a significant and beneficial reducing effect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ).",
+      "context_window": "ffect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-3305",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3305,
+      "sentence": "It has been demonstrated that a fasting regimen could have a significant and beneficial reducing effect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ).",
+      "context_window": "2, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ). The subgroup analysis revealed t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3311",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3311,
+      "sentence": "It has been demonstrated that a fasting regimen could have a significant and beneficial reducing effect on insulin levels (SMD = -0.27; 95% CI: -0.52, -0.03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ).",
+      "context_window": "03; p = 0.027) with moderate heterogeneity ( I 2 = 54.6.0%, p = 0.031) ( Figure 2C ). The subgroup analysis revealed that older a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-3388",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3388,
+      "sentence": "The subgroup analysis revealed that older adults (>50 years old) may benefit more from the fasting approach in terms of insulin levels ( p < 0.05) ( Table 2 ).",
+      "context_window": "re 2C ). The subgroup analysis revealed that older adults (>50 years old) may benefit more from the fasting approach in terms of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3474",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3474,
+      "sentence": "The subgroup analysis revealed that older adults (>50 years old) may benefit more from the fasting approach in terms of insulin levels ( p < 0.05) ( Table 2 ).",
+      "context_window": "more from the fasting approach in terms of insulin levels ( p < 0.05) ( Table 2 ). Overall, eight trials with a total of 628 ad",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-3636",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.65, -0.12",
+      "numeric_values": [
+        -0.65,
+        -0.12
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3636,
+      "sentence": "Overall, eight trials with a total of 628 adults indicated that a fasting regimen could reduce HOMA-IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ).",
+      "context_window": "men could reduce HOMA-IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ). The subg",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3658",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3658,
+      "sentence": "Overall, eight trials with a total of 628 adults indicated that a fasting regimen could reduce HOMA-IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ).",
+      "context_window": "IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ). The subgroup analys",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-3675",
+      "claim_type": "percentage",
+      "raw_text": "61.0%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3675,
+      "sentence": "Overall, eight trials with a total of 628 adults indicated that a fasting regimen could reduce HOMA-IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ).",
+      "context_window": "cantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ). The subgroup analysis showed tha",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3682",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3682,
+      "sentence": "Overall, eight trials with a total of 628 adults indicated that a fasting regimen could reduce HOMA-IR levels significantly (SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ).",
+      "context_window": "(SMD = -0.39; 95% CI: -0.65, -0.12, p = 0.004; I 2 = 61.0%, p = 0.012) ( Figure 2D ). The subgroup analysis showed that the fasti",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-3810",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3810,
+      "sentence": "The subgroup analysis showed that the fasting regimen has a more favorable effect on younger adults (<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05).",
+      "context_window": "ing regimen has a more favorable effect on younger adults (<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05).",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-3853",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3853,
+      "sentence": "The subgroup analysis showed that the fasting regimen has a more favorable effect on younger adults (<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05).",
+      "context_window": "younger adults (<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05). In addition, long-term fasting (>8 weeks",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3867",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3867,
+      "sentence": "The subgroup analysis showed that the fasting regimen has a more favorable effect on younger adults (<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05).",
+      "context_window": "(<50 years old) and obese individuals (BMI > 30 kg/m 2 ) ( p < 0.05). In addition, long-term fasting (>8 weeks) was associated",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-3911",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3911,
+      "sentence": "In addition, long-term fasting (>8 weeks) was associated with a significant reduction in HOMA-IR levels as well ( p < 0.05).",
+      "context_window": "> 30 kg/m 2 ) ( p < 0.05). In addition, long-term fasting (>8 weeks) was associated with a significant reduction in HOMA-IR lev",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-3992",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3992,
+      "sentence": "In addition, long-term fasting (>8 weeks) was associated with a significant reduction in HOMA-IR levels as well ( p < 0.05).",
+      "context_window": "ed with a significant reduction in HOMA-IR levels as well ( p < 0.05). Moreover, the subgroup analysis based on the type of fast",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4137",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4137,
+      "sentence": "Moreover, the subgroup analysis based on the type of fasting method revealed a significant reduction effect for the ICR methodology ( p < 0.05) ( Table 2 ).",
+      "context_window": "ed a significant reduction effect for the ICR methodology ( p < 0.05) ( Table 2 ). In addition, the effect of fasting on HbA1c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-4356",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4356,
+      "sentence": "Random-effects model indicated that fasting significantly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ).",
+      "context_window": "at fasting significantly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figu",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4378",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4378,
+      "sentence": "Random-effects model indicated that fasting significantly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ).",
+      "context_window": "ly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ). The results of the",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-4395",
+      "claim_type": "percentage",
+      "raw_text": "46.5%",
+      "numeric_values": [
+        46.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4395,
+      "sentence": "Random-effects model indicated that fasting significantly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ).",
+      "context_window": "levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ). The results of the subgroup anal",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4402",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.082",
+      "numeric_values": [
+        0.082
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4402,
+      "sentence": "Random-effects model indicated that fasting significantly reduced HbA1c levels (SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ).",
+      "context_window": "(SMD = -0.25; 95% CI: -0.49; -0.02, p = 0.034; I 2 = 46.5%, p = 0.082) ( Figure 2E ). The results of the subgroup analysis reveal",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-4494",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4494,
+      "sentence": "The results of the subgroup analysis revealed that older adults (>50 years old) with higher BMI (>30 kg/m 2 ) demonstrated significantly greater improvements than other subgroups ( Table 2 ).",
+      "context_window": "sults of the subgroup analysis revealed that older adults (>50 years old) with higher BMI (>30 kg/m 2 ) demonstrated significant",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-4526",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4526,
+      "sentence": "The results of the subgroup analysis revealed that older adults (>50 years old) with higher BMI (>30 kg/m 2 ) demonstrated significantly greater improvements than other subgroups ( Table 2 ).",
+      "context_window": "evealed that older adults (>50 years old) with higher BMI (>30 kg/m 2 ) demonstrated significantly greater improvements than",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-4819",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.07, 0.33",
+      "numeric_values": [
+        -0.07,
+        0.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4819,
+      "sentence": "Accordingly, it has been shown that fasting did not significantly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ).",
+      "context_window": "ting did not significantly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ). Fasting",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4840",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.212",
+      "numeric_values": [
+        0.212
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4840,
+      "sentence": "Accordingly, it has been shown that fasting did not significantly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ).",
+      "context_window": "antly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ). Fasting interventio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-4857",
+      "claim_type": "percentage",
+      "raw_text": "20.9%",
+      "numeric_values": [
+        20.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4857,
+      "sentence": "Accordingly, it has been shown that fasting did not significantly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ).",
+      "context_window": "TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ). Fasting intervention showed simi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4864",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.270",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4864,
+      "sentence": "Accordingly, it has been shown that fasting did not significantly affect the TC level (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ).",
+      "context_window": "l (SMD = 0.13; 95% CI: -0.07, 0.33, p = 0.212; I 2 = 20.9%, p = 0.270) ( Figure 3A ). Fasting intervention showed similar effects",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-4963",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.38, 0.03",
+      "numeric_values": [
+        -0.38,
+        0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4963,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "vention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-4984",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.097",
+      "numeric_values": [
+        0.097
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4984,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "r effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-5001",
+      "claim_type": "percentage",
+      "raw_text": "36.5%",
+      "numeric_values": [
+        36.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5001,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "s of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-5008",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.138",
+      "numeric_values": [
+        0.138
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5008,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "(SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-5056",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.28, 0.42",
+      "numeric_values": [
+        -0.28,
+        0.42
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5056,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels. H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-5077",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.690",
+      "numeric_values": [
+        0.69
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5077,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": ") ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels. However, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-5094",
+      "claim_type": "percentage",
+      "raw_text": "78.2%",
+      "numeric_values": [
+        78.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5094,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "nd HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels. However, the pooled effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-5101",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5101,
+      "sentence": "Fasting intervention showed similar effects in terms of TG (SMD = -0.17; 95% CI: -0.38, 0.03, p = 0.097; I 2 = 36.5%, p = 0.138) ( Figure 3B ) and HDL-C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels.",
+      "context_window": "C (SMD = 0.07; 95% CI: -0.28, 0.42, p = 0.690; I 2 = 78.2%, p < 0.001) ( Figure 3C ) levels. However, the pooled effect of seven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-5269",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.53, -0.14",
+      "numeric_values": [
+        -0.53,
+        -0.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5269,
+      "sentence": "However, the pooled effect of seven studies (518 participants) showed a reduced effect on LDL-C levels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ).",
+      "context_window": "uced effect on LDL-C levels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ). In addit",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-5291",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5291,
+      "sentence": "However, the pooled effect of seven studies (518 participants) showed a reduced effect on LDL-C levels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ).",
+      "context_window": "evels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ). In addition, hetero",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-5308",
+      "claim_type": "percentage",
+      "raw_text": "19.3%",
+      "numeric_values": [
+        19.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5308,
+      "sentence": "However, the pooled effect of seven studies (518 participants) showed a reduced effect on LDL-C levels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ).",
+      "context_window": "asting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ). In addition, heterogeneity for T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-5315",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.282",
+      "numeric_values": [
+        0.282
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5315,
+      "sentence": "However, the pooled effect of seven studies (518 participants) showed a reduced effect on LDL-C levels following fasting (SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ).",
+      "context_window": "(SMD = -0.34; 95% CI: -0.53, -0.14, p = 0.001; I 2 = 19.3%, p = 0.282) ( Figure 3D ). In addition, heterogeneity for TC, TG, and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-5407",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5407,
+      "sentence": "In addition, heterogeneity for TC, TG, and LDL-C levels was below 50%, and therefore, no subgroup analysis was performed.",
+      "context_window": "ition, heterogeneity for TC, TG, and LDL-C levels was below 50%, and therefore, no subgroup analysis was performed. However",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-ci-6097",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.57, -0.03",
+      "numeric_values": [
+        -0.57,
+        -0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6097,
+      "sentence": "The meta-analysis showed that fasting regimen has significant ameliorative effects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ).",
+      "context_window": "icant ameliorative effects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ). However,",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-6119",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6119,
+      "sentence": "The meta-analysis showed that fasting regimen has significant ameliorative effects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ).",
+      "context_window": "ects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ). However, it had no s",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-pct-6136",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6136,
+      "sentence": "The meta-analysis showed that fasting regimen has significant ameliorative effects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ).",
+      "context_window": "levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ). However, it had no significant e",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-6142",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0512",
+      "numeric_values": [
+        0.0512
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6142,
+      "sentence": "The meta-analysis showed that fasting regimen has significant ameliorative effects on the IL-6 levels (SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ).",
+      "context_window": "(SMD = -0.30; 95% CI: -0.57, -0.03, p = 0.029; I 2 = 0.0%, p = 0.0512) ( Figure 4 ). However, it had no significant effect on CRP",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-p-6232",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6232,
+      "sentence": "However, it had no significant effect on CRP and TNF-\u03b1 levels ( p > 0.05).",
+      "context_window": "ver, it had no significant effect on CRP and TNF-\u03b1 levels ( p > 0.05). Forest plot of intermittent fasting vs. control on infla",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-1562",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1562,
+      "sentence": "In addition, subgroup analysis indicated that fasting contributes to a more significant improvement in FBS, BS, HOMA-IR, and HbA1c levels in obese individuals (BMI > 30 kg/m 2 ).",
+      "context_window": ", BS, HOMA-IR, and HbA1c levels in obese individuals (BMI > 30 kg/m 2 ). These findings are promising for individuals with ob",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-1946",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1946,
+      "sentence": "Additionally, subgroup analyses demonstrated that fasting intervention resulted in a greater reduction in FBS, HOMA-IR, and HbA1c levels among participants aged > 50 years.",
+      "context_window": "in FBS, HOMA-IR, and HbA1c levels among participants aged > 50 years. Some probable mechanisms may explain this age-specific fin",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12738305_intermittent_fasting_improves_metabolic_outcomes_in_metaboli-u-4151",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4151,
+      "sentence": "In addition, the majority of the included RCTs were of short duration (\u226416 weeks), which limits the ability to assess the long-term efficacy.",
+      "context_window": "the majority of the included RCTs were of short duration (\u226416 weeks), which limits the ability to assess the long-term efficacy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

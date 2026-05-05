@@ -1,0 +1,1130 @@
+{
+  "paper_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b",
+  "doi": "10.1371/journal.pone.0131647",
+  "extracted_at": "2026-05-05T22:04:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 23,
+    "percentage": 24,
+    "unit_value": 11,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-924",
+      "claim_type": "sample_size",
+      "raw_text": "n = 101",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 924,
+      "sentence": "In intent-to-treat (ITT) analyses (n = 101), cardiorespiratory fitness increased and perceived disability decreased in a dose-dependent manner across the 4 groups.",
+      "context_window": "ction functional health. In intent-to-treat (ITT) analyses (n = 101), cardiorespiratory fitness increased and perceived disabil",
+      "claim_role": "effect",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1181",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "Analyses restricted to individuals who exercised per-protocol (n = 77) demonstrated that Simple Attention improved equivalently across all exercise groups compared to controls and a dose-response relationship was present for Visuospatial Processing.",
+      "context_window": "lyses restricted to individuals who exercised per-protocol (n = 77) demonstrated that Simple Attention improved equivalently a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-1650",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1650,
+      "sentence": "To accomplish this, we performed a pilot randomized controlled 26-week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minutes per week [ 16 ].",
+      "context_window": "controlled 26-week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-1655",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1655,
+      "sentence": "To accomplish this, we performed a pilot randomized controlled 26-week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minutes per week [ 16 ].",
+      "context_window": "olled 26-week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minutes pe",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-1664",
+      "claim_type": "percentage",
+      "raw_text": "150%",
+      "numeric_values": [
+        150.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1664,
+      "sentence": "To accomplish this, we performed a pilot randomized controlled 26-week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minutes per week [ 16 ].",
+      "context_window": "week trial of three doses of AEx representing 50%, 100%, or 150% of the recommended exercise dose of 150 minutes per week [",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-177",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 177,
+      "sentence": "The Trial of Exercise on Aging and Memory (TEAM: ClinicalTrials.gov, NCT01129115 ; trial active between 2/1/2010-2/18/2014) was a 26-week pilot study of AEx dose in individuals 65 years and older without cognitive impairment.",
+      "context_window": "/2014) was a 26-week pilot study of AEx dose in individuals 65 years and older without cognitive impairment. Based on public hea",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-1403",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1403,
+      "sentence": "Participants could not be insulin-dependent, have significant hearing or vision problems, uncontrolled hypertension, or have had recent history (<2 years) of major cardiorespiratory, musculoskeletal or neuropsychiatric impairment.",
+      "context_window": "ms, uncontrolled hypertension, or have had recent history (<2 years) of major cardiorespiratory, musculoskeletal or neuropsychi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-2688",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2688,
+      "sentence": "The same testing was conducted again after 26 weeks of intervention.",
+      "context_window": "sed as baseline. The same testing was conducted again after 26 weeks of intervention. Participants were block randomized, strat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-4343",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4343,
+      "sentence": "Participants exercised 3-5 days a week, never more than 50 minutes a day to reduce likelihood of overuse injury.",
+      "context_window": "75, 150 or 225 min/wk, S2 Table ). Participants exercised 3-5 days a week, never more than 50 minutes a day to reduce likeliho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-4634",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4634,
+      "sentence": "In the first 4 weeks of exercise, the target heart rate zone was 40-55% of HRR.",
+      "context_window": "e (HRR) as calculated by the Karvonen formula. In the first 4 weeks of exercise, the target heart rate zone was 40-55% of HRR.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-4689",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4689,
+      "sentence": "In the first 4 weeks of exercise, the target heart rate zone was 40-55% of HRR.",
+      "context_window": "irst 4 weeks of exercise, the target heart rate zone was 40-55% of HRR. In Weeks 5-18, it was 50-65% of HRR. In weeks 19-26",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-4726",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4726,
+      "sentence": "In Weeks 5-18, it was 50-65% of HRR.",
+      "context_window": "heart rate zone was 40-55% of HRR. In Weeks 5-18, it was 50-65% of HRR. In weeks 19-26, it was 60-75% of HRR. We selected a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-4764",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4764,
+      "sentence": "In weeks 19-26, it was 60-75% of HRR.",
+      "context_window": "Weeks 5-18, it was 50-65% of HRR. In weeks 19-26, it was 60-75% of HRR. We selected a 26-week intervention period to maximi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-4955",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4955,
+      "sentence": "Trainers supervised all exercise sessions for the first 6 weeks of exercise after which direct supervision occurred during at least 1 session a week.",
+      "context_window": "s. Trainers supervised all exercise sessions for the first 6 weeks of exercise after which direct supervision occurred during",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-5456",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5456,
+      "sentence": "Study staff also inquired about AEs during phone calls every 6 weeks and during incidental contact at weekly YMCA visits.",
+      "context_window": "tudy staff also inquired about AEs during phone calls every 6 weeks and during incidental contact at weekly YMCA visits. An ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-5632",
+      "claim_type": "sample_size",
+      "raw_text": "n = 101",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5632,
+      "sentence": "Intent-to-treat analyses were performed on all enrollees (n = 101, ITT cohort).",
+      "context_window": "Intent-to-treat analyses were performed on all enrollees (n = 101, ITT cohort). Per-protocol analyses (PP, n = 77) excluded i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-5681",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5681,
+      "sentence": "Per-protocol analyses (PP, n = 77) excluded individuals not achieving 80% of their exercise duration goal, those who engaged in other activities (e.g. resistance training), or those who withdrew.",
+      "context_window": "enrollees (n = 101, ITT cohort). Per-protocol analyses (PP, n = 77) excluded individuals not achieving 80% of their exercise d",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-5724",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5724,
+      "sentence": "Per-protocol analyses (PP, n = 77) excluded individuals not achieving 80% of their exercise duration goal, those who engaged in other activities (e.g. resistance training), or those who withdrew.",
+      "context_window": "ol analyses (PP, n = 77) excluded individuals not achieving 80% of their exercise duration goal, those who engaged in other",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-269",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 269,
+      "sentence": "Of a potential 1,413 individuals who contacted the University of Kansas Alzheimer\u2019s Disease Center while the trial was active a total of 101 participants elected to participate, met criteria, and were randomized to one of the four intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx.",
+      "context_window": "ed to one of the four intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-288",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 288,
+      "sentence": "Of a potential 1,413 individuals who contacted the University of Kansas Alzheimer\u2019s Disease Center while the trial was active a total of 101 participants elected to participate, met criteria, and were randomized to one of the four intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx.",
+      "context_window": "ur intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx. This r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-308",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 308,
+      "sentence": "Of a potential 1,413 individuals who contacted the University of Kansas Alzheimer\u2019s Disease Center while the trial was active a total of 101 participants elected to participate, met criteria, and were randomized to one of the four intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx.",
+      "context_window": ": no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx. This recruitment yield of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-332",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 332,
+      "sentence": "Of a potential 1,413 individuals who contacted the University of Kansas Alzheimer\u2019s Disease Center while the trial was active a total of 101 participants elected to participate, met criteria, and were randomized to one of the four intervention arms: no change control (n = 25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx.",
+      "context_window": "25), 75min/wk (n = 25), 150min/wk (n = 27), and 225min/wk (n = 24) of AEx. This recruitment yield of 7% is similar to other e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-374",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 374,
+      "sentence": "This recruitment yield of 7% is similar to other exercise trials [ 18 ].",
+      "context_window": "), and 225min/wk (n = 24) of AEx. This recruitment yield of 7% is similar to other exercise trials [ 18 ]. Most participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-519",
+      "claim_type": "sample_size",
+      "raw_text": "n = 947",
+      "numeric_values": [
+        947.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "Most participants who contacted the center were uninterested or did not return follow-up contact (n = 947) after completing an initial phone screen.",
+      "context_window": "nter were uninterested or did not return follow-up contact (n = 947) after completing an initial phone screen. Others were medi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-604",
+      "claim_type": "sample_size",
+      "raw_text": "n = 241",
+      "numeric_values": [
+        241.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 604,
+      "sentence": "Others were medically ineligible (n = 241), primarily because of significant hearing or vision problems or too physically active to participate (n = 68).",
+      "context_window": "an initial phone screen. Others were medically ineligible (n = 241), primarily because of significant hearing or vision proble",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-715",
+      "claim_type": "sample_size",
+      "raw_text": "n = 68",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 715,
+      "sentence": "Others were medically ineligible (n = 241), primarily because of significant hearing or vision problems or too physically active to participate (n = 68).",
+      "context_window": "or vision problems or too physically active to participate (n = 68). See Fig 1 for enrollment flow. Baseline measures of enrol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-931",
+      "claim_type": "sample_size",
+      "raw_text": "n = 101",
+      "numeric_values": [
+        101.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 931,
+      "sentence": "Of the intent-to-treat (ITT) cohort (n = 101), 8 individuals withdrew due to time or travel concerns, 8 withdrew due to medical issues, 1 was dissatisfied with his group allocation, and 1 was lost to follow-up.",
+      "context_window": "provided in Table 1 . Of the intent-to-treat (ITT) cohort (n = 101), 8 individuals withdrew due to time or travel concerns, 8",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1393",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1393,
+      "sentence": "The remaining 77 individuals were included in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15).",
+      "context_window": "duals were included in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1412",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1412,
+      "sentence": "The remaining 77 individuals were included in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15).",
+      "context_window": "in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15). All values a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1432",
+      "claim_type": "sample_size",
+      "raw_text": "n = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1432,
+      "sentence": "The remaining 77 individuals were included in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15).",
+      "context_window": ") analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15). All values are group mean (stand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1456",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1456,
+      "sentence": "The remaining 77 individuals were included in per-protocol (PP) analyses: control (n = 23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15).",
+      "context_window": "23), 75min/wk (n = 18), 150min/wk (n = 21), and 225min/wk (n = 15). All values are group mean (standard deviation). LLFDI an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-1530",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1530,
+      "sentence": "LLFDI and SF-36 n = 100 due to computer malfunction.",
+      "context_window": "values are group mean (standard deviation). LLFDI and SF-36 n = 100 due to computer malfunction. Baseline scores on component c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-p-1913",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.13",
+      "numeric_values": [
+        0.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1913,
+      "sentence": "In the ITT cohort, there were no differences in adherence across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (3562 minutes) of their prescribed exercise duration.",
+      "context_window": "hort, there were no differences in adherence across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-1958",
+      "claim_type": "percentage",
+      "raw_text": "82.3%",
+      "numeric_values": [
+        82.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1958,
+      "sentence": "In the ITT cohort, there were no differences in adherence across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (3562 minutes) of their prescribed exercise duration.",
+      "context_window": "across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minute",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2005",
+      "claim_type": "percentage",
+      "raw_text": "85.5%",
+      "numeric_values": [
+        85.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2005,
+      "sentence": "In the ITT cohort, there were no differences in adherence across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (3562 minutes) of their prescribed exercise duration.",
+      "context_window": "p completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2063",
+      "claim_type": "percentage",
+      "raw_text": "70.1%",
+      "numeric_values": [
+        70.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2063,
+      "sentence": "In the ITT cohort, there were no differences in adherence across groups (p = 0.13) with the 75min/wk group completing 82.3% (1595 minutes), the 150min/wk completing 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (3562 minutes) of their prescribed exercise duration.",
+      "context_window": "g 85.5% (3109 minutes), and the 225 min/wk group completing 70.1% (3562 minutes) of their prescribed exercise duration. The P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2183",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2183,
+      "sentence": "The PP cohort excluded individuals who did not achieve over 80% of their prescribed exercise minutes.",
+      "context_window": "The PP cohort excluded individuals who did not achieve over 80% of their prescribed exercise minutes. These individuals wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2318",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2318,
+      "sentence": "These individuals were generally fully adherent to the exercise prescription, achieving over 95% of their prescribed dose with no difference across groups (p = 0.9).",
+      "context_window": "fully adherent to the exercise prescription, achieving over 95% of their prescribed dose with no difference across groups (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-p-2381",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.9",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2381,
+      "sentence": "These individuals were generally fully adherent to the exercise prescription, achieving over 95% of their prescribed dose with no difference across groups (p = 0.9).",
+      "context_window": "of their prescribed dose with no difference across groups (p = 0.9). We observed a dose-response effect of AEx on cardiorespi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2590",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2590,
+      "sentence": "We observed a dose-response effect of AEx on cardiorespiratory fitness in the ITT cohort with linearly increasing gains in cardiorespiratory fitness (%\u0394 in VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ).",
+      "context_window": "ry fitness (%\u0394 in VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Tabl",
+      "claim_role": "dose",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2607",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2607,
+      "sentence": "We observed a dose-response effect of AEx on cardiorespiratory fitness in the ITT cohort with linearly increasing gains in cardiorespiratory fitness (%\u0394 in VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ).",
+      "context_window": "VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ). This dose-",
+      "claim_role": "dose",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2625",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2625,
+      "sentence": "We observed a dose-response effect of AEx on cardiorespiratory fitness in the ITT cohort with linearly increasing gains in cardiorespiratory fitness (%\u0394 in VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ).",
+      "context_window": "dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ). This dose-response was also",
+      "claim_role": "dose",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2643",
+      "claim_type": "percentage",
+      "raw_text": "9.9%",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2643,
+      "sentence": "We observed a dose-response effect of AEx on cardiorespiratory fitness in the ITT cohort with linearly increasing gains in cardiorespiratory fitness (%\u0394 in VO 2 peak) across dose groups: control = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ).",
+      "context_window": "rol = -4.4%, 75min/wk = 6.8%, 150min/wk = 7.7%, 225min/wk = 9.9% ( Table 2 ). This dose-response was also observed in the PP",
+      "claim_role": "dose",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2727",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2727,
+      "sentence": "This dose-response was also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%.",
+      "context_window": "ose-response was also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%. In I",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2744",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2744,
+      "sentence": "This dose-response was also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%.",
+      "context_window": "also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%. In ITT analyses, impr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2762",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2762,
+      "sentence": "This dose-response was also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%.",
+      "context_window": "he PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%. In ITT analyses, improvement in perceiv",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-2780",
+      "claim_type": "percentage",
+      "raw_text": "11.0%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2780,
+      "sentence": "This dose-response was also observed in the PP cohort: control = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%.",
+      "context_window": "rol = -4.4%, 75min/wk = 6.4%, 150min/wk = 8.7%, 225min/wk = 11.0%. In ITT analyses, improvement in perceived disability was o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-5448",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5448,
+      "sentence": "In the basic model, exercise duration (minutes exercised over 26 weeks) was correlated with change in Visuospatial Processing ( Fig 3 , p<0.05).",
+      "context_window": "the basic model, exercise duration (minutes exercised over 26 weeks) was correlated with change in Visuospatial Processing ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-p-5522",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5522,
+      "sentence": "In the basic model, exercise duration (minutes exercised over 26 weeks) was correlated with change in Visuospatial Processing ( Fig 3 , p<0.05).",
+      "context_window": "correlated with change in Visuospatial Processing ( Fig 3 , p<0.05). If this relationship was due to another variable, such as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-6062",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6062,
+      "sentence": "In the basic model without cardiorespiratory fitness change (%change in VO2 peak over 26 weeks) as a mediator, total number of minutes exercised (Exercise Duration) was associated with change in Visuospatial Processing.",
+      "context_window": "cardiorespiratory fitness change (%change in VO2 peak over 26 weeks) as a mediator, total number of minutes exercised (Exercise",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-6583",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6583,
+      "sentence": "There were 94 AE possibly or definitely-related to the intervention or VO 2 peak testing: 86 (91%) mild, and 8 (9%) moderate severity.",
+      "context_window": "itely-related to the intervention or VO 2 peak testing: 86 (91%) mild, and 8 (9%) moderate severity. There were no severe A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-6601",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6601,
+      "sentence": "There were 94 AE possibly or definitely-related to the intervention or VO 2 peak testing: 86 (91%) mild, and 8 (9%) moderate severity.",
+      "context_window": "he intervention or VO 2 peak testing: 86 (91%) mild, and 8 (9%) moderate severity. There were no severe AEs. Within the 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-p-6721",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6721,
+      "sentence": "Within the 3 exercising groups, AE were more common (X 2 [ 2 ] = 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild).",
+      "context_window": "3 exercising groups, AE were more common (X 2 [ 2 ] = 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-6772",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6772,
+      "sentence": "Within the 3 exercising groups, AE were more common (X 2 [ 2 ] = 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild).",
+      "context_window": "= 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-6805",
+      "claim_type": "sample_size",
+      "raw_text": "n = 36",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6805,
+      "sentence": "Within the 3 exercising groups, AE were more common (X 2 [ 2 ] = 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild).",
+      "context_window": "s exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild). Common mild AE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-6838",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6838,
+      "sentence": "Within the 3 exercising groups, AE were more common (X 2 [ 2 ] = 11.3, p = 0.003) in individuals exercising at 150min/wk (n = 40, 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild).",
+      "context_window": ", 35 mild) and 225 min/wk (n = 36, 34 mild) than 75 min/wk (n = 15, 15 mild). Common mild AE related to the intervention inclu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-6994",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6994,
+      "sentence": "Moderate severity AE included lower extremity pain (n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1).",
+      "context_window": "t pain. Moderate severity AE included lower extremity pain (n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-7030",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7030,
+      "sentence": "Moderate severity AE included lower extremity pain (n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1).",
+      "context_window": "d lower extremity pain (n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-n-7054",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7054,
+      "sentence": "Moderate severity AE included lower extremity pain (n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1).",
+      "context_window": "n = 4), heart rhythm abnormalities (n = 3), and chest pain (n = 1).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-pct-1179",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1179,
+      "sentence": "In older adults, cardiorespiratory fitness declines >2% a year [ 37 ].",
+      "context_window": "[ 3 ]. In older adults, cardiorespiratory fitness declines >2% a year [ 37 ]. Our data demonstrate that even modest levels",
+      "claim_role": "population",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-3183",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3183,
+      "sentence": "However, when we narrowed our analysis to those who exercised per-protocol, we found Simple Attention improved over 26 weeks for all exercise groups (but not in a dose-dependent manner) compared to controls and Visuospatial Processing improved non-linearly with increasing exercise dose.",
+      "context_window": "cised per-protocol, we found Simple Attention improved over 26 weeks for all exercise groups (but not in a dose-dependent manner",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4497726_dose_response_of_aerobic_exercise_on_cognition_a_community_b-u-4894",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4894,
+      "sentence": "Finally, exercise was semi-supervised after the first 6 weeks and thus at times exercise time and intensity was self-reported.",
+      "context_window": "fits. Finally, exercise was semi-supervised after the first 6 weeks and thus at times exercise time and intensity was self-repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

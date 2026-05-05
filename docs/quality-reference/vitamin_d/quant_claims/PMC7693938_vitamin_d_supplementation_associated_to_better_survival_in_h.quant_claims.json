@@ -1,0 +1,1676 @@
+{
+  "paper_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h",
+  "doi": "10.3390/nu12113377",
+  "extracted_at": "2026-05-05T21:50:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 11,
+    "mean_sd": 2,
+    "unit_value": 13,
+    "percentage": 20,
+    "p_value": 34,
+    "hazard_ratio": 7,
+    "odds_ratio": 2,
+    "risk_ratio": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-1133",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1133,
+      "sentence": "The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19.",
+      "context_window": "ments of respiratory disorders. Results. The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseli",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-msd-1152",
+      "claim_type": "mean_sd",
+      "raw_text": "88 \u00b1 5",
+      "numeric_values": [
+        88.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19.",
+      "context_window": "y disorders. Results. The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-1157",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19.",
+      "context_window": "orders. Results. The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman prop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1166",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19.",
+      "context_window": "esults. The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1232",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "The three groups ( n = 77; mean \u00b1 SD, 88 \u00b1 5 years; 49% women) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19.",
+      "context_window": "men) were similar at baseline (except for woman proportion, p = 0.02), as were the treatments used for COVID-19. In Group 1 ( n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-1298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1298,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "02), as were the treatments used for COVID-19. In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1307",
+      "claim_type": "percentage",
+      "raw_text": "93.1%",
+      "numeric_values": [
+        93.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "ere the treatments used for COVID-19. In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1370",
+      "claim_type": "percentage",
+      "raw_text": "81.2%",
+      "numeric_values": [
+        81.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1370,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% surviv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-1399",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1399,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "urvived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1409",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1409,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02). Whil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1423",
+      "claim_type": "percentage",
+      "raw_text": "68.7%",
+      "numeric_values": [
+        68.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1423,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "red to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02). While consideri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-1452",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1452,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "up 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02). While considering Group 3 as reference (hazar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "In Group 1 ( n = 29), 93.1% of COVID-19 participants survived at day 14, compared to 81.2% survivors in Group 2 ( n = 16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02).",
+      "context_window": "16) ( p = 0.33) and 68.7% survivors in Group 3 ( n = 32) ( p = 0.02). While considering Group 3 as reference (hazard ratio (HR)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-1584",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1584,
+      "sentence": "While considering Group 3 as reference (hazard ratio (HR) = 1), the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2.",
+      "context_window": "o (HR) = 1), the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Grou",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1596",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "While considering Group 3 as reference (hazard ratio (HR) = 1), the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2.",
+      "context_window": "the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2. Group 1",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-1623",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1623,
+      "sentence": "While considering Group 3 as reference (hazard ratio (HR) = 1), the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2.",
+      "context_window": "14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2. Group 1 had longer survival time t",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1635",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1635,
+      "sentence": "While considering Group 3 as reference (hazard ratio (HR) = 1), the fully-adjusted HR for 14-day mortality was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2.",
+      "context_window": "lity was HR = 0.07 ( p = 0.017) for Group 1 and HR = 0.37 ( p = 0.28) for Group 2. Group 1 had longer survival time than Group 3",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1714",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1714,
+      "sentence": "Group 1 had longer survival time than Group 3 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (log-rank p = 0.32).",
+      "context_window": "2. Group 1 had longer survival time than Group 3 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1792",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.32",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1792,
+      "sentence": "Group 1 had longer survival time than Group 3 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (log-rank p = 0.32).",
+      "context_window": "gh there was no difference between Groups 2 and 3 (log-rank p = 0.32). Group 1, but not Group 2 ( p = 0.40), was associated with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1830",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1830,
+      "sentence": "Group 1, but not Group 2 ( p = 0.40), was associated with lower risk of OSCI score \u22655 compared to Group 3 (odds ratio = 0.08, p = 0.03).",
+      "context_window": "ups 2 and 3 (log-rank p = 0.32). Group 1, but not Group 2 ( p = 0.40), was associated with lower risk of OSCI score \u22655 compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-or-l-1910",
+      "claim_type": "odds_ratio",
+      "raw_text": "odds ratio = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1910,
+      "sentence": "Group 1, but not Group 2 ( p = 0.40), was associated with lower risk of OSCI score \u22655 compared to Group 3 (odds ratio = 0.08, p = 0.03).",
+      "context_window": "iated with lower risk of OSCI score \u22655 compared to Group 3 (odds ratio = 0.08, p = 0.03). Conclusions. Regular bolus vitamin D supplement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1929",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1929,
+      "sentence": "Group 1, but not Group 2 ( p = 0.40), was associated with lower risk of OSCI score \u22655 compared to Group 3 (odds ratio = 0.08, p = 0.03).",
+      "context_window": "sk of OSCI score \u22655 compared to Group 3 (odds ratio = 0.08, p = 0.03). Conclusions. Regular bolus vitamin D supplementation was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-809",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 809,
+      "sentence": "The inclusion criteria for the present analysis were as follows: (1) COVID-19 diagnosed with RT-PCR and/or chest CT-scan; (2) data available on the treatments received, including vitamin D supplementation, since the diagnosis of COVID-19 and over the preceding year at least; (3) data available on the vital status 14 days after the diagnosis of COVID-19.",
+      "context_window": "eding year at least; (3) data available on the vital status 14 days after the diagnosis of COVID-19. Seventy-seven patients wer",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-1546",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1546,
+      "sentence": "Bolus included the doses of 50,000 IU vitamin D3 per month, or the doses of 80,000 IU or 100,000 IU vitamin D3 every 2-3 months.",
+      "context_window": "or the doses of 80,000 IU or 100,000 IU vitamin D3 every 2-3 months. None received D2 or intramuscular supplements, and no pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-2291",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2291,
+      "sentence": "Finally, \u201cGroup 3\u201d was defined as the Comparator group, i.e., all COVID-19 patients who had received no vitamin D supplements, neither over the preceding year nor after the diagnosis of COVID-19; the absence of vitamin D treatment being mostly explained by the patients\u2019 refusal to be supplemented, since vitamin D supplementation is recommended with no biological testing in all patients over 65 years of age in France [ 3 ].",
+      "context_window": "recommended with no biological testing in all patients over 65 years of age in France [ 3 ]. The primary outcome was the 14-day",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-2459",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2459,
+      "sentence": "Follow-up started from the day of COVID-19 diagnosis for each patient and continued for 14 days or until death when applicable.",
+      "context_window": "ay of COVID-19 diagnosis for each patient and continued for 14 days or until death when applicable. The secondary outcome was",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-msd-42",
+      "claim_type": "mean_sd",
+      "raw_text": "88 \u00b1 5",
+      "numeric_values": [
+        88.0,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 42,
+      "sentence": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental study.",
+      "context_window": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-47",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 47,
+      "sentence": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental study.",
+      "context_window": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this qua",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-65",
+      "claim_type": "unit_value",
+      "raw_text": "100 years",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 65,
+      "sentence": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental study.",
+      "context_window": "ty-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-76",
+      "claim_type": "percentage",
+      "raw_text": "49.4%",
+      "numeric_values": [
+        49.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 76,
+      "sentence": "Seventy-seven participants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental study.",
+      "context_window": "rticipants (mean \u00b1 SD age 88 \u00b1 5 years, range 78-100 years; 49.4% women) were included in this quasi-experimental study. Seve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-402",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 402,
+      "sentence": "Table 1 indicates the characteristics of participants separated into Group 1 who regularly received vitamin D supplements over the preceding year ( n = 29), Group 2 who received vitamin D supplements after the diagnosis of COVID-19 ( n = 16), and Group 3 who had not received vitamin D supplements ( n = 32).",
+      "context_window": "ly received vitamin D supplements over the preceding year ( n = 29), Group 2 who received vitamin D supplements after the diag",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-488",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 488,
+      "sentence": "Table 1 indicates the characteristics of participants separated into Group 1 who regularly received vitamin D supplements over the preceding year ( n = 29), Group 2 who received vitamin D supplements after the diagnosis of COVID-19 ( n = 16), and Group 3 who had not received vitamin D supplements ( n = 32).",
+      "context_window": "ved vitamin D supplements after the diagnosis of COVID-19 ( n = 16), and Group 3 who had not received vitamin D supplements (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-554",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 554,
+      "sentence": "Table 1 indicates the characteristics of participants separated into Group 1 who regularly received vitamin D supplements over the preceding year ( n = 29), Group 2 who received vitamin D supplements after the diagnosis of COVID-19 ( n = 16), and Group 3 who had not received vitamin D supplements ( n = 32).",
+      "context_window": "), and Group 3 who had not received vitamin D supplements ( n = 32). The three groups were similar at baseline with no signifi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-656",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 656,
+      "sentence": "The three groups were similar at baseline with no significant difference regarding the age ( p = 0.22), the functional abilities ( p = 0.36), the history of various comorbidities, the number of acute health issues at hospital admission ( p = 0.22), and the use of treatments dedicated to COVID-19 ( Table 1 ).",
+      "context_window": "baseline with no significant difference regarding the age ( p = 0.22), the functional abilities ( p = 0.36), the history of vari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-694",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.36",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 694,
+      "sentence": "The three groups were similar at baseline with no significant difference regarding the age ( p = 0.22), the functional abilities ( p = 0.36), the history of various comorbidities, the number of acute health issues at hospital admission ( p = 0.22), and the use of treatments dedicated to COVID-19 ( Table 1 ).",
+      "context_window": "e regarding the age ( p = 0.22), the functional abilities ( p = 0.36), the history of various comorbidities, the number of acute",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-801",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 801,
+      "sentence": "The three groups were similar at baseline with no significant difference regarding the age ( p = 0.22), the functional abilities ( p = 0.36), the history of various comorbidities, the number of acute health issues at hospital admission ( p = 0.22), and the use of treatments dedicated to COVID-19 ( Table 1 ).",
+      "context_window": ", the number of acute health issues at hospital admission ( p = 0.22), and the use of treatments dedicated to COVID-19 ( Table 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1013",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1013,
+      "sentence": "Only the proportion of women differed between groups ( p = 0.02).",
+      "context_window": "ore. Only the proportion of women differed between groups ( p = 0.02). At the end of the study, the proportion of participants e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1131",
+      "claim_type": "percentage",
+      "raw_text": "10.3%",
+      "numeric_values": [
+        10.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1131,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "icipants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-d",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1159,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1166",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1166,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1210,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02). In contrast,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-1233",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1233,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "47), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02). In contrast, participants in Group 2",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1251",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1251,
+      "sentence": "At the end of the study, the proportion of participants experiencing severe COVID-19 was lower in Group 1 (10.3%) compared to Group 3 (31.3%, p = 0.047), just like the 14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02).",
+      "context_window": "14-day mortality (6.9% in Group 1 versus 31.3% in Group 3, p = 0.02). In contrast, participants in Group 2 did not experience l",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1341,
+      "sentence": "In contrast, participants in Group 2 did not experience less severe COVID-19 ( p = 0.75) and less mortality ( p = 0.50) than participants in Group 3 ( Table 1 ).",
+      "context_window": "ipants in Group 2 did not experience less severe COVID-19 ( p = 0.75) and less mortality ( p = 0.50) than participants in Group",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1372",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1372,
+      "sentence": "In contrast, participants in Group 2 did not experience less severe COVID-19 ( p = 0.75) and less mortality ( p = 0.50) than participants in Group 3 ( Table 1 ).",
+      "context_window": "ience less severe COVID-19 ( p = 0.75) and less mortality ( p = 0.50) than participants in Group 3 ( Table 1 ). Similarly, there",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1494",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.23",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1494,
+      "sentence": "Similarly, there were no outcome differences between Groups 1 and 2 ( p = 0.23 for the onset of severe COVID-19, and p = 0.33 for 14-day mortality).",
+      "context_window": "there were no outcome differences between Groups 1 and 2 ( p = 0.23 for the onset of severe COVID-19, and p = 0.33 for 14-day m",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1541",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.33",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1541,
+      "sentence": "Similarly, there were no outcome differences between Groups 1 and 2 ( p = 0.23 for the onset of severe COVID-19, and p = 0.33 for 14-day mortality).",
+      "context_window": "ps 1 and 2 ( p = 0.23 for the onset of severe COVID-19, and p = 0.33 for 14-day mortality). Characteristics and comparisons of",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-1668",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1668,
+      "sentence": "Characteristics and comparisons of participants with COVID-19 according to the study groups ( n = 77).",
+      "context_window": "participants with COVID-19 according to the study groups ( n = 77). Data presented as n (%) where applicable; COVID-19: Coro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-2629",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2629,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in th",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-2654",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2654,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR =",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-2677",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2677,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) (",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-2712",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.18",
+      "numeric_values": [
+        0.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2712,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "(95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment f",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-2723",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2723,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for ag",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-2745",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2745,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": ") in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-2815",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2815,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-2826",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2826,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "al adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-2848",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2848,
+      "sentence": "While considering Group 3 as the reference (hazard ratio (HR) = 1), the HR for mortality in Group 1 was 0.19 (95% confidence interval (95% CI): 0.04; 0.85) ( p = 0.03) in the unadjusted model, HR = 0.18 (95% CI: 0.04; 0.85) ( p = 0.03) after partial adjustment for age, gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders.",
+      "context_window": "gender and GIR score, and HR = 0.07 (95% CI: 0.01; 0.61) ( p = 0.017) after full adjustment for all potential confounders. In co",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-3047",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3047,
+      "sentence": "In contrast, being supplemented with vitamin D after the diagnosis of COVID-19 (Group 2) was not associated with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28).",
+      "context_window": "-19 (Group 2) was not associated with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28). The history of hematologi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-3058",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3058,
+      "sentence": "In contrast, being supplemented with vitamin D after the diagnosis of COVID-19 (Group 2) was not associated with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28).",
+      "context_window": "2) was not associated with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28). The history of hematological a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-3080",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3080,
+      "sentence": "In contrast, being supplemented with vitamin D after the diagnosis of COVID-19 (Group 2) was not associated with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28).",
+      "context_window": "with lower mortality risk (HR = 0.37 (95% CI): 0.06; 2.21), p = 0.28). The history of hematological and solid cancers was associ",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-3182",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 5.56",
+      "numeric_values": [
+        5.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3182,
+      "sentence": "The history of hematological and solid cancers was associated with greater mortality risk (HR = 5.56, p = 0.01).",
+      "context_window": "d solid cancers was associated with greater mortality risk (HR = 5.56, p = 0.01). Using the season of COVID-19 diagnosis as an ad",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-3193",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3193,
+      "sentence": "The history of hematological and solid cancers was associated with greater mortality risk (HR = 5.56, p = 0.01).",
+      "context_window": "cers was associated with greater mortality risk (HR = 5.56, p = 0.01). Using the season of COVID-19 diagnosis as an additional p",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-3482",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3482,
+      "sentence": "Consistently, Kaplan-Meier distributions showed in Figure 2 that COVID-19 participants in Group 3 had shorter survival time than those in Group 1 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (log-rank p = 0.32) and between Groups 1 and 2 (log-rank p = 0.22).",
+      "context_window": "3 had shorter survival time than those in Group 1 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-3560",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.32",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3560,
+      "sentence": "Consistently, Kaplan-Meier distributions showed in Figure 2 that COVID-19 participants in Group 3 had shorter survival time than those in Group 1 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (log-rank p = 0.32) and between Groups 1 and 2 (log-rank p = 0.22).",
+      "context_window": "gh there was no difference between Groups 2 and 3 (log-rank p = 0.32) and between Groups 1 and 2 (log-rank p = 0.22). Hazard ra",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-3607",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3607,
+      "sentence": "Consistently, Kaplan-Meier distributions showed in Figure 2 that COVID-19 participants in Group 3 had shorter survival time than those in Group 1 (log-rank p = 0.015), although there was no difference between Groups 2 and 3 (log-rank p = 0.32) and between Groups 1 and 2 (log-rank p = 0.22).",
+      "context_window": "3 (log-rank p = 0.32) and between Groups 1 and 2 (log-rank p = 0.22). Hazard ratio for 14-day mortality according to vitamin D",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-3761",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3761,
+      "sentence": "Hazard ratio for 14-day mortality according to vitamin D interventions among participants with COVID-19, adjusted for potential confounders ( n = 77).",
+      "context_window": "cipants with COVID-19, adjusted for potential confounders ( n = 77). CI: confidence interval; COVID-19: coronavirus disease 20",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-hr-a-4019",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4019,
+      "sentence": "CI: confidence interval; COVID-19: coronavirus disease 2019; GIR: Iso Resource Groups; HR: hazard ratio; OSCI: World Health Organization\u2019s Ordinal Scale for Clinical Improvement; *: while using Group 3 (no vitamin D supplementation) as a reference (HR = 1); \u2020 : serum albumin concentration <30 g/L; \u2021 : quinolones, beta-lactams, sulfonamides, macrolides, lincosamides, aminoglycosides, among others; || : beta2-adrenergic agonists, inhaled corticosteroids, antihistamines, among others.",
+      "context_window": "sing Group 3 (no vitamin D supplementation) as a reference (HR = 1); \u2020 : serum albumin concentration <30 g/L; \u2021 : quinolones,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-4385",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4385,
+      "sentence": "Kaplan-Meier estimates of the cumulative probability of COVID-19 participants\u2019 survival according to vitamin D interventions ( n = 77).",
+      "context_window": "rticipants\u2019 survival according to vitamin D interventions ( n = 77). Arm 1: regular vitamin D supplementation; Arm 2: vitamin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-4776",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4776,
+      "sentence": "Finally, the multiple logistic regression model in Table 2 revealed that regular vitamin D supplementation (Group 1) was associated with a lower proportion of participants with severe COVID-19 in acute phase (odds ratio (OR) = 0.08 (95% CI): 0.01; 0.81), p = 0.033) compared to Group 3 without vitamin D supplementation.",
+      "context_window": "ith severe COVID-19 in acute phase (odds ratio (OR) = 0.08 (95% CI): 0.01; 0.81), p = 0.033) compared to Group 3 without vi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-4798",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.033",
+      "numeric_values": [
+        0.033
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4798,
+      "sentence": "Finally, the multiple logistic regression model in Table 2 revealed that regular vitamin D supplementation (Group 1) was associated with a lower proportion of participants with severe COVID-19 in acute phase (odds ratio (OR) = 0.08 (95% CI): 0.01; 0.81), p = 0.033) compared to Group 3 without vitamin D supplementation.",
+      "context_window": "acute phase (odds ratio (OR) = 0.08 (95% CI): 0.01; 0.81), p = 0.033) compared to Group 3 without vitamin D supplementation. In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-or-a-4952",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.46",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4952,
+      "sentence": "In contrast, Group 2 was not associated with any beneficial effect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40).",
+      "context_window": "associated with any beneficial effect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40). Multiple logistic regres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-4963",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4963,
+      "sentence": "In contrast, Group 2 was not associated with any beneficial effect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40).",
+      "context_window": "with any beneficial effect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40). Multiple logistic regressions",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-4985",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.40",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4985,
+      "sentence": "In contrast, Group 2 was not associated with any beneficial effect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40).",
+      "context_window": "ffect compared to Group 3 (OR = 0.46 (95% CI): 0.07; 2.85), p = 0.40). Multiple logistic regressions showing the association be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-n-5207",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5207,
+      "sentence": "Multiple logistic regressions showing the association between vitamin D interventions (independent variable) and the risk of severe COVID-19 * (dependent variable), adjusted for participants\u2019 characteristics ( n = 77).",
+      "context_window": "ent variable), adjusted for participants\u2019 characteristics ( n = 77). CI: confidence interval; COVID-19: coronavirus disease 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-rr-l-859",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 1.77",
+      "numeric_values": [
+        1.77
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 859,
+      "sentence": "The first reports indicated that adults with hypovitaminosis D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D concentrations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ].",
+      "context_window": "s D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-883",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 883,
+      "sentence": "The first reports indicated that adults with hypovitaminosis D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D concentrations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ].",
+      "context_window": "of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-1016",
+      "claim_type": "unit_value",
+      "raw_text": "11.1 ng/mL",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 1016,
+      "sentence": "The first reports indicated that adults with hypovitaminosis D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D concentrations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ].",
+      "context_window": "ations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ]. Similarly, significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-1034",
+      "claim_type": "unit_value",
+      "raw_text": "24.6 ng/mL",
+      "numeric_values": [
+        24.6
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 1034,
+      "sentence": "The first reports indicated that adults with hypovitaminosis D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D concentrations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ].",
+      "context_window": "controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ]. Similarly, significant inverse correlat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1046,
+      "sentence": "The first reports indicated that adults with hypovitaminosis D were at greater risk of being infected with SARS-CoV-2 (relative risk 1.77 with p < 0.02), [ 11 ] and that cases with COVID-19 had lower 25(OH)D concentrations compared to controls without COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ].",
+      "context_window": "thout COVID-19 (respectively, 11.1 ng/mL versus 24.6 ng/mL, p = 0.004) [ 12 ]. Similarly, significant inverse correlations were f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-rr-l-1431",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 1.59",
+      "numeric_values": [
+        1.59
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1431,
+      "sentence": "The severity of hypovitaminosis D appears to relate to the prognosis of COVID-19, since COVID-19 cases with hypovitaminosis D were more prone to experience severe COVID-19 (relative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ].",
+      "context_window": "itaminosis D were more prone to experience severe COVID-19 (relative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1455",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1455,
+      "sentence": "The severity of hypovitaminosis D appears to relate to the prognosis of COVID-19, since COVID-19 cases with hypovitaminosis D were more prone to experience severe COVID-19 (relative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ].",
+      "context_window": "rone to experience severe COVID-19 (relative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ]. Finally, hypov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-1492",
+      "claim_type": "unit_value",
+      "raw_text": "30ng/mL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 1492,
+      "sentence": "The severity of hypovitaminosis D appears to relate to the prognosis of COVID-19, since COVID-19 cases with hypovitaminosis D were more prone to experience severe COVID-19 (relative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ].",
+      "context_window": "elative risk 1.59 with p = 0.02 if vitamin D insufficiency <30ng/mL) [ 13 ]. Finally, hypovitaminosis D was found to be associa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-rr-l-1610",
+      "claim_type": "risk_ratio",
+      "raw_text": "relative risk 1.56",
+      "numeric_values": [
+        1.56
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1610,
+      "sentence": "Finally, hypovitaminosis D was found to be associated with greater COVID-19 mortality risk (incident relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adjustment) [ 14 ].",
+      "context_window": "e associated with greater COVID-19 mortality risk (incident relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adj",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1634",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1634,
+      "sentence": "Finally, hypovitaminosis D was found to be associated with greater COVID-19 mortality risk (incident relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adjustment) [ 14 ].",
+      "context_window": "r COVID-19 mortality risk (incident relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adjustment) [ 14 ]",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-p-1669",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.404",
+      "numeric_values": [
+        0.404
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1669,
+      "sentence": "Finally, hypovitaminosis D was found to be associated with greater COVID-19 mortality risk (incident relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adjustment) [ 14 ].",
+      "context_window": "relative risk 1.56 with p < 0.001 if vitamin D deficiency; p = 0.404 after adjustment) [ 14 ]. These results support that enhanc",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-2054",
+      "claim_type": "unit_value",
+      "raw_text": "53 years",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2054,
+      "sentence": "These results support that enhancing serum 25(OH)D concentration may improve the prognosis of COVID-19, as demonstrated by a pilot controlled trial reporting that the administration of calcifediol versus no calcifediol reduced the need for ICU treatment in 76 hospitalized participants with COVID-19 also receiving best available therapy (mean age, 53 years; 40.8% women) [ 15 ].",
+      "context_window": "h COVID-19 also receiving best available therapy (mean age, 53 years; 40.8% women) [ 15 ]. Following these preliminary findings,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-2064",
+      "claim_type": "percentage",
+      "raw_text": "40.8%",
+      "numeric_values": [
+        40.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2064,
+      "sentence": "These results support that enhancing serum 25(OH)D concentration may improve the prognosis of COVID-19, as demonstrated by a pilot controlled trial reporting that the administration of calcifediol versus no calcifediol reduced the need for ICU treatment in 76 hospitalized participants with COVID-19 also receiving best available therapy (mean age, 53 years; 40.8% women) [ 15 ].",
+      "context_window": "also receiving best available therapy (mean age, 53 years; 40.8% women) [ 15 ]. Following these preliminary findings, larger",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-6887",
+      "claim_type": "percentage",
+      "raw_text": "31.3%",
+      "numeric_values": [
+        31.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6887,
+      "sentence": "We also noted, in the present study, a 14-day mortality rate of 31.3% among frail older adults not supplemented with vitamin D ( Table 1 ).",
+      "context_window": "lso noted, in the present study, a 14-day mortality rate of 31.3% among frail older adults not supplemented with vitamin D (",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-7100",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7100,
+      "sentence": "Mortality is less than 1.1% in patients aged <50 years and it increases exponentially after that age up to around 30% [ 27 ], especially in frail older adults who have the highest proportion of severe cases of COVID-19 and fatal outcomes [ 28 ].",
+      "context_window": "vulnerability of frail older adults. Mortality is less than 1.1% in patients aged <50 years and it increases exponentially a",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-7123",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7123,
+      "sentence": "Mortality is less than 1.1% in patients aged <50 years and it increases exponentially after that age up to around 30% [ 27 ], especially in frail older adults who have the highest proportion of severe cases of COVID-19 and fatal outcomes [ 28 ].",
+      "context_window": "older adults. Mortality is less than 1.1% in patients aged <50 years and it increases exponentially after that age up to around",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-pct-7191",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7191,
+      "sentence": "Mortality is less than 1.1% in patients aged <50 years and it increases exponentially after that age up to around 30% [ 27 ], especially in frail older adults who have the highest proportion of severe cases of COVID-19 and fatal outcomes [ 28 ].",
+      "context_window": "and it increases exponentially after that age up to around 30% [ 27 ], especially in frail older adults who have the highe",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h-u-8765",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8765,
+      "sentence": "The OSCI score was collected here in the most acute phase of COVID-19 as it was reported that COVID-19 can get worse between 7-10 days due to the cytokine storm regardless of the initial disease severity [ 30 ].",
+      "context_window": "19 as it was reported that COVID-19 can get worse between 7-10 days due to the cytokine storm regardless of the initial disease",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

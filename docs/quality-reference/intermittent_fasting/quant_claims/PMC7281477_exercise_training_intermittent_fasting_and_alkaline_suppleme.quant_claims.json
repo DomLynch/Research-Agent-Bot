@@ -1,0 +1,2097 @@
+{
+  "paper_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme",
+  "doi": "10.3390/life10050074",
+  "extracted_at": "2026-05-05T22:11:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 49,
+    "unit_value": 37,
+    "p_value": 12,
+    "percentage": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-395",
+      "claim_type": "mean_sd",
+      "raw_text": "45.5 \u00b1 7.8",
+      "numeric_values": [
+        45.5,
+        7.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 395,
+      "sentence": "Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF).",
+      "context_window": "running performance. Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-402",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 years",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 402,
+      "sentence": "Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF).",
+      "context_window": "performance. Methods: 80 overweight subjects of age 45.5 \u00b1 7.8 years were assigned to IF or non-intermittent fasting (nIF). Furt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-689",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 689,
+      "sentence": "All subjects performed a personalized endurance exercise program (3-4 times/week for 12 weeks).",
+      "context_window": "personalized endurance exercise program (3-4 times/week for 12 weeks). Body weight, body composition, running performance and ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-1026",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1026,
+      "sentence": "There was a significant effect on body weight loss, body fat loss, visceral fat loss and running performance enhancement in all groups ( p < 0.01) for pre and post measurements.",
+      "context_window": "at loss and running performance enhancement in all groups ( p < 0.01) for pre and post measurements. Body weight decreased in al",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1111",
+      "claim_type": "mean_sd",
+      "raw_text": "5.80 \u00b1 0.77",
+      "numeric_values": [
+        5.8,
+        0.77
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1111,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "t measurements. Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nI",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1118",
+      "claim_type": "unit_value",
+      "raw_text": "0.77 kg",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "rements. Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1138",
+      "claim_type": "mean_sd",
+      "raw_text": "3.40 \u00b1 0.58",
+      "numeric_values": [
+        3.4,
+        0.58
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1138,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In b",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1145",
+      "claim_type": "unit_value",
+      "raw_text": "0.58 kg",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1145,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "sed in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In both",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1161",
+      "claim_type": "mean_sd",
+      "raw_text": "8.28 \u00b1 0.75",
+      "numeric_values": [
+        8.28,
+        0.75
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1161,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "s (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In both dietary strategies,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1168",
+      "claim_type": "unit_value",
+      "raw_text": "0.75 kg",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": ": -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In both dietary strategies, we",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1188",
+      "claim_type": "mean_sd",
+      "raw_text": "5.59 \u00b1 0.87",
+      "numeric_values": [
+        5.59,
+        0.87
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1188,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": "d nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In both dietary strategies, weight loss was significan",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1195",
+      "claim_type": "unit_value",
+      "raw_text": "0.87 kg",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1195,
+      "sentence": "Body weight decreased in all groups (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg).",
+      "context_window": ": -3.40 \u00b1 0.58 kg; IF-v: -8.28 \u00b1 0.75 kg and nIF-v: -5.59 \u00b1 0.87 kg). In both dietary strategies, weight loss was significantly",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1418",
+      "claim_type": "mean_sd",
+      "raw_text": "1.73 \u00b1 0.23",
+      "numeric_values": [
+        1.73,
+        0.23
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1418,
+      "sentence": "The increase in running velocity was significantly higher in IF combined with alkaline supplementation (IF-v 1.73 \u00b1 0.23 km/h and IF-p 0.97 \u00b1 0.20 km/h).",
+      "context_window": "y higher in IF combined with alkaline supplementation (IF-v 1.73 \u00b1 0.23 km/h and IF-p 0.97 \u00b1 0.20 km/h). In addition, alkaline supp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1444",
+      "claim_type": "mean_sd",
+      "raw_text": "0.97 \u00b1 0.20",
+      "numeric_values": [
+        0.97,
+        0.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1444,
+      "sentence": "The increase in running velocity was significantly higher in IF combined with alkaline supplementation (IF-v 1.73 \u00b1 0.23 km/h and IF-p 0.97 \u00b1 0.20 km/h).",
+      "context_window": "th alkaline supplementation (IF-v 1.73 \u00b1 0.23 km/h and IF-p 0.97 \u00b1 0.20 km/h). In addition, alkaline supplementation increased plas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-352",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 352,
+      "sentence": "A total of 80 healthy individuals met the inclusion criteria regarding age (20-60 years), body mass index (BMI; 25-30 kg/m 2 ) and physical activity (1-2 h exercise/week).",
+      "context_window": "hy individuals met the inclusion criteria regarding age (20-60 years), body mass index (BMI; 25-30 kg/m 2 ) and physical activit",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-388",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 388,
+      "sentence": "A total of 80 healthy individuals met the inclusion criteria regarding age (20-60 years), body mass index (BMI; 25-30 kg/m 2 ) and physical activity (1-2 h exercise/week).",
+      "context_window": "teria regarding age (20-60 years), body mass index (BMI; 25-30 kg/m 2 ) and physical activity (1-2 h exercise/week). A total",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-913",
+      "claim_type": "unit_value",
+      "raw_text": "120 mg",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 913,
+      "sentence": "One stick of Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 20 \u00b5g chromium, 15 \u00b5g selenium.",
+      "context_window": "vening) ( Figure 1 ). One stick of Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-929",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 929,
+      "sentence": "One stick of Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 20 \u00b5g chromium, 15 \u00b5g selenium.",
+      "context_window": "1 ). One stick of Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 20 \u00b5g chromium, 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-947",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 mg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 947,
+      "sentence": "One stick of Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 20 \u00b5g chromium, 15 \u00b5g selenium.",
+      "context_window": "Basica Direkt \u00ae contains 120 mg calcium, 200 mg magnesium, 2.5 mg zinc, 25 \u00b5g molybdenum, 20 \u00b5g chromium, 15 \u00b5g selenium. Wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1085",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1085,
+      "sentence": "Within the study, all subjects followed an individual exercise program for 12 weeks.",
+      "context_window": "y, all subjects followed an individual exercise program for 12 weeks. Body weight, body composition, running performance, dietar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2034",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2034,
+      "sentence": "Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervention, dietary intake of all subjects was monitored with standardized protocols for 7 days.",
+      "context_window": "tocol. Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2183",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2183,
+      "sentence": "Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervention, dietary intake of all subjects was monitored with standardized protocols for 7 days.",
+      "context_window": "all subjects was monitored with standardized protocols for 7 days. At the start of intervention, to adjust to the fasting pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2566",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2566,
+      "sentence": "After the initial adjusting period, the following IF program included two fasting days weekly with a daily caloric intake of 400 kcal for female and 600 kcal for male participants and 5 days of \u2018normal\u2019 caloric consumptions (covering the individual demand).",
+      "context_window": "400 kcal for female and 600 kcal for male participants and 5 days of \u2018normal\u2019 caloric consumptions (covering the individual d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-2914",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2914,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "ternational guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-2936",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2936,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ]. All",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-2951",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2951,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "ition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ]. All participants re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-4967",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4967,
+      "sentence": "For all statistical tests, p < 0.05 was considered statistically significant. p -Values are provided and data are presented as mean (M) and standard error of mean (\u00b1 SEM).",
+      "context_window": "nd blood mineral concentrations. For all statistical tests, p < 0.05 was considered statistically significant. p -Values are pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-432",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 1.1",
+      "numeric_values": [
+        1.3,
+        1.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 432,
+      "sentence": "Exercise history was also similar between the verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running hours/week).",
+      "context_window": "ition. Exercise history was also similar between the verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-482",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 1.4",
+      "numeric_values": [
+        1.2,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 482,
+      "sentence": "Exercise history was also similar between the verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running hours/week).",
+      "context_window": "he verum (1.3 \u00b1 1.1 running hours/week) and placebo groups (1.2 \u00b1 1.4 running hours/week). Changes were calculated between baseli",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-587",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 587,
+      "sentence": "Changes were calculated between baseline (start of the program) and after 12 weeks (end of the program).",
+      "context_window": "alculated between baseline (start of the program) and after 12 weeks (end of the program). Before the start of the intervention,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-851",
+      "claim_type": "mean_sd",
+      "raw_text": "1767 \u00b1 312",
+      "numeric_values": [
+        1767.0,
+        312.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 851,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "olic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-869",
+      "claim_type": "mean_sd",
+      "raw_text": "1755 \u00b1 337",
+      "numeric_values": [
+        1755.0,
+        337.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 869,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "d in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-888",
+      "claim_type": "mean_sd",
+      "raw_text": "1706 \u00b1 274",
+      "numeric_values": [
+        1706.0,
+        274.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 888,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "s from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-907",
+      "claim_type": "mean_sd",
+      "raw_text": "1743 \u00b1 372",
+      "numeric_values": [
+        1743.0,
+        372.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 907,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-939",
+      "claim_type": "mean_sd",
+      "raw_text": "1674 \u00b1 289",
+      "numeric_values": [
+        1674.0,
+        289.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 939,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-957",
+      "claim_type": "mean_sd",
+      "raw_text": "1727 \u00b1 308",
+      "numeric_values": [
+        1727.0,
+        308.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 957,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "4; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly. The t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-976",
+      "claim_type": "mean_sd",
+      "raw_text": "1685 \u00b1 266",
+      "numeric_values": [
+        1685.0,
+        266.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 976,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "2) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly. The three times of 7 day",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-995",
+      "claim_type": "mean_sd",
+      "raw_text": "1697 \u00b1 373",
+      "numeric_values": [
+        1697.0,
+        373.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 995,
+      "sentence": "Basal metabolic rate decreased in all four groups from pre test (IF-p: 1767 \u00b1 312; IF-v: 1755 \u00b1 337; nIF-p: 1706 \u00b1 274; nIF-v: 1743 \u00b1 372) to post test (IF-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly.",
+      "context_window": "-p: 1674 \u00b1 289; IF-v: 1727 \u00b1 308; nIF-p: 1685 \u00b1 266; nIF-v: 1697 \u00b1 373) significantly. The three times of 7 days dietary monitorin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1041",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1041,
+      "sentence": "The three times of 7 days dietary monitoring showed no differences in acid load calculated on basis of PRAL scores (Potential Renal Acid Load) [ 13 ] and no differences between groups in the composition of carbohydrate, fat and protein content.",
+      "context_window": "\u00b1 266; nIF-v: 1697 \u00b1 373) significantly. The three times of 7 days dietary monitoring showed no differences in acid load calcu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1354",
+      "claim_type": "mean_sd",
+      "raw_text": "52.3 \u00b1 2.2",
+      "numeric_values": [
+        52.3,
+        2.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1354,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "etween the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1361",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1361,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1381",
+      "claim_type": "mean_sd",
+      "raw_text": "30.7 \u00b1 1.7",
+      "numeric_values": [
+        30.7,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1381,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "nitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1388",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1388,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "g weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1397",
+      "claim_type": "mean_sd",
+      "raw_text": "17.0 \u00b1 2.1",
+      "numeric_values": [
+        17.0,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1397,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1404",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1404,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "k before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1424",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1424,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1433",
+      "claim_type": "mean_sd",
+      "raw_text": "50.9 \u00b1 2.4",
+      "numeric_values": [
+        50.9,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1433,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "drates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1440",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1440,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1450",
+      "claim_type": "mean_sd",
+      "raw_text": "31.3 \u00b1 1.9",
+      "numeric_values": [
+        31.3,
+        1.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1450,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1457,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1466",
+      "claim_type": "mean_sd",
+      "raw_text": "18.8 \u00b1 1.7",
+      "numeric_values": [
+        18.8,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1466,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1473",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1473,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "ein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1508",
+      "claim_type": "mean_sd",
+      "raw_text": "49.4 \u00b1 2.6",
+      "numeric_values": [
+        49.4,
+        2.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1508,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": ", 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1515",
+      "claim_type": "percentage",
+      "raw_text": "2.6%",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1515,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "\u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1525",
+      "claim_type": "mean_sd",
+      "raw_text": "33.1 \u00b1 2",
+      "numeric_values": [
+        33.1,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1525,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there was a signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1534",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1534,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": ".7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there was a significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1541",
+      "claim_type": "mean_sd",
+      "raw_text": "17.5 \u00b1 1.8",
+      "numeric_values": [
+        17.5,
+        1.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1541,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "tein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there was a significant effect of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-1548",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1548,
+      "sentence": "There were no differences between the three dietary monitoring weeks (one week before: 52.3 \u00b1 2.2% carbohydrates, 30.7 \u00b1 1.7% fat 17.0 \u00b1 2.1% protein, after 6 weeks: 50.9 \u00b1 2.4% CHO, 31.3 \u00b1 1.9% fat 18.8 \u00b1 1.7% protein and in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein).",
+      "context_window": "d in the last week: 49.4 \u00b1 2.6% CHO, 33.1 \u00b1 2,0% fat 17.5 \u00b1 1.8% protein). Overall, there was a significant effect of the 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1897",
+      "claim_type": "mean_sd",
+      "raw_text": "5.80 \u00b1 0.77",
+      "numeric_values": [
+        5.8,
+        0.77
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1897,
+      "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
+      "context_window": "ficantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1904",
+      "claim_type": "unit_value",
+      "raw_text": "0.77 kg",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1904,
+      "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
+      "context_window": "y increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral su",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-1924",
+      "claim_type": "mean_sd",
+      "raw_text": "3.40 \u00b1 0.58",
+      "numeric_values": [
+        3.4,
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1924,
+      "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
+      "context_window": "ght loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in additio",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-1931",
+      "claim_type": "unit_value",
+      "raw_text": "0.58 kg",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1931,
+      "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
+      "context_window": "s compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in addition t",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-1940",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1940,
+      "sentence": "IF significantly increased body weight loss compared to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010).",
+      "context_window": "d to nIF (IF-p: -5.80 \u00b1 0.77 kg and nIF-p: -3.40 \u00b1 0.58 kg, p = 0.010). Alkaline mineral supplementation in addition to IF result",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2052",
+      "claim_type": "mean_sd",
+      "raw_text": "8.28 \u00b1 0.75",
+      "numeric_values": [
+        8.28,
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2052,
+      "sentence": "Alkaline mineral supplementation in addition to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg).",
+      "context_window": "tion to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.01",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2059",
+      "claim_type": "unit_value",
+      "raw_text": "0.75 kg",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2059,
+      "sentence": "Alkaline mineral supplementation in addition to IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg).",
+      "context_window": "IF resulted in the highest body weight loss (IF-v: -8.28 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.015).",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2115",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2115,
+      "sentence": "Difference to placebo group was significant ( p = 0.015).",
+      "context_window": "8 \u00b1 0.75 kg). Difference to placebo group was significant ( p = 0.015). Furthermore, there was a significant difference between v",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2217",
+      "claim_type": "mean_sd",
+      "raw_text": "5.59 \u00b1 0.87",
+      "numeric_values": [
+        5.59,
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2217,
+      "sentence": "Furthermore, there was a significant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ).",
+      "context_window": "ficant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2224",
+      "claim_type": "unit_value",
+      "raw_text": "0.87 kg",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2224,
+      "sentence": "Furthermore, there was a significant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ).",
+      "context_window": "difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2244",
+      "claim_type": "mean_sd",
+      "raw_text": "3.40 \u00b1 0.58",
+      "numeric_values": [
+        3.4,
+        0.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2244,
+      "sentence": "Furthermore, there was a significant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ).",
+      "context_window": "erum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly highe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2251",
+      "claim_type": "unit_value",
+      "raw_text": "0.58 kg",
+      "numeric_values": [
+        0.58
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2251,
+      "sentence": "Furthermore, there was a significant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ).",
+      "context_window": "d placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly higher f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2260",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2260,
+      "sentence": "Furthermore, there was a significant difference between verum and placebo in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ).",
+      "context_window": "in nIF (nIF-v: -5.59 \u00b1 0.87 kg and nIF-p: -3.40 \u00b1 0.58 kg; p = 0.023) ( Figure 2 ). IF led to significantly higher fat mass los",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2348",
+      "claim_type": "mean_sd",
+      "raw_text": "3.59 \u00b1 0.45",
+      "numeric_values": [
+        3.59,
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2348,
+      "sentence": "IF led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044).",
+      "context_window": "led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044). Additionally, th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2355",
+      "claim_type": "unit_value",
+      "raw_text": "0.45 kg",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2355,
+      "sentence": "IF led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044).",
+      "context_window": "significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044). Additionally, there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2375",
+      "claim_type": "mean_sd",
+      "raw_text": "2.63 \u00b1 0.30",
+      "numeric_values": [
+        2.63,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2375,
+      "sentence": "IF led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044).",
+      "context_window": "r fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044). Additionally, there was a significant effec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2382",
+      "claim_type": "unit_value",
+      "raw_text": "0.30 kg",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2382,
+      "sentence": "IF led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044).",
+      "context_window": "ass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044). Additionally, there was a significant effect o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2391",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2391,
+      "sentence": "IF led to significantly higher fat mass loss than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044).",
+      "context_window": "than nIF (IF-p: -3.59 \u00b1 0.45 kg and nIF-p: -2.63 \u00b1 0.30 kg, p = 0.044). Additionally, there was a significant effect of the suppl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2502",
+      "claim_type": "mean_sd",
+      "raw_text": "5.12 \u00b1 0.62",
+      "numeric_values": [
+        5.12,
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2502,
+      "sentence": "Additionally, there was a significant effect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ).",
+      "context_window": "ffect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2509",
+      "claim_type": "unit_value",
+      "raw_text": "0.62 kg",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2509,
+      "sentence": "Additionally, there was a significant effect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ).",
+      "context_window": "f the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ). There",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2528",
+      "claim_type": "mean_sd",
+      "raw_text": "3.59 \u00b1 0.45",
+      "numeric_values": [
+        3.59,
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2528,
+      "sentence": "Additionally, there was a significant effect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ).",
+      "context_window": "body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ). There was a clear trend towar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2535",
+      "claim_type": "unit_value",
+      "raw_text": "0.45 kg",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2535,
+      "sentence": "Additionally, there was a significant effect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ).",
+      "context_window": "at loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ). There was a clear trend towards",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2544",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2544,
+      "sentence": "Additionally, there was a significant effect of the supplement on body fat loss in IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ).",
+      "context_window": "n IF only (IF-v: -5.12 \u00b1 0.62 kg and IF-p: -3.59 \u00b1 0.45 kg; p = 0.028) ( Figure 3 ). There was a clear trend towards enhanced lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2646",
+      "claim_type": "mean_sd",
+      "raw_text": "1.53 \u00b1 0.25",
+      "numeric_values": [
+        1.53,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2646,
+      "sentence": "There was a clear trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "context_window": "r trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2653",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 kg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2653,
+      "sentence": "There was a clear trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "context_window": "towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical si",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2673",
+      "claim_type": "mean_sd",
+      "raw_text": "1.03 \u00b1 0.17",
+      "numeric_values": [
+        1.03,
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2673,
+      "sentence": "There was a clear trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "context_window": "ss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2680",
+      "claim_type": "unit_value",
+      "raw_text": "0.17 kg",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2680,
+      "sentence": "There was a clear trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "context_window": "isceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054). On",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2733",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.054",
+      "numeric_values": [
+        0.054
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2733,
+      "sentence": "There was a clear trend towards enhanced loss of visceral fat by IF (IF-p: -1.53 \u00b1 0.25 kg and nIF-p: -1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054).",
+      "context_window": "1.03 \u00b1 0.17 kg) without reaching statistical significance ( p = 0.054). Only supplementation in IF led to a significant higher lo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2829",
+      "claim_type": "mean_sd",
+      "raw_text": "2.27 \u00b1 0.37",
+      "numeric_values": [
+        2.27,
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2829,
+      "sentence": "Only supplementation in IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ).",
+      "context_window": "IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ). Im",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2836",
+      "claim_type": "unit_value",
+      "raw_text": "0.37 kg",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2836,
+      "sentence": "Only supplementation in IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ).",
+      "context_window": "to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ). Impro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-2856",
+      "claim_type": "mean_sd",
+      "raw_text": "1.53 \u00b1 0.25",
+      "numeric_values": [
+        1.53,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2856,
+      "sentence": "Only supplementation in IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ).",
+      "context_window": "her loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ). Improvement of running perfor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-2863",
+      "claim_type": "unit_value",
+      "raw_text": "0.25 kg",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2863,
+      "sentence": "Only supplementation in IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ).",
+      "context_window": "s of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ). Improvement of running performan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-2872",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2872,
+      "sentence": "Only supplementation in IF led to a significant higher loss of visceral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ).",
+      "context_window": "eral fat (IF-v: -2.27 \u00b1 0.37 kg and nIF-v: -1.53 \u00b1 0.25 kg; p = 0.018) ( Figure 4 ). Improvement of running performance was dete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3183",
+      "claim_type": "mean_sd",
+      "raw_text": "1.73 \u00b1 0.23",
+      "numeric_values": [
+        1.73,
+        0.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3183,
+      "sentence": "Only supplementation in IF led to a significant improvement in running velocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ).",
+      "context_window": "led to a significant improvement in running velocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ). T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3210",
+      "claim_type": "mean_sd",
+      "raw_text": "0.97 \u00b1 0.20",
+      "numeric_values": [
+        0.97,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3210,
+      "sentence": "Only supplementation in IF led to a significant improvement in running velocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ).",
+      "context_window": "ement in running velocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ). There were no significant di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-3228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3228,
+      "sentence": "Only supplementation in IF led to a significant improvement in running velocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ).",
+      "context_window": "elocity (IF-v: 1.73 \u00b1 0.23 km/h and IF-p: 0.97 \u00b1 0.20 km/h; p = 0.021) ( Figure 5 ). There were no significant differences for la",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3544",
+      "claim_type": "mean_sd",
+      "raw_text": "0.53 \u00b1 0.53",
+      "numeric_values": [
+        0.53,
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3544,
+      "sentence": "There was a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ).",
+      "context_window": "re was a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week trai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3551",
+      "claim_type": "unit_value",
+      "raw_text": "0.53 mmol",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3551,
+      "sentence": "There was a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ).",
+      "context_window": "a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3576",
+      "claim_type": "mean_sd",
+      "raw_text": "0.80 \u00b1 0.62",
+      "numeric_values": [
+        0.8,
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3576,
+      "sentence": "There was a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ).",
+      "context_window": "3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ). Alkal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3583",
+      "claim_type": "unit_value",
+      "raw_text": "0.62 mmol",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3583,
+      "sentence": "There was a decrease in plasma HCO 3 - concentration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ).",
+      "context_window": "centration in IF-p (-0.53 \u00b1 0.53 mmol/L) and nIF-p (-0.80 \u00b1 0.62 mmol/L) by the 12-week training program ( Figure 6 ). Alkaline s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3728",
+      "claim_type": "mean_sd",
+      "raw_text": "1.55 \u00b1 1.07",
+      "numeric_values": [
+        1.55,
+        1.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3728,
+      "sentence": "Alkaline supplementation increased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056).",
+      "context_window": "ncreased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3735",
+      "claim_type": "unit_value",
+      "raw_text": "1.07 mmol",
+      "numeric_values": [
+        1.07
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3735,
+      "sentence": "Alkaline supplementation increased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056).",
+      "context_window": "d plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-3758",
+      "claim_type": "mean_sd",
+      "raw_text": "2.10 \u00b1 0.68",
+      "numeric_values": [
+        2.1,
+        0.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3758,
+      "sentence": "Alkaline supplementation increased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056).",
+      "context_window": "tration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3765",
+      "claim_type": "unit_value",
+      "raw_text": "0.68 mmol",
+      "numeric_values": [
+        0.68
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3765,
+      "sentence": "Alkaline supplementation increased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056).",
+      "context_window": "in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-3827",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0056",
+      "numeric_values": [
+        0.0056
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3827,
+      "sentence": "Alkaline supplementation increased plasma HCO 3 - concentration in both groups (IF-v: 1.55 \u00b1 1.07 mmol/L and nIF-v: 2.10 \u00b1 0.68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056).",
+      "context_window": "68 mmol/L), reaching statistical significance in nIF only ( p = 0.0056). Changes in urinary pH between the groups were assessed o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-4045",
+      "claim_type": "mean_sd",
+      "raw_text": "5.80 \u00b1 0.10",
+      "numeric_values": [
+        5.8,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4045,
+      "sentence": "Similar to the results for plasma HCO 3 - concentration, alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ).",
+      "context_window": "alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-4067",
+      "claim_type": "mean_sd",
+      "raw_text": "5.89 \u00b1 0.10",
+      "numeric_values": [
+        5.89,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4067,
+      "sentence": "Similar to the results for plasma HCO 3 - concentration, alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ).",
+      "context_window": "ion increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-4096",
+      "claim_type": "mean_sd",
+      "raw_text": "5.64 \u00b1 0.06",
+      "numeric_values": [
+        5.64,
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4096,
+      "sentence": "Similar to the results for plasma HCO 3 - concentration, alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ).",
+      "context_window": "F (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-msd-4119",
+      "claim_type": "mean_sd",
+      "raw_text": "5.88 \u00b1 0.10",
+      "numeric_values": [
+        5.88,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4119,
+      "sentence": "Similar to the results for plasma HCO 3 - concentration, alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ).",
+      "context_window": "d IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figur",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-p-4160",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4160,
+      "sentence": "Similar to the results for plasma HCO 3 - concentration, alkaline supplementation increased urinary pH in IF (IF-p: 5.80 \u00b1 0.10 and IF-v: 5.89 \u00b1 0.10) and nIF (nIF-p: 5.64 \u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ).",
+      "context_window": "\u00b1 0.06 and nIF-v: 5.88 \u00b1 0.10) with a significant effect ( p = 0.038) in nIF only ( Figure 7 ). There were no significant diffe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3846",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3846,
+      "sentence": "Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervention, dietary intake of all subjects was monitored with standardized protocols for 7 days.",
+      "context_window": "s only. Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-u-3995",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3995,
+      "sentence": "Before the start of the 12-week intervention, after 6 weeks into the intervention and in the last week of the intervention, dietary intake of all subjects was monitored with standardized protocols for 7 days.",
+      "context_window": "all subjects was monitored with standardized protocols for 7 days. There were no special recommendations on allowed and prohi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-4192",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4192,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "ternational guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-4214",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4214,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ]. Samp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7281477_exercise_training_intermittent_fasting_and_alkaline_suppleme-pct-4229",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4229,
+      "sentence": "Recommendations on a normal balanced diet were based on international guidelines on sports nutrition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ].",
+      "context_window": "ition consisting of 50-60% carbohydrates, 25-30% fat and 15-20% protein of total daily calories [ 11 ]. Sampling of 24-h ur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

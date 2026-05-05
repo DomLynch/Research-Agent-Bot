@@ -1,0 +1,1394 @@
+{
+  "paper_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig",
+  "doi": "10.3390/nu16203476",
+  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 7,
+    "percentage": 29,
+    "mean_sd": 10,
+    "p_value": 16,
+    "unit_value": 12,
+    "odds_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-880",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "Participants with obesity were randomized to 4 or 6 h TRE (n = 35) or a control (n = 14) group.",
+      "context_window": "Participants with obesity were randomized to 4 or 6 h TRE (n = 35) or a control (n = 14) group. Plasma biomarkers were measur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-902",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 902,
+      "sentence": "Participants with obesity were randomized to 4 or 6 h TRE (n = 35) or a control (n = 14) group.",
+      "context_window": "sity were randomized to 4 or 6 h TRE (n = 35) or a control (n = 14) group. Plasma biomarkers were measured by ELISA at baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1045",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1045,
+      "sentence": "In a sub-analysis, participants were stratified into higher- (>3.5%) and lower- (\u22643.5%) weight-loss groups.",
+      "context_window": "a sub-analysis, participants were stratified into higher- (>3.5%) and lower- (\u22643.5%) weight-loss groups. Intervention: Parti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1064",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1064,
+      "sentence": "In a sub-analysis, participants were stratified into higher- (>3.5%) and lower- (\u22643.5%) weight-loss groups.",
+      "context_window": "ticipants were stratified into higher- (>3.5%) and lower- (\u22643.5%) weight-loss groups. Intervention: Participants fasted dail",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-1590",
+      "claim_type": "mean_sd",
+      "raw_text": "3.6 \u00b1 0.3",
+      "numeric_values": [
+        3.6,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1590,
+      "sentence": "Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001).",
+      "context_window": "ed. Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001). Sign",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1596",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1596,
+      "sentence": "Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001).",
+      "context_window": "sults: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001). Signi",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-1631",
+      "claim_type": "mean_sd",
+      "raw_text": "0.2 \u00b1 0.5",
+      "numeric_values": [
+        0.2,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1631,
+      "sentence": "Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001).",
+      "context_window": "creased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001). Significant effects of TRE over time were obs",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1637",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1637,
+      "sentence": "Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001).",
+      "context_window": "d with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001). Significant effects of TRE over time were obse",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-1643",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1643,
+      "sentence": "Results: Body weight significantly decreased with TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001).",
+      "context_window": "TRE (-3.6 \u00b1 0.3%), contrasting with controls (+0.2 \u00b1 0.5%, p < 0.001). Significant effects of TRE over time were observed on pla",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2205",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2205,
+      "sentence": "IGFBP2 increased and leptin decreased when weight loss exceeded 3.5% of baseline.",
+      "context_window": "P2 increased and leptin decreased when weight loss exceeded 3.5% of baseline. Keywords: intermittent fasting, obesity, grow",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2518",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2518,
+      "sentence": "For example, a two-year intervention entailing 25% caloric restriction for participants with normal weight increased serum IGFBP1 by 21% and decreased the IGF1/IGFBP1 ratio by 42%.",
+      "context_window": "[ 14 , 15 ]. For example, a two-year intervention entailing 25% caloric restriction for participants with normal weight inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2604",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2604,
+      "sentence": "For example, a two-year intervention entailing 25% caloric restriction for participants with normal weight increased serum IGFBP1 by 21% and decreased the IGF1/IGFBP1 ratio by 42%.",
+      "context_window": "r participants with normal weight increased serum IGFBP1 by 21% and decreased the IGF1/IGFBP1 ratio by 42%. Another six-mon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2647",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2647,
+      "sentence": "For example, a two-year intervention entailing 25% caloric restriction for participants with normal weight increased serum IGFBP1 by 21% and decreased the IGF1/IGFBP1 ratio by 42%.",
+      "context_window": "serum IGFBP1 by 21% and decreased the IGF1/IGFBP1 ratio by 42%. Another six-month clinical trial for women with overweight",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2722",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2722,
+      "sentence": "Another six-month clinical trial for women with overweight found that 25% continuous as well as intermittent caloric restriction exerted comparable weight loss and increased IGFBP1 and IGFBP2 levels.",
+      "context_window": "x-month clinical trial for women with overweight found that 25% continuous as well as intermittent caloric restriction exer",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-943",
+      "claim_type": "unit_value",
+      "raw_text": "49.9 kg",
+      "numeric_values": [
+        49.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 943,
+      "sentence": "The inclusion criteria comprised being male or female, between the ages of 18 and 65, with a BMI of 30 to 49.9 kg/m 2 .",
+      "context_window": "female, between the ages of 18 and 65, with a BMI of 30 to 49.9 kg/m 2 . Conversely, individuals who smoked, had a history of",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-1498",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1498,
+      "sentence": "Thus, completers in the 4 and 6 h TRE groups (n = 16 and 19, respectively) were combined into one TRE group (n = 35) and compared with controls (n = 14) [ 4 ].",
+      "context_window": "meters [ 4 ]. Thus, completers in the 4 and 6 h TRE groups (n = 16 and 19, respectively) were combined into one TRE group (n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-1561",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1561,
+      "sentence": "Thus, completers in the 4 and 6 h TRE groups (n = 16 and 19, respectively) were combined into one TRE group (n = 35) and compared with controls (n = 14) [ 4 ].",
+      "context_window": "16 and 19, respectively) were combined into one TRE group (n = 35) and compared with controls (n = 14) [ 4 ]. Participants u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-1597",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1597,
+      "sentence": "Thus, completers in the 4 and 6 h TRE groups (n = 16 and 19, respectively) were combined into one TRE group (n = 35) and compared with controls (n = 14) [ 4 ].",
+      "context_window": "ned into one TRE group (n = 35) and compared with controls (n = 14) [ 4 ]. Participants underwent a two-week weight-stabiliza",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-3184",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3184,
+      "sentence": "Physical activity changes in terms of step count per day were evaluated over 7 days using a Fitbit Alta HR (Fitbit, San Francisco, CA, USA).",
+      "context_window": "changes in terms of step count per day were evaluated over 7 days using a Fitbit Alta HR (Fitbit, San Francisco, CA, USA). T",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-4462",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4462,
+      "sentence": "The TRE intervention resulted in an average weight loss of 3.5%.",
+      "context_window": "The TRE intervention resulted in an average weight loss of 3.5%. This was used as a cutoff to stratify all participants int",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-4552",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4552,
+      "sentence": "This was used as a cutoff to stratify all participants into the lower-weight-loss (\u22643.5%) or higher-weight-loss (>3.5%) groups.",
+      "context_window": "f to stratify all participants into the lower-weight-loss (\u22643.5%) or higher-weight-loss (>3.5%) groups. Using this cutoff re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-4582",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4582,
+      "sentence": "This was used as a cutoff to stratify all participants into the lower-weight-loss (\u22643.5%) or higher-weight-loss (>3.5%) groups.",
+      "context_window": "into the lower-weight-loss (\u22643.5%) or higher-weight-loss (>3.5%) groups. Using this cutoff resulted in 29 participants in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-327",
+      "claim_type": "mean_sd",
+      "raw_text": "7520 \u00b1 507",
+      "numeric_values": [
+        7520.0,
+        507.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 327,
+      "sentence": "However, TRE participants were significantly less physically active than controls, as measured in step count per day (7520 \u00b1 507 vs.",
+      "context_window": "ly active than controls, as measured in step count per day (7520 \u00b1 507 vs. 9477 \u00b1 795 steps/day, p < 0.05). Changes in body weigh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-342",
+      "claim_type": "mean_sd",
+      "raw_text": "9477 \u00b1 795",
+      "numeric_values": [
+        9477.0,
+        795.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 342,
+      "sentence": "9477 \u00b1 795 steps/day, p < 0.05).",
+      "context_window": "controls, as measured in step count per day (7520 \u00b1 507 vs. 9477 \u00b1 795 steps/day, p < 0.05). Changes in body weight and body comp",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-364",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 364,
+      "sentence": "9477 \u00b1 795 steps/day, p < 0.05).",
+      "context_window": "in step count per day (7520 \u00b1 507 vs. 9477 \u00b1 795 steps/day, p < 0.05). Changes in body weight and body composition in participa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-711",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 711,
+      "sentence": "Data are presented as means (SEM). p -value: repeated measures ANOVA with groups (TRE vs. control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05 and *** p < 0.001 for TRE-Week 8 vs.",
+      "context_window": "time (baseline and week 8) as the within-subject factor. * p < 0.05 and *** p < 0.001 for TRE-Week 8 vs. TRE-Baseline; # p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-728",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 728,
+      "sentence": "Data are presented as means (SEM). p -value: repeated measures ANOVA with groups (TRE vs. control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05 and *** p < 0.001 for TRE-Week 8 vs.",
+      "context_window": "nd week 8) as the within-subject factor. * p < 0.05 and *** p < 0.001 for TRE-Week 8 vs. TRE-Baseline; # p < 0.05 for TRE vs. con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-773",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 773,
+      "sentence": "TRE-Baseline; # p < 0.05 for TRE vs. control (time-matched) based on multi-comparison test.",
+      "context_window": "< 0.05 and *** p < 0.001 for TRE-Week 8 vs. TRE-Baseline; # p < 0.05 for TRE vs. control (time-matched) based on multi-compariso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-1008",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1008,
+      "sentence": "Physical activity was evaluated in step counts measured over 7 days during the baseline period and at week 8 using wearable fitness tracking devices.",
+      "context_window": "hysical activity was evaluated in step counts measured over 7 days during the baseline period and at week 8 using wearable fit",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-1682",
+      "claim_type": "mean_sd",
+      "raw_text": "6.25 \u00b1 0.10",
+      "numeric_values": [
+        6.25,
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1682,
+      "sentence": "This aligned with high adherence to TRE, as reflected by a mean of 6.25 \u00b1 0.10 days of fasting per week in the TRE group.",
+      "context_window": "igned with high adherence to TRE, as reflected by a mean of 6.25 \u00b1 0.10 days of fasting per week in the TRE group. Additionally, at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-1689",
+      "claim_type": "unit_value",
+      "raw_text": "0.10 days",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1689,
+      "sentence": "This aligned with high adherence to TRE, as reflected by a mean of 6.25 \u00b1 0.10 days of fasting per week in the TRE group.",
+      "context_window": "ith high adherence to TRE, as reflected by a mean of 6.25 \u00b1 0.10 days of fasting per week in the TRE group. Additionally, at base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2089",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2089,
+      "sentence": "For the sub-analysis, participants were categorized into two groups based on their weight loss percentages: \u22643.5% (lower weight loss) and >3.5% (higher weight loss).",
+      "context_window": "ed into two groups based on their weight loss percentages: \u22643.5% (lower weight loss) and >3.5% (higher weight loss). As expe",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2119",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "For the sub-analysis, participants were categorized into two groups based on their weight loss percentages: \u22643.5% (lower weight loss) and >3.5% (higher weight loss).",
+      "context_window": "eir weight loss percentages: \u22643.5% (lower weight loss) and >3.5% (higher weight loss). As expected, a significant group \u00d7 ti",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-2831",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2831,
+      "sentence": "Percentage of weight loss relative to baseline, stratified according to final weight loss percentage (lower vs. higher) over 8 weeks of time-restricted eating intervention.",
+      "context_window": "ing to final weight loss percentage (lower vs. higher) over 8 weeks of time-restricted eating intervention. Data are expressed",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-3028",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3028,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "body weight. Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and ***",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-3034",
+      "claim_type": "sample_size",
+      "raw_text": "n = 29",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3034,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "weight. Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.0",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-3059",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3059,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-n-3065",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3065,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "ified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percent",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-3076",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3076,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a spec",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-3093",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3093,
+      "sentence": "Participants were stratified into lower WL% (\u22643.5%, n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. group-matched baseline.",
+      "context_window": "n = 29) and higher WL% (>3.5%, n = 20). * p < 0.05 and *** p < 0.001 for mean weight loss percentage in a specific week vs. grou",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-3995",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3995,
+      "sentence": "Changes in circulating growth and metabolic factors in participants with obesity after 8 weeks of time-restricted eating (TRE) intervention compared with control.",
+      "context_window": "th and metabolic factors in participants with obesity after 8 weeks of time-restricted eating (TRE) intervention compared with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-4264",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4264,
+      "sentence": "Control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE vs. control (time-matched) based on multi-comparison test.",
+      "context_window": "time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-4277",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4277,
+      "sentence": "Control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE vs. control (time-matched) based on multi-comparison test.",
+      "context_window": "ne and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched);",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-4295",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4295,
+      "sentence": "Control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE vs. control (time-matched) based on multi-comparison test.",
+      "context_window": "the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-4348",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4348,
+      "sentence": "Control) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE vs. control (time-matched) based on multi-comparison test.",
+      "context_window": "nd *** p < 0.001 for week 8 vs. baseline (group-matched); # p < 0.05 for TRE vs. control (time-matched) based on multi-compariso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-6602",
+      "claim_type": "mean_sd",
+      "raw_text": "29.9 \u00b1 23.2",
+      "numeric_values": [
+        29.9,
+        23.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6602,
+      "sentence": "A significant effect of group over time on plasma IGFBP2 levels was observed (interaction p -value = 0.019), with IGFBP2 levels significantly increasing in the higher-weight-loss group (+67.1 (31.1) ng/mL, p -value < 0.05) but non-significantly decreasing in the lower-weight-loss group (-29.9 \u00b1 23.2 ng/mL, p -value > 0.05) after the eight-week intervention ( Table 3 ).",
+      "context_window": "n-significantly decreasing in the lower-weight-loss group (-29.9 \u00b1 23.2 ng/mL, p -value > 0.05) after the eight-week intervention (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-6609",
+      "claim_type": "unit_value",
+      "raw_text": "23.2 ng/mL",
+      "numeric_values": [
+        23.2
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 6609,
+      "sentence": "A significant effect of group over time on plasma IGFBP2 levels was observed (interaction p -value = 0.019), with IGFBP2 levels significantly increasing in the higher-weight-loss group (+67.1 (31.1) ng/mL, p -value < 0.05) but non-significantly decreasing in the lower-weight-loss group (-29.9 \u00b1 23.2 ng/mL, p -value > 0.05) after the eight-week intervention ( Table 3 ).",
+      "context_window": "ficantly decreasing in the lower-weight-loss group (-29.9 \u00b1 23.2 ng/mL, p -value > 0.05) after the eight-week intervention ( Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-6837",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6837,
+      "sentence": "Sub-analysis comparing changes in circulating growth and metabolic factors in participants with obesity stratified by weight loss percentage following 8 weeks of time-restricted eating.",
+      "context_window": "with obesity stratified by weight loss percentage following 8 weeks of time-restricted eating. Data are presented as mean \u00b1 SE",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-6956",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6956,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "ean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-6966",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6966,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-7065",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7065,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (gr",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-7078",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7078,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "ne and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched).",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-7096",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7096,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for low",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-7149",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7149,
+      "sentence": "Data are presented as mean \u00b1 SEM. p -values: repeated measures ANOVA with groups (\u22643.5% vs. <3.5%) as the between-subject factor and time (baseline and week 8) as the within-subject factor. * p < 0.05, ** p < 0.01, and *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on multi-comparison test.",
+      "context_window": "nd *** p < 0.001 for week 8 vs. baseline (group-matched). # p < 0.05 for lower vs. higher weight loss (time-matched) based on mu",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-p-10063",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10063,
+      "sentence": "However, time was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks.",
+      "context_window": "was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE parti",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-10142",
+      "claim_type": "percentage",
+      "raw_text": "0.23%",
+      "numeric_values": [
+        0.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10142,
+      "sentence": "However, time was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks.",
+      "context_window": "HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%),",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-10149",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10149,
+      "sentence": "However, time was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks.",
+      "context_window": "levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -val",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-10193",
+      "claim_type": "percentage",
+      "raw_text": "0.21%",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10193,
+      "sentence": "However, time was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks.",
+      "context_window": "ipants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks. With these dec",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-10200",
+      "claim_type": "percentage",
+      "raw_text": "0.08%",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10200,
+      "sentence": "However, time was observed to have a significant effect on HbA1C levels ( p < 0.001), whereby HbA1C levels significantly decreased in TRE participants (-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks.",
+      "context_window": "(-0.23% (0.05%), p -value < 0.001) and in controls (-0.21% (0.08%), p -value < 0.01) after eight weeks. With these decreases,",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-10301",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10301,
+      "sentence": "With these decreases, HbA1C levels became lower than the 5.7% threshold for prediabetes diagnosis in both TRE and control groups.",
+      "context_window": "s. With these decreases, HbA1C levels became lower than the 5.7% threshold for prediabetes diagnosis in both TRE and control",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-11091",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11091,
+      "sentence": "In addition, a significant effect of time on HbA1C levels was detected ( p -value < 0.001), but no significant group or interaction effects were observed, as HbA1C levels significantly decreased after 8 weeks in both higher- and lower-weight-loss participants compared with their baselines ( Table 3 ).",
+      "context_window": "ere observed, as HbA1C levels significantly decreased after 8 weeks in both higher- and lower-weight-loss participants compared",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-13031",
+      "claim_type": "mean_sd",
+      "raw_text": "12.00 \u00b1 2.74",
+      "numeric_values": [
+        12.0,
+        2.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13031,
+      "sentence": "However, a significant effect of group over time emerged concerning plasma 8-isoprostane concentration (p-interaction = 0.007), as 8-isoprostane significantly decreased over time in TRE (-12.00 \u00b1 2.74 pg/mL, p -value < 0.001) but not in control participants (+2.70 \u00b1 4.34, p -value = 0.05) according to the multi-comparison test.",
+      "context_window": "as 8-isoprostane significantly decreased over time in TRE (-12.00 \u00b1 2.74 pg/mL, p -value < 0.001) but not in control participants (+",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-13103",
+      "claim_type": "mean_sd",
+      "raw_text": "2.70 \u00b1 4.34",
+      "numeric_values": [
+        2.7,
+        4.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13103,
+      "sentence": "However, a significant effect of group over time emerged concerning plasma 8-isoprostane concentration (p-interaction = 0.007), as 8-isoprostane significantly decreased over time in TRE (-12.00 \u00b1 2.74 pg/mL, p -value < 0.001) but not in control participants (+2.70 \u00b1 4.34, p -value = 0.05) according to the multi-comparison test.",
+      "context_window": "pg/mL, p -value < 0.001) but not in control participants (+2.70 \u00b1 4.34, p -value = 0.05) according to the multi-comparison test. T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-13952",
+      "claim_type": "mean_sd",
+      "raw_text": "13.93 \u00b1 3.86",
+      "numeric_values": [
+        13.93,
+        3.86
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13952,
+      "sentence": "Post-hoc analysis revealed that 8-isoprostane levels significantly decreased in the higher-weight-loss participants following the intervention (-13.93 \u00b1 3.86 pg/mL, p -value < 0.01) but not in the lower-weight-loss participants (-3.71 \u00b1 3.15 pg/mL, p -value > 0.05) ( Table 3 ).",
+      "context_window": "igher-weight-loss participants following the intervention (-13.93 \u00b1 3.86 pg/mL, p -value < 0.01) but not in the lower-weight-loss pa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-msd-14037",
+      "claim_type": "mean_sd",
+      "raw_text": "3.71 \u00b1 3.15",
+      "numeric_values": [
+        3.71,
+        3.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14037,
+      "sentence": "Post-hoc analysis revealed that 8-isoprostane levels significantly decreased in the higher-weight-loss participants following the intervention (-13.93 \u00b1 3.86 pg/mL, p -value < 0.01) but not in the lower-weight-loss participants (-3.71 \u00b1 3.15 pg/mL, p -value > 0.05) ( Table 3 ).",
+      "context_window": "lue < 0.01) but not in the lower-weight-loss participants (-3.71 \u00b1 3.15 pg/mL, p -value > 0.05) ( Table 3 ). These findings sugges",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-14270",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14270,
+      "sentence": "In the sub-analysis, the change in 8-isoprostance was significant only with high weight loss (>3.5%), corresponding with significant correlations between changes in 8-isoprostane with changes in body weight, fat mass, and waist circumference ( Supplementary Table S1 ).",
+      "context_window": "8-isoprostance was significant only with high weight loss (>3.5%), corresponding with significant correlations between chang",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-1157",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1157,
+      "sentence": "Indeed, one study found that eucaloric 8 h TRE intervention (10 a.m.-6 p.m.) over 2 and 12 months reduced IGF1 levels in resistance-trained males compared with isocaloric non-TRE controls [ 11 , 12 ].",
+      "context_window": "eucaloric 8 h TRE intervention (10 a.m.-6 p.m.) over 2 and 12 months reduced IGF1 levels in resistance-trained males compared wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-1360",
+      "claim_type": "unit_value",
+      "raw_text": "1.62 kg",
+      "numeric_values": [
+        1.62
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 1360,
+      "sentence": "This reduction was accompanied by a significant but mild decrease in fat mass (average of 1.62 kg), circulating leptin, and IL1\u03b2, as well as an increase in adiponectin levels after 2 months.",
+      "context_window": "by a significant but mild decrease in fat mass (average of 1.62 kg), circulating leptin, and IL1\u03b2, as well as an increase in a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-u-1451",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1451,
+      "sentence": "This reduction was accompanied by a significant but mild decrease in fat mass (average of 1.62 kg), circulating leptin, and IL1\u03b2, as well as an increase in adiponectin levels after 2 months.",
+      "context_window": "nd IL1\u03b2, as well as an increase in adiponectin levels after 2 months. Another eucaloric study by the same investigators found th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1667",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1667,
+      "sentence": "Another eucaloric study by the same investigators found that a 4-week TRE intervention reduced IGF1 levels in elite cyclists compared with non-TRE controls, accompanied by small reductions in body weight (-2%), fat mass percentage (-1.1%), and the ratio of neutrophils to lymphocytes [ 21 ].",
+      "context_window": "controls, accompanied by small reductions in body weight (-2%), fat mass percentage (-1.1%), and the ratio of neutrophils",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-1694",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1694,
+      "sentence": "Another eucaloric study by the same investigators found that a 4-week TRE intervention reduced IGF1 levels in elite cyclists compared with non-TRE controls, accompanied by small reductions in body weight (-2%), fat mass percentage (-1.1%), and the ratio of neutrophils to lymphocytes [ 21 ].",
+      "context_window": "mall reductions in body weight (-2%), fat mass percentage (-1.1%), and the ratio of neutrophils to lymphocytes [ 21 ]. Conve",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-2651",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2651,
+      "sentence": "In the sub-analysis, IGFBP2 levels significantly increased in the higher-weight-loss participants who lost more than 3.5% of their baseline body weights but not in the in the lower-weight-loss participants.",
+      "context_window": "d in the higher-weight-loss participants who lost more than 3.5% of their baseline body weights but not in the in the lower-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-or-a-3428",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 7.5",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3428,
+      "sentence": "For example, a study reported that low IGFBP2 was the strongest predictor for prediabetes (OR: 7.5) in women, while in men, the strongest predictor was IGFBP1 (OR: 13.4) [ 25 ].",
+      "context_window": "hat low IGFBP2 was the strongest predictor for prediabetes (OR: 7.5) in women, while in men, the strongest predictor was IGFBP1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-or-a-3497",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 13.4",
+      "numeric_values": [
+        13.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 3497,
+      "sentence": "For example, a study reported that low IGFBP2 was the strongest predictor for prediabetes (OR: 7.5) in women, while in men, the strongest predictor was IGFBP1 (OR: 13.4) [ 25 ].",
+      "context_window": "in women, while in men, the strongest predictor was IGFBP1 (OR: 13.4) [ 25 ]. Additionally, two studies reported that IGFBP2 lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-98",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 98,
+      "sentence": "An eight-week short-term 4 to 6 h daily TRE regimen, resulting in a modest average weight loss of 3.5%, did not exert significant changes on circulating levels of IGF1, IGFBP1, IGFBP3, IGF1/IGFBP3, adiponectin, or hsCRP.",
+      "context_window": "y TRE regimen, resulting in a modest average weight loss of 3.5%, did not exert significant changes on circulating levels of",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11510611_effect_of_time_restricted_eating_on_circulating_levels_of_ig-pct-335",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 335,
+      "sentence": "However, TRE significantly increased plasma IGFBP2 and decreased plasma leptin in participants who lost more than 3.5% of their baseline body weight.",
+      "context_window": "decreased plasma leptin in participants who lost more than 3.5% of their baseline body weight. This elevation in IGFBP2 wit",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

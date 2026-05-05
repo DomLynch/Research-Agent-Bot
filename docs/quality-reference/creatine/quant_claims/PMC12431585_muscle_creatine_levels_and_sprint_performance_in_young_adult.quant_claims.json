@@ -1,0 +1,1888 @@
+{
+  "paper_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult",
+  "doi": "10.14814/phy2.70539",
+  "extracted_at": "2026-05-05T21:38:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 8,
+    "unit_value": 43,
+    "mean_sd": 19,
+    "p_value": 19,
+    "percentage": 14
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-523",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 523,
+      "sentence": "In a randomized, double\u2010blind placebo\u2010controlled design, 15 healthy vegans and vegetarians consumed CM (0.3 g/kg/day, n = 7) or placebo (PLA, 0.3 g maltodextrin/kg/day, n = 8) four times a day for 7 days.",
+      "context_window": "5 healthy vegans and vegetarians consumed CM (0.3 g/kg/day, n = 7) or placebo (PLA, 0.3 g maltodextrin/kg/day, n = 8) four ti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-574",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 574,
+      "sentence": "In a randomized, double\u2010blind placebo\u2010controlled design, 15 healthy vegans and vegetarians consumed CM (0.3 g/kg/day, n = 7) or placebo (PLA, 0.3 g maltodextrin/kg/day, n = 8) four times a day for 7 days.",
+      "context_window": "/kg/day, n = 7) or placebo (PLA, 0.3 g maltodextrin/kg/day, n = 8) four times a day for 7 days. Before and after supplementat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-602",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 602,
+      "sentence": "In a randomized, double\u2010blind placebo\u2010controlled design, 15 healthy vegans and vegetarians consumed CM (0.3 g/kg/day, n = 7) or placebo (PLA, 0.3 g maltodextrin/kg/day, n = 8) four times a day for 7 days.",
+      "context_window": "PLA, 0.3 g maltodextrin/kg/day, n = 8) four times a day for 7 days. Before and after supplementation, repeated sprint capacity",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-804",
+      "claim_type": "mean_sd",
+      "raw_text": "1.56 \u00b1 0.57",
+      "numeric_values": [
+        1.56,
+        0.57
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 804,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "rgy x\u2010ray absorptiometry. The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "0.57 kg",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "ay absorptiometry. The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PL",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-820",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "tiometry. The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group sh",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-839",
+      "claim_type": "mean_sd",
+      "raw_text": "1.15 \u00b1 0.94",
+      "numeric_values": [
+        1.15,
+        0.94
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 839,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "oup increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes. In th",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-846",
+      "claim_type": "unit_value",
+      "raw_text": "0.94 kg",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 846,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "reased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes. In the C",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-855",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "The CM group increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes.",
+      "context_window": "dy mass (1.56 \u00b1 0.57 kg, p < 0.01) and FFM (1.15 \u00b1 0.94 kg, p < 0.05), while the PLA group showed no changes. In the CM group, m",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-988",
+      "claim_type": "mean_sd",
+      "raw_text": "18.8 \u00b1 13.1",
+      "numeric_values": [
+        18.8,
+        13.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 988,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-995",
+      "claim_type": "unit_value",
+      "raw_text": "13.1 mmol",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 995,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "ne (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respect",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-1010",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1010,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "al muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively. The PLA",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1024",
+      "claim_type": "mean_sd",
+      "raw_text": "30.8 \u00b1 21.2",
+      "numeric_values": [
+        30.8,
+        21.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1024,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "tine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively. The PLA group showed no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1031",
+      "claim_type": "unit_value",
+      "raw_text": "21.2 mmol",
+      "numeric_values": [
+        21.2
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "Cr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively. The PLA group showed no chang",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1046,
+      "sentence": "In the CM group, muscle creatine (Cr) and total muscle creatine (TCr) increased by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively.",
+      "context_window": "y 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) and 30.8 \u00b1 21.2 mmol/kg ( p < 0.01), respectively. The PLA group showed no changes in Cr and T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1119",
+      "claim_type": "mean_sd",
+      "raw_text": "4.6 \u00b1 13.1",
+      "numeric_values": [
+        4.6,
+        13.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1119,
+      "sentence": "The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively).",
+      "context_window": "spectively. The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively). Phosphocreat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1125",
+      "claim_type": "unit_value",
+      "raw_text": "13.1 mmol",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1125,
+      "sentence": "The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively).",
+      "context_window": "vely. The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively). Phosphocreatine l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1142",
+      "claim_type": "mean_sd",
+      "raw_text": "2.9 \u00b1 11.6",
+      "numeric_values": [
+        2.9,
+        11.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1142,
+      "sentence": "The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively).",
+      "context_window": "up showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively). Phosphocreatine levels remained con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1148",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 mmol",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1148,
+      "sentence": "The PLA group showed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively).",
+      "context_window": "wed no changes in Cr and TCr (-4.6 \u00b1 13.1 mmol/kg and 2.9 \u00b1 11.6 mmol/kg, respectively). Phosphocreatine levels remained consiste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-2327",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2327,
+      "sentence": "Sprinting for \u226410 s can deplete PCr levels by more than 50% of resting levels (Gaitanos et al., 1993 ).",
+      "context_window": "ce. Sprinting for \u226410 s can deplete PCr levels by more than 50% of resting levels (Gaitanos et al., 1993 ). During 20 to 30",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-2426",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2426,
+      "sentence": "During 20 to 30 s sprints, PCr depletion can reach 73% and 83%, respectively, but the relative importance of glycolytic and oxidative phosphorylation energy contribution increases substantially (Cottrell et al., 2002 ; Gaitanos et al., 1993 ; Green et al., 1996 ; Harris et al., 1992 ; Hultman et al., 1996 ).",
+      "context_window": "1993 ). During 20 to 30 s sprints, PCr depletion can reach 73% and 83%, respectively, but the relative importance of glyco",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-2434",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2434,
+      "sentence": "During 20 to 30 s sprints, PCr depletion can reach 73% and 83%, respectively, but the relative importance of glycolytic and oxidative phosphorylation energy contribution increases substantially (Cottrell et al., 2002 ; Gaitanos et al., 1993 ; Green et al., 1996 ; Harris et al., 1992 ; Hultman et al., 1996 ).",
+      "context_window": "During 20 to 30 s sprints, PCr depletion can reach 73% and 83%, respectively, but the relative importance of glycolytic an",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-946",
+      "claim_type": "mean_sd",
+      "raw_text": "31 \u00b1 7",
+      "numeric_values": [
+        31.0,
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 946,
+      "sentence": "Post\u2010supplementation testing, which was identical to the baseline testing, was conducted 24-48 h (31 \u00b1 7) after the supplementation period.",
+      "context_window": "s identical to the baseline testing, was conducted 24-48 h (31 \u00b1 7) after the supplementation period. Randomization to CM and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1263",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1263,
+      "sentence": "Participants did not learn of their supplement group until 1-2 weeks post\u2010supplementation.",
+      "context_window": "articipants did not learn of their supplement group until 1-2 weeks post\u2010supplementation. Investigators were informed ~2 days a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1322",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1322,
+      "sentence": "Investigators were informed ~2 days after the last performance test.",
+      "context_window": "-2 weeks post\u2010supplementation. Investigators were informed ~2 days after the last performance test. Participants were instruct",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-2824",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2824,
+      "sentence": "Note : Statistically significant differences: * p < 0.05, ** p < 0.01.",
+      "context_window": "ervention. Note : Statistically significant differences: * p < 0.05, ** p < 0.01. Premeasured amounts of CM (MyProtein, UK) or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-2837",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2837,
+      "sentence": "Note : Statistically significant differences: * p < 0.05, ** p < 0.01.",
+      "context_window": "ote : Statistically significant differences: * p < 0.05, ** p < 0.01. Premeasured amounts of CM (MyProtein, UK) or PLA (maltode",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-3551",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 3551,
+      "sentence": "All participants were instructed to consume four packages per day (breakfast, lunch, dinner and pre\u2010bed) with approximately 500 mL of water and a carbohydrate source to promote muscle uptake (Green et al., 1996 ).",
+      "context_window": "y (breakfast, lunch, dinner and pre\u2010bed) with approximately 500 mL of water and a carbohydrate source to promote muscle uptake",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-3647",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3647,
+      "sentence": "After 7 days of supplementation, they returned their empty packages as a surrogate measure of compliance.",
+      "context_window": "ource to promote muscle uptake (Green et al., 1996 ). After 7 days of supplementation, they returned their empty packages as a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-3933",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3933,
+      "sentence": "Body mass and height were measured on a scale accurate to the nearest 0.1 kg and 0.1 cm, respectively.",
+      "context_window": "and height were measured on a scale accurate to the nearest 0.1 kg and 0.1 cm, respectively. Subjects were weighed in a t\u2010shir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-3944",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3944,
+      "sentence": "Body mass and height were measured on a scale accurate to the nearest 0.1 kg and 0.1 cm, respectively.",
+      "context_window": "were measured on a scale accurate to the nearest 0.1 kg and 0.1 cm, respectively. Subjects were weighed in a t\u2010shirt/crop\u2010top,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-4670",
+      "claim_type": "percentage",
+      "raw_text": "73%",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4670,
+      "sentence": "The software determines fat\u2010free mass from lean tissue mass and bone mineral content assuming a constant hydration level (approximately 73%).",
+      "context_window": "content assuming a constant hydration level (approximately 73%). Participants were instructed to consume approximately 500",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-4730",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4730,
+      "sentence": "Participants were instructed to consume approximately 500 mL of water 2 h prior to testing to help standardize fluid intake and empty both the bladder and bowel if needed before the DXA scan.",
+      "context_window": "73%). Participants were instructed to consume approximately 500 mL of water 2 h prior to testing to help standardize fluid int",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-4970",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4970,
+      "sentence": "Percutaneous needle biopsies were obtained from the m. vastus lateralis under local anesthesia, with 1% lidocaine and suction applied via a 60\u2010cc syringe using the Bergstr\u00f6m technique (Bergstr\u00f6m, 1975 ).",
+      "context_window": "d from the m. vastus lateralis under local anesthesia, with 1% lidocaine and suction applied via a 60\u2010cc syringe using the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-5271",
+      "claim_type": "unit_value",
+      "raw_text": "15 mg",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5271,
+      "sentence": "A portion of muscle (10 to 15 mg wet weight; ww) was freeze\u2010dried for approximately 48 h, crushed, and weighed (2 mg).",
+      "context_window": "ersed in -80\u00b0C liquid nitrogen. A portion of muscle (10 to 15 mg wet weight; ww) was freeze\u2010dried for approximately 48 h, cr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-5356",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5356,
+      "sentence": "A portion of muscle (10 to 15 mg wet weight; ww) was freeze\u2010dried for approximately 48 h, crushed, and weighed (2 mg).",
+      "context_window": "freeze\u2010dried for approximately 48 h, crushed, and weighed (2 mg). Every sample was analyzed in duplicates. Powdered samples",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-5861",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5861,
+      "sentence": "Participants began with a standard bike fitting procedure for seat height and shoe size, which was followed by a 4\u2010min warm\u2010up at ~80 rpm against a resistance of 1 kg for females and 1.5 kg for males on a cycle ergometer (Monark 894 E Peak Bike, Weight Ergometer, Vansbro, Sweden).",
+      "context_window": "lowed by a 4\u2010min warm\u2010up at ~80 rpm against a resistance of 1 kg for females and 1.5 kg for males on a cycle ergometer (Mona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-5882",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 kg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 5882,
+      "sentence": "Participants began with a standard bike fitting procedure for seat height and shoe size, which was followed by a 4\u2010min warm\u2010up at ~80 rpm against a resistance of 1 kg for females and 1.5 kg for males on a cycle ergometer (Monark 894 E Peak Bike, Weight Ergometer, Vansbro, Sweden).",
+      "context_window": "\u2010up at ~80 rpm against a resistance of 1 kg for females and 1.5 kg for males on a cycle ergometer (Monark 894 E Peak Bike, Wei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-6507",
+      "claim_type": "unit_value",
+      "raw_text": "0.075 kg",
+      "numeric_values": [
+        0.075
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 6507,
+      "sentence": "The sprints were performed at the participant's maximal cadence against a flywheel resistance relative to their body mass at baseline (0.075 kg/body).",
+      "context_window": "lywheel resistance relative to their body mass at baseline (0.075 kg/body). Before each sprint, prior to applying resistance to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-7685",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7685,
+      "sentence": "The sample size calculated was based on a study from Solis and Gualano (Solis et al., 2017 ) who presented changes in muscle PCr following creatine loading (0.3 g/kg/bw for 7 days) in vegetarian adults.",
+      "context_window": "s in muscle PCr following creatine loading (0.3 g/kg/bw for 7 days) in vegetarian adults. This study was selected for power an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-8549",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8549,
+      "sentence": "Significance was set at p < 0.05.",
+      "context_window": "wise stated, results are mean \u00b1 SD. Significance was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-107",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 107,
+      "sentence": "A time \u00d7 treatment effect ( p < 0.05) for body mass and fat\u2010free mass was seen, but differences between groups were not detectable.",
+      "context_window": "groups at baseline (Table 1 ). A time \u00d7 treatment effect ( p < 0.05) for body mass and fat\u2010free mass was seen, but differences",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-261",
+      "claim_type": "mean_sd",
+      "raw_text": "1.56 \u00b1 0.57",
+      "numeric_values": [
+        1.56,
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 261,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": "tectable. The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-268",
+      "claim_type": "unit_value",
+      "raw_text": "0.57 kg",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 268,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": "e. The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) sig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-277",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 277,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": "pplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-306",
+      "claim_type": "mean_sd",
+      "raw_text": "1.15 \u00b1 0.94",
+      "numeric_values": [
+        1.15,
+        0.94
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 306,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": "sed body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group. No changes wer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-313",
+      "claim_type": "unit_value",
+      "raw_text": "0.94 kg",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 313,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": "y mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group. No changes were o",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-322",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 322,
+      "sentence": "The supplementation protocol increased body mass (1.56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group.",
+      "context_window": ".56 \u00b1 0.57 kg, p < 0.01) and fat\u2010free mass (1.15 \u00b1 0.94 kg, p < 0.05) significantly in the CM group. No changes were observed in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-464",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 464,
+      "sentence": "The CV% of all duplicate measurements for Cr and PCr was 1.1%.",
+      "context_window": ". The CV% of all duplicate measurements for Cr and PCr was 1.1%. A significant time \u00d7 treatment interaction was detected fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-551",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 551,
+      "sentence": "A significant time \u00d7 treatment interaction was detected for muscular Cr levels ( p < 0.05).",
+      "context_window": "treatment interaction was detected for muscular Cr levels ( p < 0.05). The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-597",
+      "claim_type": "mean_sd",
+      "raw_text": "18.8 \u00b1 13.1",
+      "numeric_values": [
+        18.8,
+        13.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 597,
+      "sentence": "The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ).",
+      "context_window": "r Cr levels ( p < 0.05). The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "13.1 mmol",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 604,
+      "sentence": "The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ).",
+      "context_window": "vels ( p < 0.05). The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-619",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 619,
+      "sentence": "The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ).",
+      "context_window": "). The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-649",
+      "claim_type": "mean_sd",
+      "raw_text": "4.6 \u00b1 13.1",
+      "numeric_values": [
+        4.6,
+        13.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 649,
+      "sentence": "The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ).",
+      "context_window": "evel by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ). While t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-655",
+      "claim_type": "unit_value",
+      "raw_text": "13.1 mmol",
+      "numeric_values": [
+        13.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 655,
+      "sentence": "The CM group increased Cr level by 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ).",
+      "context_window": "y 18.8 \u00b1 13.1 mmol/kg ( p < 0.05) whereas no change (-4.6 \u00b1 13.1 mmol/kg) was detected in the PLA group (Figure 1 ). While the ba",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-811",
+      "claim_type": "mean_sd",
+      "raw_text": "25.8 \u00b1 19.1",
+      "numeric_values": [
+        25.8,
+        19.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 811,
+      "sentence": "While the baseline levels of muscular Cr were similar between groups at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation.",
+      "context_window": "r were similar between groups at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation. Ther",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-818",
+      "claim_type": "unit_value",
+      "raw_text": "19.1 mmol",
+      "numeric_values": [
+        19.1
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 818,
+      "sentence": "While the baseline levels of muscular Cr were similar between groups at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation.",
+      "context_window": "similar between groups at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation. There wer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-840",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 840,
+      "sentence": "While the baseline levels of muscular Cr were similar between groups at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation.",
+      "context_window": "at baseline, the CM group had 25.8 \u00b1 19.1 mmol/kg higher ( p < 0.01) level post\u2010supplementation. There were no main effects on",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-1419",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1419,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "Cr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1449",
+      "claim_type": "mean_sd",
+      "raw_text": "30.8 \u00b1 21.2",
+      "numeric_values": [
+        30.8,
+        21.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1449,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "ant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unalter",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1456",
+      "claim_type": "unit_value",
+      "raw_text": "21.2 mmol",
+      "numeric_values": [
+        21.2
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1456,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "e \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-1471",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1471,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "ffect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1527",
+      "claim_type": "mean_sd",
+      "raw_text": "2.9 \u00b1 11.6",
+      "numeric_values": [
+        2.9,
+        11.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1527,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "g ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA. As with Cr levels, the TCr levels were simila",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1533",
+      "claim_type": "unit_value",
+      "raw_text": "11.6 mmol",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1533,
+      "sentence": "TCr levels displayed a significant time \u00d7 treatment effect ( p < 0.05) with an increase of 30.8 \u00b1 21.2 mmol/kg ( p < 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA.",
+      "context_window": "< 0.01) in the CM group, whereas it was unaltered in (2.9 \u00b1 11.6 mmol/kg) PLA. As with Cr levels, the TCr levels were similar bet",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-1650",
+      "claim_type": "mean_sd",
+      "raw_text": "37.1 \u00b1 25.8",
+      "numeric_values": [
+        37.1,
+        25.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1650,
+      "sentence": "As with Cr levels, the TCr levels were similar between groups at baseline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation (Figure 1 ).",
+      "context_window": "similar between groups at baseline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1657",
+      "claim_type": "unit_value",
+      "raw_text": "25.8 mmol",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 1657,
+      "sentence": "As with Cr levels, the TCr levels were similar between groups at baseline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation (Figure 1 ).",
+      "context_window": "r between groups at baseline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation (Figu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-1679",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1679,
+      "sentence": "As with Cr levels, the TCr levels were similar between groups at baseline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation (Figure 1 ).",
+      "context_window": "seline, but the CM group had a 37.1 \u00b1 25.8 mmol/kg higher ( p < 0.001) TCr level post\u2010supplementation (Figure 1 ). The CV% for m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-1804",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1804,
+      "sentence": "The CV% for mean power output during all four 30s sprints in PLA was 2.2%.",
+      "context_window": "or mean power output during all four 30s sprints in PLA was 2.2%. There was no main effect (time \u00d7 treatment \u00d7 sprint) on ei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-2086",
+      "claim_type": "mean_sd",
+      "raw_text": "77 \u00b1 110",
+      "numeric_values": [
+        77.0,
+        110.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2086,
+      "sentence": "The CM group significantly decreased power from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01).",
+      "context_window": "ower from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respec",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-2104",
+      "claim_type": "mean_sd",
+      "raw_text": "78 \u00b1 110",
+      "numeric_values": [
+        78.0,
+        110.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2104,
+      "sentence": "The CM group significantly decreased power from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01).",
+      "context_window": "t to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-2167",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2167,
+      "sentence": "The CM group significantly decreased power from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01).",
+      "context_window": "\u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-2279",
+      "claim_type": "mean_sd",
+      "raw_text": "80 \u00b1 82",
+      "numeric_values": [
+        80.0,
+        82.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2279,
+      "sentence": "The CM group significantly decreased power from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01).",
+      "context_window": "r from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01). The time \u00d7 treatment \u00d7 sprint interaction was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-2290",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2290,
+      "sentence": "The CM group significantly decreased power from the first to the fourth sprint both pre and post (77 \u00b1 110 watt and 78 \u00b1 110 W for pre and post in the CM group respectively, both p < 0.05) while the PLA group only reduced peak power from the first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01).",
+      "context_window": "first to the fourth sprint post\u2010supplementation (80 \u00b1 82 W, p < 0.01). The time \u00d7 treatment \u00d7 sprint interaction was not signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-p-3274",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3274,
+      "sentence": "Statistically significant differences: * p < 0.05.",
+      "context_window": "t 4, respectively. Statistically significant differences: * p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-270",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 270,
+      "sentence": "The primary finding was that 7 days of creatine monohydrate (CM) supplementation successfully increased TCr and creatine levels, whereas intense exercise performance remained unaltered.",
+      "context_window": "ort\u2010term exercise performance. The primary finding was that 7 days of creatine monohydrate (CM) supplementation successfully i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-684",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 684,
+      "sentence": "In the current study, we were unable to confirm these findings regarding PCr changes in VEG, whereas TCr was increased after 7 days of CM loading.",
+      "context_window": "garding PCr changes in VEG, whereas TCr was increased after 7 days of CM loading. The lack of a significant increase in PCr ma",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1896",
+      "claim_type": "unit_value",
+      "raw_text": "100 mmol",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 1896,
+      "sentence": "Vegetarians have baseline muscle creatine levels of ~100 mmol/kg of dry muscle on average compared to ~120 mmol/kg in omnivores (Kreider et al., 2017 ) The lower baseline creatine content may explain why vegetarians experience a greater absolute muscle creatine increase after supplementation with creatine monohydrate (Benton & Donohoe, 2011 ; Brosnan & Brosnan, 2016 ).",
+      "context_window": "ences. Vegetarians have baseline muscle creatine levels of ~100 mmol/kg of dry muscle on average compared to ~120 mmol/kg in omn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-1946",
+      "claim_type": "unit_value",
+      "raw_text": "120 mmol",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 1946,
+      "sentence": "Vegetarians have baseline muscle creatine levels of ~100 mmol/kg of dry muscle on average compared to ~120 mmol/kg in omnivores (Kreider et al., 2017 ) The lower baseline creatine content may explain why vegetarians experience a greater absolute muscle creatine increase after supplementation with creatine monohydrate (Benton & Donohoe, 2011 ; Brosnan & Brosnan, 2016 ).",
+      "context_window": "evels of ~100 mmol/kg of dry muscle on average compared to ~120 mmol/kg in omnivores (Kreider et al., 2017 ) The lower baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-msd-2659",
+      "claim_type": "mean_sd",
+      "raw_text": "114 \u00b1 17",
+      "numeric_values": [
+        114.0,
+        17.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2659,
+      "sentence": "Surprisingly, the CM average baseline TCr level of 114 \u00b1 17 mmol/kg in the present study resembles that previously reported for omnivores, and with supplementation, the VEG TCr content approached the level of an apparent muscle threshold (~160 mmol/kg) as determined in omnivores (Kreider et al., 2017 ).",
+      "context_window": "l group. Surprisingly, the CM average baseline TCr level of 114 \u00b1 17 mmol/kg in the present study resembles that previously repo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-2665",
+      "claim_type": "unit_value",
+      "raw_text": "17 mmol",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 2665,
+      "sentence": "Surprisingly, the CM average baseline TCr level of 114 \u00b1 17 mmol/kg in the present study resembles that previously reported for omnivores, and with supplementation, the VEG TCr content approached the level of an apparent muscle threshold (~160 mmol/kg) as determined in omnivores (Kreider et al., 2017 ).",
+      "context_window": "p. Surprisingly, the CM average baseline TCr level of 114 \u00b1 17 mmol/kg in the present study resembles that previously reported",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-2848",
+      "claim_type": "unit_value",
+      "raw_text": "160 mmol",
+      "numeric_values": [
+        160.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 2848,
+      "sentence": "Surprisingly, the CM average baseline TCr level of 114 \u00b1 17 mmol/kg in the present study resembles that previously reported for omnivores, and with supplementation, the VEG TCr content approached the level of an apparent muscle threshold (~160 mmol/kg) as determined in omnivores (Kreider et al., 2017 ).",
+      "context_window": "tent approached the level of an apparent muscle threshold (~160 mmol/kg) as determined in omnivores (Kreider et al., 2017 ). Thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-3478",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 3478,
+      "sentence": "In addition, a previous intervention consisting of 21 days of a lacto\u2010ovo\u2010vegetarian diet showed large inter\u2010individual differences in muscle creatine content (Lukaszuk et al., 2002 ).",
+      "context_window": "ulative. In addition, a previous intervention consisting of 21 days of a lacto\u2010ovo\u2010vegetarian diet showed large inter\u2010individua",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-5015",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5015,
+      "sentence": "Despite a greater vastus lateralis TCr increase (~41%) in the vegetarian population, participants did not improve initial 30 s mean power output.",
+      "context_window": "us group. Despite a greater vastus lateralis TCr increase (~41%) in the vegetarian population, participants did not improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-5465",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5465,
+      "sentence": "If the power analyses were based on detecting peak and mean power output differences from pre to post, a post\u2010study power analysis revealed the required number of subjects to be n = 23.",
+      "context_window": "wer analysis revealed the required number of subjects to be n = 23. Hence, the results from repeated sprints should be interpr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-5816",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 5816,
+      "sentence": "Seven male vegetarians and nine omnivores received a loading dose (3 \u00d7 7 g creatine/day for 6 days), where both mean power and peak power were analyzed.",
+      "context_window": "omnivores received a loading dose (3 \u00d7 7 g creatine/day for 6 days), where both mean power and peak power were analyzed. Both",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-6292",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6292,
+      "sentence": "Shomrat and colleagues utilized 5.2% of body mass on the cycling ergometer flywheel while the present study and Watt et al. utilized 7.5%.",
+      "context_window": "4 min) in between sprints. Shomrat and colleagues utilized 5.2% of body mass on the cycling ergometer flywheel while the pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-6393",
+      "claim_type": "percentage",
+      "raw_text": "7.5%",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6393,
+      "sentence": "Shomrat and colleagues utilized 5.2% of body mass on the cycling ergometer flywheel while the present study and Watt et al. utilized 7.5%.",
+      "context_window": "r flywheel while the present study and Watt et al. utilized 7.5%. Burke et al. ( 2003 ) designed the best example of a rigo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-6723",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6723,
+      "sentence": "Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13).",
+      "context_window": "tant findings were reported. Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-6756",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6756,
+      "sentence": "Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13).",
+      "context_window": "groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-6789",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6789,
+      "sentence": "Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13).",
+      "context_window": "s: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-6820",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6820,
+      "sentence": "Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13).",
+      "context_window": "8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13). Concurrent supplementa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-6855",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6855,
+      "sentence": "Four groups were assessed over 8 weeks: 1) vegetarian\u2010placebo ( n = 8); 2) vegetarian\u2010creatine ( n = 10); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13).",
+      "context_window": "); 3) omnivore\u2010placebo ( n = 13); and 4) omnivore\u2010creatine (n = 13). Concurrent supplementation and a high\u2010volume resistance t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-7052",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7052,
+      "sentence": "The vegetarian\u2010creatine group had the greatest increase in vastus lateralis TCr (~30%) and PCr (~66%), which translated to a fat\u2010free mass increase (2.4 kg vs.",
+      "context_window": "e group had the greatest increase in vastus lateralis TCr (~30%) and PCr (~66%), which translated to a fat\u2010free mass increa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-7067",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7067,
+      "sentence": "The vegetarian\u2010creatine group had the greatest increase in vastus lateralis TCr (~30%) and PCr (~66%), which translated to a fat\u2010free mass increase (2.4 kg vs.",
+      "context_window": "greatest increase in vastus lateralis TCr (~30%) and PCr (~66%), which translated to a fat\u2010free mass increase (2.4 kg vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-7119",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 kg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7119,
+      "sentence": "The vegetarian\u2010creatine group had the greatest increase in vastus lateralis TCr (~30%) and PCr (~66%), which translated to a fat\u2010free mass increase (2.4 kg vs.",
+      "context_window": "d PCr (~66%), which translated to a fat\u2010free mass increase (2.4 kg vs. 1.9 kg in the omnivore\u2010creatine group) by the end of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-7130",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 kg",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7130,
+      "sentence": "1.9 kg in the omnivore\u2010creatine group) by the end of the 8\u2010week intervention.",
+      "context_window": "), which translated to a fat\u2010free mass increase (2.4 kg vs. 1.9 kg in the omnivore\u2010creatine group) by the end of the 8\u2010week in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-7487",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7487,
+      "sentence": "The vegetarian group increased work performed (~30%) during a 50\u2010repetition maximal knee extension exercise compared to the omnivore group, which only marginally increased (~9%).",
+      "context_window": "ltaneously. The vegetarian group increased work performed (~30%) during a 50\u2010repetition maximal knee extension exercise com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-pct-7613",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7613,
+      "sentence": "The vegetarian group increased work performed (~30%) during a 50\u2010repetition maximal knee extension exercise compared to the omnivore group, which only marginally increased (~9%).",
+      "context_window": "ed to the omnivore group, which only marginally increased (~9%). The vegetarian group that supplemented with creatine had",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-434",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 434,
+      "sentence": "Although it may be of importance, as a participant who has practiced a vegan/vegetarian diet for 6 months may respond differently than an individual who has been practicing the diet for 10 years.",
+      "context_window": "a participant who has practiced a vegan/vegetarian diet for 6 months may respond differently than an individual who has been pra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-523",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 523,
+      "sentence": "Although it may be of importance, as a participant who has practiced a vegan/vegetarian diet for 6 months may respond differently than an individual who has been practicing the diet for 10 years.",
+      "context_window": "tly than an individual who has been practicing the diet for 10 years. Hence, there is a need for increased sample sizes and ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-718",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 718,
+      "sentence": "Hence, there is a need for increased sample sizes and thereby adequately powered studies to facilitate stratification and analysis by diet group (vegan, vegetarian) and duration (i.e., 6 months, 5-10 years), to determine whether diet group or duration serves as mediating factors for muscle creatine and/or exercise performance.",
+      "context_window": "lysis by diet group (vegan, vegetarian) and duration (i.e., 6 months, 5-10 years), to determine whether diet group or duration s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 730,
+      "sentence": "Hence, there is a need for increased sample sizes and thereby adequately powered studies to facilitate stratification and analysis by diet group (vegan, vegetarian) and duration (i.e., 6 months, 5-10 years), to determine whether diet group or duration serves as mediating factors for muscle creatine and/or exercise performance.",
+      "context_window": "t group (vegan, vegetarian) and duration (i.e., 6 months, 5-10 years), to determine whether diet group or duration serves as med",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12431585_muscle_creatine_levels_and_sprint_performance_in_young_adult-n-2573",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 2573,
+      "sentence": "If the power analyses were based on detecting peak and mean power output differences from pre to post, a post\u2010study power analysis revealed the required amount of subjects to be n = 23.",
+      "context_window": "wer analysis revealed the required amount of subjects to be n = 23.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

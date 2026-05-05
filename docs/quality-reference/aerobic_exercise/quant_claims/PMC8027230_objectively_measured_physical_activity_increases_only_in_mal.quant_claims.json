@@ -1,0 +1,551 @@
+{
+  "paper_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal",
+  "doi": "10.3389/fspor.2021.624449",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "mean_sd": 14,
+    "p_value": 4,
+    "unit_value": 8,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-pct-461",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 461,
+      "sentence": "Twenty-eight children, 13 males and 15 females (body mass index >97\u00b0 centile, weight excess >30%, Tanner stage I), agreed to participate in an 8-day camp.",
+      "context_window": "nd 15 females (body mass index >97\u00b0 centile, weight excess >30%, Tanner stage I), agreed to participate in an 8-day camp. D",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1104",
+      "claim_type": "mean_sd",
+      "raw_text": "186.2 \u00b1 94.2",
+      "numeric_values": [
+        186.2,
+        94.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1104,
+      "sentence": "Before camping, the participants were far above the minimum daily values of moderate- to vigorous-intensity physical activity (MVPA) to be considered sufficiently active (\u226560 min/day), but male participants were more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020).",
+      "context_window": "but male participants were more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020). Male participants increased thei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1118",
+      "claim_type": "mean_sd",
+      "raw_text": "111.0 \u00b1 64.7",
+      "numeric_values": [
+        111.0,
+        64.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1118,
+      "sentence": "Before camping, the participants were far above the minimum daily values of moderate- to vigorous-intensity physical activity (MVPA) to be considered sufficiently active (\u226560 min/day), but male participants were more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020).",
+      "context_window": "icipants were more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020). Male participants increased their MVPA (234.3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-p-1132",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1132,
+      "sentence": "Before camping, the participants were far above the minimum daily values of moderate- to vigorous-intensity physical activity (MVPA) to be considered sufficiently active (\u226560 min/day), but male participants were more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020).",
+      "context_window": "more active than females (MVPA: 186.2 \u00b1 94.2, 111.0 \u00b1 64.7; P = 0.020). Male participants increased their MVPA (234.3 \u00b1 114.8, P",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1184",
+      "claim_type": "mean_sd",
+      "raw_text": "234.3 \u00b1 114.8",
+      "numeric_values": [
+        234.3,
+        114.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020).",
+      "context_window": "\u00b1 64.7; P = 0.020). Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-p-1199",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1199,
+      "sentence": "Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020).",
+      "context_window": "20). Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020). No differe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1232",
+      "claim_type": "mean_sd",
+      "raw_text": "111.9 \u00b1 52.9",
+      "numeric_values": [
+        111.9,
+        52.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1232,
+      "sentence": "Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020).",
+      "context_window": "their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020). No difference emerged for the sedentary behavi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-p-1246",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1246,
+      "sentence": "Male participants increased their MVPA (234.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020).",
+      "context_window": "4.3 \u00b1 114.8, P = 0.020), whereas females not (111.9 \u00b1 52.9, P = 0.020). No difference emerged for the sedentary behavior either b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-80",
+      "claim_type": "mean_sd",
+      "raw_text": "9.8 \u00b1 1.7",
+      "numeric_values": [
+        9.8,
+        1.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 80,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "rtal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 fem",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-86",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 years",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 86,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "hildren from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-119",
+      "claim_type": "mean_sd",
+      "raw_text": "27.0 \u00b1 3.7",
+      "numeric_values": [
+        27.0,
+        3.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 119,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "ral Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-126",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 kg",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 126,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "ly, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-155",
+      "claim_type": "mean_sd",
+      "raw_text": "8.5 \u00b1 1.8",
+      "numeric_values": [
+        8.5,
+        1.8
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 155,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": ", body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient cl",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-161",
+      "claim_type": "unit_value",
+      "raw_text": "1.8 years",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 161,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-176",
+      "claim_type": "mean_sd",
+      "raw_text": "26.9 \u00b1 4.0",
+      "numeric_values": [
+        26.9,
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 176,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "I) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to partic",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-183",
+      "claim_type": "unit_value",
+      "raw_text": "4.0 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 183,
+      "sentence": "Twenty-eight prepubertal children from a rural area in central Italy, 13 males [9.8 \u00b1 1.7 years, body mass index (BMI) 27.0 \u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participate.",
+      "context_window": "\u00b1 3.7 kg/m 2 ] and 15 females (8.5 \u00b1 1.8 years, BMI 26.9 \u00b1 4.0 kg/m 2 ), attending the outpatient clinic, agreed to participa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-415",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 415,
+      "sentence": "To be selected for participation in the study, young patients had to fulfill the following inclusion criteria: not participate in sports activities from at least 1 year, BMI >97\u00b0 centile, weight excess >30%, and Tanner stage I.",
+      "context_window": "riteria: not participate in sports activities from at least 1 year, BMI >97\u00b0 centile, weight excess >30%, and Tanner stage I.",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-pct-456",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 456,
+      "sentence": "To be selected for participation in the study, young patients had to fulfill the following inclusion criteria: not participate in sports activities from at least 1 year, BMI >97\u00b0 centile, weight excess >30%, and Tanner stage I.",
+      "context_window": "ties from at least 1 year, BMI >97\u00b0 centile, weight excess >30%, and Tanner stage I. For each participant, parents gave inf",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-1246",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1246,
+      "sentence": "School camp for obese children took place during the summer holidays in a seaside resort and lasted 8 days.",
+      "context_window": "e during the summer holidays in a seaside resort and lasted 8 days. The camp team comprised two pediatricians, a dietitian, a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-2348",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2348,
+      "sentence": "Body mass and stretched stature were measured to the nearest 0.1 kg and 0.1 cm, respectively, with the participants dressed in light clothing and without shoes, using a stadiometer with a balanced-beam scale (Seca 220; Seca, Hamburg, Germany).",
+      "context_window": "ody mass and stretched stature were measured to the nearest 0.1 kg and 0.1 cm, respectively, with the participants dressed in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-u-2359",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2359,
+      "sentence": "Body mass and stretched stature were measured to the nearest 0.1 kg and 0.1 cm, respectively, with the participants dressed in light clothing and without shoes, using a stadiometer with a balanced-beam scale (Seca 220; Seca, Hamburg, Germany).",
+      "context_window": "d stretched stature were measured to the nearest 0.1 kg and 0.1 cm, respectively, with the participants dressed in light cloth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-p-6354",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6354,
+      "sentence": "An a priori level of significance was set at p < 0.05.",
+      "context_window": "as mean \u00b1 SD. An a priori level of significance was set at p < 0.05. As data were not normally distributed, the Mann-Whitney U",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1542",
+      "claim_type": "mean_sd",
+      "raw_text": "472 \u00b1 3",
+      "numeric_values": [
+        472.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1542,
+      "sentence": "Furthermore, steps per day and average METs per day were also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively).",
+      "context_window": "METs per day were also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respecti",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1558",
+      "claim_type": "mean_sd",
+      "raw_text": "058 \u00b1 2",
+      "numeric_values": [
+        58.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1558,
+      "sentence": "Furthermore, steps per day and average METs per day were also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively).",
+      "context_window": "re also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively). No signif",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1575",
+      "claim_type": "mean_sd",
+      "raw_text": "2.10 \u00b1 0.41",
+      "numeric_values": [
+        2.1,
+        0.41
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1575,
+      "sentence": "Furthermore, steps per day and average METs per day were also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively).",
+      "context_window": "males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively). No significant reduction in we",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-1588",
+      "claim_type": "mean_sd",
+      "raw_text": "1.76 \u00b1 0.35",
+      "numeric_values": [
+        1.76,
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1588,
+      "sentence": "Furthermore, steps per day and average METs per day were also higher in males than in females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively).",
+      "context_window": "n females (16,472 \u00b1 3,774, 12,058 \u00b1 2,170; and 2.10 \u00b1 0.41, 1.76 \u00b1 0.35, respectively). No significant reduction in weight and BMI",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-2607",
+      "claim_type": "mean_sd",
+      "raw_text": "179 \u00b1 90",
+      "numeric_values": [
+        179.0,
+        90.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2607,
+      "sentence": "Indeed, physical activity levels very close to the ones of the present study (boys: 179 \u00b1 90 min/day; girls: 136 \u00b1 59 min/day) were already reported in a previous investigation using the SenseWear Armband (Soric and Misigoj-Durakovic, 2010 ).",
+      "context_window": "y levels very close to the ones of the present study (boys: 179 \u00b1 90 min/day; girls: 136 \u00b1 59 min/day) were already reported in",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-msd-2632",
+      "claim_type": "mean_sd",
+      "raw_text": "136 \u00b1 59",
+      "numeric_values": [
+        136.0,
+        59.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2632,
+      "sentence": "Indeed, physical activity levels very close to the ones of the present study (boys: 179 \u00b1 90 min/day; girls: 136 \u00b1 59 min/day) were already reported in a previous investigation using the SenseWear Armband (Soric and Misigoj-Durakovic, 2010 ).",
+      "context_window": "e ones of the present study (boys: 179 \u00b1 90 min/day; girls: 136 \u00b1 59 min/day) were already reported in a previous investigation",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8027230_objectively_measured_physical_activity_increases_only_in_mal-n-9591",
+      "claim_type": "sample_size",
+      "raw_text": "n = 24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 9591,
+      "sentence": "However, the sample was slightly larger than the minimum required for medium effect size ( n = 24).",
+      "context_window": "y larger than the minimum required for medium effect size ( n = 24). Second, detailed data collection was performed only for o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

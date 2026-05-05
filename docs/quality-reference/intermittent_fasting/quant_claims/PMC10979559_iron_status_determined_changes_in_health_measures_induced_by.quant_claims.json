@@ -1,0 +1,1295 @@
+{
+  "paper_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by",
+  "doi": "10.1186/s12877-024-04876-8",
+  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 23,
+    "unit_value": 25,
+    "sample_size": 4,
+    "mean_sd": 2,
+    "percentage": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-580",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 580,
+      "sentence": "NW + TRE induced a statistically significant decrease in ferritin levels in all participants ( p = 0.01).",
+      "context_window": "gnificant decrease in ferritin levels in all participants ( p = 0.01). Additionally, statistically significant intergroup differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-715",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "HF in the reduction of serum ferritin levels ( p = 0.04) were observed.",
+      "context_window": "n the LF vs. HF in the reduction of serum ferritin levels ( p = 0.04) were observed. The procedure NW + TRE diminished HbA1c lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-789",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 789,
+      "sentence": "The procedure NW + TRE diminished HbA1c levels ( p < 0.01) and glucose in all participants ( p = 0.05).",
+      "context_window": "observed. The procedure NW + TRE diminished HbA1c levels ( p < 0.01) and glucose in all participants ( p = 0.05). The range of",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-833",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 833,
+      "sentence": "The procedure NW + TRE diminished HbA1c levels ( p < 0.01) and glucose in all participants ( p = 0.05).",
+      "context_window": "HbA1c levels ( p < 0.01) and glucose in all participants ( p = 0.05). The range of HbA1c drop was more pronounced among those p",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-969",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 969,
+      "sentence": "The range of HbA1c drop was more pronounced among those participants who experienced a greater decrease in the stored iron ( p = 0.04, =0.17, F=4.59).",
+      "context_window": "nts who experienced a greater decrease in the stored iron ( p = 0.04, =0.17, F=4.59). Greater changes in body weight and percent",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-1090",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1090,
+      "sentence": "Greater changes in body weight and percent of body fat were recorded in the HF group (for both p <0.01).",
+      "context_window": "percent of body fat were recorded in the HF group (for both p <0.01). Body iron stores determine the effects of a 12-week NW +",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-4425",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4425,
+      "sentence": "In the current study, we aimed to examine whether the NW plus TRE-induced changes in iron stores will be related to changes in serum glucose and HbA1c concentration in individuals aged 60 years and older.",
+      "context_window": "n serum glucose and HbA1c concentration in individuals aged 60 years and older. This age group is characterized by elevated iron",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-220",
+      "claim_type": "unit_value",
+      "raw_text": "100 mmHg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 220,
+      "sentence": "Those with uncontrolled hypertension (diastolic blood pressure over 100 mmHg), a history of cardiac arrhythmia, cardio-respiratory disorders, and orthopaedic problems were excluded from the study.",
+      "context_window": "th uncontrolled hypertension (diastolic blood pressure over 100 mmHg), a history of cardiac arrhythmia, cardio-respiratory disor",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-n-443",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 443,
+      "sentence": "Six participants dropped out after the start of the study because of a lack of availability ( n = 4) or for unknown reasons ( n = 2).",
+      "context_window": "the start of the study because of a lack of availability ( n = 4) or for unknown reasons ( n = 2). After allocation to paral",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-n-475",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 475,
+      "sentence": "Six participants dropped out after the start of the study because of a lack of availability ( n = 4) or for unknown reasons ( n = 2).",
+      "context_window": "of a lack of availability ( n = 4) or for unknown reasons ( n = 2). After allocation to parallel groups (allocation ratio 1:1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-msd-703",
+      "claim_type": "mean_sd",
+      "raw_text": "70.3 \u00b1 7.68",
+      "numeric_values": [
+        70.3,
+        7.68
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 703,
+      "sentence": "In the end, twenty-four individuals (aged 70.3 \u00b1 7.68 years) participated in the study (Fig.",
+      "context_window": "h eating period. In the end, twenty-four individuals (aged 70.3 \u00b1 7.68 years) participated in the study (Fig. 1 ). Of these, at th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-710",
+      "claim_type": "unit_value",
+      "raw_text": "7.68 years",
+      "numeric_values": [
+        7.68
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 710,
+      "sentence": "In the end, twenty-four individuals (aged 70.3 \u00b1 7.68 years) participated in the study (Fig.",
+      "context_window": "ng period. In the end, twenty-four individuals (aged 70.3 \u00b1 7.68 years) participated in the study (Fig. 1 ). Of these, at the begi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-1115",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1115,
+      "sentence": "The total distance performed during the 12 weeks of training was 69.39 km and 59.3 km, accordingly.",
+      "context_window": "al ferritin levels. The total distance performed during the 12 weeks of training was 69.39 km and 59.3 km, accordingly. The atte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-msd-1199",
+      "claim_type": "mean_sd",
+      "raw_text": "86.7 \u00b1 9",
+      "numeric_values": [
+        86.7,
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1199,
+      "sentence": "The attendance rate was 86.7 \u00b1 9%.",
+      "context_window": "69.39 km and 59.3 km, accordingly. The attendance rate was 86.7 \u00b1 9%. Flow diagram of the study All experimental protocols we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-1206",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1206,
+      "sentence": "The attendance rate was 86.7 \u00b1 9%.",
+      "context_window": "km and 59.3 km, accordingly. The attendance rate was 86.7 \u00b1 9%. Flow diagram of the study All experimental protocols wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2624",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2624,
+      "sentence": "Each training unit took place in the morning and involved performing the main session of NW training as follows: 10 min warm-up, 45-55 min NW, and 10 min cool-down at 60-70% intensity of the maximum heart rate.",
+      "context_window": "s: 10 min warm-up, 45-55 min NW, and 10 min cool-down at 60-70% intensity of the maximum heart rate. Professional trainers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3398",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3398,
+      "sentence": "Assumptions of the training\n\nNote: N - teaching the technique of walking NW, NM - teaching training methods, TM - walking test, T1 - training 1 using the repetitive method (1000 m segments), T2 - training 2 using the continuous method, G - outdoor games and activities, Z - 2000 m competition\n\nOverview of the participants\u2019 activity during the NW + TRE intervention\n\nThe 12 weeks of exercise (36 training units) were divided into three microcycles (6:24:6 training units).",
+      "context_window": "articipants\u2019 activity during the NW + TRE intervention The 12 weeks of exercise (36 training units) were divided into three mic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-7080",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7080,
+      "sentence": "The test was conducted twice after the recruitment and after 12 weeks of intervention.",
+      "context_window": "he test was conducted twice after the recruitment and after 12 weeks of intervention. Saehan hydraulic dynamometer (Saehan Corp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-8988",
+      "claim_type": "unit_value",
+      "raw_text": "1 day",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "day",
+      "source_section": "methods",
+      "source_offset": 8988,
+      "sentence": "1 day before the start of the intervention) and then on the first day immediately after the 12-week NW + TRE program.",
+      "context_window": "Biochemical blood analysis was performed at baseline (i.e. 1 day before the start of the intervention) and then on the first",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-9571",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9571,
+      "sentence": "The average intra-assay coefficient of variability was < 10% for all measurements.",
+      "context_window": "). The average intra-assay coefficient of variability was < 10% for all measurements. Glucose, glycated haemoglobin (HbA1c)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-11541",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 11541,
+      "sentence": "The significance level was set at p < 0.05.",
+      "context_window": "ng a large effect [ 29 ]. The significance level was set at p < 0.05. The relationships between variables were evaluated using S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-6",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a s",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-139",
+      "claim_type": "unit_value",
+      "raw_text": "1.82 kg",
+      "numeric_values": [
+        1.82
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 139,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": "tically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and -",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-148",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 148,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": "ignificant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, resp",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-193",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 kg",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 193,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": "ge: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted. Further, the",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-206",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 206,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": ", p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted. Further, the training p",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-226",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 226,
+      "sentence": "After 12 weeks of NW training combined with daily 10 h TRE (NW + TRE), a statistically significant decrease in body weight (mean change: - 1.82 kg, p < 0.01) and body fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted.",
+      "context_window": "fat mass and percentage (-2.5 kg and - 1.8%, respectively, p < 0.01) was noted. Further, the training program effectively incre",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-561",
+      "claim_type": "unit_value",
+      "raw_text": "1.47 kg",
+      "numeric_values": [
+        1.47
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 561,
+      "sentence": "Unexpectedly, the strength of the handgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01).",
+      "context_window": "of the handgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01). C",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-570",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 570,
+      "sentence": "Unexpectedly, the strength of the handgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01).",
+      "context_window": "ndgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01). Changes in",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "2.44 kg",
+      "numeric_values": [
+        2.44
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 606,
+      "sentence": "Unexpectedly, the strength of the handgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01).",
+      "context_window": "e left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01). Changes in the anthropometric parameters and f",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-615",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "Unexpectedly, the strength of the handgrip decreased (mean change for the left hand: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01).",
+      "context_window": "nd: - 1.47 kg, p = 0.03; and for the right hand: - 2.44 kg, p < 0.01). Changes in the anthropometric parameters and functional",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-697",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 697,
+      "sentence": "Changes in the anthropometric parameters and functional fitness after 12 weeks of NW + TRE intervention\n\n-1.8 (-2.5;\n\n-1.1)\n\nValues are means \u00b1 SD.",
+      "context_window": "the anthropometric parameters and functional fitness after 12 weeks of NW + TRE intervention -1.8 (-2.5; -1.1) Values are me",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-1375",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1375,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "tween the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the stud",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-1383",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1383,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "e measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-1540",
+      "claim_type": "percentage",
+      "raw_text": "1.13%",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1540,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "line ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=. -1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p =",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-1575",
+      "claim_type": "percentage",
+      "raw_text": "2.53%",
+      "numeric_values": [
+        2.53
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1575,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "in fat percentage [LF: - 1.13%, CI=. -1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-1602",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1602,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "13%, CI=. -1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51;",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-1713",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1713,
+      "sentence": "BW, body weight; BMI, body mass index; Fat, fat mass; FFM, free fat mass; TBW, total body water; SMM, skeletal muscle mass; VFA, visceral fat area; HG, hand grip; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between the measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nConsidering the baseline ferritin levels, the decrease in fat percentage [LF: - 1.13%, CI=.\n\n-1.63; - 0.62); HF: - 2.53%, CI=(-3.86; - 1.19); p = 0.03] and increase in the O 2max [LF: 2.63 ml/kg/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than those in the LF group (Table 3 ).",
+      "context_window": "g/min, CI=(1.51; 3.75); HF: 4.13 ml/kg/min, CI=(3.07; 5.2); p = 0.04] were significantly more pronounced in the HF group than th",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-1870",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1870,
+      "sentence": "Metabolic changes concerning baseline iron status after 12 weeks of NW + TRE intervention\n\nValues are means \u00b1 SD.",
+      "context_window": "). Metabolic changes concerning baseline iron status after 12 weeks of NW + TRE intervention Values are means \u00b1 SD. PRE- measu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2895",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2895,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "e between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the stud",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2903",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2903,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "n measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3102",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3102,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "ecrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3137",
+      "claim_type": "unit_value",
+      "raw_text": "0.93 mg",
+      "numeric_values": [
+        0.93
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3137,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3169",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3169,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "1] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTf",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3245",
+      "claim_type": "unit_value",
+      "raw_text": "0.12 mg",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 3245,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "ticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both g",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3272",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3272,
+      "sentence": "Tf, transferrin, sTfR, serum soluble transferrin receptor; Hb, haemoglobin; HbA1c, glycated haemoglobin; RBC, red blood cell; Ht, haematocrit; MCV, mean corpuscular volume; MCH, mean cell haemoglobin; MCHC, mean cellular haemoglobin concentration; WBC, white blood cells; SII, systemic immune-inflammation index; AspAT, aspartate aminotransferase; ALT, alanine aminotransferase; TC, total cholesterol; TG, triglycerides; HDL-C, high-density lipoprotein; LDL-C, low-density lipoprotein; LF, low-ferritin group, < 75 ng/ml at the beginning of the intervention; HF, high-ferritin group, \u2265 75 ng/ml at the beginning of the intervention; \u0394, the mean difference between measured value after and before the intervention; 95% CI, 95% confidence interval of differences between the study groups at baseline\n\nAfter the NW + TRE intervention, a statistically significant decrease in ferritin [\u0394= - 16.88 ng/ml, CI=(-28.85; - 4.91), p = 0.01] and body iron levels (\u0394=-0.93 mg/kg, CI=(-1.41; - 0.44), p < 0.01] was noticed, while serum soluble transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups.",
+      "context_window": "transferrin receptor (sTfR) [\u0394 = 0.12 mg/l; CI=(0.03;0.22), p = 0.01] (Table 3 ) increased in both groups. Differences in the fe",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3501",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3501,
+      "sentence": "Differences in the ferritin response between the groups depended on the ferritin levels at baseline [LF: \u0394= - 6.05 ng/ml, CI=(-13.98; 1.89); HF: \u0394=-29.68 ng/ml, CI=(-53.98; - 5.38), p = 0.04].",
+      "context_window": "CI=(-13.98; 1.89); HF: \u0394=-29.68 ng/ml, CI=(-53.98; - 5.38), p = 0.04]. In addition, changes in the HbA1c (glycated haemoglobin;",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3573",
+      "claim_type": "unit_value",
+      "raw_text": "2.92 mmol",
+      "numeric_values": [
+        2.92
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3573,
+      "sentence": "In addition, changes in the HbA1c (glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed.",
+      "context_window": "In addition, changes in the HbA1c (glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3608",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3608,
+      "sentence": "In addition, changes in the HbA1c (glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed.",
+      "context_window": "glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01),",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3641",
+      "claim_type": "unit_value",
+      "raw_text": "3.42 mmol",
+      "numeric_values": [
+        3.42
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3641,
+      "sentence": "In addition, changes in the HbA1c (glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed.",
+      "context_window": "l/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed. The chang",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3676",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3676,
+      "sentence": "In addition, changes in the HbA1c (glycated haemoglobin; \u0394=-2.92 mmol/mol, CI=(-3.79; - 2.05), p < 0.01] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed.",
+      "context_window": "] and glucose levels [\u0394=-3.42 mmol/mol, CI=(-6.82; - 0.01), p = 0.05] were observed. The change in HbA1c levels was greater in t",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3789",
+      "claim_type": "unit_value",
+      "raw_text": "3.64 mmol",
+      "numeric_values": [
+        3.64
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3789,
+      "sentence": "The change in HbA1c levels was greater in the HF group than that in the LF group (HF: - 3.64 mmol/mol vs.",
+      "context_window": "as greater in the HF group than that in the LF group (HF: - 3.64 mmol/mol vs. LF: - 2.31 mmol/mol) but did not reach statistical",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-3813",
+      "claim_type": "unit_value",
+      "raw_text": "2.31 mmol",
+      "numeric_values": [
+        2.31
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3813,
+      "sentence": "LF: - 2.31 mmol/mol) but did not reach statistical significance ( p = 0.12).",
+      "context_window": "up than that in the LF group (HF: - 3.64 mmol/mol vs. LF: - 2.31 mmol/mol) but did not reach statistical significance ( p = 0.12)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-3873",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3873,
+      "sentence": "LF: - 2.31 mmol/mol) but did not reach statistical significance ( p = 0.12).",
+      "context_window": "2.31 mmol/mol) but did not reach statistical significance ( p = 0.12). Of note, in participants whose ferritin levels dropped af",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-4289",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4289,
+      "sentence": "Effects of NW + TRE on HbA1c in subgroups with different changes in serum (by repeated-measures analyses of variance with post-hoc tests, - the effect size, F- value in repeated measures ANOVA * p < 0.05).",
+      "context_window": "s, - the effect size, F- value in repeated measures ANOVA * p < 0.05). The group where ferritin decreased by more than 20ng/ml (",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-n-4358",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4358,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": ". The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15) Considering the systemic",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-n-4389",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4389,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": "eased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15) Considering the systemic immune-inflammation index (SII),",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-4655",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4655,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": "in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-4722",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 mg",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4722,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": "3], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower th",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-4797",
+      "claim_type": "unit_value",
+      "raw_text": "0.36 mg",
+      "numeric_values": [
+        0.36
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 4797,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": "-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-p-4826",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4826,
+      "sentence": "The group where ferritin decreased by more than 20ng/ml ( n = 9) and less than 20ng/ml ( n = 15)\n\nConsidering the systemic immune-inflammation index (SII), the SII decrease was significantly greater among individuals with a baseline index above 410 [\u0394= - 120.8 cells/l, CI=(-260.61; 19.01] than in those with below [\u0394 = 10.87 cells/l, CI=(-33.54; 55.28), p = 0.03], and was accompanied by a decrease in glucose levels [\u0394=-7.7 mg/dl, CI=(-12.75; - 2.65)] compared to that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "context_window": "that with SII lower than 410 [-0.36 mg/dl, CI=(-4.7; 3.98); p = 0.02].",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-591",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 591,
+      "sentence": "Obtained data indicated that 12 weeks of NW training combined with TRE altered the body composition, including a significant decrease in body mass, body fat mass content, and body mass index (BMI).",
+      "context_window": "ood glucose and Hb1Ac levels. Obtained data indicated that 12 weeks of NW training combined with TRE altered the body compositi",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-2615",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2615,
+      "sentence": "HbA1c is a good marker of average blood sugar levels in the preceding 3 months.",
+      "context_window": "good marker of average blood sugar levels in the preceding 3 months. Hence, the HbA1c levels indicate the effect of an interven",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2810",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2810,
+      "sentence": "The HbA1c levels in most participants of the current study were equal to 5.7% or higher, which indicates a pre-diabetic state [ 33 ].",
+      "context_window": "els in most participants of the current study were equal to 5.7% or higher, which indicates a pre-diabetic state [ 33 ]. Of",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2894",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2894,
+      "sentence": "Of note, a decrease of 1% in HbA1c levels has been related to a 15-20% reduction in cardiovascular disease events and a 37% reduction in microvascular complications [ 34 - 36 ].",
+      "context_window": "dicates a pre-diabetic state [ 33 ]. Of note, a decrease of 1% in HbA1c levels has been related to a 15-20% reduction in c",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2938",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2938,
+      "sentence": "Of note, a decrease of 1% in HbA1c levels has been related to a 15-20% reduction in cardiovascular disease events and a 37% reduction in microvascular complications [ 34 - 36 ].",
+      "context_window": ", a decrease of 1% in HbA1c levels has been related to a 15-20% reduction in cardiovascular disease events and a 37% reduct",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-2991",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2991,
+      "sentence": "Of note, a decrease of 1% in HbA1c levels has been related to a 15-20% reduction in cardiovascular disease events and a 37% reduction in microvascular complications [ 34 - 36 ].",
+      "context_window": "o a 15-20% reduction in cardiovascular disease events and a 37% reduction in microvascular complications [ 34 - 36 ]. In th",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-3103",
+      "claim_type": "percentage",
+      "raw_text": "0.25%",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3103,
+      "sentence": "In the current study, we observed a decrease of HbA1c 0.25% levels after the NW + TRE intervention.",
+      "context_window": "36 ]. In the current study, we observed a decrease of HbA1c 0.25% levels after the NW + TRE intervention. This may be expecte",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-3218",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3218,
+      "sentence": "This may be expected to reduce the risk of cardiovascular disease by 5% and microvascular complications by 9%.",
+      "context_window": "be expected to reduce the risk of cardiovascular disease by 5% and microvascular complications by 9%. The underlying mech",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-pct-3256",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3256,
+      "sentence": "This may be expected to reduce the risk of cardiovascular disease by 5% and microvascular complications by 9%.",
+      "context_window": "iovascular disease by 5% and microvascular complications by 9%. The underlying mechanism of the decrease in HbA1c levels",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10979559_iron_status_determined_changes_in_health_measures_induced_by-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 545,
+      "sentence": "During 12 weeks of NW + TRE, changes in ferritin, body weight, skeletal muscle mass, and fat mass were significantly higher in participants with baseline ferritin above 75 ng/ml (HF) compared to those with ferritin lower than 75 ng/ml (LF).",
+      "context_window": "(NW) are related to baseline ferritin concentration. During 12 weeks of NW + TRE, changes in ferritin, body weight, skeletal mus",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

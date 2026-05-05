@@ -1,0 +1,1105 @@
+{
+  "paper_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_",
+  "doi": "10.1007/s11154-023-09853-x",
+  "extracted_at": "2026-05-05T22:11:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 15,
+    "sample_size": 6,
+    "confidence_interval": 10,
+    "p_value": 11,
+    "percentage": 18
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-544",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 544,
+      "sentence": "We searched on PubMed, EMBASE, and the Cochrane Library for controlled studies in which subjects followed TRE for at least 4 weeks.",
+      "context_window": "trolled studies in which subjects followed TRE for at least 4 weeks. 20 studies were included in the qualitative systematic rev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-632",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1169",
+      "numeric_values": [
+        1169.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 632,
+      "sentence": "20 studies were included in the qualitative systematic review, and 18 studies (n = 1169 subjects) were included in the meta-analysis.",
+      "context_window": "luded in the qualitative systematic review, and 18 studies (n = 1169 subjects) were included in the meta-analysis. Overall, TRE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-0.31,0.16",
+      "numeric_values": [
+        -0.31,
+        0.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 766,
+      "sentence": "Overall, TRE had no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01).",
+      "context_window": "significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-785",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 785,
+      "sentence": "Overall, TRE had no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01).",
+      "context_window": "on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% C",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-848",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.47, -0.06",
+      "numeric_values": [
+        -0.47,
+        -0.06
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 848,
+      "sentence": "Overall, TRE had no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01).",
+      "context_window": "0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01). TRE significantly reduced fasting insulin (Hedg",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-870",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 870,
+      "sentence": "Overall, TRE had no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI:-0.31,0.16; p = 0.52), but it did reduce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01).",
+      "context_window": "uce HbA1c levels (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01). TRE significantly reduced fasting insulin (Hedges\u2019s g = -",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-944",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.73,-0.08",
+      "numeric_values": [
+        -0.73,
+        -0.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "TRE significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06).",
+      "context_window": "significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedge",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-965",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 965,
+      "sentence": "TRE significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06).",
+      "context_window": "d fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-1038",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-0.66,0.02",
+      "numeric_values": [
+        -0.66,
+        0.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1038,
+      "sentence": "TRE significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06).",
+      "context_window": "showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06). Interestingly, a cumulative analysis showed tha",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-1057",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "TRE significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73,-0.08; p = 0.01) and showed a tendency to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06).",
+      "context_window": "to decrease HOMA-IR (Hedges\u2019s g = -0.32; 95% CI:-0.66,0.02; p = 0.06). Interestingly, a cumulative analysis showed that the bene",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-1398",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-0.62, -0.14",
+      "numeric_values": [
+        -0.62,
+        -0.14
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1398,
+      "sentence": "Indeed, a subgroup analysis of the early TRE (eTRE) studies revealed that fasting glucose was significantly reduced by eTRE (Hedges\u2019s g = -0.38; 95% CI:-0.62, -0.14; p < 0.01).",
+      "context_window": "cose was significantly reduced by eTRE (Hedges\u2019s g = -0.38; 95% CI:-0.62, -0.14; p < 0.01). Our meta-analysis suggests that TRE can reduce",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-1419",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1419,
+      "sentence": "Indeed, a subgroup analysis of the early TRE (eTRE) studies revealed that fasting glucose was significantly reduced by eTRE (Hedges\u2019s g = -0.38; 95% CI:-0.62, -0.14; p < 0.01).",
+      "context_window": "y reduced by eTRE (Hedges\u2019s g = -0.38; 95% CI:-0.62, -0.14; p < 0.01). Our meta-analysis suggests that TRE can reduce HbA1c and",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-3504",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3504,
+      "sentence": "Although important contributions have been made in the field, it is necessary an update, since in the last 4 years a growing number of interventional studies in humans have been conducted.",
+      "context_window": "in the field, it is necessary an update, since in the last 4 years a growing number of interventional studies in humans have b",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-1165",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1165,
+      "sentence": "Studies that met the following criteria were included: controlled studies in which the control group followed a dietary regimen without temporal restriction, studies with a parallel-arm or with a crossover design, in adults (\u2265 18 years of age) assigned an intervention consisting of daily TRE, including a fasting window of between 14 and 18 h/day, associated or not with energy restriction and with a duration of 4 to 14 weeks.",
+      "context_window": "ith a parallel-arm or with a crossover design, in adults (\u2265 18 years of age) assigned an intervention consisting of daily TRE, i",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-1357",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1357,
+      "sentence": "Studies that met the following criteria were included: controlled studies in which the control group followed a dietary regimen without temporal restriction, studies with a parallel-arm or with a crossover design, in adults (\u2265 18 years of age) assigned an intervention consisting of daily TRE, including a fasting window of between 14 and 18 h/day, associated or not with energy restriction and with a duration of 4 to 14 weeks.",
+      "context_window": "or not with energy restriction and with a duration of 4 to 14 weeks. Both randomized and non-randomized designs were included.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-3088",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3088,
+      "sentence": "When needed, 95% CI was converted to SD according to the calculations outlined in the Cochrane Handbook for Systematic Reviews of Interventions [ 31 ].",
+      "context_window": "d Tau ( ) statistics were used, respectively. When needed, 95% CI was converted to SD according to the calculations outlin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-2561",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2561,
+      "sentence": "Characteristics of the included studies\n\nNAFLD patients\n\nBMI > 24\n\n20% CR\n\nno TRE\n\nObesity\n\nBMI 30-49.9\n\nOverweight/Obesity\n\nBMI \u2265 27\n\n- TRE No, Ad libitum\n\n- Control Yes\n\n8am-4 pm (earlyTRE)\n\n12 pm-8 pm (lateTRE)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nOverweight\n\nBMI \u2265 24\n\nConsistent meal timing,\n\nno TRE\n\nSelf-selected\n\n9am-3 pm\n\n22/22\n\n(same subjects)\n\n12:12\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12\n\n(fast:fed)\n\n8/8\n\n(same subjects)\n\nOverweight/Obesity\n\nBMI = 25-34.9\n\n8am-4 pm (\"early\") or\n\n12am-8 pm (\"delayed\")\n\n12:12 CR\n\n(fast:fed)\n\nBMI body mass index, BW body weight, CVD cardiovascular disease, F female, HDL high-density lipoprotein cholesterol, HIIT High-intensity interval training, LCD low-calorie diet, LDL low-density lipoprotein cholesterol, M male, NAFLD non-alcoholic fatty liver disease, TG triglycerides, TRE time restricted eating\n\nYear of publication ranged from 2016 to 2022, and 78% of the studies had been published in the previous 3 years.",
+      "context_window": "eristics of the included studies NAFLD patients BMI > 24 20% CR no TRE Obesity BMI 30-49.9 Overweight/Obesity BMI \u2265",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-3441",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3441,
+      "sentence": "Characteristics of the included studies\n\nNAFLD patients\n\nBMI > 24\n\n20% CR\n\nno TRE\n\nObesity\n\nBMI 30-49.9\n\nOverweight/Obesity\n\nBMI \u2265 27\n\n- TRE No, Ad libitum\n\n- Control Yes\n\n8am-4 pm (earlyTRE)\n\n12 pm-8 pm (lateTRE)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nOverweight\n\nBMI \u2265 24\n\nConsistent meal timing,\n\nno TRE\n\nSelf-selected\n\n9am-3 pm\n\n22/22\n\n(same subjects)\n\n12:12\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12\n\n(fast:fed)\n\n8/8\n\n(same subjects)\n\nOverweight/Obesity\n\nBMI = 25-34.9\n\n8am-4 pm (\"early\") or\n\n12am-8 pm (\"delayed\")\n\n12:12 CR\n\n(fast:fed)\n\nBMI body mass index, BW body weight, CVD cardiovascular disease, F female, HDL high-density lipoprotein cholesterol, HIIT High-intensity interval training, LCD low-calorie diet, LDL low-density lipoprotein cholesterol, M male, NAFLD non-alcoholic fatty liver disease, TG triglycerides, TRE time restricted eating\n\nYear of publication ranged from 2016 to 2022, and 78% of the studies had been published in the previous 3 years.",
+      "context_window": "d eating Year of publication ranged from 2016 to 2022, and 78% of the studies had been published in the previous 3 years.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-3495",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3495,
+      "sentence": "Characteristics of the included studies\n\nNAFLD patients\n\nBMI > 24\n\n20% CR\n\nno TRE\n\nObesity\n\nBMI 30-49.9\n\nOverweight/Obesity\n\nBMI \u2265 27\n\n- TRE No, Ad libitum\n\n- Control Yes\n\n8am-4 pm (earlyTRE)\n\n12 pm-8 pm (lateTRE)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nOverweight\n\nBMI \u2265 24\n\nConsistent meal timing,\n\nno TRE\n\nSelf-selected\n\n9am-3 pm\n\n22/22\n\n(same subjects)\n\n12:12\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12 CR\n\n(fast:fed)\n\nObesity\n\nBMI \u2265 30\n\n12:12\n\n(fast:fed)\n\n8/8\n\n(same subjects)\n\nOverweight/Obesity\n\nBMI = 25-34.9\n\n8am-4 pm (\"early\") or\n\n12am-8 pm (\"delayed\")\n\n12:12 CR\n\n(fast:fed)\n\nBMI body mass index, BW body weight, CVD cardiovascular disease, F female, HDL high-density lipoprotein cholesterol, HIIT High-intensity interval training, LCD low-calorie diet, LDL low-density lipoprotein cholesterol, M male, NAFLD non-alcoholic fatty liver disease, TG triglycerides, TRE time restricted eating\n\nYear of publication ranged from 2016 to 2022, and 78% of the studies had been published in the previous 3 years.",
+      "context_window": ", and 78% of the studies had been published in the previous 3 years. The study populations included subjects with normal weight",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-3862",
+      "claim_type": "unit_value",
+      "raw_text": "9.8 weeks",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3862,
+      "sentence": "The average duration of the TRE protocol was 9.8 weeks.",
+      "context_window": "tients [ 37 ]. The average duration of the TRE protocol was 9.8 weeks. 3 studies were performed in males only, [ 9 , 36 , 40 ] an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-4996",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4996,
+      "sentence": "Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ].",
+      "context_window": "38 ]. Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-5063",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5063,
+      "sentence": "Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ].",
+      "context_window": "s in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-5160",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5160,
+      "sentence": "Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ].",
+      "context_window": "uction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ]. With respect to di",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-5172",
+      "claim_type": "percentage",
+      "raw_text": "1.54%",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5172,
+      "sentence": "Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ].",
+      "context_window": "A1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ]. With respect to difference",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-5182",
+      "claim_type": "percentage",
+      "raw_text": "0.66%",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5182,
+      "sentence": "Interestingly, the study by Che et al. performed for 12 weeks in patients with type 2 diabetes with an average HbA1c of 8.5%, demonstrated a much greater reduction in HbA1c in the TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ].",
+      "context_window": "TRE group than in the control group (p < 0.001; -1.54% and 0.66%, respectively) [ 11 ]. With respect to differences between",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6089",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6089,
+      "sentence": "The results of the meta-analysis are presented in forest plots as Hedges\u2019s g and 95% CI.",
+      "context_window": "ta-analysis are presented in forest plots as Hedges\u2019s g and 95% CI. Hedges's g differences for the individual studies and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-6337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.31, 0.16",
+      "numeric_values": [
+        -0.31,
+        0.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6337,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-6358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6358,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "n fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6374",
+      "claim_type": "percentage",
+      "raw_text": "24.5%",
+      "numeric_values": [
+        24.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6374,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "e (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hed",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-6381",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6381,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "es\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-6456",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.47, -0.06",
+      "numeric_values": [
+        -0.47,
+        -0.06
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6456,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "moted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9). TRE also significantly reduced",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-6478",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6478,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "duction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9). TRE also significantly reduced fasting i",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6494",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6494,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "(Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9). TRE also significantly reduced fasting insulin (He",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-6498",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6498,
+      "sentence": "Despite TRE having no significant effect on fasting glucose (Hedges\u2019s g = -0.08; 95% CI: -0.31, 0.16; p = 0.56; I 2 = 24.5%; n = 20), it promoted a significant reduction in HbA1c (Hedges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9).",
+      "context_window": "dges\u2019s g = -0.27; 95% CI: -0.47, -0.06; p = 0.01; I 2 = 0%; n = 9). TRE also significantly reduced fasting insulin (Hedges\u2019s",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-6574",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.73, -0.08",
+      "numeric_values": [
+        -0.73,
+        -0.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6574,
+      "sentence": "TRE also significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig.",
+      "context_window": "significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig. 4 A), and tended to p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-6596",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6596,
+      "sentence": "TRE also significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig.",
+      "context_window": "fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig. 4 A), and tended to produce a d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6612",
+      "claim_type": "percentage",
+      "raw_text": "41.7%",
+      "numeric_values": [
+        41.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6612,
+      "sentence": "TRE also significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig.",
+      "context_window": "(Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig. 4 A), and tended to produce a decrease in HO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-6619",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6619,
+      "sentence": "TRE also significantly reduced fasting insulin (Hedges\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig.",
+      "context_window": "s\u2019s g = -0.40; 95% CI: -0.73, -0.08; p = 0.01; I 2 = 41.7%; n = 16) (Fig. 4 A), and tended to produce a decrease in HOMA-IR (H",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-6704",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.66, 0.02",
+      "numeric_values": [
+        -0.66,
+        0.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6704,
+      "sentence": "4 A), and tended to produce a decrease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig.",
+      "context_window": "ended to produce a decrease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig. 4 B). Forest plots o",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-6725",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6725,
+      "sentence": "4 A), and tended to produce a decrease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig.",
+      "context_window": "crease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig. 4 B). Forest plots of the effe",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6741",
+      "claim_type": "percentage",
+      "raw_text": "43.5%",
+      "numeric_values": [
+        43.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6741,
+      "sentence": "4 A), and tended to produce a decrease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig.",
+      "context_window": "R (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig. 4 B). Forest plots of the effect of TRE on",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-6748",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6748,
+      "sentence": "4 A), and tended to produce a decrease in HOMA-IR (Hedges\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig.",
+      "context_window": "es\u2019s g = -0.32; 95% CI: -0.66, 0.02; p = 0.06; I 2 = 43.5%; n = 16) (Fig. 4 B). Forest plots of the effect of TRE on a . Fast",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-ci-8125",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.62, -0.14",
+      "numeric_values": [
+        -0.62,
+        -0.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8125,
+      "sentence": "In fact, when we performed a separated analysis for the eTRE studies, fasting glucose was significantly reduced by eTRE compared to controls (Hedges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig.",
+      "context_window": "y reduced by eTRE compared to controls (Hedges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig. 5 B). Forest plots summari",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-p-8147",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8147,
+      "sentence": "In fact, when we performed a separated analysis for the eTRE studies, fasting glucose was significantly reduced by eTRE compared to controls (Hedges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig.",
+      "context_window": "ared to controls (Hedges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig. 5 B). Forest plots summarizing the a",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-n-8166",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8166,
+      "sentence": "In fact, when we performed a separated analysis for the eTRE studies, fasting glucose was significantly reduced by eTRE compared to controls (Hedges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig.",
+      "context_window": "edges\u2019s g = -0.38; 95% CI: -0.62, -0.14; p < 0.01; I 2 = 0; n = 5; Fig. 5 B). Forest plots summarizing the a . Cumulative an",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-112",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 112,
+      "sentence": "Our systematic review and meta-analysis reveals that a TRE regimen of a window of between 6 to 10 h during 5 to 14 weeks is sufficient to improve glycemic parameters in subjects with overweight, obesity or type 2 diabetes.",
+      "context_window": "a TRE regimen of a window of between 6 to 10 h during 5 to 14 weeks is sufficient to improve glycemic parameters in subjects wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-2375",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2375,
+      "sentence": "It is important to note that many studies included non-diabetic subjects and that the average HbA1c was 5.5%.",
+      "context_window": "cluded non-diabetic subjects and that the average HbA1c was 5.5%. In addition, none of the studies lasted more than 14 weeks",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-2431",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2431,
+      "sentence": "In addition, none of the studies lasted more than 14 weeks.",
+      "context_window": "was 5.5%. In addition, none of the studies lasted more than 14 weeks. These factors may have limited the magnitude of the decrea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-2648",
+      "claim_type": "percentage",
+      "raw_text": "1.54%",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2648,
+      "sentence": "In fact, the only included study that was performed in patients with type 2 diabetes did show a significant HbA1c decrease of -1.54% in 12 weeks [ 11 ].",
+      "context_window": "h type 2 diabetes did show a significant HbA1c decrease of -1.54% in 12 weeks [ 11 ]. Another TRE approach that is followed",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-2657",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2657,
+      "sentence": "In fact, the only included study that was performed in patients with type 2 diabetes did show a significant HbA1c decrease of -1.54% in 12 weeks [ 11 ].",
+      "context_window": "diabetes did show a significant HbA1c decrease of -1.54% in 12 weeks [ 11 ]. Another TRE approach that is followed by a large w",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-2872",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2872,
+      "sentence": "Another TRE approach that is followed by a large world population and has been extensively studied is Ramadan fasting, in which subjects refrain from eating and drinking from sunrise to sunset for 30 days.",
+      "context_window": "refrain from eating and drinking from sunrise to sunset for 30 days. Usually they eat two meals a day, one before the sunrise a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-3932",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3932,
+      "sentence": "Although some of the studies included in our meta-analysis reported high adherence to the TRE schedule, such as Cai et al., in which > 97% of subjects adhered to the TRE protocol, some of our impressions might have been biased by the inclusion of non-compliant subjects in some of the studies [ 37 ].",
+      "context_window": "herence to the TRE schedule, such as Cai et al., in which > 97% of subjects adhered to the TRE protocol, some of our impres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-4223",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4223,
+      "sentence": "Brady et al. only included subjects in their final analysis when compliance with the TRE eating window had been greater than 80% [ 40 ].",
+      "context_window": "compliance with the TRE eating window had been greater than 80% [ 40 ]. In contrast, the study by Jamshed et al. [ 22 ] inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-5026",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5026,
+      "sentence": "Calorie restriction is understood as reducing daily caloric intake by 15-40% without reaching malnutrition, and has classically been associated with improvements in metabolism and increases in longevity [ 54 , 55 ].",
+      "context_window": "iction is understood as reducing daily caloric intake by 15-40% without reaching malnutrition, and has classically been ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-5999",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 mg",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5999,
+      "sentence": "However, when we compared the post vs. pre changes in fasting glucose and HbA1c in the TRE arm, a significant reduction was evident in both studies, though greater in that by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%).",
+      "context_window": "ies, though greater in that by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%). The different duration of the T",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6018",
+      "claim_type": "percentage",
+      "raw_text": "1.54%",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6018,
+      "sentence": "However, when we compared the post vs. pre changes in fasting glucose and HbA1c in the TRE arm, a significant reduction was evident in both studies, though greater in that by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%).",
+      "context_window": "in that by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%). The different duration of the TRE interventions (",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-pct-6027",
+      "claim_type": "percentage",
+      "raw_text": "0.2%",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6027,
+      "sentence": "However, when we compared the post vs. pre changes in fasting glucose and HbA1c in the TRE arm, a significant reduction was evident in both studies, though greater in that by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%).",
+      "context_window": "by Che et al. (glucose: 26.4 vs 5.4 mg/dl; HbA1c: -1.54% vs 0.2%). The different duration of the TRE interventions (12 weeks",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-6083",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6083,
+      "sentence": "The different duration of the TRE interventions (12 weeks in Che et al. vs 4 weeks in Parr et al.) may account for this difference.",
+      "context_window": "vs 0.2%). The different duration of the TRE interventions (12 weeks in Che et al. vs 4 weeks in Parr et al.) may account for th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-6109",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6109,
+      "sentence": "The different duration of the TRE interventions (12 weeks in Che et al. vs 4 weeks in Parr et al.) may account for this difference.",
+      "context_window": "uration of the TRE interventions (12 weeks in Che et al. vs 4 weeks in Parr et al.) may account for this difference. However, i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10943166_circadian_alignment_of_food_intake_and_glycaemic_control_by_-u-7858",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7858,
+      "sentence": "In addition, a study by Andriessen et al. [ 12 ] reported modest effects of TRE on weight loss, but significant improvements in 24 h mean and fasting glucose, as well as glucose time in range after only 3 weeks of intervention.",
+      "context_window": "asting glucose, as well as glucose time in range after only 3 weeks of intervention. Given the crossover design of both studies",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

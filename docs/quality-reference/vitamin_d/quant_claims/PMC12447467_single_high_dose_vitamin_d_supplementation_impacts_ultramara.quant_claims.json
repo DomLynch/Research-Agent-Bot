@@ -1,0 +1,1591 @@
+{
+  "paper_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara",
+  "doi": "10.1080/15502783.2025.2561661",
+  "extracted_at": "2026-05-05T21:50:10+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 8,
+    "p_value": 31,
+    "percentage": 22,
+    "unit_value": 16,
+    "mean_sd": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-746",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 746,
+      "sentence": "In this clinical trial (reg. number NCT03417700 ), 35 semiprofessional male ultramarathon runners were assigned into two groups: supplemented group, administered a single high dose of vitamin D 3 (cholecalciferol, 150,000 IU) in vegetable oil 24 h before the start of the run ( n = 16), and placebo group ( n = 19), administered placebo solution 24 h before the start of the run.",
+      "context_window": "000 IU) in vegetable oil 24 h before the start of the run ( n = 16), and placebo group ( n = 19), administered placebo solutio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-775",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 775,
+      "sentence": "In this clinical trial (reg. number NCT03417700 ), 35 semiprofessional male ultramarathon runners were assigned into two groups: supplemented group, administered a single high dose of vitamin D 3 (cholecalciferol, 150,000 IU) in vegetable oil 24 h before the start of the run ( n = 16), and placebo group ( n = 19), administered placebo solution 24 h before the start of the run.",
+      "context_window": "before the start of the run ( n = 16), and placebo group ( n = 19), administered placebo solution 24 h before the start of th",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-1016",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1016,
+      "sentence": "Serum 25(OH)D 3 level significantly increased ( p \u2264 0.05.) after the ultramarathon in both groups.",
+      "context_window": "r the run. Serum 25(OH)D 3 level significantly increased ( p \u2264 0.05.) after the ultramarathon in both groups. The increase was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-1163",
+      "claim_type": "percentage",
+      "raw_text": "147.01%",
+      "numeric_values": [
+        147.01
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "The increase was more pronounced in the supplemented population, especially 24 h after the run (147.01% vs 84.71%).",
+      "context_window": "the supplemented population, especially 24 h after the run (147.01% vs 84.71%). According to post-hoc and other analyses, the l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "84.71%",
+      "numeric_values": [
+        84.71
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1174,
+      "sentence": "The increase was more pronounced in the supplemented population, especially 24 h after the run (147.01% vs 84.71%).",
+      "context_window": "ented population, especially 24 h after the run (147.01% vs 84.71%). According to post-hoc and other analyses, the levels of N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-1870",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1870,
+      "sentence": "Additionally, subjects filled the information about their Cooper test in a 12-min running version with the maximum possible intensity that was performed about 2 weeks before the start of the competition.",
+      "context_window": "ith the maximum possible intensity that was performed about 2 weeks before the start of the competition. Obtained results allow",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-2159",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2159,
+      "sentence": "Afterward they were randomly assigned to two groups: experimental (supplemented, S; n = 20) or placebo (control, C; n = 20) groups.",
+      "context_window": "omly assigned to two groups: experimental (supplemented, S; n = 20) or placebo (control, C; n = 20) groups. All 40 participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-2191",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2191,
+      "sentence": "Afterward they were randomly assigned to two groups: experimental (supplemented, S; n = 20) or placebo (control, C; n = 20) groups.",
+      "context_window": "erimental (supplemented, S; n = 20) or placebo (control, C; n = 20) groups. All 40 participants included in the study cohort",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-2415",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2415,
+      "sentence": "Four participants in the supplemented (supplemented, S; n = 16) group and one in the control group (control, C; n = 19) did not complete the trial.",
+      "context_window": "nt. Four participants in the supplemented (supplemented, S; n = 16) group and one in the control group (control, C; n = 19) di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-2471",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2471,
+      "sentence": "Four participants in the supplemented (supplemented, S; n = 16) group and one in the control group (control, C; n = 19) did not complete the trial.",
+      "context_window": "S; n = 16) group and one in the control group (control, C; n = 19) did not complete the trial. These dropouts were unrelated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2814",
+      "claim_type": "mean_sd",
+      "raw_text": "42.40 \u00b1 7.59",
+      "numeric_values": [
+        42.4,
+        7.59
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2814,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "ther group. The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2822",
+      "claim_type": "unit_value",
+      "raw_text": "7.59 years",
+      "numeric_values": [
+        7.59
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2822,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "up. The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2838",
+      "claim_type": "mean_sd",
+      "raw_text": "175.20 \u00b1 4.34",
+      "numeric_values": [
+        175.2,
+        4.34
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2838,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "ants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg. The participants in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2847",
+      "claim_type": "unit_value",
+      "raw_text": "4.34 cm",
+      "numeric_values": [
+        4.34
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2847,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "he supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg. The participants in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2873",
+      "claim_type": "mean_sd",
+      "raw_text": "72.51 \u00b1 6.71",
+      "numeric_values": [
+        72.51,
+        6.71
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2873,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg. The participants in the control group were 39.48 \u00b1 6.89",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2881",
+      "claim_type": "unit_value",
+      "raw_text": "6.71 kg",
+      "numeric_values": [
+        6.71
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2881,
+      "sentence": "The participants in the supplemented group were 42.40 \u00b1 7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg.",
+      "context_window": "7.59 years old, 175.20 \u00b1 4.34 cm high, and weighed 72.51 \u00b1 6.71 kg. The participants in the control group were 39.48 \u00b1 6.89 ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2933",
+      "claim_type": "mean_sd",
+      "raw_text": "39.48 \u00b1 6.89",
+      "numeric_values": [
+        39.48,
+        6.89
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2933,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "72.51 \u00b1 6.71 kg. The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2941",
+      "claim_type": "unit_value",
+      "raw_text": "6.89 years",
+      "numeric_values": [
+        6.89
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2941,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "6.71 kg. The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2957",
+      "claim_type": "mean_sd",
+      "raw_text": "179.67 \u00b1 4.64",
+      "numeric_values": [
+        179.67,
+        4.64
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2957,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "ticipants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg. The participants\u2019 inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2966",
+      "claim_type": "unit_value",
+      "raw_text": "4.64 cm",
+      "numeric_values": [
+        4.64
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2966,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg. The participants\u2019 inclus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-2992",
+      "claim_type": "mean_sd",
+      "raw_text": "76.19 \u00b1 5.25",
+      "numeric_values": [
+        76.19,
+        5.25
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2992,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg. The participants\u2019 inclusion and exclusion criteria are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-3000",
+      "claim_type": "unit_value",
+      "raw_text": "5.25 kg",
+      "numeric_values": [
+        5.25
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3000,
+      "sentence": "The participants in the control group were 39.48 \u00b1 6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg.",
+      "context_window": "6.89 years old, 179.67 \u00b1 4.64 cm high, and weighed 76.19 \u00b1 5.25 kg. The participants\u2019 inclusion and exclusion criteria are pre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-5147",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5147,
+      "sentence": "All participants in the S group were given a single high dose (150,000 IU) of vitamin D (cholecalciferol), as a solution in 10 mL of vegetable oil 24 h before starting in the ultramarathon.",
+      "context_window": "50,000 IU) of vitamin D (cholecalciferol), as a solution in 10 mL of vegetable oil 24 h before starting in the ultramarathon.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-5857",
+      "claim_type": "unit_value",
+      "raw_text": "9 mL",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 5857,
+      "sentence": "The blood (9 mL) was collected into Sarstedt S-Monovette tubes (S-CrossLaps\u00ae Sarstedt AG&Co, N\u00fcmbrecht, Germany) containing a coagulation accelerator for serum separation.",
+      "context_window": "n of the run finishing), and 24 h after the run. The blood (9 mL) was collected into Sarstedt S-Monovette tubes (S-CrossLaps",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-6155",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 6155,
+      "sentence": "The serum was obtained using standard laboratory procedures, aliquoted into 500 \u00b5l portions, and frozen at - 80 \u00b0C until analysis (up to 6 months).",
+      "context_window": "00 \u00b5l portions, and frozen at - 80 \u00b0C until analysis (up to 6 months). Samples had only been thawed once, i.e. before the analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9474",
+      "claim_type": "p_value",
+      "raw_text": "p \u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9474,
+      "sentence": "Statistical significance was set at p \u22640.05.",
+      "context_window": "tSoft, Tulsa, OK, USA). Statistical significance was set at p \u22640.05. Power analysis for the interactions between effects to det",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-211",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 211,
+      "sentence": "A significant group \u00d7 time interaction (F 2, 60 = 7.43, p <0.01, \u03b7 2 = 0.21) indicated that the increase in serum 25(OH)D\u2083 concentrations was significantly greater in the supplemented group compared to the control group, both immediately ( p <0.01) and 24 hours following the ultramarathon ( p <0.01).",
+      "context_window": "1 . A significant group \u00d7 time interaction (F 2, 60 = 7.43, p <0.01, \u03b7 2 = 0.21) indicated that the increase in serum 25(OH)D\u2083",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-395",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 395,
+      "sentence": "A significant group \u00d7 time interaction (F 2, 60 = 7.43, p <0.01, \u03b7 2 = 0.21) indicated that the increase in serum 25(OH)D\u2083 concentrations was significantly greater in the supplemented group compared to the control group, both immediately ( p <0.01) and 24 hours following the ultramarathon ( p <0.01).",
+      "context_window": "ted group compared to the control group, both immediately ( p <0.01) and 24 hours following the ultramarathon ( p <0.01). Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-447",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 447,
+      "sentence": "A significant group \u00d7 time interaction (F 2, 60 = 7.43, p <0.01, \u03b7 2 = 0.21) indicated that the increase in serum 25(OH)D\u2083 concentrations was significantly greater in the supplemented group compared to the control group, both immediately ( p <0.01) and 24 hours following the ultramarathon ( p <0.01).",
+      "context_window": "ately ( p <0.01) and 24 hours following the ultramarathon ( p <0.01). Table 1 . Near here Table 1. Percent changes in vitamin D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-742",
+      "claim_type": "sample_size",
+      "raw_text": "n = 16",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 742,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-n-760",
+      "claim_type": "sample_size",
+      "raw_text": "n = 19",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 760,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-768",
+      "claim_type": "mean_sd",
+      "raw_text": "27.50 \u00b1 7.01",
+      "numeric_values": [
+        27.5,
+        7.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 768,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-781",
+      "claim_type": "mean_sd",
+      "raw_text": "26.82 \u00b1 5.22",
+      "numeric_values": [
+        26.82,
+        5.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 781,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "g/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant chan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-794",
+      "claim_type": "percentage",
+      "raw_text": "111.38%",
+      "numeric_values": [
+        111.38
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 794,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "ented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs. 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-805",
+      "claim_type": "percentage",
+      "raw_text": "53.09%",
+      "numeric_values": [
+        53.09
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 805,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs. 24 h before",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-814",
+      "claim_type": "percentage",
+      "raw_text": "147.01%",
+      "numeric_values": [
+        147.01
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 814,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "rol ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs. 24 h before the run;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-825",
+      "claim_type": "percentage",
+      "raw_text": "84.71%",
+      "numeric_values": [
+        84.71
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 825,
+      "sentence": "Variable Group 24 h before the run (mean \u00b1 SD) % Change immediately after the run % Change 24 h after the run 25(OH)D 3 [ng/mL] Supplemented ( n = 16) Control ( n = 19) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs.",
+      "context_window": "9) 27.50 \u00b1 7.01 26.82 \u00b1 5.22 111.38% \u2020# 53.09% \u2020 147.01% \u2020# 84.71% \u2020 \u2020, significant change vs. 24 h before the run; #, signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-1007",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "The significance level was set at p <0.01.",
+      "context_window": "er the run, as indicated. The significance level was set at p <0.01. Percent changes in vitamin D 3 metabolite levels induced",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-1304",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1304,
+      "sentence": "The significance level was set at p <0.01.",
+      "context_window": "er the run, as indicated. The significance level was set at p <0.01. The results of analyzed biomarkers in particular groups b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-2180",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2180,
+      "sentence": "The significance threshold was set at p <0.01.",
+      "context_window": ". supplemented group. The significance threshold was set at p <0.01. Changes in bone turnover marker and PCT levels after the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-2928",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2928,
+      "sentence": "The significance threshold was set at p <0.01.",
+      "context_window": ". supplemented group. The significance threshold was set at p <0.01. Two-way ANOVA with repeated measures of changes in bone t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-3225",
+      "claim_type": "percentage",
+      "raw_text": "19.30%",
+      "numeric_values": [
+        19.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3225,
+      "sentence": "A significant effect of ultramarathon on CTX levels was noted, with a significant decrease of serum CTX levels immediately after the run (-19.30%, p <0.01), regardless the groups.",
+      "context_window": "nt decrease of serum CTX levels immediately after the run (-19.30%, p <0.01), regardless the groups. However significant inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-3233",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3233,
+      "sentence": "A significant effect of ultramarathon on CTX levels was noted, with a significant decrease of serum CTX levels immediately after the run (-19.30%, p <0.01), regardless the groups.",
+      "context_window": "ase of serum CTX levels immediately after the run (-19.30%, p <0.01), regardless the groups. However significant interaction of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-3423",
+      "claim_type": "percentage",
+      "raw_text": "26.9%",
+      "numeric_values": [
+        26.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3423,
+      "sentence": "However significant interaction of both factors showed, that while there was a significant decrease in CTX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes were observed in the control group.",
+      "context_window": "se in CTX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-3430",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3430,
+      "sentence": "However significant interaction of both factors showed, that while there was a significant decrease in CTX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes were observed in the control group.",
+      "context_window": "TX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplement",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-3464",
+      "claim_type": "percentage",
+      "raw_text": "18.9%",
+      "numeric_values": [
+        18.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "However significant interaction of both factors showed, that while there was a significant decrease in CTX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes were observed in the control group.",
+      "context_window": "mmediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-3471",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3471,
+      "sentence": "However significant interaction of both factors showed, that while there was a significant decrease in CTX concentration ( Figure 3(A) ) immediately after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes were observed in the control group.",
+      "context_window": "ely after (-26.9%, p <0.01) and 24 h after the run (-18.9%, p <0.01) in the supplemented group, no significant changes were obs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-4830",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4830,
+      "sentence": "Significant difference detected at * p <0.01.",
+      "context_window": "I, 24 h after the run. Significant difference detected at * p <0.01. Two-way ANOVA (2 groups \u00d7 3 repeated measures) of changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-5343",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5343,
+      "sentence": "Significant difference detected at * p <0.01.",
+      "context_window": "I, 24 h after the run. Significant difference detected at * p <0.01. The analysis of FGF23 showed a significant ultramarathon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-5663",
+      "claim_type": "percentage",
+      "raw_text": "171.97%",
+      "numeric_values": [
+        171.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5663,
+      "sentence": "PCT levels significantly increased 24 h after the ultramarathon (171.97%, p <0.01), regardless of the groups.",
+      "context_window": "evels significantly increased 24 h after the ultramarathon (171.97%, p <0.01), regardless of the groups. However, as the intera",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-5672",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5672,
+      "sentence": "PCT levels significantly increased 24 h after the ultramarathon (171.97%, p <0.01), regardless of the groups.",
+      "context_window": "nificantly increased 24 h after the ultramarathon (171.97%, p <0.01), regardless of the groups. However, as the interaction sho",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-6096",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6096,
+      "sentence": "PINP, PTH, and sclerostin levels increased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups.",
+      "context_window": "creased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remaine",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6109",
+      "claim_type": "percentage",
+      "raw_text": "15.65%",
+      "numeric_values": [
+        15.65
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6109,
+      "sentence": "PINP, PTH, and sclerostin levels increased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups.",
+      "context_window": "ficantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6117",
+      "claim_type": "percentage",
+      "raw_text": "482.33%",
+      "numeric_values": [
+        482.33
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6117,
+      "sentence": "PINP, PTH, and sclerostin levels increased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups.",
+      "context_window": "immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6130",
+      "claim_type": "percentage",
+      "raw_text": "23.96%",
+      "numeric_values": [
+        23.96
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6130,
+      "sentence": "PINP, PTH, and sclerostin levels increased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups.",
+      "context_window": "after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), eleva",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-6181",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6181,
+      "sentence": "PINP, PTH, and sclerostin levels increased significantly immediately after ultramarathon run ( p <0.01), by 15.65%, 482.33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups.",
+      "context_window": "33%, and 23.96%, respectively, and remained significantly ( p <0.01), elevated 24 h after the run, regardless the groups. Inter",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-7182",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7182,
+      "sentence": "The CTX and PCT baseline concentrations were significantly ( p <0.01) negatively correlated with the vitamin D 3 concentration before the run in both groups.",
+      "context_window": "he CTX and PCT baseline concentrations were significantly ( p <0.01) negatively correlated with the vitamin D 3 concentration b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-7393",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7393,
+      "sentence": "In the case of PINP, the correlation was positive, and in addition, the supplemented group showed a significant ( p <0.01) positive correlation between vitamin D 3 and PINP concentrations 24 h after the ultramarathon run.",
+      "context_window": "in addition, the supplemented group showed a significant ( p <0.01) positive correlation between vitamin D 3 and PINP concentr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-8434",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8434,
+      "sentence": "Significant difference detected at * p <0.05 or ** p <0.01.",
+      "context_window": "I, 24 h after the run. Significant difference detected at * p <0.05 or ** p <0.01. Pearson\u2019s correlation coefficient between v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-8448",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8448,
+      "sentence": "Significant difference detected at * p <0.05 or ** p <0.01.",
+      "context_window": "the run. Significant difference detected at * p <0.05 or ** p <0.01. Pearson\u2019s correlation coefficient between vitamin D 3 lev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-8993",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8993,
+      "sentence": "Significant difference detected at * p <0.05 or ** p <0.01.",
+      "context_window": "I, 24 h after the run. Significant difference detected at * p <0.05 or ** p <0.01. The sclerostin was the only marker that had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9007",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9007,
+      "sentence": "Significant difference detected at * p <0.05 or ** p <0.01.",
+      "context_window": "the run. Significant difference detected at * p <0.05 or ** p <0.01. The sclerostin was the only marker that had a significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9077",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9077,
+      "sentence": "The sclerostin was the only marker that had a significant ( p <0.01) negative correlation with vitamin D 3 at baseline, which was observed only in the supplemented group.",
+      "context_window": "The sclerostin was the only marker that had a significant ( p <0.01) negative correlation with vitamin D 3 at baseline, which w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9282",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9282,
+      "sentence": "Moreover, the sclerostin concentrations after the ultramarathon run were also significantly ( p <0.01) negatively correlated with vitamin D 3 only in the supplemented group.",
+      "context_window": "tions after the ultramarathon run were also significantly ( p <0.01) negatively correlated with vitamin D 3 only in the supplem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9429",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9429,
+      "sentence": "The PTH levels at each analyzed timepoints showed a significant ( p \u2264 0.05) negative correlation with vitamin D 3 levels in both groups.",
+      "context_window": "H levels at each analyzed timepoints showed a significant ( p \u2264 0.05) negative correlation with vitamin D 3 levels in both group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-9601",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9601,
+      "sentence": "FGF23, while there was no correlation with baseline values of the marker, there was a significant ( p <0.01) negative correlation between FGF23 and vitamin D 3 concentration, immediately and 24 h after the ultramarathon.",
+      "context_window": "th baseline values of the marker, there was a significant ( p <0.01) negative correlation between FGF23 and vitamin D 3 concent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-2306",
+      "claim_type": "unit_value",
+      "raw_text": "22.50 ng/mL",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 2306,
+      "sentence": "Previous studies [ 30 ] in the absence of physical activity (25(OH]D 3 below the median value of 22.50 ng/mL was associated with higher CTX levels at baseline).",
+      "context_window": "e of physical activity (25(OH]D 3 below the median value of 22.50 ng/mL was associated with higher CTX levels at baseline). Accordi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-3704",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 ng/mL",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 3704,
+      "sentence": "Plasma levels of PCT in healthy individuals typically range from 0.0 to 0.5 ng/mL.",
+      "context_window": "s of PCT in healthy individuals typically range from 0.0 to 0.5 ng/mL. According to many studies, PCT levels of 0.5 to 2.0 ng/mL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-3763",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 ng/mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 3763,
+      "sentence": "According to many studies, PCT levels of 0.5 to 2.0 ng/mL are associated with a possible bacterial infection or other noninfectious inflammatory conditions [ 32 ], while PCT levels over 2.0 ng/mL may indicate the possibility of a severe bacterial infection [ 32 , 33 ].",
+      "context_window": "0.5 ng/mL. According to many studies, PCT levels of 0.5 to 2.0 ng/mL are associated with a possible bacterial infection or other",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-3901",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 ng/mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 3901,
+      "sentence": "According to many studies, PCT levels of 0.5 to 2.0 ng/mL are associated with a possible bacterial infection or other noninfectious inflammatory conditions [ 32 ], while PCT levels over 2.0 ng/mL may indicate the possibility of a severe bacterial infection [ 32 , 33 ].",
+      "context_window": "tious inflammatory conditions [ 32 ], while PCT levels over 2.0 ng/mL may indicate the possibility of a severe bacterial infectio",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-4118",
+      "claim_type": "percentage",
+      "raw_text": "356.65%",
+      "numeric_values": [
+        356.65
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4118,
+      "sentence": "In the current study, PCT levels significantly increased in the control group 24 h after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the supplemented group.",
+      "context_window": "roup 24 h after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-4127",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4127,
+      "sentence": "In the current study, PCT levels significantly increased in the control group 24 h after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the supplemented group.",
+      "context_window": "after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-4167",
+      "claim_type": "percentage",
+      "raw_text": "174.05%",
+      "numeric_values": [
+        174.05
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4167,
+      "sentence": "In the current study, PCT levels significantly increased in the control group 24 h after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the supplemented group.",
+      "context_window": "h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-4176",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4176,
+      "sentence": "In the current study, PCT levels significantly increased in the control group 24 h after the run compared to the levels 24 h before (356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the supplemented group.",
+      "context_window": "(356.65%, p <0.01) and immediately after the run (174.05%, p <0.01), and were significantly higher than those in the supplemen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-4971",
+      "claim_type": "percentage",
+      "raw_text": "147.01%",
+      "numeric_values": [
+        147.01
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4971,
+      "sentence": "Although we observed a significant increase in 25(OH)D 3 levels 24 h after the ultramarathon in both groups (147.01% in the supplemented group and 84.71% in the control group vs. baseline), only the change in the supplemented group was sufficiently high to affect PCT levels, limiting their increase.",
+      "context_window": "(OH)D 3 levels 24 h after the ultramarathon in both groups (147.01% in the supplemented group and 84.71% in the control group v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-5009",
+      "claim_type": "percentage",
+      "raw_text": "84.71%",
+      "numeric_values": [
+        84.71
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5009,
+      "sentence": "Although we observed a significant increase in 25(OH)D 3 levels 24 h after the ultramarathon in both groups (147.01% in the supplemented group and 84.71% in the control group vs. baseline), only the change in the supplemented group was sufficiently high to affect PCT levels, limiting their increase.",
+      "context_window": "athon in both groups (147.01% in the supplemented group and 84.71% in the control group vs. baseline), only the change in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-5266",
+      "claim_type": "mean_sd",
+      "raw_text": "27.50 \u00b1 7.01",
+      "numeric_values": [
+        27.5,
+        7.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5266,
+      "sentence": "The overall increase may be associated with the low initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group\n\nIt was previously shown that an ultramarathon run decreases the PINP concentration [ 36 ].",
+      "context_window": "the low initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-5274",
+      "claim_type": "unit_value",
+      "raw_text": "7.01 ng/mL",
+      "numeric_values": [
+        7.01
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 5274,
+      "sentence": "The overall increase may be associated with the low initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group\n\nIt was previously shown that an ultramarathon run decreases the PINP concentration [ 36 ].",
+      "context_window": "initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-msd-5315",
+      "claim_type": "mean_sd",
+      "raw_text": "26.82 \u00b1 5.22",
+      "numeric_values": [
+        26.82,
+        5.22
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5315,
+      "sentence": "The overall increase may be associated with the low initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group\n\nIt was previously shown that an ultramarathon run decreases the PINP concentration [ 36 ].",
+      "context_window": "opulation: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group It was previously shown that an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-u-5323",
+      "claim_type": "unit_value",
+      "raw_text": "5.22 ng/mL",
+      "numeric_values": [
+        5.22
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 5323,
+      "sentence": "The overall increase may be associated with the low initial vitamin D status in the tested population: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group\n\nIt was previously shown that an ultramarathon run decreases the PINP concentration [ 36 ].",
+      "context_window": "n: 27.50 \u00b1 7.01 ng/mL in the supplemented group and 26.82 \u00b1 5.22 ng/mL in the control group It was previously shown that an ultra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6190",
+      "claim_type": "percentage",
+      "raw_text": "15.57%",
+      "numeric_values": [
+        15.57
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6190,
+      "sentence": "Moreover, PINP levels were significantly higher in the supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group.",
+      "context_window": "gher in the supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-6199",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6199,
+      "sentence": "Moreover, PINP levels were significantly higher in the supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group.",
+      "context_window": "he supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6234",
+      "claim_type": "percentage",
+      "raw_text": "19.75%",
+      "numeric_values": [
+        19.75
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6234,
+      "sentence": "Moreover, PINP levels were significantly higher in the supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group.",
+      "context_window": "fter the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group. It may be further evi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-p-6243",
+      "claim_type": "p_value",
+      "raw_text": "p <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6243,
+      "sentence": "Moreover, PINP levels were significantly higher in the supplemented group immediately after the run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group.",
+      "context_window": "run by 15.57% ( p <0.01) and 24 h after the run by 19.75% ( p <0.01) than in the control group. It may be further evidence of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6404",
+      "claim_type": "percentage",
+      "raw_text": "147.01%",
+      "numeric_values": [
+        147.01
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6404,
+      "sentence": "The results may be associated with the effect of the observed 147.01% increase in vitamin D levels in the supplemented group on PINP secretion as confirmed by correlation analysis.",
+      "context_window": "e results may be associated with the effect of the observed 147.01% increase in vitamin D levels in the supplemented group on P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-6884",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6884,
+      "sentence": "In the current study, we noted a significant increase of about 93% in the levels of this hormone at both timepoints after the run in the control group.",
+      "context_window": "the current study, we noted a significant increase of about 93% in the levels of this hormone at both timepoints after the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara-pct-7108",
+      "claim_type": "percentage",
+      "raw_text": "47.96%",
+      "numeric_values": [
+        47.96
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7108,
+      "sentence": "Similar trends were observed in ultramarathon runners supplemented with a single high dose of vitamin D, where PTH levels increased by 47.96% immediately after the run.",
+      "context_window": "ingle high dose of vitamin D, where PTH levels increased by 47.96% immediately after the run. Lippi et al. [ 14 ] have suggest",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "paper_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle",
+  "doi": "10.5604/20831862.1086732",
+  "extracted_at": "2026-05-05T21:38:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 7,
+    "unit_value": 10,
+    "p_value": 12,
+    "percentage": 6,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-602",
+      "claim_type": "mean_sd",
+      "raw_text": "34\u00b130",
+      "numeric_values": [
+        34.0,
+        30.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 602,
+      "sentence": "Basal urinary creatine (UC) was significantly lower in sprinters than controls (34\u00b130 vs.",
+      "context_window": "ne (UC) was significantly lower in sprinters than controls (34\u00b130 vs. 74\u00b13 \u00b5mol/mmol creatinine, p < 0.05). UC was inversely",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-612",
+      "claim_type": "mean_sd",
+      "raw_text": "74\u00b13",
+      "numeric_values": [
+        74.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 612,
+      "sentence": "74\u00b13 \u00b5mol/mmol creatinine, p < 0.05).",
+      "context_window": "s significantly lower in sprinters than controls (34\u00b130 vs. 74\u00b13 \u00b5mol/mmol creatinine, p < 0.05). UC was inversely correlate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-615",
+      "claim_type": "unit_value",
+      "raw_text": "3 \u00b5mol",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "abstract",
+      "source_offset": 615,
+      "sentence": "74\u00b13 \u00b5mol/mmol creatinine, p < 0.05).",
+      "context_window": "ignificantly lower in sprinters than controls (34\u00b130 vs. 74\u00b13 \u00b5mol/mmol creatinine, p < 0.05). UC was inversely correlated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-639",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 639,
+      "sentence": "74\u00b13 \u00b5mol/mmol creatinine, p < 0.05).",
+      "context_window": "rinters than controls (34\u00b130 vs. 74\u00b13 \u00b5mol/mmol creatinine, p < 0.05). UC was inversely correlated with body mass (r = -0.34, p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-705",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 705,
+      "sentence": "UC was inversely correlated with body mass (r = -0.34, p < 0.01) and lean mass (r = -0.30, p < 0.05), and positively correlated with fat mass (r = 0.32, p < 0.05).",
+      "context_window": "05). UC was inversely correlated with body mass (r = -0.34, p < 0.01) and lean mass (r = -0.30, p < 0.05), and positively correl",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-741",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 741,
+      "sentence": "UC was inversely correlated with body mass (r = -0.34, p < 0.01) and lean mass (r = -0.30, p < 0.05), and positively correlated with fat mass (r = 0.32, p < 0.05).",
+      "context_window": "h body mass (r = -0.34, p < 0.01) and lean mass (r = -0.30, p < 0.05), and positively correlated with fat mass (r = 0.32, p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-803",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 803,
+      "sentence": "UC was inversely correlated with body mass (r = -0.34, p < 0.01) and lean mass (r = -0.30, p < 0.05), and positively correlated with fat mass (r = 0.32, p < 0.05).",
+      "context_window": "< 0.05), and positively correlated with fat mass (r = 0.32, p < 0.05). After acute exercise, urinary creatine significantly decr",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-254",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 254,
+      "sentence": "In humans, over 95% of the body Cr content is stored in skeletal muscle, where Cr or more specifically phosphocreatine (PCr) plays a major role in a muscle's ability to perform and maintain short duration, high intensity exercise [ 2 ].",
+      "context_window": "brane creatine transporter (SLC6A8) [ 30 ]. In humans, over 95% of the body Cr content is stored in skeletal muscle, where",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-93",
+      "claim_type": "mean_sd",
+      "raw_text": "17\u00b11.6",
+      "numeric_values": [
+        17.0,
+        1.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 93,
+      "sentence": "Fifty-one volunteer sub-elite young sprinters (30 males and 21 females; sex-ratio, 1.4; age, 17\u00b11.6 years), living and training at the National Center for Elite Athletes (Tunis, Tunisia), participated in this study ( Table 1 ).",
+      "context_window": "ng sprinters (30 males and 21 females; sex-ratio, 1.4; age, 17\u00b11.6 years), living and training at the National Center for Elit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 years",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 96,
+      "sentence": "Fifty-one volunteer sub-elite young sprinters (30 males and 21 females; sex-ratio, 1.4; age, 17\u00b11.6 years), living and training at the National Center for Elite Athletes (Tunis, Tunisia), participated in this study ( Table 1 ).",
+      "context_window": "sprinters (30 males and 21 females; sex-ratio, 1.4; age, 17\u00b11.6 years), living and training at the National Center for Elite Athl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-319",
+      "claim_type": "mean_sd",
+      "raw_text": "4 \u00b1 2.6",
+      "numeric_values": [
+        4.0,
+        2.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 319,
+      "sentence": "The average of practice of sprint training was 4 \u00b1 2.6 years.",
+      "context_window": "ours a week. The average of practice of sprint training was 4 \u00b1 2.6 years. Exclusion criteria were subjects who had taken Cr su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-323",
+      "claim_type": "unit_value",
+      "raw_text": "2.6 years",
+      "numeric_values": [
+        2.6
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 323,
+      "sentence": "The average of practice of sprint training was 4 \u00b1 2.6 years.",
+      "context_window": "a week. The average of practice of sprint training was 4 \u00b1 2.6 years. Exclusion criteria were subjects who had taken Cr suppleme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-407",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 407,
+      "sentence": "Exclusion criteria were subjects who had taken Cr supplements within the 3 months prior to the experiment and those who were taking nutritional supplements at the time of the study.",
+      "context_window": "teria were subjects who had taken Cr supplements within the 3 months prior to the experiment and those who were taking nutrition",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-940",
+      "claim_type": "mean_sd",
+      "raw_text": "17 \u00b11.4",
+      "numeric_values": [
+        17.0,
+        1.4
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 940,
+      "sentence": "SPRINTER CHARACTERISTICS (MEAN\u00b1SD)\n\nNote: Performance compared to world record\n\nTwenty-five volunteer healthy students (14 males and 11 females; sex-ratio, 1.2; age, 17 \u00b11.4 years) who had never been engaged in any regular sport training were selected as the control group.",
+      "context_window": "thy students (14 males and 11 females; sex-ratio, 1.2; age, 17 \u00b11.4 years) who had never been engaged in any regular sport trai",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-944",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 years",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 944,
+      "sentence": "SPRINTER CHARACTERISTICS (MEAN\u00b1SD)\n\nNote: Performance compared to world record\n\nTwenty-five volunteer healthy students (14 males and 11 females; sex-ratio, 1.2; age, 17 \u00b11.4 years) who had never been engaged in any regular sport training were selected as the control group.",
+      "context_window": "students (14 males and 11 females; sex-ratio, 1.2; age, 17 \u00b11.4 years) who had never been engaged in any regular sport training w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-3257",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3257,
+      "sentence": "Urine samples were immediately transferred to the laboratory at 4\u00b0C, then stored at -20\u00b0C until analysis (within 3 months).",
+      "context_window": "oratory at 4\u00b0C, then stored at -20\u00b0C until analysis (within 3 months). Urinary creatinine was determined using the Jaffe method",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-4266",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mm",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4266,
+      "sentence": "Chromatographic separation is achieved on a GC ultra 2 non-polar capillary column, 25 m in length, 0.2 mm in internal diameter and 0.33 \u00b5m in film thickness (Agilent Technologies) with helium as the carrier gas.",
+      "context_window": "on a GC ultra 2 non-polar capillary column, 25 m in length, 0.2 mm in internal diameter and 0.33 \u00b5m in film thickness (Agilent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-4620",
+      "claim_type": "unit_value",
+      "raw_text": "20 \u00b5mol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 4620,
+      "sentence": "The method sensitivity was 20 \u00b5mol .",
+      "context_window": "on selected has m/z 239 and 258. The method sensitivity was 20 \u00b5mol . L -1 . The inter-assay (n = 10) imprecisions (CVs) were 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-n-4654",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4654,
+      "sentence": "The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol .",
+      "context_window": "he method sensitivity was 20 \u00b5mol . L -1 . The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-4686",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4686,
+      "sentence": "The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol .",
+      "context_window": "l . L -1 . The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol . L -1 , re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-4695",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4695,
+      "sentence": "The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol .",
+      "context_window": ". The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol . L -1 , respectivel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-4729",
+      "claim_type": "unit_value",
+      "raw_text": "4909 \u00b5mol",
+      "numeric_values": [
+        4909.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "methods",
+      "source_offset": 4729,
+      "sentence": "The inter-assay (n = 10) imprecisions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol .",
+      "context_window": "sions (CVs) were 6.4% and 6.9% at concentrations of 289 and 4909 \u00b5mol . L -1 , respectively. The statistical analyses were perfo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-678",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 678,
+      "sentence": "DEMOGRAPHIC, ANTHROPOMETRIC AND NUTRITIONAL PARAMETERS MEASURED IN THE ATHLETES AND CONTROL UNTRAINED SUBJECTS\n\nNote: Values are expressed as means \u00b1 SD; AP, animal proteins; VP, vegetal proteins; a values are significantly lower (P < 0.01) than the recommended dietary allowances (calculated from specific total energy expenditure).",
+      "context_window": "ns; VP, vegetal proteins; a values are significantly lower (P < 0.01) than the recommended dietary allowances (calculated from s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-867",
+      "claim_type": "mean_sd",
+      "raw_text": "34 \u00b1 30",
+      "numeric_values": [
+        34.0,
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 867,
+      "sentence": "Basal urinary Cr concentrations were significantly lower in sprinters than controls (34 \u00b1 30 vs.",
+      "context_window": "ations were significantly lower in sprinters than controls (34 \u00b1 30 vs. 74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05). Compared",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-msd-879",
+      "claim_type": "mean_sd",
+      "raw_text": "74 \u00b1 73",
+      "numeric_values": [
+        74.0,
+        73.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 879,
+      "sentence": "74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05).",
+      "context_window": "significantly lower in sprinters than controls (34 \u00b1 30 vs. 74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05). Compared to respectiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-u-884",
+      "claim_type": "unit_value",
+      "raw_text": "73 \u00b5mol",
+      "numeric_values": [
+        73.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 884,
+      "sentence": "74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05).",
+      "context_window": "ficantly lower in sprinters than controls (34 \u00b1 30 vs. 74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05). Compared to respective bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-914",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 914,
+      "sentence": "74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05).",
+      "context_window": "an controls (34 \u00b1 30 vs. 74 \u00b1 73 \u00b5mol . mmoL -1 creatinine; p < 0.05). Compared to respective basal levels, post-exercise urinar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-1180",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1180,
+      "sentence": "ROC curves showed that basal urinary Cr [AUC (95% CI), 0.725 (0.523-0.927); p = 0.025] but not post-exercise urinary Cr [0.523 (0.312-0.786); p = 0.633] discriminated sprinters from untrained subjects ( Figure 2 ).",
+      "context_window": "( Figure 1 ). ROC curves showed that basal urinary Cr [AUC (95% CI), 0.725 (0.523-0.927); p = 0.025] but not post-exercise",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-1210",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.025",
+      "numeric_values": [
+        0.025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1210,
+      "sentence": "ROC curves showed that basal urinary Cr [AUC (95% CI), 0.725 (0.523-0.927); p = 0.025] but not post-exercise urinary Cr [0.523 (0.312-0.786); p = 0.633] discriminated sprinters from untrained subjects ( Figure 2 ).",
+      "context_window": "d that basal urinary Cr [AUC (95% CI), 0.725 (0.523-0.927); p = 0.025] but not post-exercise urinary Cr [0.523 (0.312-0.786); p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-1276",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.633",
+      "numeric_values": [
+        0.633
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1276,
+      "sentence": "ROC curves showed that basal urinary Cr [AUC (95% CI), 0.725 (0.523-0.927); p = 0.025] but not post-exercise urinary Cr [0.523 (0.312-0.786); p = 0.633] discriminated sprinters from untrained subjects ( Figure 2 ).",
+      "context_window": "025] but not post-exercise urinary Cr [0.523 (0.312-0.786); p = 0.633] discriminated sprinters from untrained subjects ( Figure 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-2005",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2005,
+      "sentence": "Note: Area-under-the-curve (AUC) (95% CI) was 0.725 (0.523-0.927) for basal urinary creatine and 0.523 (0.312-0.786) for post-exercise urinary creatine.",
+      "context_window": "SUBJECTS AND SPRINTERS. Note: Area-under-the-curve (AUC) (95% CI) was 0.725 (0.523-0.927) for basal urinary creatine and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-2212",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2212,
+      "sentence": "In sprinters, basal urinary Cr was inversely correlated to total body water (r= 0.324; p = 0.028) and lean mass (r= -0.307; p = 0.038), but positively related to fat mass (r = 0.310; p = 0.036).",
+      "context_window": "Cr was inversely correlated to total body water (r= 0.324; p = 0.028) and lean mass (r= -0.307; p = 0.038), but positively relat",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-2249",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2249,
+      "sentence": "In sprinters, basal urinary Cr was inversely correlated to total body water (r= 0.324; p = 0.028) and lean mass (r= -0.307; p = 0.038), but positively related to fat mass (r = 0.310; p = 0.036).",
+      "context_window": "body water (r= 0.324; p = 0.028) and lean mass (r= -0.307; p = 0.038), but positively related to fat mass (r = 0.310; p = 0.036)",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-2308",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2308,
+      "sentence": "In sprinters, basal urinary Cr was inversely correlated to total body water (r= 0.324; p = 0.028) and lean mass (r= -0.307; p = 0.038), but positively related to fat mass (r = 0.310; p = 0.036).",
+      "context_window": "p = 0.038), but positively related to fat mass (r = 0.310; p = 0.036). No significant correlation was observed with total energy",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-p-2748",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.063",
+      "numeric_values": [
+        0.063
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2748,
+      "sentence": "However, the worst performing sprinters (first tertile of physical performance) showed a trend for significant (p = 0.063) higher post-exercise urinary Cr levels compared to the most efficient sprinters (third tertile) ( Figure 4 ).",
+      "context_window": "le of physical performance) showed a trend for significant (p = 0.063) higher post-exercise urinary Cr levels compared to the mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3994585_urinary_creatine_at_rest_and_after_repeated_sprints_in_athle-pct-1161",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1161,
+      "sentence": "Spencer et al. [ 24 ] reported that maximal sprint exercise of 10 to 12.5 seconds induced approximately 40 to 70% depletion of muscle phosphocreatine stores.",
+      "context_window": "exercise of 10 to 12.5 seconds induced approximately 40 to 70% depletion of muscle phosphocreatine stores. Hirvonen et al.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

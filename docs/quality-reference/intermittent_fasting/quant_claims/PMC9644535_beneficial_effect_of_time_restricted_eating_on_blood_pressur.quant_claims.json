@@ -1,0 +1,1150 @@
+{
+  "paper_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur",
+  "doi": "10.1186/s12986-022-00711-2",
+  "extracted_at": "2026-05-05T22:11:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 10,
+    "confidence_interval": 19,
+    "p_value": 24,
+    "unit_value": 7,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-699",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 699,
+      "sentence": "The weighted mean difference with 95% CI was used to assess the effect of TRE on blood pressure, heart rate, weight, blood glucose, total cholesterol, HDL-C, LDL-C, and triglycerides.",
+      "context_window": "d using Stata version 16. The weighted mean difference with 95% CI was used to assess the effect of TRE on blood pressure,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1180",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.73, -2.30",
+      "numeric_values": [
+        -6.73,
+        -2.3
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1180,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "ced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic bl",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1202",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "ssure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1305",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.16, 0.02",
+      "numeric_values": [
+        -4.16,
+        0.02
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1305,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean di",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1326",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.053",
+      "numeric_values": [
+        0.053
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1326,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "essure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference =",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1401",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.83, 3.54",
+      "numeric_values": [
+        -2.83,
+        3.54
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1401,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825). TRE promoted weight loss (mean difference = -",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1422",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0825",
+      "numeric_values": [
+        0.0825
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1422,
+      "sentence": "TRE significantly reduced systolic blood pressure (SBP) (mean difference = -4.15; 95% CI: -6.73, -2.30; P < 0.0001), but had no significant effect on diastolic blood pressure (DBP) (mean difference = -2.06; 95% CI: -4.16, 0.02; P = 0.053) and no beneficial effect on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825).",
+      "context_window": "on heart rate (mean difference = 0.36; 95% CI: -2.83, 3.54; P = 0.0825). TRE promoted weight loss (mean difference = -1.63; 95% CI",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1486",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.61, -0.64",
+      "numeric_values": [
+        -2.61,
+        -0.64
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "0.0825). TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean differ",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1508",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1508,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.8",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1580",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.64, -0.96",
+      "numeric_values": [
+        -4.64,
+        -0.96
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1580,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "nd decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholest",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1602",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1602,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "cose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1690",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -10.01, 10.08",
+      "numeric_values": [
+        -10.01,
+        10.08
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1690,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "ficant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80,",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1713",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.995",
+      "numeric_values": [
+        0.995
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1713,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1756",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.80, 3.49",
+      "numeric_values": [
+        -1.8,
+        3.49
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1756,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": ": -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47,",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1777",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.531",
+      "numeric_values": [
+        0.531
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1777,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P =",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1821",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.47, 4.76",
+      "numeric_values": [
+        -6.47,
+        4.76
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1821,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "I: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1842",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.764",
+      "numeric_values": [
+        0.764
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1842,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": ".531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1898",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -9.49, 2.45",
+      "numeric_values": [
+        -9.49,
+        2.45
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1898,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248). In a separate meta-regression analysis, the de",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1919",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.248",
+      "numeric_values": [
+        0.248
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1919,
+      "sentence": "TRE promoted weight loss (mean difference = -1.63; 95% CI: -2.61, -0.64; P = 0.001) and decreased blood glucose levels (mean difference = -2.80; 95% CI: -4.64, -0.96; P = 0.003), but had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), or triglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248).",
+      "context_window": "iglycerides (mean difference = -3.524, 95% CI: -9.49, 2.45; P = 0.248). In a separate meta-regression analysis, the degree of SBP",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2025",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2025,
+      "sentence": "In a separate meta-regression analysis, the degree of SBP change was related to weight loss ( P = 0.044) but not to glucose improvement ( P = 0.867).",
+      "context_window": "ysis, the degree of SBP change was related to weight loss ( P = 0.044) but not to glucose improvement ( P = 0.867). The present",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2069",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.867",
+      "numeric_values": [
+        0.867
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2069,
+      "sentence": "In a separate meta-regression analysis, the degree of SBP change was related to weight loss ( P = 0.044) but not to glucose improvement ( P = 0.867).",
+      "context_window": "o weight loss ( P = 0.044) but not to glucose improvement ( P = 0.867). The present meta-analysis suggests that TRE significantl",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-3339",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3339,
+      "sentence": "The weighted mean difference with 95% CI was used to assess the effect of TRE on BP, heart rate, weight, blood glucose, cholesterol, HDL-C, LDL-C, and triglycerides.",
+      "context_window": "ollege Station, TX, USA). The weighted mean difference with 95% CI was used to assess the effect of TRE on BP, heart rate,",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-3537",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3537,
+      "sentence": "I 2 >50% indicated apparent heterogeneity, and <50% indicated no apparent heterogeneity.",
+      "context_window": "d the I 2 index to quantify statistical heterogeneity. I 2 >50% indicated apparent heterogeneity, and <50% indicated no app",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-3580",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3580,
+      "sentence": "I 2 >50% indicated apparent heterogeneity, and <50% indicated no apparent heterogeneity.",
+      "context_window": "erogeneity. I 2 >50% indicated apparent heterogeneity, and <50% indicated no apparent heterogeneity. A random-effects model",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-4078",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4078,
+      "sentence": "Egger\u2019s test was employed to assess the probability of publication bias at a significance level of 10%.",
+      "context_window": "probability of publication bias at a significance level of 10%. We used the GRADE software to evaluate the quality of evid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1426",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.73, -2.30",
+      "numeric_values": [
+        -6.73,
+        -2.3
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1426,
+      "sentence": "Characteristics of the studies investigating the effects of Time-Restricted Eating on blood pressure\n\n12 h time-restricted eating\n\n(12:12), standard dietary advice\n\nTRE (8-hour window),\n\nnon-TRE(unrestricted eating)\n\nAge and BMI values are expressed as mean \u00b1 SD.BMI, body mass index; RCT,randomized controlled trial;NAFLD, nonalcoholic fatty liver disease\n\nA meta-analysis of ten studies [ 26 - 35 ] showed that TRE significantly reduced SBP (mean difference = -4.15, 95% CI: -6.73, -2.30; P < 0.0001), as shown in Fig.",
+      "context_window": "hat TRE significantly reduced SBP (mean difference = -4.15, 95% CI: -6.73, -2.30; P < 0.0001), as shown in Fig. 2 a. Meanwhile, TRE had no s",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1448",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "Characteristics of the studies investigating the effects of Time-Restricted Eating on blood pressure\n\n12 h time-restricted eating\n\n(12:12), standard dietary advice\n\nTRE (8-hour window),\n\nnon-TRE(unrestricted eating)\n\nAge and BMI values are expressed as mean \u00b1 SD.BMI, body mass index; RCT,randomized controlled trial;NAFLD, nonalcoholic fatty liver disease\n\nA meta-analysis of ten studies [ 26 - 35 ] showed that TRE significantly reduced SBP (mean difference = -4.15, 95% CI: -6.73, -2.30; P < 0.0001), as shown in Fig.",
+      "context_window": "reduced SBP (mean difference = -4.15, 95% CI: -6.73, -2.30; P < 0.0001), as shown in Fig. 2 a. Meanwhile, TRE had no significant e",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-1557",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.16, 0.02",
+      "numeric_values": [
+        -4.16,
+        0.02
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1557,
+      "sentence": "Meanwhile, TRE had no significant effect on DBP (mean difference = -2.06, 95% CI: -4.16, 0.02; P = 0.053), as shown in Fig.",
+      "context_window": "had no significant effect on DBP (mean difference = -2.06, 95% CI: -4.16, 0.02; P = 0.053), as shown in Fig. 2 b. Although 10 studies were",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-1578",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.053",
+      "numeric_values": [
+        0.053
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1578,
+      "sentence": "Meanwhile, TRE had no significant effect on DBP (mean difference = -2.06, 95% CI: -4.16, 0.02; P = 0.053), as shown in Fig.",
+      "context_window": "ffect on DBP (mean difference = -2.06, 95% CI: -4.16, 0.02; P = 0.053), as shown in Fig. 2 b. Although 10 studies were included,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-2154",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.83, 3.54",
+      "numeric_values": [
+        -2.83,
+        3.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2154,
+      "sentence": "TRE, time-restricted eating; SBP, systolic blood pressure\n\nA meta-analysis of three studies [ 28 , 33 , 34 ] showed that TRE was unable to lower the heart rate (mean difference =0.36, 95% CI: -2.83, 3.54; P = 0.825), as shown in Fig.",
+      "context_window": "was unable to lower the heart rate (mean difference =0.36, 95% CI: -2.83, 3.54; P = 0.825), as shown in Fig. 2 c. The results of a meta-a",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2175",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.825",
+      "numeric_values": [
+        0.825
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2175,
+      "sentence": "TRE, time-restricted eating; SBP, systolic blood pressure\n\nA meta-analysis of three studies [ 28 , 33 , 34 ] showed that TRE was unable to lower the heart rate (mean difference =0.36, 95% CI: -2.83, 3.54; P = 0.825), as shown in Fig.",
+      "context_window": "the heart rate (mean difference =0.36, 95% CI: -2.83, 3.54; P = 0.825), as shown in Fig. 2 c. The results of a meta-analysis of",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-2341",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.61, -0.64",
+      "numeric_values": [
+        -2.61,
+        -0.64
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2341,
+      "sentence": "63, 95% CI: -2.61, -0.64; P = 0.001), as shown in Fig.",
+      "context_window": "TRE significantly reduced weight (mean difference = -1. 63, 95% CI: -2.61, -0.64; P = 0.001), as shown in Fig. 2 d. A meta-analysis of seve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2363",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2363,
+      "sentence": "63, 95% CI: -2.61, -0.64; P = 0.001), as shown in Fig.",
+      "context_window": "ced weight (mean difference = -1. 63, 95% CI: -2.61, -0.64; P = 0.001), as shown in Fig. 2 d. A meta-analysis of seven studies [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-2548",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.64, -0.96",
+      "numeric_values": [
+        -4.64,
+        -0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2548,
+      "sentence": "A meta-analysis of seven studies [ 27 - 29 , 31 , 32 , 34 , 35 ] showed that TRE significantly reduced blood glucose levels (mean difference = -2.80, 95% CI: -4.64, -0.96; P = 0.003), as shown in Fig.",
+      "context_window": "ntly reduced blood glucose levels (mean difference = -2.80, 95% CI: -4.64, -0.96; P = 0.003), as shown in Fig. 2 e. A meta-analysis of five",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2570",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2570,
+      "sentence": "A meta-analysis of seven studies [ 27 - 29 , 31 , 32 , 34 , 35 ] showed that TRE significantly reduced blood glucose levels (mean difference = -2.80, 95% CI: -4.64, -0.96; P = 0.003), as shown in Fig.",
+      "context_window": "cose levels (mean difference = -2.80, 95% CI: -4.64, -0.96; P = 0.003), as shown in Fig. 2 e. A meta-analysis of five studies [",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-2747",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -10.01, 10.08",
+      "numeric_values": [
+        -10.01,
+        10.08
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2747,
+      "sentence": "A meta-analysis of five studies [ 28 , 31 , 33 - 35 ] showed that TRE had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), as shown in Fig.",
+      "context_window": "ficant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), as shown in Fig. 3 a. A meta-analysis of eight",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2770",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.995",
+      "numeric_values": [
+        0.995
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2770,
+      "sentence": "A meta-analysis of five studies [ 28 , 31 , 33 - 35 ] showed that TRE had no significant effect on total cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), as shown in Fig.",
+      "context_window": "cholesterol (mean difference = 0.03, 95% CI: -10.01, 10.08; P = 0.995), as shown in Fig. 3 a. A meta-analysis of eight studies [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-2932",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.80, 3.49",
+      "numeric_values": [
+        -1.8,
+        3.49
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2932,
+      "sentence": "A meta-analysis of eight studies [ 26 - 28 , 31 - 35 ] showed that TRE insignificantly increased HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), as shown in Fig.",
+      "context_window": "RE insignificantly increased HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), as shown in Fig. 3 b. A meta-analysis of seven",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-2953",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.531",
+      "numeric_values": [
+        0.531
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2953,
+      "sentence": "A meta-analysis of eight studies [ 26 - 28 , 31 - 35 ] showed that TRE insignificantly increased HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), as shown in Fig.",
+      "context_window": "creased HDL-C (mean difference = 0.85, 95% CI: -1.80, 3.49; P = 0.531), as shown in Fig. 3 b. A meta-analysis of seven studies [",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-3110",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -6.47, 4.76",
+      "numeric_values": [
+        -6.47,
+        4.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3110,
+      "sentence": "A meta-analysis of seven studies [ 26 - 28 , 31 , 32 , 34 , 35 ] showed that TRE decreased LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), as shown in Fig.",
+      "context_window": "] showed that TRE decreased LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), as shown in Fig. 3 c. A meta-analysis of seven",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-3131",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.764",
+      "numeric_values": [
+        0.764
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3131,
+      "sentence": "A meta-analysis of seven studies [ 26 - 28 , 31 , 32 , 34 , 35 ] showed that TRE decreased LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), as shown in Fig.",
+      "context_window": "reased LDL-C (mean difference = -0.86, 95% CI: -6.47, 4.76; P = 0.764), as shown in Fig. 3 c. A meta-analysis of seven studies [",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-3302",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -9.49, 2.45",
+      "numeric_values": [
+        -9.49,
+        2.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3302,
+      "sentence": "A meta-analysis of seven studies [ 26 - 28 , 31 , 32 , 34 , 35 ] showed that TRE decreased triglyceride levels (mean difference = -3.52, 95% CI: -9.49, 2.45; P = 0.248), as shown in Fig.",
+      "context_window": "TRE decreased triglyceride levels (mean difference = -3.52, 95% CI: -9.49, 2.45; P = 0.248), as shown in Fig. 3 d. Forest plots of TRE vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-3323",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.248",
+      "numeric_values": [
+        0.248
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3323,
+      "sentence": "A meta-analysis of seven studies [ 26 - 28 , 31 , 32 , 34 , 35 ] showed that TRE decreased triglyceride levels (mean difference = -3.52, 95% CI: -9.49, 2.45; P = 0.248), as shown in Fig.",
+      "context_window": "eride levels (mean difference = -3.52, 95% CI: -9.49, 2.45; P = 0.248), as shown in Fig. 3 d. Forest plots of TRE vs. normal eat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3750",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3750,
+      "sentence": "TRE time-restricted eating; HDL-C high-density lipoprotein cholesterol; LDL-C low-density lipoprotein cholesterol\n\nAs shown in Table 2 , upon stratification by the duration of TRE intervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4).",
+      "context_window": "of TRE intervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4). DBP was significantly reduced",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-n-3759",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3759,
+      "sentence": "TRE time-restricted eating; HDL-C high-density lipoprotein cholesterol; LDL-C low-density lipoprotein cholesterol\n\nAs shown in Table 2 , upon stratification by the duration of TRE intervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4).",
+      "context_window": "tervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4). DBP was significantly reduced in pat",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3770",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3770,
+      "sentence": "TRE time-restricted eating; HDL-C high-density lipoprotein cholesterol; LDL-C low-density lipoprotein cholesterol\n\nAs shown in Table 2 , upon stratification by the duration of TRE intervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4).",
+      "context_window": "we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4). DBP was significantly reduced in patients with an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-n-3780",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3780,
+      "sentence": "TRE time-restricted eating; HDL-C high-density lipoprotein cholesterol; LDL-C low-density lipoprotein cholesterol\n\nAs shown in Table 2 , upon stratification by the duration of TRE intervention, we divided the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4).",
+      "context_window": "d the studies into two groups 8 weeks (n = 3) and 12 weeks (n = 4). DBP was significantly reduced in patients with an interve",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3859",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3859,
+      "sentence": "DBP was significantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%).",
+      "context_window": "nificantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), wit",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3876",
+      "claim_type": "unit_value",
+      "raw_text": "1.916 mmHg",
+      "numeric_values": [
+        1.916
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3876,
+      "sentence": "DBP was significantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%).",
+      "context_window": "d in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-ci-3888",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -3.037, -0.794",
+      "numeric_values": [
+        -3.037,
+        -0.794
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3888,
+      "sentence": "DBP was significantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%).",
+      "context_window": "s with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%). Subgroup",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-3912",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3912,
+      "sentence": "DBP was significantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%).",
+      "context_window": "ime of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%). Subgroup Analysis.",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-3954",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3954,
+      "sentence": "DBP was significantly reduced in patients with an intervention time of 12 weeks (WMD = -1.916 mmHg, 95% CI: -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%).",
+      "context_window": ": -3.037, -0.794, P = 0.001), with low heterogeneity (I 2 = 0.0%). Subgroup Analysis. SBP, systolic blood pressure; DBP, di",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-4073",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4073,
+      "sentence": "SBP, systolic blood pressure; DBP, diastolic blood pressure; WMD, weighted mean difference; 95% CI, 95% confidence interval\n\nAs shown in Table 3 , sensitivity analysis was performed on nine indicators, including SBP, DBP, heart rate, weight, glucose, total cholesterol, HDL-C, LDL-C, and triglycerides.",
+      "context_window": "P, diastolic blood pressure; WMD, weighted mean difference; 95% CI, 95% confidence interval As shown in Table 3 , sensitiv",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-4081",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4081,
+      "sentence": "SBP, systolic blood pressure; DBP, diastolic blood pressure; WMD, weighted mean difference; 95% CI, 95% confidence interval\n\nAs shown in Table 3 , sensitivity analysis was performed on nine indicators, including SBP, DBP, heart rate, weight, glucose, total cholesterol, HDL-C, LDL-C, and triglycerides.",
+      "context_window": "olic blood pressure; WMD, weighted mean difference; 95% CI, 95% confidence interval As shown in Table 3 , sensitivity anal",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-4565",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4565,
+      "sentence": "SBP, systolic blood pressure; DBP, diastolic blood pressure; HR,heart rate;95% CI, 95% confidence interval\n\nWe included nine studies that included changes in body weight and seven studies that included changes in blood glucose levels using meta-regression.",
+      "context_window": "lood pressure; DBP, diastolic blood pressure; HR,heart rate;95% CI, 95% confidence interval We included nine studies that",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-pct-4573",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4573,
+      "sentence": "SBP, systolic blood pressure; DBP, diastolic blood pressure; HR,heart rate;95% CI, 95% confidence interval\n\nWe included nine studies that included changes in body weight and seven studies that included changes in blood glucose levels using meta-regression.",
+      "context_window": "ssure; DBP, diastolic blood pressure; HR,heart rate;95% CI, 95% confidence interval We included nine studies that included",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-4852",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4852,
+      "sentence": "The random-effect meta-regression of the primary meta-analysis on SBP revealed that body weight change ( P = 0.044) predicted the size of the estimated treatment effect or explained heterogeneity between studies, while glucose ( P = 0.867) did not.",
+      "context_window": "ary meta-analysis on SBP revealed that body weight change ( P = 0.044) predicted the size of the estimated treatment effect or ex",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-4976",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.867",
+      "numeric_values": [
+        0.867
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4976,
+      "sentence": "The random-effect meta-regression of the primary meta-analysis on SBP revealed that body weight change ( P = 0.044) predicted the size of the estimated treatment effect or explained heterogeneity between studies, while glucose ( P = 0.867) did not.",
+      "context_window": "or explained heterogeneity between studies, while glucose ( P = 0.867) did not. We further found that weight loss can predict TRE",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-p-5301",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5301,
+      "sentence": "In addition, as indicated by Egger\u2019s tests, there was a low probability of publication bias for all indexes under study (all P > 0.05).",
+      "context_window": "bility of publication bias for all indexes under study (all P > 0.05). Filled funnel plots of TRE vs. normal dietary eating a b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-498",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 498,
+      "sentence": "Meanwhile, TRE significantly reduced DBP in patients with an intervention duration of 12 weeks.",
+      "context_window": "ly reduced DBP in patients with an intervention duration of 12 weeks. These findings are critical because they provide a new per",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3732",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3732,
+      "sentence": "The longest intervention period in the included studies lasted 12 months, whereas the shortest was 1 month.",
+      "context_window": "longest intervention period in the included studies lasted 12 months, whereas the shortest was 1 month. These factors may have h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9644535_beneficial_effect_of_time_restricted_eating_on_blood_pressur-u-3768",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "discussion",
+      "source_offset": 3768,
+      "sentence": "The longest intervention period in the included studies lasted 12 months, whereas the shortest was 1 month.",
+      "context_window": "included studies lasted 12 months, whereas the shortest was 1 month. These factors may have had different degrees of influence",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

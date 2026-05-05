@@ -1,0 +1,752 @@
+{
+  "paper_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func",
+  "doi": "10.3233/ADR-220113",
+  "extracted_at": "2026-05-05T21:59:18+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 10,
+    "unit_value": 10,
+    "p_value": 12,
+    "percentage": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-911",
+      "claim_type": "sample_size",
+      "raw_text": "N = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 911,
+      "sentence": "Using magnetic resonance imaging data from a 12-month randomized controlled trial, we compared the effects of a twice-weekly 60-minute RT intervention versus active control on T1-weighted over T2-weighted ratio (T1w/T2w; a non-invasive proxy measure of white matter integrity) in a subset of study participants (N = 21 females, mean age = 69.7 years).",
+      "context_window": "white matter integrity) in a subset of study participants (N = 21 females, mean age = 69.7 years). We also examined the assoc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-938",
+      "claim_type": "unit_value",
+      "raw_text": "69.7 years",
+      "numeric_values": [
+        69.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 938,
+      "sentence": "Using magnetic resonance imaging data from a 12-month randomized controlled trial, we compared the effects of a twice-weekly 60-minute RT intervention versus active control on T1-weighted over T2-weighted ratio (T1w/T2w; a non-invasive proxy measure of white matter integrity) in a subset of study participants (N = 21 females, mean age = 69.7 years).",
+      "context_window": "a subset of study participants (N = 21 females, mean age = 69.7 years). We also examined the association between changes in T1w/T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1217",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1217,
+      "sentence": "Compared with an active control group, RT increased T1w/T2w in the external capsule ( p = 0.024) and posterior thalamic radiations ( p = 0.013) to a greater degree.",
+      "context_window": "ntrol group, RT increased T1w/T2w in the external capsule ( p = 0.024) and posterior thalamic radiations ( p = 0.013) to a greate",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1264",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1264,
+      "sentence": "Compared with an active control group, RT increased T1w/T2w in the external capsule ( p = 0.024) and posterior thalamic radiations ( p = 0.013) to a greater degree.",
+      "context_window": "al capsule ( p = 0.024) and posterior thalamic radiations ( p = 0.013) to a greater degree. Increased T1w/T2w in the external cap",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1393",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "Increased T1w/T2w in the external capsule was associated with an increase in peak muscle power ( p = 0.043) in the RT group.",
+      "context_window": "sule was associated with an increase in peak muscle power ( p = 0.043) in the RT group. By maintaining white matter integrity, R",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-144",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 144,
+      "sentence": "White matter hyperintensities (WMHs) are a hallmark of cerebral small vessel disease (CSVD) and are highly prevalent in older adults (exceeding 90% of adults over the age of 60 in some population-based studies) [ 1 ].",
+      "context_window": "(CSVD) and are highly prevalent in older adults (exceeding 90% of adults over the age of 60 in some population-based studi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-2094",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2094,
+      "sentence": "Specifically, we previously demonstrated that older females who underwent 52 weeks of twice-weekly RT exhibited functional plasticity, improved executive functions, and increased peak muscle power compared with an active control group [ 22 ].",
+      "context_window": "we previously demonstrated that older females who underwent 52 weeks of twice-weekly RT exhibited functional plasticity, improve",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-4221",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 4221,
+      "sentence": "We conducted an exploratory analysis of a 52-week randomized controlled trial of RT in community-dwelling females aged 65-75 years old to examine the effect of twice-weekly RT on T1w/T2w ratio.",
+      "context_window": "ontrolled trial of RT in community-dwelling females aged 65-75 years old to examine the effect of twice-weekly RT on T1w/T2w rat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-4314",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 4314,
+      "sentence": "We hypothesized that 12 months of twice-weekly RT would increase or maintain T1w/T2w, suggesting RT benefits white matter integrity.",
+      "context_window": "t of twice-weekly RT on T1w/T2w ratio. We hypothesized that 12 months of twice-weekly RT would increase or maintain T1w/T2w, sugg",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-121",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 121,
+      "sentence": "We conducted a 52-week RCT of RT (clinicaltrials.gov Identifier: NCT00426881 ) with behavioral measurements at baseline, 26 weeks, and trial completion [ 22 ].",
+      "context_window": "er: NCT00426881 ) with behavioral measurements at baseline, 26 weeks, and trial completion [ 22 ]. Assessors were trained by the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-542",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 542,
+      "sentence": "Briefly, we included community-dwelling females who: 1) were aged 65 to 75 years old and living in Metropolitan Vancouver; 2) were living independently in their own home; 3) scored \u226524/30 on the Mini-Mental State Examination (MMSE); and 4) had a visual acuity of \u226520/40, with or without corrective lenses.",
+      "context_window": "included community-dwelling females who: 1) were aged 65 to 75 years old and living in Metropolitan Vancouver; 2) were living in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-925",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 925,
+      "sentence": "Individuals were excluded if they: 1) had a medical condition for which exercise is contraindicated; 2) regularly participated in RT in the previous 6 months; 3) had a neurodegenerative disease and/or stroke; 4) had depression; 5) were not fluent in English, 6) were taking cholinesterase inhibitors; and/or 7) were on estrogen replacement or testosterone therapy.",
+      "context_window": "aindicated; 2) regularly participated in RT in the previous 6 months; 3) had a neurodegenerative disease and/or stroke; 4) had d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4251",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4251,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "y a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4256",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4256,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "0-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4261",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4261,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "est) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4266",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4266,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4271",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4271,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-4280",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4280,
+      "sentence": "This measure served as a basis for measuring peak muscle power as participants then completed 3 repetitions (each separated by a 30-s rest) at 6 different relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "context_window": "relative loads of their 1-RM (40%, 50%, 60%, 70%, 80%, and 90%) on an air-pressured digital resistance leg press machine.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-4979",
+      "claim_type": "unit_value",
+      "raw_text": "1.00 mm",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4979,
+      "sentence": "Scanning parameters for the T1w scans included a repetition time (TR) of 7.7 ms, an echo time (TE) of 3.6 ms, dimensions of 256\u00d7256\u00d7100 voxels, and a voxel size of 1.00\u00d71.00\u00d71.00 mm.",
+      "context_window": "nsions of 256\u00d7256\u00d7100 voxels, and a voxel size of 1.00\u00d71.00\u00d71.00 mm. For the T2 w scans, the TR was 5,431 ms and the TE was 90",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-5136",
+      "claim_type": "unit_value",
+      "raw_text": "3.000 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 5136,
+      "sentence": "T2 w scans had dimensions of 256\u00d7256\u00d760 voxels and a voxel size of 0.937\u00d70.937\u00d73.000 mm.",
+      "context_window": "nsions of 256\u00d7256\u00d760 voxels and a voxel size of 0.937\u00d70.937\u00d73.000 mm. The methods used to compute T1w/T2w ratios in this study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-9229",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9229,
+      "sentence": "The program was high-intensity and progressive with participants starting at 50-60% of their 1-RM before progressing to 2 sets of 6 to 8 repetitions at 75-80% 1-RM by week 4.",
+      "context_window": "-intensity and progressive with participants starting at 50-60% of their 1-RM before progressing to 2 sets of 6 to 8 repeti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-pct-9304",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9304,
+      "sentence": "The program was high-intensity and progressive with participants starting at 50-60% of their 1-RM before progressing to 2 sets of 6 to 8 repetitions at 75-80% 1-RM by week 4.",
+      "context_window": "RM before progressing to 2 sets of 6 to 8 repetitions at 75-80% 1-RM by week 4. The 7-RM method was used to subsequently in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-479",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 479,
+      "sentence": "At trial completion, there was a significant between-group difference in peak muscle power ( p = 0.036), but not in Stroop Color-Word Test ( p = 0.884) ( Table 2 ).",
+      "context_window": "significant between-group difference in peak muscle power ( p = 0.036), but not in Stroop Color-Word Test ( p = 0.884) ( Table 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-527",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.884",
+      "numeric_values": [
+        0.884
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "At trial completion, there was a significant between-group difference in peak muscle power ( p = 0.036), but not in Stroop Color-Word Test ( p = 0.884) ( Table 2 ).",
+      "context_window": "cle power ( p = 0.036), but not in Stroop Color-Word Test ( p = 0.884) ( Table 2 ). Participant characteristics mean (SD) or n (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-600",
+      "claim_type": "sample_size",
+      "raw_text": "N = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 600,
+      "sentence": "Participant characteristics mean (SD) or n (%) (N = 21)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training; MoCA, Montreal Cognitive Assessment; WMH, white matter hyperintensity. a n = 9 due to missing values at trial completion. b n = 18 due to missing values at trial completion. c n = 20 due to missing values at trial completion.",
+      "context_window": "Table 2 ). Participant characteristics mean (SD) or n (%) (N = 21) BAT, balance and tone training; 2x RT, twice-weekly resis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-755",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 755,
+      "sentence": "Participant characteristics mean (SD) or n (%) (N = 21)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training; MoCA, Montreal Cognitive Assessment; WMH, white matter hyperintensity. a n = 9 due to missing values at trial completion. b n = 18 due to missing values at trial completion. c n = 20 due to missing values at trial completion.",
+      "context_window": "l Cognitive Assessment; WMH, white matter hyperintensity. a n = 9 due to missing values at trial completion. b n = 18 due to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-806",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 806,
+      "sentence": "Participant characteristics mean (SD) or n (%) (N = 21)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training; MoCA, Montreal Cognitive Assessment; WMH, white matter hyperintensity. a n = 9 due to missing values at trial completion. b n = 18 due to missing values at trial completion. c n = 20 due to missing values at trial completion.",
+      "context_window": "nsity. a n = 9 due to missing values at trial completion. b n = 18 due to missing values at trial completion. c n = 20 due to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-858",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 858,
+      "sentence": "Participant characteristics mean (SD) or n (%) (N = 21)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training; MoCA, Montreal Cognitive Assessment; WMH, white matter hyperintensity. a n = 9 due to missing values at trial completion. b n = 18 due to missing values at trial completion. c n = 20 due to missing values at trial completion.",
+      "context_window": "tion. b n = 18 due to missing values at trial completion. c n = 20 due to missing values at trial completion. Mean (SD) of be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-1007",
+      "claim_type": "sample_size",
+      "raw_text": "N = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "Mean (SD) of behavioral outcome measures in the analyzed sample at baseline and trial completion (N = 15)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training. * Significantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age and peak muscle power.",
+      "context_window": "es in the analyzed sample at baseline and trial completion (N = 15) BAT, balance and tone training; 2x RT, twice-weekly resis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1156",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1156,
+      "sentence": "Mean (SD) of behavioral outcome measures in the analyzed sample at baseline and trial completion (N = 15)\n\nBAT, balance and tone training; 2x RT, twice-weekly resistance training. * Significantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age and peak muscle power.",
+      "context_window": "ficantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age and peak muscle power. At tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1339",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1339,
+      "sentence": "At trial completion, there were significant between-group differences in the external capsule T1w/T2w ratio (F = 6.173; p = 0.024) and the posterior thalamic radiations T1w/T2w ratio (F = 7.869; p = 0.013) ( Figs.",
+      "context_window": "fferences in the external capsule T1w/T2w ratio (F = 6.173; p = 0.024) and the posterior thalamic radiations T1w/T2w ratio (F = 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-1414",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1414,
+      "sentence": "At trial completion, there were significant between-group differences in the external capsule T1w/T2w ratio (F = 6.173; p = 0.024) and the posterior thalamic radiations T1w/T2w ratio (F = 7.869; p = 0.013) ( Figs.",
+      "context_window": "the posterior thalamic radiations T1w/T2w ratio (F = 7.869; p = 0.013) ( Figs. 2 and 3 ). Specifically, the external capsule T1w/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-2435",
+      "claim_type": "sample_size",
+      "raw_text": "N = 21",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2435,
+      "sentence": "Mean (SD) of regional T1w/T2w (N = 21)\n\nT1w/T2w: T1-weighted over T2-weighted ratio; BAT: balance and tone training; 2x RT: twice-weekly resistance training. * Significantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age, education, WMH volume (log-transformed), and T1w/T2w.",
+      "context_window": "ted over T2-weighted ratio. Mean (SD) of regional T1w/T2w (N = 21) T1w/T2w: T1-weighted over T2-weighted ratio; BAT: balance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-2629",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2629,
+      "sentence": "Mean (SD) of regional T1w/T2w (N = 21)\n\nT1w/T2w: T1-weighted over T2-weighted ratio; BAT: balance and tone training; 2x RT: twice-weekly resistance training. * Significantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age, education, WMH volume (log-transformed), and T1w/T2w.",
+      "context_window": "ficantly different from the BAT group at trial completion ( p < 0.05); controlled for baseline age, education, WMH volume (log-t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-2920",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2920,
+      "sentence": "Thus, there was an analyzed sample of 15 participants (BAT: n = 6; 2x RT: n = 9) for the partial correlation analyses.",
+      "context_window": "Thus, there was an analyzed sample of 15 participants (BAT: n = 6; 2x RT: n = 9) for the partial correlation analyses. In the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-2934",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2934,
+      "sentence": "Thus, there was an analyzed sample of 15 participants (BAT: n = 6; 2x RT: n = 9) for the partial correlation analyses.",
+      "context_window": "s an analyzed sample of 15 participants (BAT: n = 6; 2x RT: n = 9) for the partial correlation analyses. In the 2x RT group,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-3129",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3129,
+      "sentence": "In the 2x RT group, change in external capsule T1w/T2w was positively and significantly associated with an increase in peak muscle power ( r = 0.771; p = 0.042).",
+      "context_window": "sociated with an increase in peak muscle power ( r = 0.771; p = 0.042). This association was not present for the BAT group ( r =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-3206",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.986",
+      "numeric_values": [
+        0.986
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3206,
+      "sentence": "This association was not present for the BAT group ( r = -0.014; p = 0.986) ( Fig.",
+      "context_window": "association was not present for the BAT group ( r = -0.014; p = 0.986) ( Fig. 4 ). No other significant associations were found (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-n-3625",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3625,
+      "sentence": "Partial correlations between change in regional T1w/T2w and change in cognition and muscle strength in the 2x RT group ( n = 9)\n\nT1w/T2w: T1-weighted over T2-weighted ratio; 2x RT: twice-weekly resistance training.",
+      "context_window": "hange in cognition and muscle strength in the 2x RT group ( n = 9) T1w/T2w: T1-weighted over T2-weighted ratio; 2x RT: twice",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-p-3783",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3783,
+      "sentence": "Controlled for baseline age and WMH volume (log-transformed). * p < 0.05.",
+      "context_window": "rolled for baseline age and WMH volume (log-transformed). * p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10357123_resistance_training_maintains_white_matter_and_physical_func-u-49",
+      "claim_type": "unit_value",
+      "raw_text": "52 weeks",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 49,
+      "sentence": "This study is the first to explore the effect of 52 weeks of twice-weekly RT on T1w/T2w ratios in older females.",
+      "context_window": "This study is the first to explore the effect of 52 weeks of twice-weekly RT on T1w/T2w ratios in older females. Comp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,3009 @@
+{
+  "paper_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome",
+  "doi": "10.1016/j.eclinm.2021.101261",
+  "extracted_at": "2026-05-05T22:17:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 80,
+    "mean_sd": 4,
+    "percentage": 38,
+    "sample_size": 9,
+    "p_value": 32,
+    "hazard_ratio": 2,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-621",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 621,
+      "sentence": "In this secondary analysis, we had the opportunity to test these principles for newly identified molecular biomarkers of cardiometabolic risk in a young (21-50 years), normal weight healthy population undergoing calorie restriction for two years.",
+      "context_window": "molecular biomarkers of cardiometabolic risk in a young (21-50 years), normal weight healthy population undergoing calorie restr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-msd-1077",
+      "claim_type": "mean_sd",
+      "raw_text": "37.9 \u00b1 7.2",
+      "numeric_values": [
+        37.9,
+        7.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1077,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "g those associated with disease risk. 218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1084",
+      "claim_type": "unit_value",
+      "raw_text": "7.2 years",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1084,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "associated with disease risk. 218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-msd-1120",
+      "claim_type": "mean_sd",
+      "raw_text": "25.1 \u00b1 1.7",
+      "numeric_values": [
+        25.1,
+        1.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1120,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "articipants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (p",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1127",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 kg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1127,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "ants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (pres",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1172",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1172,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "x (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie in",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1203",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1203,
+      "sentence": "218 participants (age 37.9 \u00b1 7.2 years and body mass index (BMI) 25.1 \u00b1 1.7 kg/m 2 , mean\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (AL).",
+      "context_window": "n\u00b1SD) were randomized 2:1 to 24 months of CR (prescribed as 25% reduction from baseline calorie intake) versus ad libitum (",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1309",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1309,
+      "sentence": "Fasting plasma from baseline, 12, and 24 months was used for assessments of lipoproteins, metabolites, and inflammatory markers using nuclear magnetic resonance spectroscopy.",
+      "context_window": "rsus ad libitum (AL). Fasting plasma from baseline, 12, and 24 months was used for assessments of lipoproteins, metabolites, and",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "Averaging 11.9% CR, the CR group had reductions at 12 and 24 months in the cardiovascular disease risk markers, apolipoprotein B and GlycA, and risks for insulin resistance and type 2 diabetes-Lipoprotein Insulin Resistance Index and Diabetes Risk Index (all P CRvsAL \u22640.0009).",
+      "context_window": "s using nuclear magnetic resonance spectroscopy. Averaging 11.9% CR, the CR group had reductions at 12 and 24 months in the",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1505",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1505,
+      "sentence": "Averaging 11.9% CR, the CR group had reductions at 12 and 24 months in the cardiovascular disease risk markers, apolipoprotein B and GlycA, and risks for insulin resistance and type 2 diabetes-Lipoprotein Insulin Resistance Index and Diabetes Risk Index (all P CRvsAL \u22640.0009).",
+      "context_window": "Averaging 11.9% CR, the CR group had reductions at 12 and 24 months in the cardiovascular disease risk markers, apolipoprotein",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-2304",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 2304,
+      "sentence": "In normal to slightly overweight adults without overt risk factors or disease, 12 months of \u223c12% CR improved newly identified risk markers for atherosclerotic cardiovascular disease, insulin resistance and type 2 diabetes.",
+      "context_window": "ly overweight adults without overt risk factors or disease, 12 months of \u223c12% CR improved newly identified risk markers for ather",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-2318",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2318,
+      "sentence": "In normal to slightly overweight adults without overt risk factors or disease, 12 months of \u223c12% CR improved newly identified risk markers for atherosclerotic cardiovascular disease, insulin resistance and type 2 diabetes.",
+      "context_window": "adults without overt risk factors or disease, 12 months of \u223c12% CR improved newly identified risk markers for atherosclerot",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-3004",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 3004,
+      "sentence": "23 , 24 In healthy individuals without obesity, CR of \u223c300 kcal/day reduced resting metabolic rate adjusted for weight change at 12 months, but exerted little influence on core body temperature.",
+      "context_window": "educed resting metabolic rate adjusted for weight change at 12 months, but exerted little influence on core body temperature. 24",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-135",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 135,
+      "sentence": "CALERIE\u2122 Phase 2 was a multicenter, randomized controlled trial (May 2007-November 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2).",
+      "context_window": "ovember 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-145",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 145,
+      "sentence": "CALERIE\u2122 Phase 2 was a multicenter, randomized controlled trial (May 2007-November 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2).",
+      "context_window": "12) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-240",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 240,
+      "sentence": "CALERIE\u2122 Phase 2 was a multicenter, randomized controlled trial (May 2007-November 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2).",
+      "context_window": "m baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), witho",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-292",
+      "claim_type": "unit_value",
+      "raw_text": "47 years",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 292,
+      "sentence": "CALERIE\u2122 Phase 2 was a multicenter, randomized controlled trial (May 2007-November 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2).",
+      "context_window": "aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2). 23 The study prot",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-329",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 329,
+      "sentence": "CALERIE\u2122 Phase 2 was a multicenter, randomized controlled trial (May 2007-November 2012) aimed at evaluating the time-course effect of 25% CR (a 25% reduction in calorie intake from baseline) over a two-year period in healthy, men (aged 21-50 years) and women who were premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2).",
+      "context_window": "premenopausal (aged 21-47 years), without obesity (BMI 22.0-27.9 kg/m\u00b2). 23 The study protocol ( NCT00427193 ) was approved by",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-859",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 859,
+      "sentence": "Participants were assigned randomly at a ratio of 2:1 to a 25% CR behavioral intervention or to an AL control group.",
+      "context_window": "Participants were assigned randomly at a ratio of 2:1 to a 25% CR behavioral intervention or to an AL control group. 24 Ra",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1192",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1192,
+      "sentence": "Of the 218 participants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assigned to the AL diet group.",
+      "context_window": "ed the assigned intervention. Of the 218 participants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1218",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1218,
+      "sentence": "Of the 218 participants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assigned to the AL diet group.",
+      "context_window": "on. Of the 218 participants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assigned to the AL diet group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1241",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1241,
+      "sentence": "Of the 218 participants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assigned to the AL diet group.",
+      "context_window": "ants, 143 (66%) were assigned to the 25% CR diet group; 75 (34%) were assigned to the AL diet group. In the two study arms,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1310",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1310,
+      "sentence": "In the two study arms, 117 (82%) of the participants in the CR group and 71 (95%) of the participants in the AL group completed the study.",
+      "context_window": "assigned to the AL diet group. In the two study arms, 117 (82%) of the participants in the CR group and 71 (95%) of the pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1359",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1359,
+      "sentence": "In the two study arms, 117 (82%) of the participants in the CR group and 71 (95%) of the participants in the AL group completed the study.",
+      "context_window": "arms, 117 (82%) of the participants in the CR group and 71 (95%) of the participants in the AL group completed the study. S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1504",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1504,
+      "sentence": "Sample size calculations were based on a 2:1 (CR:AL) allocation and expectation of 10% attrition.",
+      "context_window": "s were based on a 2:1 (CR:AL) allocation and expectation of 10% attrition. 23 For 225 persons enrolled and 180 persons comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1595",
+      "claim_type": "percentage",
+      "raw_text": "93%",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1595,
+      "sentence": "23 For 225 persons enrolled and 180 persons completing the study, there was 93% and 94% power (alpha=0.05) to detect expected group differences for primary outcomes of resting metabolic rate and core temperature, respectively.",
+      "context_window": "ns enrolled and 180 persons completing the study, there was 93% and 94% power (alpha=0.05) to detect expected group differe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1603",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1603,
+      "sentence": "23 For 225 persons enrolled and 180 persons completing the study, there was 93% and 94% power (alpha=0.05) to detect expected group differences for primary outcomes of resting metabolic rate and core temperature, respectively.",
+      "context_window": "led and 180 persons completing the study, there was 93% and 94% power (alpha=0.05) to detect expected group differences for",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-msd-1853",
+      "claim_type": "mean_sd",
+      "raw_text": "60 \u00b1 1107",
+      "numeric_values": [
+        60.0,
+        1107.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1853,
+      "sentence": "23 Resting metabolic rate and core temperature expected group differences were (mean \u00b1 standard deviation) 60 \u00b1 1107 kCal/d and 0.20 \u00b1 0.36 \u00b0C, respectively, derived from CALERIE Phase 1 data, literature, and expert opinion.",
+      "context_window": "expected group differences were (mean \u00b1 standard deviation) 60 \u00b1 1107 kCal/d and 0.20 \u00b1 0.36 \u00b0C, respectively, derived from CALER",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-msd-1874",
+      "claim_type": "mean_sd",
+      "raw_text": "0.20 \u00b1 0.36",
+      "numeric_values": [
+        0.2,
+        0.36
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1874,
+      "sentence": "23 Resting metabolic rate and core temperature expected group differences were (mean \u00b1 standard deviation) 60 \u00b1 1107 kCal/d and 0.20 \u00b1 0.36 \u00b0C, respectively, derived from CALERIE Phase 1 data, literature, and expert opinion.",
+      "context_window": "ences were (mean \u00b1 standard deviation) 60 \u00b1 1107 kCal/d and 0.20 \u00b1 0.36 \u00b0C, respectively, derived from CALERIE Phase 1 data, litera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-2309",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2309,
+      "sentence": "23 , 24 , 25 At baseline, participants in the CR group were prescribed a 25% restriction in calorie intake based on energy requirements from two consecutive doubly labeled water measurements over a 4-week period.",
+      "context_window": "At baseline, participants in the CR group were prescribed a 25% restriction in calorie intake based on energy requirements",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-3568",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3568,
+      "sentence": "Retrospective analyses indicated these calculated weight loss trajectories permitted less weight loss than was needed to achieve 25% CR as determined by doubly labeled water and DEXAs performed during the intervention; thus, these differences contributed to the CR group attaining an average of \u223c12% CR.",
+      "context_window": "ories permitted less weight loss than was needed to achieve 25% CR as determined by doubly labeled water and DEXAs performe",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-3735",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3735,
+      "sentence": "Retrospective analyses indicated these calculated weight loss trajectories permitted less weight loss than was needed to achieve 25% CR as determined by doubly labeled water and DEXAs performed during the intervention; thus, these differences contributed to the CR group attaining an average of \u223c12% CR.",
+      "context_window": "rences contributed to the CR group attaining an average of \u223c12% CR. For the first 27 days of the intervention, all particip",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-3757",
+      "claim_type": "unit_value",
+      "raw_text": "27 days",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3757,
+      "sentence": "For the first 27 days of the intervention, all participant meals and snacks were prepared in a metabolic kitchen at each clinical center to facilitate adoption of the CR diet; subsequently, meal provision was offered periodically to enhance adherence.",
+      "context_window": "the CR group attaining an average of \u223c12% CR. For the first 27 days of the intervention, all participant meals and snacks were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-4847",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4847,
+      "sentence": "This secondary analysis addressed NMR-determined cardiovascular risk measures that were assessed in all participants (CR and AL) at baseline, 12 months, and 24 months, Details on the primary outcome measures have been reported previously.",
+      "context_window": "were assessed in all participants (CR and AL) at baseline, 12 months, and 24 months, Details on the primary outcome measures hav",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-4862",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4862,
+      "sentence": "This secondary analysis addressed NMR-determined cardiovascular risk measures that were assessed in all participants (CR and AL) at baseline, 12 months, and 24 months, Details on the primary outcome measures have been reported previously.",
+      "context_window": "in all participants (CR and AL) at baseline, 12 months, and 24 months, Details on the primary outcome measures have been reported",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-6457",
+      "claim_type": "sample_size",
+      "raw_text": "n = 698",
+      "numeric_values": [
+        698.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6457,
+      "sentence": "For the LP4 algorithm, linear regression of the lipoprotein subclass signal areas against serum lipid and apolipoprotein levels measured by chemical assays in a large reference range study population ( n = 698) provided the conversion factors to generate NMR-derived concentrations of total cholesterol, triglycerides, the cholesterol in TRL, LDL and HDL fractions, apolipoprotein B (ApoB) and apolipoprotein A-I (ApoA-I).",
+      "context_window": "emical assays in a large reference range study population ( n = 698) provided the conversion factors to generate NMR-derived co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8870",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 kg",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8870,
+      "sentence": "Site, sex, BMI stratum (normal weight [22.0-24.9 kg/m\u00b2] and overweight [25.0-27.9 kg/m\u00b2]), and the baseline value were included as covariates to ensure statistical balance not captured by randomization, and to reduce error variance.",
+      "context_window": "by examination. Site, sex, BMI stratum (normal weight [22.0-24.9 kg/m\u00b2] and overweight [25.0-27.9 kg/m\u00b2]), and the baseline val",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8903",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8903,
+      "sentence": "Site, sex, BMI stratum (normal weight [22.0-24.9 kg/m\u00b2] and overweight [25.0-27.9 kg/m\u00b2]), and the baseline value were included as covariates to ensure statistical balance not captured by randomization, and to reduce error variance.",
+      "context_window": "ratum (normal weight [22.0-24.9 kg/m\u00b2] and overweight [25.0-27.9 kg/m\u00b2]), and the baseline value were included as covariates to",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-519",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "year two. 24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-570",
+      "claim_type": "unit_value",
+      "raw_text": "8.4 kg",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 570,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-580",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 580,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "1.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-594",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 kg",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 594,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "monstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-604",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 604,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) an",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-626",
+      "claim_type": "unit_value",
+      "raw_text": "6.1 kg",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 626,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "ss (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-636",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 636,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 m",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-650",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 kg",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 650,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-660",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 660,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-690",
+      "claim_type": "unit_value",
+      "raw_text": "2.20 kg",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 690,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months). 5 , 24 Table 2 Base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-701",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 701,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "nths and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months). 5 , 24 Table 2 Baseline characte",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-715",
+      "claim_type": "unit_value",
+      "raw_text": "2.17 kg",
+      "numeric_values": [
+        2.17
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 715,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "g at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months). 5 , 24 Table 2 Baseline characteristics of C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-726",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 726,
+      "sentence": "24 Specifically, the CR group achieved an average 11.9% CR and demonstrated reductions in body mass (8.4 kg at 12 months and 7.5 kg at 24 months), fat mass (6.1 kg at 12 months and 5.3 kg at 24 months) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months).",
+      "context_window": "ths) and fat free mass (2.20 kg at 12 months and 2.17 kg at 24 months). 5 , 24 Table 2 Baseline characteristics of CALERIE\u2122 study",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-837",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 837,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "of CALERIE\u2122 study participants. Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9)",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-873",
+      "claim_type": "sample_size",
+      "raw_text": "n = 143",
+      "numeric_values": [
+        143.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 873,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "le 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-929",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 929,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "p ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White Africa",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-938",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 938,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "43) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African America",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 951,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "s 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-960",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 960,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": ".9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1014",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1014,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": ") 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1023",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1023,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": ") Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 1",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1031",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1031,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "thnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1040,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1049,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "ican American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-1058",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1058,
+      "sentence": "Table 2 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Age, years 37.9 (6.9) 38.0 (7.3) Sex Women 53 (71%) 99 (69%) Men 22 (29%) 44 (31%) Race/Ethnicity White African American Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72.0 (9.5) BMI, kg/m 2 25.1 (1.6) 25.2 (1.8) Fat mass,% 33.6 (6.6) 32.9 (6.1) Fat free mass, kg 47.6 (8.6) 48.5 (9.2) Energy intake, kcal/d 2390 (384.8) 2467 (405.6) Data are n (%) or mean (SD).",
+      "context_window": "ican Other* 57 (76%) 11 (15%) 7 (9%) 111 (78%) 15 (11%) 17 (12%) Height, m 168.4 (8.3) 168.9 (8.6) Weight, kg 71.5 (8.7) 72",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1850",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1850,
+      "sentence": "At both 12 and 24 months, as compared to AL, the CR group had reductions in emerging molecular biomarkers for T2D and cardiovascular disease; these included reductions in ApoB, a pro-atherosclerotic apolipoprotein, GlycA ( Figure 3 A), a composite inflammatory marker, and LP-IR and DRI ( Figure 3 B,C), indices reflecting insulin resistance and T2D risk, (scored 0-100 and 1-100, respectively). ( Table 3 ; all P < 0.001 for CR versus AL ( P CRvsAL )).",
+      "context_window": "summarized in Table 3 , Table 4 , Table 5 . At both 12 and 24 months, as compared to AL, the CR group had reductions in emerging",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-2247",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2247,
+      "sentence": "At both 12 and 24 months, as compared to AL, the CR group had reductions in emerging molecular biomarkers for T2D and cardiovascular disease; these included reductions in ApoB, a pro-atherosclerotic apolipoprotein, GlycA ( Figure 3 A), a composite inflammatory marker, and LP-IR and DRI ( Figure 3 B,C), indices reflecting insulin resistance and T2D risk, (scored 0-100 and 1-100, respectively). ( Table 3 ; all P < 0.001 for CR versus AL ( P CRvsAL )).",
+      "context_window": "sk, (scored 0-100 and 1-100, respectively). ( Table 3 ; all P < 0.001 for CR versus AL ( P CRvsAL )). Table 3 NMR-measured marker",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-2411",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2411,
+      "sentence": "Table 3 NMR-measured markers of cardiovascular and type 2 diabetes risk at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "etes risk at baseline, and changes from baseline at 12, and 24 months a . Table 3 Ad libitum group ( n = 75) Calorie restriction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-2452",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2452,
+      "sentence": "Table 3 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Apolipoprotein B (mg/dL) Baseline 73.9 (2.4) 70.5 (1.6) 0.21 Change at month 12 -3.76 (1.39)* -10.56 (1.05)*** <0.0001 Change at month 24 -1.92 (1.46) -9.83 (1.11)*** <0.0001 Apolipoprotein A-I (mg/dL) Baseline 134.7 (2.5) 137.6 (2.2) 0.68 Change at month 12 -1.41 (1.86) -3.29 (1.39)* 0.40 Change at month 24 -1.81 (2.12) 1.30 (1.61) 0.23 GlycA (\u00b5mol/L) Baseline 334.1 (5.6) 326.7 (4.8) 0.12 Change at month 12 0.06(4.66) -31.79 (3.52)*** <0.0001 Change at month 24 -2.07 (4.80) -32.58 (3.70)*** <0.0001 LP-IR score (0-100) Baseline 30.8 (2.6) 33.7 (1.9) 0.42 Change at month 12 -2.59 (1.68) -12.03 (1.29)*** <0.0001 Change at month 24 -5.83 (1.70)** -12.75 (1.32)*** 0.0009 DRI score (1-100) Baseline 22.1 (2.0) 23.9 (1.4) 0.33 Change at month 12 -0.72 (1.15) -7.94 (0.89)*** <0.0001 Change at month 24 -0.90 (1.23) -7.81 (0.97)*** <0.0001 Abbreviations: LP-IR, Lipoprotein Insulin Resistance Index; DRI, Diabetes Risk Index. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "aseline at 12, and 24 months a . Table 3 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-2488",
+      "claim_type": "sample_size",
+      "raw_text": "n = 143",
+      "numeric_values": [
+        143.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2488,
+      "sentence": "Table 3 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Apolipoprotein B (mg/dL) Baseline 73.9 (2.4) 70.5 (1.6) 0.21 Change at month 12 -3.76 (1.39)* -10.56 (1.05)*** <0.0001 Change at month 24 -1.92 (1.46) -9.83 (1.11)*** <0.0001 Apolipoprotein A-I (mg/dL) Baseline 134.7 (2.5) 137.6 (2.2) 0.68 Change at month 12 -1.41 (1.86) -3.29 (1.39)* 0.40 Change at month 24 -1.81 (2.12) 1.30 (1.61) 0.23 GlycA (\u00b5mol/L) Baseline 334.1 (5.6) 326.7 (4.8) 0.12 Change at month 12 0.06(4.66) -31.79 (3.52)*** <0.0001 Change at month 24 -2.07 (4.80) -32.58 (3.70)*** <0.0001 LP-IR score (0-100) Baseline 30.8 (2.6) 33.7 (1.9) 0.42 Change at month 12 -2.59 (1.68) -12.03 (1.29)*** <0.0001 Change at month 24 -5.83 (1.70)** -12.75 (1.32)*** 0.0009 DRI score (1-100) Baseline 22.1 (2.0) 23.9 (1.4) 0.33 Change at month 12 -0.72 (1.15) -7.94 (0.89)*** <0.0001 Change at month 24 -0.90 (1.23) -7.81 (0.97)*** <0.0001 Abbreviations: LP-IR, Lipoprotein Insulin Resistance Index; DRI, Diabetes Risk Index. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "le 3 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Apolipoprotein B (mg/dL) Baseline",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-3905",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3905,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text). *, **, and *** indicated within group differences at the P <0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": "). *, **, and *** indicated within group differences at the P <0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-3987",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3987,
+      "sentence": "Between group significant findings p <0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p <0.0017 are bolded and italicized for emphasis. Table 4 NMR-measure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-4138",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4138,
+      "sentence": "Table 4 NMR-measured lipid and lipoproteins levels at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "ns levels at baseline, and changes from baseline at 12, and 24 months a . Table 4 Ad libitum group ( n = 75) Calorie restriction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-4179",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4179,
+      "sentence": "Table 4 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Total cholesterol (mg/dL) Baseline 156.5 (3.4) 153.5 (2.4) 0.29 Change at month 12 -4.98 (2.09)* -14.66 (1.58)*** 0.0002 Change at month 24 -3.03 (2.36) -11.34 (1.81)*** 0.004 TRL cholesterol (mg/dL) Baseline 24.8 (1.3) 23.7 (0.9) 0.70 Change at month 12 -1.22 (0.79) -5.16 (0.59)*** <0.0001 Change at month 24 -0.72 (0.87) -4.69 (0.66)*** 0.0002 LDL cholesterol (mg/dL) Baseline 78.6 (2.5) 75.6 (1.8) 0.30 Change at month 12 -4.20 (1.58)* -10.80 (1.19)*** 0.0006 Change at month 24 -2.74 (1.62) -10.14 (1.25)*** 0.0002 HDL cholesterol (mg/dL) Baseline 53.1 (1.4) 54.2 (1.2) 0.64 Change at month 12 0.72 (0.91) 1.49 (0.68) 0.47 Change at month 24 0.47 (1.05) 3.75 (0.80)*** 0.010 Triglycerides (mg/dL) Baseline 119.5 (6.6) 118.2 (4.4) 0.94 Change at month 12 -6.33 (3.87) -29.42 (2.92)*** <0.0001 Change at month 24 -5.86 (4.03) -26.53 (3.10)*** <0.0001 TRL triglycerides (mg/dL) Baseline 81.7 (6.3) 79.8 (4.2) 0.90 Change at month 12 -5.62 (3.68) -25.62 (2.79)*** <0.0001 Change at month 24 -5.40 (3.80) -24.00 (2.92)*** <0.0001 Total TRL particles (nmol/L) Baseline 139.2 (6.9) 129.5 (4.2) 0.41 Change at month 12 -4.21 (3.98) -19.17 (2.98)*** 0.002 Change at month 24 0.20 (4.78) -17.33 (3.64)*** 0.003 Large TRL particles (nmol/L) Baseline 2.3 (0.5) 2.5 (0.3) 0.42 Change at month 12 -0.51 (0.29) -1.76 (0.22)*** 0.0005 Change at month 24 -0.43 (0.32) -1.69 (0.25)*** 0.0013 Medium TRL particles (nmol/L) Baseline 17.6 (1.4) 17.7 (1.1) 0.90 Change at month 12 -1.59 (1.10) -4.54 (0.83)*** 0.026 Change at month 24 -1.34 (1.07) -4.53 (0.83)*** 0.015 Small TRL particles (nmol/L) Baseline 62.3 (4.8) 48.6 (2.8) 0.014 Change at month 12 -2.26 (3.42) -7.40 (2.56)** 0.43 Change at month 24 4.39 (3.55) -5.27 (2.71) 0.053 Very small TRL particles (nmol/L) Baseline 56.8 (6.1) 60.6 (3.6) 0.014 Change at month 12 3.01 (4.11) -5.71 (3.08) 0.16 Change at month 24 0.29 (4.13) -6.71 (3.18) 0.33 TRL size (nm) Baseline 42.4 (0.8) 43.5 (0.60) 0.18 Change at month 12 -0.41 (0.59) -2.87 (0.44)*** 0.0007 Change at month 24 -1.97 (0.52)*** -3.01 (0.41)*** 0.10 Total LDL particles (nmol/L) Baseline 1187.7 (36.2) 1162.1 (27.6) 0.51 Change at month 12 -58.64 (23.25)* -170.11 (17.48)*** <0.0001 Change at month 24 -39.89 (22.77) -163.83 (17.47)*** <0.0001 Large LDL particles (nmol/L) Baseline 337.4 (22.7) 302.5 (15.6) 0.17 Change at month 12 -4.54 (16.81) -22.10 (12.72) 0.78 Change at month 24 -15.02 (15.46) -27.34 (12.06) 1.00 Medium LDL particles (nmol/L) Baseline 293.0 (35.4) 243.4 (20.9) 0.41 Change at month 12 -20.30 (23.69) -54.03 (17.66)** 0.48 Change at month 24 12.89 (24.16) -28.84 (18.54) 0.32 Small LDL particles (nmol/L) Baseline 557.4 (42.1) 616.3 (29.0) 0.11 Change at month 12 -30.54 (26.92) -92.79 (20.27)*** 0.06 Change at month 24 -34.13 (26.66) -106.53 (20.62)*** 0.027 LDL size (nm) Baseline 21.1 (0.06) 21.0 (0.04) 0.12 Change at month 12 -0.000 (0.04) -0.002 (0.03) 1.00 Change at month 24 -0.01 (0.04) -0.009 (0.03) 1.00 Total HDL particles (\u00b5mol/L) Baseline 20.3 (0.3) 20.7 (0.3) 0.36 Change at month 12 -0.28 (0.26) -1.27 (0.19)*** 0.002 Change at month 24 -0.47 (0.28) -0.73 (0.22)** 0.46 Large HDL particles (\u00b5mol/L) Baseline 2.4 (0.1) 2.4 (0.1) 0.73 Change at month 12 0.10 (0.10) 0.63 (0.08)*** <0.0001 Change at month 24 0.13 (0.12) 0.69 (0.09)*** 0.0001 Medium HDL particles (\u00b5mol/L) Baseline 6.2 (0.3) 6.3 (0.2) 0.97 Change at month 12 0.05 (0.19) -0.53 (0.14)*** 0.013 Change at month 24 0.23 (0.19) -0.08 (0.15) 0.19 Small HDL particles (\u00b5mol/L) Baseline 11.7 (0.3) 12.0 (0.3) 0.38 Change at month 12 -0.26 (0.29) -1.25 (0.22)*** 0.006 Change at month 24 -0.67 (0.27)* -1.22 (0.21)*** 0.10 H7 particles (\u00b5mol/L) Baseline 0.46 (0.04) 0.49 (0.03) 0.74 Change at month 12 0.02 (0.04) 0.09 (0.03)** 0.12 Change at month 24 -0.01 (0.04) 0.10 (0.03)*** 0.009 H6 particles (\u00b5mol/L) Baseline 1.06 (0.11) 1.09 (0.09) 0.73 Change at month 12 -0.05 (0.10) 0.30 (0.07)*** 0.003 Change at month 24 0.02 (0.12) 0.44 (0.09)*** 0.006 H5 particles (\u00b5mol/L) Baseline 0.88 (0.07) 0.84 (0.05) 0.68 Change at month 12 0.08 (0.08) 0.17 (0.06)* 0.65 Change at month 24 0.07 (0.08) 0.12 (0.06) 1.00 H4 particles (\u00b5mol/L) Baseline 1.52 (0.13) 1.60 (0.07) 0.07 Change at month 12 0.13 (0.10) -0.23 (0.08)** 0.004 Change at month 24 0.01 (0.12) 0.05 (0.09) 0.79 H3 particles (\u00b5mol/L) Baseline 4.71 (0.23) 4.66 (0.17) 0.51 Change at month 12 -0.12 (0.18) -0.33 (0.14)* 0.66 Change at month 24 0.18 (0.18) -0.18 (0.14) 0.19 H2 particles (\u00b5mol/L) Baseline 9.85 (0.26) 10.25 (0.21) 0.34 Change at month 12 -0.28 (0.25) -1.04 (0.19)*** 0.012 Change at month 24 -0.58 (0.24)* -1.06 (0.19)*** 0.11 H1 particles (\u00b5mol/L) Baseline 1.81 (0.18) 1.79 (0.14) 0.85 Change at month 12 0.04 (0.15) -0.19 (0.11) .37 Change at month 24 -0.08 (0.14) -0.13 (0.11) 1.00 HDL size (nm) Baseline 9.2(0.04) 9.1 (0.04) 0.55 Change at month 12 0.05 (0.03) 0.22 (0.02)*** <0.0001 Change at month 24 0.06 (0.03) 0.23 (0.02)*** <0.0001 Abbreviations: HDL, high density lipoprotein; LDL, low density lipoprotein; TRL, triglyceride-rich lipoprotein. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "aseline at 12, and 24 months a . Table 4 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-4215",
+      "claim_type": "sample_size",
+      "raw_text": "n = 143",
+      "numeric_values": [
+        143.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4215,
+      "sentence": "Table 4 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Total cholesterol (mg/dL) Baseline 156.5 (3.4) 153.5 (2.4) 0.29 Change at month 12 -4.98 (2.09)* -14.66 (1.58)*** 0.0002 Change at month 24 -3.03 (2.36) -11.34 (1.81)*** 0.004 TRL cholesterol (mg/dL) Baseline 24.8 (1.3) 23.7 (0.9) 0.70 Change at month 12 -1.22 (0.79) -5.16 (0.59)*** <0.0001 Change at month 24 -0.72 (0.87) -4.69 (0.66)*** 0.0002 LDL cholesterol (mg/dL) Baseline 78.6 (2.5) 75.6 (1.8) 0.30 Change at month 12 -4.20 (1.58)* -10.80 (1.19)*** 0.0006 Change at month 24 -2.74 (1.62) -10.14 (1.25)*** 0.0002 HDL cholesterol (mg/dL) Baseline 53.1 (1.4) 54.2 (1.2) 0.64 Change at month 12 0.72 (0.91) 1.49 (0.68) 0.47 Change at month 24 0.47 (1.05) 3.75 (0.80)*** 0.010 Triglycerides (mg/dL) Baseline 119.5 (6.6) 118.2 (4.4) 0.94 Change at month 12 -6.33 (3.87) -29.42 (2.92)*** <0.0001 Change at month 24 -5.86 (4.03) -26.53 (3.10)*** <0.0001 TRL triglycerides (mg/dL) Baseline 81.7 (6.3) 79.8 (4.2) 0.90 Change at month 12 -5.62 (3.68) -25.62 (2.79)*** <0.0001 Change at month 24 -5.40 (3.80) -24.00 (2.92)*** <0.0001 Total TRL particles (nmol/L) Baseline 139.2 (6.9) 129.5 (4.2) 0.41 Change at month 12 -4.21 (3.98) -19.17 (2.98)*** 0.002 Change at month 24 0.20 (4.78) -17.33 (3.64)*** 0.003 Large TRL particles (nmol/L) Baseline 2.3 (0.5) 2.5 (0.3) 0.42 Change at month 12 -0.51 (0.29) -1.76 (0.22)*** 0.0005 Change at month 24 -0.43 (0.32) -1.69 (0.25)*** 0.0013 Medium TRL particles (nmol/L) Baseline 17.6 (1.4) 17.7 (1.1) 0.90 Change at month 12 -1.59 (1.10) -4.54 (0.83)*** 0.026 Change at month 24 -1.34 (1.07) -4.53 (0.83)*** 0.015 Small TRL particles (nmol/L) Baseline 62.3 (4.8) 48.6 (2.8) 0.014 Change at month 12 -2.26 (3.42) -7.40 (2.56)** 0.43 Change at month 24 4.39 (3.55) -5.27 (2.71) 0.053 Very small TRL particles (nmol/L) Baseline 56.8 (6.1) 60.6 (3.6) 0.014 Change at month 12 3.01 (4.11) -5.71 (3.08) 0.16 Change at month 24 0.29 (4.13) -6.71 (3.18) 0.33 TRL size (nm) Baseline 42.4 (0.8) 43.5 (0.60) 0.18 Change at month 12 -0.41 (0.59) -2.87 (0.44)*** 0.0007 Change at month 24 -1.97 (0.52)*** -3.01 (0.41)*** 0.10 Total LDL particles (nmol/L) Baseline 1187.7 (36.2) 1162.1 (27.6) 0.51 Change at month 12 -58.64 (23.25)* -170.11 (17.48)*** <0.0001 Change at month 24 -39.89 (22.77) -163.83 (17.47)*** <0.0001 Large LDL particles (nmol/L) Baseline 337.4 (22.7) 302.5 (15.6) 0.17 Change at month 12 -4.54 (16.81) -22.10 (12.72) 0.78 Change at month 24 -15.02 (15.46) -27.34 (12.06) 1.00 Medium LDL particles (nmol/L) Baseline 293.0 (35.4) 243.4 (20.9) 0.41 Change at month 12 -20.30 (23.69) -54.03 (17.66)** 0.48 Change at month 24 12.89 (24.16) -28.84 (18.54) 0.32 Small LDL particles (nmol/L) Baseline 557.4 (42.1) 616.3 (29.0) 0.11 Change at month 12 -30.54 (26.92) -92.79 (20.27)*** 0.06 Change at month 24 -34.13 (26.66) -106.53 (20.62)*** 0.027 LDL size (nm) Baseline 21.1 (0.06) 21.0 (0.04) 0.12 Change at month 12 -0.000 (0.04) -0.002 (0.03) 1.00 Change at month 24 -0.01 (0.04) -0.009 (0.03) 1.00 Total HDL particles (\u00b5mol/L) Baseline 20.3 (0.3) 20.7 (0.3) 0.36 Change at month 12 -0.28 (0.26) -1.27 (0.19)*** 0.002 Change at month 24 -0.47 (0.28) -0.73 (0.22)** 0.46 Large HDL particles (\u00b5mol/L) Baseline 2.4 (0.1) 2.4 (0.1) 0.73 Change at month 12 0.10 (0.10) 0.63 (0.08)*** <0.0001 Change at month 24 0.13 (0.12) 0.69 (0.09)*** 0.0001 Medium HDL particles (\u00b5mol/L) Baseline 6.2 (0.3) 6.3 (0.2) 0.97 Change at month 12 0.05 (0.19) -0.53 (0.14)*** 0.013 Change at month 24 0.23 (0.19) -0.08 (0.15) 0.19 Small HDL particles (\u00b5mol/L) Baseline 11.7 (0.3) 12.0 (0.3) 0.38 Change at month 12 -0.26 (0.29) -1.25 (0.22)*** 0.006 Change at month 24 -0.67 (0.27)* -1.22 (0.21)*** 0.10 H7 particles (\u00b5mol/L) Baseline 0.46 (0.04) 0.49 (0.03) 0.74 Change at month 12 0.02 (0.04) 0.09 (0.03)** 0.12 Change at month 24 -0.01 (0.04) 0.10 (0.03)*** 0.009 H6 particles (\u00b5mol/L) Baseline 1.06 (0.11) 1.09 (0.09) 0.73 Change at month 12 -0.05 (0.10) 0.30 (0.07)*** 0.003 Change at month 24 0.02 (0.12) 0.44 (0.09)*** 0.006 H5 particles (\u00b5mol/L) Baseline 0.88 (0.07) 0.84 (0.05) 0.68 Change at month 12 0.08 (0.08) 0.17 (0.06)* 0.65 Change at month 24 0.07 (0.08) 0.12 (0.06) 1.00 H4 particles (\u00b5mol/L) Baseline 1.52 (0.13) 1.60 (0.07) 0.07 Change at month 12 0.13 (0.10) -0.23 (0.08)** 0.004 Change at month 24 0.01 (0.12) 0.05 (0.09) 0.79 H3 particles (\u00b5mol/L) Baseline 4.71 (0.23) 4.66 (0.17) 0.51 Change at month 12 -0.12 (0.18) -0.33 (0.14)* 0.66 Change at month 24 0.18 (0.18) -0.18 (0.14) 0.19 H2 particles (\u00b5mol/L) Baseline 9.85 (0.26) 10.25 (0.21) 0.34 Change at month 12 -0.28 (0.25) -1.04 (0.19)*** 0.012 Change at month 24 -0.58 (0.24)* -1.06 (0.19)*** 0.11 H1 particles (\u00b5mol/L) Baseline 1.81 (0.18) 1.79 (0.14) 0.85 Change at month 12 0.04 (0.15) -0.19 (0.11) .37 Change at month 24 -0.08 (0.14) -0.13 (0.11) 1.00 HDL size (nm) Baseline 9.2(0.04) 9.1 (0.04) 0.55 Change at month 12 0.05 (0.03) 0.22 (0.02)*** <0.0001 Change at month 24 0.06 (0.03) 0.23 (0.02)*** <0.0001 Abbreviations: HDL, high density lipoprotein; LDL, low density lipoprotein; TRL, triglyceride-rich lipoprotein. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "le 4 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p-value b Total cholesterol (mg/dL) Baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-9726",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9726,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text). *, **, and *** indicated within group differences at the p <0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": "). *, **, and *** indicated within group differences at the p <0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-9808",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9808,
+      "sentence": "Between group significant findings p <0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p <0.0017 are bolded and italicized for emphasis. Table 5 NMR-measure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-9962",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 9962,
+      "sentence": "Table 5 NMR-measured small molecule metabolite levels at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "te levels at baseline, and changes from baseline at 12, and 24 months a . Table 5 Ad libitum group ( n = 75) Calorie restriction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-10003",
+      "claim_type": "sample_size",
+      "raw_text": "n = 75",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10003,
+      "sentence": "Table 5 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p -value b Total BCAAs (\u00b5M) Baseline 310.1 (7.3) 313.2 (4.6) 0.42 Change at month 12 3.47 (4.83) -13.85 (3.67)*** 0.003 Change at month 24 9.55 (4.86) -9.20 (3.79)* 0.002 Valine (\u00b5M) Baseline 182.5 (3.8) 184.0 (2.6) 0.80 Change at month 12 -0.45 (2.47) -8.44 (1.88)*** 0.008 Change at month 24 3.52 (2.50) -6.99 (1.94)*** 0.0006 Leucine (\u00b5M) Baseline 92.3 (3.1) 92.5 (1.7) 0.67 Change at month 12 3.45 (2.31) -3.42 (1.75) 0.014 Change at month 24 4.04 (2.44) -2.55 (1.88) 0.027 Isoleucine (\u00b5M) Baseline 36.0 (1.5) 36.7 (0.9) 0.38 Change at month 12 0.75 (1.20) -0.78 (0.90) 0.59 Change at month 24 1.73 (1.11) 0.78 (0.85) 0.96 Alanine (\u00b5M) Baseline 274.7 (8.9) 275.2 (6.7) 0.92 Change at month 12 -0.32 (7.65) -31.48 (5.76)*** 0.0008 Change at month 24 -0.58 (8.18) -23.52 (6.32)*** 0.023 Fasting Glucose (mg/dL) Baseline 90.4(0.9) 90.5 (0.7) 0.92 Change at month 12 -0.64 (0.61) -2.52 (0.46)*** 0.011 Change at month 24 -0.44 (0.68) -1.81 (0.53)** 0.10 Citrate (\u00b5M) Baseline 91.9 (2.3) 93.1 (2.0) 0.96 Change at month 12 -6.07 (2.13)** -2.26 (1.60) 0.27 Change at month 24 -2.73 (2.44) -1.28 (1.87) 1.0 Total ketone bodies (\u00b5M) Baseline 196.9 (10.9) 218.8 (11.5) 0.87 Change at month 12 9.04 (19.05) 47.57 (14.09)** 0.10 Change at month 24 -4.62 (16.71) 34.47 (12.77)* 0.055 \u03b2-hydroxybutyrate (\u00b5M) Baseline 117.0 (7.1) 128.3 (7.6) 0.91 Change at month 12 -0.76 (11.70) 23.23 (8.66)* 0.09 Change at month 24 -7.90 (10.27) 17.95 (7.86)* 0.039 Acetoacetate (\u00b5M) Baseline 52.2 (3.5) 56.5 (2.8) 0.40 Change at month 12 10.20 (5.88) 20.18 (4.37)*** 0.33 Change at month 24 6.51 (5.06) 17.37 (3.89)*** 0.16 Acetone (\u00b5M) Baseline 27.7 (2.1) 34.0 (2.6) 0.44 Change at month 12 -2.77 (3.07) 4.86 (2.27) 0.043 Change at month 24 -5.39 (2.24)* -0.33 (1.72) 0.06 Abbreviations: BCAA, branched chain amino acids. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "aseline at 12, and 24 months a . Table 5 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p -valu",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-n-10039",
+      "claim_type": "sample_size",
+      "raw_text": "n = 143",
+      "numeric_values": [
+        143.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10039,
+      "sentence": "Table 5 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p -value b Total BCAAs (\u00b5M) Baseline 310.1 (7.3) 313.2 (4.6) 0.42 Change at month 12 3.47 (4.83) -13.85 (3.67)*** 0.003 Change at month 24 9.55 (4.86) -9.20 (3.79)* 0.002 Valine (\u00b5M) Baseline 182.5 (3.8) 184.0 (2.6) 0.80 Change at month 12 -0.45 (2.47) -8.44 (1.88)*** 0.008 Change at month 24 3.52 (2.50) -6.99 (1.94)*** 0.0006 Leucine (\u00b5M) Baseline 92.3 (3.1) 92.5 (1.7) 0.67 Change at month 12 3.45 (2.31) -3.42 (1.75) 0.014 Change at month 24 4.04 (2.44) -2.55 (1.88) 0.027 Isoleucine (\u00b5M) Baseline 36.0 (1.5) 36.7 (0.9) 0.38 Change at month 12 0.75 (1.20) -0.78 (0.90) 0.59 Change at month 24 1.73 (1.11) 0.78 (0.85) 0.96 Alanine (\u00b5M) Baseline 274.7 (8.9) 275.2 (6.7) 0.92 Change at month 12 -0.32 (7.65) -31.48 (5.76)*** 0.0008 Change at month 24 -0.58 (8.18) -23.52 (6.32)*** 0.023 Fasting Glucose (mg/dL) Baseline 90.4(0.9) 90.5 (0.7) 0.92 Change at month 12 -0.64 (0.61) -2.52 (0.46)*** 0.011 Change at month 24 -0.44 (0.68) -1.81 (0.53)** 0.10 Citrate (\u00b5M) Baseline 91.9 (2.3) 93.1 (2.0) 0.96 Change at month 12 -6.07 (2.13)** -2.26 (1.60) 0.27 Change at month 24 -2.73 (2.44) -1.28 (1.87) 1.0 Total ketone bodies (\u00b5M) Baseline 196.9 (10.9) 218.8 (11.5) 0.87 Change at month 12 9.04 (19.05) 47.57 (14.09)** 0.10 Change at month 24 -4.62 (16.71) 34.47 (12.77)* 0.055 \u03b2-hydroxybutyrate (\u00b5M) Baseline 117.0 (7.1) 128.3 (7.6) 0.91 Change at month 12 -0.76 (11.70) 23.23 (8.66)* 0.09 Change at month 24 -7.90 (10.27) 17.95 (7.86)* 0.039 Acetoacetate (\u00b5M) Baseline 52.2 (3.5) 56.5 (2.8) 0.40 Change at month 12 10.20 (5.88) 20.18 (4.37)*** 0.33 Change at month 24 6.51 (5.06) 17.37 (3.89)*** 0.16 Acetone (\u00b5M) Baseline 27.7 (2.1) 34.0 (2.6) 0.44 Change at month 12 -2.77 (3.07) 4.86 (2.27) 0.043 Change at month 24 -5.39 (2.24)* -0.33 (1.72) 0.06 Abbreviations: BCAA, branched chain amino acids. a Baseline values are the observed mean (SE); change scores are the least-squares adjusted means (SE) from the ITT repeated measures analysis. b Between-group p -value tests for a significant between-group difference in the change score at the time point.",
+      "context_window": "le 5 Ad libitum group ( n = 75) Calorie restriction group ( n = 143) Between-group p -value b Total BCAAs (\u00b5M) Baseline 310.1 (",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-12318",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12318,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text). *, **, and *** indicated within group differences at the P < 0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": "). *, **, and *** indicated within group differences at the P < 0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-12401",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12401,
+      "sentence": "Between group significant findings p < 0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p < 0.0017 are bolded and italicized for emphasis. Figure 3 Mean (\u00b1 SE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-12999",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12999,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-13344",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 13344,
+      "sentence": "Fig 3\n\nNMR-measured markers of cardiovascular and type 2 diabetes risk at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "etes risk at baseline, and changes from baseline at 12, and 24 months a . Abbreviations: LP-IR, Lipoprotein Insulin Resistance I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-13900",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13900,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text).\n\n*, **, and *** indicated within group differences at the P <0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": ". *, **, and *** indicated within group differences at the P <0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-13982",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13982,
+      "sentence": "Between group significant findings p <0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p <0.0017 are bolded and italicized for emphasis. NMR-measured lipid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-14126",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 14126,
+      "sentence": "NMR-measured lipid and lipoproteins levels at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "ns levels at baseline, and changes from baseline at 12, and 24 months a . Abbreviations: HDL, high density lipoprotein; LDL, low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-14708",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14708,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text).\n\n*, **, and *** indicated within group differences at the p <0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": ". *, **, and *** indicated within group differences at the p <0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-14790",
+      "claim_type": "p_value",
+      "raw_text": "p <0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14790,
+      "sentence": "Between group significant findings p <0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p <0.0017 are bolded and italicized for emphasis. NMR-measured small",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-14937",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 14937,
+      "sentence": "NMR-measured small molecule metabolite levels at baseline, and changes from baseline at 12, and 24 months a .",
+      "context_window": "te levels at baseline, and changes from baseline at 12, and 24 months a . Abbreviations: BCAA, branched chain amino acids. Base",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-15456",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15456,
+      "sentence": "All p -values reflect Bonferroni corrections, truncated at 1.0, as appropriate (see text).\n\n*, **, and *** indicated within group differences at the P < 0.05, 0.01, and 0.001 values, respectively.",
+      "context_window": ". *, **, and *** indicated within group differences at the P < 0.05, 0.01, and 0.001 values, respectively. Between group signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-15539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0017",
+      "numeric_values": [
+        0.0017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15539,
+      "sentence": "Between group significant findings p < 0.0017 are bolded and italicized for emphasis.",
+      "context_window": "01 values, respectively. Between group significant findings p < 0.0017 are bolded and italicized for emphasis. Mean (\u00b1 SE) Change",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-16129",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16129,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-16708",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 16708,
+      "sentence": "For HDL cholesterol, as compared to AL, CR increased concentrations but only at 24 months ( Table 4 ; 24-month P CRvsAL = 0.01).",
+      "context_window": "as compared to AL, CR increased concentrations but only at 24 months ( Table 4 ; 24-month P CRvsAL = 0.01). CR benefits on lipo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-16889",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 16889,
+      "sentence": "At 12 months, the CR but not the AL group had reductions in the following molecular biomarkers of lipid metabolism: total ( Figure 3 D), large, and medium TRL particles, and thus, TRL size; total LDL particles; and total, medium and small HDL particles with increases in large HDL particles and HDL size ( Figure 3 E; all 12-month P CRvAL <0.05).",
+      "context_window": "r traditional cholesterol panel components. ( Table 4 ). At 12 months, the CR but not the AL group had reductions in the followin",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-17236",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 17236,
+      "sentence": "At 24 months, CR-mediated responses remained superior to AL for total, large, and medium TRL particles; total LDL particle numbers; as well as large HDL particles and HDL size (all 24-month P CRvsAL <0.05).",
+      "context_window": "and HDL size ( Figure 3 E; all 12-month P CRvAL <0.05). At 24 months, CR-mediated responses remained superior to AL for total, l",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-17449",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 17449,
+      "sentence": "Also, at 24 months, CR-mediated reductions in small LDL particles were superior to AL (24-month P CRvsAL = 0.027).",
+      "context_window": "ticles and HDL size (all 24-month P CRvsAL <0.05). Also, at 24 months, CR-mediated reductions in small LDL particles were superio",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-17668",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 17668,
+      "sentence": "At 12 months, the CR but not the AL group had increases in the larger HDL subtype, H6, and reductions in the smaller subtypes H4 and H2 (all 12-month P CRvsAL < 0.02).",
+      "context_window": "standing effects of CR on changes in HDL subpopulations. At 12 months, the CR but not the AL group had increases in the larger HD",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-17836",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 17836,
+      "sentence": "At 24 months, CR responses were superior to AL for increases in H6 as well as H7 (both 24-month P CRvsAL < 0.009).",
+      "context_window": "aller subtypes H4 and H2 (all 12-month P CRvsAL < 0.02). At 24 months, CR responses were superior to AL for increases in H6 as we",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-18277",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 18277,
+      "sentence": "At both 12 and 24 months, the CR but not the AL group had reductions in valine, leucine, total BCAAs ( Figure 3 F), and alanine (all 12- and 24-month P CRvsAL <0.03).",
+      "context_window": "NMR-assessed small metabolites ( Table 5 ). At both 12 and 24 months, the CR but not the AL group had reductions in valine, leuc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-18502",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 18502,
+      "sentence": "As previously reported, the CR group had reductions in glucose at 12 and 24 months in CR, yet this change differed from AL at 12 months only (12-month P CRvsAL = 0.01).",
+      "context_window": "reported, the CR group had reductions in glucose at 12 and 24 months in CR, yet this change differed from AL at 12 months only (",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-18555",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 18555,
+      "sentence": "As previously reported, the CR group had reductions in glucose at 12 and 24 months in CR, yet this change differed from AL at 12 months only (12-month P CRvsAL = 0.01).",
+      "context_window": "12 and 24 months in CR, yet this change differed from AL at 12 months only (12-month P CRvsAL = 0.01). Consistent with an energy",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-18737",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 18737,
+      "sentence": "Consistent with an energy deficit state in the CR group, total ketone bodies, \u03b2-hydroxybutyrate, and acetoacetate were increased at 12 and 24 months; however, significant between-group differences for ketone bodies were observed only for \u03b2-hydroxybutyrate (24-month P CRvsAL = 0.038) and acetone (12-month P CRvsAL =0.043).",
+      "context_window": "-hydroxybutyrate, and acetoacetate were increased at 12 and 24 months; however, significant between-group differences for ketone",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19176",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 19176,
+      "sentence": "Participants with BMI of 25.0 to 27.9 kg/m 2 had greater effects with CR compared to AL for reductions in LP-IR, large TRL particles, and TRL size with increases in H5; however, for those with a BMI 22.0 to 24.9 kg/m 2 , these measures responded similarly in CR and AL ( Figure 4 A-D; BMI by treatment interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "nses were impacted by BMI. Participants with BMI of 25.0 to 27.9 kg/m 2 had greater effects with CR compared to AL for reductio",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19350",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 kg",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 19350,
+      "sentence": "Participants with BMI of 25.0 to 27.9 kg/m 2 had greater effects with CR compared to AL for reductions in LP-IR, large TRL particles, and TRL size with increases in H5; however, for those with a BMI 22.0 to 24.9 kg/m 2 , these measures responded similarly in CR and AL ( Figure 4 A-D; BMI by treatment interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "with increases in H5; however, for those with a BMI 22.0 to 24.9 kg/m 2 , these measures responded similarly in CR and AL ( Fig",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-19464",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19464,
+      "sentence": "Participants with BMI of 25.0 to 27.9 kg/m 2 had greater effects with CR compared to AL for reductions in LP-IR, large TRL particles, and TRL size with increases in H5; however, for those with a BMI 22.0 to 24.9 kg/m 2 , these measures responded similarly in CR and AL ( Figure 4 A-D; BMI by treatment interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "and AL ( Figure 4 A-D; BMI by treatment interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19571",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 19571,
+      "sentence": "Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "P CRvsAL < 0.0001). Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholester",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19651",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 19651,
+      "sentence": "Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "ctions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions on",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19691",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 kg",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 19691,
+      "sentence": "Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "olesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-19729",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 19729,
+      "sentence": "Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "hose with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-19799",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19799,
+      "sentence": "Also, CR participants with BMI 25.0 to 27.9 kg/m 2 had reductions in total triglycerides and TRL cholesterol at 12 and 24 months, while those with BMI 22.0 to 24.9 kg/m 2 had reductions only after 24 months ( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "context_window": "( Figure 4 E-F; BMI by treatment by time interaction effect P < 0.05; for higher BMI only, 12- and 24-month P CRvsAL < 0.0001).",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-20166",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20166,
+      "sentence": "For several NMR markers, significant BMI main effects reflect that differences in CR and AL were similar regardless of BMI, but overall reductions were greater for those with lower BMIs; these markers include total and small LDL particles, fasting glucose, and GlycA ( Figure 4 G-J; BMI main effect P < 0.05).",
+      "context_window": "fasting glucose, and GlycA ( Figure 4 G-J; BMI main effect P < 0.05). Figure 4 BMI Effects on Mean (\u00b1 SE) Changes in NMR Parame",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-20326",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 20326,
+      "sentence": "The NMR parameter changes (means\u00b1SE) by treatment group by BMI (22.0-24.9 versus 25.0-27.9 kg/m 2 ) for (A) Lipoprotein Insulin Resistance Index (LP-IR), (B) Large triglyceride-rich lipoprotein (TRL) particles, (C) TRL size (D) HDL particle subtype H5, (E) triglycerides (TG), (F) TRL cholesterol, (G) LDL particles; (H) small LDL particles; (I) glucose, and (J) GlycA.",
+      "context_window": "(means\u00b1SE) by treatment group by BMI (22.0-24.9 versus 25.0-27.9 kg/m 2 ) for (A) Lipoprotein Insulin Resistance Index (LP-IR),",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-20772",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20772,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-21131",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 21131,
+      "sentence": "The NMR parameter changes (means\u00b1SE) by treatment group by BMI (22.0-24.9 versus 25.0-27.9 kg/m 2 ) for (A) Lipoprotein Insulin Resistance Index (LP-IR), (B) Large triglyceride-rich lipoprotein (TRL) particles, (C) TRL size (D) HDL particle subtype H5, (E) triglycerides (TG), (F) TRL cholesterol, (G) LDL particles; (H) small LDL particles; (I) glucose, and (J) GlycA.",
+      "context_window": "(means\u00b1SE) by treatment group by BMI (22.0-24.9 versus 25.0-27.9 kg/m 2 ) for (A) Lipoprotein Insulin Resistance Index (LP-IR),",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-21577",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21577,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-21947",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 21947,
+      "sentence": "For several NMR -determined molecular markers of cardiometabolic risk, treatment effects differed by sex (sex by treatment interaction effects P < 0.05): compared with men in the AL group, men assigned to CR had superior responses for LP-IR, large TRL particles, TRL size, TRL triglycerides, TRL cholesterol, total triglycerides, HDL size, and medium LDL particles ( Figure 5 A-G; for all sex by treatment interaction P < 0.05; 12- and 24-month P CRvsAL < 0.05); however, for women, treatment group differences were less remarkable.",
+      "context_window": "fects differed by sex (sex by treatment interaction effects P < 0.05): compared with men in the AL group, men assigned to CR had",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-22222",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22222,
+      "sentence": "For several NMR -determined molecular markers of cardiometabolic risk, treatment effects differed by sex (sex by treatment interaction effects P < 0.05): compared with men in the AL group, men assigned to CR had superior responses for LP-IR, large TRL particles, TRL size, TRL triglycerides, TRL cholesterol, total triglycerides, HDL size, and medium LDL particles ( Figure 5 A-G; for all sex by treatment interaction P < 0.05; 12- and 24-month P CRvsAL < 0.05); however, for women, treatment group differences were less remarkable.",
+      "context_window": "ticles ( Figure 5 A-G; for all sex by treatment interaction P < 0.05; 12- and 24-month P CRvsAL < 0.05); however, for women, tre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-22417",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 22417,
+      "sentence": "One exception was the observation for medium LDL particles: for women at 12 and 24 months, medium LDL particles were reduced in CR; for men, there was no group difference in medium LDL particle responses ( Figure 5 H; sex by treatment interaction P < 0.05; for women only, 12- and 24-month P CRvsAL < 0.05) .",
+      "context_window": "e observation for medium LDL particles: for women at 12 and 24 months, medium LDL particles were reduced in CR; for men, there wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-22584",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22584,
+      "sentence": "One exception was the observation for medium LDL particles: for women at 12 and 24 months, medium LDL particles were reduced in CR; for men, there was no group difference in medium LDL particle responses ( Figure 5 H; sex by treatment interaction P < 0.05; for women only, 12- and 24-month P CRvsAL < 0.05) .",
+      "context_window": "rticle responses ( Figure 5 H; sex by treatment interaction P < 0.05; for women only, 12- and 24-month P CRvsAL < 0.05) . For se",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-22996",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22996,
+      "sentence": "For several measures, CR responses were superior to AL similarly in both sexes, but regardless of group, the magnitude of response was greater for one sex: men had greater reductions in small LDL particles and GlycA ( Figure 6 A-B), while women had greater responses for the HDL subpopulation H2, leucine, and glucose ( Figure 6 C-E; sex main effect P < 0.05).",
+      "context_window": "on H2, leucine, and glucose ( Figure 6 C-E; sex main effect P < 0.05). Figure 5 Sex by Treatment Effects on Mean (\u00b1 SE) Changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-23482",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23482,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-24051",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24051,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-24753",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24753,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-25308",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 25308,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-25774",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 25774,
+      "sentence": "These were most notable for differences according to sex and group in CR responses that were sustained at 24 months.",
+      "context_window": "ing to sex and group in CR responses that were sustained at 24 months. While both sexes had CR-induced reductions at 12 months in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-25831",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 25831,
+      "sentence": "While both sexes had CR-induced reductions at 12 months in total LDL particles, LDL cholesterol, and Apo B ( Figure 7 A-C), group differences were sustained at 24 months only for CR women (sex by treatment by time effects P < 0.05).",
+      "context_window": "at 24 months. While both sexes had CR-induced reductions at 12 months in total LDL particles, LDL cholesterol, and Apo B ( Figure",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-25945",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 25945,
+      "sentence": "While both sexes had CR-induced reductions at 12 months in total LDL particles, LDL cholesterol, and Apo B ( Figure 7 A-C), group differences were sustained at 24 months only for CR women (sex by treatment by time effects P < 0.05).",
+      "context_window": "Apo B ( Figure 7 A-C), group differences were sustained at 24 months only for CR women (sex by treatment by time effects P < 0.0",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-26007",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26007,
+      "sentence": "While both sexes had CR-induced reductions at 12 months in total LDL particles, LDL cholesterol, and Apo B ( Figure 7 A-C), group differences were sustained at 24 months only for CR women (sex by treatment by time effects P < 0.05).",
+      "context_window": "months only for CR women (sex by treatment by time effects P < 0.05). For some measures, CR responses occurred for one sex at o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-26153",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 26153,
+      "sentence": "For some measures, CR responses occurred for one sex at only one time point: CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05).",
+      "context_window": ": CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL parti",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-26230",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 26230,
+      "sentence": "For some measures, CR responses occurred for one sex at only one time point: CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05).",
+      "context_window": "e 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholest",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-26351",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 26351,
+      "sentence": "For some measures, CR responses occurred for one sex at only one time point: CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05).",
+      "context_window": "cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by t",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-26377",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 26377,
+      "sentence": "For some measures, CR responses occurred for one sex at only one time point: CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05).",
+      "context_window": "and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-26445",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26445,
+      "sentence": "For some measures, CR responses occurred for one sex at only one time point: CR men had reductions in total and small HDL particles at 12 months ( Figure 7 D-E); CR women had reductions in small TRL particles at 24 months ( Figure 7 F); reductions in total cholesterol, TRL cholesterol, total BCAAs, and valine occurred in CR men at 12 months and CR women at 24 months ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05).",
+      "context_window": "s ( Figure 7 G-J; for all, sex by treatment by time effects P < 0.05). Figure 7 Sex by Treatment by Time Effects on Mean (\u00b1 SE)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-26939",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 26939,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-p-27649",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 27649,
+      "sentence": "Asterisk indicates p < 0.05 for a significant between-group difference in the change score at the time point.",
+      "context_window": "cated at 1.0, as appropriate (see text). Asterisk indicates p < 0.05 for a significant between-group difference in the change sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-5",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5,
+      "sentence": "Over 24 months, \u223c12% CR improved NMR-determined molecular markers of ASCVD, insulin resistance (LP-IR), and T2D (DRI).",
+      "context_window": "Over 24 months, \u223c12% CR improved NMR-determined molecular markers of ASCVD",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-17",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 17,
+      "sentence": "Over 24 months, \u223c12% CR improved NMR-determined molecular markers of ASCVD, insulin resistance (LP-IR), and T2D (DRI).",
+      "context_window": "Over 24 months, \u223c12% CR improved NMR-determined molecular markers of ASCVD, insu",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-172",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 172,
+      "sentence": "Remarkably, these improvements occurred in young (21-50 years), healthy adults with normal weight to moderate overweight with minimal underlying cardiometabolic risk.",
+      "context_window": "(DRI). Remarkably, these improvements occurred in young (21-50 years), healthy adults with normal weight to moderate overweight",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-492",
+      "claim_type": "unit_value",
+      "raw_text": "300 kg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 492,
+      "sentence": "This is important, as evidence that modest calorie restriction of about 300 kg calories per day without substantive changes of macronutrients in the diet results in improvements in emerging cardiovascular risk factors even in healthy, young and middle aged individuals; further, we found the effects of calorie restriction on these cardiovascular risk markers to be more pronounced in men than women, and overweight than normal weight persons.",
+      "context_window": "rtant, as evidence that modest calorie restriction of about 300 kg calories per day without substantive changes of macronutrie",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-1797",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1797,
+      "sentence": "Previously reported, insulin resistance as measured by Homeostatic Model Assessment for Insulin Resistance (HOMA-IR) was reduced in the CR group and not the AL group, although the between-group difference was significant only at 24 months.",
+      "context_window": "though the between-group difference was significant only at 24 months. 5 LP-IR is a measure of insulin resistance in the liver as",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-2152",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2152,
+      "sentence": "In addition to insulin resistance, CR reduced the DRI at both 12 and 24 months.",
+      "context_window": "on to insulin resistance, CR reduced the DRI at both 12 and 24 months. Greater scores for both LP-IR (0-100) and DRI (1-100) conf",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-2431",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2431,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "om the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for inciden",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-2439",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2439,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "econd lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D ov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-2505",
+      "claim_type": "unit_value",
+      "raw_text": "7.5 years",
+      "numeric_values": [
+        7.5
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2505,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "e- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-hr-a-2582",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=2.07",
+      "numeric_values": [
+        2.07
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2582,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "tion of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)). 17 , 19 Thu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-2591",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2591,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "enal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)). 17 , 19 Thus, CR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-hr-a-2615",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=2.42",
+      "numeric_values": [
+        2.42
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2615,
+      "sentence": "17 , 19 CR-mediated reductions in LP-IR (from \u223c 34 to \u223c22) and DRI (from \u223c24 to \u223c16) correspond to shifts from the second lowest to the lowest quartiles, comparable to 52% and 59% age- and sex-adjusted hazard reductions for incident T2D over 7.5 years (Prevention of Renal and Vascular Endstage Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)).",
+      "context_window": "ge Disease (PREVEND) LP-IR HR=2.07, 95% CI=1.16 - 3.68; DRI HR=2.42 (1.33 - 4.4)). 17 , 19 Thus, CR appears to reduce the risk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-5071",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 5071,
+      "sentence": "41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80).",
+      "context_window": "vascular risk. 41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower ri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-5095",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5095,
+      "sentence": "41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80).",
+      "context_window": "he magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-5124",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5124,
+      "sentence": "41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80).",
+      "context_window": "ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-or-a-5172",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 0.77",
+      "numeric_values": [
+        0.77
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5172,
+      "sentence": "41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80).",
+      "context_window": "ates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80). Thus, CR alterations in lipoprotein p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-5183",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5183,
+      "sentence": "41 , 42 The magnitude of reduction in ApoB, \u223c10 mg/dl at both 12 and 24 months, associates with a 23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80).",
+      "context_window": "23% lower risk of coronary heart disease (in 43 OR = 0.77, 95% CI = 0.74-0.80). Thus, CR alterations in lipoprotein profil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-6229",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 6229,
+      "sentence": "Increases in ketone bodies along with reductions in fasting glucose were most notable after the first 12 months of CR, reflecting reductions in energy intake, weight, fat mass, and fat-free mass.",
+      "context_window": "ctions in fasting glucose were most notable after the first 12 months of CR, reflecting reductions in energy intake, weight, fat",
+      "claim_role": "duration",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-6352",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 6352,
+      "sentence": "Reductions in amino acids at 12 months were sustained at 24 months, during the \u201cweight maintenance stage\u201d of the intervention period and despite declines in adherence, indicating a persistent enhancement of energetic balance.",
+      "context_window": ", fat mass, and fat-free mass. Reductions in amino acids at 12 months were sustained at 24 months, during the \u201cweight maintenance",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-6380",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 6380,
+      "sentence": "Reductions in amino acids at 12 months were sustained at 24 months, during the \u201cweight maintenance stage\u201d of the intervention period and despite declines in adherence, indicating a persistent enhancement of energetic balance.",
+      "context_window": "s. Reductions in amino acids at 12 months were sustained at 24 months, during the \u201cweight maintenance stage\u201d of the intervention",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8102",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8102,
+      "sentence": "CR responses in men were robust after 12 months while responses in women were more notable after 24 than 12 months ( Figure 5 , Figure 6 , Figure 7 ).",
+      "context_window": "fic temporal pattern. CR responses in men were robust after 12 months while responses in women were more notable after 24 than 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8169",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8169,
+      "sentence": "CR responses in men were robust after 12 months while responses in women were more notable after 24 than 12 months ( Figure 5 , Figure 6 , Figure 7 ).",
+      "context_window": "hs while responses in women were more notable after 24 than 12 months ( Figure 5 , Figure 6 , Figure 7 ). Thus, while CR response",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8620",
+      "claim_type": "unit_value",
+      "raw_text": "27.9 kg",
+      "numeric_values": [
+        27.9
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8620,
+      "sentence": "CR responses in NMR measures were more robust for overweight (BMI 25.0-27.9 kg/m 2 ) than normal weight (BMI 22.0-24.9 kg/m 2 ) individuals; these findings were notable for TRL cholesterol, TRL-related particles, and total triglycerides.",
+      "context_window": "s in NMR measures were more robust for overweight (BMI 25.0-27.9 kg/m 2 ) than normal weight (BMI 22.0-24.9 kg/m 2 ) individual",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-8663",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 kg",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8663,
+      "sentence": "CR responses in NMR measures were more robust for overweight (BMI 25.0-27.9 kg/m 2 ) than normal weight (BMI 22.0-24.9 kg/m 2 ) individuals; these findings were notable for TRL cholesterol, TRL-related particles, and total triglycerides.",
+      "context_window": "weight (BMI 25.0-27.9 kg/m 2 ) than normal weight (BMI 22.0-24.9 kg/m 2 ) individuals; these findings were notable for TRL chol",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-9122",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9122,
+      "sentence": "For those with BMIs in the overweight range, benefits accrued after 12 months of CR.",
+      "context_window": "e with BMIs in the overweight range, benefits accrued after 12 months of CR. In contrast, persons with normal BMIs may require a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-9219",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9219,
+      "sentence": "In contrast, persons with normal BMIs may require a longer duration, as long as 24 months of CR, to derive benefits.",
+      "context_window": "with normal BMIs may require a longer duration, as long as 24 months of CR, to derive benefits. With CR, normal weight participa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-9839",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9839,
+      "sentence": "Although the CR intervention was over 24 months, these measures were available only at these three windows in time; thus, it is not clear when the critical shifts in lipids and metabolites occurred.",
+      "context_window": "ons of this analysis. Although the CR intervention was over 24 months, these measures were available only at these three windows",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-10309",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10309,
+      "sentence": "While the original design was for 25% CR, participants in the CR group attained closer to 12% CR from baseline.",
+      "context_window": "ures with a glucose load. While the original design was for 25% CR, participants in the CR group attained closer to 12% CR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-10365",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10365,
+      "sentence": "While the original design was for 25% CR, participants in the CR group attained closer to 12% CR from baseline.",
+      "context_window": "for 25% CR, participants in the CR group attained closer to 12% CR from baseline. Rather than a lack of participant complia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-10676",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10676,
+      "sentence": "Rather the mean attainment of 12% CR over two years is a study strength, especially since this degree and length of CR in humans has never been studied.",
+      "context_window": "on the intervention delivery. Rather the mean attainment of 12% CR over two years is a study strength, especially since thi",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-u-11287",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 11287,
+      "sentence": "In summary, in young (21-50 yrs), healthy, normal to moderately overweight adults, after 12 and 24 months of 12% CR, there were improved NMR measures of insulin resistance, T2D, and ASCVD risk.",
+      "context_window": "althy, normal to moderately overweight adults, after 12 and 24 months of 12% CR, there were improved NMR measures of insulin resi",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome-pct-11300",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 11300,
+      "sentence": "In summary, in young (21-50 yrs), healthy, normal to moderately overweight adults, after 12 and 24 months of 12% CR, there were improved NMR measures of insulin resistance, T2D, and ASCVD risk.",
+      "context_window": "to moderately overweight adults, after 12 and 24 months of 12% CR, there were improved NMR measures of insulin resistance,",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

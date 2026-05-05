@@ -1,0 +1,139 @@
+{
+  "paper_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal",
+  "doi": "10.3390/life15050688",
+  "extracted_at": "2026-05-05T21:59:31+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 3,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-pct-502",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 502,
+      "sentence": "The skeletal muscle loss was found to be 3-8% every decade after 40 years, with accelerated deterioration in muscle strength and mass after 65 years.",
+      "context_window": "y of life [ 2 ]. The skeletal muscle loss was found to be 3-8% every decade after 40 years, with accelerated deterioration",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-u-524",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 524,
+      "sentence": "The skeletal muscle loss was found to be 3-8% every decade after 40 years, with accelerated deterioration in muscle strength and mass after 65 years.",
+      "context_window": "keletal muscle loss was found to be 3-8% every decade after 40 years, with accelerated deterioration in muscle strength and mass",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-u-599",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 599,
+      "sentence": "The skeletal muscle loss was found to be 3-8% every decade after 40 years, with accelerated deterioration in muscle strength and mass after 65 years.",
+      "context_window": "accelerated deterioration in muscle strength and mass after 65 years. Further, the cross-sectional area of knee extensors reduce",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-pct-672",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 672,
+      "sentence": "Further, the cross-sectional area of knee extensors reduced by 16.1% in 12 years from middle working age to the older retirement stage [ 3 ].",
+      "context_window": "ther, the cross-sectional area of knee extensors reduced by 16.1% in 12 years from middle working age to the older retirement",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-u-681",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 681,
+      "sentence": "Further, the cross-sectional area of knee extensors reduced by 16.1% in 12 years from middle working age to the older retirement stage [ 3 ].",
+      "context_window": "cross-sectional area of knee extensors reduced by 16.1% in 12 years from middle working age to the older retirement stage [ 3 ]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-n-957",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 957,
+      "sentence": "While substantial evidence indicates that RT programs can effectively reduce the risk of sarcopenia in healthy older adults [ 9 , 10 , 16 , 17 , 20 , 21 , 22 , 24 , 27 , 28 , 29 , 30 , 31 , 32 , 33 , 34 , 35 , 36 , 37 , 38 , 39 , 40 , 41 , 43 , 44 , 46 , 47 , 48 , 49 ], the majority of trials (n = 13 of 17) did not observe similar favorable effects on muscle mass and biomarkers associated with sarcopenic obesity [ 1 , 15 , 18 , 23 , 25 , 42 , 45 ].",
+      "context_window": "41 , 43 , 44 , 46 , 47 , 48 , 49 ], the majority of trials (n = 13 of 17) did not observe similar favorable effects on muscle",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12112962_effects_of_resistance_training_on_sarcopenia_risk_among_heal-pct-4548",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4548,
+      "sentence": "A recent systematic review by Momma et al. (2022) demonstrated that RT programs were associated with a 10-20% lower risk of all-cause mortality, cardiovascular disease, total cancer, diabetes, and lung cancer, with the maximum risk reduction observed at approximately 30-60 min per week of performing muscle-strengthening activities [ 56 ].",
+      "context_window": "22) demonstrated that RT programs were associated with a 10-20% lower risk of all-cause mortality, cardiovascular disease,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

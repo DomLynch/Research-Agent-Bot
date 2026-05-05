@@ -1,0 +1,4146 @@
+{
+  "topic": "omega3",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 581,
+  "n_selected_for_fetch": 581,
+  "n_pmcid_resolved": 108,
+  "n_extracted": 86,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10043196",
+    "PMC10113533",
+    "PMC10196397",
+    "PMC10341783",
+    "PMC10367180",
+    "PMC10626455",
+    "PMC10837958",
+    "PMC10905261",
+    "PMC10976228",
+    "PMC11123418",
+    "PMC11274850",
+    "PMC11351866",
+    "PMC11354246",
+    "PMC11426295",
+    "PMC11759855",
+    "PMC11892077",
+    "PMC12163325",
+    "PMC12166187",
+    "PMC12448684",
+    "PMC12450000",
+    "PMC12460143",
+    "PMC12469626",
+    "PMC12523382",
+    "PMC12611454",
+    "PMC12678151",
+    "PMC12737357",
+    "PMC12777072",
+    "PMC12826911",
+    "PMC13001453",
+    "PMC13008728",
+    "PMC1993981",
+    "PMC2500009",
+    "PMC2612582",
+    "PMC2819264",
+    "PMC2838628",
+    "PMC2856352",
+    "PMC3024511",
+    "PMC3143823",
+    "PMC3210089",
+    "PMC3217043",
+    "PMC3257651",
+    "PMC3279313",
+    "PMC3286229",
+    "PMC3302663",
+    "PMC3317266",
+    "PMC3468870",
+    "PMC3518659",
+    "PMC3886744",
+    "PMC3942733",
+    "PMC3992162",
+    "PMC4013121",
+    "PMC4115447",
+    "PMC4210907",
+    "PMC4404917",
+    "PMC4498302",
+    "PMC4537738",
+    "PMC4632767",
+    "PMC4728620",
+    "PMC4808858",
+    "PMC4957603",
+    "PMC5015035",
+    "PMC5067287",
+    "PMC5180582",
+    "PMC5396348",
+    "PMC5431122",
+    "PMC5526680",
+    "PMC5537875",
+    "PMC5543674",
+    "PMC5748755",
+    "PMC5763552",
+    "PMC5845148",
+    "PMC5885893",
+    "PMC5946201",
+    "PMC6034629",
+    "PMC6073248",
+    "PMC6164598",
+    "PMC6176151",
+    "PMC6330561",
+    "PMC6513557",
+    "PMC6517311",
+    "PMC6617060",
+    "PMC6683166",
+    "PMC6836340",
+    "PMC6903779",
+    "PMC6966808",
+    "PMC7049091",
+    "PMC7072971",
+    "PMC7146314",
+    "PMC7156328",
+    "PMC7204890",
+    "PMC7353404",
+    "PMC7551800",
+    "PMC7656284",
+    "PMC7667577",
+    "PMC7827286",
+    "PMC7911027",
+    "PMC8104745",
+    "PMC8413259",
+    "PMC8438613",
+    "PMC8464922",
+    "PMC8518559",
+    "PMC8615276",
+    "PMC9002234",
+    "PMC9075326",
+    "PMC9334128",
+    "PMC9695993",
+    "PMC9834373",
+    "PMC9863621"
+  ],
+  "active_paper_ids": [
+    "PMC10043196_assessment_of_lipid_composition_and_eicosapentaenoic_acid_do",
+    "PMC10113533_the_effect_of_omega_3_fatty_acids_on_alcohol_induced_damage",
+    "PMC10196397_differential_effects_of_high_dose_omega_3_fatty_acids_on_met",
+    "PMC10341783_dha_epa_omega_3_and_la_gla_omega_6_as_bioactive_molecules_in",
+    "PMC10367180_correction_harris_et_al_derivation_of_the_omega_3_index_from",
+    "PMC10626455_correlations_between_omega_3_fatty_acids_and_inflammatory_gl",
+    "PMC10837958_study_protocol_fish_oil_supplement_in_prevention_of_oxalipla",
+    "PMC10905261_the_effect_of_rosuvastatin_alone_or_in_combination_with_feno",
+    "PMC10976228_quantification_of_trimethylamine_n_oxide_and_trimethylamine_",
+    "PMC11123418_effects_of_omega_3_polyunsaturated_fatty_acids_docosahexaeno",
+    "PMC11274850_docosahexaenoic_acid_dha_and_eicosapentaenoic_acid_epa_shoul",
+    "PMC11351866_eicosapentaenoic_acid_epa_and_docosahexaenoic_acid_dha_ameli",
+    "PMC11354246_omega_3_polyunsaturated_fatty_acids_in_depression",
+    "PMC11426295_omega_3_polyunsaturated_fatty_acids_and_blood_brain_barrier_",
+    "PMC11759855_eicosapentaenoic_acid_epa_and_docosahexaenoic_acid_dha_a_tar",
+    "PMC11892077_impact_of_omega_3_fatty_acids_on_cognitive_outcomes_in_child",
+    "PMC12163325_omega_3_fatty_acids_multi_target_mechanisms_and_therapeutic_",
+    "PMC12166187_impact_of_omega_3_polyunsaturated_fatty_acids_on_alcohol_use",
+    "PMC12448684_effects_of_algal_oil_as_an_alternative_to_fish_oil_in_feline",
+    "PMC12450000_comparative_risk_of_atrial_fibrillation_onset_in_statin_trea",
+    "PMC12460143_synergistic_effects_of_mediterranean_diet_combined_with_phyt",
+    "PMC12469626_the_omega_3_fatty_acids_eicosapentaenoic_acid_and_docosahexa",
+    "PMC12523382_fyn_t_kinase_regulates_dha_induced_pyroptosis_in_immortalize",
+    "PMC12611454_recognizing_the_health_benefits_of_plant_sourced_omega_3_ste",
+    "PMC12678151_retrospective_analysis_of_omega_3_fatty_acids_and_the_dash_d",
+    "PMC12737357_omega_3_fatty_acid_intake_and_oxylipin_production_in_respons",
+    "PMC12777072_omega_3_polyunsaturated_fatty_acids_and_mortality_risk_in_de",
+    "PMC12826911_associations_between_plasma_omega_3_and_fish_oil_use_with_ri",
+    "PMC13001453_gut_microbiota_derived_epa_alleviates_neuroinflammation_asso",
+    "PMC13008728_effect_of_omega_3_supplementation_on_metabolic_and_inflammat",
+    "PMC1993981_a_review_of_omega_3_ethyl_esters_for_cardiovascular_preventi",
+    "PMC2500009_the_omega_3_fatty_acid_eicosapentaenoic_acid_epa_prevents_th",
+    "PMC2612582_effect_of_fish_oil_on_arrhythmias_and_mortality_systematic_r",
+    "PMC3024511_metabolic_effects_of_krill_oil_are_essentially_similar_to_th",
+    "PMC3210089_the_older_people_omega_3_and_cognitive_health_epoch_trial_de",
+    "PMC3257651_omega_3_fatty_acids_and_inflammatory_processes",
+    "PMC3317266_the_effects_of_supplementation_with_omega_3_polyunsaturated_",
+    "PMC3468870_patient_with_hypertriglyceridemia_type_2_diabetes_and_chroni",
+    "PMC3886744_determinants_of_erythrocyte_omega_3_fatty_acid_content_in_re",
+    "PMC3942733_omega_3_index_and_cardiovascular_health",
+    "PMC3992162_u_s_adults_are_not_meeting_recommended_levels_for_fish_and_o",
+    "PMC4013121_role_of_omega_3_fatty_acids_in_the_treatment_of_depressive_d",
+    "PMC4210907_the_role_for_dietary_omega_3_fatty_acids_supplementation_in_",
+    "PMC4404917_long_chain_omega_3_fatty_acids_and_the_brain_a_review_of_the",
+    "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac",
+    "PMC4537738_the_omega_3_fatty_acid_docosahexaenoic_acid_modulates_inflam",
+    "PMC4632767_no_effect_of_omega_3_fatty_acid_supplementation_on_cognition",
+    "PMC4728620_dha_effects_in_brain_development_and_function",
+    "PMC4808858_an_increase_in_the_omega_6_omega_3_fatty_acid_ratio_increase",
+    "PMC4957603_switching_from_epa_dha_omega_3_acid_ethyl_esters_to_high_pur",
+    "PMC5067287_omega_3_fatty_acids_and_cardiovascular_disease_are_there_ben",
+    "PMC5180582_whole_genome_single_nucleotide_polymorphism_snp_marker_disco",
+    "PMC5396348_rationale_and_design_of_reduce_it_reduction_of_cardiovascula",
+    "PMC5431122_omega_3_long_chain_polyunsaturated_fatty_acid_content_and_ox",
+    "PMC5537875_effects_of_eicosapentaenoic_acid_epa_and_docosahexaenoic_aci",
+    "PMC5543674_functional_and_structural_benefits_induced_by_omega_3_polyun",
+    "PMC5748755_effects_of_omega_3_long_chain_polyunsaturated_fatty_acid_sup",
+    "PMC5763552_effects_of_concentrated_long_chain_omega_3_polyunsaturated_f",
+    "PMC5845148_omega_6_omega_3_fatty_acid_intake_of_children_and_older_adul",
+    "PMC5885893_associations_of_omega_3_fatty_acid_supplement_use_with_cardi",
+    "PMC5946201_dietary_intakes_of_epa_and_dha_omega_3_fatty_acids_among_us_",
+    "PMC6073248_omega_3_fatty_acid_supplementation_and_cardiovascular_diseas",
+    "PMC6164598_the_gut_brain_axis_in_alzheimer_s_disease_and_omega_3_a_crit",
+    "PMC6176151_inflammation_and_intestinal_leakiness_in_older_hiv_individua",
+    "PMC6330561_new_insights_into_mechanisms_of_action_for_omega_3_fatty_aci",
+    "PMC6617060_whole_life_or_fattening_period_only_broiler_feeding_strategi",
+    "PMC6683166_efficacy_of_omega_3_pufas_in_depression_a_meta_analysis",
+    "PMC6836340_omega_3_polyunsaturated_fatty_acids_status_and_cognitive_fun",
+    "PMC6966808_impact_of_omega_3_fatty_acid_oral_therapy_on_healing_of_chro",
+    "PMC7072971_marine_omega_3_n_3_fatty_acids_for_cardiovascular_health_an_",
+    "PMC7146314_comparison_of_omega_3_eicosapentaenoic_acid_versus_docosahex",
+    "PMC7353404_omega_3_eicosapentaenoic_acid_epa_rich_extract_from_the_micr",
+    "PMC7551800_expert_opinion_on_benefits_of_long_chain_omega_3_fatty_acids",
+    "PMC7827286_an_update_on_omega_3_polyunsaturated_fatty_acids_and_cardiov",
+    "PMC7911027_the_influence_of_omega_3_long_chain_polyunsaturated_fatty_ac",
+    "PMC8413259_effect_of_omega_3_fatty_acids_on_cardiovascular_outcomes_a_s",
+    "PMC8438613_digital_technology_tools_to_examine_patient_adherence_to_a_p",
+    "PMC8464922_neuroinflammation_in_autism_and_supplementation_based_on_ome",
+    "PMC8518559_three_liquid_phase_salting_out_extraction_of_eicosapentaenoi",
+    "PMC8615276_oral_mucositis_in_cancer_and_potential_use_of_omega_3_free_f",
+    "PMC9002234_docosahexaenoic_and_eicosapentaenoic_intervention_modifies_p",
+    "PMC9075326_a_head_to_head_comparison_of_a_free_fatty_acid_formulation_o",
+    "PMC9334128_aerobic_exercise_associated_with_fish_oil_supplementation_de",
+    "PMC9695993_marine_sources_of_dha_rich_phospholipids_with_anti_alzheimer",
+    "PMC9834373_role_of_omega_3_fatty_acids_in_cardiovascular_disease_the_de",
+    "PMC9863621_derivation_of_the_omega_3_index_from_epa_and_dha_analysis_of"
+  ],
+  "failures": [
+    {
+      "title": "Plasma Omega\u20103 Fatty Acid Response to a Fish Oil Supplement in the Healthy Elder",
+      "doi": "10.1007/s11745-008-3232-z",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intravenous Fish Oil Based Lipid Emulsion to Enhance Recovery in High-Risk Cardi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Optimizing CNS DHA Delivery in Elderly Adults at Risk for Dementia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids and Subconcussive Head Impacts",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3D: Omega-3 for Diet-Driven Health Disparities",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NMDA Enhancement Combined With Omega-3 for Early Dementia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on Acute Graft-versus-Host Disease After Allogene",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Supplementation on Pregnant Outcomes and Inflammation Markers ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Fish Oil and Red Wine on Oxidative Stress Biomarkers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ATLANTIS Trial: Phospholipid Omega-3 Versus Conventional Omega-3",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Non-surgical Periodontitis Treatment With Aspirin and Omega-3",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of a Dialysis-Specific Formula Rich in Branched-Chain Amino Acids, O",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation During Pregnancy for Prevention of Asthma, Eczema and A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "B-vitamins and Omega-3 Fatty Acids and Biomarkers of Brain Atrophy.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NUTRIMOOD-Inflammation and Depressive Comorbidity in Obesity: Modulation by Omeg",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-Term Omega-3 and Omega-3 Index >8%: Effects on Physiological Recovery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Validating Fish Oil's Role in Alleviating Bortezomib-Induced Neuropathy: A Multi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on Use of Omega-3 Fatty Acids to Improve Outcomes in Individuals With Sick",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lutein, Zeaxathin, and Fish Oil Supplementation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation for Pediatric Migraine",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study in Healthy Subjects to Compare the Bioavailability of EPA + DHA",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil, Metformin and Heart Health in PCOS",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study in Healthy Adults to Compare the Bioavailability of EPA + DHA From Two M",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional Therapy Enriched With Omega-3 in Patients With Lung Resection",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids and Nutritional Support in Gastrointestinal Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of DHA in Patients With Multiple Sclerosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids, Inflammation, Gut Microbiota in Youth With Depression",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Lower Body Positive Pressure Therapy Versus Alpha Lipoic Acid and Ome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids in Muscle Function and Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation in Systemic Lupus Erythematosus",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3, Autism Spectrum Disorder (ASD)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atmeg (Atorvastatin and Omega-3 Combination) and Carotid Atherosclerosis in Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "IcoSApent ethyL to Slow Down Aortic VAlve Stenosis proGrEssion",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Freshwater Snails Avoid PFOS But Only At Concentrations Well Above EPA Safe Wate",
+      "doi": "10.1093/etojnl/vgag049",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Change in Omega 3 Index in Healthy Adults With OmeGo or a Standard Omega-3 Oil S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Plant-Based Omega-3 Fatty Acids and Molecular Characterisation in In",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of an Omega-3 Fatty Acid-based Supplement on Healthy Ageing",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Omega-3 Hypertension Trial (VITAL Hypertension)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation and Mental Health in College Students",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Efficacy of Phospholipid-Bound Omega-3 Versus Omega-3 Alone in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Monoglyceride Based Topic Products as Skin Prebiotics for Eczema",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 and Whey Protein Supplementation on Lean Mass in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Dose Response Investigation of Docosahexaenoic Acid (DHA)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigation of the Effects of Omega-3 Supplementation in Chronic Kidney Diseas",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Assessment of Adjunctive Omega-3 Versus Vitamin D Daily Supplements on ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Supplementation on Exercise Performance, Body Composition, an",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of the Plasmodium Vivax Transmission-blocking Vaccine Pvs230D1-EPA/Matrix-",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Deep White-Matter Pathways Mediate the Link Between Docosahexaenoic Acid (DHA) S",
+      "doi": "10.1101/2025.11.20.689543",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mendelian Randomization Indicates Enhanced Lipid Control is Essential for Omega-",
+      "doi": "10.1101/2025.09.03.25333717",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility, Implementation and Early Adoption of an Omega-3 Test-and-Treat Prog",
+      "doi": "10.1101/2025.06.12.25329455",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Analysis of mercury content in fish and its impact on human health in the contex",
+      "doi": "10.2478/ahem-2025-0016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "75 Re-evaluating recommendations for Eicosapentaenoic acid (EPA) and Docosahexae",
+      "doi": "10.1093/jas/skaf300.142",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preventing Cognitive Decline in Late-Life Depression: A Longitudinal Study on th",
+      "doi": "10.37275/scipsy.v6i2.190",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Unlocking the Power of Eggs: Nutritional Insights, Bioactive Compounds, and the ",
+      "doi": "10.3390/agriculture15030242",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ameliorative effects of lycopene on oxidized fish oil-induced growth reduction a",
+      "doi": "10.1016/j.aqrep.2025.103028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplement and Health Markers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DHA Brain Delivery Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of E-EPA on Circulating LDL and Plasma Lipid Metabolism",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Comparison of the Effects of Krill Oil and Fish Oil Supplementation on Muscle ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Pufa and Aspirin as Adjunctive Therapy in Treatment of Smoker Patients W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional Study to Determine the Effect of Fish Oil on Atopic Dermatitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids for Smoking Cessation in Pregnancy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Omega-3 Fatty Acid Oral Therapy on Healing of Chronic Venous Leg Ulcer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of OmegaBoost to Increase Omega-3 Levels in Healthy Individuals",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Long-term Effect of Marine Omega-3 Fatty Acid Supplementation in Renal Trans",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Clinical Study of Omega-3 on Depression and Cognition",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Exercise in Rheumatoid Arthritis People",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Risk of the Onset of Atrial Fibrillation after Icosapent Ethyl versu",
+      "doi": "10.1101/2024.09.16.24313779",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids and intracranial aneurysms: a Mendelian randomization study",
+      "doi": "10.1101/2024.10.11.24315356",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Remodelling of plasma lipoproteins by icosapent ethyl -supplementation and its i",
+      "doi": "10.1101/2024.11.27.24318042",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Decomposed interaction testing improves detection of genetic modifiers of the re",
+      "doi": "10.1101/2024.09.09.24313018",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of Omega-3 fatty acid\u2013 fish oil and seed oil\u2013on the prevention of Alz",
+      "doi": "10.54254/2753-8818/33/20240534",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega\u20103 EPA and DHA From Algal Oil Improve Pacific White Shrimp Zootechnical Per",
+      "doi": "10.1155/2024/7543478",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of dietary fish oil replacement by microalgae on the gilthead sea bre",
+      "doi": "10.24072/pcjournal.498",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pros and Cons of Long-Chain Omega-3 Polyunsaturated Fatty Acids in Cardiovascula",
+      "doi": "10.1146/annurev-pharmtox-051921-090208",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Remote Assessment of Cognition, Insulin Resistance and Omega-3 Fatty Acid Biomar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Placebo-controlled Trial in Subjects at Ultra-high Risk for Psychosis With Omega",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Enteral High-dose DHA Supplementation on Bronchopulmonary Dysplasia in Very Pret",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of 2.0g Daily of MAG-EPA on the AA/EPA Ratio and Inflammation Biomarkers ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil (Omega 3 ) in Sjogren's Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Tolerability of Intravenous Fish Oil Lipid Emulsion in Children Under",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Fish Oil Dose on Tissue Content and Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Counselling Plus Omega-3 Supplementation in the Treatment of Generalized",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Docosahexaenoic (DHA) Values in Patients With Polycystic Ovary Syn",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Consuming a Mixture of Extracts and DHA on the Mild Cognitive Impairme",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Omega-3 Fatty Acids Versus Gabapentin in Uremic Pruritus in Hemodi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Assessment of the Safety of a Combination of Curcumin, Omega-3, and Vitami",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Maqui Berry Extract and Omega-3 Fatty Acids for Cytokine Reduction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Effects of Fish Oil Combined With Pine Bark Extract on Cognitive Decli",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid and Colorectal Adenoma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Do Omega-3 Fatty Acids Have an Antidepressant Effect in Patients With Signs of P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long chain omega-3 fatty acid intake in pregnancy and risk of type 1 diabetes in",
+      "doi": "10.1101/2023.11.23.23297665",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "OMEGA-3 \u2013 ONLY VIRTUALLY BENEFICIAL FOR THE VEGANS & FANATIC VEGETARIANS!",
+      "doi": "10.53879/id.60.11.p0005",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Analysis of Omega-3, AA, EPA, Omega-6, DHA, Pb and Hg Fatty Acid Levels of Sardi",
+      "doi": "10.23917/iseth.2639",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Eicosapentaenoic Acid and Docosahexaenoic Acid Content Reported in the Nutri",
+      "doi": "10.1097/nt.0000000000000654",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-Chain Omega-3 Fatty Acid Supplementation and Exercise-Induced Muscle Damage",
+      "doi": "10.1249/mss.0000000000003332",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of long-chain omega-3 canola oil on Atlantic salmon growth, performan",
+      "doi": "10.1007/s10499-023-01099-3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Fatty Acids on Kynurenine Metabolism and Mood",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating the Impact of Omega-3 Fatty Acid Supplementation (Soloways\u2122) on Lipid",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil for Cognitive Function, Sleep Quality, and Bone Density",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Vitamin D Supplementation in Breast Cancer Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Omega-3 FA on Glucose and Lipid Homeostasis Disorders in Obese/Dia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D and Fish Oil on the Kidney in Hypertensives",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation for LIver VolumE Reduction Study (OLIVER) Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Could Docosahexaenoic Acid (DHA), Contained in Breast Milk and Artificial Baby M",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Omega-3 Adiposity Trial (VITAL Adiposity)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Unsaturated Fatty Acid Improves Cognitive Function in Patients With Depr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Determine Optimal Absorption of Single Dose Omega-3",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Dietary Intervention (O3DI)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "FISH LIVER OIL: OMEGA-3 FATTY ACID AND HUMAN HEALTH",
+      "doi": "10.56557/upjoz/2022/v43i243325",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Docosapentaenoic Acid on Lipids and Other Risk Factors for Ca",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITAL-DEP: Depression Endpoint Prevention in the VITamin D and OmegA-3 TriaL",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on Muscle Wasting",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Omega-3 Status and Supplementation on Tendon Structure in Competi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega 3 and Ischemic Stroke; Fish Oil as an Option",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional Study of Fish Oil in Skin Quality in Healthy Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Oil Use in COVID-19 Patients in Qatar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation on Serum Fetuin-A Levels",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resolving Inflammatory Storm in COVID-19 Patients by Omega-3 Polyunsaturated Fat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized Clinical Trial of HMR(Home Meal Replacement)-Type Omega-3-balanced-di",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immunomodulation by intravenous omega-3 fatty acid treatment in older subjects h",
+      "doi": "10.1101/2021.12.27.21268264",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation of Lysine Essential Amino Acids in Commercial Feed to Increase E",
+      "doi": "10.29303/jbt.v21i3.2995",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Dietary Omega-3 Fatty Acids (DHA/EPA) and Vitamin E on Fatty Acid Pro",
+      "doi": "10.51304/baer.2021.5.1.10",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Analysis of Omega-3 Fatty Acid Content in Fish Oil Products",
+      "doi": "10.1177/08830738211015051",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sustainable Synthesis of Omega-3 Fatty Acid Ethyl Esters from Monkfish Liver Oil",
+      "doi": "10.3390/catal11010100",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Dosage on Cardiovascular Outcomes",
+      "doi": "10.1016/j.mayocp.2020.08.034",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Investigation on the Effects of Icosapent Ethyl (VascepaTM) on Inflammatory B",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Systematic Review and Meta-analysis of the Differential Effects of DHA and EPA o",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Fish Oil or Olive Oil Supplementation on the Health Effects of Ozone",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of EPA on Prostate Cancer Cells Proliferation and Quality of Life",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 and Probiotic Dietary Supplements on Elevated High Sensitivity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of EPA and HMB on Strength in ICU Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High Dose Intravenous Fish Oil Reduces Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Specified Drug-use Survey of the Granular Capsule Formulation of Omega-3 Fatty A",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Omega-3 Fatty Acid Therapy in Preventing Gastrointestinal Bleeding i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Affects Cognition and ADHD Symptoms in Adults With Autism Spectrum Diso",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA) on Inflammati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Fish Oil Intervention in Polycystic Ovary Syndrome (PCOS)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Investigation of the Relationship Between Omega-3 Fatty Acid Nutrition and Me",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Transcriptomics of Mononuclear Cells and Inflammatory Status of Obese Patients T",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and HMB Supplementation in COPD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Docosahexaenoic Acid (DHA) Supplementation in High Risk Pregnancies",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 to Reduce Diabetes Risk in Subjects With High Number of Particles That C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3, Nigella Sativa, Indian Costus, Quinine, Anise Seed, Deglycyrrhizinated ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Omega-3 on Selected Cytokines Involved in Cytokine Storm",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Distinct microalgae species for food\u2014part 2: comparative life cycle assessment o",
+      "doi": "10.1007/s10811-020-02181-6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of eicosapentaenoic acid/docosahexaenoic acid on coronary high-intensity ",
+      "doi": "10.1093/ehjci/ehaa946.1441",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of High\u2010Level Omega\u20103 Eicosapentaenoic Acid (EPA) Production from Ph",
+      "doi": "10.1111/jpy.13082",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of elevated triglycerides and purified eicosapentaenoic acid ethyl es",
+      "doi": "10.1093/ehjci/ehaa946.3343",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A novel marine algal oil containing both <scp>EPA</scp> and <scp>DHA</scp> is an",
+      "doi": "10.1111/jwas.12699",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of omega-3 fatty acid DHA and EPA supplementation in pregnant or breast-f",
+      "doi": "10.1093/nutrit/nuaa060",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acid-derived mediators that control inflammation and tissue homeos",
+      "doi": "10.1093/intimm/dxz001",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids for the Management of Hypertriglyceridemia: A Science Adviso",
+      "doi": "10.1161/cir.0000000000000709",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Exercise and Omega-3 on Metabolic Health in Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Fish Oil Enriched In Omega-11 Fatty Acid On Lipoprotein Metabolism In ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of EPA + DHA Enriched Canned Tuna and Its Acute Effects",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids Supplement in Cognition of Young Healthy Adults a",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil-derived N-3 Polyunsaturated Fatty Acids and Extracellular Vesicles",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Obesity, Inflammation and Aging: Effects of Physical Exercise and Omega-3 Fatty ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Omega-3 Supplementation on Muscle Functioning, Inflammation and Mu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Fish Oil Monoglycerides on the Modulation of Mitochondrial Functions a",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Safety and Efficacy Study to Determine if Giving Intravenous Fish Oil Helps Ch",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Study on the Effect of Elevit Pregnancy 2nd & 3rd Trimester (Multi-micr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intervention With Vitamin D and Omega-3 Supplements and Incident Heart Failure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pro-omega-3, Reduction of Inflammation and Modulation of Prematurity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "PENGARUH PENAMBAHAN COD LIVER OIL PADA PAKAN KOMERSIAL TERHADAP KANDUNGAN OMEGA-",
+      "doi": "10.20473/jafh.v6i1.11269",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "P3712The omega-3 fatty acid eicosapentaenoic acid (EPA) is inversely associated ",
+      "doi": "10.1093/eurheartj/ehz745.0566",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Separation of high\u2010purity eicosapentaenoic acid and docosahexaenoic acid from fi",
+      "doi": "10.1002/jssc.201900378",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preparation of eicosapentaenoic acid ethyl ester from fish oil ethyl esters by c",
+      "doi": "10.1002/jssc.201900387",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 332: Effects of Fish Oil Enriched in Omega-11 Fatty Acid on Lipoprotein",
+      "doi": "10.1161/atvb.39.suppl_1.332",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular Risk Reduction with Icosapent Ethyl for Hypertriglyceridemia",
+      "doi": "10.1056/nejmoa1812792",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Polyunsaturated Fatty Acids and Their Health Benefits",
+      "doi": "10.1146/annurev-food-111317-095850",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "How does high DHA fish oil affect health? A systematic review of evidence",
+      "doi": "10.1080/10408398.2018.1425978",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Fish Oil to Reduce Inflammation During Endovascular Abdominal Aortic Repa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Fish Oil in Alleviating Health Hazards Associated With Ozone Exposure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of EPA + DHA in a SMEDS Formulation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of DHA- and EPA-enriched Oils on Cognitive Function and Mood",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids and Exercise on Mobility and Cognition in Older Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Fish Oil for Autoimmune Disease, Inflammation and Knee Pain",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D and Omega-3 on Cerebrovascular Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Dietary Supplemental Fish Oil in Alleviating Health Hazards Associated",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DHA Supplementation for Lactating Mothers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids for Major Depressive Disorder With High Inflammation: A Pers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Essential Fatty Acid Regulation of Omega-3 HUFA Metabolism; Satiety and ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Protective Effect of Omega-3 Fatty Acid on Cognitive Function Among Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Modulation of Esophageal Inflammation in Barrett's Esophagus by Omega-3 Fatty Ac",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Supplementation With Omega-3 Fatty Acid in Muscle Response",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 for Depression and Other Cardiac Risk Factors - 2",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Brain Delivery Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids in Sickle Cell Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Omega-3 Trial (VITAL)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ranger Resilience and Improved Performance on Phospholipid Bound Omega-3's",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Topical Omega-3 Fatty Acids (REMOGEN\u00ae OMEGA) in the Treatment of Dry Eye",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Persistent Citation of the Only Published Randomized Controlled Trial of Omega-3",
+      "doi": "10.3390/publications6030035",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Eicosapentaenoic Acid (EPA) from Fish Oil and Margarine as Bioactive Compound fo",
+      "doi": "10.18502/kls.v4i5.2588",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of the Effects of Blackcurrant Extract and Omega-3 Fats on the Health of t",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish OIL Optimal dosE Determination Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation for Tetraplegics With Poor Cholesterol Levels",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigating the Effect of 4-week Omega-3 Polyunsaturated Fatty Acid Supplement",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Omega-3 Fatty Acids on Peripheral Arterial Disease II",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Omega-3/Omega-6 Fatty Acids in Pre-school Children at Risk for ADHD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation, Resting Energy Expenditure, Skeletal Muscle Membrane C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of EPA and DHA in the Inflammation and Metabolic Disorders in DMD/DMB Pat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiometabolic Benefits of Omega-3 Polyunsaturated Fatty Acids",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Polyunsaturated Fatty Acids on Major Depressive Disorder in Patients Wit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Plant Omega-3 and Omega-6 Fatty Acids on Exercise Performance",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Use of Fish Oil to Reduce Inflammation Caused by a Peripheral Vascular Inter",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation and Behavior Problems",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Fish Oil on Platelet Function and Coagulation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid for Critically Ill Patients.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oils and Adipose Inflammation Reduction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Parenteral Nutrition With Intravenous and Oral Fish Oil for Intensive Care Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Omega-3 Fatty Acid Supplementation on Memory Functions in Healthy Olde",
+      "doi": "10.3233/jad-150886",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic Actions of Omega-3 Fatty Acids",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation and Resistance Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation, Nutrigenomics and Colorectal Cancer Prevention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Enhanced Counseling Using Complementary Feeding Recommendation Based o",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "OmegaChild - Omega-3 Supplementation to Children Previously Treated for Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lipoic Acid and Omega-3 Fatty Acids for Cognitive Impairment in Multiple Scleros",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Mother's Supplementation Omega-3 in the Dynamics of Fetal Ductus Arter",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Gender Effects of Dietary Omega-3 Fatty Acids From Plant and Marine Sources on O",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on Outcome After Major Liver Resection",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Fatty Acids on the Perioperative Immune Response and Erythrocy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 LCPUFA Intervention on Learning, Cognition, Behaviour and Visu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pro-resolving Effect of MAG-DHA in Cystic Fibrosis (PREMDIC)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolism of Omega-3 and Omega-6 During Healthy Aging",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil T Cell Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study Comparing Fish Oil and Krill Oil",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Fatty Acid on Endothelial Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Blueberry Supplementation in Age-Related Cognitive Decline",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Comparator Trial on the Relative Efficacy of Two Triglyceride Forms of Fish Oi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation in Gastrointestinal Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Large Randomized Trial of Vitamin D, Omega-3 Fatty Acids and Cognitive Decline",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Cardiovascular Risk Factors and Kidney Related Biomarkers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of a Spread With Added Plant Sterols and Omega-3 Fatty Acids on Bloo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of dietary microalgae (Schizochytrium spp.) and fish oil in layers o",
+      "doi": "10.1017/jan.2016.4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Absorption of Eicosapentaenoic acid (EPA) and Docosahexaenoic acid (DHA) in Wax\u2010",
+      "doi": "10.1096/fasebj.30.1_supplement.684.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Maternal fish oil supplementation during lactation is associated with reduced he",
+      "doi": "10.1017/s0007114516004293",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Omega-3 for Reduction of Kidney Scar Due to Pyelonephritis in Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Adaptations to Resistance Exercise in Older People",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluate the Efficacy and Safety of DHA in the Adjuvant Treatment of Children Wi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluate the Effect of Omega-3 vs Soy Isoflavones in Postmenopausal Women With M",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids Supplementation and Atherothrombotic Biomarkers in Type 2 Di",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Slowing HEART diSease With Lifestyle and Omega-3 Fatty Acids",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of DHA on Attention Deficit and Hyperactivity Disorder",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil for HIV-Related Inflamm-aging and Immune Senescence",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early Supplementation of Enteral Microlipid With and Without Fish Oil in Prematu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Cardiovascular Suboptimal Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Prescription Omega-3 Fatty Acid Concentrate on Induced Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Probiotic Co-administration With Omega-3 Fatty Acids on NAFLD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Decreasing Risk of Coronary Artery Disease in Schizophrenia by Omega-3 Fatty Aci",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of DHA Supplementation on Cognitive Performance and Growth in Chinese Chi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids to Combat Sarcopenia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cholesteryl esters from squid oil contain only saturated fatty acids, whereas th",
+      "doi": "10.1002/ejlt.201400390",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Persistent Citation of the Only Published Randomised Controlled Trial of Omega-3",
+      "doi": "10.3390/publications3010017",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "OMEGA-3 FATTY ACIDS AND AGE-RELATED DISEASES: REALITIES AND PROSPECTS",
+      "doi": "10.20996/1819-6446-2015-11-3-309-316",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE USE OF OMEGA-3 FATTY ACIDS FOR THE TREATMENT OF PATIENTS WITH CARDIAC ARRHYT",
+      "doi": "10.1234/1819-6446-2013-1-56-61",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Blood docosahexaenoic acid and eicosapentaenoic acid in vegans: Associations wit",
+      "doi": "10.1016/j.clnu.2014.03.003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of omega-3 fatty acids and their metabolites in asthma and allergic disease",
+      "doi": "10.1016/j.alit.2014.08.003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of food-grade nanoemulsions and emulsions for delivery of omega-3 fa",
+      "doi": "10.1039/c4fo00723a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Acids and Cardio - Vascular Complications in Patients With Chronic Kidne",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating the Effectiveness of Fish Oil Supplements at Reducing the Recurrence ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oils and Soybean Lecithin Supplementation Modulate Immune Function in Runne",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Muscle Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of DHA on Pro-resolving Anti-inflammatory Mediators in Obese Patients Un",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of 4 Weeks Fish Oil Supplementation on Cycling Performance in Healthy Mal",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids and Insulin Sensitivity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lipoic Acid and Omega-3 Fatty Acids for Alzheimer's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Therapy Study for Childhood Bipolar Disorder- Not Otherwise Specifie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Supplementation on the Cytokine and Lipid Profiles in Patient",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CONSIDERATIONS IN FAVOR OF THE USE OF FISH OIL FOR CARDIOVASCULAR DISEASE PREVEN",
+      "doi": "10.14283/jarcp.2014.33",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Lutein + Zeaxanthin and Omega-3 Fatty Acids for Age-Related Macular Degeneration",
+      "doi": "10.1001/jama.2013.4997",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-Chain Omega-3 Fatty Acids Improve Brain Function and Structure in Older Adu",
+      "doi": "10.1093/cercor/bht163",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Erythrocyte omega-3 fatty acids increase and linoleic acid decreases with age: O",
+      "doi": "10.1016/j.plefa.2012.12.004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Eicosapentaenoic Acid (EPA) Reduces Cardiovascular Events: Relationship with the",
+      "doi": "10.5551/jat.18002",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Omega-3 Polyunsaturated Fatty Acids (PUFAs) Pretreatment Improve Outcomes i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Supplementation in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Pilot Study of Docosahexaenoic Acid (DHA) in Obese Menopausal Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety Study of DHA-O in Adults With Hypertriglyceridemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of 12 wk of Omega-3 FA Supplementation on Metabolic and Physical Health P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Fish Oils to Prevent Atrial Mechanical Stunning and Atrial Remodeling Due",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids in Chronic Periodontitis.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Fish Oils to Reduce the Frequency and Duration of Episodes of Atrial Fibr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of Fish Oils to Reduce Recurrence of Atrial Fibrillation Following DC Cardio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Docosahexaenoic Acid (DHA) Effects on Cognitive Function, Craving and Psychosoci",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids Monotherapy in Children and Adolescents With Autism Spectrum",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Docosahexaenoic Acid (DHA) on Cardiovascular Disease on Diabetic Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Postprandial Lipid Metabolism in Familial Hypercholesterolaemia:Effects of Fish ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Omega-3 Phospholipids on Perceptual-cognitive Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Study to Assess High-DHA Fish Oil on Biomarkers of Cardiovascular Disea",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Mother DHA Supplementation on Premature Newborn.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessing the Effects of Omega-3 Supplementation on Some Serum BDNF\u060c Follistatin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy Study Regarding the Beneficial Effects of Omega-3 Fatty Acids on Cardio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of DHA on Lipid and Carbohydrate Metabolism Alterations and Body Fat Dist",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation of Glutamine and Fish Oil Versus Placebo in Patients With Heart ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "OMEGA-3-Polyunsaturated Fatty-Acids (N3-Pufa) In Patients With Peripheral Arteri",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Omega-3 Fatty Acid Supplements (Eicosapentaenoic Acid and Docosahexa",
+      "doi": "10.1001/archinternmed.2012.262",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Between Omega-3 Fatty Acid Supplementation and Risk of Major Cardiov",
+      "doi": "10.1001/2012.jama.11374",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long chain omega-3 fatty acids and cardiovascular disease: a systematic review",
+      "doi": "10.1017/s0007114512001596",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Incorporation of EPA and DHA in Lipoproteins Differ According to Apolipopro",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MsFLASH-02: Interventions for Relief of Menopausal Symptoms: A 3-by-2 Factorial ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of EPA on Aerobic Performance, Muscle, and Quality of Life in Colorectal ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids in Bipolar Patients With a Low Omega-3 Index and Reduced Hea",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of a Component of Fish Oil on Exercise-Induced Bronchoconstriction and Ai",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Multi_center Study to Evaluate the Effect of N-3 Fatty Acids (OMEGA-3) on Arrhyt",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acid Supplementation on Inflammatory Response in Multis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose Response Effects of Marine Omega-3 Fatty Acids on Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Omega-3 Fatty Acids Regarding Ergogenic, Anti-inflammatory and Obesity ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Omega-3 Inhibit Metabolic Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Docosahexaenoic Acid (DHA)-Enriched Human Milk in Premature Newborns",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation and Vascular Function in Hypertensive Patients With Hyp",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Assess the Effect of Consumption of Fish Oil Encapsulated on Inflammato",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Supplementation in Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Scientific Opinion on the Tolerable Upper Intake Level of eicosapentaenoic acid ",
+      "doi": "10.2903/j.efsa.2012.2815",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increasing seafood in the USDA Food Patterns increases eicosapentaenoic acid (EP",
+      "doi": "10.1096/fasebj.26.1_supplement.118.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Allergic disease in infants up to 2 years of age in relation to plasma omega\u20103 f",
+      "doi": "10.1111/j.1399-3038.2010.01096.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects ofn-3 fatty acids, EPAv. DHA, on depressive symptoms, quality of life, m",
+      "doi": "10.1017/s0007114511004788",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DHA Supplements to Improve Insulin Sensitivity in Obese Pregnant Women (The Omeg",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Double Blind, Crossover Study of Fish Oil [EPA and DHA] for Intractable Partial ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Omega-3 Fatty Acids on Borderline Personality Disorder",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Genes, Omega-3 Fatty Acids and Cardiovascular Disease Risk Factors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Administration in Dialysis Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Microencapsulated Fish Oil or Conjugated Linoleic Acid in Metabolic Syndrome",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids as Adjunct Treatment for Major Depressive Disorder",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Lipoic Acid and Eicosapentaenoic Acid (EPA) in Human Obesity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Stearidonic Acid-Containing Foods on Eicosapentaenoic Acid Levels in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Eicosapentaenoic Acid (EPA)and Docosahexaenoic Acid Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Fish Oil Supplementation on Cognition in MCI Patients and the Influe",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-6 to Omega-3 Fatty Acid Ratio and Higher Order Cognitive Function in 7-to ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil In Heart Transplantation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 EPA/DHA for Soldiers at Risk for Mood Disorders",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Versus Statins Versus Placebos in Reducing Atrial Fibrillation in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil (Omega 3), Immune Function, and Mood",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The DHA (Docosahexaenoic Acid) Oxford Learning and Behaviour (DOLAB) Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interaction of Epanova on Warfarin Pharmacokinetic and Anticoagulant Activity an",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Fish Oil in Lupus Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Do Apolipoprotein E Polymorphisms Influence Risk of Cognitive Decline by Modulat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Docosahexaenoic Acid (DHA) on Fetal Cardiac Outcomes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Supplements and Dry Eye",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Protein-energy Oral Supplementation Enriched With Omega-3 Fatty Acids in Cardiac",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Feasibility Study of Omega-3 Fatty Acids in Dialysis Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil to Prevent Asthma Exacerbations in Patients With ALOX5 Polymorphisms",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 4765: Investigation of omega-3 docosahexaenoic acid (DHA)-induced apopt",
+      "doi": "10.1158/1538-7445.am2011-4765",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fatty acids from fish: the anti-inflammatory potential of long-chain omega-3 fat",
+      "doi": "10.1111/j.1753-4887.2010.00287.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Mother DHA Supplementation on Term Newborn.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardioprotective Effects of Omega-3 Fatty Acids Supplementation in Healthy Older",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CCRC: Understanding the Effects of Omega-3 Fatty Acids Versus Lignans in Flaxsee",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigation Into the Effects of Krill Oil vs. Fish Oil on Markers of Cardiovas",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3-fatty Acids on Age-related Macular",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids and Muscle Protein Synthesis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Fish Oil and Vitamin C on Exercise-Induced Bronchoconstriction and Air",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Efficacy and Safety of Lovaza (Omega-3-Acid Ethyl Esters) in Recur",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on the Human Gene Expression",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Supplementation in Late-life Depression",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differential Effects of Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DH",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Intensive Lipid Lowering and Omega-3 Fatty Acid on Composition of Cor",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Time and Dose Evaluation of Stearidonic Acid (SDA) to Eicosapentaenoic Acid (EPA",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Iron and Omega-3 Fatty Acid Supplementation on Cognition and Immu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of \u03b1\u2010Linolenic Acid (ALA) Versus Eicosapentaenoic Acid (EPA) and Docosah",
+      "doi": "10.1096/fasebj.24.1_supplement.323.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A factorial design feeding study to evaluate the effects of \u03b1\u2010linolenic acid (AL",
+      "doi": "10.1096/fasebj.24.1_supplement.210.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary intake of eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) in ",
+      "doi": "10.1017/s0007114509991851",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acid supplements improve the cardiovascular risk profile of subjec",
+      "doi": "10.2143/ac.64.3.2038016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Safety and Biologic Effects of an Eicosapentaenoic (EPA)-Enric",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Fish Oils on Human Hepatic Colorectal Metastases",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Supplementation in HIV Patients With Therapeutic Lifestyle Change Diet.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Gelatin Supplement and Omega-3 Supplement in Obese or Overweight Subjects W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Assessment of Fish Oil-based Lipid Emulsion Infusions in Critical Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil for Reduction of Atrial Fibrillation After Cardiac Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Dietary Supplements With Fish Oil on Mannitol-induced Airway Sensitivi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DHA (Docosahexaenoic Acid), an Omega 3 Fatty Acid, in Slowing the Progression of",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Effects of Fish Oil Supplementation and a Montelukast on EIB and Air",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Phase II Randomized Trial of Fish Oil in Patients With Acute Lung Injury (ALI)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Omega-3 Fatty Acids on Lactate",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alpha Omega Trial: Study of Omega-3 Fatty Acids and Coronary Mortality",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on Bone and Frailty",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Docosahexaenoic Acid (DHA)-Rich Fish Oil on Cerebral Haemodynamics",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early Versus Delayed Enteral Feeding and Omega-3 Fatty Acid/Antioxidant Suppleme",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pulmonary Vein Isolation Outcomes With Fish Oils",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Docosahexaenoic Acid (DHA) on Heart Rate Variability in Elderly Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Aspirin in Periodontal Regeneration",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary supplementation with cholesterol and docosahexaenoic acid (DHA) affects ",
+      "doi": "10.1096/fasebj.23.1_supplement.33.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Importance of the Omega-6/Omega-3 Fatty Acid Ratio in Cardiovascular Disease",
+      "doi": "10.3181/0711-mr-311",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The omega-6/omega-3 fatty acid ratio, genetic variation, and cardiovascular dise",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of fish oil on cognitive performance in older subjects",
+      "doi": "10.1212/01.wnl.0000324268.45138.86",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cognitive and Mood Effects of Docosahexaenoic Acid (DHA)-Rich and Eicosapentaeno",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Fish Oils on Blood Pressure, Heart Rate Variability and Liver Fat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Fish Oil Supplementation on Endothelial Function, Heart Rate Varia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Eicosapentaenoic Acid (EPA), Gamma-Linolenic Acid (GLA) and Antio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids and Menaquinone-7 on Thrombotic Tendency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pure Fish Oil Parenteral Lipid Emulsion in Patients With Gastrointestinal Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Omega-3 Fatty Acids on Markers of Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Academic Stress and Proinflammatory Cytokines: Omega-3 Intervention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Purification and biochemical characterization of an intracellular lipase by Rhiz",
+      "doi": "10.1002/jctb.2058",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids and cardiovascular disease",
+      "doi": "10.1097/mco.0b013e3280127af0",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 DHA and EPA for cognition, behavior, and mood: clinical findings and str",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Docosahexaenoic Acid (DHA) on Cognitive Function in Children 4 Years ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Biomarkers of Cardiovascular Risk",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omegaven (w-3 Fish Oil) Supplemented Parenteral Nutrition in Subjects of SICU.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Triglyceride Lowering Effect of an Omega-3 Fat (DHA) in Addition to Statin T",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "TREND-HD - A Trial of Ethyl-EPA (Miraxion\u2122) in Treating Mild to Moderate Hunting",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increased Endothelium\u2010Mediated Vasorelaxation Induced By The Omega\u20103 Fatty Acid ",
+      "doi": "10.1096/fasebj.21.5.a522",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation of dietary long-chain polyunsaturated omega-3 fatty acids high i",
+      "doi": "10.1017/s1478061507811443",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The implication of omega-3 polyunsaturated fatty acids in retinal physiology",
+      "doi": "10.1051/ocl.2007.0121",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular benefits of omega-3 fatty acids",
+      "doi": "10.1016/j.cardiores.2006.08.019",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Incorporation and Clearance of Omega-3 Fatty Acids in Erythrocyte Membranes and ",
+      "doi": "10.1373/clinchem.2006.072322",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cigarette Smoking, Fish Consumption, Omega-3 Fatty Acid Intake, and Associations",
+      "doi": "10.1001/archopht.124.7.995",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cognitive assessment of children at age 2\u00bd years after maternal fish oil supplem",
+      "doi": "10.1136/adc.2006.099085",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Alpha Lipoic Acid in Treating Alzheimer's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluating Atorvastatin With Omega-3 Fatty Acids in Cardiovascular Risk Reductio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3/Omega-6 Fatty Acids for Attention-Deficit/Hyperactivity Disorder (ADHD):",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of an Oral Nutritional Supplement Rich in Omega-3 Fatty Acids on Funct",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The impact of age, body mass index, and fish intake on the EPA and DHA content o",
+      "doi": "10.1007/s11745-006-1392-2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SOFA: Study on Omega-3 Fatty Acids and Ventricular Arrhythmia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Docosahexenoic Acid (DHA) Supplementation and Cardiovascular Disease in Men With",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Fish Oil on Adiposity and Atherogenic Factors in Type 2 Diabetic Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preliminary Study of Fish Oil and Dementia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 polyunsaturated fatty acids in cardiology",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efectos cardiovasculares de los \u00e1cidos grasos Omega-3 y alternativas para increm",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Benefit of Adding Fish Oil to the Nutrition of Critically Ill Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Milk Types and Fish Oil in 9- to 12-Month-Old Infants",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acids in Treating Patients With Advanced Cancer Who Have Significa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Asthma in House Dust Mite Allergy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Protective Effect of EPA on Cardiovascular Events",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Consumption, Fish Oil, Omega-3 Fatty Acids, and Cardiovascular Disease",
+      "doi": "10.1161/01.atv.0000038493.65177.94",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The role of omega-3 fatty acids in the secondary prevention of cardiovascular di",
+      "doi": "10.1093/qjmed/hcg092",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil and Folate Supplementation During Pregnancy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary strategies for increasing docosahexaenoic acid (DHA) and eicosapentaenoi",
+      "doi": "10.1079/pavsnnr20033059692",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary strategies for increasing docosahexaenoic acid (DHA) and eicosapentaenoi",
+      "doi": "10.1079/cabireviews20033059692",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Consumption, Fish Oil, Omega-3 Fatty Acids, and Cardiovascular Disease",
+      "doi": "10.1161/01.cir.0000038493.65177.94",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Diet and Omega-3 Intervention Trial on Atherosclerosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Separation of eicosapentaenoic acid and docosahexaenoic acid in fish oil by kine",
+      "doi": "10.1007/s11746-998-0093-9",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Duration of effects of dietary fish oil supplementation on serum eicosapentaenoi",
+      "doi": "10.2460/ajvr.1998.59.07.864",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The preparation of concentrates of eicosapentaenoic acid and docosahexaenoic aci",
+      "doi": "10.1007/s11746-997-0247-1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fish Oil Trials in Pregnancy for the Prevention of Pregnancy Complications ('FOT",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Blood lipid docosahexaenoic and arachidonic acid in term gestation infants fed f",
+      "doi": "10.1007/bf02523832",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increased docosahexaenoic acid levels in human newborn infants by administration",
+      "doi": "10.1007/bf02637073",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Do Fish Oils Prevent Restenosis Post-Coronary Angioplasty?",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Atherosclerosis and Omega-3 Fatty Acids in Alaskan Natives",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship between the Refractive Index of Fish Oils and their Content of ",
+      "doi": "10.1002/lipi.19940960907",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does fish oil lower blood pressure? A meta-analysis of controlled trials.",
+      "doi": "10.1161/01.cir.88.2.523",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary eicosapentaenoic acid and docosahexaenoic acid from fish oil. Their inco",
+      "doi": "10.1161/01.atv.11.4.903",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Application of lipase to concentrate the docosahexaenoic acid (DHA) fraction of ",
+      "doi": "10.1002/bit.260380818",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids and fetal brain development: implications for maternal nutri",
+      "doi": "10.37349/ent.2025.1004107",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 polyunsaturated fatty acids and Parkinson's disease: A systematic review",
+      "doi": "10.1111/jnc.16154",
+      "pmid": "38923542",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Potential of omega-3 and conjugated fatty acids to control microglia inflammator",
+      "doi": "10.1016/j.bbalip.2023.159331",
+      "pmid": "37172801",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Omega-3 Supplementation on the Expanded Disability Status Scale a",
+      "doi": "10.2174/1871527318666190516083008",
+      "pmid": "31096898",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuroinflammation in Alzheimer's Disease: The Role of Obesity, Gut Microbiota, a",
+      "doi": "10.1016/j.tjnut.2026.101407",
+      "pmid": "41687786",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional interventions in depression: The role of vitamin D and omega-3 fatty",
+      "doi": "10.1016/j.clnu.2025.01.009",
+      "pmid": "39874718",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Omega-3 Fatty Acids in Cognitive Health: From Development to Aging a",
+      "doi": "10.12775/qs.2025.41.58753",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid Derived Neuroactive Lipids - Docosahexaenoyl-Glycine and Its ",
+      "doi": "10.1101/2025.10.17.681057",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ultrasound\u2010Assisted Extraction Improved the Extraction Rate, Omega\u20103, and Polyun",
+      "doi": "10.1002/ejlt.202400131",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The impact of omega-3 fatty acids, vitamins, minerals, N-acetylcysteine, and gin",
+      "doi": "10.12775/qs.2025.41.59840",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 Fatty Acid in the Prevention of Migraine",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids and mental health",
+      "doi": "10.1016/j.glohj.2020.01.004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adipose tissue fatty acid and lipid mediator composition in obesity and response",
+      "doi": "10.1017/s0029665120001998",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Strategies for Enzymatic Synthesis of Omega\u20103 Structured Triacylglycerols from C",
+      "doi": "10.1002/ejlt.201800412",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 784: Eicosapentaenoic Acid, Unlike Other Omega-3 Fatty Acids, Inhibits ",
+      "doi": "10.1161/res.125.suppl_1.784",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids' supplementation in Alzheimer's disease: A systematic review",
+      "doi": "10.1080/1028415x.2017.1321813",
+      "pmid": "28466678",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 polyunsaturated fatty acid supplementation in prevention and treatment o",
+      "doi": "10.1016/j.jad.2018.05.018",
+      "pmid": "29860183",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The role of Omega-3 and Omega-9 fatty acids for the treatment of neuropathic pai",
+      "doi": "10.1016/j.bbamem.2017.05.003",
+      "pmid": "28495596",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuroprotective effect of omega-3 polyunsaturated fatty acids in the 6-OHDA mode",
+      "doi": "10.1080/1028415x.2017.1290928",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 243: Regression of Carotid Intima-media Thickness and Improvement of Li",
+      "doi": "10.1161/atvb.36.suppl_1.243",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Icosapent Ethyl (Eicosapentaenoic Acid Ethyl Ester): Effects Upon High-Sensitivi",
+      "doi": "10.1089/met.2014.0137",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 fatty acids and traumatic neurological injury: from neuroprotection to n",
+      "doi": "10.1016/j.tins.2013.10.005",
+      "pmid": "24268818",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 397: Correlation Between the Whole Blood Omega-Score and Red Blood Cell",
+      "doi": "10.1161/atvb.34.suppl_1.397",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Docosahexaenoic acid (DHA) in stroke, Alzheimer\u2019s disease, and blinding retinal ",
+      "doi": "10.1051/ocl.2011.0403",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose-dependent effects of docosahexaenoic acid-rich fish oil on erythrocyte doco",
+      "doi": "10.1017/s000711450785344x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of biochemical effects of statins and fish oil in brain: the battle o",
+      "doi": "10.1016/j.brainresrev.2007.09.004",
+      "pmid": "17959252",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Eicosapentaenoic acid and docosahexaenoic acid from fish oils: differential asso",
+      "doi": "10.1079/bjn2002556",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Increased production of docosahexaenoic acid (22: 6 n\u20103, DHA) in catfish nutriti",
+      "doi": "10.1111/j.1095-8649.1996.tb00073.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of olive oil, hydrogenated palm oil, and omega-3 fatty acid-enriched",
+      "doi": "10.1161/01.atv.13.1.84",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of dietary fish oil supplementation on the fatty acid composition of the",
+      "doi": "10.1042/cs0680449",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC13008728": {
+      "title": "Effect of omega-3 supplementation on metabolic and inflammatory markers in adults with HIV infection: a systematic review and meta-analysis",
+      "doi": "10.3389/fnut.2026.1746723",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12448684": {
+      "title": "Effects of algal oil as an alternative to fish oil in feline foods on serum concentrations of eicosapentaenoic acid and docosahexaenoic acid",
+      "doi": "10.1093/jas/skaf252",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Animal Science",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12469626": {
+      "title": "The Omega-3 Fatty Acids Eicosapentaenoic Acid and Docosahexaenoic Acid Enhance the Effects of Temozolomide Chemotherapy in Glioblastoma Cells",
+      "doi": "10.3390/ijms26188759",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12611454": {
+      "title": "Recognizing the Health Benefits of Plant\u2010Sourced Omega\u20103 Stearidonic Acid: Exploring Its Complementary Role to Preformed EPA/DHA",
+      "doi": "10.1002/lipd.12452",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Lipids",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12450000": {
+      "title": "Comparative Risk of Atrial Fibrillation Onset in Statin\u2010Treated Patients Initiating Icosapent Ethyl and Omega\u20103 Acid Ethyl Esters: A Retrospective Cohort Study",
+      "doi": "10.1161/jaha.124.038846",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of the American Heart Association",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12737357": {
+      "title": "Omega-3 Fatty Acid Intake and Oxylipin Production in Response to Short-Term Ambient Air Pollution Exposure in Healthy Adults",
+      "doi": "10.3390/toxics13121063",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Toxics",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12777072": {
+      "title": "Omega-3 polyunsaturated fatty acids and mortality risk in depression: immune-inflammatory mediation in NHANES 1999\u20132018",
+      "doi": "10.1186/s12937-025-01265-8",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12460143": {
+      "title": "Synergistic effects of Mediterranean diet combined with phytosterol-based supplements and omega-3 fatty acids on lipid profiles: a pilot study in menopausal women",
+      "doi": "10.3389/fnut.2025.1645102",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12826911": {
+      "title": "Associations Between Plasma Omega\u20103 and Fish Oil Use With Risk of Atrial Fibrillation in the UK Biobank",
+      "doi": "10.1161/jaha.125.043031",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of the American Heart Association: Cardiovascular and Cerebrovascular Disease",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12678151": {
+      "title": "Retrospective analysis of omega-3 fatty acids and the DASH diet in hyperlipidemia and hypertension management among obese individuals",
+      "doi": "10.3389/fnut.2025.1704552",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11274850": {
+      "title": "Docosahexaenoic Acid (DHA) and Eicosapentaenoic Acid (EPA)\u2014Should They Be Mandatory Supplements in Pregnancy?",
+      "doi": "10.3390/biomedicines12071471",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Biomedicines",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11351866": {
+      "title": "Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA) Ameliorate Heart Failure through Reductions in Oxidative Stress: A Systematic Review and Meta-Analysis",
+      "doi": "10.3390/antiox13080955",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Antioxidants",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11759855": {
+      "title": "Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA): A Targeted Antioxidant Strategy to Counter Oxidative Stress in Retinopathy",
+      "doi": "10.3390/antiox14010006",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Antioxidants",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11123418": {
+      "title": "Effects of Omega-3 Polyunsaturated Fatty Acids, Docosahexaenoic Acid and Eicosapentaenoic Acid, on Post-Surgical Complications in Surgical Trauma Patients: Mechanisms, Nutrition, and Challenges",
+      "doi": "10.3390/md22050207",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Marine Drugs",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10976228": {
+      "title": "Quantification of Trimethylamine-N-Oxide and Trimethylamine in Fish Oils for Human Consumption",
+      "doi": "10.3390/molecules29061339",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Molecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10905261": {
+      "title": "The effect of rosuvastatin alone or in combination with fenofibrate or omega-3 fatty acids on lipoprotein(a) levels in patients with mixed hyperlipidemia",
+      "doi": "10.5114/amsad/178441",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Archives of Medical Science: Atherosclerotic Diseases",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10043196": {
+      "title": "Assessment of lipid composition and eicosapentaenoic acid/docosahexaenoic acid bioavailability in fish oil obtained through different enrichment methods",
+      "doi": "10.3389/fnut.2023.1136490",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10196397": {
+      "title": "Differential effects of high dose omega-3 fatty acids on metabolism and inflammation in patients with obesity: eicosapentaenoic and docosahexaenoic acid supplementation",
+      "doi": "10.3389/fnut.2023.1156995",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10367180": {
+      "title": "Correction: Harris et al. Derivation of the Omega-3 Index from EPA and DHA Analysis of Dried Blood Spots from Dogs and Cats. Vet. Sci. 2023, 10, 13",
+      "doi": "10.3390/vetsci10070422",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Veterinary Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10113533": {
+      "title": "The effect of omega-3 fatty acids on alcohol-induced damage",
+      "doi": "10.3389/fnut.2023.1068343",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9834373": {
+      "title": "Role of Omega-3 Fatty Acids in Cardiovascular Disease: the Debate Continues",
+      "doi": "10.1007/s11883-022-01075-x",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Current Atherosclerosis Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9863621": {
+      "title": "Derivation of the Omega-3 Index from EPA and DHA Analysis of Dried Blood Spots from Dogs and Cats",
+      "doi": "10.3390/vetsci10010013",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Veterinary Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9002234": {
+      "title": "Docosahexaenoic and Eicosapentaenoic Intervention Modifies Plasma and Erythrocyte Omega-3 Fatty Acid Profiles But Not the Clinical Course of Children With Autism Spectrum Disorder: A Randomized Control Trial",
+      "doi": "10.3389/fnut.2022.790250",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9075326": {
+      "title": "A Head\u2010to\u2010Head Comparison of a Free Fatty Acid Formulation of Omega\u20103 Pentaenoic Acids Versus Icosapent Ethyl in Adults With Hypertriglyceridemia: The ENHANCE\u2010IT Study",
+      "doi": "10.1161/jaha.121.024176",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of the American Heart Association",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9334128": {
+      "title": "Aerobic Exercise Associated with Fish Oil Supplementation Decreases C-Reactive Protein and Interleukin-6 in Celiac Disease Patients",
+      "doi": "10.1155/2022/3908675",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of Nutrition and Metabolism",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8413259": {
+      "title": "Effect of omega-3 fatty acids on cardiovascular outcomes: A systematic review and meta-analysis",
+      "doi": "10.1016/j.eclinm.2021.100997",
+      "pmid": null,
+      "year": 2021,
+      "venue": "EClinicalMedicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7827286": {
+      "title": "An Update on Omega-3 Polyunsaturated Fatty Acids and Cardiovascular Health",
+      "doi": "10.3390/nu13010204",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8438613": {
+      "title": "Digital Technology Tools to Examine Patient Adherence to a Prescription-Only Omega-3 Polyunsaturated Fatty Acid Therapy To Mitigate Cardiovascular Risk: Protocol for a Prospective Observational Study and Preliminary Demographic Analysis",
+      "doi": "10.2196/29061",
+      "pmid": null,
+      "year": 2021,
+      "venue": "JMIR Research Protocols",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7911027": {
+      "title": "The Influence of Omega-3 Long-Chain Polyunsaturated Fatty Acid, Docosahexaenoic Acid, on Child Behavioral Functioning: A Review of Randomized Controlled Trials of DHA Supplementation in Pregnancy, the Neonatal Period and Infancy",
+      "doi": "10.3390/nu13020415",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8518559": {
+      "title": "Three\u2010liquid\u2010phase salting\u2010out extraction of eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA)\u2010rich oils from Euphausia superba",
+      "doi": "10.1002/elsc.202000098",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Engineering in Life Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8104745": {
+      "title": "PSII-13 Supplemental Effects of Unrefined Fish Oil, Powdered/Coated Docosahexaenoic Acid on the Growth Performance in Weaner Pigs",
+      "doi": "10.1093/jas/skab054.279",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Journal of Animal Science",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8615276": {
+      "title": "Oral Mucositis in Cancer and Potential Use of Omega-3 Free Fatty Acids in Its Management: A Review",
+      "doi": "10.3390/biomedicines9111531",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Biomedicines",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7667577": {
+      "title": "Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High Cardiovascular Risk",
+      "doi": "10.1001/jama.2020.22258",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7072971": {
+      "title": "Marine Omega-3 (N-3) Fatty Acids for Cardiovascular Health: An Update for 2020",
+      "doi": "10.3390/ijms21041362",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7551800": {
+      "title": "Expert Opinion on Benefits of Long-Chain Omega-3 Fatty Acids (DHA and EPA) in Aging and Clinical Nutrition",
+      "doi": "10.3390/nu12092555",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7049091": {
+      "title": "Omega-3 fatty acids for the primary and secondary prevention of cardiovascular disease",
+      "doi": "10.1002/14651858.cd003177.pub5",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7656284": {
+      "title": "Effect of Vitamin D Supplementation, Omega-3 Fatty Acid Supplementation, or a Strength-Training Exercise Program on Clinical Outcomes in Older Adults",
+      "doi": "10.1001/jama.2020.16909",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7146314": {
+      "title": "Comparison of Omega-3 Eicosapentaenoic Acid Versus Docosahexaenoic Acid-Rich Fish Oil Supplementation on Plasma Lipids and Lipoproteins in Normolipidemic Adults",
+      "doi": "10.3390/nu12030749",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7353404": {
+      "title": "Omega-3 Eicosapentaenoic Acid (EPA) Rich Extract from the Microalga Nannochloropsis Decreases Cholesterol in Healthy Individuals: A Double-Blind, Randomized, Placebo-Controlled, Three-Month Supplementation Study",
+      "doi": "10.3390/nu12061869",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6966808": {
+      "title": "Impact of omega-3 fatty acid oral therapy on healing of chronic venous leg ulcers in older adults: Study protocol for a randomized controlled single-center trial",
+      "doi": "10.1186/s13063-019-3970-7",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Trials",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6330561": {
+      "title": "New Insights into Mechanisms of Action for Omega-3 Fatty Acids in Atherothrombotic Cardiovascular Disease",
+      "doi": "10.1007/s11883-019-0762-1",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Current Atherosclerosis Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6683166": {
+      "title": "Efficacy of omega-3 PUFAs in depression: A meta-analysis",
+      "doi": "10.1038/s41398-019-0515-5",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Translational Psychiatry",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6617060": {
+      "title": "Whole-Life or Fattening Period Only Broiler Feeding Strategies Achieve Similar Levels of Omega-3 Fatty Acid Enrichment Using the DHA-Rich Protist, Aurantiochytrium limacinum",
+      "doi": "10.3390/ani9060327",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Animals",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6836340": {
+      "title": "Omega-3 polyunsaturated fatty acids status and cognitive function in young women",
+      "doi": "10.1186/s12944-019-1143-z",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Lipids in Health and Disease",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6513557": {
+      "title": "Omega-3 fatty acids for the primary and secondary prevention of cardiovascular disease",
+      "doi": "10.1002/14651858.cd003177.pub3",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5885893": {
+      "title": "Associations of Omega-3 Fatty Acid Supplement Use With Cardiovascular Disease Risks",
+      "doi": "10.1001/jamacardio.2017.5205",
+      "pmid": null,
+      "year": 2018,
+      "venue": "JAMA Cardiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6517311": {
+      "title": "Omega-3 fatty acids for the primary and secondary prevention of cardiovascular disease",
+      "doi": "10.1002/14651858.cd003177.pub4",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5946201": {
+      "title": "Dietary Intakes of EPA and DHA Omega-3 Fatty Acids among US Childbearing-Age and Pregnant Women: An Analysis of NHANES 2001\u20132014",
+      "doi": "10.3390/nu10040416",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6034629": {
+      "title": "Erythrocyte long-chain omega-3 fatty acid levels are inversely associated with mortality and with incident cardiovascular disease: The Framingham Heart Study",
+      "doi": "10.1016/j.jacl.2018.02.010",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Journal of clinical lipidology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5845148": {
+      "title": "Omega-6/omega-3 fatty acid intake of children and older adults in the U.S.: dietary intake in comparison to current dietary recommendations and the Healthy Eating Index",
+      "doi": "10.1186/s12944-018-0693-9",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Lipids in Health and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6073248": {
+      "title": "Omega-3 Fatty Acid Supplementation and Cardiovascular Disease Risk: Glass Half Full or Time to Nail the Coffin Shut?",
+      "doi": "10.3390/nu10070864",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5763552": {
+      "title": "Effects of concentrated long-chain omega-3 polyunsaturated fatty acid supplementation before radical prostatectomy on prostate cancer proliferation, inflammation, and quality of life: study protocol for a phase IIb, randomized, double-blind, placebo-controlled trial",
+      "doi": "10.1186/s12885-017-3979-9",
+      "pmid": null,
+      "year": 2018,
+      "venue": "BMC Cancer",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6176151": {
+      "title": "Inflammation and intestinal leakiness in older HIV+ individuals with fish oil treatment",
+      "doi": "10.1016/j.gendis.2018.07.001",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Genes and Diseases",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6903779": {
+      "title": "Omega-3 Polyunsaturated Fatty Acid (Fish Oil) Supplementation and the Prevention of Clinical Cardiovascular Disease",
+      "doi": "10.1161/cir.0000000000000482",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Circulation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5396348": {
+      "title": "Rationale and design of <scp>REDUCE\u2010IT</scp>: Reduction of Cardiovascular Events with Icosapent Ethyl\u2013Intervention Trial",
+      "doi": "10.1002/clc.22692",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Clinical Cardiology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5537875": {
+      "title": "Effects of Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA) on Fetal Pulmonary Circulation: An Experimental Study in Fetal Lambs",
+      "doi": "10.3390/nu9070761",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5748755": {
+      "title": "Effects of Omega-3 Long Chain Polyunsaturated Fatty Acid Supplementation on Cardiovascular Mortality: The Importance of the Dose of DHA",
+      "doi": "10.3390/nu9121305",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5431122": {
+      "title": "Omega-3 Long-Chain Polyunsaturated Fatty Acid Content and Oxidation State of Fish Oil Supplements in New Zealand",
+      "doi": "10.1038/s41598-017-01470-4",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4808858": {
+      "title": "An Increase in the Omega-6/Omega-3 Fatty Acid Ratio Increases the Risk for Obesity",
+      "doi": "10.3390/nu8030128",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5067287": {
+      "title": "Omega-3 Fatty Acids and Cardiovascular Disease: Are There Benefits?",
+      "doi": "10.1007/s11936-016-0487-1",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Current Treatment Options in Cardiovascular Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4957603": {
+      "title": "Switching from EPA + DHA (Omega-3-acid Ethyl Esters) to High-Purity EPA (Icosapent Ethyl) in a Statin-Treated Patient with Persistent Dyslipidemia and High Cardiovascular Risk: A Case Study",
+      "doi": "10.4137/cmc.s38123",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Clinical Medicine Insights: Cardiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5180582": {
+      "title": "Whole-genome single-nucleotide polymorphism (SNP) marker discovery and association analysis with the eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) content in Larimichthys crocea",
+      "doi": "10.7717/peerj.2664",
+      "pmid": null,
+      "year": 2016,
+      "venue": "PeerJ",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4404917": {
+      "title": "Long-chain omega-3 fatty acids and the brain: a review of the independent and shared effects of EPA, DPA and DHA",
+      "doi": "10.3389/fnagi.2015.00052",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4632767": {
+      "title": "No Effect of Omega-3 Fatty Acid Supplementation on Cognition and Mood in Individuals with Cognitive Impairment and Probable Alzheimer\u2019s Disease: A Randomised Controlled Trial",
+      "doi": "10.3390/ijms161024600",
+      "pmid": null,
+      "year": 2015,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3942733": {
+      "title": "Omega-3 Index and Cardiovascular Health",
+      "doi": "10.3390/nu6020799",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4013121": {
+      "title": "Role of Omega-3 Fatty Acids in the Treatment of Depressive Disorders: A Comprehensive Meta-Analysis of Randomized Clinical Trials",
+      "doi": "10.1371/journal.pone.0096905",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4210907": {
+      "title": "The Role for Dietary Omega-3 Fatty Acids Supplementation in Older Adults",
+      "doi": "10.3390/nu6104058",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3992162": {
+      "title": "U.S. adults are not meeting recommended levels for fish and omega-3 fatty acid intake: results of an analysis using observational data from NHANES 2003\u20132008",
+      "doi": "10.1186/1475-2891-13-31",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3886744": {
+      "title": "Determinants of Erythrocyte Omega\u20103 Fatty Acid Content in Response to Fish Oil Supplementation: A Dose\u2013Response Randomized Controlled Trial",
+      "doi": "10.1161/jaha.113.000513",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of the American Heart Association",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3286229": {
+      "title": "Red blood cell omega-3 fatty acid levels and markers of accelerated brain aging",
+      "doi": "10.1212/wnl.0b013e318249f6a9",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Neurology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3302663": {
+      "title": "Association of Plasma Phospholipid Long-Chain Omega-3 Fatty Acids With Incident Atrial Fibrillation in Older Adults",
+      "doi": "10.1161/circulationaha.111.062653",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Circulation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3468870": {
+      "title": "Patient with Hypertriglyceridemia, Type 2 Diabetes, and Chronic Kidney Disease Treated with Atorvastatin and Omega-3 Fatty Acid Ethyl Esters",
+      "doi": "10.2174/1874192401206010122",
+      "pmid": null,
+      "year": 2012,
+      "venue": "The Open Cardiovascular Medicine Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3317266": {
+      "title": "The effects of extra-supplementation with omega-3 polyunsaturated fatty acids on cardiac rhythm:antiarrhythmic, proarrhythmic, both or neither ?It depends\u2026.",
+      "doi": "10.3389/fphys.2012.00057",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3279313": {
+      "title": "Fish oil and omega-3 fatty acids in cardiovascular disease: do they really work?",
+      "doi": "10.1093/eurheartj/ehr362",
+      "pmid": null,
+      "year": 2011,
+      "venue": "European Heart Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3210089": {
+      "title": "The older people, omega-3, and cognitive health (EPOCH) trial design and methodology: A randomised, double-blind, controlled trial investigating the effect of long-chain omega-3 fatty acids on cognitive ageing and wellbeing in cognitively healthy older adults",
+      "doi": "10.1186/1475-2891-10-117",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC2819264": {
+      "title": "Association of Marine Omega-3 Fatty Acid Levels With Telomeric Aging in Patients With Coronary Heart Disease",
+      "doi": "10.1001/jama.2009.2008",
+      "pmid": null,
+      "year": 2010,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3257651": {
+      "title": "Omega-3 Fatty Acids and Inflammatory Processes",
+      "doi": "10.3390/nu2030355",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3217043": {
+      "title": "Fish Oil for the Treatment of Cardiovascular Disease",
+      "doi": "10.1097/crd.0b013e3181ea0de0",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Cardiology in Review",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3024511": {
+      "title": "Metabolic Effects of Krill Oil are Essentially Similar to Those of Fish Oil but at Lower Dose of EPA and DHA, in Healthy Volunteers",
+      "doi": "10.1007/s11745-010-3490-4",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Lipids",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2612582": {
+      "title": "Effect of fish oil on arrhythmias and mortality: systematic review",
+      "doi": "10.1136/bmj.a2931",
+      "pmid": null,
+      "year": 2008,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2500009": {
+      "title": "The omega-3 fatty acid, eicosapentaenoic acid (EPA), prevents the damaging effects of tumour necrosis factor (TNF)-alpha during murine skeletal muscle cell differentiation",
+      "doi": "10.1186/1476-511x-7-24",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Lipids in Health and Disease",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2856352": {
+      "title": "Depressive Symptoms, omega-6:omega-3 Fatty Acids, and Inflammation in Older Adults",
+      "doi": "10.1097/psy.0b013e3180313a45",
+      "pmid": null,
+      "year": 2007,
+      "venue": "Psychosomatic Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1993981": {
+      "title": "A review of omega-3 ethyl esters for cardiovascular prevention and treatment of increased blood triglyceride levels",
+      "doi": "10.2147/vhrm.2006.2.3.251",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Vascular Health and Risk Management",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8464922": {
+      "title": "Neuroinflammation in Autism and Supplementation Based on Omega-3 Polyunsaturated Fatty Acids: A Narrative Review.",
+      "doi": "10.3390/medicina57090893",
+      "pmid": "34577816",
+      "year": 2021,
+      "venue": "Medicina (Kaunas)",
+      "sources": [
+        "doaj",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12523382": {
+      "title": "Fyn-T Kinase Regulates DHA-Induced Pyroptosis in Immortalized Normal Human Astrocytes.",
+      "doi": "10.3390/cells14191530",
+      "pmid": "41090758",
+      "year": 2025,
+      "venue": "Cells",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC12163325": {
+      "title": "Omega-3 fatty acids: multi-target mechanisms and therapeutic applications in neurodevelopmental disorders and epilepsy",
+      "doi": "10.3389/fnut.2025.1598588",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC11354246": {
+      "title": "Omega-3 Polyunsaturated Fatty Acids in Depression.",
+      "doi": "10.3390/ijms25168675",
+      "pmid": "39201362",
+      "year": 2024,
+      "venue": "Int J Mol Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC11426295": {
+      "title": "Omega-3 Polyunsaturated Fatty Acids and Blood-Brain Barrier Integrity in Major Depressive Disorder: Restoring Balance for Neuroinflammation and Neuroprotection.",
+      "doi": "10.59249/yzlq4631",
+      "pmid": "39351324",
+      "year": 2024,
+      "venue": "Yale J Biol Med",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC10837958": {
+      "title": "Study protocol: fish oil supplement in prevention of oxaliplatin-induced peripheral neuropathy in adjuvant colorectal cancer patients - a randomized controlled trial. (OxaNeuro).",
+      "doi": "10.1186/s12885-024-11856-z",
+      "pmid": "38308227",
+      "year": 2024,
+      "venue": "BMC Cancer",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC10341783": {
+      "title": "DHA/EPA (Omega-3) and LA/GLA (Omega-6) as Bioactive Molecules in Neurodegenerative Diseases.",
+      "doi": "10.3390/ijms241310717",
+      "pmid": "37445890",
+      "year": 2023,
+      "venue": "Int J Mol Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC10626455": {
+      "title": "Correlations between omega-3 fatty acids and inflammatory/glial abnormalities: the involvement of the membrane and neurotransmitter dysfunction in schizophrenia",
+      "doi": "10.3389/fncel.2023.1163764",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Cellular Neuroscience",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC9695993": {
+      "title": "Marine Sources of DHA-Rich Phospholipids with Anti-Alzheimer Effect",
+      "doi": "10.3390/md20110662",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Marine Drugs",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC7156328": {
+      "title": "Effect of APOE Genotype on Plasma Docosahexaenoic Acid (DHA), Eicosapentaenoic Acid, Arachidonic Acid, and Hippocampal Volume in the Alzheimer's Disease Cooperative Study-Sponsored DHA Clinical Trial.",
+      "doi": "10.3233/jad-191017",
+      "pmid": "32116250",
+      "year": 2020,
+      "venue": "J Alzheimers Dis",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC7204890": {
+      "title": "Omega-3 Fatty Acids as Druggable Therapeutics for Neurodegenerative Disorders.",
+      "doi": "10.2174/1871527318666191114093749",
+      "pmid": "31724519",
+      "year": 2019,
+      "venue": "CNS Neurol Disord Drug Targets",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC5543674": {
+      "title": "Functional and Structural Benefits Induced by Omega-3 Polyunsaturated Fatty Acids During Aging.",
+      "doi": "10.2174/1570159x14666160614091311",
+      "pmid": "27306037",
+      "year": 2017,
+      "venue": "Curr Neuropharmacol",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC13001453": {
+      "title": "Gut microbiota-derived EPA alleviates neuroinflammation associated with white matter injury by influencing H3K9ac/BDNF/TrkB pathway",
+      "doi": "10.3389/fmicb.2026.1711114",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Frontiers in Microbiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12166187": {
+      "title": "Impact of Omega-3 Polyunsaturated Fatty Acids on Alcohol Use and Negative Consequences: A Systematic Review.",
+      "doi": "10.1093/nutrit/nuaf036",
+      "pmid": "40139917",
+      "year": 2025,
+      "venue": "Nutr Rev",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11892077": {
+      "title": "Impact of Omega-3 Fatty Acids on Cognitive Outcomes in Children With Autism Spectrum Disorder: A Systematic Review",
+      "doi": "10.7759/cureus.80291",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Cureus",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6164598": {
+      "title": "The Gut-Brain Axis in Alzheimer's Disease and Omega-3. A Critical Overview of Clinical Trials.",
+      "doi": "10.3390/nu10091267",
+      "pmid": "30205543",
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5526680": {
+      "title": "Clearing the fog: a review of the effects of dietary omega-3 fatty acids and added sugars on chemotherapy-induced cognitive deficits.",
+      "doi": "10.1007/s10549-016-4073-8",
+      "pmid": "27933449",
+      "year": 2017,
+      "venue": "Breast Cancer Res Treat",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5015035": {
+      "title": "Omega-3 Polyunsaturated Fatty Acids and Oxylipins in Neuroinflammation and Management of Alzheimer Disease.",
+      "doi": "10.3945/an.116.012187",
+      "pmid": "27633106",
+      "year": 2016,
+      "venue": "Adv Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4728620": {
+      "title": "DHA Effects in Brain Development and Function",
+      "doi": "10.3390/nu8010006",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4537738": {
+      "title": "The Omega-3 Fatty Acid Docosahexaenoic Acid Modulates Inflammatory Mediator Release in Human Alveolar Cells Exposed to Bronchoalveolar Lavage Fluid of ARDS Patients",
+      "doi": "10.1155/2015/642520",
+      "pmid": null,
+      "year": 2015,
+      "venue": "BioMed Research International",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4498302": {
+      "title": "Effect of Different Omega-6/Omega-3 Polyunsaturated Fatty Acid Ratios on the Formation of Monohydroxylated Fatty Acids in THP-1 Derived Macrophages",
+      "doi": "10.3390/biology4020314",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Biology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3518659": {
+      "title": "Therapeutic use of omega-3 fatty acids in severe head trauma.",
+      "doi": "10.1016/j.ajem.2012.05.014",
+      "pmid": "22867826",
+      "year": 2013,
+      "venue": "Am J Emerg Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4115447": {
+      "title": "N-3 (omega-3) polyunsaturated Fatty acids in the pathophysiology and treatment of depression: pre-clinical evidence.",
+      "doi": "10.2174/1871527311312040003",
+      "pmid": "23574159",
+      "year": 2013,
+      "venue": "CNS Neurol Disord Drug Targets",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3143823": {
+      "title": "Modulation of dendritic cell function by PGE2 and DHA: a framework for understanding the role of dendritic cells in neuroinflammation",
+      "doi": "10.2217/clp.11.12",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Clinical Lipidology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2838628": {
+      "title": "DHA may prevent age-related dementia.",
+      "doi": "10.3945/jn.109.113910",
+      "pmid": "20181786",
+      "year": 2010,
+      "venue": "J Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    }
+  }
+}

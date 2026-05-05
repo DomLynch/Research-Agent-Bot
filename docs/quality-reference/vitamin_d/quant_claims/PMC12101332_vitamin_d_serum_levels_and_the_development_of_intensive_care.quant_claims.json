@@ -1,0 +1,1202 @@
+{
+  "paper_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care",
+  "doi": "10.3390/pathophysiology32020021",
+  "extracted_at": "2026-05-05T21:50:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 14,
+    "percentage": 34,
+    "p_value": 17,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-811",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 811,
+      "sentence": "The inclusion criteria were as follows: patients over 18 years old who had a confirmed severe acute respiratory coronavirus disease 2 (SARS-CoV-2) infection, patients who were mechanically ventilated for more than 48 h, and patients who were weaned from a ventilator over at least 24 h.",
+      "context_window": "2022. The inclusion criteria were as follows: patients over 18 years old who had a confirmed severe acute respiratory coronaviru",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1557",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1557,
+      "sentence": "Of these 35 patients, 12 (34%) developed ICU-AW.",
+      "context_window": "tal of 35 patients were analyzed. Of these 35 patients, 12 (34%) developed ICU-AW. The median vitamin D serum level in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-1812",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.567",
+      "numeric_values": [
+        0.567
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1812,
+      "sentence": "The difference in vitamin D serum levels between the groups was not significantly different from zero ( p = 0.567).",
+      "context_window": "ween the groups was not significantly different from zero ( p = 0.567). All patients, except for one, were vitamin D insufficient",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-202",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 202,
+      "sentence": "About 50-80% of critically ill patients treated in an ICU develop intensive care unit-acquired weakness (ICU-AW) [ 4 , 5 , 6 ].",
+      "context_window": "ent in an intensive care unit (ICU) [ 1 , 2 , 3 ]. About 50-80% of critically ill patients treated in an ICU develop intens",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-1092",
+      "claim_type": "unit_value",
+      "raw_text": "59 years",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1092,
+      "sentence": "Older age and, in some studies, female sex are also recognized as risk factors for ICU-AW development, although the specific age threshold varies across studies, with some identifying 59 years and others identifying 62 years as the cutoff [ 12 , 13 , 14 , 15 , 16 , 17 ].",
+      "context_window": "age threshold varies across studies, with some identifying 59 years and others identifying 62 years as the cutoff [ 12 , 13 , 1",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-1124",
+      "claim_type": "unit_value",
+      "raw_text": "62 years",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1124,
+      "sentence": "Older age and, in some studies, female sex are also recognized as risk factors for ICU-AW development, although the specific age threshold varies across studies, with some identifying 59 years and others identifying 62 years as the cutoff [ 12 , 13 , 14 , 15 , 16 , 17 ].",
+      "context_window": "dies, with some identifying 59 years and others identifying 62 years as the cutoff [ 12 , 13 , 14 , 15 , 16 , 17 ]. ICU-AW diagn",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1666",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1666,
+      "sentence": "Almost 50% of patients who develop ICU-AW after weaning from an MV will require reintubation, and 50% of them will die during hospitalization [ 18 ].",
+      "context_window": "on, prolonged hospitalization, and higher mortality. Almost 50% of patients who develop ICU-AW after weaning from an MV wil",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1757",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1757,
+      "sentence": "Almost 50% of patients who develop ICU-AW after weaning from an MV will require reintubation, and 50% of them will die during hospitalization [ 18 ].",
+      "context_window": "-AW after weaning from an MV will require reintubation, and 50% of them will die during hospitalization [ 18 ]. Considering",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-2613",
+      "claim_type": "unit_value",
+      "raw_text": "9.9 ng/mL",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 2613,
+      "sentence": "In addition, vitamin D serum levels below 9.9 ng/mL (24.71 nmol/L) at admission are associated with a higher risk of in-hospital mortality in patients with COVID-19 disease [ 28 ].",
+      "context_window": ", 25 , 26 , 27 ]. In addition, vitamin D serum levels below 9.9 ng/mL (24.71 nmol/L) at admission are associated with a higher ri",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3810",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3810,
+      "sentence": "Roughly 50% of the world\u2019s population and up to 80% of critically ill patients in ICUs are vitamin D deficient [ 33 , 34 , 35 , 36 ].",
+      "context_window": "ss all age groups and populations worldwide [ 32 ]. Roughly 50% of the world\u2019s population and up to 80% of critically ill p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3850",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3850,
+      "sentence": "Roughly 50% of the world\u2019s population and up to 80% of critically ill patients in ICUs are vitamin D deficient [ 33 , 34 , 35 , 36 ].",
+      "context_window": "ide [ 32 ]. Roughly 50% of the world\u2019s population and up to 80% of critically ill patients in ICUs are vitamin D deficient",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-374",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 374,
+      "sentence": "The inclusion criteria were as follows: patients over 18 years old with a SARS-CoV-2 infection confirmed through a real-time reverse transcription polymerase chain reaction test.",
+      "context_window": "tian. The inclusion criteria were as follows: patients over 18 years old with a SARS-CoV-2 infection confirmed through a real-ti",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-2593",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2593,
+      "sentence": "Patients who were vitamin D insufficient (<75 nmol/L) received vitamin D-4000 IU of cholecalciferol daily (1 mL of Plivit D 3 \u00a9 4000 IU oral suspension 4000 IU/mL, Pliva, Zagreb, Croatia).",
+      "context_window": "mol/L) received vitamin D-4000 IU of cholecalciferol daily (1 mL of Plivit D 3 \u00a9 4000 IU oral suspension 4000 IU/mL, Pliva,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3266",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3266,
+      "sentence": "The results were interpreted at a significance level of 95%.",
+      "context_window": "ps. The results were interpreted at a significance level of 95%. This study is an exploratory pilot study, so no formal pow",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-172",
+      "claim_type": "percentage",
+      "raw_text": "47%",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 172,
+      "sentence": "In this group, 36 (47%) patients were successfully weaned from a ventilator over at least 24 h.",
+      "context_window": "the University Hospital of Split [ 53 ]. In this group, 36 (47%) patients were successfully weaned from a ventilator over a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-868",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 868,
+      "sentence": "A previous study conducted on this cohort [ 53 ] examined and found that, out of the 35 patients, 12 (34%) developed ICU-AW.",
+      "context_window": "[ 53 ] examined and found that, out of the 35 patients, 12 (34%) developed ICU-AW. The median age in the ICU-AW group was 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-930",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 930,
+      "sentence": "The median age in the ICU-AW group was 71 years (58-77), and in the non-ICU-AW group was 66 years (47-75), which was statistically different ( p = 0.038).",
+      "context_window": "%) developed ICU-AW. The median age in the ICU-AW group was 71 years (58-77), and in the non-ICU-AW group was 66 years (47-75),",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "66 years",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 980,
+      "sentence": "The median age in the ICU-AW group was 71 years (58-77), and in the non-ICU-AW group was 66 years (47-75), which was statistically different ( p = 0.038).",
+      "context_window": "group was 71 years (58-77), and in the non-ICU-AW group was 66 years (47-75), which was statistically different ( p = 0.038). In",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-1034",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1034,
+      "sentence": "The median age in the ICU-AW group was 71 years (58-77), and in the non-ICU-AW group was 66 years (47-75), which was statistically different ( p = 0.038).",
+      "context_window": "p was 66 years (47-75), which was statistically different ( p = 0.038). In the ICU-AW group, 58% of the patients were women, and,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1067",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1067,
+      "sentence": "In the ICU-AW group, 58% of the patients were women, and, in the non-ICU-AW group, 78% of the patients were men, with no statistical difference.",
+      "context_window": "statistically different ( p = 0.038). In the ICU-AW group, 58% of the patients were women, and, in the non-ICU-AW group, 7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1129",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1129,
+      "sentence": "In the ICU-AW group, 58% of the patients were women, and, in the non-ICU-AW group, 78% of the patients were men, with no statistical difference.",
+      "context_window": "% of the patients were women, and, in the non-ICU-AW group, 78% of the patients were men, with no statistical difference. I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1227",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1227,
+      "sentence": "In the ICU-AW group, five patients (42%) died during hospitalization, whereas in the non-ICU-AW group, only one patient (4%) died ( p = 0.012) [ 53 ].",
+      "context_window": "statistical difference. In the ICU-AW group, five patients (42%) died during hospitalization, whereas in the non-ICU-AW gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1312",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1312,
+      "sentence": "In the ICU-AW group, five patients (42%) died during hospitalization, whereas in the non-ICU-AW group, only one patient (4%) died ( p = 0.012) [ 53 ].",
+      "context_window": "ization, whereas in the non-ICU-AW group, only one patient (4%) died ( p = 0.012) [ 53 ]. Other results of the previous st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-1323",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1323,
+      "sentence": "In the ICU-AW group, five patients (42%) died during hospitalization, whereas in the non-ICU-AW group, only one patient (4%) died ( p = 0.012) [ 53 ].",
+      "context_window": "ereas in the non-ICU-AW group, only one patient (4%) died ( p = 0.012) [ 53 ]. Other results of the previous study are presented",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1929",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1929,
+      "sentence": "In the ICU-AW group, 11 out of 12 (92%) patients were not vaccinated, and, in the non-ICU-AW group, 19 out of 23 (82%) patients were not vaccinated, with no statistical significance ( p = 0.640).",
+      "context_window": "vitamin D serum levels. In the ICU-AW group, 11 out of 12 (92%) patients were not vaccinated, and, in the non-ICU-AW group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-2008",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2008,
+      "sentence": "In the ICU-AW group, 11 out of 12 (92%) patients were not vaccinated, and, in the non-ICU-AW group, 19 out of 23 (82%) patients were not vaccinated, with no statistical significance ( p = 0.640).",
+      "context_window": "not vaccinated, and, in the non-ICU-AW group, 19 out of 23 (82%) patients were not vaccinated, with no statistical signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2078",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.640",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2078,
+      "sentence": "In the ICU-AW group, 11 out of 12 (92%) patients were not vaccinated, and, in the non-ICU-AW group, 19 out of 23 (82%) patients were not vaccinated, with no statistical significance ( p = 0.640).",
+      "context_window": "nts were not vaccinated, with no statistical significance ( p = 0.640). The number of days from SARS-CoV-2 infection to respirato",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2269",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.888",
+      "numeric_values": [
+        0.888
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2269,
+      "sentence": "The number of days from SARS-CoV-2 infection to respiratory failure in the non-ICU-AW group was 9 (2-15), and in the ICU-AW group was 7.5 (6-17), with no statistical difference ( p = 0.888).",
+      "context_window": "U-AW group was 7.5 (6-17), with no statistical difference ( p = 0.888). There was no statistical significance in comorbidities be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2357",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.113",
+      "numeric_values": [
+        0.113
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2357,
+      "sentence": "There was no statistical significance in comorbidities between the groups ( p = 0.113).",
+      "context_window": "tistical significance in comorbidities between the groups ( p = 0.113). The APACHE II score at ICU admission was 10 (5-19) in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2513",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.151",
+      "numeric_values": [
+        0.151
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2513,
+      "sentence": "The APACHE II score at ICU admission was 10 (5-19) in the ICU-AW group and 9 (3-16) in the non-ICU-AW group, with no statistical significance ( p = 0.151).",
+      "context_window": "in the non-ICU-AW group, with no statistical significance ( p = 0.151). The SOFA score at ICU admission was 2 (2-7) in the ICU-AW",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2661",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.144",
+      "numeric_values": [
+        0.144
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2661,
+      "sentence": "The SOFA score at ICU admission was 2 (2-7) in the ICU-AW group and 2 (2-3) in the non-ICU-AW group, with no statistical significance ( p = 0.144).",
+      "context_window": "in the non-ICU-AW group, with no statistical significance ( p = 0.144). The observed median vitamin D serum level in the ICU-AW g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2857",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.567",
+      "numeric_values": [
+        0.567
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2857,
+      "sentence": "The observed median vitamin D serum level in the ICU-AW group was 17 (7.5-73.3), while that in the non-ICU-AW group was 25.2 (12.3-121), with no statistically significant difference ( p = 0.567).",
+      "context_window": "(12.3-121), with no statistically significant difference ( p = 0.567). All patients, except for one, were vitamin D deficient (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-2950",
+      "claim_type": "percentage",
+      "raw_text": "82%",
+      "numeric_values": [
+        82.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2950,
+      "sentence": "Notably, 29 (82%) patients were vitamin D deficient (below 50 nmol/L), of whom 20 (57%) patients were severely vitamin D deficient (below 30 nmol/L), 5 (14%) patients were vitamin D insufficient (50-75 nmol/L), and only 1 (3%) patient was vitamin D sufficient ( Table 3 ).",
+      "context_window": "for one, were vitamin D deficient ( Table 3 ). Notably, 29 (82%) patients were vitamin D deficient (below 50 nmol/L), of wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3020",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3020,
+      "sentence": "Notably, 29 (82%) patients were vitamin D deficient (below 50 nmol/L), of whom 20 (57%) patients were severely vitamin D deficient (below 30 nmol/L), 5 (14%) patients were vitamin D insufficient (50-75 nmol/L), and only 1 (3%) patient was vitamin D sufficient ( Table 3 ).",
+      "context_window": "nts were vitamin D deficient (below 50 nmol/L), of whom 20 (57%) patients were severely vitamin D deficient (below 30 nmol/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3090",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3090,
+      "sentence": "Notably, 29 (82%) patients were vitamin D deficient (below 50 nmol/L), of whom 20 (57%) patients were severely vitamin D deficient (below 30 nmol/L), 5 (14%) patients were vitamin D insufficient (50-75 nmol/L), and only 1 (3%) patient was vitamin D sufficient ( Table 3 ).",
+      "context_window": "nts were severely vitamin D deficient (below 30 nmol/L), 5 (14%) patients were vitamin D insufficient (50-75 nmol/L), and o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-3160",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3160,
+      "sentence": "Notably, 29 (82%) patients were vitamin D deficient (below 50 nmol/L), of whom 20 (57%) patients were severely vitamin D deficient (below 30 nmol/L), 5 (14%) patients were vitamin D insufficient (50-75 nmol/L), and only 1 (3%) patient was vitamin D sufficient ( Table 3 ).",
+      "context_window": "nts were vitamin D insufficient (50-75 nmol/L), and only 1 (3%) patient was vitamin D sufficient ( Table 3 ). We also comp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-3464",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.488",
+      "numeric_values": [
+        0.488
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3464,
+      "sentence": "We also compared the incidence of ICU-AW in the group of patients whose vitamin D serum level was below 30 nmol/L with that in the group of patients whose vitamin D serum level was above 30 nmol/L, and there was no statistically significant difference ( p = 0.488, Table 4 ).",
+      "context_window": "/L, and there was no statistically significant difference ( p = 0.488, Table 4 ). The range of vitamin D serum levels and ICU-AW",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-893",
+      "claim_type": "unit_value",
+      "raw_text": "9.9 ng/mL",
+      "numeric_values": [
+        9.9
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 893,
+      "sentence": "Previous research suggested that a vitamin D level below 9.9 ng/mL (\u226424.71 nmol/L) at admission is associated with increased in-hospital mortality in patients with COVID-19 [ 28 ].",
+      "context_window": "W. Previous research suggested that a vitamin D level below 9.9 ng/mL (\u226424.71 nmol/L) at admission is associated with increased i",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1531",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1531,
+      "sentence": "In addition, it is important to emphasize that, in our study, only 1 patient (3%) was vitamin D sufficient, while 34 patients (97%) were vitamin D insufficient and 20 patients (57%) were severely vitamin D deficient ( Table 3 ).",
+      "context_window": "important to emphasize that, in our study, only 1 patient (3%) was vitamin D sufficient, while 34 patients (97%) were vit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1580",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1580,
+      "sentence": "In addition, it is important to emphasize that, in our study, only 1 patient (3%) was vitamin D sufficient, while 34 patients (97%) were vitamin D insufficient and 20 patients (57%) were severely vitamin D deficient ( Table 3 ).",
+      "context_window": "1 patient (3%) was vitamin D sufficient, while 34 patients (97%) were vitamin D insufficient and 20 patients (57%) were sev",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-1630",
+      "claim_type": "percentage",
+      "raw_text": "57%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1630,
+      "sentence": "In addition, it is important to emphasize that, in our study, only 1 patient (3%) was vitamin D sufficient, while 34 patients (97%) were vitamin D insufficient and 20 patients (57%) were severely vitamin D deficient ( Table 3 ).",
+      "context_window": "patients (97%) were vitamin D insufficient and 20 patients (57%) were severely vitamin D deficient ( Table 3 ). In a study",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2037",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2037,
+      "sentence": "Increased age was detected as a significant risk factor for ICU-AW development in this cohort ( p = 0.038) [ 53 ], consistent with previous research [ 12 , 13 , 14 ].",
+      "context_window": "ificant risk factor for ICU-AW development in this cohort ( p = 0.038) [ 53 ], consistent with previous research [ 12 , 13 , 14 ]",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-2147",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2147,
+      "sentence": "The median age in the ICU-AW group was 71 years, which was 5 years higher than that in the non-ICU-AW group, further supporting the association between aging and increased susceptibility to ICU-AW.",
+      "context_window": "ch [ 12 , 13 , 14 ]. The median age in the ICU-AW group was 71 years, which was 5 years higher than that in the non-ICU-AW group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-2167",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2167,
+      "sentence": "The median age in the ICU-AW group was 71 years, which was 5 years higher than that in the non-ICU-AW group, further supporting the association between aging and increased susceptibility to ICU-AW.",
+      "context_window": "The median age in the ICU-AW group was 71 years, which was 5 years higher than that in the non-ICU-AW group, further supportin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-2338",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2338,
+      "sentence": "Additionally, an age older than 65 years is a known risk factor for vitamin D deficiency [ 30 , 31 , 40 , 41 , 42 ].",
+      "context_window": "d susceptibility to ICU-AW. Additionally, an age older than 65 years is a known risk factor for vitamin D deficiency [ 30 , 31 ,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-2523",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2523,
+      "sentence": "In this cohort, males were predominant in the non-ICU-AW group (78% of the patients in the non-ICU-AW group were men), while females were predominant in the ICU-AW group (58% of the patients who developed ICU-AW were women).",
+      "context_window": "his cohort, males were predominant in the non-ICU-AW group (78% of the patients in the non-ICU-AW group were men), while fe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-2630",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2630,
+      "sentence": "In this cohort, males were predominant in the non-ICU-AW group (78% of the patients in the non-ICU-AW group were men), while females were predominant in the ICU-AW group (58% of the patients who developed ICU-AW were women).",
+      "context_window": "e men), while females were predominant in the ICU-AW group (58% of the patients who developed ICU-AW were women). However,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-2750",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.059",
+      "numeric_values": [
+        0.059
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2750,
+      "sentence": "However, this difference did not reach statistical significance ( p = 0.059) [ 53 ].",
+      "context_window": "r, this difference did not reach statistical significance ( p = 0.059) [ 53 ]. The findings of this cohort do not align with prev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-4082",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.488",
+      "numeric_values": [
+        0.488
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4082,
+      "sentence": "However, the incidence of ICU-AW in the group of patients whose vitamin D serum level was below 30 nmol/L was not significantly greater ( p = 0.488, Table 4 ) than in the group whose vitamin D serum level was above 30 nmol/L.",
+      "context_window": "m level was below 30 nmol/L was not significantly greater ( p = 0.488, Table 4 ) than in the group whose vitamin D serum level wa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-6470",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6470,
+      "sentence": "In this study, 12 (34%) patients developed ICU-AW [ 53 ].",
+      "context_window": "ry response [ 19 , 20 , 21 , 22 , 23 ]. In this study, 12 (34%) patients developed ICU-AW [ 53 ]. In a study by Schmidt et",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-6567",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6567,
+      "sentence": "In a study by Schmidt et al., the incidence of ICU-AW was 52% at the time of weaning from MV [ 68 ].",
+      "context_window": ". In a study by Schmidt et al., the incidence of ICU-AW was 52% at the time of weaning from MV [ 68 ]. Van Aerde found that",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-6716",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6716,
+      "sentence": "Van Aerde found that the incidence of ICU-AW in patients with COVID-19 at the time of weaning from MV was 72% [ 5 ].",
+      "context_window": "n patients with COVID-19 at the time of weaning from MV was 72% [ 5 ]. This difference could be explained by the fact that",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-6963",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6963,
+      "sentence": "This difference could be explained by the fact that the study by Schmidt et al. included participants who used noninvasive ventilation and a high-flow nasal cannula; when analyzing only the participants who needed MV, the incidence was 52% at the time of weaning from MV [ 68 ].",
+      "context_window": "zing only the participants who needed MV, the incidence was 52% at the time of weaning from MV [ 68 ]. Still, we assume tha",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-7184",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7184,
+      "sentence": "Five patients (22%) in the group that returned to MV were not monitored for weaning attempts [ 53 ].",
+      "context_window": "tients on the first attempt to wean from MV. Five patients (22%) in the group that returned to MV were not monitored for we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-n-7317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7317,
+      "sentence": "In this cohort, almost half of the patients ( n = 5) in the ICU-AW group died, while, in the non-ICU-AW group, only one patient (4%) ( p = 0.012) died [ 53 ], which roughly corresponds to the mortality observed during hospitalization in other studies [ 18 , 69 , 70 ].",
+      "context_window": "mpts [ 53 ]. In this cohort, almost half of the patients ( n = 5) in the ICU-AW group died, while, in the non-ICU-AW group,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-7400",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7400,
+      "sentence": "In this cohort, almost half of the patients ( n = 5) in the ICU-AW group died, while, in the non-ICU-AW group, only one patient (4%) ( p = 0.012) died [ 53 ], which roughly corresponds to the mortality observed during hospitalization in other studies [ 18 , 69 , 70 ].",
+      "context_window": "oup died, while, in the non-ICU-AW group, only one patient (4%) ( p = 0.012) died [ 53 ], which roughly corresponds to the",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-7406",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7406,
+      "sentence": "In this cohort, almost half of the patients ( n = 5) in the ICU-AW group died, while, in the non-ICU-AW group, only one patient (4%) ( p = 0.012) died [ 53 ], which roughly corresponds to the mortality observed during hospitalization in other studies [ 18 , 69 , 70 ].",
+      "context_window": "ed, while, in the non-ICU-AW group, only one patient (4%) ( p = 0.012) died [ 53 ], which roughly corresponds to the mortality ob",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-7639",
+      "claim_type": "percentage",
+      "raw_text": "31.4%",
+      "numeric_values": [
+        31.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7639,
+      "sentence": "Research conducted by Ali et al. found lower mortality during hospitalization in the ICU-AW group (31.4%) [ 71 ].",
+      "context_window": "lower mortality during hospitalization in the ICU-AW group (31.4%) [ 71 ]. We did not find a statistical difference in the A",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-7721",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.151",
+      "numeric_values": [
+        0.151
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7721,
+      "sentence": "We did not find a statistical difference in the APACHE II score ( p = 0.151) or SOFA score ( p = 0.144) at the time of ICU admission between the ICU-AW and non-ICU-AW groups.",
+      "context_window": "not find a statistical difference in the APACHE II score ( p = 0.151) or SOFA score ( p = 0.144) at the time of ICU admission be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-7748",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.144",
+      "numeric_values": [
+        0.144
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7748,
+      "sentence": "We did not find a statistical difference in the APACHE II score ( p = 0.151) or SOFA score ( p = 0.144) at the time of ICU admission between the ICU-AW and non-ICU-AW groups.",
+      "context_window": "ference in the APACHE II score ( p = 0.151) or SOFA score ( p = 0.144) at the time of ICU admission between the ICU-AW and non-IC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-8386",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8386,
+      "sentence": "In the study by Feng et al., the APACHE II and SOFA scores were higher, which could be explained by the fact that, in their study, the inclusion criteria were patients who were mechanically ventilated for more than 7 days.",
+      "context_window": "ere patients who were mechanically ventilated for more than 7 days. In our study, 14 patients (40%) were mechanically ventilat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-8421",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8421,
+      "sentence": "In our study, 14 patients (40%) were mechanically ventilated for less than 7 days; thus, it is possible that our study included patients with less severe disease.",
+      "context_window": "ventilated for more than 7 days. In our study, 14 patients (40%) were mechanically ventilated for less than 7 days; thus, i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-u-8469",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8469,
+      "sentence": "In our study, 14 patients (40%) were mechanically ventilated for less than 7 days; thus, it is possible that our study included patients with less severe disease.",
+      "context_window": "4 patients (40%) were mechanically ventilated for less than 7 days; thus, it is possible that our study included patients with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-8809",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8809,
+      "sentence": "In our study, there was a higher proportion of non-vaccinated patients in the ICU-AW group (92%) than in the non-ICU-AW group (83%).",
+      "context_window": "proportion of non-vaccinated patients in the ICU-AW group (92%) than in the non-ICU-AW group (83%). However, the small sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-pct-8844",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8844,
+      "sentence": "In our study, there was a higher proportion of non-vaccinated patients in the ICU-AW group (92%) than in the non-ICU-AW group (83%).",
+      "context_window": "nts in the ICU-AW group (92%) than in the non-ICU-AW group (83%). However, the small sample size limited the ability to dra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care-p-8982",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.640",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8982,
+      "sentence": "We did not observe a statistically significant difference ( p = 0.640) in vaccination status between the groups.",
+      "context_window": "We did not observe a statistically significant difference ( p = 0.640) in vaccination status between the groups. Future studies w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

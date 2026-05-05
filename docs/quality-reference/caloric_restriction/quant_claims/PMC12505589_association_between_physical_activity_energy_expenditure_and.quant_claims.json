@@ -1,0 +1,1707 @@
+{
+  "paper_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and",
+  "doi": "10.1186/s12966-025-01825-5",
+  "extracted_at": "2026-05-05T22:17:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 35,
+    "confidence_interval": 3,
+    "p_value": 30,
+    "unit_value": 7,
+    "sample_size": 4,
+    "mean_sd": 14
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-402",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 402,
+      "sentence": "In Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE)\u2122 2, participants without obesity were randomized to 25% CR or ad libitum control.",
+      "context_window": "ALERIE)\u2122 2, participants without obesity were randomized to 25% CR or ad libitum control. This post-hoc analysis included b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-930",
+      "claim_type": "percentage",
+      "raw_text": "71.3%",
+      "numeric_values": [
+        71.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 930,
+      "sentence": "Overall, 136 participants (97 [71.3%] females; age: 38.6 [7.4] years; BMI: 25.3 [1.7] kg/m\u00b2) who showed CR were analyzed.",
+      "context_window": "and self-reported PA time. Overall, 136 participants (97 [71.3%] females; age: 38.6 [7.4] years; BMI: 25.3 [1.7] kg/m\u00b2) who",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-ci-1110",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.023, 0.986",
+      "numeric_values": [
+        0.023,
+        0.986
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "A smaller decrease in PAEE was associated with improved grip strength (estimate = 0.504 [95% CI: 0.023, 0.986] kg), homeostatic model assessment of insulin resistance (estimate: -0.032 [95% CI: -0.062, -0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040).",
+      "context_window": "s associated with improved grip strength (estimate = 0.504 [95% CI: 0.023, 0.986] kg), homeostatic model assessment of insulin resistance (e",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-ci-1207",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.062, -0.002",
+      "numeric_values": [
+        -0.062,
+        -0.002
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1207,
+      "sentence": "A smaller decrease in PAEE was associated with improved grip strength (estimate = 0.504 [95% CI: 0.023, 0.986] kg), homeostatic model assessment of insulin resistance (estimate: -0.032 [95% CI: -0.062, -0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040).",
+      "context_window": "c model assessment of insulin resistance (estimate: -0.032 [95% CI: -0.062, -0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI:",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-ci-1282",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.356, 1.666",
+      "numeric_values": [
+        0.356,
+        1.666
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1282,
+      "sentence": "A smaller decrease in PAEE was associated with improved grip strength (estimate = 0.504 [95% CI: 0.023, 0.986] kg), homeostatic model assessment of insulin resistance (estimate: -0.032 [95% CI: -0.062, -0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040).",
+      "context_window": "-0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040). PAEE change was not associated with aer",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1311",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1311,
+      "sentence": "A smaller decrease in PAEE was associated with improved grip strength (estimate = 0.504 [95% CI: 0.023, 0.986] kg), homeostatic model assessment of insulin resistance (estimate: -0.032 [95% CI: -0.062, -0.002]), and high-density lipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040).",
+      "context_window": "ipoprotein-cholesterol (1.011 [95% CI: 0.356, 1.666] mg/dL; P \u2264 0.040). PAEE change was not associated with aerobic capacity, low",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1451",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.053",
+      "numeric_values": [
+        0.053
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1451,
+      "sentence": "PAEE change was not associated with aerobic capacity, low-density lipoprotein-cholesterol, triglycerides, glucose, or insulin ( P \u2265 0.053).",
+      "context_window": "poprotein-cholesterol, triglycerides, glucose, or insulin ( P \u2265 0.053). A smaller PAEE decline was associated with more PA minute",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1524",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1524,
+      "sentence": "A smaller PAEE decline was associated with more PA minutes ( P = 0.028).",
+      "context_window": "smaller PAEE decline was associated with more PA minutes ( P = 0.028). For some blood lipids, change in PAEE interacted with bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1611",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1611,
+      "sentence": "For some blood lipids, change in PAEE interacted with baseline BMI class ( P \u2264 0.029): in participants who were overweight, higher PAEE was associated with lower triglyceride and triglyceride: high-density lipoprotein-cholesterol ratio ( P \u2264 0.022), whereas in participants who were normal weight, it was related to increased total-cholesterol ( P = 0.006).",
+      "context_window": "lipids, change in PAEE interacted with baseline BMI class ( P \u2264 0.029): in participants who were overweight, higher PAEE was asso",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1774",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1774,
+      "sentence": "For some blood lipids, change in PAEE interacted with baseline BMI class ( P \u2264 0.029): in participants who were overweight, higher PAEE was associated with lower triglyceride and triglyceride: high-density lipoprotein-cholesterol ratio ( P \u2264 0.022), whereas in participants who were normal weight, it was related to increased total-cholesterol ( P = 0.006).",
+      "context_window": "triglyceride: high-density lipoprotein-cholesterol ratio ( P \u2264 0.022), whereas in participants who were normal weight, it was re",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1882",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1882,
+      "sentence": "For some blood lipids, change in PAEE interacted with baseline BMI class ( P \u2264 0.029): in participants who were overweight, higher PAEE was associated with lower triglyceride and triglyceride: high-density lipoprotein-cholesterol ratio ( P \u2264 0.022), whereas in participants who were normal weight, it was related to increased total-cholesterol ( P = 0.006).",
+      "context_window": "mal weight, it was related to increased total-cholesterol ( P = 0.006). A smaller reduction in PAEE during CR was associated wit",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-676",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 676,
+      "sentence": "The Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE)\u2122 phase 2 study showed that two years of CR, which targeted a 25% decrease in energy intake, induced benefits in healthy humans without obesity [ 1 ], including improvements in blood lipids and decreased insulin resistance [ 7 ].",
+      "context_window": "phase 2 study showed that two years of CR, which targeted a 25% decrease in energy intake, induced benefits in healthy huma",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-1538",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 1538,
+      "sentence": "In CALERIE\u2122 phase 1, aerobic exercise improved fasting insulin and blood lipids when combined with CR over 6 months, with no differences compared to CR alone [ 10 , 11 ].",
+      "context_window": "fasting insulin and blood lipids when combined with CR over 6 months, with no differences compared to CR alone [ 10 , 11 ]. Rese",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-823",
+      "claim_type": "unit_value",
+      "raw_text": "28.0 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 823,
+      "sentence": "In summary, 220 healthy individuals with a body mass index (BMI) of 22.0 to < 28.0 kg/m\u00b2, aged 21-50 years, were randomized.",
+      "context_window": "althy individuals with a body mass index (BMI) of 22.0 to < 28.0 kg/m\u00b2, aged 21-50 years, were randomized. Participants were in",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-843",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 843,
+      "sentence": "In summary, 220 healthy individuals with a body mass index (BMI) of 22.0 to < 28.0 kg/m\u00b2, aged 21-50 years, were randomized.",
+      "context_window": "th a body mass index (BMI) of 22.0 to < 28.0 kg/m\u00b2, aged 21-50 years, were randomized. Participants were ineligible if they had",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-1369",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1369,
+      "sentence": "This included outcome assessments and habitual energy intake to establish a 25% CR target.",
+      "context_window": "tcome assessments and habitual energy intake to establish a 25% CR target. Participants were randomized to either a CR grou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-1474",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1474,
+      "sentence": "Participants were randomized to either a CR group or an ad libitum (AL) control group for 2 years, with randomization stratified by study site, sex, and BMI; BMI was categorized into normal weight and overweight.",
+      "context_window": "o either a CR group or an ad libitum (AL) control group for 2 years, with randomization stratified by study site, sex, and BMI;",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-1984",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1984,
+      "sentence": "Briefly, the intervention aimed for an immediate 25% reduction in energy intake.",
+      "context_window": "re [ 17 ]. Briefly, the intervention aimed for an immediate 25% reduction in energy intake. This was determined and monitor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-2527",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2527,
+      "sentence": "There were 12 group sessions delivered in the first 26 weeks and a monthly group session from weeks 27 to 104.",
+      "context_window": "erence. There were 12 group sessions delivered in the first 26 weeks and a monthly group session from weeks 27 to 104. The AL co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-3129",
+      "claim_type": "percentage",
+      "raw_text": "99.98%",
+      "numeric_values": [
+        99.98
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3129,
+      "sentence": "For each DLW assessment, two baseline urine samples were collected before participants consumed a cocktail containing 0.1 g of \u00b2H\u2082O (99.98% atom \u00b2H) and 0.16 g of 100% \u00b9\u2078O per kilogram of body weight.",
+      "context_window": "participants consumed a cocktail containing 0.1 g of \u00b2H\u2082O (99.98% atom \u00b2H) and 0.16 g of 100% \u00b9\u2078O per kilogram of body weight",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-3159",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3159,
+      "sentence": "For each DLW assessment, two baseline urine samples were collected before participants consumed a cocktail containing 0.1 g of \u00b2H\u2082O (99.98% atom \u00b2H) and 0.16 g of 100% \u00b9\u2078O per kilogram of body weight.",
+      "context_window": "ail containing 0.1 g of \u00b2H\u2082O (99.98% atom \u00b2H) and 0.16 g of 100% \u00b9\u2078O per kilogram of body weight. After ingesting the DLW, p",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4648",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4648,
+      "sentence": "TDEE was multiplied by 0.9 before subtraction of RMR because we estimated that 10% of TDEE occurs due to the thermic effect of food [ 9 ].",
+      "context_window": "by 0.9 before subtraction of RMR because we estimated that 10% of TDEE occurs due to the thermic effect of food [ 9 ]. Sim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-7334",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7334,
+      "sentence": "Completers who demonstrated CR per the intake-balance method at month 24 (percent CR > 0%) were included in the analyses, regardless of randomization group, as this method was the objective and principal indicator of CR in CALERIE\u2122 phase 2 [ 15 ].",
+      "context_window": "CR per the intake-balance method at month 24 (percent CR > 0%) were included in the analyses, regardless of randomization",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-8267",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8267,
+      "sentence": "We performed confirmatory analyses, including: (1) the primary adjusted analysis including participants who displayed CR (percent CR > 0%) at month 12 and month 24; (2) the primary adjusted analysis with PAEE (unadjusted for known determinants) as the exposure variable; and (3) the primary adjusted analysis with PAL as the exposure variable.",
+      "context_window": "lysis including participants who displayed CR (percent CR > 0%) at month 12 and month 24; (2) the primary adjusted analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-8689",
+      "claim_type": "unit_value",
+      "raw_text": "25.0 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8689,
+      "sentence": "Furthermore, we examined if the associations between the PAEE residual and outcomes were different in individuals who were normal weight and overweight at baseline by adding BMI class (normal weight [22.0 \u2264 BMI < 25.0 kg/m\u00b2] vs. overweight [25.0 \u2264 BMI < 28.0 kg/m\u00b2]) as an interaction term.",
+      "context_window": "t baseline by adding BMI class (normal weight [22.0 \u2264 BMI < 25.0 kg/m\u00b2] vs. overweight [25.0 \u2264 BMI < 28.0 kg/m\u00b2]) as an interac",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-u-8730",
+      "claim_type": "unit_value",
+      "raw_text": "28.0 kg",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8730,
+      "sentence": "Furthermore, we examined if the associations between the PAEE residual and outcomes were different in individuals who were normal weight and overweight at baseline by adding BMI class (normal weight [22.0 \u2264 BMI < 25.0 kg/m\u00b2] vs. overweight [25.0 \u2264 BMI < 28.0 kg/m\u00b2]) as an interaction term.",
+      "context_window": "ight [22.0 \u2264 BMI < 25.0 kg/m\u00b2] vs. overweight [25.0 \u2264 BMI < 28.0 kg/m\u00b2]) as an interaction term. Significant interactions were",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-8981",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8981,
+      "sentence": "This was achieved by calculating estimate coefficients (95% CI) for individuals who were normal weight and overweight.",
+      "context_window": "ss. This was achieved by calculating estimate coefficients (95% CI) for individuals who were normal weight and overweight.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-151",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 151,
+      "sentence": "At month 24, 136 participants demonstrated CR per the DLW intake-balance method (percent CR > 0%) and had PAEE data at baseline and Follow-up at month 24; thus, these were included in the analysis (Fig.",
+      "context_window": "nstrated CR per the DLW intake-balance method (percent CR > 0%) and had PAEE data at baseline and Follow-up at month 24; t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-n-306",
+      "claim_type": "sample_size",
+      "raw_text": "N = 97",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 306,
+      "sentence": "Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this cohort was 38.6 (7.4) years, 72.6 (9.6) kg, and 25.3 (1.7) kg/m 2 , respectively (Table 1 ).",
+      "context_window": "nalysis (Fig. 1 ). Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-314",
+      "claim_type": "percentage",
+      "raw_text": "71.3%",
+      "numeric_values": [
+        71.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this cohort was 38.6 (7.4) years, 72.6 (9.6) kg, and 25.3 (1.7) kg/m 2 , respectively (Table 1 ).",
+      "context_window": "(Fig. 1 ). Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) a",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-n-343",
+      "claim_type": "sample_size",
+      "raw_text": "N = 104",
+      "numeric_values": [
+        104.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 343,
+      "sentence": "Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this cohort was 38.6 (7.4) years, 72.6 (9.6) kg, and 25.3 (1.7) kg/m 2 , respectively (Table 1 ).",
+      "context_window": "icipants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this coh",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-352",
+      "claim_type": "percentage",
+      "raw_text": "76.5%",
+      "numeric_values": [
+        76.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "Most of these participants were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this cohort was 38.6 (7.4) years, 72.6 (9.6) kg, and 25.3 (1.7) kg/m 2 , respectively (Table 1 ).",
+      "context_window": "were female ( N = 97; 71.3%) and in the CR group ( N = 104; 76.5%), and the mean (SD) age, weight, and BMI of this cohort was",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-515",
+      "claim_type": "percentage",
+      "raw_text": "46.3%",
+      "numeric_values": [
+        46.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 515,
+      "sentence": "There were 63 (46.3%) participants who were normal weight and 73 (53.7%) participants who were overweight.",
+      "context_window": "25.3 (1.7) kg/m 2 , respectively (Table 1 ). There were 63 (46.3%) participants who were normal weight and 73 (53.7%) partici",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-566",
+      "claim_type": "percentage",
+      "raw_text": "53.7%",
+      "numeric_values": [
+        53.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 566,
+      "sentence": "There were 63 (46.3%) participants who were normal weight and 73 (53.7%) participants who were overweight.",
+      "context_window": "were 63 (46.3%) participants who were normal weight and 73 (53.7%) participants who were overweight. No between-group differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-679",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.207",
+      "numeric_values": [
+        0.207
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 679,
+      "sentence": "No between-group differences in baseline characteristics were seen (all P \u2265 0.207; Supplemental Table 1).",
+      "context_window": "roup differences in baseline characteristics were seen (all P \u2265 0.207; Supplemental Table 1). Overall, participants in the analys",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-778",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 778,
+      "sentence": "Overall, participants in the analyses attained a mean (SD) CR of 11.7% (6.4%).",
+      "context_window": "ll, participants in the analyses attained a mean (SD) CR of 11.7% (6.4%). Fig. 1 Study participant CONSORT Study participant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-785",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 785,
+      "sentence": "Overall, participants in the analyses attained a mean (SD) CR of 11.7% (6.4%).",
+      "context_window": "ticipants in the analyses attained a mean (SD) CR of 11.7% (6.4%). Fig. 1 Study participant CONSORT Study participant CONSO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-n-919",
+      "claim_type": "sample_size",
+      "raw_text": "N = 136",
+      "numeric_values": [
+        136.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 919,
+      "sentence": "1 Study participant CONSORT\n\nStudy participant CONSORT\n\nTable 1 Baseline characteristics of study participants Variable ( N = 136) Values a Age (year) 38.6 (7.4) Sex Male 39 (28.7) Female 97 (71.3) Race White 108 (79.4) Black 16 (11.8) Asian 6 (4.4) Other 6 (4.4) BMI class Normal weight 63 (46.3) Overweight 73 (53.7) Family household income $0 - $19,999 6 (4.4) $20,000 - $39,999 12 (8.8) $40,000 - $59,999 25 (18.4) $60,000 - $79,999 11 (8.1) $80,000 - $99,999 27 (19.9) >$100,000 55 (40.4) Randomization group Calorie restriction 104 (76.5) Ad libitum 32 (23.5) a Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nBaseline characteristics of study participants\n\na Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nGeneral linear model showed weight decreased in the studied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24.",
+      "context_window": "1 Baseline characteristics of study participants Variable ( N = 136) Values a Age (year) 38.6 (7.4) Sex Male 39 (28.7) Female 9",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1624",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1624,
+      "sentence": "1 Study participant CONSORT\n\nStudy participant CONSORT\n\nTable 1 Baseline characteristics of study participants Variable ( N = 136) Values a Age (year) 38.6 (7.4) Sex Male 39 (28.7) Female 97 (71.3) Race White 108 (79.4) Black 16 (11.8) Asian 6 (4.4) Other 6 (4.4) BMI class Normal weight 63 (46.3) Overweight 73 (53.7) Family household income $0 - $19,999 6 (4.4) $20,000 - $39,999 12 (8.8) $40,000 - $59,999 25 (18.4) $60,000 - $79,999 11 (8.1) $80,000 - $99,999 27 (19.9) >$100,000 55 (40.4) Randomization group Calorie restriction 104 (76.5) Ad libitum 32 (23.5) a Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nBaseline characteristics of study participants\n\na Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nGeneral linear model showed weight decreased in the studied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24.",
+      "context_window": "inear model showed weight decreased in the studied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-1671",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1671,
+      "sentence": "1 Study participant CONSORT\n\nStudy participant CONSORT\n\nTable 1 Baseline characteristics of study participants Variable ( N = 136) Values a Age (year) 38.6 (7.4) Sex Male 39 (28.7) Female 97 (71.3) Race White 108 (79.4) Black 16 (11.8) Asian 6 (4.4) Other 6 (4.4) BMI class Normal weight 63 (46.3) Overweight 73 (53.7) Family household income $0 - $19,999 6 (4.4) $20,000 - $39,999 12 (8.8) $40,000 - $59,999 25 (18.4) $60,000 - $79,999 11 (8.1) $80,000 - $99,999 27 (19.9) >$100,000 55 (40.4) Randomization group Calorie restriction 104 (76.5) Ad libitum 32 (23.5) a Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nBaseline characteristics of study participants\n\na Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nGeneral linear model showed weight decreased in the studied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24.",
+      "context_window": "ied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24. There was similarly a -4.",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-1677",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1677,
+      "sentence": "1 Study participant CONSORT\n\nStudy participant CONSORT\n\nTable 1 Baseline characteristics of study participants Variable ( N = 136) Values a Age (year) 38.6 (7.4) Sex Male 39 (28.7) Female 97 (71.3) Race White 108 (79.4) Black 16 (11.8) Asian 6 (4.4) Other 6 (4.4) BMI class Normal weight 63 (46.3) Overweight 73 (53.7) Family household income $0 - $19,999 6 (4.4) $20,000 - $39,999 12 (8.8) $40,000 - $59,999 25 (18.4) $60,000 - $79,999 11 (8.1) $80,000 - $99,999 27 (19.9) >$100,000 55 (40.4) Randomization group Calorie restriction 104 (76.5) Ad libitum 32 (23.5) a Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nBaseline characteristics of study participants\n\na Continuous values are mean (\u00b1 SD); categorical values are number (%)\n\nGeneral linear model showed weight decreased in the studied cohort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24.",
+      "context_window": "hort ( P < 0.001; Table 2 ), with weight changing by -8.4% (95% CI, -9.4, -7.3) at month 24. There was similarly a -4.3 (95",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-1738",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1738,
+      "sentence": "There was similarly a -4.3 (95% CI, -4.9, -3.7) kg and - 1.7 (-2.0, -1.4) kg change in fat mass and fat-free mass, respectively ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and per design of the analysis, a decrease in energy intake (all P < 0.001; Table 2 ).",
+      "context_window": "5% CI, -9.4, -7.3) at month 24. There was similarly a -4.3 (95% CI, -4.9, -3.7) kg and - 1.7 (-2.0, -1.4) kg change in fat",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1840",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1840,
+      "sentence": "There was similarly a -4.3 (95% CI, -4.9, -3.7) kg and - 1.7 (-2.0, -1.4) kg change in fat mass and fat-free mass, respectively ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and per design of the analysis, a decrease in energy intake (all P < 0.001; Table 2 ).",
+      "context_window": ".4) kg change in fat mass and fat-free mass, respectively ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1894",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1894,
+      "sentence": "There was similarly a -4.3 (95% CI, -4.9, -3.7) kg and - 1.7 (-2.0, -1.4) kg change in fat mass and fat-free mass, respectively ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and per design of the analysis, a decrease in energy intake (all P < 0.001; Table 2 ).",
+      "context_window": "ely ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and per design of the analysis, a decrease in energy inta",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-1971",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1971,
+      "sentence": "There was similarly a -4.3 (95% CI, -4.9, -3.7) kg and - 1.7 (-2.0, -1.4) kg change in fat mass and fat-free mass, respectively ( P < 0.001), a reduction in measures of PAEE and PAL ( P \u2264 0.003), and per design of the analysis, a decrease in energy intake (all P < 0.001; Table 2 ).",
+      "context_window": "er design of the analysis, a decrease in energy intake (all P < 0.001; Table 2 ). Multiple linear regression showed that change i",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-2229",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2229,
+      "sentence": "Multiple linear regression showed that change in PAEE residual was positively related to change in energy intake after adjustments for site, baseline PAEE residual, BMI class, randomization group, and baseline energy intake (\u03b2 = 0.374; P < 0.001).",
+      "context_window": "randomization group, and baseline energy intake (\u03b2 = 0.374; P < 0.001). Table 2 Weight, BMI, body composition, activity-related",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-n-2388",
+      "claim_type": "sample_size",
+      "raw_text": "N = 136",
+      "numeric_values": [
+        136.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2388,
+      "sentence": "Table 2 Weight, BMI, body composition, activity-related energy expenditure, and energy intake in study participants during the trial a Variable ( N = 136) Baseline b Month 24 b Difference b P Weight (kg) 72.6 (70.9, 74.2) 66.5 (64.8, 68.2) -6.1 (-6.9, -5.3) < 0.001 BMI (kg/m 2 ) 25.3 (25.1, 25.6) 23.2 (22.9, 23.6) -2.1 (-2.4, -1.9) < 0.001 Fat mass (kg) 24.1 (23.3, 24.9) 19.8 (18.9, 20.7) -4.3 (-4.9, -3.7) < 0.001 Fat-free mass (kg) 48.5 (46.9, 50.0) 46.8 (45.3, 48.3) -1.7 (-2.0, -1.4) < 0.001 PAEE (kcal/day) 817 (777, 857) 693 (650, 737) -124 (-165, -82) < 0.001 PAEE residual (kcal/day) 24 (-9, 56) -111 (-149, -74) -135 (-176, -95) < 0.001 PAL 1.76 (1.73, 1.79) 1.69 (1.66, 1.73) -0.06 (-0.10, -0.02) 0.003 Energy intake (kcal/day) 2481 (2413, 2549) 2186 (2124, 2247) -295 (-325, -266) < 0.001 Bold is statistically ( P < 0.05) PAEE Physical activity energy expenditure, BMI Body mass index, PAL Physical activity level a P values are from general linear models, with time (baseline vs. month 24) used as fixed factor.",
+      "context_window": "intake in study participants during the trial a Variable ( N = 136) Baseline b Month 24 b Difference b P Weight (kg) 72.6 (70.",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-3069",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3069,
+      "sentence": "Table 2 Weight, BMI, body composition, activity-related energy expenditure, and energy intake in study participants during the trial a Variable ( N = 136) Baseline b Month 24 b Difference b P Weight (kg) 72.6 (70.9, 74.2) 66.5 (64.8, 68.2) -6.1 (-6.9, -5.3) < 0.001 BMI (kg/m 2 ) 25.3 (25.1, 25.6) 23.2 (22.9, 23.6) -2.1 (-2.4, -1.9) < 0.001 Fat mass (kg) 24.1 (23.3, 24.9) 19.8 (18.9, 20.7) -4.3 (-4.9, -3.7) < 0.001 Fat-free mass (kg) 48.5 (46.9, 50.0) 46.8 (45.3, 48.3) -1.7 (-2.0, -1.4) < 0.001 PAEE (kcal/day) 817 (777, 857) 693 (650, 737) -124 (-165, -82) < 0.001 PAEE residual (kcal/day) 24 (-9, 56) -111 (-149, -74) -135 (-176, -95) < 0.001 PAL 1.76 (1.73, 1.79) 1.69 (1.66, 1.73) -0.06 (-0.10, -0.02) 0.003 Energy intake (kcal/day) 2481 (2413, 2549) 2186 (2124, 2247) -295 (-325, -266) < 0.001 Bold is statistically ( P < 0.05) PAEE Physical activity energy expenditure, BMI Body mass index, PAL Physical activity level a P values are from general linear models, with time (baseline vs. month 24) used as fixed factor.",
+      "context_window": "24, 2247) -295 (-325, -266) < 0.001 Bold is statistically ( P < 0.05) PAEE Physical activity energy expenditure, BMI Body mass i",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-3385",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3385,
+      "sentence": "Models were complete case analysis, with participants removed if they had missing outcome data b Values are means (95% CI) generated from general linear model\n\nWeight, BMI, body composition, activity-related energy expenditure, and energy intake in study participants during the trial a\n\nBold is statistically ( P < 0.05)\n\nPAEE Physical activity energy expenditure, BMI Body mass index, PAL Physical activity level\n\na P values are from general linear models, with time (baseline vs. month 24) used as fixed factor.",
+      "context_window": "emoved if they had missing outcome data b Values are means (95% CI) generated from general linear model Weight, BMI, body",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-3582",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3582,
+      "sentence": "Models were complete case analysis, with participants removed if they had missing outcome data b Values are means (95% CI) generated from general linear model\n\nWeight, BMI, body composition, activity-related energy expenditure, and energy intake in study participants during the trial a\n\nBold is statistically ( P < 0.05)\n\nPAEE Physical activity energy expenditure, BMI Body mass index, PAL Physical activity level\n\na P values are from general linear models, with time (baseline vs. month 24) used as fixed factor.",
+      "context_window": "dy participants during the trial a Bold is statistically ( P < 0.05) PAEE Physical activity energy expenditure, BMI Body mass",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-3901",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3901,
+      "sentence": "Models were complete case analysis, with participants removed if they had missing outcome data\n\nb Values are means (95% CI) generated from general linear model\n\nMultivariate linear regression results are displayed in Table 3 .",
+      "context_window": "moved if they had missing outcome data b Values are means (95% CI) generated from general linear model Multivariate linea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4143",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4143,
+      "sentence": "A smaller decrease (or relative increase) in PAEE residual was not associated with change in absolute V\u0307O 2max (estimate, -0.0112 [95% CI, -0.0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -0.027 [95% CI, -0.445, 0.391] mL/kg/min) or change in treadmill exercise time (estimate, -0.014 [95% CI, -0.043, 0.015] sqrt min); yet a smaller reduction in the PAEE residual was associated with an increase in grip strength ( P = 0.040).",
+      "context_window": "ciated with change in absolute V\u0307O 2max (estimate, -0.0112 [95% CI, -0.0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4213",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "A smaller decrease (or relative increase) in PAEE residual was not associated with change in absolute V\u0307O 2max (estimate, -0.0112 [95% CI, -0.0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -0.027 [95% CI, -0.445, 0.391] mL/kg/min) or change in treadmill exercise time (estimate, -0.014 [95% CI, -0.043, 0.015] sqrt min); yet a smaller reduction in the PAEE residual was associated with an increase in grip strength ( P = 0.040).",
+      "context_window": ".0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -0.027 [95% CI, -0.445, 0.391] mL/kg/min) or change in treadmill exerci",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4303",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4303,
+      "sentence": "A smaller decrease (or relative increase) in PAEE residual was not associated with change in absolute V\u0307O 2max (estimate, -0.0112 [95% CI, -0.0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -0.027 [95% CI, -0.445, 0.391] mL/kg/min) or change in treadmill exercise time (estimate, -0.014 [95% CI, -0.043, 0.015] sqrt min); yet a smaller reduction in the PAEE residual was associated with an increase in grip strength ( P = 0.040).",
+      "context_window": "in) or change in treadmill exercise time (estimate, -0.014 [95% CI, -0.043, 0.015] sqrt min); yet a smaller reduction in th",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-4433",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4433,
+      "sentence": "A smaller decrease (or relative increase) in PAEE residual was not associated with change in absolute V\u0307O 2max (estimate, -0.0112 [95% CI, -0.0361, 0.0137] L/min), relative V\u0307O 2max (estimate, -0.027 [95% CI, -0.445, 0.391] mL/kg/min) or change in treadmill exercise time (estimate, -0.014 [95% CI, -0.043, 0.015] sqrt min); yet a smaller reduction in the PAEE residual was associated with an increase in grip strength ( P = 0.040).",
+      "context_window": "residual was associated with an increase in grip strength ( P = 0.040). Specifically, a 100 kcal/day attenuated decline in the PA",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4720",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4720,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": "associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-4745",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4745,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": "ents in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P =",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4781",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4781,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": "5% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-4810",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4810,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": ".036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051,",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-4863",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4863,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": "mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043). A smaller decrease in",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-4893",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.043",
+      "numeric_values": [
+        0.043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4893,
+      "sentence": "Further, following adjustment, an attenuated decline in the PAEE residual was associated with improvements in HOMA-IR (estimate, -0.032 [95% CI, -0.062, -0.002]; P = 0.036), HDL-C (estimate, 1.011 [95% CI, 0.356, 1.666] mg/dL; P = 0.003), and the TG: HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043).",
+      "context_window": "HDL ratio (estimate, -0.026 [95% CI, -0.051, -0.001] sqrt; P = 0.043). A smaller decrease in the PAEE residual was not, however,",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-5019",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.053",
+      "numeric_values": [
+        0.053
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5019,
+      "sentence": "A smaller decrease in the PAEE residual was not, however, related to other cardiometabolic disease risk markers ( P \u2265 0.053).",
+      "context_window": "er, related to other cardiometabolic disease risk markers ( P \u2265 0.053). A smaller decline in the PAEE residual was associated wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-5196",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5196,
+      "sentence": "A smaller decline in the PAEE residual was associated with minutes of PA, with each 100 kcal/day attenuated reduction in the PAEE residual associated with a 0.250 (95% CI, 0.028, 0.472) sqrt min/day increase in time engaged in PA ( P = 0.028).",
+      "context_window": "ted reduction in the PAEE residual associated with a 0.250 (95% CI, 0.028, 0.472) sqrt min/day increase in time engaged in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-5264",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5264,
+      "sentence": "A smaller decline in the PAEE residual was associated with minutes of PA, with each 100 kcal/day attenuated reduction in the PAEE residual associated with a 0.250 (95% CI, 0.028, 0.472) sqrt min/day increase in time engaged in PA ( P = 0.028).",
+      "context_window": "0.028, 0.472) sqrt min/day increase in time engaged in PA ( P = 0.028). Analyses including all participants who completed the tri",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-5639",
+      "claim_type": "mean_sd",
+      "raw_text": "1.92 \u00b1 6.85",
+      "numeric_values": [
+        1.92,
+        6.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5639,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-5737",
+      "claim_type": "mean_sd",
+      "raw_text": "0.15 \u00b1 0.24",
+      "numeric_values": [
+        0.15,
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5737,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-5850",
+      "claim_type": "mean_sd",
+      "raw_text": "0.98 \u00b1 4.22",
+      "numeric_values": [
+        0.98,
+        4.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5850,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": ".0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-5969",
+      "claim_type": "mean_sd",
+      "raw_text": "0.14 \u00b1 0.30",
+      "numeric_values": [
+        0.14,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5969,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "5, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015)",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6109",
+      "claim_type": "mean_sd",
+      "raw_text": "4.58 \u00b1 24.39",
+      "numeric_values": [
+        4.58,
+        24.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6109,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.1",
+      "claim_role": "dose",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6206",
+      "claim_type": "mean_sd",
+      "raw_text": "4.02 \u00b1 8.14",
+      "numeric_values": [
+        4.02,
+        8.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6206,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6301",
+      "claim_type": "mean_sd",
+      "raw_text": "5.04 \u00b1 19.75",
+      "numeric_values": [
+        5.04,
+        19.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6301,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.1",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6401",
+      "claim_type": "mean_sd",
+      "raw_text": "0.87 \u00b1 1.88",
+      "numeric_values": [
+        0.87,
+        1.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6401,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072)",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6507",
+      "claim_type": "mean_sd",
+      "raw_text": "0.38 \u00b1 0.64",
+      "numeric_values": [
+        0.38,
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6507,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "2 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009)",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6615",
+      "claim_type": "mean_sd",
+      "raw_text": "0.18 \u00b1 0.33",
+      "numeric_values": [
+        0.18,
+        0.33
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6615,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "-0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001)",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6727",
+      "claim_type": "mean_sd",
+      "raw_text": "0.26 \u00b1 4.71",
+      "numeric_values": [
+        0.26,
+        4.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6727,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "26 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121)",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6839",
+      "claim_type": "mean_sd",
+      "raw_text": "1.17 \u00b1 2.29",
+      "numeric_values": [
+        1.17,
+        2.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6839,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "01 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002)",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-6934",
+      "claim_type": "mean_sd",
+      "raw_text": "0.24 \u00b1 0.50",
+      "numeric_values": [
+        0.24,
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6934,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "-0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002)",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-msd-7061",
+      "claim_type": "mean_sd",
+      "raw_text": "1.13 \u00b1 3.05",
+      "numeric_values": [
+        1.13,
+        3.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7061,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-7175",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7175,
+      "sentence": "Table 3 Association between month 24 PAEE residual change and change in outcomes during CR a Mean \u00b1 SD change Crude model Adjusted model d Estimate b \u03b2 c P Estimate b \u03b2 c P Strength and aerobic capacity Grip strength (kg) e -1.92 \u00b1 6.85 0.769 (0.293, 1.246) 0.268 0.002 0.504 (0.023, 0.986) 0.176 0.040 V\u0307O 2max (L/min) f -0.15 \u00b1 0.24 -0.0002 (-0.0219, 0.0215) -0.002 0.986 -0.0112 (-0.0361, 0.0137) -0.108 0.375 V\u0307O 2max (mL/kg/min) f 0.98 \u00b1 4.22 0.058 (-0.322, 0.439) 0.032 0.761 -0.027 (-0.445, 0.391) -0.015 0.898 Treadmill exercise time (sqrt min) f 0.14 \u00b1 0.30 -0.023 (-0.049, 0.004) -0.174 0.097 -0.014 (-0.043, 0.015) -0.111 0.327 Cardiometabolic disease risk markers Total-C (mg/dL) g -4.58 \u00b1 24.39 1.281 (-0.461, 3.022) 0.125 0.148 1.553 (-0.279, 3.384) 0.152 0.096 HDL-C (mg/dL) g 4.02 \u00b1 8.14 0.955 (0.393, 1.518) 0.280 0.001 1.011 (0.356, 1.666) 0.296 0.003 LDL-C (mg/dL) g -5.04 \u00b1 19.75 0.651 (-0.767, 2.068) 0.078 0.366 0.885 (-0.631, 2.401) 0.107 0.250 TG (sqrt mg/dL) g -0.87 \u00b1 1.88 -0.062 (-0.197, 0.072) -0.079 0.362 -0.070 (-0.212, 0.072) -0.089 0.329 Total: HDL-C ratio g -0.38 \u00b1 0.64 -0.041 (-0.087, 0.004) -0.153 0.076 -0.035 (-0.080, 0.009) -0.130 0.122 TG: HDL ratio (sqrt) g -0.18 \u00b1 0.33 -0.026(-0.050, -0.003) -0.189 0.028 -0.026 (-0.051, -0.001) -0.186 0.043 Fasting glucose (mg/dL) g -0.26 \u00b1 4.71 -0.214 (-0.551, 0.123) -0.108 0.212 -0.201 (-0.523, 0.121) -0.102 0.219 Fasting insulin (\u00b5IU/mL) g -1.17 \u00b1 2.29 -0.038 (-0.202, 0.127) -0.039 0.649 -0.138 (-0.279, 0.002) -0.144 0.053 HOMA-IR g -0.24 \u00b1 0.50 -0.013 (-0.048, 0.023) -0.061 0.482 -0.032 (-0.062, -0.002) -0.155 0.036 PA minutes PA minutes/day (sqrt min/day) -1.13 \u00b1 3.05 0.313 (0.102, 0.525) 0.245 0.004 0.250 (0.028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake a P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "028, 0.472) 0.196 0.028 Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein cho",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-7760",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7760,
+      "sentence": "Regressions were complete case analysis, with participants removed if they had missing outcome data b Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual c \u03b2 represents the expected change in the outcome (in standard deviation units) for a one standard deviation increase in PAEE residual d Model adjusted for site, BMI class, baseline PAEE residual, randomization group, and baseline of respective outcome e Data were missing for 2 participants f Data were missing for 44 participants g Data were missing for 1 participant\n\nAssociation between month 24 PAEE residual change and change in outcomes during CR a\n\nBold is statistically significant ( P < 0.05)\n\nCR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake\n\na P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "g outcome data b Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual c \u03b2 represen",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-8304",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8304,
+      "sentence": "Regressions were complete case analysis, with participants removed if they had missing outcome data b Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual c \u03b2 represents the expected change in the outcome (in standard deviation units) for a one standard deviation increase in PAEE residual d Model adjusted for site, BMI class, baseline PAEE residual, randomization group, and baseline of respective outcome e Data were missing for 2 participants f Data were missing for 44 participants g Data were missing for 1 participant\n\nAssociation between month 24 PAEE residual change and change in outcomes during CR a\n\nBold is statistically significant ( P < 0.05)\n\nCR Calorie restriction, HDL-C High-density lipoprotein cholesterol, HOMA-IR Homeostasis model assessment for insulin resistance, LDL-C Low-density lipoprotein cholesterol, PA Physical activity, PAEE Physical activity energy expenditure, SD Standard deviation, TG Triglycerides, Total-C Total cholesterol, V\u0307O 2max , Maximal oxygen uptake\n\na P values are from multivariate linear regression of 136 participants who demonstrated CR.",
+      "context_window": "n outcomes during CR a Bold is statistically significant ( P < 0.05) CR Calorie restriction, HDL-C High-density lipoprotein ch",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-8892",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8892,
+      "sentence": "Regressions were complete case analysis, with participants removed if they had missing outcome data\n\nb Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual\n\nc \u03b2 represents the expected change in the outcome (in standard deviation units) for a one standard deviation increase in PAEE residual\n\nd Model adjusted for site, BMI class, baseline PAEE residual, randomization group, and baseline of respective outcome\n\ne Data were missing for 2 participants\n\nf Data were missing for 44 participants\n\ng Data were missing for 1 participant\n\nPre-intervention BMI class moderated the association between PAEE residual change and change in total-C, TG, and the TG: HDL ratio (all interaction term P \u2264 0.029; Fig.",
+      "context_window": "outcome data b Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual c \u03b2 represe",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-9472",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9472,
+      "sentence": "Regressions were complete case analysis, with participants removed if they had missing outcome data\n\nb Estimates represent the change in outcome (95% CI) per 100 kcal/day increase in PAEE residual\n\nc \u03b2 represents the expected change in the outcome (in standard deviation units) for a one standard deviation increase in PAEE residual\n\nd Model adjusted for site, BMI class, baseline PAEE residual, randomization group, and baseline of respective outcome\n\ne Data were missing for 2 participants\n\nf Data were missing for 44 participants\n\ng Data were missing for 1 participant\n\nPre-intervention BMI class moderated the association between PAEE residual change and change in total-C, TG, and the TG: HDL ratio (all interaction term P \u2264 0.029; Fig.",
+      "context_window": "in total-C, TG, and the TG: HDL ratio (all interaction term P \u2264 0.029; Fig. 2 ). An attenuated decline in the PAEE residual was o",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-9624",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9624,
+      "sentence": "An attenuated decline in the PAEE residual was only associated with an increase in total-C in individuals who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated reduction in the PAEE residual was associated with a decrease in TG and the TG: HDL ratio in individuals who were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig.",
+      "context_window": "increase in total-C in individuals who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated red",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-9656",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.848",
+      "numeric_values": [
+        0.848
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9656,
+      "sentence": "An attenuated decline in the PAEE residual was only associated with an increase in total-C in individuals who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated reduction in the PAEE residual was associated with a decrease in TG and the TG: HDL ratio in individuals who were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig.",
+      "context_window": "ls who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated reduction in the PAEE residual was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-9820",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9820,
+      "sentence": "An attenuated decline in the PAEE residual was only associated with an increase in total-C in individuals who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated reduction in the PAEE residual was associated with a decrease in TG and the TG: HDL ratio in individuals who were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig.",
+      "context_window": "d the TG: HDL ratio in individuals who were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig. 2 ). The associ",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-9858",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.201",
+      "numeric_values": [
+        0.201
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9858,
+      "sentence": "An attenuated decline in the PAEE residual was only associated with an increase in total-C in individuals who were normal weight ( P = 0.006) but not overweight ( P = 0.848), whereas an attenuated reduction in the PAEE residual was associated with a decrease in TG and the TG: HDL ratio in individuals who were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig.",
+      "context_window": "were overweight (all P \u2264 0.022) but not normal weight (all P \u2265 0.201; Fig. 2 ). The association between change in the PAEE resid",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-10053",
+      "claim_type": "p_value",
+      "raw_text": "P \u2265 0.052",
+      "numeric_values": [
+        0.052
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10053,
+      "sentence": "The association between change in the PAEE residual and change in all other outcomes were similar in participants who were normal weight and overweight (all interaction term P \u2265 0.052).",
+      "context_window": "who were normal weight and overweight (all interaction term P \u2265 0.052). Fig. 2 Association between change in PAEE residual and li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-10178",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10178,
+      "sentence": "Data are estimates (95% CI) representing the change in total-C ( A ), TG ( B ), and the TG: HDL ratio ( C ) per 100 kcal/day increase in PAEE residual in individuals who are normal weight (NW) and overweight (OW).",
+      "context_window": "d lipid markers based on weight status. Data are estimates (95% CI) representing the change in total-C ( A ), TG ( B ), and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-10625",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10625,
+      "sentence": "Data are estimates (95% CI) representing the change in total-C ( A ), TG ( B ), and the TG: HDL ratio ( C ) per 100 kcal/day increase in PAEE residual in individuals who are normal weight (NW) and overweight (OW).",
+      "context_window": "d lipid markers based on weight status. Data are estimates (95% CI) representing the change in total-C ( A ), TG ( B ), and",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-11228",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11228,
+      "sentence": "Data missing for 1 participant\n\nAs displayed in Supplemental Tables 2-4, confirmatory analyses were analogous, with similar effect sizes (standardised \u03b2 values); although a smaller decrease in absolute PAEE change was associated with a significant reduction in total: HDL-C ratio and insulin ( P \u2264 0.035; Supplemental Table 3), and an attenuated reduction in PAL was not associated with a significant reduction in the TG: HDL ratio ( P = 0.119; Supplemental Table 4).",
+      "context_window": "a significant reduction in total: HDL-C ratio and insulin ( P \u2264 0.035; Supplemental Table 3), and an attenuated reduction in PAL",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-p-11368",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.119",
+      "numeric_values": [
+        0.119
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11368,
+      "sentence": "Data missing for 1 participant\n\nAs displayed in Supplemental Tables 2-4, confirmatory analyses were analogous, with similar effect sizes (standardised \u03b2 values); although a smaller decrease in absolute PAEE change was associated with a significant reduction in total: HDL-C ratio and insulin ( P \u2264 0.035; Supplemental Table 3), and an attenuated reduction in PAL was not associated with a significant reduction in the TG: HDL ratio ( P = 0.119; Supplemental Table 4).",
+      "context_window": "ociated with a significant reduction in the TG: HDL ratio ( P = 0.119; Supplemental Table 4).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12505589_association_between_physical_activity_energy_expenditure_and-pct-6716",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6716,
+      "sentence": "For instance, using previous evidence [ 43 ], it can be estimated that a 0.032-0.096 reduction in HOMA-IR associated with an increase in PAEE of 100-300 kcal/day would reduce the relative risk of type 2 diabetes by approximately 1.9-5.5%.",
+      "context_window": "e the relative risk of type 2 diabetes by approximately 1.9-5.5%. Though it is possible that enhancing PAEE during CR reduce",
+      "claim_role": "dose",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

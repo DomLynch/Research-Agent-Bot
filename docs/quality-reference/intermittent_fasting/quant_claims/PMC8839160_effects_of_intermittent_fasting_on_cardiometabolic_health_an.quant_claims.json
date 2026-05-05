@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC8839160_effects_of_intermittent_fasting_on_cardiometabolic_health_an",
+  "doi": "10.3390/nu14030489",
+  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8839160_effects_of_intermittent_fasting_on_cardiometabolic_health_an-pct-1590",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1590,
+      "sentence": "Similarly, the ADMF modality severely limits food intake (usually to 25% of habitual energy needs or ~500 kcal/day) during 24-h periods, followed by unrestricted access to food for 24 h.",
+      "context_window": ", the ADMF modality severely limits food intake (usually to 25% of habitual energy needs or ~500 kcal/day) during 24-h peri",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8839160_effects_of_intermittent_fasting_on_cardiometabolic_health_an-u-2107",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 2107,
+      "sentence": "The modified periodic fasting consists of consuming a plant-based, very-low-caloric diet during 5 consecutive days followed by at least 10 days of unrestricted eating.",
+      "context_window": "caloric diet during 5 consecutive days followed by at least 10 days of unrestricted eating. Lastly, TRE consists of restricting",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

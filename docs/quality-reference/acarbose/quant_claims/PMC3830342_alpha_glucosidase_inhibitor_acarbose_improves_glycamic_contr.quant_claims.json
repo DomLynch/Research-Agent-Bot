@@ -1,0 +1,553 @@
+{
+  "paper_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr",
+  "doi": "10.4103/2230-8210.119634",
+  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 21,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-700",
+      "claim_type": "unit_value",
+      "raw_text": "12.5 weeks",
+      "numeric_values": [
+        12.5
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "After 12.5 weeks (mean), the mean change in 2-hour PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl.",
+      "context_window": "patients were included in the effectiveness analysis. After 12.5 weeks (mean), the mean change in 2-hour PPG from baseline was -74",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-768",
+      "claim_type": "unit_value",
+      "raw_text": "74.4 mg",
+      "numeric_values": [
+        74.4
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "After 12.5 weeks (mean), the mean change in 2-hour PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl.",
+      "context_window": "ks (mean), the mean change in 2-hour PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood g",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-805",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 805,
+      "sentence": "After 12.5 weeks (mean), the mean change in 2-hour PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl.",
+      "context_window": "PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl. T",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-856",
+      "claim_type": "unit_value",
+      "raw_text": "37.9 mg",
+      "numeric_values": [
+        37.9
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 856,
+      "sentence": "After 12.5 weeks (mean), the mean change in 2-hour PPG from baseline was -74.4 mg/dl, mean HbA1c decreased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl.",
+      "context_window": "ased by -1.0%, and mean fasting blood glucose decreased by -37.9 mg/dl. The efficacy of acarbose was rated \u201cvery good\u201d or \u201cgood",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-928",
+      "claim_type": "percentage",
+      "raw_text": "91.1%",
+      "numeric_values": [
+        91.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 928,
+      "sentence": "The efficacy of acarbose was rated \u201cvery good\u201d or \u201cgood\u201d in 91.1% of patients, and tolerability as \u201cvery good\u201d or \u201cgood\u201d in 88.0% of patients.",
+      "context_window": "The efficacy of acarbose was rated \u201cvery good\u201d or \u201cgood\u201d in 91.1% of patients, and tolerability as \u201cvery good\u201d or \u201cgood\u201d in 8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-992",
+      "claim_type": "percentage",
+      "raw_text": "88.0%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 992,
+      "sentence": "The efficacy of acarbose was rated \u201cvery good\u201d or \u201cgood\u201d in 91.1% of patients, and tolerability as \u201cvery good\u201d or \u201cgood\u201d in 88.0% of patients.",
+      "context_window": "% of patients, and tolerability as \u201cvery good\u201d or \u201cgood\u201d in 88.0% of patients. The results of this observational study sugges",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-68",
+      "claim_type": "unit_value",
+      "raw_text": "57.6 years",
+      "numeric_values": [
+        57.6
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 68,
+      "sentence": "Among 15,034 patients valid for the efficacy analysis (mean age was 57.6 years and 92.6% of patients were Asian), 1996 were from India.",
+      "context_window": ",034 patients valid for the efficacy analysis (mean age was 57.6 years and 92.6% of patients were Asian), 1996 were from India. Th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-83",
+      "claim_type": "percentage",
+      "raw_text": "92.6%",
+      "numeric_values": [
+        92.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 83,
+      "sentence": "Among 15,034 patients valid for the efficacy analysis (mean age was 57.6 years and 92.6% of patients were Asian), 1996 were from India.",
+      "context_window": "alid for the efficacy analysis (mean age was 57.6 years and 92.6% of patients were Asian), 1996 were from India. The mean (SD",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-267",
+      "claim_type": "percentage",
+      "raw_text": "26.5%",
+      "numeric_values": [
+        26.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 267,
+      "sentence": "A total of 26.5% of patients were newly diagnosed and 71.9% of patients had previous diagnosis of diabetes.",
+      "context_window": "D) body mass index (BMI) was 27.2 (4.4) kg/m 2 . A total of 26.5% of patients were newly diagnosed and 71.9% of patients had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-310",
+      "claim_type": "percentage",
+      "raw_text": "71.9%",
+      "numeric_values": [
+        71.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 310,
+      "sentence": "A total of 26.5% of patients were newly diagnosed and 71.9% of patients had previous diagnosis of diabetes.",
+      "context_window": "m 2 . A total of 26.5% of patients were newly diagnosed and 71.9% of patients had previous diagnosis of diabetes. Also, 73.4%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-370",
+      "claim_type": "percentage",
+      "raw_text": "73.4%",
+      "numeric_values": [
+        73.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 370,
+      "sentence": "Also, 73.4% of patients had specific concomitant diseases.",
+      "context_window": "71.9% of patients had previous diagnosis of diabetes. Also, 73.4% of patients had specific concomitant diseases. Majority of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-490",
+      "claim_type": "percentage",
+      "raw_text": "21.9%",
+      "numeric_values": [
+        21.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 490,
+      "sentence": "Majority of them were diagnosed with other diabetic complications (21.9%) followed by vascular disease + CHF (16.2%).",
+      "context_window": "y of them were diagnosed with other diabetic complications (21.9%) followed by vascular disease + CHF (16.2%). Mean (SD) 2-h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-533",
+      "claim_type": "percentage",
+      "raw_text": "16.2%",
+      "numeric_values": [
+        16.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 533,
+      "sentence": "Majority of them were diagnosed with other diabetic complications (21.9%) followed by vascular disease + CHF (16.2%).",
+      "context_window": "c complications (21.9%) followed by vascular disease + CHF (16.2%). Mean (SD) 2-hour PPG decreased from 241.8 (68.3) mg/dl a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-n-918",
+      "claim_type": "sample_size",
+      "raw_text": "N =1996",
+      "numeric_values": [
+        1996.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 918,
+      "sentence": "Mean change in blood glucose levels from initial visit to final visit ( N =1996)\n\nMean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL to 124.8 (30.5) mg/dL in total population and from 158.3 (45.1) mg/dL to 120.4 (30.1) mg/dL in Indian, and mean body weight (BW) decreased from 70.4 (13.4) kg to 69.5 (12.8) mg/dL in total population and from 72.7 (12.6) kg to 71.3 (12.2) kg in the Indian subgroup.",
+      "context_window": "in blood glucose levels from initial visit to final visit ( N =1996) Mean HbA1c decreased from 8.2% (1.6) at initial visit to",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-954",
+      "claim_type": "percentage",
+      "raw_text": "8.2%",
+      "numeric_values": [
+        8.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 954,
+      "sentence": "Mean change in blood glucose levels from initial visit to final visit ( N =1996)\n\nMean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL to 124.8 (30.5) mg/dL in total population and from 158.3 (45.1) mg/dL to 120.4 (30.1) mg/dL in Indian, and mean body weight (BW) decreased from 70.4 (13.4) kg to 69.5 (12.8) mg/dL in total population and from 72.7 (12.6) kg to 71.3 (12.2) kg in the Indian subgroup.",
+      "context_window": "visit to final visit ( N =1996) Mean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total populatio",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-985",
+      "claim_type": "percentage",
+      "raw_text": "7.2%",
+      "numeric_values": [
+        7.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 985,
+      "sentence": "Mean change in blood glucose levels from initial visit to final visit ( N =1996)\n\nMean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL to 124.8 (30.5) mg/dL in total population and from 158.3 (45.1) mg/dL to 120.4 (30.1) mg/dL in Indian, and mean body weight (BW) decreased from 70.4 (13.4) kg to 69.5 (12.8) mg/dL in total population and from 72.7 (12.6) kg to 71.3 (12.2) kg in the Indian subgroup.",
+      "context_window": ") Mean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4%",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1030",
+      "claim_type": "percentage",
+      "raw_text": "8.4%",
+      "numeric_values": [
+        8.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1030,
+      "sentence": "Mean change in blood glucose levels from initial visit to final visit ( N =1996)\n\nMean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL to 124.8 (30.5) mg/dL in total population and from 158.3 (45.1) mg/dL to 120.4 (30.1) mg/dL in Indian, and mean body weight (BW) decreased from 70.4 (13.4) kg to 69.5 (12.8) mg/dL in total population and from 72.7 (12.6) kg to 71.3 (12.2) kg in the Indian subgroup.",
+      "context_window": "itial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1044",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1044,
+      "sentence": "Mean change in blood glucose levels from initial visit to final visit ( N =1996)\n\nMean HbA1c decreased from 8.2% (1.6) at initial visit to 7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL to 124.8 (30.5) mg/dL in total population and from 158.3 (45.1) mg/dL to 120.4 (30.1) mg/dL in Indian, and mean body weight (BW) decreased from 70.4 (13.4) kg to 69.5 (12.8) mg/dL in total population and from 72.7 (12.6) kg to 71.3 (12.2) kg in the Indian subgroup.",
+      "context_window": "7.2% (1.1) in the total population, and from 8.4% (1.3) to 7.4% (0.8) in Indian, mean FBG decreased from 157.4 (49.2) mg/dL",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1436",
+      "claim_type": "percentage",
+      "raw_text": "85.5%",
+      "numeric_values": [
+        85.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1436,
+      "sentence": "The efficacy of acarbose was rated \u2018very good\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian population, and tolerability as very good\u2019 or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian population [Figures 2 and 3 ].",
+      "context_window": "The efficacy of acarbose was rated \u2018very good\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian populat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1478",
+      "claim_type": "percentage",
+      "raw_text": "91.1%",
+      "numeric_values": [
+        91.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1478,
+      "sentence": "The efficacy of acarbose was rated \u2018very good\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian population, and tolerability as very good\u2019 or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian population [Figures 2 and 3 ].",
+      "context_window": "ood\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian population, and tolerability as very good\u2019 or \u2018go",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1550",
+      "claim_type": "percentage",
+      "raw_text": "84.9%",
+      "numeric_values": [
+        84.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1550,
+      "sentence": "The efficacy of acarbose was rated \u2018very good\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian population, and tolerability as very good\u2019 or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian population [Figures 2 and 3 ].",
+      "context_window": "ian population, and tolerability as very good\u2019 or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-1596",
+      "claim_type": "percentage",
+      "raw_text": "88.0%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1596,
+      "sentence": "The efficacy of acarbose was rated \u2018very good\u2019 or \u2018good\u2019 in 85.5% of patients in total population and 91.1% in Indian population, and tolerability as very good\u2019 or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian population [Figures 2 and 3 ].",
+      "context_window": "or \u2018good\u2019 in 84.9% of patients in the total population and 88.0% in the Indian population [Figures 2 and 3 ]. Physician ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-n-1717",
+      "claim_type": "sample_size",
+      "raw_text": "N =1996",
+      "numeric_values": [
+        1996.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1717,
+      "sentence": "Physician assessment of efficacy on five-point scale at last visit ( N =1996)\n\nPhysician assessment of tolerability on five-point scale at last visit ( N =1996)",
+      "context_window": "assessment of efficacy on five-point scale at last visit ( N =1996) Physician assessment of tolerability on five-point scale",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-n-1800",
+      "claim_type": "sample_size",
+      "raw_text": "N =1996",
+      "numeric_values": [
+        1996.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1800,
+      "sentence": "Physician assessment of efficacy on five-point scale at last visit ( N =1996)\n\nPhysician assessment of tolerability on five-point scale at last visit ( N =1996)",
+      "context_window": "essment of tolerability on five-point scale at last visit ( N =1996)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-300",
+      "claim_type": "unit_value",
+      "raw_text": "4.9 weeks",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 300,
+      "sentence": "The results demonstrated that acarbose was effective in reducing all glycemic parameters measured, and these improvements were observed by the first follow-up visit, after a mean of only 4.9 weeks.",
+      "context_window": "observed by the first follow-up visit, after a mean of only 4.9 weeks. Overall, 2-hour PPG decreased in 94.4% of patients, HbA1c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-344",
+      "claim_type": "percentage",
+      "raw_text": "94.4%",
+      "numeric_values": [
+        94.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 344,
+      "sentence": "Overall, 2-hour PPG decreased in 94.4% of patients, HbA1c decreased in 52.4% of patients and FBG decreased in 90.6% of patients.",
+      "context_window": "a mean of only 4.9 weeks. Overall, 2-hour PPG decreased in 94.4% of patients, HbA1c decreased in 52.4% of patients and FBG d",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-382",
+      "claim_type": "percentage",
+      "raw_text": "52.4%",
+      "numeric_values": [
+        52.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 382,
+      "sentence": "Overall, 2-hour PPG decreased in 94.4% of patients, HbA1c decreased in 52.4% of patients and FBG decreased in 90.6% of patients.",
+      "context_window": "hour PPG decreased in 94.4% of patients, HbA1c decreased in 52.4% of patients and FBG decreased in 90.6% of patients. These r",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-421",
+      "claim_type": "percentage",
+      "raw_text": "90.6%",
+      "numeric_values": [
+        90.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 421,
+      "sentence": "Overall, 2-hour PPG decreased in 94.4% of patients, HbA1c decreased in 52.4% of patients and FBG decreased in 90.6% of patients.",
+      "context_window": ", HbA1c decreased in 52.4% of patients and FBG decreased in 90.6% of patients. These results clearly show that acarbose was e",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-pct-870",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 870,
+      "sentence": "Reducing PPG is also important because it significantly contributes to HbA1c in the nearly well-controlled patients.[ 5 6 ] Our results indicate that HbA1c was reduced by \u22651% over a 3-month period, which may reflect the significant improvement in PPG.",
+      "context_window": "nts.[ 5 6 ] Our results indicate that HbA1c was reduced by \u22651% over a 3-month period, which may reflect the significant im",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr-u-979",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 kg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 979,
+      "sentence": "The mean weight reduction of 1.4 kg observed during this study was similar to reductions observed in other large surveillance studies.",
+      "context_window": "ignificant improvement in PPG. The mean weight reduction of 1.4 kg observed during this study was similar to reductions observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

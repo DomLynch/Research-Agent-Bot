@@ -1,0 +1,517 @@
+{
+  "paper_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i",
+  "doi": "10.1155/2022/2830545",
+  "extracted_at": "2026-05-05T22:11:22+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "p_value": 22,
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-pct-49",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 49,
+      "sentence": "Polycystic ovarian syndrome (PCOS) affects up to 10% of premenopausal women and is characterised by multiple ovarian cysts, hyperandrogenism causing hirsutism, hyperinsulinemia, insulin resistance, obesity, infertility, and mood disturbances [ 1 ].",
+      "context_window": "Polycystic ovarian syndrome (PCOS) affects up to 10% of premenopausal women and is characterised by multiple ova",
+      "claim_role": "background",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-pct-1316",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1316,
+      "sentence": "Overall data suggests that 1 in 3 women with PCOS have impaired glucose tolerance and 1 in 10 have type 2 diabetes, with the majority (60%) being overweight or obese [ 1 ].",
+      "context_window": "erance and 1 in 10 have type 2 diabetes, with the majority (60%) being overweight or obese [ 1 ]. Hyperinsulinemia is link",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-pct-1092",
+      "claim_type": "percentage",
+      "raw_text": "16.7%",
+      "numeric_values": [
+        16.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1092,
+      "sentence": "Three of the 18 participants (16.7%) dropped out of the trial.",
+      "context_window": "weight stabilisation period. Three of the 18 participants (16.7%) dropped out of the trial. Time-restricted eating (16 : 8)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1190",
+      "claim_type": "p_value",
+      "raw_text": "p =0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1190,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ra",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1245",
+      "claim_type": "p_value",
+      "raw_text": "p =0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1245,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "ls ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025),",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1281",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1281,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1302",
+      "claim_type": "p_value",
+      "raw_text": "p =0.0025",
+      "numeric_values": [
+        0.0025
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1302,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1321",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1321,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1347",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1347,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "01), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1365",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1365,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen i",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1393",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1393,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1441",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1441,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1458",
+      "claim_type": "p_value",
+      "raw_text": "p =0.040",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1458,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": ".001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006). There were no sig",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1475",
+      "claim_type": "p_value",
+      "raw_text": "p =0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1475,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006). There were no significant differen",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-1498",
+      "claim_type": "p_value",
+      "raw_text": "p =0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1498,
+      "sentence": "Time-restricted eating (16 : 8) reduced fasting insulin levels ( p =0.017), area under the curve for insulin (AUCIns) ( p =0.007), ratio of AUCIns/AUCGlu ( p =0.001), HOMA-IR ( p =0.0025), SHBG ( p < 0.001), body weight ( p < 0.001), BMI ( p < 0.001), body fat mass ( p < 0.001), percentage of free androgen index ( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006).",
+      "context_window": "( p =0.001), CRP ( p =0.040), ALT ( p =0.027), and IGF-1 ( p =0.006). There were no significant differences in fasting glucose,",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-u-2044",
+      "claim_type": "unit_value",
+      "raw_text": "29 days",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2044,
+      "sentence": "The second study [ 47 ] investigated the effects of Ramadan fasting in 27 women who fasted for a mean period of 16.5 hours a day for 29 days.",
+      "context_window": "women who fasted for a mean period of 16.5 hours a day for 29 days. There were no significant differences in weight ( p =0.439",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2103",
+      "claim_type": "p_value",
+      "raw_text": "p =0.439",
+      "numeric_values": [
+        0.439
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2103,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "29 days. There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insul",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2120",
+      "claim_type": "p_value",
+      "raw_text": "p =0.646",
+      "numeric_values": [
+        0.646
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2120,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "ere no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), H",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2155",
+      "claim_type": "p_value",
+      "raw_text": "p =0.183",
+      "numeric_values": [
+        0.183
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2155,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "eight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.7",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2176",
+      "claim_type": "p_value",
+      "raw_text": "p =0.474",
+      "numeric_values": [
+        0.474
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2176,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "I ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.30",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2197",
+      "claim_type": "p_value",
+      "raw_text": "p =0.364",
+      "numeric_values": [
+        0.364
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2197,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "g blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2217",
+      "claim_type": "p_value",
+      "raw_text": "p =0.736",
+      "numeric_values": [
+        0.736
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2217,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "=0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles. There were signifi",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2237",
+      "claim_type": "p_value",
+      "raw_text": "p =0.308",
+      "numeric_values": [
+        0.308
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2237,
+      "sentence": "There were no significant differences in weight ( p =0.439), BMI ( p =0.646), fasting blood glucose ( p =0.183), insulin ( p =0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles.",
+      "context_window": "=0.474), HOMA-IR ( p =0.364), HOMA-B ( p =0.736), QUICKI ( p =0.308), or lipid profiles. There were significant decreases in C-",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2331",
+      "claim_type": "p_value",
+      "raw_text": "p =0.072",
+      "numeric_values": [
+        0.072
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2331,
+      "sentence": "There were significant decreases in C-reactive protein levels ( p =0.072), nitric oxide (NO) levels ( p =0.003), and total glutathione levels ( p =0.011).",
+      "context_window": "e were significant decreases in C-reactive protein levels ( p =0.072), nitric oxide (NO) levels ( p =0.003), and total glutathio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2369",
+      "claim_type": "p_value",
+      "raw_text": "p =0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2369,
+      "sentence": "There were significant decreases in C-reactive protein levels ( p =0.072), nitric oxide (NO) levels ( p =0.003), and total glutathione levels ( p =0.011).",
+      "context_window": "tive protein levels ( p =0.072), nitric oxide (NO) levels ( p =0.003), and total glutathione levels ( p =0.011). This study corr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-p-2411",
+      "claim_type": "p_value",
+      "raw_text": "p =0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2411,
+      "sentence": "There were significant decreases in C-reactive protein levels ( p =0.072), nitric oxide (NO) levels ( p =0.003), and total glutathione levels ( p =0.011).",
+      "context_window": "ide (NO) levels ( p =0.003), and total glutathione levels ( p =0.011). This study corroborated the systematic review finding tha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-u-8958",
+      "claim_type": "unit_value",
+      "raw_text": "2 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8958,
+      "sentence": "Time-restricted eating in non-PCOS patients resulted in weight loss, with meta-analysis showing a weighted mean difference of 2 kg in observational studies and 0.4 kg in randomised controlled trials analysed, but with limited improvements in insulin levels, glucose haemostasis, and lipid profiles [ 67 ].",
+      "context_window": "s, with meta-analysis showing a weighted mean difference of 2 kg in observational studies and 0.4 kg in randomised controlle",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9507776_the_effect_of_time_restricted_eating_on_insulin_levels_and_i-u-8992",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 8992,
+      "sentence": "Time-restricted eating in non-PCOS patients resulted in weight loss, with meta-analysis showing a weighted mean difference of 2 kg in observational studies and 0.4 kg in randomised controlled trials analysed, but with limited improvements in insulin levels, glucose haemostasis, and lipid profiles [ 67 ].",
+      "context_window": "ighted mean difference of 2 kg in observational studies and 0.4 kg in randomised controlled trials analysed, but with limited",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "paper_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri",
+  "doi": "10.3390/nu17172757",
+  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 13,
+    "percentage": 33,
+    "p_value": 4,
+    "mean_sd": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-n-246",
+      "claim_type": "sample_size",
+      "raw_text": "n = 69",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 246,
+      "sentence": "Methods: Adults with T2D ( n = 69) were randomly assigned to one of three interventions for 6 months: 8 h TRE (eating only between 12 and 8 pm daily); CR (25% energy restriction daily); or a no-intervention control group.",
+      "context_window": "ults with type 2 diabetes (T2D). Methods: Adults with T2D ( n = 69) were randomly assigned to one of three interventions for 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-311",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 311,
+      "sentence": "Methods: Adults with T2D ( n = 69) were randomly assigned to one of three interventions for 6 months: 8 h TRE (eating only between 12 and 8 pm daily); CR (25% energy restriction daily); or a no-intervention control group.",
+      "context_window": "9) were randomly assigned to one of three interventions for 6 months: 8 h TRE (eating only between 12 and 8 pm daily); CR (25% e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-374",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 374,
+      "sentence": "Methods: Adults with T2D ( n = 69) were randomly assigned to one of three interventions for 6 months: 8 h TRE (eating only between 12 and 8 pm daily); CR (25% energy restriction daily); or a no-intervention control group.",
+      "context_window": "onths: 8 h TRE (eating only between 12 and 8 pm daily); CR (25% energy restriction daily); or a no-intervention control gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-457",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 457,
+      "sentence": "At baseline and 6 months, mood was assessed using the Beck Depression Inventory-II (BDI-II) and the Profile of Mood States (POMS) questionnaires, while quality of life was assessed using the Rand 36-Item Short Form (SF-36).",
+      "context_window": "daily); or a no-intervention control group. At baseline and 6 months, mood was assessed using the Beck Depression Inventory-II (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-729",
+      "claim_type": "percentage",
+      "raw_text": "3.38%",
+      "numeric_values": [
+        3.38
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 729,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "lts: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR gro",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-736",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "dy weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-754",
+      "claim_type": "percentage",
+      "raw_text": "0.71%",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 754,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "antly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-p-761",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 761,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "ecreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-799",
+      "claim_type": "percentage",
+      "raw_text": "1.80%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-806",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 806,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": ".04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6. F",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-823",
+      "claim_type": "percentage",
+      "raw_text": "0.91%",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 823,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "= 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6. Fat mass, lean mass,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-p-830",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.32",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "Results: Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6.",
+      "context_window": "), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls by month 6. Fat mass, lean mass, and visce",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-1822",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1822,
+      "sentence": "However, the participants\u2019 baseline mood and quality of life were generally within healthy ranges, and only minimal weight loss was achieved (3.5%, TRE only), which may explain the lack of observed effects.",
+      "context_window": "healthy ranges, and only minimal weight loss was achieved (3.5%, TRE only), which may explain the lack of observed effects.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-762",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 762,
+      "sentence": "In the Look AHEAD trial, an 8% reduction in body weight among those with type 2 diabetes was associated with a lower incidence of depressive symptoms, as well as improvements in the physical health component of quality of life [ 6 ].",
+      "context_window": "en conducted in those with T2D. In the Look AHEAD trial, an 8% reduction in body weight among those with type 2 diabetes w",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-1095",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1095,
+      "sentence": "Similarly, the DiRECT trial [ 7 ] found significant improvements in quality-of-life measures in participants with T2D who lost 10% of their body weight.",
+      "context_window": "quality-of-life measures in participants with T2D who lost 10% of their body weight. Recently, time-restricted eating (TR",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-1600",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1600,
+      "sentence": "In a recent study, our group demonstrated that an 8-h TRE intervention led to a significant reduction in body weight of approximately 3.5%, relative to controls, in adults with T2D [ 9 ].",
+      "context_window": "to a significant reduction in body weight of approximately 3.5%, relative to controls, in adults with T2D [ 9 ]. Despite t",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-2226",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2226,
+      "sentence": "Therefore, this secondary analysis aims to compare the effect of 6 months of TRE versus CR and controls on mood and quality of life in adults with type 2 diabetes.",
+      "context_window": "fore, this secondary analysis aims to compare the effect of 6 months of TRE versus CR and controls on mood and quality of life i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-302",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 302,
+      "sentence": "Briefly, eligible participants were adults with previously diagnosed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 .",
+      "context_window": "pants were adults with previously diagnosed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-342",
+      "claim_type": "percentage",
+      "raw_text": "6.5%",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 342,
+      "sentence": "Briefly, eligible participants were adults with previously diagnosed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 .",
+      "context_window": "sed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 . Key exclusion cri",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-351",
+      "claim_type": "percentage",
+      "raw_text": "11.0%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 351,
+      "sentence": "Briefly, eligible participants were adults with previously diagnosed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 .",
+      "context_window": "aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 . Key exclusion criteria incl",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-377",
+      "claim_type": "unit_value",
+      "raw_text": "50 kg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 377,
+      "sentence": "Briefly, eligible participants were adults with previously diagnosed T2D, aged 18 to 80 years, with a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 .",
+      "context_window": "a baseline HbA1c between 6.5% and 11.0%, and a BMI of 30 to 50 kg/m 2 . Key exclusion criteria included greater than 4% weigh",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-434",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 434,
+      "sentence": "Key exclusion criteria included greater than 4% weight change in the three months before enrollment, an eating window of less than 10 h per day, pregnant women, a history of eating disorders, night shift workers, or current smokers.",
+      "context_window": "to 50 kg/m 2 . Key exclusion criteria included greater than 4% weight change in the three months before enrollment, an eat",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1007",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1007,
+      "sentence": "Participants were randomized to one of three groups: TRE, CR, or control, for 6 months.",
+      "context_window": "randomized to one of three groups: TRE, CR, or control, for 6 months. Participants in the TRE group were instructed to consume f",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-1554",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1554,
+      "sentence": "Participants in the CR group were instructed to reduce their caloric intake by 25% each day.",
+      "context_window": "CR group were instructed to reduce their caloric intake by 25% each day. Individual caloric requirements were estimated fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-2038",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2038,
+      "sentence": "The control group was instructed to maintain their usual eating and exercise patterns throughout the 6 months of the study.",
+      "context_window": "ain their usual eating and exercise patterns throughout the 6 months of the study. Participants in the control group visited the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-5222",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5222,
+      "sentence": "Unless otherwise noted, all data are presented as mean (95% CI) and were analyzed for completers only (69 participants who completed the 6-month trial).",
+      "context_window": "s. Unless otherwise noted, all data are presented as mean (95% CI) and were analyzed for completers only (69 participants",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-786",
+      "claim_type": "percentage",
+      "raw_text": "3.38%",
+      "numeric_values": [
+        3.38
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 786,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "2 . Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR gro",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-793",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 793,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "dy weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-811",
+      "claim_type": "percentage",
+      "raw_text": "0.71%",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 811,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "antly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-p-818",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 818,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "ecreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-856",
+      "claim_type": "percentage",
+      "raw_text": "1.80%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by mont",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-863",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 863,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": ".04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-880",
+      "claim_type": "percentage",
+      "raw_text": "0.91%",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 880,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "= 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6. There were no signi",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-p-887",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.32",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 887,
+      "sentence": "Body weight significantly decreased in the TRE group (-3.38%; 95% CI, -6.04 to -0.71%, p = 0.008), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6.",
+      "context_window": "), but not in the CR group (-1.80%, 95% CI, -4.50 to 0.91%, p = 0.32) versus controls, by month 6. There were no significant cha",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1337",
+      "claim_type": "mean_sd",
+      "raw_text": "50.3 \u00b1 7.1",
+      "numeric_values": [
+        50.3,
+        7.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1337,
+      "sentence": "In the Diabetes Prevention Program [ 18 ], baseline SF-36 physical component summary, mental component summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively.",
+      "context_window": "t summary, mental component summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively. The Look AHEAD tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1349",
+      "claim_type": "mean_sd",
+      "raw_text": "54.0 \u00b1 7.5",
+      "numeric_values": [
+        54.0,
+        7.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1349,
+      "sentence": "In the Diabetes Prevention Program [ 18 ], baseline SF-36 physical component summary, mental component summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively.",
+      "context_window": "ental component summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively. The Look AHEAD trial [ 17 ] r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1365",
+      "claim_type": "mean_sd",
+      "raw_text": "4.6 \u00b1 4.6",
+      "numeric_values": [
+        4.6,
+        4.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1365,
+      "sentence": "In the Diabetes Prevention Program [ 18 ], baseline SF-36 physical component summary, mental component summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively.",
+      "context_window": "summary, and BDI-II scores were 50.3 \u00b1 7.1, 54.0 \u00b1 7.5, and 4.6 \u00b1 4.6, respectively. The Look AHEAD trial [ 17 ] reported baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1466",
+      "claim_type": "mean_sd",
+      "raw_text": "47.9 \u00b1 7.9",
+      "numeric_values": [
+        47.9,
+        7.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1466,
+      "sentence": "The Look AHEAD trial [ 17 ] reported baseline physical component summary of 47.9 \u00b1 7.9, mental component summary of 54.0 \u00b1 8.1, and a mean BDI-II score of 5.7 \u00b1 5.0.",
+      "context_window": "rial [ 17 ] reported baseline physical component summary of 47.9 \u00b1 7.9, mental component summary of 54.0 \u00b1 8.1, and a mean BDI-II",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1506",
+      "claim_type": "mean_sd",
+      "raw_text": "54.0 \u00b1 8.1",
+      "numeric_values": [
+        54.0,
+        8.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1506,
+      "sentence": "The Look AHEAD trial [ 17 ] reported baseline physical component summary of 47.9 \u00b1 7.9, mental component summary of 54.0 \u00b1 8.1, and a mean BDI-II score of 5.7 \u00b1 5.0.",
+      "context_window": "omponent summary of 47.9 \u00b1 7.9, mental component summary of 54.0 \u00b1 8.1, and a mean BDI-II score of 5.7 \u00b1 5.0. Physical and mental",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-msd-1545",
+      "claim_type": "mean_sd",
+      "raw_text": "5.7 \u00b1 5.0",
+      "numeric_values": [
+        5.7,
+        5.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1545,
+      "sentence": "The Look AHEAD trial [ 17 ] reported baseline physical component summary of 47.9 \u00b1 7.9, mental component summary of 54.0 \u00b1 8.1, and a mean BDI-II score of 5.7 \u00b1 5.0.",
+      "context_window": "component summary of 54.0 \u00b1 8.1, and a mean BDI-II score of 5.7 \u00b1 5.0. Physical and mental component summary scores from the SF-3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-1973",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1973,
+      "sentence": "We found that after 6 months, 8-h TRE produced no significant changes in mood or depressive symptoms.",
+      "context_window": "fects on their glycemic control [ 20 ]. We found that after 6 months, 8-h TRE produced no significant changes in mood or depress",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-2315",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2315,
+      "sentence": "Our findings contrast with the Look AHEAD trial [ 6 ], in which an intensive lifestyle intervention leading to 8% weight loss significantly reduced the incidence of mild or greater depressive symptoms in participants with type 2 diabetes.",
+      "context_window": "], in which an intensive lifestyle intervention leading to 8% weight loss significantly reduced the incidence of mild or",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-2594",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2594,
+      "sentence": "Similarly, a study comparing low-fat and low-carbohydrate diets in individuals with T2D found that both diets resulted in weight loss of approximately 9% and improvements in mood (measured by BDI) and depressive symptoms (measured by POMS); these improvements were significantly correlated with a decrease in both body weight and glycated hemoglobin [ 21 ].",
+      "context_window": "nd that both diets resulted in weight loss of approximately 9% and improvements in mood (measured by BDI) and depressive s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-5418",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5418,
+      "sentence": "The Look AHEAD trial [ 6 ] reported an improvement in the physical functioning domain of quality of life (change: 1.65 [SD7.94]) in participants in the intensive lifestyle intervention group, where the average weight loss was 8%.",
+      "context_window": "style intervention group, where the average weight loss was 8%. Similarly, in the DiRECT trial [ 7 ], participants in the",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-5530",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5530,
+      "sentence": "Similarly, in the DiRECT trial [ 7 ], participants in the intervention group achieved a mean weight loss of 10% and a seven-point improvement in quality of life, as measured by the EuroQol 5-Dimensions Visual Analogue Scale (EQ-5D VAS), after 12 months.",
+      "context_window": "ts in the intervention group achieved a mean weight loss of 10% and a seven-point improvement in quality of life, as measur",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-5665",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5665,
+      "sentence": "Similarly, in the DiRECT trial [ 7 ], participants in the intervention group achieved a mean weight loss of 10% and a seven-point improvement in quality of life, as measured by the EuroQol 5-Dimensions Visual Analogue Scale (EQ-5D VAS), after 12 months.",
+      "context_window": "roQol 5-Dimensions Visual Analogue Scale (EQ-5D VAS), after 12 months. At present, only two studies have assessed the impact of",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-5872",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5872,
+      "sentence": "A 12-week study by Chet et al. [ 10 ] found that 10-h TRE significantly reduced body weight by 4% and improved quality of life, as assessed by the 12-item Short Form survey (SF-12), compared to the control group.",
+      "context_window": "] found that 10-h TRE significantly reduced body weight by 4% and improved quality of life, as assessed by the 12-item Sh",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-6216",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6216,
+      "sentence": "In contrast, a pre-post study by Parr et al. [ 11 ] reported no change in quality of life after 4 weeks of 9-h TRE.",
+      "context_window": "r et al. [ 11 ] reported no change in quality of life after 4 weeks of 9-h TRE. This shorter duration study, compared with the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-6840",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6840,
+      "sentence": "Both interventions produced similar energy restriction (~400 kcal/day) and comparable weight loss (~5%) between groups, and neither led to changes in mood or quality of life.",
+      "context_window": "gy restriction (~400 kcal/day) and comparable weight loss (~5%) between groups, and neither led to changes in mood or qual",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-7387",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7387,
+      "sentence": "In contrast, in the Diabetes Prevention Program, Ackermann et al. [ 18 ] quantified the amount of weight loss necessary to see improvements in QOL regardless of treatment group (metformin, lifestyle intervention, or placebo) and reported that every 5 kg weight loss was associated with an increase of 0.64 in the SF-36 physical component and an increase of 0.28 in the SF-36 mental component.",
+      "context_window": "lifestyle intervention, or placebo) and reported that every 5 kg weight loss was associated with an increase of 0.64 in the",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-7641",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 7641,
+      "sentence": "In terms of mood, a lifestyle intervention study [ 26 ] found significant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II score was associated with a further -0.4% decrease in body weight.",
+      "context_window": "26 ] found significant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-7654",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7654,
+      "sentence": "In terms of mood, a lifestyle intervention study [ 26 ] found significant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II score was associated with a further -0.4% decrease in body weight.",
+      "context_window": "ignificant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II scor",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-7663",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7663,
+      "sentence": "In terms of mood, a lifestyle intervention study [ 26 ] found significant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II score was associated with a further -0.4% decrease in body weight.",
+      "context_window": "t improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II score was ass",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-7751",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7751,
+      "sentence": "In terms of mood, a lifestyle intervention study [ 26 ] found significant improvements in BDI-II scores after 12 months of 4.2% (SD 6.1%) weight loss, and a 1-unit decrease in BDI-II score was associated with a further -0.4% decrease in body weight.",
+      "context_window": "nit decrease in BDI-II score was associated with a further -0.4% decrease in body weight. These findings suggest that the mo",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-7833",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7833,
+      "sentence": "These findings suggest that the modest weight loss (3.5%) in our study may have been insufficient to detect associations between weight change and mood or quality of life.",
+      "context_window": "weight. These findings suggest that the modest weight loss (3.5%) in our study may have been insufficient to detect associat",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-n-8024",
+      "claim_type": "sample_size",
+      "raw_text": "n = 69",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 8024,
+      "sentence": "First, the sample size was small ( n = 69), likely limiting our statistical power to detect significant differences in secondary outcomes.",
+      "context_window": "has several limitations. First, the sample size was small ( n = 69), likely limiting our statistical power to detect significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-u-138",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 138,
+      "sentence": "In conclusion, our findings suggest that TRE and CR do not have any effect on mood or quality of life in adults with obesity and T2D over 6 months, relative to controls.",
+      "context_window": "mood or quality of life in adults with obesity and T2D over 6 months, relative to controls. However, our participants had health",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri-pct-293",
+      "claim_type": "percentage",
+      "raw_text": "3.5%",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 293,
+      "sentence": "However, our participants had healthy mood and quality of life scores at baseline and experienced only modest weight loss (3.5%), which may explain why no significant changes were observed.",
+      "context_window": "scores at baseline and experienced only modest weight loss (3.5%), which may explain why no significant changes were observe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

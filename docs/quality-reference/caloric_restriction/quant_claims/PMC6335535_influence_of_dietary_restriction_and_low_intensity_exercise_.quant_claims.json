@@ -1,0 +1,1517 @@
+{
+  "paper_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_",
+  "doi": "10.1111/jvim.15374",
+  "extracted_at": "2026-05-05T22:17:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 17,
+    "unit_value": 24,
+    "p_value": 26,
+    "mean_sd": 8,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-606",
+      "claim_type": "percentage",
+      "raw_text": "1.25%",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 606,
+      "sentence": "All animals were provided with a restricted ration of grass hay at 1.25% body weight (BW) on a dry matter basis, providing 82.5% estimated digestible energy requirements.",
+      "context_window": "mals were provided with a restricted ration of grass hay at 1.25% body weight (BW) on a dry matter basis, providing 82.5% est",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-662",
+      "claim_type": "percentage",
+      "raw_text": "82.5%",
+      "numeric_values": [
+        82.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 662,
+      "sentence": "All animals were provided with a restricted ration of grass hay at 1.25% body weight (BW) on a dry matter basis, providing 82.5% estimated digestible energy requirements.",
+      "context_window": "at 1.25% body weight (BW) on a dry matter basis, providing 82.5% estimated digestible energy requirements. The DIET+EX group",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-761",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 761,
+      "sentence": "The DIET+EX group undertook low\u2010intensity exercise 5 days per week on an automated horse walker.",
+      "context_window": "rements. The DIET+EX group undertook low\u2010intensity exercise 5 days per week on an automated horse walker. Before and after wei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1137",
+      "claim_type": "p_value",
+      "raw_text": "P > .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1137,
+      "sentence": "Decreases in BCS, BW, and TBFM were similar between groups (all P > .05).",
+      "context_window": "eases in BCS, BW, and TBFM were similar between groups (all P > .05). After weight loss, animals in both groups had decreased b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1290",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1290,
+      "sentence": "After weight loss, animals in both groups had decreased basal insulin and leptin concentrations, and increased adiponectin concentrations (all P < .001).",
+      "context_window": "ncentrations, and increased adiponectin concentrations (all P < .001). Furthermore, animals in the DIET+EX group had significant",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1462,
+      "sentence": "Furthermore, animals in the DIET+EX group had significantly improved SI and decreased serum amyloid A concentrations relative to animals in the DIET group (both P = .01).",
+      "context_window": "concentrations relative to animals in the DIET group (both P = .01). Regular low\u2010intensity exercise provided additional healt",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-66",
+      "claim_type": "mean_sd",
+      "raw_text": "9 \u00b1 2",
+      "numeric_values": [
+        9.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 66,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed pon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-70",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 70,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "r equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-79",
+      "claim_type": "mean_sd",
+      "raw_text": "530 \u00b1 30",
+      "numeric_values": [
+        530.0,
+        30.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 79,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-85",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 85,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "tudied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-136",
+      "claim_type": "mean_sd",
+      "raw_text": "9 \u00b1 3",
+      "numeric_values": [
+        9.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 136,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "s; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-140",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 140,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "30 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-149",
+      "claim_type": "mean_sd",
+      "raw_text": "350 \u00b1 60",
+      "numeric_values": [
+        350.0,
+        60.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 149,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "g; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-155",
+      "claim_type": "unit_value",
+      "raw_text": "60 kg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 155,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "eldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-215",
+      "claim_type": "mean_sd",
+      "raw_text": "8 \u00b1 2",
+      "numeric_values": [
+        8.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 215,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares). All animals were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-219",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 219,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "g; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares). All animals were in obe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-228",
+      "claim_type": "mean_sd",
+      "raw_text": "550 \u00b1 70",
+      "numeric_values": [
+        550.0,
+        70.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 228,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "ings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares). All animals were in obese body co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-234",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 234,
+      "sentence": "Twenty\u2010four equids were studied, including 8 Standardbred horses (9 \u00b1 2 years; 530 \u00b1 30 kg; 5 geldings, 3 mares), 8 mixed\u2010breed ponies (9 \u00b1 3 years; 350 \u00b1 60 kg; 5 geldings, 3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares).",
+      "context_window": "3 mares), and 8 Andalusian\u2010Cross horses (8 \u00b1 2 years; 550 \u00b1 70 kg; 3 geldings, 5 mares). All animals were in obese body condi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-405",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 405,
+      "sentence": "All animals were in obese body condition as defined by body condition score (BCS) \u2265 7/9 at the study outset and had been so for between 4 and 8 weeks before the start of the study.",
+      "context_window": "\u2265 7/9 at the study outset and had been so for between 4 and 8 weeks before the start of the study. Twenty\u2010two animals were enro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-758",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 758,
+      "sentence": "The 2 replacement animals had been kept in an adjacent dry lot paddock for the previous 6 months with similar daily husbandry procedures.",
+      "context_window": "d been kept in an adjacent dry lot paddock for the previous 6 months with similar daily husbandry procedures. All animals had re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-896",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 896,
+      "sentence": "All animals had remained sedentary (no prescriptive exercise) for at least the previous 12 months.",
+      "context_window": "entary (no prescriptive exercise) for at least the previous 12 months. An a priori estimate of study power indicated that 10 anim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-1044",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1044,
+      "sentence": "An a priori estimate of study power indicated that 10 animals per group were appropriate to detect a 1\u2010unit change in SI with a power of 80% (alpha = 0.05, 2\u2010tailed).",
+      "context_window": "appropriate to detect a 1\u2010unit change in SI with a power of 80% (alpha = 0.05, 2\u2010tailed). The use of animals was approved b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-1242",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1242,
+      "sentence": "The horses and ponies underwent an initial acclimation period of 4 weeks, during which they were kept in large dry lot paddocks and provided with ad libitum access to mixed grass hay and fresh water.",
+      "context_window": "orses and ponies underwent an initial acclimation period of 4 weeks, during which they were kept in large dry lot paddocks and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-1481",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1481,
+      "sentence": "A small meal containing lucerne chaff (0.5 g/kg body weight [BW], as fed) and a vitamin/mineral powder (60 mg/kg BW; Ranvet, East Botany, New South Wales, Australia) was provided 5 days per week, with animals moved to individual yards (4 \u00d7 4 m) along the perimeter of the dry lot during meal times.",
+      "context_window": "/kg body weight [BW], as fed) and a vitamin/mineral powder (60 mg/kg BW; Ranvet, East Botany, New South Wales, Australia) was",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-1556",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1556,
+      "sentence": "A small meal containing lucerne chaff (0.5 g/kg body weight [BW], as fed) and a vitamin/mineral powder (60 mg/kg BW; Ranvet, East Botany, New South Wales, Australia) was provided 5 days per week, with animals moved to individual yards (4 \u00d7 4 m) along the perimeter of the dry lot during meal times.",
+      "context_window": "nvet, East Botany, New South Wales, Australia) was provided 5 days per week, with animals moved to individual yards (4 \u00d7 4 m)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-1708",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1708,
+      "sentence": "The weight loss program lasted 12 weeks.",
+      "context_window": "dry lot during meal times. The weight loss program lasted 12 weeks. Horses and ponies were blocked by both breed and the diet",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2416",
+      "claim_type": "percentage",
+      "raw_text": "1.25%",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2416,
+      "sentence": "All animals were provided with a restricted ration of the same batch of mixed grass hay (Supporting Information Table S1 ) at 1.25% BW (dry matter [DM] basis) daily (7.5 MJ/kg DM, 9.1% NSC) that was divided and fed at 0700 hours (one\u2010quarter), 1600 hours (one\u2010quarter), and 1900 hours (one\u2010half).",
+      "context_window": "ch of mixed grass hay (Supporting Information Table S1 ) at 1.25% BW (dry matter [DM] basis) daily (7.5 MJ/kg DM, 9.1% NSC) t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2470",
+      "claim_type": "percentage",
+      "raw_text": "9.1%",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2470,
+      "sentence": "All animals were provided with a restricted ration of the same batch of mixed grass hay (Supporting Information Table S1 ) at 1.25% BW (dry matter [DM] basis) daily (7.5 MJ/kg DM, 9.1% NSC) that was divided and fed at 0700 hours (one\u2010quarter), 1600 hours (one\u2010quarter), and 1900 hours (one\u2010half).",
+      "context_window": ") at 1.25% BW (dry matter [DM] basis) daily (7.5 MJ/kg DM, 9.1% NSC) that was divided and fed at 0700 hours (one\u2010quarter),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-2825",
+      "claim_type": "unit_value",
+      "raw_text": "60 mg",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2825,
+      "sentence": "A single daily meal containing soybean meal (1.0 g/kg BW, as fed), lucerne chaff (1.0 g/kg BW, as fed), and a vitamin/mineral powder (60 mg/kg BW; Ranvet) was provided at 0900 hours.",
+      "context_window": "chaff (1.0 g/kg BW, as fed), and a vitamin/mineral powder (60 mg/kg BW; Ranvet) was provided at 0900 hours. The rationale fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3076",
+      "claim_type": "unit_value",
+      "raw_text": "100 kg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3076,
+      "sentence": "12 , 15 The total ration offered 11.5 MJ/100 kg BW, providing 82.5% of estimated daily digestible energy requirements.",
+      "context_window": "etary restriction. 12 , 15 The total ration offered 11.5 MJ/100 kg BW, providing 82.5% of estimated daily digestible energy re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-3097",
+      "claim_type": "percentage",
+      "raw_text": "82.5%",
+      "numeric_values": [
+        82.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3097,
+      "sentence": "12 , 15 The total ration offered 11.5 MJ/100 kg BW, providing 82.5% of estimated daily digestible energy requirements.",
+      "context_window": ", 15 The total ration offered 11.5 MJ/100 kg BW, providing 82.5% of estimated daily digestible energy requirements. 27 Indiv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3499",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3499,
+      "sentence": "Animals in this group were trained to use the horse walker during the final 2 weeks of the acclimation period.",
+      "context_window": "group were trained to use the horse walker during the final 2 weeks of the acclimation period. During the 12\u2010week weight loss p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3592",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3592,
+      "sentence": "During the 12\u2010week weight loss program, exercise occurred 5 days per week between 0800 and 1000 hours, and consisted of 5 minutes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and larger Andalusians), and 5 minutes walking.",
+      "context_window": ". During the 12\u2010week weight loss program, exercise occurred 5 days per week between 0800 and 1000 hours, and consisted of 5 mi",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3700",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 m/s",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3700,
+      "sentence": "During the 12\u2010week weight loss program, exercise occurred 5 days per week between 0800 and 1000 hours, and consisted of 5 minutes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and larger Andalusians), and 5 minutes walking.",
+      "context_window": "consisted of 5 minutes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s fo",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3720",
+      "claim_type": "unit_value",
+      "raw_text": "3.0 m/s",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3720,
+      "sentence": "During the 12\u2010week weight loss program, exercise occurred 5 days per week between 0800 and 1000 hours, and consisted of 5 minutes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and larger Andalusians), and 5 minutes walking.",
+      "context_window": "tes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-3757",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 m/s",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 3757,
+      "sentence": "During the 12\u2010week weight loss program, exercise occurred 5 days per week between 0800 and 1000 hours, and consisted of 5 minutes walking, 15 minutes brisk trotting (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and larger Andalusians), and 5 minutes walking.",
+      "context_window": "g (2.0 m/s for ponies, 3.0 m/s for smaller Andalusians, and 3.5 m/s for Standardbreds and larger Andalusians), and 5 minutes wa",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-5398",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 5398,
+      "sentence": "31\n\nInsulin\u2010modified frequently sampled IV glucose tolerance tests (FSIGT) were performed in all animals over 5 days, before the start of the acclimation period and after the period of dietary restriction.",
+      "context_window": "tolerance tests (FSIGT) were performed in all animals over 5 days, before the start of the acclimation period and after the p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-5881",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5881,
+      "sentence": "Briefly, between 0800 and 0830 hours, a catheter was placed in the left jugular vein under local anesthesia and blood samples were collected 60 minutes, 45 minutes, and immediately before a glucose bolus (300 mg/kg BW; 40% weight/volume) administered over 2 minutes through the jugular catheter, then irrigated thoroughly with 0.9% saline solution.",
+      "context_window": "inutes, 45 minutes, and immediately before a glucose bolus (300 mg/kg BW; 40% weight/volume) administered over 2 minutes throu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-5895",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5895,
+      "sentence": "Briefly, between 0800 and 0830 hours, a catheter was placed in the left jugular vein under local anesthesia and blood samples were collected 60 minutes, 45 minutes, and immediately before a glucose bolus (300 mg/kg BW; 40% weight/volume) administered over 2 minutes through the jugular catheter, then irrigated thoroughly with 0.9% saline solution.",
+      "context_window": "utes, and immediately before a glucose bolus (300 mg/kg BW; 40% weight/volume) administered over 2 minutes through the jugu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-6003",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6003,
+      "sentence": "Briefly, between 0800 and 0830 hours, a catheter was placed in the left jugular vein under local anesthesia and blood samples were collected 60 minutes, 45 minutes, and immediately before a glucose bolus (300 mg/kg BW; 40% weight/volume) administered over 2 minutes through the jugular catheter, then irrigated thoroughly with 0.9% saline solution.",
+      "context_window": "hrough the jugular catheter, then irrigated thoroughly with 0.9% saline solution. Twenty minutes later, a rapid insulin bolu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-8869",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8869,
+      "sentence": "Significance was accepted at P < .05.",
+      "context_window": "ta were reported as mean \u00b1 SD. Significance was accepted at P < .05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-270",
+      "claim_type": "mean_sd",
+      "raw_text": "6.2 \u00b1 4.3",
+      "numeric_values": [
+        6.2,
+        4.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 270,
+      "sentence": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30).",
+      "context_window": "ve exercise throughout the study. Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group (",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-276",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 276,
+      "sentence": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30).",
+      "context_window": "rcise throughout the study. Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-msd-304",
+      "claim_type": "mean_sd",
+      "raw_text": "7.7 \u00b1 2.1",
+      "numeric_values": [
+        7.7,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 304,
+      "sentence": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30).",
+      "context_window": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30). Significant decreases in",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-310",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 310,
+      "sentence": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30).",
+      "context_window": "weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30). Significant decreases in",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-339",
+      "claim_type": "p_value",
+      "raw_text": "P = .30",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 339,
+      "sentence": "Body weight decreased by 6.2 \u00b1 4.3% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30).",
+      "context_window": "% for the DIET group and 7.7 \u00b1 2.1% for the DIET+EX group ( P = .30). Significant decreases in BCS, CNS, and TBFM occurred rela",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-461",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 461,
+      "sentence": "Significant decreases in BCS, CNS, and TBFM occurred relative to starting values for both groups (Table 1 ; all P < .001).",
+      "context_window": "relative to starting values for both groups (Table 1 ; all P < .001). A main effect of breed was present for CNS, with Standard",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-612",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 612,
+      "sentence": "A main effect of breed was present for CNS, with Standardbreds having lower scores relative to ponies and Andalusians at both time points ( P = .003).",
+      "context_window": "es relative to ponies and Andalusians at both time points ( P = .003). A significant 3\u2010way interaction was detected for TBFM ( P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-679",
+      "claim_type": "p_value",
+      "raw_text": "P = .04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 679,
+      "sentence": "A significant 3\u2010way interaction was detected for TBFM ( P = .04), with ponies exhibiting lower TBFM within the DIET+EX group when compared to ponies in the DIET group after weight loss ( P = .01).",
+      "context_window": "3). A significant 3\u2010way interaction was detected for TBFM ( P = .04), with ponies exhibiting lower TBFM within the DIET+EX grou",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-810",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 810,
+      "sentence": "A significant 3\u2010way interaction was detected for TBFM ( P = .04), with ponies exhibiting lower TBFM within the DIET+EX group when compared to ponies in the DIET group after weight loss ( P = .01).",
+      "context_window": "en compared to ponies in the DIET group after weight loss ( P = .01). Adiposity (mean \u00b1 SD) of equids subjected to a 12\u2010week w",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-943",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 943,
+      "sentence": "Adiposity (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+E",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-1012",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "Adiposity (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "r dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12) Different superscript letters indicate significant differ",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1133",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1133,
+      "sentence": "Adiposity (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "ifference between groups or time points for each variable ( P < .05). Abbreviations: BCS, body condition score; CNS, cresty ne",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1385",
+      "claim_type": "p_value",
+      "raw_text": "P = .009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1385,
+      "sentence": "A significant 2\u2010way interaction between time and intervention group was detected for SI ( P = .009).",
+      "context_window": "n between time and intervention group was detected for SI ( P = .009). Values for SI were similar between intervention groups be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1472",
+      "claim_type": "p_value",
+      "raw_text": "P = .34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1472,
+      "sentence": "Values for SI were similar between intervention groups before weight loss ( P = .34), but animals in the DIET+EX group had higher values than those in the DIET group after weight loss occurred ( P = .01).",
+      "context_window": "re similar between intervention groups before weight loss ( P = .34), but animals in the DIET+EX group had higher values than t",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1591",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1591,
+      "sentence": "Values for SI were similar between intervention groups before weight loss ( P = .34), but animals in the DIET+EX group had higher values than those in the DIET group after weight loss occurred ( P = .01).",
+      "context_window": "s than those in the DIET group after weight loss occurred ( P = .01). A main effect of breed was present for both SI and AIRg,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1780",
+      "claim_type": "p_value",
+      "raw_text": "P = .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1780,
+      "sentence": "A main effect of breed was present for both SI and AIRg, with Standardbreds having higher SI values and lower AIRg values relative to ponies and Andalusians at both time points ( P = .001 and .009, respectively).",
+      "context_window": "es relative to ponies and Andalusians at both time points ( P = .001 and .009, respectively). A significant 2\u2010way interaction be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1904",
+      "claim_type": "p_value",
+      "raw_text": "P = .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1904,
+      "sentence": "A significant 2\u2010way interaction between time and intervention group was detected for DI ( P = .005).",
+      "context_window": "n between time and intervention group was detected for DI ( P = .005). Values for DI were similar between intervention groups be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-1991",
+      "claim_type": "p_value",
+      "raw_text": "P = .60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1991,
+      "sentence": "Values for DI were similar between intervention groups before weight loss ( P = .60) but were higher in the DIET+EX group after weight loss compared to the DIET group ( P < .001).",
+      "context_window": "re similar between intervention groups before weight loss ( P = .60) but were higher in the DIET+EX group after weight loss com",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-2084",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2084,
+      "sentence": "Values for DI were similar between intervention groups before weight loss ( P = .60) but were higher in the DIET+EX group after weight loss compared to the DIET group ( P < .001).",
+      "context_window": "IET+EX group after weight loss compared to the DIET group ( P < .001). Frequently sampled intravenous glucose tolerance test re",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-2270",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2270,
+      "sentence": "Frequently sampled intravenous glucose tolerance test results (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+E",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-2339",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2339,
+      "sentence": "Frequently sampled intravenous glucose tolerance test results (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "r dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12) Different superscript letters indicate significant differ",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-2460",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2460,
+      "sentence": "Frequently sampled intravenous glucose tolerance test results (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < .05).",
+      "context_window": "ifference between groups or time points for each variable ( P < .05). Abbreviations: AIRg, acute insulin response to glucose;",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-2817",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2817,
+      "sentence": "Insulin sensitivity (SI) of Standardbred horses (circles), mixed\u2010breed ponies (squares), and Andalusians horses (triangles) subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12).",
+      "context_window": "loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+E",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-2886",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2886,
+      "sentence": "Insulin sensitivity (SI) of Standardbred horses (circles), mixed\u2010breed ponies (squares), and Andalusians horses (triangles) subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12).",
+      "context_window": "r dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12). A main effect of breed was present, with Standardbreds ha",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3013",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3013,
+      "sentence": "A main effect of breed was present, with Standardbreds having higher SI values compared with ponies and Andalusians ( P < .05). * P < .05 for group \u00d7 time interaction, with higher values detected for the DIET+EX group after weight loss\n\nResults of plasma analyses are shown in Table 3 .",
+      "context_window": "ing higher SI values compared with ponies and Andalusians ( P < .05). * P < .05 for group \u00d7 time interaction, with higher value",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3025",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3025,
+      "sentence": "A main effect of breed was present, with Standardbreds having higher SI values compared with ponies and Andalusians ( P < .05). * P < .05 for group \u00d7 time interaction, with higher values detected for the DIET+EX group after weight loss\n\nResults of plasma analyses are shown in Table 3 .",
+      "context_window": "I values compared with ponies and Andalusians ( P < .05). * P < .05 for group \u00d7 time interaction, with higher values detected f",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3342",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3342,
+      "sentence": "A significant effect of time was detected for several plasma analytes, with both intervention groups having lower basal insulin and leptin concentrations (both P < .001), and higher adiponectin concentrations ( P < .001), after weight loss.",
+      "context_window": "having lower basal insulin and leptin concentrations (both P < .001), and higher adiponectin concentrations ( P < .001), after",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3393",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3393,
+      "sentence": "A significant effect of time was detected for several plasma analytes, with both intervention groups having lower basal insulin and leptin concentrations (both P < .001), and higher adiponectin concentrations ( P < .001), after weight loss.",
+      "context_window": "ns (both P < .001), and higher adiponectin concentrations ( P < .001), after weight loss. A significant 2\u2010way interaction betwee",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3514",
+      "claim_type": "p_value",
+      "raw_text": "P = .04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3514,
+      "sentence": "A significant 2\u2010way interaction between time and intervention group was detected for SAA ( P = .04).",
+      "context_window": "between time and intervention group was detected for SAA ( P = .04). Intervention groups were similar before weight loss ( P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3578",
+      "claim_type": "p_value",
+      "raw_text": "P = .42",
+      "numeric_values": [
+        0.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "Intervention groups were similar before weight loss ( P = .42), but SAA concentrations were lower in the DIET+EX group after weight loss compared to the DIET group ( P = .01).",
+      "context_window": ".04). Intervention groups were similar before weight loss ( P = .42), but SAA concentrations were lower in the DIET+EX group af",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-3690",
+      "claim_type": "p_value",
+      "raw_text": "P = .01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3690,
+      "sentence": "Intervention groups were similar before weight loss ( P = .42), but SAA concentrations were lower in the DIET+EX group after weight loss compared to the DIET group ( P = .01).",
+      "context_window": "IET+EX group after weight loss compared to the DIET group ( P = .01). Plasma analytes (mean \u00b1 SD) of equids subjected to a 12\u2010",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-3829",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3829,
+      "sentence": "Plasma analytes (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < 0.05).",
+      "context_window": "loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+E",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-n-3898",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3898,
+      "sentence": "Plasma analytes (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < 0.05).",
+      "context_window": "r dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12) Different superscript letters indicate significant differ",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-p-4019",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4019,
+      "sentence": "Plasma analytes (mean \u00b1 SD) of equids subjected to a 12\u2010week weight loss program consisting of dietary restriction alone (DIET; n = 12) or dietary restriction plus low\u2010intensity exercise (DIET+EX; n = 12)\n\nDifferent superscript letters indicate significant difference between groups or time points for each variable ( P < 0.05).",
+      "context_window": "ifference between groups or time points for each variable ( P < 0.05). Abbreviations: SAA, serum amyloid A; TNF\u2010\u03b1, tumor necros",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2098",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2098,
+      "sentence": "For example, a study of obese Shetland ponies demonstrated improved glucose tolerance using a protocol that gradually restricted forage intake to as little as 35% of maintenance energy requirements, yielding much greater reductions in body mass of approximately 16% BW over 17 weeks.",
+      "context_window": "col that gradually restricted forage intake to as little as 35% of maintenance energy requirements, yielding much greater r",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2201",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2201,
+      "sentence": "For example, a study of obese Shetland ponies demonstrated improved glucose tolerance using a protocol that gradually restricted forage intake to as little as 35% of maintenance energy requirements, yielding much greater reductions in body mass of approximately 16% BW over 17 weeks.",
+      "context_window": "lding much greater reductions in body mass of approximately 16% BW over 17 weeks. 11 Greater levels of dietary restriction",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-u-2213",
+      "claim_type": "unit_value",
+      "raw_text": "17 weeks",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2213,
+      "sentence": "For example, a study of obese Shetland ponies demonstrated improved glucose tolerance using a protocol that gradually restricted forage intake to as little as 35% of maintenance energy requirements, yielding much greater reductions in body mass of approximately 16% BW over 17 weeks.",
+      "context_window": "reater reductions in body mass of approximately 16% BW over 17 weeks. 11 Greater levels of dietary restriction or a longer study",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2676",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2676,
+      "sentence": "The restriction of forage to achieve weight loss while avoiding the potentially negative health consequences of negative energy balance, such as hyperlipemia, is suggested at 1.0%\u20101.5% BW.",
+      "context_window": "ative energy balance, such as hyperlipemia, is suggested at 1.0%\u20101.5% BW. 1 , 9 , 17 In addition to the restriction of DM in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2681",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2681,
+      "sentence": "The restriction of forage to achieve weight loss while avoiding the potentially negative health consequences of negative energy balance, such as hyperlipemia, is suggested at 1.0%\u20101.5% BW.",
+      "context_window": "energy balance, such as hyperlipemia, is suggested at 1.0%\u20101.5% BW. 1 , 9 , 17 In addition to the restriction of DM intake,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-2883",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2883,
+      "sentence": "1 , 9 , 17 In addition to the restriction of DM intake, NSC content is a key consideration to minimize postprandial hyperinsulinemia, with existing recommendations suggesting an upper limit of 10% NSC content.",
+      "context_window": "with existing recommendations suggesting an upper limit of 10% NSC content. 1 , 9 Consistent with several previous studies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-3004",
+      "claim_type": "percentage",
+      "raw_text": "1.25%",
+      "numeric_values": [
+        1.25
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3004,
+      "sentence": "1 , 9 Consistent with several previous studies of weight loss in equids, we chose to restrict forage to 1.25% BW (DM basis) using a mixed grass hay containing 9.1% NSC.",
+      "context_window": "es of weight loss in equids, we chose to restrict forage to 1.25% BW (DM basis) using a mixed grass hay containing 9.1% NSC.",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_-pct-3059",
+      "claim_type": "percentage",
+      "raw_text": "9.1%",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3059,
+      "sentence": "1 , 9 Consistent with several previous studies of weight loss in equids, we chose to restrict forage to 1.25% BW (DM basis) using a mixed grass hay containing 9.1% NSC.",
+      "context_window": "e to 1.25% BW (DM basis) using a mixed grass hay containing 9.1% NSC. 13 , 14 , 17 A steady rate of weight loss similar to t",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

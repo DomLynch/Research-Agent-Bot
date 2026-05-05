@@ -1,0 +1,120 @@
+{
+  "paper_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines",
+  "doi": "10.3389/fendo.2022.811751",
+  "extracted_at": "2026-05-05T21:59:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-u-835",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 835,
+      "sentence": "More than 50 million people worldwide suffer from sarcopenia, and it is estimated that more than 200 million older people will be affected in the next 40 years.",
+      "context_window": "than 200 million older people will be affected in the next 40 years. Annual skeletal muscle loss appears to be approximately 0.",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-pct-905",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 905,
+      "sentence": "Annual skeletal muscle loss appears to be approximately 0.1-0.5% from age 30 but increases dramatically after age 65 ( 1 ).",
+      "context_window": "Annual skeletal muscle loss appears to be approximately 0.1-0.5% from age 30 but increases dramatically after age 65 ( 1 ).",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-pct-4368",
+      "claim_type": "percentage",
+      "raw_text": "174%",
+      "numeric_values": [
+        174.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4368,
+      "sentence": "Other studies on sarcopenia have reported that people aged 90 to 99 can increase their muscle strength by about 174%, their walking speed by about 48% with eight weeks of high-intensity progressive resistance training ( 9 ).",
+      "context_window": "e aged 90 to 99 can increase their muscle strength by about 174%, their walking speed by about 48% with eight weeks of high-",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-pct-4403",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4403,
+      "sentence": "Other studies on sarcopenia have reported that people aged 90 to 99 can increase their muscle strength by about 174%, their walking speed by about 48% with eight weeks of high-intensity progressive resistance training ( 9 ).",
+      "context_window": "muscle strength by about 174%, their walking speed by about 48% with eight weeks of high-intensity progressive resistance t",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-pct-4890",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4890,
+      "sentence": "Another study reported that after 24 sessions of resistance training with blood flow restriction (BFR), a 12% increase in muscle cross-section and an 8% increase in lateral extensor muscle thickness were observed in 90-year-olds.",
+      "context_window": "of resistance training with blood flow restriction (BFR), a 12% increase in muscle cross-section and an 8% increase in late",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8892203_exercise_therapy_for_people_with_sarcopenic_obesity_myokines-pct-4934",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4934,
+      "sentence": "Another study reported that after 24 sessions of resistance training with blood flow restriction (BFR), a 12% increase in muscle cross-section and an 8% increase in lateral extensor muscle thickness were observed in 90-year-olds.",
+      "context_window": "iction (BFR), a 12% increase in muscle cross-section and an 8% increase in lateral extensor muscle thickness were observed",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

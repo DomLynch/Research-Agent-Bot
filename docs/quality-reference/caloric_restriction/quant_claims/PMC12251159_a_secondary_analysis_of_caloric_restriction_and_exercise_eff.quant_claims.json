@@ -1,0 +1,684 @@
+{
+  "paper_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff",
+  "doi": "10.3390/nu17132075",
+  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "p_value": 9,
+    "percentage": 12,
+    "unit_value": 11,
+    "confidence_interval": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-n-705",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 705,
+      "sentence": "Methods: This study represents a secondary analysis of a previously conducted pilot trial, in which 34 participants were randomly assigned to a 24-week intervention: (i) caloric restriction plus exercise (CR + E; n = 17) or (ii) educational control (EC; n = 17).",
+      "context_window": "ntervention: (i) caloric restriction plus exercise (CR + E; n = 17) or (ii) educational control (EC; n = 17). In the CR + E gr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-n-746",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 746,
+      "sentence": "Methods: This study represents a secondary analysis of a previously conducted pilot trial, in which 34 participants were randomly assigned to a 24-week intervention: (i) caloric restriction plus exercise (CR + E; n = 17) or (ii) educational control (EC; n = 17).",
+      "context_window": "exercise (CR + E; n = 17) or (ii) educational control (EC; n = 17). In the CR + E group, participants engaged in group-based",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-1365",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1365,
+      "sentence": "Results: In the CR + E group, DSST scores significantly improved compared to the EC group ( p < 0.05).",
+      "context_window": "ST scores significantly improved compared to the EC group ( p < 0.05). There were no significant changes in COWA scores for eith",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-363",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 363,
+      "sentence": "Specifically, in 2007-2010, 35% of older adults met the criteria for obesity (BMI \u2265 30 kg/m 2 ), increasing to 42.8% by 2017-2018 [ 2 , 3 ].",
+      "context_window": "r obesity, given recent trends. Specifically, in 2007-2010, 35% of older adults met the criteria for obesity (BMI \u2265 30 kg/m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-419",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 419,
+      "sentence": "Specifically, in 2007-2010, 35% of older adults met the criteria for obesity (BMI \u2265 30 kg/m 2 ), increasing to 42.8% by 2017-2018 [ 2 , 3 ].",
+      "context_window": "10, 35% of older adults met the criteria for obesity (BMI \u2265 30 kg/m 2 ), increasing to 42.8% by 2017-2018 [ 2 , 3 ]. In addit",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-446",
+      "claim_type": "percentage",
+      "raw_text": "42.8%",
+      "numeric_values": [
+        42.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 446,
+      "sentence": "Specifically, in 2007-2010, 35% of older adults met the criteria for obesity (BMI \u2265 30 kg/m 2 ), increasing to 42.8% by 2017-2018 [ 2 , 3 ].",
+      "context_window": "the criteria for obesity (BMI \u2265 30 kg/m 2 ), increasing to 42.8% by 2017-2018 [ 2 , 3 ]. In addition to these trends, there",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-561",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 561,
+      "sentence": "Specifically, women aged 65 years and older have a higher prevalence of obesity than men, and those who identify as non-Hispanic Black women face the largest disparity, having 1.75 times higher odds of class 2 (BMI 35-39.9 kg/m 2 ) and class 3 (\u226540 kg/m 2 ) obesity compared to non-Hispanic White women [ 4 ].",
+      "context_window": "ds, there are noted discrepancies. Specifically, women aged 65 years and older have a higher prevalence of obesity than men, and",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-754",
+      "claim_type": "unit_value",
+      "raw_text": "39.9 kg",
+      "numeric_values": [
+        39.9
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 754,
+      "sentence": "Specifically, women aged 65 years and older have a higher prevalence of obesity than men, and those who identify as non-Hispanic Black women face the largest disparity, having 1.75 times higher odds of class 2 (BMI 35-39.9 kg/m 2 ) and class 3 (\u226540 kg/m 2 ) obesity compared to non-Hispanic White women [ 4 ].",
+      "context_window": "disparity, having 1.75 times higher odds of class 2 (BMI 35-39.9 kg/m 2 ) and class 3 (\u226540 kg/m 2 ) obesity compared to non-His",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-782",
+      "claim_type": "unit_value",
+      "raw_text": "40 kg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 782,
+      "sentence": "Specifically, women aged 65 years and older have a higher prevalence of obesity than men, and those who identify as non-Hispanic Black women face the largest disparity, having 1.75 times higher odds of class 2 (BMI 35-39.9 kg/m 2 ) and class 3 (\u226540 kg/m 2 ) obesity compared to non-Hispanic White women [ 4 ].",
+      "context_window": "higher odds of class 2 (BMI 35-39.9 kg/m 2 ) and class 3 (\u226540 kg/m 2 ) obesity compared to non-Hispanic White women [ 4 ].",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-1206",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 1206,
+      "sentence": "A recent study found that individuals with overweight or obesity (BMI \u2265 25 kg/m 2 ) in mid-and late life had a faster rate of cognitive decline and a higher Alzheimer\u2019s risk than those with lower BMIs (18.5-24.9 kg/m 2 ) [ 8 ].",
+      "context_window": "dy found that individuals with overweight or obesity (BMI \u2265 25 kg/m 2 ) in mid-and late life had a faster rate of cognitive d",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-1341",
+      "claim_type": "unit_value",
+      "raw_text": "24.9 kg",
+      "numeric_values": [
+        24.9
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 1341,
+      "sentence": "A recent study found that individuals with overweight or obesity (BMI \u2265 25 kg/m 2 ) in mid-and late life had a faster rate of cognitive decline and a higher Alzheimer\u2019s risk than those with lower BMIs (18.5-24.9 kg/m 2 ) [ 8 ].",
+      "context_window": "a higher Alzheimer\u2019s risk than those with lower BMIs (18.5-24.9 kg/m 2 ) [ 8 ]. In addition, obesity in older adulthood has be",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-1401",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1401,
+      "sentence": "Main study inclusion included those aged 55-79 years old, BMI > 28, non-Hispanic Black or White racial identity, and self-reported sedentary behavior.",
+      "context_window": "ility criteria. Main study inclusion included those aged 55-79 years old, BMI > 28, non-Hispanic Black or White racial identity,",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2481",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2481,
+      "sentence": "Participants were randomly assigned to one of two groups for the six-month study: The CR + E group followed a daily 750 kcal deficit, determined by baseline food log evaluations conducted by a study dietitian, and adhered to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American Heart Association recommendations [ 27 ].",
+      "context_window": "d by a study dietitian, and adhered to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American H",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2500",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2500,
+      "sentence": "Participants were randomly assigned to one of two groups for the six-month study: The CR + E group followed a daily 750 kcal deficit, determined by baseline food log evaluations conducted by a study dietitian, and adhered to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American Heart Association recommendations [ 27 ].",
+      "context_window": "ian, and adhered to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American Heart Association re",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2513",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2513,
+      "sentence": "Participants were randomly assigned to one of two groups for the six-month study: The CR + E group followed a daily 750 kcal deficit, determined by baseline food log evaluations conducted by a study dietitian, and adhered to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American Heart Association recommendations [ 27 ].",
+      "context_window": "red to a diet consisting of 55% carbohydrates, 30% fat, and 15% protein based on American Heart Association recommendations",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-6525",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6525,
+      "sentence": "The dataset exhibited 2.5% missing data, which was addressed using multiple imputations via PMM to impute ten values.",
+      "context_window": "g (PMM) method were used [ 32 , 33 ]. The dataset exhibited 2.5% missing data, which was addressed using multiple imputation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-1639",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1639,
+      "sentence": "The overall model of the ANCOVA was significant [F (2, 28) = 3.70, p = 0.01].",
+      "context_window": "rall model of the ANCOVA was significant [F (2, 28) = 3.70, p = 0.01]. The EC group exhibited a mean decrease in the DSST score",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-1935",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "There was a significant difference between the EC and the CR + E intervention groups with a positive moderate effect (\u0394 = -7.17, p = 0.03, d = 0.78).",
+      "context_window": "rvention groups with a positive moderate effect (\u0394 = -7.17, p = 0.03, d = 0.78). A figure representing the changes in group sco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2114",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2114,
+      "sentence": "The figure incorporates error bars, denoting the 95% confidence interval.",
+      "context_window": "st (DSST). The figure incorporates error bars, denoting the 95% confidence interval. CR + E, caloric restriction plus exerc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-2379",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.15",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2379,
+      "sentence": "The overall model of the ANCOVA was non-significant [F (2, 28) = 1.76, p = 0.15].",
+      "context_window": "model of the ANCOVA was non-significant [F (2, 28) = 1.76, p = 0.15]. Specifically, the EC group had a mean increase in COWA sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2719",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2719,
+      "sentence": "The figure incorporates error bars, denoting the 95% confidence interval.",
+      "context_window": "OWA) test. The figure incorporates error bars, denoting the 95% confidence interval. CR + E, caloric restriction plus exerc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2852",
+      "claim_type": "percentage",
+      "raw_text": "83%",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2852,
+      "sentence": "Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group sessions, respectively.",
+      "context_window": "ducation control. Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2860",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2860,
+      "sentence": "Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group sessions, respectively.",
+      "context_window": "control. Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercis",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2869",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2869,
+      "sentence": "Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group sessions, respectively.",
+      "context_window": "Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-pct-2877",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2877,
+      "sentence": "Those randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group sessions, respectively.",
+      "context_window": "randomized to the CR + E group had 83% (SD 16%) and 70% (SD 26%) attendance at the weight loss and exercise group sessions,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-3125",
+      "claim_type": "unit_value",
+      "raw_text": "5.72 kg",
+      "numeric_values": [
+        5.72
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3125,
+      "sentence": "The CR + E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group.",
+      "context_window": "The CR + E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-ci-3134",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -8.6, -2.82",
+      "numeric_values": [
+        -8.6,
+        -2.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3134,
+      "sentence": "The CR + E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group.",
+      "context_window": "E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-3190",
+      "claim_type": "unit_value",
+      "raw_text": "0.14 m/s",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 3190,
+      "sentence": "The CR + E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group.",
+      "context_window": "kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group. The CR + E g",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-ci-3200",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.04, 0.24",
+      "numeric_values": [
+        0.04,
+        0.24
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3200,
+      "sentence": "The CR + E group showed significantly greater weight loss (-5.72 kg; 95% CI: -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group.",
+      "context_window": ": -8.6, -2.82) and improvements in walking speed (0.14 m/s; 95% CI: 0.04, 0.24) compared to the EC group. The CR + E group also showed sig",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-ci-3356",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.16, 1.88",
+      "numeric_values": [
+        0.16,
+        1.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3356,
+      "sentence": "The CR + E group also showed significantly greater improvement in SPPB scores compared to the EC group (1.02; 95% CI: 0.16, 1.88; p = 0.02) [ 22 ].",
+      "context_window": "improvement in SPPB scores compared to the EC group (1.02; 95% CI: 0.16, 1.88; p = 0.02) [ 22 ]. No significant associations were observ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-3376",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3376,
+      "sentence": "The CR + E group also showed significantly greater improvement in SPPB scores compared to the EC group (1.02; 95% CI: 0.16, 1.88; p = 0.02) [ 22 ].",
+      "context_window": "scores compared to the EC group (1.02; 95% CI: 0.16, 1.88; p = 0.02) [ 22 ]. No significant associations were observed between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-3651",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.72",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3651,
+      "sentence": "The change in the DSST scores was not significantly correlated with changes in walking speed (rho = -0.01, p = 0.72) or SPPB scores (rho = 0.21, p = 0.11).",
+      "context_window": "ntly correlated with changes in walking speed (rho = -0.01, p = 0.72) or SPPB scores (rho = 0.21, p = 0.11). Similarly, changes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-3689",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3689,
+      "sentence": "The change in the DSST scores was not significantly correlated with changes in walking speed (rho = -0.01, p = 0.72) or SPPB scores (rho = 0.21, p = 0.11).",
+      "context_window": "g speed (rho = -0.01, p = 0.72) or SPPB scores (rho = 0.21, p = 0.11). Similarly, changes in COWA scores were not significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-3811",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3811,
+      "sentence": "Similarly, changes in COWA scores were not significantly associated with changes in walking speed (rho = 0.33, p = 0.19) or SPPB scores (rho = 0.39, p = 0.12).",
+      "context_window": "antly associated with changes in walking speed (rho = 0.33, p = 0.19) or SPPB scores (rho = 0.39, p = 0.12). Correlations betwe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-p-3849",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3849,
+      "sentence": "Similarly, changes in COWA scores were not significantly associated with changes in walking speed (rho = 0.33, p = 0.19) or SPPB scores (rho = 0.39, p = 0.12).",
+      "context_window": "ng speed (rho = 0.33, p = 0.19) or SPPB scores (rho = 0.39, p = 0.12). Correlations between changes observed in the caloric res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-1030",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1030,
+      "sentence": "The significant increase in DSST scores from pre- to post-intervention provides preliminary data to suggest that 6 months of CR + E in a diverse sample of postmenopausal women with overweight or obesity and functional limitations may improve the cognitive domain of complex attention.",
+      "context_window": "post-intervention provides preliminary data to suggest that 6 months of CR + E in a diverse sample of postmenopausal women with",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff-u-1821",
+      "claim_type": "unit_value",
+      "raw_text": "53 years",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1821,
+      "sentence": "Contrary to our findings, a randomized controlled trial investigating the effects of diet plus exercise, diet alone, or control in middle-aged men and women (mean age = 53 years) with hypertension showed no significant improvement in the DSST scores for the diet plus exercise group [ 26 ].",
+      "context_window": "alone, or control in middle-aged men and women (mean age = 53 years) with hypertension showed no significant improvement in the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

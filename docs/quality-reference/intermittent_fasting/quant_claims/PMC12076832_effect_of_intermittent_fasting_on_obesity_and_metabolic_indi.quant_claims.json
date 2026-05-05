@@ -1,0 +1,1231 @@
+{
+  "paper_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi",
+  "doi": "10.1186/s12902-025-01952-x",
+  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "confidence_interval": 11,
+    "percentage": 13,
+    "unit_value": 23,
+    "mean_sd": 16,
+    "p_value": 2,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-1683",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-3.06, -0.48",
+      "numeric_values": [
+        -3.06,
+        -0.48
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1683,
+      "sentence": "However, IF was better than CRin terms of improvement in obesity over the trial period (mean -1.77, 95% CI [-3.06, -0.48]), and it was more conducive to a reduction in TG levels, which was beneficial in terms of improving insulin resistance (mean -10.16, 95% CI [-18.88, -1.45]).",
+      "context_window": "f improvement in obesity over the trial period (mean -1.77, 95% CI [-3.06, -0.48]), and it was more conducive to a reduction in TG levels, w",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-1838",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-18.88, -1.45",
+      "numeric_values": [
+        -18.88,
+        -1.45
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1838,
+      "sentence": "However, IF was better than CRin terms of improvement in obesity over the trial period (mean -1.77, 95% CI [-3.06, -0.48]), and it was more conducive to a reduction in TG levels, which was beneficial in terms of improving insulin resistance (mean -10.16, 95% CI [-18.88, -1.45]).",
+      "context_window": "cial in terms of improving insulin resistance (mean -10.16, 95% CI [-18.88, -1.45]). Given its notable advantages for obesity, lipids, and i",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-48",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 48,
+      "sentence": "Global epidemiologic data indicates that around 25% to 30% of adults fulfill the diagnostic criteria for metabolic syndrome, with this figure being even more pronounced among the obese population.",
+      "context_window": "Global epidemiologic data indicates that around 25% to 30% of adults fulfill the diagnostic criteria for metabo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-55",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 55,
+      "sentence": "Global epidemiologic data indicates that around 25% to 30% of adults fulfill the diagnostic criteria for metabolic syndrome, with this figure being even more pronounced among the obese population.",
+      "context_window": "Global epidemiologic data indicates that around 25% to 30% of adults fulfill the diagnostic criteria for metabolic syn",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-3179",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3179,
+      "sentence": "The exclusion criteria were as follows: (1) Patients with additional chronic conditions that could influence the measured indicators, such as heart failure; (2) Pregnant or breastfeeding women; (3) Patients with significant eating disorders or substantial weight changes in the last 3 months that may affect the study; (4) Lack of required outcome indicators or inability to provide data; (5) Exclusion of non-English studies.",
+      "context_window": "eating disorders or substantial weight changes in the last 3 months that may affect the study; (4) Lack of required outcome ind",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-3875",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3875,
+      "sentence": "The retrieved continuous variables for the meta-analysis were analyzed using R version 4.4.1, which generated the standardized mean difference (SMD) with 95% confidence intervals (CI) or the odds ratio (OR) with 95% CI.",
+      "context_window": "which generated the standardized mean difference (SMD) with 95% confidence intervals (CI) or the odds ratio (OR) with 95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-3933",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3933,
+      "sentence": "The retrieved continuous variables for the meta-analysis were analyzed using R version 4.4.1, which generated the standardized mean difference (SMD) with 95% confidence intervals (CI) or the odds ratio (OR) with 95% CI.",
+      "context_window": "h 95% confidence intervals (CI) or the odds ratio (OR) with 95% CI. We decided, as recommended by the Cochrane guidelines,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-4154",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4154,
+      "sentence": "We decided, as recommended by the Cochrane guidelines, and after considering factors such as sample size, weights, and study effects, it was decided that random effects models would be used for pooling when I 2 > 50%, and fixed effects models would be used for pooling when I 2 < 50%.",
+      "context_window": "random effects models would be used for pooling when I 2 > 50%, and fixed effects models would be used for pooling when I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-4221",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4221,
+      "sentence": "We decided, as recommended by the Cochrane guidelines, and after considering factors such as sample size, weights, and study effects, it was decided that random effects models would be used for pooling when I 2 > 50%, and fixed effects models would be used for pooling when I 2 < 50%.",
+      "context_window": "d fixed effects models would be used for pooling when I 2 < 50%. Sensitivity analyses were performed to identify potential",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-873",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 873,
+      "sentence": "In our review, evidence started at high quality and was downgraded on each of the following issues: (1) allocation of hidden bias (trials for this outcome were not disclosed as blinded); (2) I 2 > 50% heterogeneity; and (3) imprecision in meta-analyses when fewer than 200 subjects were included.",
+      "context_window": "for this outcome were not disclosed as blinded); (2) I 2 > 50% heterogeneity; and (3) imprecision in meta-analyses when fe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1561",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1561,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.9",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1581",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1581,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-1613",
+      "claim_type": "mean_sd",
+      "raw_text": "49.4 \u00b1 9.0",
+      "numeric_values": [
+        49.4,
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1613,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1662",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1662,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 w",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-1677",
+      "claim_type": "mean_sd",
+      "raw_text": "50.5 \u00b1 8.0",
+      "numeric_values": [
+        50.5,
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1677,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "\u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1726",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1726,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "eeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Gl",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-1758",
+      "claim_type": "mean_sd",
+      "raw_text": "50 \u00b1 12",
+      "numeric_values": [
+        50.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1758,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "ose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1823",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1823,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-1837",
+      "claim_type": "mean_sd",
+      "raw_text": "56 \u00b1 8",
+      "numeric_values": [
+        56.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1837,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "t, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1901",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1901,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Wa",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-1935",
+      "claim_type": "mean_sd",
+      "raw_text": "34 \u00b1 10",
+      "numeric_values": [
+        34.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "se, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-1991",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1991,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumferenc",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2006",
+      "claim_type": "mean_sd",
+      "raw_text": "35 \u00b1 9",
+      "numeric_values": [
+        35.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2006,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "ght, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Ku",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2061",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2061,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "R 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass,",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2096",
+      "claim_type": "mean_sd",
+      "raw_text": "47.44 \u00b1 2.17",
+      "numeric_values": [
+        47.44,
+        2.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2096,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2180",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2180,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2195",
+      "claim_type": "mean_sd",
+      "raw_text": "48.76 \u00b1 2.13",
+      "numeric_values": [
+        48.76,
+        2.13
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2195,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, L",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2282",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2282,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2313",
+      "claim_type": "mean_sd",
+      "raw_text": "34.7 \u00b1 9.8",
+      "numeric_values": [
+        34.7,
+        9.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2313,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "lin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Wei",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2347",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2347,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "eks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2362",
+      "claim_type": "mean_sd",
+      "raw_text": "37.5 \u00b1 11.7",
+      "numeric_values": [
+        37.5,
+        11.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2362,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 3",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2397",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2397,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2432",
+      "claim_type": "mean_sd",
+      "raw_text": "35.09 \u00b1 8.38",
+      "numeric_values": [
+        35.09,
+        8.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2432,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2457",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2457,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2471",
+      "claim_type": "mean_sd",
+      "raw_text": "36.08 \u00b1 8.58",
+      "numeric_values": [
+        36.08,
+        8.58
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2471,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "iar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weig",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2496",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2496,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "9 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2525",
+      "claim_type": "mean_sd",
+      "raw_text": "44 \u00b1 12",
+      "numeric_values": [
+        44.0,
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2525,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, L",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2607",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2607,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2623",
+      "claim_type": "mean_sd",
+      "raw_text": "44 \u00b1 9",
+      "numeric_values": [
+        44.0,
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2623,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": ", Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2701",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2701,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2733",
+      "claim_type": "mean_sd",
+      "raw_text": "57 \u00b1 10",
+      "numeric_values": [
+        57.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2733,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "in, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2818",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2818,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, I",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-msd-2833",
+      "claim_type": "mean_sd",
+      "raw_text": "58 \u00b1 10",
+      "numeric_values": [
+        58.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2833,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-2918",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2918,
+      "sentence": "1 PRISMA flow diagram for search and selection of eligible studies included in the meta-analysis Table 1 Characteristics of studies used for analysis Study year T N Age Gender Criteria Duration Mean(SD) (% female) Anglin et al 2013 IF 8 Weight 6 weeks CR 8 Weight 6 weeks Sch\u00fcbe et al 2018 IF 49 49.4 \u00b1 9.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks CR 49 50.5 \u00b1 8.0 48.98 Glucose, Insulin, TC, TG, LDL-C 12 weeks Pinto et al 2019 IF 21 50 \u00b1 12 71.43 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks CR 22 56 \u00b1 8 72.73 Weight, BMI, Waist, Glucose, Insulin, TC, SBP, DBP 4 weeks Beaulieu et al 2019 IF 12 34 \u00b1 10 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks CR 18 35 \u00b1 9 Weight, Fat mass, BMI, Waist, Hip circumference 12 weeks Kundurac et al 2020 IF 32 47.44 \u00b1 2.17 50 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks CR 33 48.76 \u00b1 2.13 54.55 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 weeks Kang et al 2022 IF 42 34.7 \u00b1 9.8 78.57 Weight, Fat mass 12 weeks CR 41 37.5 \u00b1 11.7 87.80 Weight, Fat mass 12 weeks Hooshiar et al 2023 IF 23 35.09 \u00b1 8.38 Weight, BMI 8 weeks CR 24 36.08 \u00b1 8.58 Weight, BMI 8 weeks Lin et al 2023 IF 30 44 \u00b1 12 83.33 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months CR 30 44 \u00b1 9 80 Weight, Fat mass, BMI, W, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 12 months Xiao et al 2023 IF 85 57 \u00b1 10 42.35 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months CR 83 58 \u00b1 10 40.96 Weight, Fat mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nPRISMA flow diagram for search and selection of eligible studies included in the meta-analysis\n\nCharacteristics of studies used for analysis\n\nN number of patients, T Treatment, IF Intermittent fasting, CR Continuous energy limitation, SD standard deviation, BMI Body mass index, W Waist, H Hip circumference, TC Total cholesterol, TG Triglyceride, LDL-C Low-density lipoprotein cholesterol, SBP Systolic blood pressure, DBP Diastolic blood pressure\n\nEight trials reported weight changes, encompassing a total of 528 samples.",
+      "context_window": "mass, BMI, W, H, Glucose, Insulin, TC, TG, LDL-C, SBP, DBP 6 months N number of patients, T Treatment, IF Intermittent fasting,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-3814",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3814,
+      "sentence": "The I 2 statistic for between-study heterogeneity was 84%, with a p -value less than 0.01 for the \u03c7 2 test.",
+      "context_window": "ples. The I 2 statistic for between-study heterogeneity was 84%, with a p -value less than 0.01 for the \u03c7 2 test. A sensiti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-4737",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4737,
+      "sentence": "The 6 trials that specified total calories included 452 subjects, yielding an I 2 statistic of 52%, and their results were pooled using a random-effects model.",
+      "context_window": "alories included 452 subjects, yielding an I 2 statistic of 52%, and their results were pooled using a random-effects model",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-4905",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-3.06, -0.48",
+      "numeric_values": [
+        -3.06,
+        -0.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4905,
+      "sentence": "The data indicated a significant advantage of IF over CR regarding weight loss (mean difference -1.77, 95% CI [-3.06, -0.48]) (Fig.",
+      "context_window": "of IF over CR regarding weight loss (mean difference -1.77, 95% CI [-3.06, -0.48]) (Fig. 3 ). The 2 trials with unspecified caloric intake i",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-5031",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5031,
+      "sentence": "The 2 trials with unspecified caloric intake included 76 subjects, with an I 2 statistic of 0%, and their results were pooled using a fixed-effects model.",
+      "context_window": "loric intake included 76 subjects, with an I 2 statistic of 0%, and their results were pooled using a fixed-effects model.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-5182",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [0.23, 1.52",
+      "numeric_values": [
+        0.23,
+        1.52
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5182,
+      "sentence": "The data demonstrated that IF was inferior to CR for weight loss (mean difference 0.87, 95% CI [0.23, 1.52]) (Fig.",
+      "context_window": "F was inferior to CR for weight loss (mean difference 0.87, 95% CI [0.23, 1.52]) (Fig. 3 ). The effect value for IF versus CR in the group",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-5333",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-1.48, 0.68",
+      "numeric_values": [
+        -1.48,
+        0.68
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5333,
+      "sentence": "The effect value for IF versus CR in the group where patients had definite comorbid diabetes was mean difference -0.4, 95% CI [-1.48, 0.68] (Fig.",
+      "context_window": "ts had definite comorbid diabetes was mean difference -0.4, 95% CI [-1.48, 0.68] (Fig. 4 A). For the cohort of patients with confirmed excl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-5508",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-3.38, 1.58",
+      "numeric_values": [
+        -3.38,
+        1.58
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5508,
+      "sentence": "For the cohort of patients with confirmed exclusion of diabetes, the impact size of IF versus CR was represented by the mean difference -0.9, 95% CI [-3.38, 1.58] (Fig.",
+      "context_window": "f IF versus CR was represented by the mean difference -0.9, 95% CI [-3.38, 1.58] (Fig. 4 A). The effect value for IF and CR in the group ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-5643",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-24.20, 19.46",
+      "numeric_values": [
+        -24.2,
+        19.46
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5643,
+      "sentence": "The effect value for IF and CR in the group adopting 5 + 2 fasting pattern was mean difference -2.37, 95% CI [-24.20, 19.46] (Fig.",
+      "context_window": "p adopting 5 + 2 fasting pattern was mean difference -2.37, 95% CI [-24.20, 19.46] (Fig. 4 B). The effect value for IF and CR in the 16 + 8 f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-5769",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-21.38, 18.88",
+      "numeric_values": [
+        -21.38,
+        18.88
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5769,
+      "sentence": "The effect value for IF and CR in the 16 + 8 fasting mode group was mean difference -1.25, 95% CI [-21.38, 18.88] (Fig.",
+      "context_window": "in the 16 + 8 fasting mode group was mean difference -1.25, 95% CI [-21.38, 18.88] (Fig. 4 B). The subgroup analyses examining the presence o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-6158",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-2.43, 0.34",
+      "numeric_values": [
+        -2.43,
+        0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6158,
+      "sentence": "The subgroup analyses examining the presence or absence of comorbid diabetes in patients, along with the specific fasting modalities reported in the included trials and the overall quantitative synthetic data, revealed no statistically significant difference in weight loss outcomes between the intermittent fasting and CR groups (mean difference -1.04, 95% CI [-2.43, 0.34]) (Fig.",
+      "context_window": "intermittent fasting and CR groups (mean difference -1.04, 95% CI [-2.43, 0.34]) (Fig. 4 ). The Egger test indicated a lack of statistical",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-p-6253",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.861",
+      "numeric_values": [
+        0.861
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6253,
+      "sentence": "The Egger test indicated a lack of statistical significance ( P = 0.861), implying that no notable publication bias was detected (Supplementary Material 5).",
+      "context_window": "e Egger test indicated a lack of statistical significance ( P = 0.861), implying that no notable publication bias was detected (S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-7951",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7951,
+      "sentence": "The I 2 statistic for between-study heterogeneity was 0%, indicating that a fixed-effects model was appropriate for the analysis.",
+      "context_window": "ples. The I 2 statistic for between-study heterogeneity was 0%, indicating that a fixed-effects model was appropriate for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-8133",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-1.10, -0.52",
+      "numeric_values": [
+        -1.1,
+        -0.52
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8133,
+      "sentence": "The data demonstrated that IF was more favorable for BMI reduction compared to CR (mean difference -0.81, 95% CI [-1.10, -0.52]) (Fig.",
+      "context_window": "le for BMI reduction compared to CR (mean difference -0.81, 95% CI [-1.10, -0.52]) (Fig. 5 ). To evaluate the strength of the results, sensi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-p-8411",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.612",
+      "numeric_values": [
+        0.612
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8411,
+      "sentence": "Egger's test did not detect publication bias ( P = 0.612) but given the small amount of literature included on this outcome metric (n = 5), its detection power was limited, and the risk of bias still could not be completely ruled out.",
+      "context_window": "s (Fig. 6 ). Egger's test did not detect publication bias ( P = 0.612) but given the small amount of literature included on this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-n-8496",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8496,
+      "sentence": "Egger's test did not detect publication bias ( P = 0.612) but given the small amount of literature included on this outcome metric (n = 5), its detection power was limited, and the risk of bias still could not be completely ruled out.",
+      "context_window": "small amount of literature included on this outcome metric (n = 5), its detection power was limited, and the risk of bias sti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-9184",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9184,
+      "sentence": "The I 2 statistic for between-study heterogeneity was 8%, indicating the appropriateness of a fixed-effects model for analysis.",
+      "context_window": "ples. The I 2 statistic for between-study heterogeneity was 8%, indicating the appropriateness of a fixed-effects model fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-ci-9372",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [-18.88, -1.45",
+      "numeric_values": [
+        -18.88,
+        -1.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9372,
+      "sentence": "The data demonstrated that IF conferred greater benefits for TG reduction compared to CR (mean difference -10.16, 95% CI [-18.88, -1.45]) (Fig.",
+      "context_window": "ts for TG reduction compared to CR (mean difference -10.16, 95% CI [-18.88, -1.45]) (Fig. 7 ). Sensitivity analysis across studies indicated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-pct-11075",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11075,
+      "sentence": "Table 2 Mean, Confidence Interval and Heterogeneity for Secondary Outcome Measures Secondary outcome measures No publication Sample size Mean 95%CI Heterogeneity text IF CR I 2 (%) P Fat mass 5 213 209 -0.46 (-1.16,0.25) 0 0.95 Waist 5 192 190 -0.94 (-2.03,0.15) 21 0.28 Hip circumference 2 109 105 -0.82 (-2.32,0.69) 0 0.95 Glucose 5 217 217 -0.95 (-5.03,3.12) 71 < 0.01 Insulin 5 217 217 -0.28 (-1.01,0.44) 46 0.12 Systolic blood pressure 4 168 168 1.58 (-0.61,3.77) 0 0.56 Diastolic blood pressure 4 168 168 -0.31 (-1.62,1.01) 35 0.20 Total cholesterol 5 217 217 -1.27 (-6.99,4.44) 0 0.73 Low-density lipoprotein cholesterol 4 196 195 -2.07 (-7.37,3.24) 0 0.92 IF intermittent fasting, CR continuous energy limitation, CI confidence interval, I 2 percentage of heterogeneity due to true differences within studies, P p -value for heterogeneity Fig.",
+      "context_window": "Secondary outcome measures No publication Sample size Mean 95%CI Heterogeneity text IF CR I 2 (%) P Fat mass 5 213 209 -0.",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-9115",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 9115,
+      "sentence": "Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects.",
+      "context_window": "ias. Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effect",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-9127",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9127,
+      "sentence": "Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects.",
+      "context_window": "most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects. Third, 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-898",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 898,
+      "sentence": "Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects.",
+      "context_window": "ias. Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effect",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12076832_effect_of_intermittent_fasting_on_obesity_and_metabolic_indi-u-910",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 910,
+      "sentence": "Second, most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects.",
+      "context_window": "most of the included studies had a duration of 12 weeks or 6 months and lacked results and data on long-term effects. Third, 2",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

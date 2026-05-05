@@ -1,0 +1,1683 @@
+{
+  "paper_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow",
+  "doi": "10.1155/2015/809492",
+  "extracted_at": "2026-05-05T22:17:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 13,
+    "unit_value": 22,
+    "p_value": 42,
+    "percentage": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-188",
+      "claim_type": "mean_sd",
+      "raw_text": "20.45 \u00b1 0.51",
+      "numeric_values": [
+        20.45,
+        0.51
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 188,
+      "sentence": "In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR).",
+      "context_window": "judo athletes. In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) part",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-210",
+      "claim_type": "mean_sd",
+      "raw_text": "1.71 \u00b1 0.3",
+      "numeric_values": [
+        1.71,
+        0.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 210,
+      "sentence": "In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR).",
+      "context_window": "ndomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this stud",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-241",
+      "claim_type": "mean_sd",
+      "raw_text": "75.9 \u00b1 3.1",
+      "numeric_values": [
+        75.9,
+        3.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 241,
+      "sentence": "In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR).",
+      "context_window": "(age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight mai",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-248",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 kg",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 248,
+      "sentence": "In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR).",
+      "context_window": "20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight mainte",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-341",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 341,
+      "sentence": "In a randomised order, 11 male judokas (age: 20.45 \u00b1 0.51; height: 1.71 \u00b1 0.3 m; and body weight: 75.9 \u00b1 3.1 kg) participate in this study during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR).",
+      "context_window": "during a period of weight maintenance (baseline) and after 7 days of caloric restriction (CR). All subjects performed the Spe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-700",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 700,
+      "sentence": "Our results showed that CR resulted in significant decreases in body weight ( P < 0.05) and performance ( P < 0.05).",
+      "context_window": "that CR resulted in significant decreases in body weight ( P < 0.05) and performance ( P < 0.05). However, heart rate and SJFT",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-728",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 728,
+      "sentence": "Our results showed that CR resulted in significant decreases in body weight ( P < 0.05) and performance ( P < 0.05).",
+      "context_window": "cant decreases in body weight ( P < 0.05) and performance ( P < 0.05). However, heart rate and SJFT index ( P < 0.05) increase s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-776",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 776,
+      "sentence": "However, heart rate and SJFT index ( P < 0.05) increase significantly during CR in comparison to baseline.",
+      "context_window": "rformance ( P < 0.05). However, heart rate and SJFT index ( P < 0.05) increase significantly during CR in comparison to baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1111",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1111,
+      "sentence": "Compared to baseline, TNF- \u03b1 and IL-6 were significantly higher during CR condition ( P < 0.05).",
+      "context_window": "\u03b1 and IL-6 were significantly higher during CR condition ( P < 0.05). Additionally, CR leads to an increase in cortisol and GH",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1181",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1181,
+      "sentence": "Additionally, CR leads to an increase in cortisol and GH ( P < 0.05) and a decrease in testosterone concentrations ( P < 0.05).",
+      "context_window": "Additionally, CR leads to an increase in cortisol and GH ( P < 0.05) and a decrease in testosterone concentrations ( P < 0.05).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1239",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1239,
+      "sentence": "Additionally, CR leads to an increase in cortisol and GH ( P < 0.05) and a decrease in testosterone concentrations ( P < 0.05).",
+      "context_window": "( P < 0.05) and a decrease in testosterone concentrations ( P < 0.05).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-494",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 494,
+      "sentence": "This rapid weight loss typically starts 3-5 days before competition, when athletes may restrict food with combination of intensive exercise in rubber or plastic suits, vomit, and use of saunas or diet pills [ 2 , 3 ].",
+      "context_window": "weight reduction. This rapid weight loss typically starts 3-5 days before competition, when athletes may restrict food with co",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-2279",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2279,
+      "sentence": "In this context, Shimizu et al. [ 14 ] showed that 2 weeks of weight loss before a competition can impair cell-mediated immune function and induce high susceptibility to upper respiratory tract infections (URTIs) in judo athletes.",
+      "context_window": "e state. In this context, Shimizu et al. [ 14 ] showed that 2 weeks of weight loss before a competition can impair cell-mediate",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-4467",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 4467,
+      "sentence": "It is crucial, therefore, to investigate the effect of 7 days' food restriction on proinflammatory cytokines and steroid hormones in male judo athletes preparing for a national championship.",
+      "context_window": "le. It is crucial, therefore, to investigate the effect of 7 days' food restriction on proinflammatory cytokines and steroid",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-47",
+      "claim_type": "mean_sd",
+      "raw_text": "20.45 \u00b1 2.51",
+      "numeric_values": [
+        20.45,
+        2.51
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 47,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-55",
+      "claim_type": "unit_value",
+      "raw_text": "2.51 years",
+      "numeric_values": [
+        2.51
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 55,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-75",
+      "claim_type": "mean_sd",
+      "raw_text": "171.6 \u00b1 3.6",
+      "numeric_values": [
+        171.6,
+        3.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 75,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": "judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study. Af",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-83",
+      "claim_type": "unit_value",
+      "raw_text": "3.6 cm",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 83,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": "letes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study. After",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-102",
+      "claim_type": "mean_sd",
+      "raw_text": "75.9 \u00b1 3.1",
+      "numeric_values": [
+        75.9,
+        3.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 102,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": "age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study. After receiving a thorough e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-109",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 kg",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 109,
+      "sentence": "Eleven healthy judo athletes (mean (\u00b1SD); age: 20.45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study.",
+      "context_window": ".45 \u00b1 2.51 years; height: 171.6 \u00b1 3.6 cm; and weight 75.9 \u00b1 3.1 kg) participated in the study. After receiving a thorough expl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-627",
+      "claim_type": "mean_sd",
+      "raw_text": "30 \u00b1 1",
+      "numeric_values": [
+        30.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 627,
+      "sentence": "They had an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h).",
+      "context_window": "an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-644",
+      "claim_type": "mean_sd",
+      "raw_text": "00 \u00b1 1",
+      "numeric_values": [
+        0.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 644,
+      "sentence": "They had an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h).",
+      "context_window": "hronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the comme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-748",
+      "claim_type": "mean_sd",
+      "raw_text": "00 \u00b1 1",
+      "numeric_values": [
+        0.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 748,
+      "sentence": "They had an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h).",
+      "context_window": "ing prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-773",
+      "claim_type": "mean_sd",
+      "raw_text": "00 \u00b1 1",
+      "numeric_values": [
+        0.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 773,
+      "sentence": "They had an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h).",
+      "context_window": "ment of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h). Their mean period of p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-803",
+      "claim_type": "mean_sd",
+      "raw_text": "00 \u00b1 1",
+      "numeric_values": [
+        0.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 803,
+      "sentence": "They had an intermediate chronotype (i.e., sleep duration between 22:30 \u00b1 1:00 and 07:00 \u00b1 1:00 h) and kept standard times for eating prior to the commencement of the study (breakfast at 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h).",
+      "context_window": "t 07:00 \u00b1 1:00 h, lunch at 12:00 \u00b1 1:00 h, and dinner at 20:00 \u00b1 1:00 h). Their mean period of practising judo was 11.2 \u00b1 3.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-858",
+      "claim_type": "mean_sd",
+      "raw_text": "11.2 \u00b1 3.1",
+      "numeric_values": [
+        11.2,
+        3.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 858,
+      "sentence": "Their mean period of practising judo was 11.2 \u00b1 3.1 years.",
+      "context_window": "t 20:00 \u00b1 1:00 h). Their mean period of practising judo was 11.2 \u00b1 3.1 years. The participants' technical levels were second and t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-865",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 years",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 865,
+      "sentence": "Their mean period of practising judo was 11.2 \u00b1 3.1 years.",
+      "context_window": "\u00b1 1:00 h). Their mean period of practising judo was 11.2 \u00b1 3.1 years. The participants' technical levels were second and third D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-994",
+      "claim_type": "unit_value",
+      "raw_text": "80 kg",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 994,
+      "sentence": "They competed in categories between -73 and 80 kg weight category.",
+      "context_window": "an black belts. They competed in categories between -73 and 80 kg weight category. Based on the results of a self-reported qu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-1949",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1949,
+      "sentence": "The second is a condition of caloric restriction for 7 days; participants reduce their energy intake by 6.7 MJ/day (CR).",
+      "context_window": "line). The second is a condition of caloric restriction for 7 days; participants reduce their energy intake by 6.7 MJ/day (CR)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-2368",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2368,
+      "sentence": "At the beginning of each session, the body weight, % fat, fat mass, fat-free mass, and body water were recorded using bioelectrical impedance scale to the nearest 0.1 kg (Tanita, Tokyo, Japan) calibrated in accordance with the manufacturer's guidelines by one trained technician.",
+      "context_window": "recorded using bioelectrical impedance scale to the nearest 0.1 kg (Tanita, Tokyo, Japan) calibrated in accordance with the ma",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-3198",
+      "claim_type": "unit_value",
+      "raw_text": "15 days",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3198,
+      "sentence": "Nutritional assessment was carried out every 15 days to assess the energy intake of the subjects (i.e., fat, protein, and carbohydrate).",
+      "context_window": "test session. Nutritional assessment was carried out every 15 days to assess the energy intake of the subjects (i.e., fat, pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-3437",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3437,
+      "sentence": "Thus, they detailed the food and beverages consumed during the 3 days prior to sampling.",
+      "context_window": "s, they detailed the food and beverages consumed during the 3 days prior to sampling. We asked subjects to maintain their norm",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-3674",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3674,
+      "sentence": "Values for nutrient intakes were obtained from a food diary for a holding period of weight and dietary restriction after 7 days.",
+      "context_window": "or a holding period of weight and dietary restriction after 7 days. The plan was to carry out dietary restriction (-6 MJ/day)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-5840",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5840,
+      "sentence": "The intra- and interassay coefficients of variation (CV) were 0.9% and 3.6%, respectively.",
+      "context_window": "e intra- and interassay coefficients of variation (CV) were 0.9% and 3.6%, respectively. The limit detection was 0.07 ng/mL.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-5849",
+      "claim_type": "percentage",
+      "raw_text": "3.6%",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5849,
+      "sentence": "The intra- and interassay coefficients of variation (CV) were 0.9% and 3.6%, respectively.",
+      "context_window": "and interassay coefficients of variation (CV) were 0.9% and 3.6%, respectively. The limit detection was 0.07 ng/mL. Testost",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-5893",
+      "claim_type": "unit_value",
+      "raw_text": "0.07 ng/mL",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 5893,
+      "sentence": "The limit detection was 0.07 ng/mL.",
+      "context_window": ") were 0.9% and 3.6%, respectively. The limit detection was 0.07 ng/mL. Testosterone and cortisol concentrations were analysed by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6065",
+      "claim_type": "percentage",
+      "raw_text": "18.2%",
+      "numeric_values": [
+        18.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6065,
+      "sentence": "The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively.",
+      "context_window": "DAS, BioMerieux, France). The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6075",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6075,
+      "sentence": "The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively.",
+      "context_window": "rieux, France). The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respective",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6101",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6101,
+      "sentence": "The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively.",
+      "context_window": "and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively. The limit detections w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6110",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6110,
+      "sentence": "The intra- and interassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively.",
+      "context_window": "rassay CV were 18.2% and 5.6% for testosterone and 2.7% and 5.8% for cortisol, respectively. The limit detections were 0.1 n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6415",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6415,
+      "sentence": "The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively.",
+      "context_window": "3/3, Paris, respectively. The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respective",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6424",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6424,
+      "sentence": "The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively.",
+      "context_window": "s, respectively. The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively. All a",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6442",
+      "claim_type": "percentage",
+      "raw_text": "6.9%",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6442,
+      "sentence": "The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively.",
+      "context_window": "he intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively. All assays were carried",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-6451",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6451,
+      "sentence": "The intra- and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively.",
+      "context_window": "and interassay CV were 3.4% and 5.2% for IL-6 and 6.9% and 7.4% for TNF- \u03b1 , respectively. All assays were carried out as a",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-7508",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7508,
+      "sentence": "The level of statistical significance was set at P < 0.05.",
+      "context_window": "ts (ICCs). The level of statistical significance was set at P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-92",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 92,
+      "sentence": "The statistical analysis showed significant effects of caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease during CR in comparison to baseline.",
+      "context_window": "significant effects of caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-114",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 114,
+      "sentence": "The statistical analysis showed significant effects of caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease during CR in comparison to baseline.",
+      "context_window": "caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) wi",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-141",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 141,
+      "sentence": "The statistical analysis showed significant effects of caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease during CR in comparison to baseline.",
+      "context_window": "y weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease d",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-169",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 169,
+      "sentence": "The statistical analysis showed significant effects of caloric restriction on body weight ( P < 0.05), fat mass ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease during CR in comparison to baseline.",
+      "context_window": "ss ( P < 0.05), fat-free mass ( P < 0.05), and body water ( P < 0.001) with a significant decrease during CR in comparison to bas",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-344",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 344,
+      "sentence": "Likewise, macronutrient intake showed significant decrease during CR in comparison with baseline ( P < 0.05) statistical differences ( Table 1 ).",
+      "context_window": "ignificant decrease during CR in comparison with baseline ( P < 0.05) statistical differences ( Table 1 ). Likewise, a significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-462",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 462,
+      "sentence": "Likewise, a significant decrease in performance (i.e., total throws) ( P < 0.05) was observed.",
+      "context_window": "significant decrease in performance (i.e., total throws) ( P < 0.05) was observed. The SJFT showed a high reliability between t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-618",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 618,
+      "sentence": "However, heart rate (i.e., HR immediately ( P < 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.05) were significantly higher during CR in comparison to baseline ( Table 2 ).",
+      "context_window": "her than 0.87). However, heart rate (i.e., HR immediately ( P < 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-651",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 651,
+      "sentence": "However, heart rate (i.e., HR immediately ( P < 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.05) were significantly higher during CR in comparison to baseline ( Table 2 ).",
+      "context_window": "te (i.e., HR immediately ( P < 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.05) were significantly higher duri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-679",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 679,
+      "sentence": "However, heart rate (i.e., HR immediately ( P < 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.05) were significantly higher during CR in comparison to baseline ( Table 2 ).",
+      "context_window": "< 0.05) and 1 min after test ( P < 0.05)) and SJFT index ( P < 0.05) were significantly higher during CR in comparison to basel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-907",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 907,
+      "sentence": "Mean (\u00b1SD) values for daily nutrient consumption and anthropometrics parameters during baseline and CR conditions.\n\n* Significant difference: P < 0.05 versus baseline.",
+      "context_window": "ring baseline and CR conditions. * Significant difference: P < 0.05 versus baseline. FFM: free fat mass; BMI: body mass index.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1123",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1123,
+      "sentence": "Mean (\u00b1SD) results of SJFT (i.e., performance and heart rate (HR)) in judo athletes during baseline and CR conditions.\n\n* Significant difference: P < 0.05 versus baseline.",
+      "context_window": "ring baseline and CR conditions. * Significant difference: P < 0.05 versus baseline. Exercise was associated with an increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1240",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1240,
+      "sentence": "Exercise was associated with an increase in testosterone ( F (1,10) = 5.56; \u03b7 P 2 = 0.54; P < 0.05), GH ( F (1,10) = 7.33; \u03b7 P 2 = 0.67; P < 0.05), and cortisol ( F (1,10) = 5.20; \u03b7 P 2 = 0.59; P < 0.05) immediately after the SJFT.",
+      "context_window": "n increase in testosterone ( F (1,10) = 5.56; \u03b7 P 2 = 0.54; P < 0.05), GH ( F (1,10) = 7.33; \u03b7 P 2 = 0.67; P < 0.05), and cortis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1287",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1287,
+      "sentence": "Exercise was associated with an increase in testosterone ( F (1,10) = 5.56; \u03b7 P 2 = 0.54; P < 0.05), GH ( F (1,10) = 7.33; \u03b7 P 2 = 0.67; P < 0.05), and cortisol ( F (1,10) = 5.20; \u03b7 P 2 = 0.59; P < 0.05) immediately after the SJFT.",
+      "context_window": "P 2 = 0.54; P < 0.05), GH ( F (1,10) = 7.33; \u03b7 P 2 = 0.67; P < 0.05), and cortisol ( F (1,10) = 5.20; \u03b7 P 2 = 0.59; P < 0.05) i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1344",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1344,
+      "sentence": "Exercise was associated with an increase in testosterone ( F (1,10) = 5.56; \u03b7 P 2 = 0.54; P < 0.05), GH ( F (1,10) = 7.33; \u03b7 P 2 = 0.67; P < 0.05), and cortisol ( F (1,10) = 5.20; \u03b7 P 2 = 0.59; P < 0.05) immediately after the SJFT.",
+      "context_window": "7; P < 0.05), and cortisol ( F (1,10) = 5.20; \u03b7 P 2 = 0.59; P < 0.05) immediately after the SJFT. Likewise, a significant diet c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1478",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1478,
+      "sentence": "Likewise, a significant diet condition effect in testosterone ( F (2,20) = 63.35; \u03b7 P 2 = 0.77; P < 0.05), GH ( F (2,20) = 22.72; \u03b7 P 2 = 0.65; P < 0.05), and cortisol concentrations ( F (2,20) = 21.86; \u03b7 P 2 = 0.77; P < 0.05) was observed ( Figure 1 ).",
+      "context_window": "on effect in testosterone ( F (2,20) = 63.35; \u03b7 P 2 = 0.77; P < 0.05), GH ( F (2,20) = 22.72; \u03b7 P 2 = 0.65; P < 0.05), and corti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1526",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1526,
+      "sentence": "Likewise, a significant diet condition effect in testosterone ( F (2,20) = 63.35; \u03b7 P 2 = 0.77; P < 0.05), GH ( F (2,20) = 22.72; \u03b7 P 2 = 0.65; P < 0.05), and cortisol concentrations ( F (2,20) = 21.86; \u03b7 P 2 = 0.77; P < 0.05) was observed ( Figure 1 ).",
+      "context_window": "P 2 = 0.77; P < 0.05), GH ( F (2,20) = 22.72; \u03b7 P 2 = 0.65; P < 0.05), and cortisol concentrations ( F (2,20) = 21.86; \u03b7 P 2 = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1599",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1599,
+      "sentence": "Likewise, a significant diet condition effect in testosterone ( F (2,20) = 63.35; \u03b7 P 2 = 0.77; P < 0.05), GH ( F (2,20) = 22.72; \u03b7 P 2 = 0.65; P < 0.05), and cortisol concentrations ( F (2,20) = 21.86; \u03b7 P 2 = 0.77; P < 0.05) was observed ( Figure 1 ).",
+      "context_window": "d cortisol concentrations ( F (2,20) = 21.86; \u03b7 P 2 = 0.77; P < 0.05) was observed ( Figure 1 ). However, there was no significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1770",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1770,
+      "sentence": "However, there was no significant interaction (diet condition \u00d7 points of measurement) for testosterone and cortisol concentrations ( P > 0.05).",
+      "context_window": "measurement) for testosterone and cortisol concentrations ( P > 0.05). Moreover, concentrations of testosterone, GH, and cortiso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-1925",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1925,
+      "sentence": "Moreover, concentrations of testosterone, GH, and cortisol are significantly higher at P2 in comparison with P1 and P3 during baseline and CR ( P < 0.01).",
+      "context_window": "at P2 in comparison with P1 and P3 during baseline and CR ( P < 0.01). CR leads to a significant decrease in concentrations of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2084",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2084,
+      "sentence": "CR leads to a significant decrease in concentrations of testosterone and significant increase in cortisol and GH concentrations at P1, P2, and P3 ( P < 0.05).",
+      "context_window": "rease in cortisol and GH concentrations at P1, P2, and P3 ( P < 0.05). Growth hormone (GH) (a), testosterone (b), and cortisol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2507",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2507,
+      "sentence": "All values are expressed as mean (\u00b1SD). \u2217 indicates significant difference with (P1) during the same condition; \u00b6 indicates significant difference in comparison with baseline ( P < 0.05).",
+      "context_window": "icates significant difference in comparison with baseline ( P < 0.05). The effects of CR on inflammatory mediators during the e",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2716",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2716,
+      "sentence": "Both CR and baseline conditions were associated with increases in IL-6 ( F (1,10) =120.3; \u03b7 P 2 = 0.81; P < 0.001) and TNF- \u03b1 ( F (1,10) = 13.53; \u03b7 P 2 = 0.67; P < 0.01) during P2.",
+      "context_window": "ted with increases in IL-6 ( F (1,10) =120.3; \u03b7 P 2 = 0.81; P < 0.001) and TNF- \u03b1 ( F (1,10) = 13.53; \u03b7 P 2 = 0.67; P < 0.01) dur",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2772",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2772,
+      "sentence": "Both CR and baseline conditions were associated with increases in IL-6 ( F (1,10) =120.3; \u03b7 P 2 = 0.81; P < 0.001) and TNF- \u03b1 ( F (1,10) = 13.53; \u03b7 P 2 = 0.67; P < 0.01) during P2.",
+      "context_window": "81; P < 0.001) and TNF- \u03b1 ( F (1,10) = 13.53; \u03b7 P 2 = 0.67; P < 0.01) during P2. A significant diet condition effect on the circ",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2885",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2885,
+      "sentence": "A significant diet condition effect on the circulating IL-6 ( F (2,20) =42.38; \u03b7 P 2 =0.74; P < 0.001) and TNF- \u03b1 ( F (2,20) = 32.04; \u03b7 P 2 = 0.69; P < 0.001) was observed.",
+      "context_window": "ect on the circulating IL-6 ( F (2,20) =42.38; \u03b7 P 2 =0.74; P < 0.001) and TNF- \u03b1 ( F (2,20) = 32.04; \u03b7 P 2 = 0.69; P < 0.001) wa",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-2941",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2941,
+      "sentence": "A significant diet condition effect on the circulating IL-6 ( F (2,20) =42.38; \u03b7 P 2 =0.74; P < 0.001) and TNF- \u03b1 ( F (2,20) = 32.04; \u03b7 P 2 = 0.69; P < 0.001) was observed.",
+      "context_window": "74; P < 0.001) and TNF- \u03b1 ( F (2,20) = 32.04; \u03b7 P 2 = 0.69; P < 0.001) was observed. However, the interaction diet condition \u00d7 po",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3273",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3273,
+      "sentence": "Indeed, the increase in plasma concentrations of IL-6 and TNF- \u03b1 is significantly higher at P2 in comparison with P1 and P3 during CR in comparison with baseline ( P < 0.05).",
+      "context_window": "ison with P1 and P3 during CR in comparison with baseline ( P < 0.05). Leukocytes ( F (2,16) = 27.53; \u03b7 P 2 = 0.65; P < 0.001) a",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3329",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3329,
+      "sentence": "Leukocytes ( F (2,16) = 27.53; \u03b7 P 2 = 0.65; P < 0.001) and lymphocytes ( F (2,16) = 32.43; \u03b7 P 2 = 0.73; P < 0.001) during the CR were significantly lower in comparison with baseline whereas neutrophils ( F (2,16) = 34.16; \u03b7 P 2 = 0.71; P < 0.001) were significantly higher during the baseline than CR conditions ( Table 3 ).",
+      "context_window": "e ( P < 0.05). Leukocytes ( F (2,16) = 27.53; \u03b7 P 2 = 0.65; P < 0.001) and lymphocytes ( F (2,16) = 32.43; \u03b7 P 2 = 0.73; P < 0.00",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3390",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3390,
+      "sentence": "Leukocytes ( F (2,16) = 27.53; \u03b7 P 2 = 0.65; P < 0.001) and lymphocytes ( F (2,16) = 32.43; \u03b7 P 2 = 0.73; P < 0.001) during the CR were significantly lower in comparison with baseline whereas neutrophils ( F (2,16) = 34.16; \u03b7 P 2 = 0.71; P < 0.001) were significantly higher during the baseline than CR conditions ( Table 3 ).",
+      "context_window": "< 0.001) and lymphocytes ( F (2,16) = 32.43; \u03b7 P 2 = 0.73; P < 0.001) during the CR were significantly lower in comparison with",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3522",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3522,
+      "sentence": "Leukocytes ( F (2,16) = 27.53; \u03b7 P 2 = 0.65; P < 0.001) and lymphocytes ( F (2,16) = 32.43; \u03b7 P 2 = 0.73; P < 0.001) during the CR were significantly lower in comparison with baseline whereas neutrophils ( F (2,16) = 34.16; \u03b7 P 2 = 0.71; P < 0.001) were significantly higher during the baseline than CR conditions ( Table 3 ).",
+      "context_window": "eline whereas neutrophils ( F (2,16) = 34.16; \u03b7 P 2 = 0.71; P < 0.001) were significantly higher during the baseline than CR cond",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3654",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3654,
+      "sentence": "Lymphocytes ( F (1,8) = 8.6; \u03b7 P 2 = 0.67; P < 0.01) and neutrophils ( F (1,8) = 9.7; \u03b7 P 2 = 0.66; P < 0.01) increased significantly at P2 compared to P1 and remained significantly higher compared to their baseline value.",
+      "context_window": "ons ( Table 3 ). Lymphocytes ( F (1,8) = 8.6; \u03b7 P 2 = 0.67; P < 0.01) and neutrophils ( F (1,8) = 9.7; \u03b7 P 2 = 0.66; P < 0.01) i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3711",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3711,
+      "sentence": "Lymphocytes ( F (1,8) = 8.6; \u03b7 P 2 = 0.67; P < 0.01) and neutrophils ( F (1,8) = 9.7; \u03b7 P 2 = 0.66; P < 0.01) increased significantly at P2 compared to P1 and remained significantly higher compared to their baseline value.",
+      "context_window": "7; P < 0.01) and neutrophils ( F (1,8) = 9.7; \u03b7 P 2 = 0.66; P < 0.01) increased significantly at P2 compared to P1 and remained",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-3886",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3886,
+      "sentence": "However, leucocytes ( F (1,8) = 7.77; \u03b7 P 2 = 0.63; P < 0.01) were significantly lower during CR than baseline at P2.",
+      "context_window": "value. However, leucocytes ( F (1,8) = 7.77; \u03b7 P 2 = 0.63; P < 0.01) were significantly lower during CR than baseline at P2. P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-4337",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4337,
+      "sentence": "All values are expressed as mean (\u00b1SD). \u2217 indicates significant difference with (P1) during the same condition; \u00b6 indicates significant difference in comparison with baseline ( P < 0.05).",
+      "context_window": "icates significant difference in comparison with baseline ( P < 0.05). Changes of hematological measurements measured before th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-4528",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4528,
+      "sentence": "Changes of hematological measurements measured before the exercise (P1) and immediately (P2) and 60 min after the exercise (P3) during baseline and CR.\n\n* Significant difference: P < 0.05 versus P1.\n\n\u00b6 Significant difference: P < 0.05 versus baseline.",
+      "context_window": "ise (P3) during baseline and CR. * Significant difference: P < 0.05 versus P1. \u00b6 Significant difference: P < 0.05 versus basel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-p-4575",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4575,
+      "sentence": "Changes of hematological measurements measured before the exercise (P1) and immediately (P2) and 60 min after the exercise (P3) during baseline and CR.\n\n* Significant difference: P < 0.05 versus P1.\n\n\u00b6 Significant difference: P < 0.05 versus baseline.",
+      "context_window": "difference: P < 0.05 versus P1. \u00b6 Significant difference: P < 0.05 versus baseline.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-38",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 38,
+      "sentence": "The results of this study showed that 7 days of CR leads to alterations in immunological responses as well as steroid hormone during a high-intensity specific exercise in judo athletes.",
+      "context_window": "The results of this study showed that 7 days of CR leads to alterations in immunological responses as we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-msd-858",
+      "claim_type": "mean_sd",
+      "raw_text": "4.2 \u00b1 0.5",
+      "numeric_values": [
+        4.2,
+        0.5
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 858,
+      "sentence": "In this study, the caloric intake during the CR period leads to a significant decrease in body weight (4.2 \u00b1 0.5%), which was in accordance with other athletes in combat sports [ 10 , 27 ].",
+      "context_window": "e CR period leads to a significant decrease in body weight (4.2 \u00b1 0.5%), which was in accordance with other athletes in combat sp",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-864",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 864,
+      "sentence": "In this study, the caloric intake during the CR period leads to a significant decrease in body weight (4.2 \u00b1 0.5%), which was in accordance with other athletes in combat sports [ 10 , 27 ].",
+      "context_window": "eriod leads to a significant decrease in body weight (4.2 \u00b1 0.5%), which was in accordance with other athletes in combat spo",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-995",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 kg",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 995,
+      "sentence": "The loss of body weight represented an average of 3.1 kg in absolute ( Table 1 ).",
+      "context_window": "0 , 27 ]. The loss of body weight represented an average of 3.1 kg in absolute ( Table 1 ). The deficit in energy intake repre",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-1230",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1230,
+      "sentence": "The average magnitude of weight reductions was around 5% of body weight (i.e., 2-5 times per year).",
+      "context_window": "ions. The average magnitude of weight reductions was around 5% of body weight (i.e., 2-5 times per year). In this context,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-1327",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1327,
+      "sentence": "In this context, Artioli et al. [ 28 ] observed a ~4% reduction in body weight after a 5-day weight loss period when compared to control values.",
+      "context_window": "r year). In this context, Artioli et al. [ 28 ] observed a ~4% reduction in body weight after a 5-day weight loss period w",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-1462",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1462,
+      "sentence": "Likewise, Mendes et al. [ 29 ] showed a ~5% reduction in body weight after a 5-day weight loss period.",
+      "context_window": "to control values. Likewise, Mendes et al. [ 29 ] showed a ~5% reduction in body weight after a 5-day weight loss period.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-pct-2005",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2005,
+      "sentence": "As a result, only 2% of fluid loss induces an increase in the heart rate and lowers the stroke volume, which impairs cardiac output [ 30 ].",
+      "context_window": "restriction is due to a body water loss. As a result, only 2% of fluid loss induces an increase in the heart rate and low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-4499",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4499,
+      "sentence": "To our knowledge, this study is the first to report that high-intensity exercise induced changes on proinflammatory cytokines (i.e., IL-6 and TNF- \u03b1 ) during 7 days of CR.",
+      "context_window": "n proinflammatory cytokines (i.e., IL-6 and TNF- \u03b1 ) during 7 days of CR. Judo is characterised by high-intensity, short-durat",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-6285",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6285,
+      "sentence": "Regarding the effect of CR on immune parameters, our results showed a significant increase in plasma concentrations of IL-6 and TNF- \u03b1 following the 7 days of CR.",
+      "context_window": "e in plasma concentrations of IL-6 and TNF- \u03b1 following the 7 days of CR. These results are in agreement with previous reports",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-7786",
+      "claim_type": "unit_value",
+      "raw_text": "100 kg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7786,
+      "sentence": "Additional studies must use proper number of weight loss and control subjects who are expending energy similar to that used for judo (e.g., wrestling) but who are not participating in the competition, who are not pursuing weight loss such as open-category class athletes (e.g., 100 kg class in judo), and who perform either fluid restriction program or dietary energy restriction program.",
+      "context_window": "ing weight loss such as open-category class athletes (e.g., 100 kg class in judo), and who perform either fluid restriction pr",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow-u-32",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "conclusion",
+      "source_offset": 32,
+      "sentence": "In conclusion, we conclude that 7 days of weight loss programs undertaken in preparation for competition might degrade immune functions and conduct to the appearance of infectious diseases such as URTI symptoms in male judo athletes by the increase of proinflammatory cytokines (i.e., IL-6; TNF- \u03b1 ).",
+      "context_window": "In conclusion, we conclude that 7 days of weight loss programs undertaken in preparation for compe",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

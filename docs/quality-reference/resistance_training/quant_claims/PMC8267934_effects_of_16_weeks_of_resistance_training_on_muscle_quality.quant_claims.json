@@ -1,0 +1,1760 @@
+{
+  "paper_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality",
+  "doi": "10.3390/ijerph18136762",
+  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "unit_value": 32,
+    "p_value": 45,
+    "percentage": 18
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-n-274",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 274,
+      "sentence": "Twenty-two older adult women aged over 65 with sarcopenia were randomly assigned to either resistance training (RT, n = 12) or non-exercise control group (CG, n = 10).",
+      "context_window": "a were randomly assigned to either resistance training (RT, n = 12) or non-exercise control group (CG, n = 10). The body weigh",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-n-317",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 317,
+      "sentence": "Twenty-two older adult women aged over 65 with sarcopenia were randomly assigned to either resistance training (RT, n = 12) or non-exercise control group (CG, n = 10).",
+      "context_window": "ce training (RT, n = 12) or non-exercise control group (CG, n = 10). The body weight-based and elastic band RT were performed",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-427",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 427,
+      "sentence": "The body weight-based and elastic band RT were performed three times a week, 60 min per session, for 16 weeks.",
+      "context_window": "were performed three times a week, 60 min per session, for 16 weeks. Body composition and thigh muscle quality were estimated b",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1104",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1104,
+      "sentence": "The RT group improved their functional fitness, grip strength, gait speed, and isometric muscle strength ( p < 0.01, d > 0.99; large), while these variables did not change in the CG.",
+      "context_window": "grip strength, gait speed, and isometric muscle strength ( p < 0.01, d > 0.99; large), while these variables did not change in",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1243",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1243,
+      "sentence": "An increase in intramuscular fat was only observed in the CG ( p < 0.01, 1.06; large).",
+      "context_window": "increase in intramuscular fat was only observed in the CG ( p < 0.01, 1.06; large). Muscle growth factors such as follistatin we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1350",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1350,
+      "sentence": "Muscle growth factors such as follistatin were significantly increased in the RT ( p < 0.05, 0.81; large), but other variables did not change following resistance training.",
+      "context_window": "uch as follistatin were significantly increased in the RT ( p < 0.05, 0.81; large), but other variables did not change following",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-402",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 402,
+      "sentence": "The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ].",
+      "context_window": "increasing worldwide [ 1 ]. The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ]. Sarcopen",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-411",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 411,
+      "sentence": "The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ].",
+      "context_window": "g worldwide [ 1 ]. The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ]. Sarcopenia is strongly",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-428",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 428,
+      "sentence": "The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ].",
+      "context_window": ". The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ]. Sarcopenia is strongly associated",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-437",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 437,
+      "sentence": "The prevalence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ].",
+      "context_window": "valence of sarcopenia is 20% over 70 years old and 30% over 80 years old [ 2 ]. Sarcopenia is strongly associated with a progres",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3567",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3567,
+      "sentence": "Krause et al. demonstrated that 12 weeks of combined body weight-based and elastic band resistance training enhanced lean body mass and muscle function in the older population [ 20 ].",
+      "context_window": "der population [ 20 , 21 ]. Krause et al. demonstrated that 12 weeks of combined body weight-based and elastic band resistance t",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3749",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3749,
+      "sentence": "Watanabe et al. reported that 16 weeks of body weight-based resistance training improved physical function and muscle strength of the upper and lower extremities in elderly adults [ 22 ].",
+      "context_window": "the older population [ 20 ]. Watanabe et al. reported that 16 weeks of body weight-based resistance training improved physical",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3920",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3920,
+      "sentence": "Furthermore, 12 weeks of resistance training using elastic bands improved upper and lower muscle quality (upper; handgrip strength (kg)/arm lean mass (kg), lower; isometric quadriceps (N)/leg lean (kg)) and physical performance in sarcopenic obesity in older women [ 23 ].",
+      "context_window": "nd lower extremities in elderly adults [ 22 ]. Furthermore, 12 weeks of resistance training using elastic bands improved upper a",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-4626",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4626,
+      "sentence": "It was hypothesized that 16 weeks of body weight-based and elastic band resistance training enhances functional fitness, muscle function, muscle quality, and muscle growth factors.",
+      "context_window": "statin) in sarcopenic older women. It was hypothesized that 16 weeks of body weight-based and elastic band resistance training e",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-684",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 684,
+      "sentence": "Exclusion criteria were as follows: (1) Regular participation in exercise programs at least twice a week (at least 20 min) in the last six months; (2) Either a recent change in the dose of oral hypoglycemic agents, hypertensive drugs, and cholesterol-lowering drugs, or more than 5% weight change within the first two months of the study; (3) Blood pressure over 160/100 mmHg; (4) Communication problems; (5) History of unstable angina pectoris (chest pain), uncontrollable hypertension, type 1 diabetes, heart attack, heart surgery, arthritis, chronic renal failure, epilepsy, convulsions, chronic enterocolitis, and other psychotic disorders associated with loss of mental or cognitive functions.",
+      "context_window": "tensive drugs, and cholesterol-lowering drugs, or more than 5% weight change within the first two months of the study; (3)",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-771",
+      "claim_type": "unit_value",
+      "raw_text": "100 mmHg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 771,
+      "sentence": "Exclusion criteria were as follows: (1) Regular participation in exercise programs at least twice a week (at least 20 min) in the last six months; (2) Either a recent change in the dose of oral hypoglycemic agents, hypertensive drugs, and cholesterol-lowering drugs, or more than 5% weight change within the first two months of the study; (3) Blood pressure over 160/100 mmHg; (4) Communication problems; (5) History of unstable angina pectoris (chest pain), uncontrollable hypertension, type 1 diabetes, heart attack, heart surgery, arthritis, chronic renal failure, epilepsy, convulsions, chronic enterocolitis, and other psychotic disorders associated with loss of mental or cognitive functions.",
+      "context_window": "first two months of the study; (3) Blood pressure over 160/100 mmHg; (4) Communication problems; (5) History of unstable angina",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-1434",
+      "claim_type": "unit_value",
+      "raw_text": "5.67 kg",
+      "numeric_values": [
+        5.67
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1434,
+      "sentence": "The inclusion criteria for sarcopenia diagnosis were (1) gait speed < 1.0 m.s -1 and appendicular skeletal muscle index (ASMI) < 5.67 kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteoporosis (lumbar or femur bone mineral density T-score < -2.5).",
+      "context_window": "1.0 m.s -1 and appendicular skeletal muscle index (ASMI) < 5.67 kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20",
+      "claim_role": "population",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-1498",
+      "claim_type": "unit_value",
+      "raw_text": "20 kg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1498,
+      "sentence": "The inclusion criteria for sarcopenia diagnosis were (1) gait speed < 1.0 m.s -1 and appendicular skeletal muscle index (ASMI) < 5.67 kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteoporosis (lumbar or femur bone mineral density T-score < -2.5).",
+      "context_window": "kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat <",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-1515",
+      "claim_type": "unit_value",
+      "raw_text": "5.67 kg",
+      "numeric_values": [
+        5.67
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1515,
+      "sentence": "The inclusion criteria for sarcopenia diagnosis were (1) gait speed < 1.0 m.s -1 and appendicular skeletal muscle index (ASMI) < 5.67 kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteoporosis (lumbar or femur bone mineral density T-score < -2.5).",
+      "context_window": "t speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteopor",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1564,
+      "sentence": "The inclusion criteria for sarcopenia diagnosis were (1) gait speed < 1.0 m.s -1 and appendicular skeletal muscle index (ASMI) < 5.67 kg.m -2 , or gait speed > 1.0 m.s -1 , (2) grip strength < 20 kg and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteoporosis (lumbar or femur bone mineral density T-score < -2.5).",
+      "context_window": "and ASMI < 5.67 kg.m -2 , (3) not obese (percent body fat < 35%), (4) osteoporosis (lumbar or femur bone mineral density T-",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-2854",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2854,
+      "sentence": "Body height and weight were assessed, with minimal clothing and no shoes, to the nearest 0.1 cm using a stadiometer (T.K.K.",
+      "context_window": "ssessed, with minimal clothing and no shoes, to the nearest 0.1 cm using a stadiometer (T.K.K. Takei Scientific Instruments Co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3011",
+      "claim_type": "unit_value",
+      "raw_text": "0.01 kg",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 3011,
+      "sentence": "Takei Scientific Instruments Co., Tokyo, Japan) and a digital weight scale (150A, CAS, Seoul, South Korea) to the nearest 0.01 kg.",
+      "context_window": "weight scale (150A, CAS, Seoul, South Korea) to the nearest 0.01 kg. Waist circumference (WC) was measured at the midpoint betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-3887",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3887,
+      "sentence": "The coefficient of variance of the DXA machine was 1.5% less as designated by Hologic, Inc.",
+      "context_window": ".m -2 ). The coefficient of variance of the DXA machine was 1.5% less as designated by Hologic, Inc. The same experienced te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-6162",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 6162,
+      "sentence": "Venous blood samples (5 mL) were taken from the antecubital vein into ethylenediaminetetraacetic acid (EDTA) vacuum tubes by the clinical laboratory scientist.",
+      "context_window": "overnight fasting in our laboratory. Venous blood samples (5 mL) were taken from the antecubital vein into ethylenediaminet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7186",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7186,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7195",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7195,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7217",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7217,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7227",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7227,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "t of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7243",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7243,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "re 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7252",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7252,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "nd 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A. The intervent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7273",
+      "claim_type": "percentage",
+      "raw_text": "4.7%",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7273,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "in, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A. The intervention program was condu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7282",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7282,
+      "sentence": "All biochemical marker assays were conducted at the National Committee Clinic Laboratory (Green Cross Lab Cell, certified by the Korea laboratory accreditation scheme, Yongin-si, South Korea), and the inter- and intraclass coefficient of variance were 5.7% and 1.7% for follistatin, 3.1%, and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A.",
+      "context_window": "and 1.8% for GDF-8, 4.7% and 1.8% for GDF-15, and 4.7% and 4.2% for activin A. The intervention program was conducted for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-7346",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7346,
+      "sentence": "The intervention program was conducted for 16 weeks from March to June in 2019.",
+      "context_window": "for activin A. The intervention program was conducted for 16 weeks from March to June in 2019. The resistance training program",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-8450",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8450,
+      "sentence": "Data are expressed as mean, standard deviation (SD), and 95% confidence interval (95% CI).",
+      "context_window": "). Data are expressed as mean, standard deviation (SD), and 95% confidence interval (95% CI). Repeated-measures MANOVA (bod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-8475",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8475,
+      "sentence": "Data are expressed as mean, standard deviation (SD), and 95% confidence interval (95% CI).",
+      "context_window": "mean, standard deviation (SD), and 95% confidence interval (95% CI). Repeated-measures MANOVA (body composition, functional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-399",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 399,
+      "sentence": "However, there was a significant interaction effect for the group by time on WHR (F(1,20) = 7.188, p = 0.014, \u03b7 2 p = 0.264).",
+      "context_window": "ction effect for the group by time on WHR (F(1,20) = 7.188, p = 0.014, \u03b7 2 p = 0.264). The CG increased WHR ( p < 0.01, d = 1.04)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-414",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.264",
+      "numeric_values": [
+        0.264
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 414,
+      "sentence": "However, there was a significant interaction effect for the group by time on WHR (F(1,20) = 7.188, p = 0.014, \u03b7 2 p = 0.264).",
+      "context_window": "r the group by time on WHR (F(1,20) = 7.188, p = 0.014, \u03b7 2 p = 0.264). The CG increased WHR ( p < 0.01, d = 1.04) after 16 weeks",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-449",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 449,
+      "sentence": "The CG increased WHR ( p < 0.01, d = 1.04) after 16 weeks compared with the RT ( Table 4 ).",
+      "context_window": "= 7.188, p = 0.014, \u03b7 2 p = 0.264). The CG increased WHR ( p < 0.01, d = 1.04) after 16 weeks compared with the RT ( Table 4 ).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-475",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 475,
+      "sentence": "The CG increased WHR ( p < 0.01, d = 1.04) after 16 weeks compared with the RT ( Table 4 ).",
+      "context_window": "= 0.264). The CG increased WHR ( p < 0.01, d = 1.04) after 16 weeks compared with the RT ( Table 4 ). Two-way repeated measure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-659",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 659,
+      "sentence": "Two-way repeated measures MANOVA revealed significant interaction effects on functional fitness and physical performance (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813) ( Table 5 ).",
+      "context_window": "ctional fitness and physical performance (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813) ( Table 5 ). Seven univariate variables wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-674",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.813",
+      "numeric_values": [
+        0.813
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 674,
+      "sentence": "Two-way repeated measures MANOVA revealed significant interaction effects on functional fitness and physical performance (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813) ( Table 5 ).",
+      "context_window": "and physical performance (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813) ( Table 5 ). Seven univariate variables were found to have",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-841",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 841,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "roup by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-856",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.507",
+      "numeric_values": [
+        0.507
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "ncluding 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-901",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 901,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p <",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-916",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.697",
+      "numeric_values": [
+        0.697
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 916,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p =",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-967",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 967,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-982",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.650",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 982,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1030",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1030,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1045",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.599",
+      "numeric_values": [
+        0.599
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1045,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.5",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1092",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1092,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "< 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1107",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.529",
+      "numeric_values": [
+        0.529
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1107,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "= 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1152",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1152,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1167",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.673",
+      "numeric_values": [
+        0.673
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1167,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.54",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1213",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1213,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "< 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542). As mentioned above, all variables improved",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.542",
+      "numeric_values": [
+        0.542
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1228,
+      "sentence": "Seven univariate variables were found to have significant interaction effects for group by time, including 30-s chair stand (F(1,20) = 20.608, p < 0.001, \u03b7 2 p = 0.507), 30-s arm curl (F(1,20) = 45.996, p < 0.001, \u03b7 2 p = 0.697), chair sit-and-reach (F(1,20) = 37.101, p < 0.001, \u03b7 2 p = 0.650), 8-foot up-and-go (F(1,20) = 29.831, p < 0.001, \u03b7 2 p = 0.599), 2-min step test (F(1,20) = 22.453, p < 0.001, \u03b7 2 p = 0.529), grip strength (F(1,20) = 41.123, p < 0.001, \u03b7 2 p = 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542).",
+      "context_window": "= 0.673), and gait speed (F(1,20) = 23.635, p < 0.001, \u03b7 2 p = 0.542). As mentioned above, all variables improved significantly",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1315",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1315,
+      "sentence": "As mentioned above, all variables improved significantly in the RT group ( p < 0.001, d > 1.20), and chair sit-and-reach, 2.4-m up-and-go, 2-min step, and grip strength were degenerated in the CG ( p < 0.05, d > 0.79).",
+      "context_window": "ove, all variables improved significantly in the RT group ( p < 0.001, d > 1.20), and chair sit-and-reach, 2.4-m up-and-go, 2-min",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1438",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1438,
+      "sentence": "As mentioned above, all variables improved significantly in the RT group ( p < 0.001, d > 1.20), and chair sit-and-reach, 2.4-m up-and-go, 2-min step, and grip strength were degenerated in the CG ( p < 0.05, d > 0.79).",
+      "context_window": "2-min step, and grip strength were degenerated in the CG ( p < 0.05, d > 0.79). Repeated measures MANOVA showed significant in",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1570",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1570,
+      "sentence": "Repeated measures MANOVA showed significant interaction effects on mid-thigh muscle quality (F(1,20) = 7.579, p < 0.05, \u03b7 2 p = 0.752)( Table 6 ).",
+      "context_window": "ction effects on mid-thigh muscle quality (F(1,20) = 7.579, p < 0.05, \u03b7 2 p = 0.752)( Table 6 ). There were significant interact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1584",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.752",
+      "numeric_values": [
+        0.752
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1584,
+      "sentence": "Repeated measures MANOVA showed significant interaction effects on mid-thigh muscle quality (F(1,20) = 7.579, p < 0.05, \u03b7 2 p = 0.752)( Table 6 ).",
+      "context_window": "on mid-thigh muscle quality (F(1,20) = 7.579, p < 0.05, \u03b7 2 p = 0.752)( Table 6 ). There were significant interaction effects for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1736",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1736,
+      "sentence": "There were significant interaction effects for group by time in maximum voluntary isometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274).",
+      "context_window": "um voluntary isometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1751",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.271",
+      "numeric_values": [
+        0.271
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1751,
+      "sentence": "There were significant interaction effects for group by time in maximum voluntary isometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274).",
+      "context_window": "ometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric contraction (RMVI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1841",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1841,
+      "sentence": "There were significant interaction effects for group by time in maximum voluntary isometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274).",
+      "context_window": "m voluntary isometric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274). RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1856",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.274",
+      "numeric_values": [
+        0.274
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1856,
+      "sentence": "There were significant interaction effects for group by time in maximum voluntary isometric contraction (MVIC) (F(1,20) = 7.417, p = 0.013, \u03b7 2 p = 0.271) and relative maximum voluntary isometric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274).",
+      "context_window": "metric contraction (RMVIC) (F(1,20) = 7.560, p = 0.012, \u03b7 2 p = 0.274). RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1.09) and RMVIC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1887",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1887,
+      "sentence": "RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1.09) and RMVIC ( p < 0.01, Cohen\u2019s d = 1.20) during the intervention period compared with CG.",
+      "context_window": ",20) = 7.560, p = 0.012, \u03b7 2 p = 0.274). RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1.09) and RMVIC ( p < 0.01, Cohen\u2019s d = 1.20)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-1927",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1927,
+      "sentence": "RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1.09) and RMVIC ( p < 0.01, Cohen\u2019s d = 1.20) during the intervention period compared with CG.",
+      "context_window": "RT improved MVIC ( p < 0.01, Cohen\u2019s d = 1.09) and RMVIC ( p < 0.01, Cohen\u2019s d = 1.20) during the intervention period compared",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2104",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2104,
+      "sentence": "Furthermore, significant interaction effects for group by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention.",
+      "context_window": "ects for group by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2119",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.196",
+      "numeric_values": [
+        0.196
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "Furthermore, significant interaction effects for group by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention.",
+      "context_window": "by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) durin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2157",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2157,
+      "sentence": "Furthermore, significant interaction effects for group by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention.",
+      "context_window": "4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention. However, TMV did n",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2172",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.270",
+      "numeric_values": [
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2172,
+      "sentence": "Furthermore, significant interaction effects for group by time were shown for TMV (F(1,20) = 4.872, p = 0.039, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention.",
+      "context_window": "9, \u03b7 2 p = 0.196) and IMAT (F(1,20) = 7.381, p = 0.013, \u03b7 2 p = 0.270) during the intervention. However, TMV did not change in bo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2297",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2297,
+      "sentence": "However, TMV did not change in both groups, and IMAT increased significantly in the CG ( p < 0.01, d = 1.06) after 16 weeks.",
+      "context_window": "n both groups, and IMAT increased significantly in the CG ( p < 0.01, d = 1.06) after 16 weeks. A repeated measures MANOVA indi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-2323",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2323,
+      "sentence": "However, TMV did not change in both groups, and IMAT increased significantly in the CG ( p < 0.01, d = 1.06) after 16 weeks.",
+      "context_window": "creased significantly in the CG ( p < 0.01, d = 1.06) after 16 weeks. A repeated measures MANOVA indicated no significant inter",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2629",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2629,
+      "sentence": "However, there was a significant interaction effect for follistatin (F(1,20) = 4.960, p = 0.038, \u03b7 2 p = 0.199) during the intervention period.",
+      "context_window": "ficant interaction effect for follistatin (F(1,20) = 4.960, p = 0.038, \u03b7 2 p = 0.199) during the intervention period. Follistatin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2644",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.199",
+      "numeric_values": [
+        0.199
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2644,
+      "sentence": "However, there was a significant interaction effect for follistatin (F(1,20) = 4.960, p = 0.038, \u03b7 2 p = 0.199) during the intervention period.",
+      "context_window": "ion effect for follistatin (F(1,20) = 4.960, p = 0.038, \u03b7 2 p = 0.199) during the intervention period. Follistatin improved signi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2734",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2734,
+      "sentence": "Follistatin improved significantly in the RT ( p < 0.05, Cohen\u2019s d = 0.81) compared with the CG during the intervention.",
+      "context_window": "tion period. Follistatin improved significantly in the RT ( p < 0.05, Cohen\u2019s d = 0.81) compared with the CG during the interven",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-44",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 44,
+      "sentence": "A main finding of the present study is that 16 weeks of resistance training using body weight-based training and elastic bands significantly improves muscle quality and functional fitness in sarcopenic older women.",
+      "context_window": "A main finding of the present study is that 16 weeks of resistance training using body weight-based training and",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-442",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 442,
+      "sentence": "Therefore, we accept our hypotheses that a change in functional fitness and muscle quality in sarcopenic older adults would be seen after 16 weeks of resistance training compared with the control group.",
+      "context_window": "scle quality in sarcopenic older adults would be seen after 16 weeks of resistance training compared with the control group. Bas",
+      "claim_role": "duration",
+      "endpoint": "sarcopenia",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-573",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 573,
+      "sentence": "Based on the results of this study, we reject the hypothesis that 16 weeks of resistance training affected muscle growth factors in sarcopenic older women.",
+      "context_window": "on the results of this study, we reject the hypothesis that 16 weeks of resistance training affected muscle growth factors in sa",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-1450",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1450,
+      "sentence": "A previous study observed that 12 weeks of strength exercises with nutritional supplementation (i.e., whey protein, essential amino acids, vitamin D) improved fat-free mass compared with the placebo group in older adults [ 29 ], and combined interventions with exercise and dietary intake have been shown to induce a positive change in the muscle mass of older adults with sarcopenia [ 30 , 31 ].",
+      "context_window": "used by older adults [ 28 ]. A previous study observed that 12 weeks of strength exercises with nutritional supplementation (i.e",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-2204",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2204,
+      "sentence": "The authors speculated that bone composition changes could be expected from long-term intervention periods of at least 24 weeks, and efficient bone remodeling after 6 to 8 months leads to new steady-state bone after intervention periods.",
+      "context_window": "be expected from long-term intervention periods of at least 24 weeks, and efficient bone remodeling after 6 to 8 months leads to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-2255",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2255,
+      "sentence": "The authors speculated that bone composition changes could be expected from long-term intervention periods of at least 24 weeks, and efficient bone remodeling after 6 to 8 months leads to new steady-state bone after intervention periods.",
+      "context_window": "at least 24 weeks, and efficient bone remodeling after 6 to 8 months leads to new steady-state bone after intervention periods.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-2423",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2423,
+      "sentence": "Although the present study did not show the interaction effects of bone composition, we assume that 16 weeks of non-exercising in thecontrol group had significant adverse effects during the intervention (lumbar BMC; p < 0.01, Cohen\u2019s d =1.09).",
+      "context_window": "the interaction effects of bone composition, we assume that 16 weeks of non-exercising in thecontrol group had significant adver",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2539",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2539,
+      "sentence": "Although the present study did not show the interaction effects of bone composition, we assume that 16 weeks of non-exercising in thecontrol group had significant adverse effects during the intervention (lumbar BMC; p < 0.01, Cohen\u2019s d =1.09).",
+      "context_window": "ficant adverse effects during the intervention (lumbar BMC; p < 0.01, Cohen\u2019s d =1.09). The importance of functional fitness has",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2898",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2898,
+      "sentence": "The present study revealed that resistance training using body weight-based training and elastic bands improves functional fitness and physical performance in sarcopenic older women (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813).",
+      "context_window": "al performance in sarcopenic older women (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813). Resistance training is a potential treatme",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-2913",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.813",
+      "numeric_values": [
+        0.813
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2913,
+      "sentence": "The present study revealed that resistance training using body weight-based training and elastic bands improves functional fitness and physical performance in sarcopenic older women (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813).",
+      "context_window": "in sarcopenic older women (F(1,20) = 10.880, p < 0.001, \u03b7 2 p = 0.813). Resistance training is a potential treatment with immense",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3074",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3074,
+      "sentence": "Previous studies indicated that 12 weeks of resistance training significantly increased grip strength, power, agility, flexibility, and functional performance in older adults [ 34 ].",
+      "context_window": "l mobility in older adults. Previous studies indicated that 12 weeks of resistance training significantly increased grip strengt",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3512",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3512,
+      "sentence": "However, Martins et al. found that eight weeks of resistance training using elastic bands did not change grip strength [ 35 ], and Vikberg et al. also showed that there were no significant changes in the short physical performance battery (SPPB) score after the resistance training over 10 weeks in pre-sarcopenic older adults [ 21 ].",
+      "context_window": "nce battery (SPPB) score after the resistance training over 10 weeks in pre-sarcopenic older adults [ 21 ]. The conflicting resu",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-3764",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3764,
+      "sentence": "Nevertheless, our study confirmed that 16 weeks of body weight-based and elastic band resistance training had a positive effect on the independence of daily living by the improvement of functional fitness.",
+      "context_window": "ological conditions. Nevertheless, our study confirmed that 16 weeks of body weight-based and elastic band resistance training h",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-4279",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4279,
+      "sentence": "Notably, we observed that the muscle function significantly improved with a 16-week intervention period (F(1,20) = 4.771, p < 0.01, \u03b7 2 p = 0.656).",
+      "context_window": "proved with a 16-week intervention period (F(1,20) = 4.771, p < 0.01, \u03b7 2 p = 0.656). Although univariate variable analysis indi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-p-4293",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.656",
+      "numeric_values": [
+        0.656
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4293,
+      "sentence": "Notably, we observed that the muscle function significantly improved with a 16-week intervention period (F(1,20) = 4.771, p < 0.01, \u03b7 2 p = 0.656).",
+      "context_window": "16-week intervention period (F(1,20) = 4.771, p < 0.01, \u03b7 2 p = 0.656). Although univariate variable analysis indicated no signif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-5315",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5315,
+      "sentence": "This study confirmed that 16 weeks of suggested resistance training should mitigate the accretion of IMAT in sarcopenic older adults.",
+      "context_window": "tic value in various pathologies. This study confirmed that 16 weeks of suggested resistance training should mitigate the accret",
+      "claim_role": "protocol",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-5673",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5673,
+      "sentence": "The RT group greatly increased follistatin following 16 weeks of intervention (Cohen\u2019s d = 0.81), whereas this parameter did not change in the CG.",
+      "context_window": "tatin. The RT group greatly increased follistatin following 16 weeks of intervention (Cohen\u2019s d = 0.81), whereas this parameter",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-6907",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6907,
+      "sentence": "Regarding muscle growth regulators, it is unclear why 16 weeks of body weight-based and elastic band resistance training only increases follistatin but not all TGF-\u03b2 superfamily members; however, the results indicate that the training protocol was sufficient to improve muscle strength.",
+      "context_window": "40 ]. Regarding muscle growth regulators, it is unclear why 16 weeks of body weight-based and elastic band resistance training o",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-7659",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7659,
+      "sentence": "In addition, we recruited 136 women over 65 years for the initial screening.",
+      "context_window": "ightly controlled. In addition, we recruited 136 women over 65 years for the initial screening. However, using the Asian Working",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7756",
+      "claim_type": "percentage",
+      "raw_text": "5.9%",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7756,
+      "sentence": "However, using the Asian Working Group for Sarcopenia (AWGS, 5.9%), EWGSOP (7.4%), and Foundation for the National Institutes of Health (FNIH, 4.4%) diagnosis, very few participants were classified as sarcopenic in the present study.",
+      "context_window": "owever, using the Asian Working Group for Sarcopenia (AWGS, 5.9%), EWGSOP (7.4%), and Foundation for the National Institutes",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7771",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7771,
+      "sentence": "However, using the Asian Working Group for Sarcopenia (AWGS, 5.9%), EWGSOP (7.4%), and Foundation for the National Institutes of Health (FNIH, 4.4%) diagnosis, very few participants were classified as sarcopenic in the present study.",
+      "context_window": "he Asian Working Group for Sarcopenia (AWGS, 5.9%), EWGSOP (7.4%), and Foundation for the National Institutes of Health (FNI",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-pct-7838",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7838,
+      "sentence": "However, using the Asian Working Group for Sarcopenia (AWGS, 5.9%), EWGSOP (7.4%), and Foundation for the National Institutes of Health (FNIH, 4.4%) diagnosis, very few participants were classified as sarcopenic in the present study.",
+      "context_window": "and Foundation for the National Institutes of Health (FNIH, 4.4%) diagnosis, very few participants were classified as sarcop",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8267934_effects_of_16_weeks_of_resistance_training_on_muscle_quality-u-15",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 15,
+      "sentence": "In conclusion, 16 weeks of body weight-based and elastic band resistance training improved functional fitness and muscle quality in older women with sarcopenia.",
+      "context_window": "In conclusion, 16 weeks of body weight-based and elastic band resistance training i",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

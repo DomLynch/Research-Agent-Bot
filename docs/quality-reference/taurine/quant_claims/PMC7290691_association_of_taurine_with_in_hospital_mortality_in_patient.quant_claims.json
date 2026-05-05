@@ -1,0 +1,745 @@
+{
+  "paper_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient",
+  "doi": "10.3390/jcm9051405",
+  "extracted_at": "2026-05-05T21:41:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 13,
+    "confidence_interval": 10,
+    "p_value": 10,
+    "unit_value": 1,
+    "sample_size": 6
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-783",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 783,
+      "sentence": "We calculated logistic regression analyses and report odds ratios (OR) and 95% confidence intervals (CI).",
+      "context_window": "ogistic regression analyses and report odds ratios (OR) and 95% confidence intervals (CI). We calculated different predefin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-1126",
+      "claim_type": "percentage",
+      "raw_text": "54.2%",
+      "numeric_values": [
+        54.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "Results: Of 240 included patients, 130 (54.2%) survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome.",
+      "context_window": "rating curve (ROC). Results: Of 240 included patients, 130 (54.2%) survived until hospital discharge and 110 (45.8%) had a fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-1176",
+      "claim_type": "percentage",
+      "raw_text": "45.8%",
+      "numeric_values": [
+        45.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1176,
+      "sentence": "Results: Of 240 included patients, 130 (54.2%) survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome.",
+      "context_window": "nts, 130 (54.2%) survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome. Taurine levels were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-1319",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.22 to 13.91",
+      "numeric_values": [
+        1.22,
+        13.91
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1319,
+      "sentence": "Taurine levels were significantly associated with higher in-hospital mortality (adjusted OR 4.12 (95%CI 1.22 to 13.91), p = 0.02).",
+      "context_window": "ciated with higher in-hospital mortality (adjusted OR 4.12 (95%CI 1.22 to 13.91), p = 0.02). In addition, a significant association between",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-1341",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "Taurine levels were significantly associated with higher in-hospital mortality (adjusted OR 4.12 (95%CI 1.22 to 13.91), p = 0.02).",
+      "context_window": "hospital mortality (adjusted OR 4.12 (95%CI 1.22 to 13.91), p = 0.02). In addition, a significant association between taurine co",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-1488",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.13 to 12.25",
+      "numeric_values": [
+        1.13,
+        12.25
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1488,
+      "sentence": "In addition, a significant association between taurine concentration and a poor neurological outcome was observed (adjusted OR of 3.71 (95%CI 1.13 to 12.25), p = 0.03).",
+      "context_window": "oor neurological outcome was observed (adjusted OR of 3.71 (95%CI 1.13 to 12.25), p = 0.03). Area under the curve (AUC) suggested only low",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-1510",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "In addition, a significant association between taurine concentration and a poor neurological outcome was observed (adjusted OR of 3.71 (95%CI 1.13 to 12.25), p = 0.03).",
+      "context_window": "me was observed (adjusted OR of 3.71 (95%CI 1.13 to 12.25), p = 0.03). Area under the curve (AUC) suggested only low discriminat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-5098",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5098,
+      "sentence": "We report odds ratios (OR) and 95% confidence intervals (CI).",
+      "context_window": "ary and a secondary outcome. We report odds ratios (OR) and 95% confidence intervals (CI). Five models were established for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-286",
+      "claim_type": "percentage",
+      "raw_text": "72.9%",
+      "numeric_values": [
+        72.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 286,
+      "sentence": "Patients were predominantly male (72.9%) with a median age of 65 years.",
+      "context_window": "( Appendix A ) are shown. Patients were predominantly male (72.9%) with a median age of 65 years. Most patients had cardiac c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-u-314",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 314,
+      "sentence": "Patients were predominantly male (72.9%) with a median age of 65 years.",
+      "context_window": "tients were predominantly male (72.9%) with a median age of 65 years. Most patients had cardiac comorbidities such as coronary h",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-398",
+      "claim_type": "percentage",
+      "raw_text": "69.0%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 398,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-406",
+      "claim_type": "sample_size",
+      "raw_text": "n = 165",
+      "numeric_values": [
+        165.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 406,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "iac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart fai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-432",
+      "claim_type": "percentage",
+      "raw_text": "52.3%",
+      "numeric_values": [
+        52.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 432,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-440",
+      "claim_type": "sample_size",
+      "raw_text": "n = 125",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 440,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33). Furthermo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-481",
+      "claim_type": "percentage",
+      "raw_text": "13.8%",
+      "numeric_values": [
+        13.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 481,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "tension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33). Furthermore, 50.8% of patients ( n = 122) were s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-489",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 489,
+      "sentence": "Most patients had cardiac comorbidities such as coronary heart disease in 69.0% ( n = 165), hypertension in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33).",
+      "context_window": "in 52.3% ( n = 125) and congestive heart failure in 13.8% ( n = 33). Furthermore, 50.8% of patients ( n = 122) were smokers, 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-511",
+      "claim_type": "percentage",
+      "raw_text": "50.8%",
+      "numeric_values": [
+        50.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 511,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "d congestive heart failure in 13.8% ( n = 33). Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-531",
+      "claim_type": "sample_size",
+      "raw_text": "n = 122",
+      "numeric_values": [
+        122.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 531,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "ailure in 13.8% ( n = 33). Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-554",
+      "claim_type": "percentage",
+      "raw_text": "26.8%",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 554,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "3). Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-562",
+      "claim_type": "sample_size",
+      "raw_text": "n = 64",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 562,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "hermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney diseas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-587",
+      "claim_type": "percentage",
+      "raw_text": "14.2%",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 587,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "s ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease. A total of 130 (54.2%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-n-595",
+      "claim_type": "sample_size",
+      "raw_text": "n = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 595,
+      "sentence": "Furthermore, 50.8% of patients ( n = 122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease.",
+      "context_window": "122) were smokers, 26.8% ( n = 64) had diabetes and 14.2% ( n = 34) had chronic kidney disease. A total of 130 (54.2%) patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-647",
+      "claim_type": "percentage",
+      "raw_text": "54.2%",
+      "numeric_values": [
+        54.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 647,
+      "sentence": "A total of 130 (54.2%) patients survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome.",
+      "context_window": "14.2% ( n = 34) had chronic kidney disease. A total of 130 (54.2%) patients survived until hospital discharge and 110 (45.8%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-pct-706",
+      "claim_type": "percentage",
+      "raw_text": "45.8%",
+      "numeric_values": [
+        45.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 706,
+      "sentence": "A total of 130 (54.2%) patients survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome.",
+      "context_window": "(54.2%) patients survived until hospital discharge and 110 (45.8%) had a favorable neurological outcome. We found significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2038",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.25 to 12.40",
+      "numeric_values": [
+        1.25,
+        12.4
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2038,
+      "sentence": "After adjusting for age and gender, the taurine concentration was significantly associated with in-hospital mortality (OR 3.93 [95%CI 1.25 to 12.40] p = 0.02).",
+      "context_window": "gnificantly associated with in-hospital mortality (OR 3.93 [95%CI 1.25 to 12.40] p = 0.02). Results remained robust after adjusting for com",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2059",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2059,
+      "sentence": "After adjusting for age and gender, the taurine concentration was significantly associated with in-hospital mortality (OR 3.93 [95%CI 1.25 to 12.40] p = 0.02).",
+      "context_window": "d with in-hospital mortality (OR 3.93 [95%CI 1.25 to 12.40] p = 0.02). Results remained robust after adjusting for comorbidities",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2138",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.22 to 13.91",
+      "numeric_values": [
+        1.22,
+        13.91
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2138,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": "remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2159",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2159,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": "adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2195",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.62 to 19.41",
+      "numeric_values": [
+        1.62,
+        19.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2195,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": "2 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2216",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2216,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": "1] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2263",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.03 to 15.83",
+      "numeric_values": [
+        1.03,
+        15.83
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2263,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": "62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05). However, there was only low discrimination with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2284",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2284,
+      "sentence": "Results remained robust after adjusting for comorbidities (OR 4.12 [95%CI 1.22 to 13.91] p = 0.02), initial status (OR 5.61 [95%CI 1.62 to 19.41] p = 0.01) and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05).",
+      "context_window": ") and resuscitation measures (OR 4.03 [95%CI 1.03 to 15.83] p < 0.05). However, there was only low discrimination with an area u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2533",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 0.91 to 7.89",
+      "numeric_values": [
+        0.91,
+        7.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2533,
+      "sentence": "The serum taurine levels were higher in patients with poor neurological outcomes compared to patients with a favorable neurological outcome (OR 2.69 [95%CI 0.91 to 7.89] p = 0.07, AUC 0.57).",
+      "context_window": "to patients with a favorable neurological outcome (OR 2.69 [95%CI 0.91 to 7.89] p = 0.07, AUC 0.57). Taurine levels were significantly ass",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2553",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2553,
+      "sentence": "The serum taurine levels were higher in patients with poor neurological outcomes compared to patients with a favorable neurological outcome (OR 2.69 [95%CI 0.91 to 7.89] p = 0.07, AUC 0.57).",
+      "context_window": "avorable neurological outcome (OR 2.69 [95%CI 0.91 to 7.89] p = 0.07, AUC 0.57). Taurine levels were significantly associated wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.11 to 10.92",
+      "numeric_values": [
+        1.11,
+        10.92
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2696,
+      "sentence": "Taurine levels were significantly associated with poor neurological outcomes after adjusting for age and gender (OR 3.49 [95%CI 1.11 to 10.92] p = 0.03).",
+      "context_window": "gical outcomes after adjusting for age and gender (OR 3.49 [95%CI 1.11 to 10.92] p = 0.03). Results remained robust when additionally adjus",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2717",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2717,
+      "sentence": "Taurine levels were significantly associated with poor neurological outcomes after adjusting for age and gender (OR 3.49 [95%CI 1.11 to 10.92] p = 0.03).",
+      "context_window": "adjusting for age and gender (OR 3.49 [95%CI 1.11 to 10.92] p = 0.03). Results remained robust when additionally adjusting for c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2808",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.13 to 12.25",
+      "numeric_values": [
+        1.13,
+        12.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2808,
+      "sentence": "Results remained robust when additionally adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02).",
+      "context_window": "ust when additionally adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2829",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2829,
+      "sentence": "Results remained robust when additionally adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02).",
+      "context_window": "adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-ci-2868",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI 1.28 to 15.25",
+      "numeric_values": [
+        1.28,
+        15.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2868,
+      "sentence": "Results remained robust when additionally adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02).",
+      "context_window": "95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02). ROC analysis suggested only low discrimination",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7290691_association_of_taurine_with_in_hospital_mortality_in_patient-p-2889",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2889,
+      "sentence": "Results remained robust when additionally adjusting for comorbidities (OR 3.71 [95%CI 1.13 to 12.25] p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02).",
+      "context_window": "p = 0.03) and initial status (OR 4.43 [95%CI 1.28 to 15.25] p = 0.02). ROC analysis suggested only low discrimination for the ne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

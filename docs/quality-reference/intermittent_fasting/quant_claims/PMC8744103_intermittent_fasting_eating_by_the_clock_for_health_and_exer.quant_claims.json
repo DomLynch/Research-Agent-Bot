@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer",
+  "doi": "10.1136/bmjsem-2021-001206",
+  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 4,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer-pct-1645",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1645,
+      "sentence": "5 However, in real world conditions these are poorly tolerated and have recently been replaced with modified ADF (mADF) protocols, which allow for an intake of up to 40% of the recommended daily caloric intake on fasted days.",
+      "context_window": "ed ADF (mADF) protocols, which allow for an intake of up to 40% of the recommended daily caloric intake on fasted days. 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer-pct-2627",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2627,
+      "sentence": "3 These regimes have been shown to be well-tolerated, and lead to an average of 20% unintentional reduction in caloric intake.",
+      "context_window": "been shown to be well-tolerated, and lead to an average of 20% unintentional reduction in caloric intake. 10 It has been s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer-pct-5482",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5482,
+      "sentence": "5\n\nIF practices have demonstrated short-term positive impacts on patients\u2019 metabolic health, with a recent systematic review reporting significant reductions in weight (average body mass index decrease of 4.3%) and waist circumference in overweight/obese patients.",
+      "context_window": "t reductions in weight (average body mass index decrease of 4.3%) and waist circumference in overweight/obese patients. 12 T",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer-pct-7429",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7429,
+      "sentence": "13\n\nFor IF diets to be sustainable they must also be accompanied by continued lifestyle and behaviour change. mADF diets may provide this, with one study reporting a spontaneous 19% reduction in energy intake on unrestricted days in overweight patients completing the diet for weight loss.",
+      "context_window": "ts may provide this, with one study reporting a spontaneous 19% reduction in energy intake on unrestricted days in overweig",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8744103_intermittent_fasting_eating_by_the_clock_for_health_and_exer-u-8997",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 8997,
+      "sentence": "15 Short-term studies in soccer players taking part in 30 days of TRE (Ramadan) have also shown that periods of fasted exercise are well tolerated and did not increase the incidence of injury.",
+      "context_window": "ion. 15 Short-term studies in soccer players taking part in 30 days of TRE (Ramadan) have also shown that periods of fasted exe",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    }
+  ]
+}

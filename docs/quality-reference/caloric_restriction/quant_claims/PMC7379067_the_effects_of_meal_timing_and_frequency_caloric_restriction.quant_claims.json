@@ -1,0 +1,66 @@
+{
+  "paper_id": "PMC7379067_the_effects_of_meal_timing_and_frequency_caloric_restriction",
+  "doi": "10.12997/jla.2020.9.1.140",
+  "extracted_at": "2026-05-05T22:17:54+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7379067_the_effects_of_meal_timing_and_frequency_caloric_restriction-pct-1437",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1437,
+      "sentence": "8 Another concept that has attracted significant interest and debate among researchers is calorie restriction (CR), which involves a reduced daily caloric intake (approximately by 20%-40%) with no changes in meal frequency.",
+      "context_window": "h involves a reduced daily caloric intake (approximately by 20%-40%) with no changes in meal frequency. Previous reviews of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7379067_the_effects_of_meal_timing_and_frequency_caloric_restriction-pct-1441",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1441,
+      "sentence": "8 Another concept that has attracted significant interest and debate among researchers is calorie restriction (CR), which involves a reduced daily caloric intake (approximately by 20%-40%) with no changes in meal frequency.",
+      "context_window": "volves a reduced daily caloric intake (approximately by 20%-40%) with no changes in meal frequency. Previous reviews of in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7379067_the_effects_of_meal_timing_and_frequency_caloric_restriction-u-2262",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2262,
+      "sentence": "14 , 15 Fasting is achieved by ingesting no food or caloric beverages for periods that typically range from 12 hours to 3 weeks.",
+      "context_window": "beverages for periods that typically range from 12 hours to 3 weeks. It is well known that fasting results in ketogenesis and p",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

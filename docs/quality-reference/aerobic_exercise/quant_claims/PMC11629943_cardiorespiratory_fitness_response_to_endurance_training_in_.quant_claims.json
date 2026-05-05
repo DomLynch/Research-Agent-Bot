@@ -1,0 +1,1118 @@
+{
+  "paper_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_",
+  "doi": "10.17159/2078-516X/2024/v36i1a18872",
+  "extracted_at": "2026-05-05T22:04:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "sample_size": 10,
+    "mean_sd": 4,
+    "p_value": 21,
+    "percentage": 14,
+    "odds_ratio": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-62",
+      "claim_type": "unit_value",
+      "raw_text": "35 years",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 62,
+      "sentence": "Endurance sports primarily attract recreational athletes over 35 years, who impose an exceptionally rigorous and sustained demand on their cardiorespiratory systems.",
+      "context_window": "durance sports primarily attract recreational athletes over 35 years, who impose an exceptionally rigorous and sustained demand",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-904",
+      "claim_type": "sample_size",
+      "raw_text": "n=57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 904,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "unaffected by COVID-19. The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory thresh",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-msd-920",
+      "claim_type": "mean_sd",
+      "raw_text": "44.5\u00b18.1",
+      "numeric_values": [
+        44.5,
+        8.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 920,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "OVID-19. The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-925",
+      "claim_type": "unit_value",
+      "raw_text": "8.1years",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 925,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "19. The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and worklo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-973",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "an age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-997",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 997,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "wed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1046",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1046,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years. Ma",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-1078",
+      "claim_type": "sample_size",
+      "raw_text": "n=34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1078,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years. Maximal inspiratory pressure imp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-msd-1094",
+      "claim_type": "mean_sd",
+      "raw_text": "41.8\u00b17.7",
+      "numeric_values": [
+        41.8,
+        7.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1094,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "ange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years. Maximal inspiratory pressure improved at follow-up i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-1099",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 years",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "The post-COVID-19 exposure group (n=57), mean age 44.5\u00b18.1years showed a poorer ventilatory threshold (p=0.004), and workload (p=0.05), with higher respiratory exchange ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "ratio (p=0.05) than the control group (n=34), mean age 41.8\u00b17.7 years. Maximal inspiratory pressure improved at follow-up in the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1209",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1209,
+      "sentence": "Maximal inspiratory pressure improved at follow-up in the COVID-19 group compared to the controls (p=0.03).",
+      "context_window": "t follow-up in the COVID-19 group compared to the controls (p=0.03). Increased odds of pulmonary and skeletal muscle limitatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1418",
+      "claim_type": "p_value",
+      "raw_text": "p=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1418,
+      "sentence": "The COVID-19 group responded positively to endurance training with improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001).",
+      "context_window": "d positively to endurance training with improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1458",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1458,
+      "sentence": "The COVID-19 group responded positively to endurance training with improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001).",
+      "context_window": "improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001). CO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1480",
+      "claim_type": "p_value",
+      "raw_text": "p=0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1480,
+      "sentence": "The COVID-19 group responded positively to endurance training with improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001).",
+      "context_window": "0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001). COVID-19 has led to pulm",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1511",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1511,
+      "sentence": "The COVID-19 group responded positively to endurance training with improved VO 2 peak (p=0.005), maximal inspiratory pressure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001).",
+      "context_window": "ssure (p=0.04), oxygenpulse (p=0.02), and maximal workload (p<0.001). COVID-19 has led to pulmonary and extrapulmonary limitat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-600",
+      "claim_type": "sample_size",
+      "raw_text": "n=25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 600,
+      "sentence": "Social media advertisements were approved by athletic clubs and posted on their Facebook pages (n=25) and WhatsApp groups (n=18).",
+      "context_window": "roved by athletic clubs and posted on their Facebook pages (n=25) and WhatsApp groups (n=18). They included a clickable link",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-627",
+      "claim_type": "sample_size",
+      "raw_text": "n=18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 627,
+      "sentence": "Social media advertisements were approved by athletic clubs and posted on their Facebook pages (n=25) and WhatsApp groups (n=18).",
+      "context_window": "posted on their Facebook pages (n=25) and WhatsApp groups (n=18). They included a clickable link to more information about",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-1165",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1165,
+      "sentence": "The inclusion criteria for both study groups were adult endurance athletes (marathon minimum age is 18 years), who were eligible if they engaged in cardiovascular exercise for three or more hours per week. [ 11 ] COVID-19 convalescent athletes who had persistent symptoms affecting their exercise capacity were allocated to the exposure group (COVID-19), and COVID-negative or those who were unaffected by the infection and had successfully returned to their pre-illness fitness levels were allocated to the control group (N-COVID-19).",
+      "context_window": "oups were adult endurance athletes (marathon minimum age is 18 years), who were eligible if they engaged in cardiovascular exerc",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-1635",
+      "claim_type": "unit_value",
+      "raw_text": "18 days",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1635,
+      "sentence": "A minimum time since infection of 18 days and the ability to run for 30 min was required.",
+      "context_window": "ntrol group (N-COVID-19). A minimum time since infection of 18 days and the ability to run for 30 min was required. Those with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-3476",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3476,
+      "sentence": "The best of three attempts with a less than 5% difference was recorded according to the American Thoracic Society protocol.",
+      "context_window": "eath K3 device. The best of three attempts with a less than 5% difference was recorded according to the American Thoracic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-5089",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5089,
+      "sentence": "We added 10% for each confounding factor: age, sex, stage of disease, and loss to follow-up.",
+      "context_window": "l of 0.05 and a statistical power of 0.8 selected. We added 10% for each confounding factor: age, sex, stage of disease, an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-5198",
+      "claim_type": "sample_size",
+      "raw_text": "n=50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5198,
+      "sentence": "Therefore, a sample size n=50 was required.",
+      "context_window": "of disease, and loss to follow-up. Therefore, a sample size n=50 was required. We aimed for a 2:1 ratio of symptomatic to co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-58",
+      "claim_type": "sample_size",
+      "raw_text": "n=57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 58,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-msd-74",
+      "claim_type": "mean_sd",
+      "raw_text": "44.5\u00b18.1",
+      "numeric_values": [
+        44.5,
+        8.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 74,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "ssment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-79",
+      "claim_type": "unit_value",
+      "raw_text": "8.1 years",
+      "numeric_values": [
+        8.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 79,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "t was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-124",
+      "claim_type": "sample_size",
+      "raw_text": "n=34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 124,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years. No significant differences in p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-msd-140",
+      "claim_type": "mean_sd",
+      "raw_text": "41.8\u00b17.7",
+      "numeric_values": [
+        41.8,
+        7.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 140,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": ".1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years. No significant differences in population demographi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-145",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 years",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 145,
+      "sentence": "The first assessment was attended by: the COVID-19 group (n=57), mean age 44.5\u00b18.1 years, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years.",
+      "context_window": "ars, and the N-COVID-19 control group (n=34), mean age 41.8\u00b17.7 years. No significant differences in population demographics bet",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-573",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 573,
+      "sentence": "All participants reached a maximal heart rate of at least 85% maximum, predicted at the termination of both tests.",
+      "context_window": ". All participants reached a maximal heart rate of at least 85% maximum, predicted at the termination of both tests. In the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-u-674",
+      "claim_type": "unit_value",
+      "raw_text": "250mmHg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 674,
+      "sentence": "In the first test, systolic blood pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-19 group and was referred for further investigation.",
+      "context_window": "of both tests. In the first test, systolic blood pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-1",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-716",
+      "claim_type": "sample_size",
+      "raw_text": "n=1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 716,
+      "sentence": "In the first test, systolic blood pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-19 group and was referred for further investigation.",
+      "context_window": "c blood pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-19 group and was referred for further i",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-721",
+      "claim_type": "percentage",
+      "raw_text": "1.8%",
+      "numeric_values": [
+        1.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 721,
+      "sentence": "In the first test, systolic blood pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-19 group and was referred for further investigation.",
+      "context_window": "od pressure >250mmHg was the reason for termination in n=1 (1.8%) in the COVID-19 group and was referred for further investi",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-915",
+      "claim_type": "sample_size",
+      "raw_text": "n=24",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 915,
+      "sentence": "Dyspnoea terminated the test in n=24 (42%), three of whom had been suffering from anxiety.",
+      "context_window": "found in two participants. Dyspnoea terminated the test in n=24 (42%), three of whom had been suffering from anxiety. Volit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-921",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 921,
+      "sentence": "Dyspnoea terminated the test in n=24 (42%), three of whom had been suffering from anxiety.",
+      "context_window": "in two participants. Dyspnoea terminated the test in n=24 (42%), three of whom had been suffering from anxiety. Volitional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1254",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1254,
+      "sentence": "Baseline CPET found a higher respiratory exchange ratio at maximal exercise (p=0.05, CI=0-0.05, d=0.43), and strong evidence of a lower ventilatory threshold (p=0.004, CI=-11.42- -2.29, d=-0.65) and lower maximal workload (p=0.05, CI=0-1.10, d=0.71) in the COVID-19 group.",
+      "context_window": "nd a higher respiratory exchange ratio at maximal exercise (p=0.05, CI=0-0.05, d=0.43), and strong evidence of a lower ventila",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1336",
+      "claim_type": "p_value",
+      "raw_text": "p=0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1336,
+      "sentence": "Baseline CPET found a higher respiratory exchange ratio at maximal exercise (p=0.05, CI=0-0.05, d=0.43), and strong evidence of a lower ventilatory threshold (p=0.004, CI=-11.42- -2.29, d=-0.65) and lower maximal workload (p=0.05, CI=0-1.10, d=0.71) in the COVID-19 group.",
+      "context_window": ".43), and strong evidence of a lower ventilatory threshold (p=0.004, CI=-11.42- -2.29, d=-0.65) and lower maximal workload (p=0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1400",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1400,
+      "sentence": "Baseline CPET found a higher respiratory exchange ratio at maximal exercise (p=0.05, CI=0-0.05, d=0.43), and strong evidence of a lower ventilatory threshold (p=0.004, CI=-11.42- -2.29, d=-0.65) and lower maximal workload (p=0.05, CI=0-1.10, d=0.71) in the COVID-19 group.",
+      "context_window": "004, CI=-11.42- -2.29, d=-0.65) and lower maximal workload (p=0.05, CI=0-1.10, d=0.71) in the COVID-19 group. No differences i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-n-1580",
+      "claim_type": "sample_size",
+      "raw_text": "n=17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1580,
+      "sentence": "On follow-up, dyspnoea terminated the test in n=17 (33%) in the COVID-19 group.",
+      "context_window": "two groups. On follow-up, dyspnoea terminated the test in n=17 (33%) in the COVID-19 group. When comparing the exercise re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-1586",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1586,
+      "sentence": "On follow-up, dyspnoea terminated the test in n=17 (33%) in the COVID-19 group.",
+      "context_window": "roups. On follow-up, dyspnoea terminated the test in n=17 (33%) in the COVID-19 group. When comparing the exercise respons",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1820",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "When comparing the exercise response to endurance training ( Table 3 ) there is strong evidence of a process of recovery shown by improved MIP in the COVID-19 group versus a decline in the NCOVID-19 group (p=0.03, CI=0.94-16.22, d=0.54).",
+      "context_window": "the COVID-19 group versus a decline in the NCOVID-19 group (p=0.03, CI=0.94-16.22, d=0.54). The difference in maxRER in the CO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-1955",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1955,
+      "sentence": "The difference in maxRER in the COVID-19 group declined, whereas it increased in the N-COVID-19 group (p=0.05, CI=0.03-0.05, d=0.58).",
+      "context_window": "oup declined, whereas it increased in the N-COVID-19 group (p=0.05, CI=0.03-0.05, d=0.58). When comparing the exercise respon",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2170",
+      "claim_type": "p_value",
+      "raw_text": "p=0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2170,
+      "sentence": "When comparing the exercise response in the COVID-19 group (baseline versus follow-up tests), there is strong evidence of a process of recovery over time shown by improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03, d=-0.31), ( Supplementary Table 1 ).",
+      "context_window": "process of recovery over time shown by improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2210",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2210,
+      "sentence": "When comparing the exercise response in the COVID-19 group (baseline versus follow-up tests), there is strong evidence of a process of recovery over time shown by improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03, d=-0.31), ( Supplementary Table 1 ).",
+      "context_window": "improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2256",
+      "claim_type": "p_value",
+      "raw_text": "p=0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2256,
+      "sentence": "When comparing the exercise response in the COVID-19 group (baseline versus follow-up tests), there is strong evidence of a process of recovery over time shown by improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03, d=-0.31), ( Supplementary Table 1 ).",
+      "context_window": "mal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2316",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2316,
+      "sentence": "When comparing the exercise response in the COVID-19 group (baseline versus follow-up tests), there is strong evidence of a process of recovery over time shown by improved VO 2 peak (p=0.005, d=0.-41) and maximal workload (p<0.001, d=0.5), moderate improvement in MIP (p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03, d=-0.31), ( Supplementary Table 1 ).",
+      "context_window": "p=0.04, d=-0.38), and weak evidence of improved O 2 -pulse (p=0.03, d=-0.31), ( Supplementary Table 1 ). No meaningful differe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2737",
+      "claim_type": "p_value",
+      "raw_text": "p=0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2737,
+      "sentence": "There are higher odds of exercise-induced hypoxia post-COVID-19 (p=0.05, OR=7.02, CI=0.86-57.53).",
+      "context_window": "are higher odds of exercise-induced hypoxia post-COVID-19 (p=0.05, OR=7.02, CI=0.86-57.53). The odds ratio of abnormal MIP po",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-or-a-2745",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=7.02",
+      "numeric_values": [
+        7.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2745,
+      "sentence": "There are higher odds of exercise-induced hypoxia post-COVID-19 (p=0.05, OR=7.02, CI=0.86-57.53).",
+      "context_window": "her odds of exercise-induced hypoxia post-COVID-19 (p=0.05, OR=7.02, CI=0.86-57.53). The odds ratio of abnormal MIP post-COVID-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-2871",
+      "claim_type": "p_value",
+      "raw_text": "p=0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2871,
+      "sentence": "The odds ratio of abnormal MIP post-COVID-19 is high, although not showing statistical significance (p=0.07, OR=3.19, CI=1.15-12.2).",
+      "context_window": "-19 is high, although not showing statistical significance (p=0.07, OR=3.19, CI=1.15-12.2). Similarly, there are higher odds o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-or-a-2879",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=3.19",
+      "numeric_values": [
+        3.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2879,
+      "sentence": "The odds ratio of abnormal MIP post-COVID-19 is high, although not showing statistical significance (p=0.07, OR=3.19, CI=1.15-12.2).",
+      "context_window": "igh, although not showing statistical significance (p=0.07, OR=3.19, CI=1.15-12.2). Similarly, there are higher odds of pulmona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-3014",
+      "claim_type": "p_value",
+      "raw_text": "p=0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3014,
+      "sentence": "Similarly, there are higher odds of pulmonary limitations after COVID-19 implied by combining MIP with VE/MVV (p=0.07, OR=4.27, CI=0.89-20.39).",
+      "context_window": "ations after COVID-19 implied by combining MIP with VE/MVV (p=0.07, OR=4.27, CI=0.89-20.39). These results may have clinical",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-or-a-3022",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=4.27",
+      "numeric_values": [
+        4.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3022,
+      "sentence": "Similarly, there are higher odds of pulmonary limitations after COVID-19 implied by combining MIP with VE/MVV (p=0.07, OR=4.27, CI=0.89-20.39).",
+      "context_window": "fter COVID-19 implied by combining MIP with VE/MVV (p=0.07, OR=4.27, CI=0.89-20.39). These results may have clinical relevance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-p-3224",
+      "claim_type": "p_value",
+      "raw_text": "p=0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3224,
+      "sentence": "Baseline testing of VT suggested skeletal muscle oxygen extraction limitations in the COVID-19 group up to nine months post-illness (p=0.03, OR=5.21, CI=1.11-24.56).",
+      "context_window": "tions in the COVID-19 group up to nine months post-illness (p=0.03, OR=5.21, CI=1.11-24.56).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-or-a-3232",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR=5.21",
+      "numeric_values": [
+        5.21
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3232,
+      "sentence": "Baseline testing of VT suggested skeletal muscle oxygen extraction limitations in the COVID-19 group up to nine months post-illness (p=0.03, OR=5.21, CI=1.11-24.56).",
+      "context_window": "the COVID-19 group up to nine months post-illness (p=0.03, OR=5.21, CI=1.11-24.56).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-209",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 209,
+      "sentence": "VO 2 peak of less than 85% of the predicted value indicates functional cardiorespiratory limitation to exercise capacity in the general population, [ 5 ] and in athletes, less than 100% warrants further clinical investigation. [ 15 ] Our findings suggest that the athletes had poorer maxRER, VO 2 at VT, and maximal workload during CPET testing for an average of six months post-COVID-19, when compared to matched athletes.",
+      "context_window": "rcise, predominantly of masters-age. VO 2 peak of less than 85% of the predicted value indicates functional cardiorespirato",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-367",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 367,
+      "sentence": "VO 2 peak of less than 85% of the predicted value indicates functional cardiorespiratory limitation to exercise capacity in the general population, [ 5 ] and in athletes, less than 100% warrants further clinical investigation. [ 15 ] Our findings suggest that the athletes had poorer maxRER, VO 2 at VT, and maximal workload during CPET testing for an average of six months post-COVID-19, when compared to matched athletes.",
+      "context_window": "in the general population, [ 5 ] and in athletes, less than 100% warrants further clinical investigation. [ 15 ] Our finding",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-1023",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1023,
+      "sentence": "For endurance athletes, VT is a better predictor of endurance capacity as it relates to skeletal muscle capacity, [ 5 , 15 ] and should typically reach 70-80% of VO 2 peak.[ 18 ] The mean time from acute illness to the first test in this study was six months, indicating a prolonged adverse effect on the skeletal muscle system.",
+      "context_window": "l muscle capacity, [ 5 , 15 ] and should typically reach 70-80% of VO 2 peak.[ 18 ] The mean time from acute illness to the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-2371",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2371,
+      "sentence": "There were 23% of the athletes in the COVID-19 group that had elevated VE/VCO 2 slopes, as opposed to the 18% in the N-COVID-19 group.",
+      "context_window": "stently low O 2 -pulse should not be overlooked. There were 23% of the athletes in the COVID-19 group that had elevated VE/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-2466",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2466,
+      "sentence": "There were 23% of the athletes in the COVID-19 group that had elevated VE/VCO 2 slopes, as opposed to the 18% in the N-COVID-19 group.",
+      "context_window": "group that had elevated VE/VCO 2 slopes, as opposed to the 18% in the N-COVID-19 group. Considering the positive y-interce",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-2863",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2863,
+      "sentence": "Pulmonary limitations cause impaired perfusion, effectively detected by CPET. [ 5 ] Our study results agree with Moulson et al. [ 20 ], who found that among individuals with low breathing reserve, 50% had a true pulmonary limitation.",
+      "context_window": "ho found that among individuals with low breathing reserve, 50% had a true pulmonary limitation. In comparison, 38% had nor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-2915",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2915,
+      "sentence": "In comparison, 38% had normal resting lung function and supranormal fitness (VO 2 peak>120%), indicating a normal physiological response in well-trained athletes.",
+      "context_window": "eserve, 50% had a true pulmonary limitation. In comparison, 38% had normal resting lung function and supranormal fitness (V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11629943_cardiorespiratory_fitness_response_to_endurance_training_in_-pct-2987",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2987,
+      "sentence": "In comparison, 38% had normal resting lung function and supranormal fitness (VO 2 peak>120%), indicating a normal physiological response in well-trained athletes.",
+      "context_window": "al resting lung function and supranormal fitness (VO 2 peak>120%), indicating a normal physiological response in well-traine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

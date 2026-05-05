@@ -1,0 +1,1763 @@
+{
+  "paper_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati",
+  "doi": "10.1038/s41598-017-12109-9",
+  "extracted_at": "2026-05-05T22:17:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 20,
+    "unit_value": 22,
+    "p_value": 37,
+    "sample_size": 3,
+    "percentage": 14
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-423",
+      "claim_type": "mean_sd",
+      "raw_text": "6.9 \u00b1 1.9",
+      "numeric_values": [
+        6.9,
+        1.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 423,
+      "sentence": "The 4-week very-low calorie diet (VLCD, 800 kcal/day) induced a mean weight loss of 6.9 \u00b1 1.9 kg accompanied by a reduction in HOMA-IR (Homeostasis model assessment-insulin resistance), fasting plasma glucose and insulin, plasma leptin, and leptin gene expression in subcutaneous adipose tissue.",
+      "context_window": "rie diet (VLCD, 800 kcal/day) induced a mean weight loss of 6.9 \u00b1 1.9 kg accompanied by a reduction in HOMA-IR (Homeostasis model",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-429",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 kg",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 429,
+      "sentence": "The 4-week very-low calorie diet (VLCD, 800 kcal/day) induced a mean weight loss of 6.9 \u00b1 1.9 kg accompanied by a reduction in HOMA-IR (Homeostasis model assessment-insulin resistance), fasting plasma glucose and insulin, plasma leptin, and leptin gene expression in subcutaneous adipose tissue.",
+      "context_window": "et (VLCD, 800 kcal/day) induced a mean weight loss of 6.9 \u00b1 1.9 kg accompanied by a reduction in HOMA-IR (Homeostasis model as",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-875",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 875,
+      "sentence": "Plasma levels of high-sensitivity C-reactive protein (hsCRP) and lipopolysaccharide-binding protein (LBP) were significantly decreased after 28 days of VLCD.",
+      "context_window": "de-binding protein (LBP) were significantly decreased after 28 days of VLCD. Using three different methods, gut paracellular pe",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-23",
+      "claim_type": "mean_sd",
+      "raw_text": "46.8 \u00b1 11.5",
+      "numeric_values": [
+        46.8,
+        11.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23,
+      "sentence": "Twenty women (mean age 46.8 \u00b1 11.5) were included in the study and no participant dropped out.",
+      "context_window": "Twenty women (mean age 46.8 \u00b1 11.5) were included in the study and no participant dropped out.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-415",
+      "claim_type": "mean_sd",
+      "raw_text": "698.1 \u00b1 592.7",
+      "numeric_values": [
+        698.1,
+        592.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 415,
+      "sentence": "Compared to the original caloric intake of 1,698.1 \u00b1 592.7 kcal/day, this intervention caused a substantial energy deficit (P < 0.0001).",
+      "context_window": "g vegetables. Compared to the original caloric intake of 1,698.1 \u00b1 592.7 kcal/day, this intervention caused a substantial energy def",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-494",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 494,
+      "sentence": "Compared to the original caloric intake of 1,698.1 \u00b1 592.7 kcal/day, this intervention caused a substantial energy deficit (P < 0.0001).",
+      "context_window": "day, this intervention caused a substantial energy deficit (P < 0.0001). Anthropometric and metabolic characteristics of study pa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-797",
+      "claim_type": "mean_sd",
+      "raw_text": "6.9 \u00b1 1.9",
+      "numeric_values": [
+        6.9,
+        1.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 797,
+      "sentence": "The VLCD resulted in a significant decrease in body weight (-6.9 \u00b1 1.9 kg).",
+      "context_window": "he VLCD resulted in a significant decrease in body weight (-6.9 \u00b1 1.9 kg). This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-803",
+      "claim_type": "unit_value",
+      "raw_text": "1.9 kg",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 803,
+      "sentence": "The VLCD resulted in a significant decrease in body weight (-6.9 \u00b1 1.9 kg).",
+      "context_window": "D resulted in a significant decrease in body weight (-6.9 \u00b1 1.9 kg). This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2)",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-853",
+      "claim_type": "mean_sd",
+      "raw_text": "2.5 \u00b1 0.7",
+      "numeric_values": [
+        2.5,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 853,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "t (-6.9 \u00b1 1.9 kg). This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-859",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 kg",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 859,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "9 \u00b1 1.9 kg). This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-883",
+      "claim_type": "mean_sd",
+      "raw_text": "2.7 \u00b1 1.6",
+      "numeric_values": [
+        2.7,
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 883,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "ponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg). In addition,",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-889",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 kg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 889,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg). In addition, wai",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-924",
+      "claim_type": "mean_sd",
+      "raw_text": "4.2 \u00b1 1.6",
+      "numeric_values": [
+        4.2,
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 924,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "g/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg). In addition, waist circumference (-5.7 \u00b1 5.5 cm) and h",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-930",
+      "claim_type": "unit_value",
+      "raw_text": "1.6 kg",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 930,
+      "sentence": "This corresponded to a decrease in BMI (-2.5 \u00b1 0.7 kg/m\u00b2), lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg).",
+      "context_window": "lean mass (-2.7 \u00b1 1.6 kg), and total body fat mass (-4.2 \u00b1 1.6 kg). In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-974",
+      "claim_type": "mean_sd",
+      "raw_text": "5.7 \u00b1 5.5",
+      "numeric_values": [
+        5.7,
+        5.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 974,
+      "sentence": "In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased.",
+      "context_window": "at mass (-4.2 \u00b1 1.6 kg). In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-980",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 cm",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 980,
+      "sentence": "In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased.",
+      "context_window": "s (-4.2 \u00b1 1.6 kg). In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly d",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-1012",
+      "claim_type": "mean_sd",
+      "raw_text": "4.5 \u00b1 3.7",
+      "numeric_values": [
+        4.5,
+        3.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1012,
+      "sentence": "In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased.",
+      "context_window": "waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased. RMR did not change signif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-1018",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 cm",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 1018,
+      "sentence": "In addition, waist circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased.",
+      "context_window": "circumference (-5.7 \u00b1 5.5 cm) and hip circumference (-4.5 \u00b1 3.7 cm) were significantly decreased. RMR did not change significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-1100",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1100,
+      "sentence": "RMR did not change significantly during the 4 weeks of dietary intervention (Table 1 ).",
+      "context_window": "ntly decreased. RMR did not change significantly during the 4 weeks of dietary intervention (Table 1 ). During the two weeks f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-1227",
+      "claim_type": "mean_sd",
+      "raw_text": "250 \u00b1 1.5",
+      "numeric_values": [
+        250.0,
+        1.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1227,
+      "sentence": "During the two weeks following the intervention, participants regained on average 250 \u00b1 1.5 g body weight (P = 0.47).",
+      "context_window": "ollowing the intervention, participants regained on average 250 \u00b1 1.5 g body weight (P = 0.47). Waist circumference (P = 0.44) an",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1252",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1252,
+      "sentence": "During the two weeks following the intervention, participants regained on average 250 \u00b1 1.5 g body weight (P = 0.47).",
+      "context_window": ", participants regained on average 250 \u00b1 1.5 g body weight (P = 0.47). Waist circumference (P = 0.44) and hip circumference (P =",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1284",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1284,
+      "sentence": "Waist circumference (P = 0.44) and hip circumference (P = 0.64) did not change significantly during this post-study period.",
+      "context_window": "ge 250 \u00b1 1.5 g body weight (P = 0.47). Waist circumference (P = 0.44) and hip circumference (P = 0.64) did not change significan",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1317",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1317,
+      "sentence": "Waist circumference (P = 0.44) and hip circumference (P = 0.64) did not change significantly during this post-study period.",
+      "context_window": ".47). Waist circumference (P = 0.44) and hip circumference (P = 0.64) did not change significantly during this post-study period",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1407",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1407,
+      "sentence": "However, lean mass (P = 0.01) significantly increased and fat mass (P = 0.02) significantly decreased during the last two weeks.",
+      "context_window": "ficantly during this post-study period. However, lean mass (P = 0.01) significantly increased and fat mass (P = 0.02) significan",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1455",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1455,
+      "sentence": "However, lean mass (P = 0.01) significantly increased and fat mass (P = 0.02) significantly decreased during the last two weeks.",
+      "context_window": "lean mass (P = 0.01) significantly increased and fat mass (P = 0.02) significantly decreased during the last two weeks. Total",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1763",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1763,
+      "sentence": "During the subsequent two weeks, these parameters increased again (P < 0.001 each).",
+      "context_window": "the subsequent two weeks, these parameters increased again (P < 0.001 each). In addition, we observed a significant (P = 0.03) in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1820",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "In addition, we observed a significant (P = 0.03) increase in nonesterified fatty acids (NEFA) during VLCD.",
+      "context_window": "n (P < 0.001 each). In addition, we observed a significant (P = 0.03) increase in nonesterified fatty acids (NEFA) during VLCD.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-1951",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "During the subsequent two weeks, NEFA decreased significantly (P < 0.0001).",
+      "context_window": "ing the subsequent two weeks, NEFA decreased significantly (P < 0.0001). Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2016",
+      "claim_type": "mean_sd",
+      "raw_text": "4.8 \u00b1 0.7",
+      "numeric_values": [
+        4.8,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2016,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": ".0001). Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-2022",
+      "claim_type": "unit_value",
+      "raw_text": "0.7 mmol",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 2022,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": ". Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pm",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2036",
+      "claim_type": "mean_sd",
+      "raw_text": "4.5 \u00b1 0.6",
+      "numeric_values": [
+        4.5,
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2036,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "ucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-2042",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mmol",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 2042,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2076",
+      "claim_type": "mean_sd",
+      "raw_text": "63.7 \u00b1 44.6",
+      "numeric_values": [
+        63.7,
+        44.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2076,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2098",
+      "claim_type": "mean_sd",
+      "raw_text": "44.3 \u00b1 20.6",
+      "numeric_values": [
+        44.3,
+        20.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2098,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2143",
+      "claim_type": "mean_sd",
+      "raw_text": "2.05 \u00b1 1.52",
+      "numeric_values": [
+        2.05,
+        1.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) a",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-2158",
+      "claim_type": "mean_sd",
+      "raw_text": "1.29 \u00b1 0.68",
+      "numeric_values": [
+        1.29,
+        0.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2158,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compa",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2197",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2197,
+      "sentence": "Regarding glucose metabolism, fasting glucose (from 4.8 \u00b1 0.7 mmol/L to 4.5 \u00b1 0.6 mmol/L), plasma insulin (from 63.7 \u00b1 44.6 pmol/L to 44.3 \u00b1 20.6 pmol/L), and HOMA-IR index (from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline.",
+      "context_window": "(from 2.05 \u00b1 1.52 to 1.29 \u00b1 0.68) were significantly lower (P < 0.001 each) after VLCD compared to baseline. During the last two",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2364",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2364,
+      "sentence": "During the last two weeks of the study (after returning to the habitual diet), blood glucose significantly increased (P = 0.04), whereas insulin levels (P = 0.11) and HOMA-IR did not change significantly (P = 0.16).",
+      "context_window": "the habitual diet), blood glucose significantly increased (P = 0.04), whereas insulin levels (P = 0.11) and HOMA-IR did not cha",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2399",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.11",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2399,
+      "sentence": "During the last two weeks of the study (after returning to the habitual diet), blood glucose significantly increased (P = 0.04), whereas insulin levels (P = 0.11) and HOMA-IR did not change significantly (P = 0.16).",
+      "context_window": "significantly increased (P = 0.04), whereas insulin levels (P = 0.11) and HOMA-IR did not change significantly (P = 0.16). Post-",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2451",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2451,
+      "sentence": "During the last two weeks of the study (after returning to the habitual diet), blood glucose significantly increased (P = 0.04), whereas insulin levels (P = 0.11) and HOMA-IR did not change significantly (P = 0.16).",
+      "context_window": "levels (P = 0.11) and HOMA-IR did not change significantly (P = 0.16). Post-glucose concentrations during the glucose tolerance",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2576",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.16",
+      "numeric_values": [
+        0.16
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2576,
+      "sentence": "Post-glucose concentrations during the glucose tolerance test did not change significantly before and after VLCD (P = 0.16, Table 1 ).",
+      "context_window": "ce test did not change significantly before and after VLCD (P = 0.16, Table 1 ). The hypocaloric diet induced a decrease in the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-2731",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2731,
+      "sentence": "HMW adiponectin increased and leptin decreased (P < 0.001 each) after VLCD.",
+      "context_window": "(Table 1 ). HMW adiponectin increased and leptin decreased (P < 0.001 each) after VLCD. The chemokines regulated on activation no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-3124",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3124,
+      "sentence": "Chemerin, considered to be a marker of inflammation and to be associated with obesity and the metabolic syndrome 23 , 24 , showed a significant decrease after caloric restriction (P < 0.01).",
+      "context_window": ", showed a significant decrease after caloric restriction (P < 0.01). LBP levels, a marker for translocation of cell-wall compo",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-3271",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3271,
+      "sentence": "LBP levels, a marker for translocation of cell-wall components from Gram-negative bacteria, significantly decreased after intervention (P < 0.01) and increased again during follow-up (P < 0.0001).",
+      "context_window": "ative bacteria, significantly decreased after intervention (P < 0.01) and increased again during follow-up (P < 0.0001). Fecal c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-3319",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3319,
+      "sentence": "LBP levels, a marker for translocation of cell-wall components from Gram-negative bacteria, significantly decreased after intervention (P < 0.01) and increased again during follow-up (P < 0.0001).",
+      "context_window": "tervention (P < 0.01) and increased again during follow-up (P < 0.0001). Fecal calprotectin did not decrease significantly after V",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-3394",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3394,
+      "sentence": "Fecal calprotectin did not decrease significantly after VLCD (P = 0.79).",
+      "context_window": "cal calprotectin did not decrease significantly after VLCD (P = 0.79). Table 2 summarises the results obtained using different",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4128",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4128,
+      "sentence": "Sucrose, used as a proxy for gastroduodenal permeability, significantly decreased after caloric restriction (P = 0.012).",
+      "context_window": "ability, significantly decreased after caloric restriction (P = 0.012). Two weeks after intervention, sucrose increased significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4209",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4209,
+      "sentence": "Two weeks after intervention, sucrose increased significantly again (P = 0.006).",
+      "context_window": "after intervention, sucrose increased significantly again (P = 0.006). In contrast, mannitol, a marker for intestinal permeabili",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-4322",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4322,
+      "sentence": "In contrast, mannitol, a marker for intestinal permeability, did not change significantly during the 28 days of caloric restriction (P = 0.162).",
+      "context_window": "tinal permeability, did not change significantly during the 28 days of caloric restriction (P = 0.162). However, after the post",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4354",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.162",
+      "numeric_values": [
+        0.162
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4354,
+      "sentence": "In contrast, mannitol, a marker for intestinal permeability, did not change significantly during the 28 days of caloric restriction (P = 0.162).",
+      "context_window": "ge significantly during the 28 days of caloric restriction (P = 0.162). However, after the post- intervention phase, its percenta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4469",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4469,
+      "sentence": "However, after the post- intervention phase, its percental urine recovery was significantly increased (P < 0.001).",
+      "context_window": ", its percental urine recovery was significantly increased (P < 0.001). Lactulose, used as a surrogate to monitor tight junction",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4591",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4591,
+      "sentence": "Lactulose, used as a surrogate to monitor tight junction fitness significantly decreased during intervention (P = 0.01), while it relapsed afterwards (P < 0.01).",
+      "context_window": "nction fitness significantly decreased during intervention (P = 0.01), while it relapsed afterwards (P < 0.01). Also, sucralose,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4632",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4632,
+      "sentence": "Lactulose, used as a surrogate to monitor tight junction fitness significantly decreased during intervention (P = 0.01), while it relapsed afterwards (P < 0.01).",
+      "context_window": "ring intervention (P = 0.01), while it relapsed afterwards (P < 0.01). Also, sucralose, used as colonic permeability marker, sig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4734",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4734,
+      "sentence": "Also, sucralose, used as colonic permeability marker, significantly decreased during VLCD (P = 0.018) and increased again after caloric restriction (P = 0.019).",
+      "context_window": "c permeability marker, significantly decreased during VLCD (P = 0.018) and increased again after caloric restriction (P = 0.019).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-4792",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4792,
+      "sentence": "Also, sucralose, used as colonic permeability marker, significantly decreased during VLCD (P = 0.018) and increased again after caloric restriction (P = 0.019).",
+      "context_window": "(P = 0.018) and increased again after caloric restriction (P = 0.019). In addition to sugar translocation, we used PEGs translo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-5356",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5356,
+      "sentence": "All larger homologues of different chain lengths (PEG 25 , PEG 30 , PEG 35 , and PEG 40 ) significantly decreased after caloric restriction (P < 0.01 for each measurement), but remained stable during the subsequent two weeks.",
+      "context_window": "PEG 40 ) significantly decreased after caloric restriction (P < 0.01 for each measurement), but remained stable during the subse",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-5505",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5505,
+      "sentence": "Similarly, PEG 70 and PEG 80 significantly decreased during the 28 days of caloric restriction and remained stable thereafter (Table 2 ).",
+      "context_window": "larly, PEG 70 and PEG 80 significantly decreased during the 28 days of caloric restriction and remained stable thereafter (Tabl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-5761",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5761,
+      "sentence": "Plasma concentration at baseline declined significantly after the 4-week hypocaloric intervention (P < 0.01).",
+      "context_window": "ed significantly after the 4-week hypocaloric intervention (P < 0.01). After the subsequent two weeks, zonulin levels returned t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-5848",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5848,
+      "sentence": "After the subsequent two weeks, zonulin levels returned to baseline values (P < 0.01) (Table 2 ).",
+      "context_window": "uent two weeks, zonulin levels returned to baseline values (P < 0.01) (Table 2 ). In the whole study population, gene expressio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-6059",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6059,
+      "sentence": "In the whole study population, gene expression in subcutaneous adipose tissue was assessed by qPCR and showed a significant down-regulation of leptin after VLCD in comparison to baseline (P = 0.001).",
+      "context_window": "-regulation of leptin after VLCD in comparison to baseline (P = 0.001). In contrast, the expression of adiponectin, MCP-1, and cl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-6478",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6478,
+      "sentence": "1 )\n\n( a - d ) Boxplots based on cycle threshold values (CT) of adipose tissue biopsies from 18 participants before and after the 4-week caloric restriction. ( e ) For fat cell diameters, data of 8 participants were available. ***P < 0.001.",
+      "context_window": "t cell diameters, data of 8 participants were available. ***P < 0.001. From a subsample of participants, fat cell size from para",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-6672",
+      "claim_type": "mean_sd",
+      "raw_text": "70.5 \u00b1 7.7",
+      "numeric_values": [
+        70.5,
+        7.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6672,
+      "sentence": "Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P = 0.38).",
+      "context_window": "re and after VLCD (Fig. 1 ). Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after cal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-n-6687",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6687,
+      "sentence": "Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P = 0.38).",
+      "context_window": "CD (Fig. 1 ). Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-6711",
+      "claim_type": "mean_sd",
+      "raw_text": "67.3 \u00b1 7.1",
+      "numeric_values": [
+        67.3,
+        7.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6711,
+      "sentence": "Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P = 0.38).",
+      "context_window": "size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-n-6726",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6726,
+      "sentence": "Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P = 0.38).",
+      "context_window": "D was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-6790",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.38",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6790,
+      "sentence": "Adipocyte size before VLCD was 70.5 \u00b1 7.7 \u03bcm (n = 8) and decreased to 67.3 \u00b1 7.1 \u03bcm (n = 8) after caloric restriction without reaching significance (P = 0.38).",
+      "context_window": "8) after caloric restriction without reaching significance (P = 0.38). Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-6847",
+      "claim_type": "mean_sd",
+      "raw_text": "478 \u00b1 997",
+      "numeric_values": [
+        478.0,
+        997.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6847,
+      "sentence": "Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31).",
+      "context_window": "e (P = 0.38). Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-msd-6881",
+      "claim_type": "mean_sd",
+      "raw_text": "020 \u00b1 773",
+      "numeric_values": [
+        20.0,
+        773.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6881,
+      "sentence": "Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31).",
+      "context_window": "ce area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31). After quality- and chimera-check,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-n-6897",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6897,
+      "sentence": "Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31).",
+      "context_window": "LCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31). After quality- and chimera-check, a total of 8",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-6904",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6904,
+      "sentence": "Mean adipocyte surface area before VLCD was 4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31).",
+      "context_window": "4,478 \u00b1 997 \u03bcm 2 and decreased to 4,020 \u00b1 773 \u03bcm 2 (n = 8, P = 0.31). After quality- and chimera-check, a total of 815,773 seq",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-8057",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8057,
+      "sentence": "OTU 8 ( Anaerostipes hadrus , 100% sequence identity) and OTU 10 ( Blautia sp ., several hits > 97% sequence identity) showed higher relative abundance after VLCD and returned to baseline values after two weeks.",
+      "context_window": "ithin the phylum Firmicutes . OTU 8 ( Anaerostipes hadrus , 100% sequence identity) and OTU 10 ( Blautia sp ., several hits",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-8123",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8123,
+      "sentence": "OTU 8 ( Anaerostipes hadrus , 100% sequence identity) and OTU 10 ( Blautia sp ., several hits > 97% sequence identity) showed higher relative abundance after VLCD and returned to baseline values after two weeks.",
+      "context_window": "equence identity) and OTU 10 ( Blautia sp ., several hits > 97% sequence identity) showed higher relative abundance after V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-8294",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8294,
+      "sentence": "Relative abundances of OTU 1 ( Agathobacter rectalis , 100% sequence identity) decreased after caloric restriction and throughout the end of the study.",
+      "context_window": "eks. Relative abundances of OTU 1 ( Agathobacter rectalis , 100% sequence identity) decreased after caloric restriction and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-8552",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8552,
+      "sentence": "Two additional OTUs outside the Lachnospiraceae were characterised by intervention-related increase in their relative abundances: OTU 18 ( Ruminococcus faecis , 100% sequence identity) within the Ruminococcaceae and OTU 3 ( Bifidodbacterium sp ., several hits > 97% sequence identity) within the family Bifidobacteriaceae .",
+      "context_window": "n their relative abundances: OTU 18 ( Ruminococcus faecis , 100% sequence identity) within the Ruminococcaceae and OTU 3 ( B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-8653",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8653,
+      "sentence": "Two additional OTUs outside the Lachnospiraceae were characterised by intervention-related increase in their relative abundances: OTU 18 ( Ruminococcus faecis , 100% sequence identity) within the Ruminococcaceae and OTU 3 ( Bifidodbacterium sp ., several hits > 97% sequence identity) within the family Bifidobacteriaceae .",
+      "context_window": "coccaceae and OTU 3 ( Bifidodbacterium sp ., several hits > 97% sequence identity) within the family Bifidobacteriaceae .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-9270",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9270,
+      "sentence": "Fecal microbiota analysis by 16 S rRNA gene amplicon analysis. ( a ) Diversity within samples ( alpha -diversity) was estimated by species richness and Shannon-effective counts. ( b ) meta nonparametric multidimensional scaling plot of phylogenetic distances based on generalized UniFrac ( beta -diversity). ( c ) Occurrence of members of the phylum Proteobacteria and the family Enterobacteriaceae , including significance before and after Benjamini-Hochberg adjustment. ( d ) Relative abundances of five dominant OTUs showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "context_window": "ces of five dominant OTUs showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-9283",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9283,
+      "sentence": "Fecal microbiota analysis by 16 S rRNA gene amplicon analysis. ( a ) Diversity within samples ( alpha -diversity) was estimated by species richness and Shannon-effective counts. ( b ) meta nonparametric multidimensional scaling plot of phylogenetic distances based on generalized UniFrac ( beta -diversity). ( c ) Occurrence of members of the phylum Proteobacteria and the family Enterobacteriaceae , including significance before and after Benjamini-Hochberg adjustment. ( d ) Relative abundances of five dominant OTUs showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "context_window": "ominant OTUs showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-p-9294",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.5",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9294,
+      "sentence": "Fecal microbiota analysis by 16 S rRNA gene amplicon analysis. ( a ) Diversity within samples ( alpha -diversity) was estimated by species richness and Shannon-effective counts. ( b ) meta nonparametric multidimensional scaling plot of phylogenetic distances based on generalized UniFrac ( beta -diversity). ( c ) Occurrence of members of the phylum Proteobacteria and the family Enterobacteriaceae , including significance before and after Benjamini-Hochberg adjustment. ( d ) Relative abundances of five dominant OTUs showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "context_window": "s showing significance overtime. ***P < 0.001; **P < 0.01; *P < 0.5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-3168",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3168,
+      "sentence": "One explanation could be that a mean weight loss of 7% is too small for a larger effect on obesity-related inflammation markers 30 .",
+      "context_window": "hanged. One explanation could be that a mean weight loss of 7% is too small for a larger effect on obesity-related inflamm",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-3656",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3656,
+      "sentence": "Verhoef et al . showed that a 10% weight loss mediated a significant decline in adipocyte size 31 .",
+      "context_window": "e of the mean adipocyte size. Verhoef et al . showed that a 10% weight loss mediated a significant decline in adipocyte siz",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-4370",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 4370,
+      "sentence": "Relative abundances of the species Anaerostipes hadrus were increased by approximately two-fold after 28 days of caloric restriction and returned to baseline values after intervention.",
+      "context_window": "tipes hadrus were increased by approximately two-fold after 28 days of caloric restriction and returned to baseline values afte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-4872",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4872,
+      "sentence": "7 to 4% after caloric restriction.",
+      "context_window": "ecies, Agathobacter rectalis , were decreased from ca. 7 to 4% after caloric restriction. Additional studies including tar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-5379",
+      "claim_type": "unit_value",
+      "raw_text": "9 kg",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5379,
+      "sentence": "Santacruz et al . also showed an increase in qPCR counts of Bifidobacterium spp . after weight loss (-6,9 kg) in obese adolescents following 10 weeks of caloric restriction 41 .",
+      "context_window": "qPCR counts of Bifidobacterium spp . after weight loss (-6,9 kg) in obese adolescents following 10 weeks of caloric restric",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-5416",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5416,
+      "sentence": "Santacruz et al . also showed an increase in qPCR counts of Bifidobacterium spp . after weight loss (-6,9 kg) in obese adolescents following 10 weeks of caloric restriction 41 .",
+      "context_window": "after weight loss (-6,9 kg) in obese adolescents following 10 weeks of caloric restriction 41 . The strength of our study is t",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-7117",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7117,
+      "sentence": "Twenty female participants with a BMI \u2265 30 kg/m\u00b2 were recruited in October 2013 via advertisements in the area of Munich, Germany.",
+      "context_window": "s 11 th June 2014. Twenty female participants with a BMI \u2265 30 kg/m\u00b2 were recruited in October 2013 via advertisements in the",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-7355",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 7355,
+      "sentence": "Exclusion criteria were: BMI < 30 kg/m\u00b2, male, smoking, acute infections, severe diseases (e.g. cancer), treatment with oral anticoagulants or other antithrombotic medication, intestinal surgery in the last three months, autonomous neuropathy, or inflammatory intestinal diseases.",
+      "context_window": "uding their medical history. Exclusion criteria were: BMI < 30 kg/m\u00b2, male, smoking, acute infections, severe diseases (e.g.",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-7964",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 7964,
+      "sentence": "Then, participants underwent a caloric restriction using a defined formula diet of 800 kcal/day for 28 days.",
+      "context_window": "estriction using a defined formula diet of 800 kcal/day for 28 days. Finally, during the two weeks following intervention, part",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-8458",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 8458,
+      "sentence": "Magnetic resonance imaging (MRI) of subcutaneous and visceral fat depots and a needle aspiration of periumbilical subcutaneous adipose tissue was carried out before and after the 4 weeks of hypocaloric intervention.",
+      "context_window": "taneous adipose tissue was carried out before and after the 4 weeks of hypocaloric intervention. Study design. The scheme give",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-11951",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 11951,
+      "sentence": "Participants received 100 ml of a PEG test solution containing 1 mg of molecular mass (M r) 400 (PEG 6 -PEG 13 ; mass range: 285-678 Da), 200 mg of M r 1500 (PEG 20 -PEG 45 ; mass range: 899-2,000 Da), 4 g of Mr 3000 (PEG 51 -PEG 90 ; mass range: 2,264-3,982 Da), and 4 g of Mr 4000 (PEG 75 -PEG 115 : mass range: 3,322-5,084 Da) (Merck Darmstadt, Germany).",
+      "context_window": "ticipants received 100 ml of a PEG test solution containing 1 mg of molecular mass (M r) 400 (PEG 6 -PEG 13 ; mass range: 28",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-u-12026",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 12026,
+      "sentence": "Participants received 100 ml of a PEG test solution containing 1 mg of molecular mass (M r) 400 (PEG 6 -PEG 13 ; mass range: 285-678 Da), 200 mg of M r 1500 (PEG 20 -PEG 45 ; mass range: 899-2,000 Da), 4 g of Mr 3000 (PEG 51 -PEG 90 ; mass range: 2,264-3,982 Da), and 4 g of Mr 4000 (PEG 75 -PEG 115 : mass range: 3,322-5,084 Da) (Merck Darmstadt, Germany).",
+      "context_window": "ar mass (M r) 400 (PEG 6 -PEG 13 ; mass range: 285-678 Da), 200 mg of M r 1500 (PEG 20 -PEG 45 ; mass range: 899-2,000 Da), 4",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-12820",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12820,
+      "sentence": "After washing in Krebs-Ringer-buffer, fat tissue was aliquoted into tubes containing sterilised zirkonia-glas-beads (Carl Roth, Karlsruhe, Germany), RLT-buffer (RNeasy Mini Kit, Qiagen, Hilden, Germany) and 1% (v/v) \u00df-mercaptoethanol (#M3148, Sigma-Aldrich, St.",
+      "context_window": ", RLT-buffer (RNeasy Mini Kit, Qiagen, Hilden, Germany) and 1% (v/v) \u00df-mercaptoethanol (#M3148, Sigma-Aldrich, St. Louis,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-12991",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12991,
+      "sentence": "For fat histology, fat tissue was fixed in 4% buffered formalin (pH 7.4) for 24 h and finally embedded in paraffin and stored at room temperature until analysis.",
+      "context_window": "tored at -80 \u00b0C. For fat histology, fat tissue was fixed in 4% buffered formalin (pH 7.4) for 24 h and finally embedded in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-15298",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 15298,
+      "sentence": "After purification (AMPure XP system, Beckmann Coulter Biomedical GmbH) and pooling in an equimolar amount, the 16 S rRNA gene amplicons were sequenced in paired-end modus (PE275) using a MiSeq system (Illumina, Inc., San Diego, California, USA) following the manufacturer\u2019s instructions and a final DNA concentration of 10 pM and 15% (v/v) PhiX standard library.",
+      "context_window": "r\u2019s instructions and a final DNA concentration of 10 pM and 15% (v/v) PhiX standard library. Raw read files were processed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-15520",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 15520,
+      "sentence": "Sequences were tested for the presence of chimeras using UCHIME 52 and OTUs were clustered at a threshold of 97% sequence similarity.",
+      "context_window": "s using UCHIME 52 and OTUs were clustered at a threshold of 97% sequence similarity. To avoid analysis of spurious OTUs, on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-15620",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 15620,
+      "sentence": "To avoid analysis of spurious OTUs, only those with a relative abundance > 0.5% total sequences in at least one sample were kept.",
+      "context_window": "is of spurious OTUs, only those with a relative abundance > 0.5% total sequences in at least one sample were kept. SILVA (SI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati-pct-15755",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 15755,
+      "sentence": "SILVA (SILVA Incremental Aligner version 1.2.11) 53 and RDP classifier (set 15; 80% confidence) 54 were used to assign taxonomic classification to the OTUs representative sequences.",
+      "context_window": "ntal Aligner version 1.2.11) 53 and RDP classifier (set 15; 80% confidence) 54 were used to assign taxonomic classification",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

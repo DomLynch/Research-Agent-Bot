@@ -1,0 +1,1150 @@
+{
+  "paper_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o",
+  "doi": "10.1038/s41598-017-12661-4",
+  "extracted_at": "2026-05-05T22:17:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 24,
+    "mean_sd": 10,
+    "sample_size": 2,
+    "p_value": 6,
+    "unit_value": 12,
+    "confidence_interval": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-428",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 428,
+      "sentence": "30% of total mortality of copepods at a global scale is not from predation 4 - 6 .",
+      "context_window": "that, although most copepods are presumed to be eaten, ca. 30% of total mortality of copepods at a global scale is not fro",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-603",
+      "claim_type": "mean_sd",
+      "raw_text": "345 \u00b1 1.3",
+      "numeric_values": [
+        345.0,
+        1.3
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 603,
+      "sentence": "Adult male and female O. davisae are similarly sized, although males are slightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015).",
+      "context_window": "lightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly dif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-n-617",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 617,
+      "sentence": "Adult male and female O. davisae are similarly sized, although males are slightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015).",
+      "context_window": "r (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-633",
+      "claim_type": "mean_sd",
+      "raw_text": "350 \u00b1 1.6",
+      "numeric_values": [
+        350.0,
+        1.6
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 633,
+      "sentence": "Adult male and female O. davisae are similarly sized, although males are slightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015).",
+      "context_window": "length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-n-647",
+      "claim_type": "sample_size",
+      "raw_text": "n = 39",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 647,
+      "sentence": "Adult male and female O. davisae are similarly sized, although males are slightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015).",
+      "context_window": "\u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015). Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-699",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 699,
+      "sentence": "Adult male and female O. davisae are similarly sized, although males are slightly smaller (cephalothorax length, mean \u00b1 s.e.m.; male: 345 \u00b1 1.3 \u00b5m, n = 31; female: 350 \u00b1 1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015).",
+      "context_window": "1.6 \u00b5m, n = 39; significantly different, two-tailed t-test, P = 0.015). The dinoflagellate Ox. marina and the cryptophyte R. sali",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-2040",
+      "claim_type": "unit_value",
+      "raw_text": "10 mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2040,
+      "sentence": "The cohort was then checked daily, and when newly moulted adult males and newly moulted females were recognizable in the culture, groups of either two adult males or two adult ovigerous females were pipetted using the stereomicroscope into the wells of multi-well plates filled with 10 mL of one of the experimental diets.",
+      "context_window": "omicroscope into the wells of multi-well plates filled with 10 mL of one of the experimental diets. Males and females were no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-2993",
+      "claim_type": "unit_value",
+      "raw_text": "8 mL",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2993,
+      "sentence": "8 mL, replacing those with fresh Ox. marina suspension.",
+      "context_window": "13 . We gently mixed the well contents and pipetted out ca. 8 mL, replacing those with fresh Ox. marina suspension. During t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-7527",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7527,
+      "sentence": "Age 0 of adult O. davisae was defined as when the survival monitoring was initiated; in this case males and females in the cohort had moulted into adulthood over the weekend (not monitored), therefore, they were actually up to 2 days old when the survival experiment started.",
+      "context_window": "eekend (not monitored), therefore, they were actually up to 2 days old when the survival experiment started. Hatched nauplii w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-274",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13-14",
+      "numeric_values": [
+        13.0,
+        14.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 274,
+      "sentence": "Overall, males of O. davisae lived much shorter lives than females, with median survival times of 13 (95% CI: 13-14) and 14 (95% CI: 13-14) days when exposed to low and high food availability, respectively (Fig.",
+      "context_window": "orter lives than females, with median survival times of 13 (95% CI: 13-14) and 14 (95% CI: 13-14) days when exposed to low and high f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-297",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 13-14",
+      "numeric_values": [
+        13.0,
+        14.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 297,
+      "sentence": "Overall, males of O. davisae lived much shorter lives than females, with median survival times of 13 (95% CI: 13-14) and 14 (95% CI: 13-14) days when exposed to low and high food availability, respectively (Fig.",
+      "context_window": "s, with median survival times of 13 (95% CI: 13-14) and 14 (95% CI: 13-14) days when exposed to low and high food availability, respe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-485",
+      "claim_type": "mean_sd",
+      "raw_text": "13.6 \u00b1 0.28",
+      "numeric_values": [
+        13.6,
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 485,
+      "sentence": "Mean life expectancies (\u00b1s.e.m.) of males at low and high food availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days.",
+      "context_window": "males at low and high food availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days. No significant differences were found",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-501",
+      "claim_type": "mean_sd",
+      "raw_text": "14.2 \u00b1 0.28",
+      "numeric_values": [
+        14.2,
+        0.28
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 501,
+      "sentence": "Mean life expectancies (\u00b1s.e.m.) of males at low and high food availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days.",
+      "context_window": "high food availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days. No significant differences were found in the survival",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-508",
+      "claim_type": "unit_value",
+      "raw_text": "0.28 days",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 508,
+      "sentence": "Mean life expectancies (\u00b1s.e.m.) of males at low and high food availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days.",
+      "context_window": "ood availability were, respectively, 13.6 \u00b1 0.28 and 14.2 \u00b1 0.28 days. No significant differences were found in the survival curv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-693",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.084",
+      "numeric_values": [
+        0.084
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 693,
+      "sentence": "1 ; Log-rank (Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, p = 0.084 and p = 0.245, respectively).",
+      "context_window": "1 ; Log-rank (Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, p = 0.084 and p = 0.245, respectively). Figure 1 Survival in the calo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-707",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.245",
+      "numeric_values": [
+        0.245
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 707,
+      "sentence": "1 ; Log-rank (Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, p = 0.084 and p = 0.245, respectively).",
+      "context_window": "Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, p = 0.084 and p = 0.245, respectively). Figure 1 Survival in the caloric restrictio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-984",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 984,
+      "sentence": "Error bars are \u00b195% confidence interval.",
+      "context_window": "ctively, caloric restriction and satiation. Error bars are \u00b195% confidence interval. Dotted line illustrates the 50% of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-1037",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1037,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "s are \u00b195% confidence interval. Dotted line illustrates the 50% of the population. Survival in the caloric restriction exp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-1303",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "Error bars are \u00b195% confidence interval.",
+      "context_window": "ctively, caloric restriction and satiation. Error bars are \u00b195% confidence interval. Dotted line illustrates the 50% of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-1356",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1356,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "s are \u00b195% confidence interval. Dotted line illustrates the 50% of the population. For adult females, we found median surv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-1437",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 31-35",
+      "numeric_values": [
+        31.0,
+        35.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1437,
+      "sentence": "For adult females, we found median survival times of 32 (95% CI: 31-35) and 24 (95% CI: 17-31) days for the copepods exposed to low and high food availability, respectively (Fig.",
+      "context_window": ". For adult females, we found median survival times of 32 (95% CI: 31-35) and 24 (95% CI: 17-31) days for the copepods exposed to lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-1460",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 17-31",
+      "numeric_values": [
+        17.0,
+        31.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1460,
+      "sentence": "For adult females, we found median survival times of 32 (95% CI: 31-35) and 24 (95% CI: 17-31) days for the copepods exposed to low and high food availability, respectively (Fig.",
+      "context_window": "e found median survival times of 32 (95% CI: 31-35) and 24 (95% CI: 17-31) days for the copepods exposed to low and high food availab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-1602",
+      "claim_type": "mean_sd",
+      "raw_text": "32.5 \u00b1 1.44",
+      "numeric_values": [
+        32.5,
+        1.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1602,
+      "sentence": "1 ); mean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively.",
+      "context_window": "spectively (Fig. 1 ); mean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively. The Gehan-Breslow-Wilco",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-1618",
+      "claim_type": "mean_sd",
+      "raw_text": "27.6 \u00b1 1.59",
+      "numeric_values": [
+        27.6,
+        1.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1618,
+      "sentence": "1 ); mean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively.",
+      "context_window": "1 ); mean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively. The Gehan-Breslow-Wilcoxon test showed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-1625",
+      "claim_type": "unit_value",
+      "raw_text": "1.59 days",
+      "numeric_values": [
+        1.59
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1625,
+      "sentence": "1 ); mean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively.",
+      "context_window": "ean life expectancies (\u00b1s.e.m.) were 32.5 \u00b1 1.44 and 27.6 \u00b1 1.59 days, respectively. The Gehan-Breslow-Wilcoxon test showed the d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-1763",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1763,
+      "sentence": "The Gehan-Breslow-Wilcoxon test showed the differences in female survival curves were statistically significant (p = 0.012), but the probability estimated by the Log-rang (Mantel-Cox) test was higher (p = 0.114).",
+      "context_window": "s in female survival curves were statistically significant (p = 0.012), but the probability estimated by the Log-rang (Mantel-Cox",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-1851",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.114",
+      "numeric_values": [
+        0.114
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1851,
+      "sentence": "The Gehan-Breslow-Wilcoxon test showed the differences in female survival curves were statistically significant (p = 0.012), but the probability estimated by the Log-rang (Mantel-Cox) test was higher (p = 0.114).",
+      "context_window": "ity estimated by the Log-rang (Mantel-Cox) test was higher (p = 0.114). This latter test gives more weight to a few extreme exten",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-2186",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2186,
+      "sentence": "This latter test gives more weight to a few extreme extensions of the life span; the Gehan-Breslow-Wilcoxon test gives more weight to deaths at early time points and, therefore, was more sensitive to the evident differences in the survival curve from our experiment (differences more apparent at female ages between 15 and 30 days, Fig.",
+      "context_window": "nt (differences more apparent at female ages between 15 and 30 days, Fig. 1 ). The Nelson-Aalen cumulative hazard (mortality)",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-2784",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2784,
+      "sentence": "15 and 30 days (notice that 95% confidence intervals do not overlap; Fig.",
+      "context_window": "ns than the low ones in the age interval between ca. 15 and 30 days (notice that 95% confidence intervals do not overlap; Fig.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-2805",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2805,
+      "sentence": "15 and 30 days (notice that 95% confidence intervals do not overlap; Fig.",
+      "context_window": "in the age interval between ca. 15 and 30 days (notice that 95% confidence intervals do not overlap; Fig. 2 ). Figure 2 Mor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-3203",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3203,
+      "sentence": "Error bars are \u00b195% confidence interval.",
+      "context_window": "of the hazard rates between days 10 and 30. Error bars are \u00b195% confidence interval. Mortality in the caloric restriction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-3567",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3567,
+      "sentence": "Error bars are \u00b195% confidence interval.",
+      "context_window": "of the hazard rates between days 10 and 30. Error bars are \u00b195% confidence interval. The percentage of ovigerous females (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-3765",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3765,
+      "sentence": "The percentage of ovigerous females (i.e. carrying either 1 or 2 egg sacs) declined with age, and it dropped faster in the high food treatment, as measured by threshold at 50% of females ovigerous (Fig.",
+      "context_window": "ter in the high food treatment, as measured by threshold at 50% of females ovigerous (Fig. 3a ). This threshold was reached",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-4850",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4850,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "oric restriction and satiation. Dotted line illustrates the 50% of the population. Reproductive status of O. davisae femal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-5404",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5404,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "oric restriction and satiation. Dotted line illustrates the 50% of the population. The changes in the clutch size of O. da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-6214",
+      "claim_type": "mean_sd",
+      "raw_text": "2.6 \u00b1 0.57",
+      "numeric_values": [
+        2.6,
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6214,
+      "sentence": "The mean (\u00b1s.e.m.) daily fecundities during the first week, respectively 2.6 \u00b1 0.57 and 6.3 \u00b1 0.68 nauplii female -1 d -1 in the low and high food treatments, agree with the values reported for O. davisae at similarly food-restricted and satiating concentrations 27 .",
+      "context_window": "e.m.) daily fecundities during the first week, respectively 2.6 \u00b1 0.57 and 6.3 \u00b1 0.68 nauplii female -1 d -1 in the low and high f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-6229",
+      "claim_type": "mean_sd",
+      "raw_text": "6.3 \u00b1 0.68",
+      "numeric_values": [
+        6.3,
+        0.68
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6229,
+      "sentence": "The mean (\u00b1s.e.m.) daily fecundities during the first week, respectively 2.6 \u00b1 0.57 and 6.3 \u00b1 0.68 nauplii female -1 d -1 in the low and high food treatments, agree with the values reported for O. davisae at similarly food-restricted and satiating concentrations 27 .",
+      "context_window": "undities during the first week, respectively 2.6 \u00b1 0.57 and 6.3 \u00b1 0.68 nauplii female -1 d -1 in the low and high food treatments,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-7653",
+      "claim_type": "unit_value",
+      "raw_text": "32 days",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7653,
+      "sentence": "Throughout their life span O. davisae females can produce averages of 59 and 109 nauplii at low and high food concentration, respectively; most of these nauplii (respectively 50 and 98 nauplii) were produced during the age intervals up to the median survival times (low food: 32 days; high food: 24 days).",
+      "context_window": "he age intervals up to the median survival times (low food: 32 days; high food: 24 days). Figure 4b shows the time courses of n",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-7673",
+      "claim_type": "unit_value",
+      "raw_text": "24 days",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7673,
+      "sentence": "Throughout their life span O. davisae females can produce averages of 59 and 109 nauplii at low and high food concentration, respectively; most of these nauplii (respectively 50 and 98 nauplii) were produced during the age intervals up to the median survival times (low food: 32 days; high food: 24 days).",
+      "context_window": "to the median survival times (low food: 32 days; high food: 24 days). Figure 4b shows the time courses of nauplius recruitment",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-p-8599",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8599,
+      "sentence": "5a ; Log-rank (Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, both p < 0.001).",
+      "context_window": "og-rank (Mantel-Cox) and Gehan-Breslow-Wilcoxon tests, both p < 0.001). The drop in survival was abrupt for both sexes. Median su",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-8727",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 7-8",
+      "numeric_values": [
+        7.0,
+        8.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8727,
+      "sentence": "Median survival time of males incubated in filtered seawater was 8 (95% CI: 7-8) days, whereas for females it was 15 (95% CI: 14-16) days.",
+      "context_window": "urvival time of males incubated in filtered seawater was 8 (95% CI: 7-8) days, whereas for females it was 15 (95% CI: 14-16) days.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-8777",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 14-16",
+      "numeric_values": [
+        14.0,
+        16.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8777,
+      "sentence": "Median survival time of males incubated in filtered seawater was 8 (95% CI: 7-8) days, whereas for females it was 15 (95% CI: 14-16) days.",
+      "context_window": "er was 8 (95% CI: 7-8) days, whereas for females it was 15 (95% CI: 14-16) days. The mean life expectancies (\u00b1s.e.m.) of starving mal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-8894",
+      "claim_type": "mean_sd",
+      "raw_text": "8.0 \u00b1 0.27",
+      "numeric_values": [
+        8.0,
+        0.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8894,
+      "sentence": "The mean life expectancies (\u00b1s.e.m.) of starving male and female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults).",
+      "context_window": "of starving male and female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults). Figure 5 Tolerance of O.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-msd-8909",
+      "claim_type": "mean_sd",
+      "raw_text": "15.3 \u00b1 0.46",
+      "numeric_values": [
+        15.3,
+        0.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8909,
+      "sentence": "The mean life expectancies (\u00b1s.e.m.) of starving male and female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults).",
+      "context_window": "le and female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults). Figure 5 Tolerance of O. davisae to starv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-8916",
+      "claim_type": "unit_value",
+      "raw_text": "0.46 days",
+      "numeric_values": [
+        0.46
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 8916,
+      "sentence": "The mean life expectancies (\u00b1s.e.m.) of starving male and female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults).",
+      "context_window": "female O. davisae were, respectively, 8.0 \u00b1 0.27 and 15.3 \u00b1 0.46 days (as adults). Figure 5 Tolerance of O. davisae to starvation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-9307",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9307,
+      "sentence": "Error bars are \u00b1 95% confidence interval.",
+      "context_window": "s with respect to total female population. Error bars are \u00b1 95% confidence interval. Dotted line illustrates the 50% of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-9360",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9360,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "are \u00b1 95% confidence interval. Dotted line illustrates the 50% of the population. Tolerance of O. davisae to starvation.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-9743",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9743,
+      "sentence": "Error bars are \u00b1 95% confidence interval.",
+      "context_window": "s with respect to total female population. Error bars are \u00b1 95% confidence interval. Dotted line illustrates the 50% of the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-9796",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9796,
+      "sentence": "Dotted line illustrates the 50% of the population.",
+      "context_window": "are \u00b1 95% confidence interval. Dotted line illustrates the 50% of the population. We also quantified the production of eg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-10263",
+      "claim_type": "percentage",
+      "raw_text": "84%",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10263,
+      "sentence": "84%; Fig.",
+      "context_window": "lready reduced to about half of the initial percentage (ca. 84%; Fig. 5b ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-1189",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1189,
+      "sentence": "50%) in comparison with females.",
+      "context_window": "increase in mortality, resulting in shorter lifespans (ca. 50%) in comparison with females. The shorter lifespan of males",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-2594",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2594,
+      "sentence": "However, maximum weight-specific ingestion rates of males are similar to those displayed by the females (both at 70-80% d -1 ) 27 , 33 , suggesting that metabolism might be unsupported by nutrition and that exhaustion of body reserves underlies their earlier deaths.",
+      "context_window": "s are similar to those displayed by the females (both at 70-80% d -1 ) 27 , 33 , suggesting that metabolism might be unsupp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-6141",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6141,
+      "sentence": "50% that of the female), despite them being of relatively similar sizes, suggests much higher rates of metabolic expenditure and consequent oxidative damage.",
+      "context_window": "shorter lifespans of O. davisae males under starvation (ca. 50% that of the female), despite them being of relatively simil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-6469",
+      "claim_type": "percentage",
+      "raw_text": "59%",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6469,
+      "sentence": "59% of the mean life expectancy of males with food (13.6 and 14.2 days at low and high food availability, respectively) could be supported by just their body reserves in the absence of feeding (mean life expectancy under starvation: 8 days).",
+      "context_window": "es with food available is comparatively short. In fact, ca. 59% of the mean life expectancy of males with food (13.6 and 14",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-6530",
+      "claim_type": "unit_value",
+      "raw_text": "14.2 days",
+      "numeric_values": [
+        14.2
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6530,
+      "sentence": "59% of the mean life expectancy of males with food (13.6 and 14.2 days at low and high food availability, respectively) could be supported by just their body reserves in the absence of feeding (mean life expectancy under starvation: 8 days).",
+      "context_window": "9% of the mean life expectancy of males with food (13.6 and 14.2 days at low and high food availability, respectively) could be s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-u-6702",
+      "claim_type": "unit_value",
+      "raw_text": "8 days",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 6702,
+      "sentence": "59% of the mean life expectancy of males with food (13.6 and 14.2 days at low and high food availability, respectively) could be supported by just their body reserves in the absence of feeding (mean life expectancy under starvation: 8 days).",
+      "context_window": "absence of feeding (mean life expectancy under starvation: 8 days). Contrarily to females, there was no substantial differenc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-7772",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7772,
+      "sentence": "For instance, one week after the mean life expectancy, 50% of the remaining females were still reproducing.",
+      "context_window": "pan. For instance, one week after the mean life expectancy, 50% of the remaining females were still reproducing. Compared t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-8555",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 17-31",
+      "numeric_values": [
+        17.0,
+        31.0
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 8555,
+      "sentence": "The median survival times observed here for Oithona davisae at satiation (median: 24 d; 95% CI: 17-31) are not sensibly different from those reported for P. grani at similar conditions (median: 16 d; 95% CI: 12-30) 13 .",
+      "context_window": "served here for Oithona davisae at satiation (median: 24 d; 95% CI: 17-31) are not sensibly different from those reported for P. gran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-ci-8667",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 12-30",
+      "numeric_values": [
+        12.0,
+        30.0
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 8667,
+      "sentence": "The median survival times observed here for Oithona davisae at satiation (median: 24 d; 95% CI: 17-31) are not sensibly different from those reported for P. grani at similar conditions (median: 16 d; 95% CI: 12-30) 13 .",
+      "context_window": "reported for P. grani at similar conditions (median: 16 d; 95% CI: 12-30) 13 . However, compared to female P. grani 13 , the respons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-10503",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10503,
+      "sentence": "Maximum weight-specific egg production rates of O. davisae at 18-20 \u00b0C are on the order of 12-20% d -1 27 , 46 , whereas the rates reported for P. grani at similar temperatures are ca.",
+      "context_window": "tion rates of O. davisae at 18-20 \u00b0C are on the order of 12-20% d -1 27 , 46 , whereas the rates reported for P. grani at s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-10597",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10597,
+      "sentence": "45-63% d -1 47 , 48 .",
+      "context_window": "es reported for P. grani at similar temperatures are ca. 45-63% d -1 47 , 48 . Moreover, at 19 \u00b0C a single P. grani female",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o-pct-13140",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 13140,
+      "sentence": "33% increase in median survival times) and the reproductive period of Oithona davisae females (Figs 3 and 4 ) until the next favourable season.",
+      "context_window": "eriod will also contribute to extend both the lifespan (ca. 33% increase in median survival times) and the reproductive per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

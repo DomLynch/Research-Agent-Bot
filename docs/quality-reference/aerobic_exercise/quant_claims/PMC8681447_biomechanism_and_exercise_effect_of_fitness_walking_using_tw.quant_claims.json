@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMC8681447_biomechanism_and_exercise_effect_of_fitness_walking_using_tw",
+  "doi": "10.1093/geroni/igab046.3244",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8681447_biomechanism_and_exercise_effect_of_fitness_walking_using_tw-p-1092",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1092,
+      "sentence": "The gait of WS increased the step length, step width, and walking ratio as compared with that of WN (p<0.05).",
+      "context_window": "step width, and walking ratio as compared with that of WN (p<0.05). WS likely reduce cadence and one-leg support time (p<0.05",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8681447_biomechanism_and_exercise_effect_of_fitness_walking_using_tw-p-1152",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "WS likely reduce cadence and one-leg support time (p<0.05).",
+      "context_window": "p<0.05). WS likely reduce cadence and one-leg support time (p<0.05). The CG locus in the left-right direction showed no signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8681447_biomechanism_and_exercise_effect_of_fitness_walking_using_tw-p-1331",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1331,
+      "sentence": "The maximum value of the CG locus in the vertical direction was high in WS (p<0.05).",
+      "context_window": "e of the CG locus in the vertical direction was high in WS (p<0.05). WS can be used as a navigation training tool that improve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

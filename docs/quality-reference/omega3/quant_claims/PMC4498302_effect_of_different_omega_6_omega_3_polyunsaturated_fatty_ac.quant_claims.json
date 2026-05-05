@@ -1,0 +1,459 @@
+{
+  "paper_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac",
+  "doi": "10.3390/biology4020314",
+  "extracted_at": "2026-05-05T21:47:05+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 15,
+    "p_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-830",
+      "claim_type": "mean_sd",
+      "raw_text": "950.6 \u00b1 110",
+      "numeric_values": [
+        950.6,
+        110.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 830,
+      "sentence": "The concentration of AA-derived hydroxyeicosatetraenoic acids (HETEs) was not significantly changed when incubated THP-1 macrophages in a high AA/(EPA+DHA) ratio of 19/1 vs. a low ratio AA/(EPA+DHA) of 1/1 (950.6 \u00b1 110 ng/mg vs.",
+      "context_window": "EPA+DHA) ratio of 19/1 vs. a low ratio AA/(EPA+DHA) of 1/1 (950.6 \u00b1 110 ng/mg vs. 648.2 \u00b1 92.4 ng/mg, p = 0.103). Correspondingly,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-852",
+      "claim_type": "mean_sd",
+      "raw_text": "648.2 \u00b1 92.4",
+      "numeric_values": [
+        648.2,
+        92.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 852,
+      "sentence": "648.2 \u00b1 92.4 ng/mg, p = 0.103).",
+      "context_window": "vs. a low ratio AA/(EPA+DHA) of 1/1 (950.6 \u00b1 110 ng/mg vs. 648.2 \u00b1 92.4 ng/mg, p = 0.103). Correspondingly, the concentration of EP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-872",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.103",
+      "numeric_values": [
+        0.103
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 872,
+      "sentence": "648.2 \u00b1 92.4 ng/mg, p = 0.103).",
+      "context_window": "(EPA+DHA) of 1/1 (950.6 \u00b1 110 ng/mg vs. 648.2 \u00b1 92.4 ng/mg, p = 0.103). Correspondingly, the concentration of EPA-derived hydroxy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-1055",
+      "claim_type": "mean_sd",
+      "raw_text": "63.9 \u00b1 7.8",
+      "numeric_values": [
+        63.9,
+        7.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1055,
+      "sentence": "Correspondingly, the concentration of EPA-derived hydroxyeicosapentaenoic acids (HEPEs) and DHA-derived hydroxydocosahexaenoic acids (HDHAs) were significantly increased (63.9 \u00b1 7.8 ng/mg vs.",
+      "context_window": "docosahexaenoic acids (HDHAs) were significantly increased (63.9 \u00b1 7.8 ng/mg vs. 434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-1076",
+      "claim_type": "mean_sd",
+      "raw_text": "434.4 \u00b1 84.3",
+      "numeric_values": [
+        434.4,
+        84.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1076,
+      "sentence": "434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs.",
+      "context_window": "(HDHAs) were significantly increased (63.9 \u00b1 7.8 ng/mg vs. 434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs. 439.4 \u00b1 82.7 ng/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-1096",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1096,
+      "sentence": "434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs.",
+      "context_window": "icantly increased (63.9 \u00b1 7.8 ng/mg vs. 434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs. 439.4 \u00b1 82.7 ng/mg, p = 0.014, re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-1110",
+      "claim_type": "mean_sd",
+      "raw_text": "84.9 \u00b1 18.3",
+      "numeric_values": [
+        84.9,
+        18.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1110,
+      "sentence": "434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs.",
+      "context_window": "sed (63.9 \u00b1 7.8 ng/mg vs. 434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs. 439.4 \u00b1 82.7 ng/mg, p = 0.014, respectively). Mos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-1132",
+      "claim_type": "mean_sd",
+      "raw_text": "439.4 \u00b1 82.7",
+      "numeric_values": [
+        439.4,
+        82.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1132,
+      "sentence": "439.4 \u00b1 82.7 ng/mg, p = 0.014, respectively).",
+      "context_window": "vs. 434.4 \u00b1 84.3 ng/mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs. 439.4 \u00b1 82.7 ng/mg, p = 0.014, respectively). Most notable was the stron",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-1152",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1152,
+      "sentence": "439.4 \u00b1 82.7 ng/mg, p = 0.014, respectively).",
+      "context_window": "mg, p = 0.012 and 84.9 \u00b1 18.3 ng/mg vs. 439.4 \u00b1 82.7 ng/mg, p = 0.014, respectively). Most notable was the strong increase of 18-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-1307",
+      "claim_type": "mean_sd",
+      "raw_text": "170.9 \u00b1 40.2",
+      "numeric_values": [
+        170.9,
+        40.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1307,
+      "sentence": "Most notable was the strong increase of 18-hydroxyeicosapentaenoic acid (18-HEPE) formation in THP-1 macrophages, with levels of 170.9 \u00b1 40.2 ng/mg protein in the high n-3 PUFA treated cells.",
+      "context_window": "id (18-HEPE) formation in THP-1 macrophages, with levels of 170.9 \u00b1 40.2 ng/mg protein in the high n-3 PUFA treated cells. Thus our",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-207",
+      "claim_type": "mean_sd",
+      "raw_text": "1099.4 \u00b1 135.7",
+      "numeric_values": [
+        1099.4,
+        135.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 207,
+      "sentence": "Incubating THP-1 macrophages in medium with a total concentration of 100 \u00b5M PUFA (95 \u00b5M AA and 2.5 \u00b5M EPA and DHA, respectively, reflecting an (AA/(EPA+DHA) ratio of 19/1) led to the formation of a total of 1099.4 \u00b1 135.7 ng/mg of the assayed HETEs, HEPEs and HDHAs that could be derived from AA, EPA and DHA.",
+      "context_window": "(EPA+DHA) ratio of 19/1) led to the formation of a total of 1099.4 \u00b1 135.7 ng/mg of the assayed HETEs, HEPEs and HDHAs that could be d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-519",
+      "claim_type": "mean_sd",
+      "raw_text": "1522.1 \u00b1 256",
+      "numeric_values": [
+        1522.1,
+        256.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "Reducing the AA/EPA+DHA ratio to 1/1 by using a combination of 50 \u00b5M AA and 25 \u00b5M EPA and DHA, respectively, did not result in a significant change of the sum of the HETEs, HEPEs and HDHAs (mean concentration 1522.1 \u00b1 256 ng/mg; p = 0.218 vs. high AA/(EPA+DHA) ratio).",
+      "context_window": "f the sum of the HETEs, HEPEs and HDHAs (mean concentration 1522.1 \u00b1 256 ng/mg; p = 0.218 vs. high AA/(EPA+DHA) ratio). The concentr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-539",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.218",
+      "numeric_values": [
+        0.218
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 539,
+      "sentence": "Reducing the AA/EPA+DHA ratio to 1/1 by using a combination of 50 \u00b5M AA and 25 \u00b5M EPA and DHA, respectively, did not result in a significant change of the sum of the HETEs, HEPEs and HDHAs (mean concentration 1522.1 \u00b1 256 ng/mg; p = 0.218 vs. high AA/(EPA+DHA) ratio).",
+      "context_window": "Es, HEPEs and HDHAs (mean concentration 1522.1 \u00b1 256 ng/mg; p = 0.218 vs. high AA/(EPA+DHA) ratio). The concentration of compound",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-682",
+      "claim_type": "mean_sd",
+      "raw_text": "63.9 \u00b1 7.8",
+      "numeric_values": [
+        63.9,
+        7.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 682,
+      "sentence": "The concentration of compounds derived from EPA and DHA (HEPEs and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these conditions ( Figure 1 a).",
+      "context_window": "EPA and DHA (HEPEs and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-702",
+      "claim_type": "mean_sd",
+      "raw_text": "434.4 \u00b1 84.3",
+      "numeric_values": [
+        434.4,
+        84.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 702,
+      "sentence": "The concentration of compounds derived from EPA and DHA (HEPEs and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these conditions ( Figure 1 a).",
+      "context_window": "and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respecti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-725",
+      "claim_type": "mean_sd",
+      "raw_text": "84.9 \u00b1 18.3",
+      "numeric_values": [
+        84.9,
+        18.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 725,
+      "sentence": "The concentration of compounds derived from EPA and DHA (HEPEs and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these conditions ( Figure 1 a).",
+      "context_window": "y increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these cond",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-746",
+      "claim_type": "mean_sd",
+      "raw_text": "439.4 \u00b1 82.7",
+      "numeric_values": [
+        439.4,
+        82.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 746,
+      "sentence": "The concentration of compounds derived from EPA and DHA (HEPEs and HDHAs) significantly increased from 63.9 \u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these conditions ( Figure 1 a).",
+      "context_window": "\u00b1 7.8 ng/mg to 434.4 \u00b1 84.3 ng/mg and 84.9 \u00b1 18.3 ng/mg to 439.4 \u00b1 82.7 ng/mg, respectively, under these conditions ( Figure 1 a).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-907",
+      "claim_type": "mean_sd",
+      "raw_text": "950.6 \u00b1 110",
+      "numeric_values": [
+        950.6,
+        110.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 907,
+      "sentence": "In contrast, the concentration of AA-derived metabolites was not significantly reduced (950.6 \u00b1 110 ng/mg and 648.2 \u00b1 92.4 ng/mg with 95 \u00b5M and 50 \u00b5M AA, respectively).",
+      "context_window": "on of AA-derived metabolites was not significantly reduced (950.6 \u00b1 110 ng/mg and 648.2 \u00b1 92.4 ng/mg with 95 \u00b5M and 50 \u00b5M AA, respe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-msd-929",
+      "claim_type": "mean_sd",
+      "raw_text": "648.2 \u00b1 92.4",
+      "numeric_values": [
+        648.2,
+        92.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 929,
+      "sentence": "In contrast, the concentration of AA-derived metabolites was not significantly reduced (950.6 \u00b1 110 ng/mg and 648.2 \u00b1 92.4 ng/mg with 95 \u00b5M and 50 \u00b5M AA, respectively).",
+      "context_window": "olites was not significantly reduced (950.6 \u00b1 110 ng/mg and 648.2 \u00b1 92.4 ng/mg with 95 \u00b5M and 50 \u00b5M AA, respectively). When calculat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-5226",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5226,
+      "sentence": "Comparison of metabolites derived from arachidonic acid (AA)/eicosapentaenoic acid (EPA)/docosahexaenoic acid (DHA), in response to incubation of THP-1 macrophages with a high ratio of AA/(EPA+DHA) (19/1) vs. a low ratio of AA/(EPA+DHA) (1/1). ( a ) Total monohydroxylated fatty acids (HO-Fas) and those derived from AA/EPA/DHA respectively; ( b ) HO-FAs formed by combined action of 5-,12-, 15- Lipoxygenase (LOX), and the other metabolic pathways or autooxidation. * p < 0.05, ** p < 0.01 1/1 vs.",
+      "context_window": "(LOX), and the other metabolic pathways or autooxidation. * p < 0.05, ** p < 0.01 1/1 vs. 19/1 ratio; ( c ) There was no signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-5239",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5239,
+      "sentence": "Comparison of metabolites derived from arachidonic acid (AA)/eicosapentaenoic acid (EPA)/docosahexaenoic acid (DHA), in response to incubation of THP-1 macrophages with a high ratio of AA/(EPA+DHA) (19/1) vs. a low ratio of AA/(EPA+DHA) (1/1). ( a ) Total monohydroxylated fatty acids (HO-Fas) and those derived from AA/EPA/DHA respectively; ( b ) HO-FAs formed by combined action of 5-,12-, 15- Lipoxygenase (LOX), and the other metabolic pathways or autooxidation. * p < 0.05, ** p < 0.01 1/1 vs.",
+      "context_window": "e other metabolic pathways or autooxidation. * p < 0.05, ** p < 0.01 1/1 vs. 19/1 ratio; ( c ) There was no significant differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-5488",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.7",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5488,
+      "sentence": "19/1 ratio; ( c ) There was no significant difference in THP-1 macrophage growth between the two groups during the 6 h polyunsaturated fatty acid (PUFA) incubation as evidenced by similar total protein content in the cell pellets ( p = 0.7 for 19/1 vs.",
+      "context_window": "nced by similar total protein content in the cell pellets ( p = 0.7 for 19/1 vs. 1/1). Metabolites that can be contributed to",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-5888",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5888,
+      "sentence": "Metabolites that can be contributed to different LOX enzymes in a high ratio of AA/(EPA+DHA) (19/1) vs. low ratio of AA/(EPA+DHA) (1/1). ( a ) metabolites that can be formed by 5-LOX; ( b ) metabolites that can be formed by 12-LOX; and ( c ) metabolites that can be formed by 15-LOX, ( d ) metabolites not attributable to specific enzymatic or other metabolic pathways. * p < 0.05, ** p < 0.01 1/1 vs.",
+      "context_window": "utable to specific enzymatic or other metabolic pathways. * p < 0.05, ** p < 0.01 1/1 vs. 19/1 ratio. The monohydroxylated meta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4498302_effect_of_different_omega_6_omega_3_polyunsaturated_fatty_ac-p-5901",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5901,
+      "sentence": "Metabolites that can be contributed to different LOX enzymes in a high ratio of AA/(EPA+DHA) (19/1) vs. low ratio of AA/(EPA+DHA) (1/1). ( a ) metabolites that can be formed by 5-LOX; ( b ) metabolites that can be formed by 12-LOX; and ( c ) metabolites that can be formed by 15-LOX, ( d ) metabolites not attributable to specific enzymatic or other metabolic pathways. * p < 0.05, ** p < 0.01 1/1 vs.",
+      "context_window": "cific enzymatic or other metabolic pathways. * p < 0.05, ** p < 0.01 1/1 vs. 19/1 ratio. The monohydroxylated metabolites 14-HD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

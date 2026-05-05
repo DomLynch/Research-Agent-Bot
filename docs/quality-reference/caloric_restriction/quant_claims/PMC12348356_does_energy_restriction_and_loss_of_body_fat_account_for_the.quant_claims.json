@@ -1,0 +1,967 @@
+{
+  "paper_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the",
+  "doi": "10.3390/nu17152407",
+  "extracted_at": "2026-05-05T22:17:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 42,
+    "percentage": 10,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-1548",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1548,
+      "sentence": "Uchida et al. followed a cohort of over 2500 Japanese adults aged 40-65 at baseline for more than 15 years and found that those in the highest quartile of waist circumference had nearly double the risk of developing dementia compared to those in the lowest quartile, even after adjusting for confounding variables such as age, sex, diabetes status, and physical activity [ 11 ].",
+      "context_window": "r 2500 Japanese adults aged 40-65 at baseline for more than 15 years and found that those in the highest quartile of waist circu",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-6919",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6919,
+      "sentence": "Alternate-day modified fasting (ADMF): a version of ADF where fasting days include a low energy intake (~25-30% of daily needs) [ 20 ] The 5:2 diet (fasting mimicking diet): two non-consecutive days per week of caloric restriction (~500-700 kcal), with ad libitum eating on other days [ 21 ]\n\nTime-restricted eating (TRE): daily fasting intervals (e.g., 14-18 h) followed by an eating window (typically 6-10 h), with no intentional caloric reduction [ 17 ].",
+      "context_window": "of ADF where fasting days include a low energy intake (~25-30% of daily needs) [ 20 ] The 5:2 diet (fasting mimicking diet",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-7516",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7516,
+      "sentence": "Alternate-day modified fasting (ADMF): a version of ADF where fasting days include a low energy intake (~25-30% of daily needs) [ 20 ]\n\nThe 5:2 diet (fasting mimicking diet): two non-consecutive days per week of caloric restriction (~500-700 kcal), with ad libitum eating on other days [ 21 ]\n\nIn contrast to IF, CR involves a chronic daily reduction in energy intake (typically 20-40%) without prolonged fasting other than during sleep.",
+      "context_window": "of ADF where fasting days include a low energy intake (~25-30% of daily needs) [ 20 ] The 5:2 diet (fasting mimicking die",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-7790",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7790,
+      "sentence": "Alternate-day modified fasting (ADMF): a version of ADF where fasting days include a low energy intake (~25-30% of daily needs) [ 20 ]\n\nThe 5:2 diet (fasting mimicking diet): two non-consecutive days per week of caloric restriction (~500-700 kcal), with ad libitum eating on other days [ 21 ]\n\nIn contrast to IF, CR involves a chronic daily reduction in energy intake (typically 20-40%) without prolonged fasting other than during sleep.",
+      "context_window": "es a chronic daily reduction in energy intake (typically 20-40%) without prolonged fasting other than during sleep. The nut",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-412",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 412,
+      "sentence": "Anton et al. [ 21 ] conducted a 4-week pilot trial evaluating time-restricted feeding (TRE; 16 h fast:8 non-fast) in overweight adults aged 65-75 years (BMI 25-35 kg/m 2 ).",
+      "context_window": "ng (TRE; 16 h fast:8 non-fast) in overweight adults aged 65-75 years (BMI 25-35 kg/m 2 ). Despite a significant decrease in body",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-429",
+      "claim_type": "unit_value",
+      "raw_text": "35 kg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 429,
+      "sentence": "Anton et al. [ 21 ] conducted a 4-week pilot trial evaluating time-restricted feeding (TRE; 16 h fast:8 non-fast) in overweight adults aged 65-75 years (BMI 25-35 kg/m 2 ).",
+      "context_window": "t:8 non-fast) in overweight adults aged 65-75 years (BMI 25-35 kg/m 2 ). Despite a significant decrease in body weight and BM",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-879",
+      "claim_type": "unit_value",
+      "raw_text": "32 kg",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 879,
+      "sentence": "Kapogiannis et al. [ 15 ] conducted a highly documented, 8-week randomized controlled trial in sedentary older adults with obesity and prediabetes (mean BMI \u2248 32 kg/m 2 ).",
+      "context_window": "ntary older adults with obesity and prediabetes (mean BMI \u2248 32 kg/m 2 ). Participants were assigned to either an IF (TRE; 14:",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-2008",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2008,
+      "sentence": "Data on anthropometry, biochemical indices and cognitive function were collected at baseline and after 36 months.",
+      "context_window": "and cognitive function were collected at baseline and after 36 months. The IF group had better scores on the Mini-Mental State Ex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3198",
+      "claim_type": "unit_value",
+      "raw_text": "4.96 kg",
+      "numeric_values": [
+        4.96
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3198,
+      "sentence": "The IF group in the study by Kapogiannis et al. lost 4.96 kg, whereas the IF subjects in Anton et al. only lost ~2.25 kg.",
+      "context_window": "mance. The IF group in the study by Kapogiannis et al. lost 4.96 kg, whereas the IF subjects in Anton et al. only lost ~2.25 kg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3258",
+      "claim_type": "unit_value",
+      "raw_text": "2.25 kg",
+      "numeric_values": [
+        2.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3258,
+      "sentence": "The IF group in the study by Kapogiannis et al. lost 4.96 kg, whereas the IF subjects in Anton et al. only lost ~2.25 kg.",
+      "context_window": "4.96 kg, whereas the IF subjects in Anton et al. only lost ~2.25 kg. Traditional caloric restriction without a structured chan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3421",
+      "claim_type": "unit_value",
+      "raw_text": "42 years",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3421,
+      "sentence": "Traditional caloric restriction without a structured change in the eating-fasting cycle was used in a by Kretsch et al. (1997) [ 24 ] on young women (25-42 years) via a 50% reduction in energy intake for 15 weeks; control subjects maintained their habitual diets ( Table 2 ).",
+      "context_window": "sed in a by Kretsch et al. (1997) [ 24 ] on young women (25-42 years) via a 50% reduction in energy intake for 15 weeks; control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-3437",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3437,
+      "sentence": "Traditional caloric restriction without a structured change in the eating-fasting cycle was used in a by Kretsch et al. (1997) [ 24 ] on young women (25-42 years) via a 50% reduction in energy intake for 15 weeks; control subjects maintained their habitual diets ( Table 2 ).",
+      "context_window": "sch et al. (1997) [ 24 ] on young women (25-42 years) via a 50% reduction in energy intake for 15 weeks; control subjects m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3472",
+      "claim_type": "unit_value",
+      "raw_text": "15 weeks",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3472,
+      "sentence": "Traditional caloric restriction without a structured change in the eating-fasting cycle was used in a by Kretsch et al. (1997) [ 24 ] on young women (25-42 years) via a 50% reduction in energy intake for 15 weeks; control subjects maintained their habitual diets ( Table 2 ).",
+      "context_window": "omen (25-42 years) via a 50% reduction in energy intake for 15 weeks; control subjects maintained their habitual diets ( Table 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3563",
+      "claim_type": "unit_value",
+      "raw_text": "12 kg",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3563,
+      "sentence": "CR subjects lost ~12 kg body weight of which ~10 kg was body fat.",
+      "context_window": "tained their habitual diets ( Table 2 ). CR subjects lost ~12 kg body weight of which ~10 kg was body fat. Tests of cognitiv",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-3591",
+      "claim_type": "unit_value",
+      "raw_text": "10 kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "CR subjects lost ~12 kg body weight of which ~10 kg was body fat.",
+      "context_window": "( Table 2 ). CR subjects lost ~12 kg body weight of which ~10 kg was body fat. Tests of cognitive function were administered",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4149",
+      "claim_type": "unit_value",
+      "raw_text": "60.5 years",
+      "numeric_values": [
+        60.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4149,
+      "sentence": "In the study by Witte et al. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant reduction in body weight in the CR group.",
+      "context_window": "the study by Witte et al. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-4173",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4173,
+      "sentence": "In the study by Witte et al. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant reduction in body weight in the CR group.",
+      "context_window": "l. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ),",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4197",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4197,
+      "sentence": "In the study by Witte et al. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant reduction in body weight in the CR group.",
+      "context_window": "s (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant r",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4224",
+      "claim_type": "unit_value",
+      "raw_text": "30 kg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4224,
+      "sentence": "In the study by Witte et al. [ 25 ], healthy adults (mean age 60.5 years) underwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant reduction in body weight in the CR group.",
+      "context_window": "erwent a 30% CR intervention for 3 months (initial mean BMI 30 kg/m 2 ), resulting in a significant reduction in body weight",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4341",
+      "claim_type": "unit_value",
+      "raw_text": "27 kg",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4341,
+      "sentence": "Compared to the control group (BMI 27 kg/m 2 ) which was instructed to maintain habitual intake, CR participants showed significant improvement in verbal memory as measured by the Verbal Learning and Memory Test (VLMT) recognition score.",
+      "context_window": "weight in the CR group. Compared to the control group (BMI 27 kg/m 2 ) which was instructed to maintain habitual intake, CR",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4753",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4753,
+      "sentence": "Prehn et al. [ 14 ] conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance) in postmenopausal women (mean BMI \u2248 35).",
+      "context_window": ". Prehn et al. [ 14 ] conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4775",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4775,
+      "sentence": "Prehn et al. [ 14 ] conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance) in postmenopausal women (mean BMI \u2248 35).",
+      "context_window": "conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weig",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-4821",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4821,
+      "sentence": "Prehn et al. [ 14 ] conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance) in postmenopausal women (mean BMI \u2248 35).",
+      "context_window": "@ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-4858",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4858,
+      "sentence": "Prehn et al. [ 14 ] conducted a 16-week CR intervention (8 weeks @ 800 kcal/d, 4 weeks @ unspecified energy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance) in postmenopausal women (mean BMI \u2248 35).",
+      "context_window": "nergy reduction until \u226510% loss of body weight, followed by 4 weeks weight maintenance) in postmenopausal women (mean BMI \u2248 35)",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-5201",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5201,
+      "sentence": "Only CR subjects had significant improvements in recognition memory, delayed recall, processing speed, and executive function (e.g., Stroop task, Trail Making Test B) at week 12, but not after 4 weeks of weight maintenance.",
+      "context_window": "Stroop task, Trail Making Test B) at week 12, but not after 4 weeks of weight maintenance. These benefits were paired with incr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-5512",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5512,
+      "sentence": "Several studies analyzed the effect of continuous 25%CR by non-obese adults, reported from the 24-month randomized control trial, Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE; [ 33 ]).",
+      "context_window": "y by CR. Several studies analyzed the effect of continuous 25%CR by non-obese adults, reported from the 24-month randomize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-5884",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5884,
+      "sentence": "After 6 months of CR, no difference was observed between CR and control subjects (each n = 12) in tests of memory or attention, despite greater weight loss and fat loss with CR [ 26 , 34 , 35 ].",
+      "context_window": ", as compared with ad libitum eating (control group). After 6 months of CR, no difference was observed between CR and control su",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-n-5965",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5965,
+      "sentence": "After 6 months of CR, no difference was observed between CR and control subjects (each n = 12) in tests of memory or attention, despite greater weight loss and fat loss with CR [ 26 , 34 , 35 ].",
+      "context_window": "fference was observed between CR and control subjects (each n = 12) in tests of memory or attention, despite greater weight lo",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-6083",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6083,
+      "sentence": "At 12 and 24 months of the study, no differences in cognitive function were seen between the CR and control groups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ].",
+      "context_window": "eight loss and fat loss with CR [ 26 , 34 , 35 ]. At 12 and 24 months of the study, no differences in cognitive function were see",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-6236",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6236,
+      "sentence": "At 12 and 24 months of the study, no differences in cognitive function were seen between the CR and control groups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ].",
+      "context_window": "trol groups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ]. Reduc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-6243",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6243,
+      "sentence": "At 12 and 24 months of the study, no differences in cognitive function were seen between the CR and control groups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ].",
+      "context_window": "oups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ]. Reduction in ener",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-6256",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6256,
+      "sentence": "At 12 and 24 months of the study, no differences in cognitive function were seen between the CR and control groups; note that actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ].",
+      "context_window": "at actual energy restriction went from ~20% at 6 months to ~10% for the rest of the trial [ 34 ]. Reduction in energy intak",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-6500",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6500,
+      "sentence": "Leclerc et al. [ 27 ] reported a \u201cslightly positive effect\u201d on spatial working memory (SWM) after 24 months only for the CR group, based on their total SWM errors but not SWM strategy.",
+      "context_window": "htly positive effect\u201d on spatial working memory (SWM) after 24 months only for the CR group, based on their total SWM errors but",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-7453",
+      "claim_type": "unit_value",
+      "raw_text": "46 kg",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 7453,
+      "sentence": "Miller et al. [ 30 ] and Alosco et al. [ 29 ] studied cognitive performance in patients (mean BMI = 46 kg/m 2 ) approved for bariatric surgery; these subjects also suffered from health issues such as hypertension and Type 2 Diabetes mellitus (T2DM).",
+      "context_window": "29 ] studied cognitive performance in patients (mean BMI = 46 kg/m 2 ) approved for bariatric surgery; these subjects also s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-7721",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7721,
+      "sentence": "At 12 weeks and 12 months post-surgery, BMI declined markedly and performance on memory tests was improved, with no change in the subjects who had not had surgery [ 30 ].",
+      "context_window": "s of memory, attention, executive function and language. At 12 weeks and 12 months post-surgery, BMI declined markedly and perfo",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-7734",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7734,
+      "sentence": "At 12 weeks and 12 months post-surgery, BMI declined markedly and performance on memory tests was improved, with no change in the subjects who had not had surgery [ 30 ].",
+      "context_window": "attention, executive function and language. At 12 weeks and 12 months post-surgery, BMI declined markedly and performance on memo",
+      "claim_role": "protocol",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-7892",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7892,
+      "sentence": "At 24 months post-surgery, gains in memory and attention were maintained, while executive function continued to improve at 36 months post-surgery.",
+      "context_window": "o change in the subjects who had not had surgery [ 30 ]. At 24 months post-surgery, gains in memory and attention were maintained",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8012",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8012,
+      "sentence": "At 24 months post-surgery, gains in memory and attention were maintained, while executive function continued to improve at 36 months post-surgery.",
+      "context_window": "aintained, while executive function continued to improve at 36 months post-surgery. Note that the average loss of ~16 kg of body",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8067",
+      "claim_type": "unit_value",
+      "raw_text": "16 kg",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 8067,
+      "sentence": "Note that the average loss of ~16 kg of body weight occurred over a period of 24-36 months.",
+      "context_window": "e at 36 months post-surgery. Note that the average loss of ~16 kg of body weight occurred over a period of 24-36 months. Subj",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8117",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8117,
+      "sentence": "Note that the average loss of ~16 kg of body weight occurred over a period of 24-36 months.",
+      "context_window": "loss of ~16 kg of body weight occurred over a period of 24-36 months. Subjects who regained body weight by 36 months showed decr",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8165",
+      "claim_type": "unit_value",
+      "raw_text": "36 months",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8165,
+      "sentence": "Subjects who regained body weight by 36 months showed decreases in attention at that time.",
+      "context_window": "eriod of 24-36 months. Subjects who regained body weight by 36 months showed decreases in attention at that time. Smith et al. [",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8428",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8428,
+      "sentence": "Subjects who underwent Roux-en-Y surgery lost more weight by 6 months.",
+      "context_window": "ubjects who underwent Roux-en-Y surgery lost more weight by 6 months. At 1 year post surgery, subjects with either procedure sho",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-8441",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 8441,
+      "sentence": "At 1 year post surgery, subjects with either procedure showed improvement in auditory attention, psychomotor speed and executive function.",
+      "context_window": "nderwent Roux-en-Y surgery lost more weight by 6 months. At 1 year post surgery, subjects with either procedure showed improve",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-9785",
+      "claim_type": "unit_value",
+      "raw_text": "32 kg",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 9785,
+      "sentence": "The study by Kim et al. [ 36 ] evaluated 43 centrally obese (mean BMI~32 kg/m 2 ) adults aged 35-75 years who were randomized to either a 5:2 IF regimen (intermittent energy restriction) or daily caloric restriction (CR) for four weeks.",
+      "context_window": "by Kim et al. [ 36 ] evaluated 43 centrally obese (mean BMI~32 kg/m 2 ) adults aged 35-75 years who were randomized to either",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-9812",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9812,
+      "sentence": "The study by Kim et al. [ 36 ] evaluated 43 centrally obese (mean BMI~32 kg/m 2 ) adults aged 35-75 years who were randomized to either a 5:2 IF regimen (intermittent energy restriction) or daily caloric restriction (CR) for four weeks.",
+      "context_window": "ted 43 centrally obese (mean BMI~32 kg/m 2 ) adults aged 35-75 years who were randomized to either a 5:2 IF regimen (intermitten",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-10443",
+      "claim_type": "unit_value",
+      "raw_text": "32.9 kg",
+      "numeric_values": [
+        32.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 10443,
+      "sentence": "In the study by Teong et al. [ 37 ], 48 overweight or obese adults (mean BMI 32.9 kg/m 2 ) were randomized to IF (TRF; 16:8) or CR with target energy intakes of 70% of calculated requirements for both groups, in this particular analysis.",
+      "context_window": "eong et al. [ 37 ], 48 overweight or obese adults (mean BMI 32.9 kg/m 2 ) were randomized to IF (TRF; 16:8) or CR with target e",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-pct-10527",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10527,
+      "sentence": "In the study by Teong et al. [ 37 ], 48 overweight or obese adults (mean BMI 32.9 kg/m 2 ) were randomized to IF (TRF; 16:8) or CR with target energy intakes of 70% of calculated requirements for both groups, in this particular analysis.",
+      "context_window": "mized to IF (TRF; 16:8) or CR with target energy intakes of 70% of calculated requirements for both groups, in this particu",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-10726",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10726,
+      "sentence": "At baseline and at 6 weeks of the study, subjects underwent neuropsychological assessments covering multiple cognitive domains, including executive function, attention, working memory, and verbal learning.",
+      "context_window": "body weight was greater in the IF group. At baseline and at 6 weeks of the study, subjects underwent neuropsychological assessm",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-11061",
+      "claim_type": "unit_value",
+      "raw_text": "32 kg",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 11061,
+      "sentence": "Both studies involved subjects with BMI ~32 kg/m 2 and both reported many similar effects on cognitive performance by the two approaches, supporting the conclusion that it is the reduction in energy intake and not the pattern of feeding and fasting that leads to changes in cognitive performance.",
+      "context_window": "e between groups. Both studies involved subjects with BMI ~32 kg/m 2 and both reported many similar effects on cognitive per",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-11599",
+      "claim_type": "unit_value",
+      "raw_text": "3 kg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 11599,
+      "sentence": "This difference between the studies may be due to the higher rate of weight loss in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ].",
+      "context_window": "eight loss in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong e",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-11609",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11609,
+      "sentence": "This difference between the studies may be due to the higher rate of weight loss in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ].",
+      "context_window": "in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ].",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-11622",
+      "claim_type": "unit_value",
+      "raw_text": "3 kg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 11622,
+      "sentence": "This difference between the studies may be due to the higher rate of weight loss in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ].",
+      "context_window": "by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ]. Periods o",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the-u-11632",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11632,
+      "sentence": "This difference between the studies may be due to the higher rate of weight loss in the study by Kim et al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ].",
+      "context_window": "al., where subjects lost ~3 kg over 4 weeks vs. ~3 kg over 8 weeks in the study by Teong et al. [ 37 ]. Periods of greater res",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

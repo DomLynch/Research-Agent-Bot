@@ -1,0 +1,662 @@
+{
+  "paper_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do",
+  "doi": "10.1371/journal.pone.0169620",
+  "extracted_at": "2026-05-05T21:50:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 21,
+    "p_value": 8,
+    "sample_size": 4,
+    "percentage": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-393",
+      "claim_type": "unit_value",
+      "raw_text": "84 days",
+      "numeric_values": [
+        84.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 393,
+      "sentence": "Up to 8,000 I.U. oral cholecalciferol was administered daily for 84 days in a 4 week dose-escalation setting to vitamin D deficient individuals.",
+      "context_window": "8,000 I.U. oral cholecalciferol was administered daily for 84 days in a 4 week dose-escalation setting to vitamin D deficient",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-406",
+      "claim_type": "unit_value",
+      "raw_text": "4 week",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "week",
+      "source_section": "abstract",
+      "source_offset": 406,
+      "sentence": "Up to 8,000 I.U. oral cholecalciferol was administered daily for 84 days in a 4 week dose-escalation setting to vitamin D deficient individuals.",
+      "context_window": "ral cholecalciferol was administered daily for 84 days in a 4 week dose-escalation setting to vitamin D deficient individuals.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1139",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "In individuals receiving 100,000 I.U. cholecalciferol intramuscular, the mean 25(OH)D serum concentration peaked after 4 weeks measuring 70.9 nmol/l compared to 32.7 nmol/l in the placebo group (p = 0.002).",
+      "context_window": "muscular, the mean 25(OH)D serum concentration peaked after 4 weeks measuring 70.9 nmol/l compared to 32.7 nmol/l in the placeb",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1215",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1215,
+      "sentence": "In individuals receiving 100,000 I.U. cholecalciferol intramuscular, the mean 25(OH)D serum concentration peaked after 4 weeks measuring 70.9 nmol/l compared to 32.7 nmol/l in the placebo group (p = 0.002).",
+      "context_window": "g 70.9 nmol/l compared to 32.7 nmol/l in the placebo group (p = 0.002). The increase of 25(OH)D serum concentrations after 28 day",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1278",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1278,
+      "sentence": "The increase of 25(OH)D serum concentrations after 28 days was comparable between both routes of administration (p = 0.264).",
+      "context_window": "0.002). The increase of 25(OH)D serum concentrations after 28 days was comparable between both routes of administration (p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1340",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.264",
+      "numeric_values": [
+        0.264
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1340,
+      "sentence": "The increase of 25(OH)D serum concentrations after 28 days was comparable between both routes of administration (p = 0.264).",
+      "context_window": "days was comparable between both routes of administration (p = 0.264). Oral and intramuscular cholecalciferol supplementation e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-682",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 682,
+      "sentence": "The 25(OH)D has a circulating half-life of 3 weeks [ 6 ] and is commonly used to determine the vitamin D status [ 7 ].",
+      "context_window": "lcitriol) [ 5 ]. The 25(OH)D has a circulating half-life of 3 weeks [ 6 ] and is commonly used to determine the vitamin D statu",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-67",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 67,
+      "sentence": "In the first cohort, 43 healthy subjects between the age of 18 and 60 years were enrolled in an open label study ( Table 1 ) [ 11 ].",
+      "context_window": "first cohort, 43 healthy subjects between the age of 18 and 60 years were enrolled in an open label study ( Table 1 ) [ 11 ]. Th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-315",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 315,
+      "sentence": "The exclusion criteria were a lack of consent, incompliance, scheduled sun tanning or UV exposure, a positive history of sarcoidosis, hypercalcemia, serum creatinine concentration > 1 mg/dl, nephrolithiasis, pregnancy and lactation, diseases of the cardiovascular system, cancer, malabsorption or chronic infection.",
+      "context_window": "arcoidosis, hypercalcemia, serum creatinine concentration > 1 mg/dl, nephrolithiasis, pregnancy and lactation, diseases of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-n-485",
+      "claim_type": "sample_size",
+      "raw_text": "n = 25",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 485,
+      "sentence": "Individuals of the vitamin D group (n = 25) received monthly increasing doses of 2,000 I.U. (50\u03bcg, week 1 to 4), 4,000 I.U. (100\u03bcg, week 5 to 8) and 8,000 I.U. (200\u03bcg, week 9 to 12) of cholecalciferol per day.",
+      "context_window": "n or chronic infection. Individuals of the vitamin D group (n = 25) received monthly increasing doses of 2,000 I.U. (50\u03bcg, wee",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-n-731",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 731,
+      "sentence": "Healthy individuals without vitamin D intake served as a control group (n = 18).",
+      "context_window": "viduals without vitamin D intake served as a control group (n = 18). Both study groups were comparable with respect to age, ge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-930",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 930,
+      "sentence": "Blood samples for serum analysis were drawn at baseline and after 4, 8 and 12 weeks.",
+      "context_window": "or serum analysis were drawn at baseline and after 4, 8 and 12 weeks. Serum 25(OH)D levels were measured using the serum 25(OH)D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1362",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1362,
+      "sentence": "Twelve women and 6 men between 18 and 60 years of age were recruited and enrolled if the inclusion and exclusion criteria as mentioned above were met.",
+      "context_window": "ot study ( Table 1 ). Twelve women and 6 men between 18 and 60 years of age were recruited and enrolled if the inclusion and exc",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-pct-961",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 961,
+      "sentence": "Data shown as mean \u00b1 SD, number of individuals, n; p-values calculated by Students-T-Test, effect size calculated by d Cohen and 95% confidence intervals.",
+      "context_window": "d by Students-T-Test, effect size calculated by d Cohen and 95% confidence intervals. Not applicable = n.a. In the vitamin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1246",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1246,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "ciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1311",
+      "claim_type": "unit_value",
+      "raw_text": "4 week",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 1311,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "01, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1396",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1396,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "olecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1448",
+      "claim_type": "unit_value",
+      "raw_text": "4 week",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 1448,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1517",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1517,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "th 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10). In the subgroup reaching up to 110",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-n-1541",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1541,
+      "sentence": "In the vitamin D group, the 25(OH)D serum concentrations increased from a mean baseline level of 40.0 nmol/l during 4-week intervals with the oral intake of 2,000 I.U. cholecalciferol per day (total dose of 56,000 I.U.) to 83.4 nmol/l (p<0.001, dCohen compared to control = 2.93), after an additional 4 week with 4.000 I.U. cholecalciferol per day (total 112,000 I.U.) to 127.4 nmol/l (p<0.001, dCohen = 3.00), and finally after the last 4 week with 8,000 I.U. per day (total 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10).",
+      "context_window": "otal 224,000 I.U.) to 159.7 nmol/l (p<0.001, dCohen = 6.59, n = 10). In the subgroup reaching up to 110.0 nmol/l serum 25(OH)D",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-1745",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1745,
+      "sentence": "In the subgroup reaching up to 110.0 nmol/l serum 25(OH)D at day 56, vitamin D intake was stopped to prevent potentially toxic levels and decreased values were determined on day 84 (96.1 nmol/l (p<0.001, dCohen = 4.19, n = 15).",
+      "context_window": "nd decreased values were determined on day 84 (96.1 nmol/l (p<0.001, dCohen = 4.19, n = 15). Intramuscular vitamin D supplemen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-n-1769",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1769,
+      "sentence": "In the subgroup reaching up to 110.0 nmol/l serum 25(OH)D at day 56, vitamin D intake was stopped to prevent potentially toxic levels and decreased values were determined on day 84 (96.1 nmol/l (p<0.001, dCohen = 4.19, n = 15).",
+      "context_window": "determined on day 84 (96.1 nmol/l (p<0.001, dCohen = 4.19, n = 15). Intramuscular vitamin D supplementation significantly in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1876",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1876,
+      "sentence": "Intramuscular vitamin D supplementation significantly increased serum 25(OH)D concentrations for 3 months, in contrast to placebo.",
+      "context_window": "on significantly increased serum 25(OH)D concentrations for 3 months, in contrast to placebo. 25(OH)D serum concentration was m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-pct-2247",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2247,
+      "sentence": "Data shown as mean \u00b1 SD, number of individuals, n; p-values calculated by Students-T-Test, effect size calculated by d Cohen and 95% confidence intervals.",
+      "context_window": "d by Students-T-Test, effect size calculated by d Cohen and 95% confidence intervals. Not applicable = n.a. The baseline 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-2546",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2546,
+      "sentence": "3 days after vitamin D administration, the serum concentration increased by 16.8 nmol/l in the vitamin D group.",
+      "context_window": ".9 nmol/l \u00b1 6.7 nmol/l (range: 38.3 nmol/l to 55.1 nmol/l). 3 days after vitamin D administration, the serum concentration inc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-2664",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2664,
+      "sentence": "After 7 days, 25(OH)D serum concentrations increased to a mean of 57.8 nmol/l \u00b1 13.8 nmol/l in the vitamin D group, whereas it decreased to a mean of 39.8 nmol/l in the placebo treated group ( Table 3 ).",
+      "context_window": "tion increased by 16.8 nmol/l in the vitamin D group. After 7 days, 25(OH)D serum concentrations increased to a mean of 57.8 n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-3070",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3070,
+      "sentence": "On day 28, the 25(OH)D serum concentrations increased significantly and peaked in the vitamin D treated group with a mean of 70.9 nmol/l and remained low in the placebo treated individuals (mean 37.0 nmol/l, p = 0.002).",
+      "context_window": "d low in the placebo treated individuals (mean 37.0 nmol/l, p = 0.002). After 2 months, 25(OH)D serum concentrations was again de",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-3088",
+      "claim_type": "unit_value",
+      "raw_text": "2 months",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3088,
+      "sentence": "After 2 months, 25(OH)D serum concentrations was again decreased to 58.0 nmol/l in the vitamin D group and 32.7 nmol/l in the placebo treated group.",
+      "context_window": "bo treated individuals (mean 37.0 nmol/l, p = 0.002). After 2 months, 25(OH)D serum concentrations was again decreased to 58.0 n",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-3240",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3240,
+      "sentence": "Finally, 3 months after the injection, with the beginning of the UV rich season 25(OH)D (April, UV-index 4-5), serum concentrations increased in the vitamin D (75.2 nmol/l) as well as in the placebo group (49.7 nmol/l).",
+      "context_window": "roup and 32.7 nmol/l in the placebo treated group. Finally, 3 months after the injection, with the beginning of the UV rich seas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-3960",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3960,
+      "sentence": "A comparable increase in serum 25(OH)D concentration upon 4 weeks of oral and intramuscular supplementation.",
+      "context_window": "A comparable increase in serum 25(OH)D concentration upon 4 weeks of oral and intramuscular supplementation. 25(OH)D serum c",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-p-4856",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.264",
+      "numeric_values": [
+        0.264
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4856,
+      "sentence": "Statistical analysis revealed no significant difference in 25(OH)D increase between oral and i.m. supplementation groups ( Fig 3 , p = 0.264).",
+      "context_window": "ease between oral and i.m. supplementation groups ( Fig 3 , p = 0.264).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-pct-675",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 675,
+      "sentence": "As approximately 50% of the individuals still remained vitamin D deficient after a single dose, the data suggest that a higher dose is most likely more effective and probably safe [ 1 , 23 , 25 ].",
+      "context_window": "ations increased to a mean of 70.9 nmol/l. As approximately 50% of the individuals still remained vitamin D deficient after",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1603",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 1603,
+      "sentence": "In a previous report, serum 25(OH)D levels gradually increased in 7 weeks after injection [ 26 ].",
+      "context_window": "revious report, serum 25(OH)D levels gradually increased in 7 weeks after injection [ 26 ]. Here, after 100,000 I.U. i.m. the s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1711",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 1711,
+      "sentence": "Here, after 100,000 I.U. i.m. the serum 25(OH)D concentrations peaked after 4 weeks and decreased in the following 4 weeks.",
+      "context_window": "000 I.U. i.m. the serum 25(OH)D concentrations peaked after 4 weeks and decreased in the following 4 weeks. The oral supplement",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1750",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 1750,
+      "sentence": "Here, after 100,000 I.U. i.m. the serum 25(OH)D concentrations peaked after 4 weeks and decreased in the following 4 weeks.",
+      "context_window": "rations peaked after 4 weeks and decreased in the following 4 weeks. The oral supplementation resulted in a rapid increase in s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do-u-1857",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "conclusion",
+      "source_offset": 1857,
+      "sentence": "The oral supplementation resulted in a rapid increase in serum 25(OH)D levels, which peaked about 1 week after first daily dose of 80 \u03bcg/kg (3,200 I.U./kg) cholecalciferol [ 26 ].",
+      "context_window": "rapid increase in serum 25(OH)D levels, which peaked about 1 week after first daily dose of 80 \u03bcg/kg (3,200 I.U./kg) cholecal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

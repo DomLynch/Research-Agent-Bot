@@ -1,0 +1,1334 @@
+{
+  "paper_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait",
+  "doi": "10.3390/medicina57121344",
+  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 17,
+    "percentage": 34,
+    "sample_size": 8,
+    "mean_sd": 5,
+    "p_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-151",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 151,
+      "sentence": "Background and Objectives : The world\u2019s population is rapidly aging, and it is estimated that, by 2050, every sixth person on earth will be older than 65 years.",
+      "context_window": "at, by 2050, every sixth person on earth will be older than 65 years. Around 30% of older adults entering cardiac rehabilitation",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-168",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 168,
+      "sentence": "Around 30% of older adults entering cardiac rehabilitation (CR) meet the criteria of frailty.",
+      "context_window": "y sixth person on earth will be older than 65 years. Around 30% of older adults entering cardiac rehabilitation (CR) meet t",
+      "claim_role": "population",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-767",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 767,
+      "sentence": "Therefore, the aim of our study was to determine the prevalence of frailty and to evaluate the effect of two different complementary training programs on the gait speed of older vulnerable and frail patients with acute coronary syndrome and mid-range-to-preserved left ventricular ejection fraction (\u226540%) during short-term CR.",
+      "context_window": "mid-range-to-preserved left ventricular ejection fraction (\u226540%) during short-term CR. Materials and Methods : This randomi",
+      "claim_role": "background",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-920",
+      "claim_type": "sample_size",
+      "raw_text": "n = 97",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 920,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "cted from January 2020 to September 2021. CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocate",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-msd-947",
+      "claim_type": "mean_sd",
+      "raw_text": "73.1 \u00b1 5.3",
+      "numeric_values": [
+        73.1,
+        5.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 947,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "eptember 2021. CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-954",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 years",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 954,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "r 2021. CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1020",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1020,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "ars were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1051",
+      "claim_type": "sample_size",
+      "raw_text": "n = 32",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "o three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33). The patients of all thr",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1085",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "CR participants ( n = 97) with a mean age of 73.1 \u00b1 5.3 years were randomly allocated into three groups: control (CG, n = 32), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33).",
+      "context_window": "2), intervention-1 (IG-1, n = 32) and intervention-2 (IG-2, n = 33). The patients of all three groups attended a usual inpatie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-1267",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1267,
+      "sentence": "The patients of all three groups attended a usual inpatient CR program, and two intervention groups additionally received different resistance and balance training programs 3 days a week: the IG-1 underwent complementary training with traditional means of physical therapy, while the IG-2 underwent complementary training with mechanical devices.",
+      "context_window": "received different resistance and balance training programs 3 days a week: the IG-1 underwent complementary training with trad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-msd-1466",
+      "claim_type": "mean_sd",
+      "raw_text": "18.9 \u00b1 1.7",
+      "numeric_values": [
+        18.9,
+        1.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1466,
+      "sentence": "The mean CR duration was 18.9 \u00b1 1.7 days.",
+      "context_window": "training with mechanical devices. The mean CR duration was 18.9 \u00b1 1.7 days. Frailty was assessed with the Edmonton Frail Scale, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-1473",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 days",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 1473,
+      "sentence": "The mean CR duration was 18.9 \u00b1 1.7 days.",
+      "context_window": "ng with mechanical devices. The mean CR duration was 18.9 \u00b1 1.7 days. Frailty was assessed with the Edmonton Frail Scale, and th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1626",
+      "claim_type": "percentage",
+      "raw_text": "37.1%",
+      "numeric_values": [
+        37.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1626,
+      "sentence": "Results : Frailty was determined in 37.1% of participants, and 42.3% met the criteria of being vulnerable.",
+      "context_window": "to evaluate gait speed. Results : Frailty was determined in 37.1% of participants, and 42.3% met the criteria of being vulner",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1653",
+      "claim_type": "percentage",
+      "raw_text": "42.3%",
+      "numeric_values": [
+        42.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1653,
+      "sentence": "Results : Frailty was determined in 37.1% of participants, and 42.3% met the criteria of being vulnerable.",
+      "context_window": "ults : Frailty was determined in 37.1% of participants, and 42.3% met the criteria of being vulnerable. After CR, the gait sp",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-1800",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1800,
+      "sentence": "After CR, the gait speed of frail and vulnerable patients significantly improved in all three groups ( p < 0.05).",
+      "context_window": "rable patients significantly improved in all three groups ( p < 0.05). In the IG-2, slow gait speed was reversed to normal in th",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-1906",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1906,
+      "sentence": "In the IG-2, slow gait speed was reversed to normal in the overwhelming majority of patients ( p < 0.05), while the CG had the greatest proportion of patients who remained to be slow after CR ( p < 0.05).",
+      "context_window": "versed to normal in the overwhelming majority of patients ( p < 0.05), while the CG had the greatest proportion of patients who",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-2005",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2005,
+      "sentence": "In the IG-2, slow gait speed was reversed to normal in the overwhelming majority of patients ( p < 0.05), while the CG had the greatest proportion of patients who remained to be slow after CR ( p < 0.05).",
+      "context_window": "t proportion of patients who remained to be slow after CR ( p < 0.05). Conclusions : A considerable part of patients entering CR",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-113",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 113,
+      "sentence": "The prevalence of cardiovascular diseases increases with age, and this group of diseases is responsible for even 45% of all deaths in Europe [ 1 ].",
+      "context_window": "ith age, and this group of diseases is responsible for even 45% of all deaths in Europe [ 1 ]. Patients who are diagnosed w",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-809",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 809,
+      "sentence": "Advances in medicine are contributing to the growth of the older population worldwide, and projections indicate that, by 2050, every sixth person on earth will be older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ].",
+      "context_window": "at, by 2050, every sixth person on earth will be older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ].",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-819",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 819,
+      "sentence": "Advances in medicine are contributing to the growth of the older population worldwide, and projections indicate that, by 2050, every sixth person on earth will be older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ].",
+      "context_window": "0, every sixth person on earth will be older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ]. Due t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-858",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 858,
+      "sentence": "Advances in medicine are contributing to the growth of the older population worldwide, and projections indicate that, by 2050, every sixth person on earth will be older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ].",
+      "context_window": "older than 65 years (16%) compared with 1 out of 11 people (9%) in 2019 [ 6 ]. Due to a rapidly aging population, much att",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1670",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1670,
+      "sentence": "Therefore, almost 30% of older persons arrive to CR with reduced muscle strength and mass as well as limited physical performance [ 9 , 10 ], and this has a huge impact on balance, gait speed, and general ability to perform daily activities [ 11 ].",
+      "context_window": "ed rest and insufficient nutrition [ 8 ]. Therefore, almost 30% of older persons arrive to CR with reduced muscle strength",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-2180",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2180,
+      "sentence": "A recently conducted meta-analysis has shown that the overall estimated prevalence of frailty in Europe is 18%; however, in hospitals and nursing homes, the prevalence of frailty reaches 45% [ 14 ].",
+      "context_window": "at the overall estimated prevalence of frailty in Europe is 18%; however, in hospitals and nursing homes, the prevalence of",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-2260",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2260,
+      "sentence": "A recently conducted meta-analysis has shown that the overall estimated prevalence of frailty in Europe is 18%; however, in hospitals and nursing homes, the prevalence of frailty reaches 45% [ 14 ].",
+      "context_window": "pitals and nursing homes, the prevalence of frailty reaches 45% [ 14 ]. Frailty identification has not been included in the",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-2919",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2919,
+      "sentence": "Therefore, the aim of our study was to determine the prevalence of frailty and the impact of two different complementary resistance and balance training programs during short-term CR on gait speed of frail and vulnerable elderly patients who sustained acute coronary syndrome and had mid-range-to-preserved left ventricular (LV) ejection fraction (\u226540%).",
+      "context_window": "ange-to-preserved left ventricular (LV) ejection fraction (\u226540%).",
+      "claim_role": "background",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-830",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 830,
+      "sentence": "The inclusion criteria were as follows: age \u2265 65 years; 6 min walk distance (6MWD) \u2265 150 m; LV ejection fraction \u2265 40%; and signed written informed consent.",
+      "context_window": "n this study. The inclusion criteria were as follows: age \u2265 65 years; 6 min walk distance (6MWD) \u2265 150 m; LV ejection fraction \u2265",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-899",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 899,
+      "sentence": "The inclusion criteria were as follows: age \u2265 65 years; 6 min walk distance (6MWD) \u2265 150 m; LV ejection fraction \u2265 40%; and signed written informed consent.",
+      "context_window": "6 min walk distance (6MWD) \u2265 150 m; LV ejection fraction \u2265 40%; and signed written informed consent. The exclusion criteri",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1600",
+      "claim_type": "sample_size",
+      "raw_text": "n = 41",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1600,
+      "sentence": "Of these, 152 were excluded due to not meeting the inclusion criteria, declining to participate and other reasons, leaving with 122 participants who were randomly assigned to three groups: control (CG, n = 41), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2, n = 41).",
+      "context_window": "ts who were randomly assigned to three groups: control (CG, n = 41), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1631",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1631,
+      "sentence": "Of these, 152 were excluded due to not meeting the inclusion criteria, declining to participate and other reasons, leaving with 122 participants who were randomly assigned to three groups: control (CG, n = 41), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2, n = 41).",
+      "context_window": "o three groups: control (CG, n = 41), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2, n = 41). After completion of th",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1666",
+      "claim_type": "sample_size",
+      "raw_text": "n = 41",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1666,
+      "sentence": "Of these, 152 were excluded due to not meeting the inclusion criteria, declining to participate and other reasons, leaving with 122 participants who were randomly assigned to three groups: control (CG, n = 41), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2, n = 41).",
+      "context_window": "), intervention-1 (IG-1, n = 40), and intervention-2 (IG-2, n = 41). After completion of the first assessment, 25 participants",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-2833",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 2833,
+      "sentence": "A gait speed of <1.0 m/s was defined as a slow gait speed and \u22651.0 m/s was defined as normal [ 19 ].",
+      "context_window": "ait speed, using the 5 m walk test (5MWT). A gait speed of <1.0 m/s was defined as a slow gait speed and \u22651.0 m/s was defined a",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-2879",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 2879,
+      "sentence": "A gait speed of <1.0 m/s was defined as a slow gait speed and \u22651.0 m/s was defined as normal [ 19 ].",
+      "context_window": "ait speed of <1.0 m/s was defined as a slow gait speed and \u22651.0 m/s was defined as normal [ 19 ]. All of these assessments were",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-4563",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4563,
+      "sentence": "The level of significance was set at p < 0.05.",
+      "context_window": "ed-rank test was used. The level of significance was set at p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-144",
+      "claim_type": "percentage",
+      "raw_text": "26.8%",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 144,
+      "sentence": "More than a quarter (26.8%) of the participants were women, and 73.2% were men.",
+      "context_window": "tudy population are shown in Table 1 . More than a quarter (26.8%) of the participants were women, and 73.2% were men. The me",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-187",
+      "claim_type": "percentage",
+      "raw_text": "73.2%",
+      "numeric_values": [
+        73.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 187,
+      "sentence": "More than a quarter (26.8%) of the participants were women, and 73.2% were men.",
+      "context_window": "than a quarter (26.8%) of the participants were women, and 73.2% were men. The mean age of participants was 73.1 \u00b1 5.3 years",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-msd-236",
+      "claim_type": "mean_sd",
+      "raw_text": "73.1 \u00b1 5.3",
+      "numeric_values": [
+        73.1,
+        5.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 236,
+      "sentence": "The mean age of participants was 73.1 \u00b1 5.3 years.",
+      "context_window": "women, and 73.2% were men. The mean age of participants was 73.1 \u00b1 5.3 years. The groups were not homogeneous by age ( p = 0.008),",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-243",
+      "claim_type": "unit_value",
+      "raw_text": "5.3 years",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "The mean age of participants was 73.1 \u00b1 5.3 years.",
+      "context_window": "and 73.2% were men. The mean age of participants was 73.1 \u00b1 5.3 years. The groups were not homogeneous by age ( p = 0.008), with",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-295",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 295,
+      "sentence": "The groups were not homogeneous by age ( p = 0.008), with the patients being significantly older in the CG compared with both intervention groups.",
+      "context_window": "73.1 \u00b1 5.3 years. The groups were not homogeneous by age ( p = 0.008), with the patients being significantly older in the CG com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-956",
+      "claim_type": "percentage",
+      "raw_text": "37.1%",
+      "numeric_values": [
+        37.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 956,
+      "sentence": "According to the EFS scores, 37.1% of participants were frail, 42.3% were vulnerable, and 20.6% were fit.",
+      "context_window": "ngiotensin-converting enzyme. According to the EFS scores, 37.1% of participants were frail, 42.3% were vulnerable, and 20.6",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-990",
+      "claim_type": "percentage",
+      "raw_text": "42.3%",
+      "numeric_values": [
+        42.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 990,
+      "sentence": "According to the EFS scores, 37.1% of participants were frail, 42.3% were vulnerable, and 20.6% were fit.",
+      "context_window": "ording to the EFS scores, 37.1% of participants were frail, 42.3% were vulnerable, and 20.6% were fit. All the groups were ho",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1017",
+      "claim_type": "percentage",
+      "raw_text": "20.6%",
+      "numeric_values": [
+        20.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1017,
+      "sentence": "According to the EFS scores, 37.1% of participants were frail, 42.3% were vulnerable, and 20.6% were fit.",
+      "context_window": "7.1% of participants were frail, 42.3% were vulnerable, and 20.6% were fit. All the groups were homogeneous regarding the med",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-n-1625",
+      "claim_type": "sample_size",
+      "raw_text": "n = 77",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1625,
+      "sentence": "To evaluate the impact of CR on gait speed, only vulnerable (a score of 4 to 5 by the EFS) and frail participants (a score of \u22656 by the EFS) were selected ( n = 77).",
+      "context_window": "ail participants (a score of \u22656 by the EFS) were selected ( n = 77). Before CR, the groups were homogeneous by the mean gait s",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-1698",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.941",
+      "numeric_values": [
+        0.941
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1698,
+      "sentence": "Before CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001).",
+      "context_window": "re CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and f",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-msd-1814",
+      "claim_type": "mean_sd",
+      "raw_text": "1.27 \u00b1 0.32",
+      "numeric_values": [
+        1.27,
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1814,
+      "sentence": "Before CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001).",
+      "context_window": "nerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001). Improvement in gait speed",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-msd-1829",
+      "claim_type": "mean_sd",
+      "raw_text": "1.43 \u00b1 0.31",
+      "numeric_values": [
+        1.43,
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1829,
+      "sentence": "Before CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001).",
+      "context_window": "il participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001). Improvement in gait speed was documented",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-1836",
+      "claim_type": "unit_value",
+      "raw_text": "0.31 m/s",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 1836,
+      "sentence": "Before CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001).",
+      "context_window": "icipants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001). Improvement in gait speed was documented in a",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-1847",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1847,
+      "sentence": "Before CR, the groups were homogeneous by the mean gait speed ( p = 0.941), and after CR, the mean gait speed of all vulnerable and frail participants increased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001).",
+      "context_window": "creased significantly from 1.27 \u00b1 0.32 to 1.43 \u00b1 0.31 m/s ( p < 0.001). Improvement in gait speed was documented in all three gro",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-2319",
+      "claim_type": "percentage",
+      "raw_text": "77%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2319,
+      "sentence": "Evaluation of gait speed in the groups revealed that, before CR, 77% of vulnerable and frail participants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s).",
+      "context_window": "ation of gait speed in the groups revealed that, before CR, 77% of vulnerable and frail participants had normal gait speed",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-2384",
+      "claim_type": "unit_value",
+      "raw_text": "1 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 2384,
+      "sentence": "Evaluation of gait speed in the groups revealed that, before CR, 77% of vulnerable and frail participants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s).",
+      "context_window": "f vulnerable and frail participants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s).",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-2410",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2410,
+      "sentence": "Evaluation of gait speed in the groups revealed that, before CR, 77% of vulnerable and frail participants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s).",
+      "context_window": "ticipants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s). In the CG, gait speed re",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-2441",
+      "claim_type": "unit_value",
+      "raw_text": "1 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "results",
+      "source_offset": 2441,
+      "sentence": "Evaluation of gait speed in the groups revealed that, before CR, 77% of vulnerable and frail participants had normal gait speed (\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s).",
+      "context_window": "(\u22651 m/s), and the remaining 23% had a reduced gait speed (<1 m/s). In the CG, gait speed remained slow in 5 out of 10 partic",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-2524",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2524,
+      "sentence": "In the CG, gait speed remained slow in 5 out of 10 participants after CR ( p = 0.013), while in the IG-2, slow gait speed was reversed to normal in 6 out of 7 participants ( p = 0.031).",
+      "context_window": "speed remained slow in 5 out of 10 participants after CR ( p = 0.013), while in the IG-2, slow gait speed was reversed to normal",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-p-2623",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2623,
+      "sentence": "In the CG, gait speed remained slow in 5 out of 10 participants after CR ( p = 0.013), while in the IG-2, slow gait speed was reversed to normal in 6 out of 7 participants ( p = 0.031).",
+      "context_window": "t speed was reversed to normal in 6 out of 7 participants ( p = 0.031).",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 96,
+      "sentence": "One of the aims of this study was to determine the prevalence of frailty among older patients (\u226565 years) with acute coronary syndrome during CR.",
+      "context_window": "determine the prevalence of frailty among older patients (\u226565 years) with acute coronary syndrome during CR. By using the multi",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-231",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 231,
+      "sentence": "By using the multidimensional EFS to assess the prevalence of frailty, we found that 37% of patients were frail and that 42% met the criteria of being vulnerable.",
+      "context_window": "onal EFS to assess the prevalence of frailty, we found that 37% of patients were frail and that 42% met the criteria of bei",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-267",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 267,
+      "sentence": "By using the multidimensional EFS to assess the prevalence of frailty, we found that 37% of patients were frail and that 42% met the criteria of being vulnerable.",
+      "context_window": "frailty, we found that 37% of patients were frail and that 42% met the criteria of being vulnerable. These results are att",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-444",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 444,
+      "sentence": "These results are attributable to the fact that, for the identification of frailty, not only the results of the TUG test, which showed 70% of participants completing the test faster than within 10 s, but also more aspects important to frailty, such as cognitive functioning, medication use, social support, mood, and general health status were evaluated [ 21 , 22 ].",
+      "context_window": "frailty, not only the results of the TUG test, which showed 70% of participants completing the test faster than within 10 s",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1094",
+      "claim_type": "percentage",
+      "raw_text": "11.8%",
+      "numeric_values": [
+        11.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1094,
+      "sentence": "Based on the findings of the systematic review in 2018, among four different study populations, the prevalence of frailty ranged from 11.8% to 44% [ 25 ].",
+      "context_window": "nt study populations, the prevalence of frailty ranged from 11.8% to 44% [ 25 ]. In general, the first systematic review on t",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1103",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1103,
+      "sentence": "Based on the findings of the systematic review in 2018, among four different study populations, the prevalence of frailty ranged from 11.8% to 44% [ 25 ].",
+      "context_window": "populations, the prevalence of frailty ranged from 11.8% to 44% [ 25 ]. In general, the first systematic review on the prev",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1237",
+      "claim_type": "percentage",
+      "raw_text": "10.7%",
+      "numeric_values": [
+        10.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1237,
+      "sentence": "In general, the first systematic review on the prevalence of frailty was published in 2012, and at that time, on average, 10.7% of community-dwelling older persons were frail and 41.6% were vulnerable [ 26 ].",
+      "context_window": "railty was published in 2012, and at that time, on average, 10.7% of community-dwelling older persons were frail and 41.6% we",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1294",
+      "claim_type": "percentage",
+      "raw_text": "41.6%",
+      "numeric_values": [
+        41.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1294,
+      "sentence": "In general, the first systematic review on the prevalence of frailty was published in 2012, and at that time, on average, 10.7% of community-dwelling older persons were frail and 41.6% were vulnerable [ 26 ].",
+      "context_window": "e, 10.7% of community-dwelling older persons were frail and 41.6% were vulnerable [ 26 ]. In comparison, the most recent meta",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1449",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1449,
+      "sentence": "In comparison, the most recent meta-analysis published in 2021 showed a greater prevalence of frailty and pre-frailty, being 16% and 45%, respectively [ 27 ].",
+      "context_window": "owed a greater prevalence of frailty and pre-frailty, being 16% and 45%, respectively [ 27 ]. The results of our study conf",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1457",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1457,
+      "sentence": "In comparison, the most recent meta-analysis published in 2021 showed a greater prevalence of frailty and pre-frailty, being 16% and 45%, respectively [ 27 ].",
+      "context_window": "reater prevalence of frailty and pre-frailty, being 16% and 45%, respectively [ 27 ]. The results of our study confirm that",
+      "claim_role": "background",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-1900",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 m/s",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 1900,
+      "sentence": "Gait speed was found to be an independent predictor of adverse outcomes after cardiac, and every 0.1 m/s decrease in gait speed was related to an 11% relative increase in operative mortality [ 35 ].",
+      "context_window": "dent predictor of adverse outcomes after cardiac, and every 0.1 m/s decrease in gait speed was related to an 11% relative incre",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-1949",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1949,
+      "sentence": "Gait speed was found to be an independent predictor of adverse outcomes after cardiac, and every 0.1 m/s decrease in gait speed was related to an 11% relative increase in operative mortality [ 35 ].",
+      "context_window": "and every 0.1 m/s decrease in gait speed was related to an 11% relative increase in operative mortality [ 35 ]. Thus, an i",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-3405",
+      "claim_type": "unit_value",
+      "raw_text": "1 m/s",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "m/s",
+      "source_section": "discussion",
+      "source_offset": 3405,
+      "sentence": "It is worth noting that complementary exercises with pneumatic technology-based HUR training devices and the Biodex Balance System were more effective at improving gait speed to normal (\u22651 m/s) during short-term CR.",
+      "context_window": "tem were more effective at improving gait speed to normal (\u22651 m/s) during short-term CR. Unfortunately, we could not compare",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-3968",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3968,
+      "sentence": "The study by Kim et al. showed that nutrition supplementation in combination with 60 min strengthening and balance training given twice per week for 3 months improved gait speed in frail elderly women even by 14.7% [ 43 ].",
+      "context_window": "strengthening and balance training given twice per week for 3 months improved gait speed in frail elderly women even by 14.7% [",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-4028",
+      "claim_type": "percentage",
+      "raw_text": "14.7%",
+      "numeric_values": [
+        14.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4028,
+      "sentence": "The study by Kim et al. showed that nutrition supplementation in combination with 60 min strengthening and balance training given twice per week for 3 months improved gait speed in frail elderly women even by 14.7% [ 43 ].",
+      "context_window": "3 months improved gait speed in frail elderly women even by 14.7% [ 43 ]. Another study reported that 4-month resistance trai",
+      "claim_role": "effect",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-4763",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4763,
+      "sentence": "Some limitations of this study have to be acknowledged: (1) This study is a single-institution study; therefore, the results cannot be generalized to all patients who sustained acute coronary syndrome. (2) The inclusion criteria such as 6MWD \u2265 150 m and LV ejection fraction \u2265 40% could prevent the inclusion of many other frail patients. (3) This study included patients only with mid-range-to-preserved LV ejection fraction (\u226540%); thus, the findings can be generalized only to these patients.",
+      "context_window": "on criteria such as 6MWD \u2265 150 m and LV ejection fraction \u2265 40% could prevent the inclusion of many other frail patients. (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-4914",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4914,
+      "sentence": "Some limitations of this study have to be acknowledged: (1) This study is a single-institution study; therefore, the results cannot be generalized to all patients who sustained acute coronary syndrome. (2) The inclusion criteria such as 6MWD \u2265 150 m and LV ejection fraction \u2265 40% could prevent the inclusion of many other frail patients. (3) This study included patients only with mid-range-to-preserved LV ejection fraction (\u226540%); thus, the findings can be generalized only to these patients.",
+      "context_window": "nts only with mid-range-to-preserved LV ejection fraction (\u226540%); thus, the findings can be generalized only to these patie",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-u-82",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 82,
+      "sentence": "The findings of this study indicated that a considerable part of older patients (\u226565 years) entering CR after acute coronary syndrome were found to be frail (37%) or vulnerable (42%).",
+      "context_window": "tudy indicated that a considerable part of older patients (\u226565 years) entering CR after acute coronary syndrome were found to be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-158",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 158,
+      "sentence": "The findings of this study indicated that a considerable part of older patients (\u226565 years) entering CR after acute coronary syndrome were found to be frail (37%) or vulnerable (42%).",
+      "context_window": "ng CR after acute coronary syndrome were found to be frail (37%) or vulnerable (42%). All three CR programs improved gait s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8705993_frailty_and_different_exercise_interventions_to_improve_gait-pct-178",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 178,
+      "sentence": "The findings of this study indicated that a considerable part of older patients (\u226565 years) entering CR after acute coronary syndrome were found to be frail (37%) or vulnerable (42%).",
+      "context_window": "ronary syndrome were found to be frail (37%) or vulnerable (42%). All three CR programs improved gait speed (5 MWT) in thes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

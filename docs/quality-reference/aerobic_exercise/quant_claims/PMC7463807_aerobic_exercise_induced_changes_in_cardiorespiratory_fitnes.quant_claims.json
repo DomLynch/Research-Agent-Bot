@@ -1,0 +1,579 @@
+{
+  "paper_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes",
+  "doi": "10.3390/cancers12082240",
+  "extracted_at": "2026-05-05T22:04:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 16,
+    "unit_value": 6,
+    "mean_sd": 3,
+    "confidence_interval": 3,
+    "p_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-952",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 952,
+      "sentence": "The results suggest that increases in CRF are favored by (a) aerobic training when compared to usual care; (b) vigorous-intensity aerobic exercise (64-90% of maximal oxygen uptake, VO 2max ) when compared to moderate-intensity aerobic exercise (46-63% of VO 2max ); and (c) both continuous and interval aerobic training are effective at increasing the VO 2max .",
+      "context_window": "to usual care; (b) vigorous-intensity aerobic exercise (64-90% of maximal oxygen uptake, VO 2max ) when compared to modera",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1049,
+      "sentence": "The results suggest that increases in CRF are favored by (a) aerobic training when compared to usual care; (b) vigorous-intensity aerobic exercise (64-90% of maximal oxygen uptake, VO 2max ) when compared to moderate-intensity aerobic exercise (46-63% of VO 2max ); and (c) both continuous and interval aerobic training are effective at increasing the VO 2max .",
+      "context_window": ") when compared to moderate-intensity aerobic exercise (46-63% of VO 2max ); and (c) both continuous and interval aerobic",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-558",
+      "claim_type": "percentage",
+      "raw_text": "31%",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 558,
+      "sentence": "Further, a 31% impairment in cardiorespiratory fitness (CRF), as measured by the peak/maximal oxygen consumption (VO 2max ), has been observed in women with BC undergoing adjuvant chemotherapy [ 12 ].",
+      "context_window": "6 , 7 , 8 ], and cardiotoxicity [ 9 , 10 , 11 ]. Further, a 31% impairment in cardiorespiratory fitness (CRF), as measured",
+      "claim_role": "background",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-1714",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1714,
+      "sentence": "For instance, Segal et al. (2001) [ 21 ] compared a continuous aerobic exercise guideline-based training group (chemotherapy + 150 min of moderate (50-60% of VO 2max ) continuously walking) versus an usual care (UC) non-exercising group.",
+      "context_window": "ased training group (chemotherapy + 150 min of moderate (50-60% of VO 2max ) continuously walking) versus an usual care (UC",
+      "claim_role": "background",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-1832",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1832,
+      "sentence": "The authors showed that, after 26 weeks of training, the VO 2max decreased by 0.3 mL\u2219kg -1 min -1 in the training group and increased by 0.2 mL\u2219kg -1 min -1 in the UC group.",
+      "context_window": "e (UC) non-exercising group. The authors showed that, after 26 weeks of training, the VO 2max decreased by 0.3 mL\u2219kg -1 min -1 i",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-1879",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mL",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mL",
+      "source_section": "introduction",
+      "source_offset": 1879,
+      "sentence": "The authors showed that, after 26 weeks of training, the VO 2max decreased by 0.3 mL\u2219kg -1 min -1 in the training group and increased by 0.2 mL\u2219kg -1 min -1 in the UC group.",
+      "context_window": "that, after 26 weeks of training, the VO 2max decreased by 0.3 mL\u2219kg -1 min -1 in the training group and increased by 0.2 mL\u2219",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-1938",
+      "claim_type": "unit_value",
+      "raw_text": "0.2 mL",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mL",
+      "source_section": "introduction",
+      "source_offset": 1938,
+      "sentence": "The authors showed that, after 26 weeks of training, the VO 2max decreased by 0.3 mL\u2219kg -1 min -1 in the training group and increased by 0.2 mL\u2219kg -1 min -1 in the UC group.",
+      "context_window": "0.3 mL\u2219kg -1 min -1 in the training group and increased by 0.2 mL\u2219kg -1 min -1 in the UC group. Conversely, Jones et al. [ 22",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-2019",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2019,
+      "sentence": "Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "context_window": "n the UC group. Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO",
+      "claim_role": "protocol",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-2080",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2080,
+      "sentence": "Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "context_window": "2 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (f",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-msd-2148",
+      "claim_type": "mean_sd",
+      "raw_text": "19.5 \u00b1 7.6",
+      "numeric_values": [
+        19.5,
+        7.6
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2148,
+      "sentence": "Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "context_window": "2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-msd-2162",
+      "claim_type": "mean_sd",
+      "raw_text": "22.1 \u00b1 7.0",
+      "numeric_values": [
+        22.1,
+        7.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2162,
+      "sentence": "Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "context_window": "n-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-2169",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 mL",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "mL",
+      "source_section": "introduction",
+      "source_offset": 2169,
+      "sentence": "Conversely, Jones et al. [ 22 ] showed that 12 weeks of moderate/vigorous-intensity aerobic training (55-100%-VO 2max, 20-45 min-, 3 times/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy.",
+      "context_window": "imes/week) increased the VO 2max (from 19.5 \u00b1 7.6 to 22.1 \u00b1 7.0 mL\u2219kg -1 min -1 ) in women with BC undergoing chemotherapy. Ta",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-3662",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3662,
+      "sentence": "To test for possible coding drift, we randomly selected 30% of the studies for recoding following procedures outlined by Cooper et al. [ 26 ].",
+      "context_window": "et. To test for possible coding drift, we randomly selected 30% of the studies for recoding following procedures outlined b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-3787",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3787,
+      "sentence": "The mean agreement between coders was 95%.",
+      "context_window": "Cooper et al. [ 26 ]. The mean agreement between coders was 95%. The risk of bias of the included studies was independentl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-750",
+      "claim_type": "percentage",
+      "raw_text": "9.97%",
+      "numeric_values": [
+        9.97
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 750,
+      "sentence": "The average pre- to post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usual care groups, respectively.",
+      "context_window": "average pre- to post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95%",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-ci-766",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.29 to 1.53",
+      "numeric_values": [
+        -0.29,
+        1.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 766,
+      "sentence": "The average pre- to post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usual care groups, respectively.",
+      "context_window": "post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the tra",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-794",
+      "claim_type": "percentage",
+      "raw_text": "10.18%",
+      "numeric_values": [
+        10.18
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 794,
+      "sentence": "The average pre- to post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usual care groups, respectively.",
+      "context_window": "the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usu",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-ci-812",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.99 to -0.10",
+      "numeric_values": [
+        -0.99,
+        -0.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 812,
+      "sentence": "The average pre- to post-intervention change in the VO 2max was 9.97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usual care groups, respectively.",
+      "context_window": "97% (ES: 0.62 95% CI: -0.29 to 1.53) and -10.18% (ES: -0.54 95% CI: -0.99 to -0.10) for the training and usual care groups, respectively. The",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-msd-996",
+      "claim_type": "mean_sd",
+      "raw_text": "1.19 \u00b1 0.38",
+      "numeric_values": [
+        1.19,
+        0.38
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 996,
+      "sentence": "The overall between-group effect size difference for the VO 2max favored the aerobic training group ( d : 1.19 \u00b1 0.38 95% CI: 0.45 to 1.94) ( Figure 3 ).",
+      "context_window": "ce for the VO 2max favored the aerobic training group ( d : 1.19 \u00b1 0.38 95% CI: 0.45 to 1.94) ( Figure 3 ). The subgroup analyses",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-ci-1008",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45 to 1.94",
+      "numeric_values": [
+        0.45,
+        1.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1008,
+      "sentence": "The overall between-group effect size difference for the VO 2max favored the aerobic training group ( d : 1.19 \u00b1 0.38 95% CI: 0.45 to 1.94) ( Figure 3 ).",
+      "context_window": "O 2max favored the aerobic training group ( d : 1.19 \u00b1 0.38 95% CI: 0.45 to 1.94) ( Figure 3 ). The subgroup analyses revealed a significan",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-p-1462",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1462,
+      "sentence": "The meta-regression analyses did not produce significant betas for both continuous variables: total session exercise volume and total intervention period ( p > 0.05).",
+      "context_window": "tal session exercise volume and total intervention period ( p > 0.05). The sensitivity analysis demonstrated that CRF was not hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-p-1762",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1762,
+      "sentence": "Visual inspection of the funnel plot showed seven studies outside the funnel limits (five in the left and two in the right); both Kendall\u2019s tau with continuity correction (tau = 0.55; p = 0.04) and the Egger\u2019s regression intercept did not show significant bias ( z = 2.0019; p = 0.04) ( Figure 4 ).",
+      "context_window": "both Kendall\u2019s tau with continuity correction (tau = 0.55; p = 0.04) and the Egger\u2019s regression intercept did not show signific",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-p-1853",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1853,
+      "sentence": "Visual inspection of the funnel plot showed seven studies outside the funnel limits (five in the left and two in the right); both Kendall\u2019s tau with continuity correction (tau = 0.55; p = 0.04) and the Egger\u2019s regression intercept did not show significant bias ( z = 2.0019; p = 0.04) ( Figure 4 ).",
+      "context_window": "ssion intercept did not show significant bias ( z = 2.0019; p = 0.04) ( Figure 4 ). As the fill and trim procedure did not chang",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-792",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 792,
+      "sentence": "Our main results show that: (a) aerobic exercise training significantly increases the VO 2max compared with UC; (b) only vigorous-intensity aerobic exercise (64-90% of VO 2max ) significantly increases VO 2max , with no effect for moderate-intensity aerobic protocols (46-63% of VO 2max ); and (c) both continuous and interval aerobic training are effective at increasing VO 2max .",
+      "context_window": "d with UC; (b) only vigorous-intensity aerobic exercise (64-90% of VO 2max ) significantly increases VO 2max , with no effe",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-903",
+      "claim_type": "percentage",
+      "raw_text": "63%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 903,
+      "sentence": "Our main results show that: (a) aerobic exercise training significantly increases the VO 2max compared with UC; (b) only vigorous-intensity aerobic exercise (64-90% of VO 2max ) significantly increases VO 2max , with no effect for moderate-intensity aerobic protocols (46-63% of VO 2max ); and (c) both continuous and interval aerobic training are effective at increasing VO 2max .",
+      "context_window": "with no effect for moderate-intensity aerobic protocols (46-63% of VO 2max ); and (c) both continuous and interval aerobic",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-4883",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4883,
+      "sentence": "Due to the nature of interval training, which includes short sets of vigorous to maximal exercise (\u226590% of VO 2max ) interspaced by low-intensity recovery periods, the maintenance of training intensity during aerobic exercise is possible.",
+      "context_window": "which includes short sets of vigorous to maximal exercise (\u226590% of VO 2max ) interspaced by low-intensity recovery periods,",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-u-5316",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5316,
+      "sentence": "There is some compelling evidence that vigorous intensity continuous aerobic training performed during chemotherapy counteracts cancer-related fatigue, which can last up to 12 months after treatment completion, and reduces the time to return to work as compared with the UC group [ 57 ].",
+      "context_window": "py counteracts cancer-related fatigue, which can last up to 12 months after treatment completion, and reduces the time to return",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-7696",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7696,
+      "sentence": "High-intensity continuous training (walking/run, 5x week at 70% of VO 2peak for 30 min) may be very demanding for this cohort.",
+      "context_window": "High-intensity continuous training (walking/run, 5x week at 70% of VO 2peak for 30 min) may be very demanding for this coho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-7842",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7842,
+      "sentence": "Thus, performing high-intensity interval training (e.g., cycling 3x of 3min at 90% of VO 2peak , with intervals cycling at 30% of VO 2peak , 3x week) seems to be a more feasible alternative, as it is less time-consuming and more enjoyable.",
+      "context_window": "gh-intensity interval training (e.g., cycling 3x of 3min at 90% of VO 2peak , with intervals cycling at 30% of VO 2peak , 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-7886",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7886,
+      "sentence": "Thus, performing high-intensity interval training (e.g., cycling 3x of 3min at 90% of VO 2peak , with intervals cycling at 30% of VO 2peak , 3x week) seems to be a more feasible alternative, as it is less time-consuming and more enjoyable.",
+      "context_window": "g 3x of 3min at 90% of VO 2peak , with intervals cycling at 30% of VO 2peak , 3x week) seems to be a more feasible alternat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7463807_aerobic_exercise_induced_changes_in_cardiorespiratory_fitnes-pct-166",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "conclusion",
+      "source_offset": 166,
+      "sentence": "We also showed that vigorous intensities (64-90% of VO 2max ) performed with continuous or interval aerobic training are effective at increasing the VO 2max in women with BC undergoing chemotherapy.",
+      "context_window": "chemotherapy. We also showed that vigorous intensities (64-90% of VO 2max ) performed with continuous or interval aerobic",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

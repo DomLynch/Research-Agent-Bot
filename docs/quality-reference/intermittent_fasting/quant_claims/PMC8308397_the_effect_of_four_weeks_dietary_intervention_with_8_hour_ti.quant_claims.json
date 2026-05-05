@@ -1,0 +1,1597 @@
+{
+  "paper_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti",
+  "doi": "10.3390/nu13072164",
+  "extracted_at": "2026-05-05T22:11:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 46,
+    "mean_sd": 16,
+    "percentage": 21,
+    "p_value": 2,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-435",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 435,
+      "sentence": "A total of 33 young adults completed the 8 h TRE for 4 weeks.",
+      "context_window": "night. A total of 33 young adults completed the 8 h TRE for 4 weeks. Body composition was measured by bioelectrical impedance a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-532",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 532,
+      "sentence": "Body composition was measured by bioelectrical impedance analysis at baseline and every 2 weeks, and blood samples were collected at baseline and week 4.",
+      "context_window": "d by bioelectrical impedance analysis at baseline and every 2 weeks, and blood samples were collected at baseline and week 4. D",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-730",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 1.4",
+      "numeric_values": [
+        1.0,
+        1.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 730,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "rticipants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-736",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 kg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 736,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "ants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-763",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 0.5",
+      "numeric_values": [
+        0.4,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 763,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "t changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-769",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 769,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "ges in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE. Whe",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-798",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 1.9",
+      "numeric_values": [
+        0.4,
+        1.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 798,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE. When participants were divided into",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-804",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 804,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE. When participants were divided into",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-816",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 816,
+      "sentence": "Participants experienced significant changes in body weight (-1.0 \u00b1 1.4 kg), body mass index (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE.",
+      "context_window": "ndex (-0.4 \u00b1 0.5 kg/m 2 ), and body fat (-0.4 \u00b1 1.9%) after 4 weeks of TRE. When participants were divided into weight loss/gai",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1465",
+      "claim_type": "mean_sd",
+      "raw_text": "2.8 \u00b1 0.5",
+      "numeric_values": [
+        2.8,
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1465,
+      "sentence": "When meal frequency and energy proportion were evaluated, the average meal frequency was 2.8 \u00b1 0.5 and energy proportions of breakfast, lunch, dinner, and snacks were 4.5, 39.2, 37.6, and 18.5%, respectively; there were no significant differences between the two groups.",
+      "context_window": "y proportion were evaluated, the average meal frequency was 2.8 \u00b1 0.5 and energy proportions of breakfast, lunch, dinner, and sna",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-1564",
+      "claim_type": "percentage",
+      "raw_text": "18.5%",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1564,
+      "sentence": "When meal frequency and energy proportion were evaluated, the average meal frequency was 2.8 \u00b1 0.5 and energy proportions of breakfast, lunch, dinner, and snacks were 4.5, 39.2, 37.6, and 18.5%, respectively; there were no significant differences between the two groups.",
+      "context_window": "akfast, lunch, dinner, and snacks were 4.5, 39.2, 37.6, and 18.5%, respectively; there were no significant differences betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1727",
+      "claim_type": "mean_sd",
+      "raw_text": "3.1 \u00b1 3.2",
+      "numeric_values": [
+        3.1,
+        3.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1727,
+      "sentence": "However, the saturated fat intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively).",
+      "context_window": "ed fat intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively). In conclusion, 8 h TRE can be a",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-1733",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1733,
+      "sentence": "However, the saturated fat intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively).",
+      "context_window": "intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively). In conclusion, 8 h TRE can be ap",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1739",
+      "claim_type": "mean_sd",
+      "raw_text": "6.0 \u00b1 2.5",
+      "numeric_values": [
+        6.0,
+        2.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1739,
+      "sentence": "However, the saturated fat intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively).",
+      "context_window": "e at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively). In conclusion, 8 h TRE can be applied as a",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-1745",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1745,
+      "sentence": "However, the saturated fat intake at dinner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively).",
+      "context_window": "inner was lower in the weight loss group (3.1 \u00b1 3.2%, 6.0 \u00b1 2.5% respectively). In conclusion, 8 h TRE can be applied as a l",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1564",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1564,
+      "sentence": "An 8 h TRE intervention study over 12 weeks in obese subjects showed significant body weight reduction in TRE subjects, but no differences in other metabolic risk factors such as serum lipids, fasting glucose, and fasting insulin compared to control or non-TRE groups [ 8 , 9 ].",
+      "context_window": "ndings are inconclusive. An 8 h TRE intervention study over 12 weeks in obese subjects showed significant body weight reduction",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-199",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 199,
+      "sentence": "Inclusion criteria were healthy young adults aged 18-28 who could engage in 4 weeks of TRE intervention.",
+      "context_window": "ia were healthy young adults aged 18-28 who could engage in 4 weeks of TRE intervention. Exclusion criteria included previous d",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-395",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 395,
+      "sentence": "Exclusion criteria included previous diagnosis or treatment for metabolic diseases (e.g., diabetes, dyslipidemia, metabolic syndrome, etc.), having a weight change of 10% or more in the past month, or having a sleep disorder.",
+      "context_window": "demia, metabolic syndrome, etc.), having a weight change of 10% or more in the past month, or having a sleep disorder. Of",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1092",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1092,
+      "sentence": "Starting from the next day, all participants began 8 h TRE for 4 weeks.",
+      "context_window": "rting from the next day, all participants began 8 h TRE for 4 weeks. The participants were asked to select an eating window dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1440",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1440,
+      "sentence": "After 2 weeks, participants were invited to attend a second visit to measure body composition.",
+      "context_window": "ly dietary record and sleep records via a mobile app. After 2 weeks, participants were invited to attend a second visit to meas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1535",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1535,
+      "sentence": "After 4 weeks, participants made a final visit for body composition measurements and blood sample collection in a nearby hospital.",
+      "context_window": "to attend a second visit to measure body composition. After 4 weeks, participants made a final visit for body composition measu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2248",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2248,
+      "sentence": "All participants completed 28 days of dietary records.",
+      "context_window": "take and evaluate meal patterns. All participants completed 28 days of dietary records. Participants were instructed to record",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2657",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2657,
+      "sentence": "Nutrient intakes were calculated from 28 days of dietary records using the Diet Evaluation System, a web-based program for the dietary assessment of Korean people [ 20 ].",
+      "context_window": "nack, and late snack. Nutrient intakes were calculated from 28 days of dietary records using the Diet Evaluation System, a web-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3209",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3209,
+      "sentence": "Meal frequency was defined as the frequency of each meal type that was consumed per day over 28 days and meal proportion was defined as the average daily nutrient intake per meal over 28 days, in which four snacks were counted as a single meal.",
+      "context_window": "frequency of each meal type that was consumed per day over 28 days and meal proportion was defined as the average daily nutrie",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3300",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3300,
+      "sentence": "Meal frequency was defined as the frequency of each meal type that was consumed per day over 28 days and meal proportion was defined as the average daily nutrient intake per meal over 28 days, in which four snacks were counted as a single meal.",
+      "context_window": "defined as the average daily nutrient intake per meal over 28 days, in which four snacks were counted as a single meal. Nutrie",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3567",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3567,
+      "sentence": "Participants were invited for body composition measurements at baseline, after 2 weeks of TRE, and after 4 weeks of TRE.",
+      "context_window": "nvited for body composition measurements at baseline, after 2 weeks of TRE, and after 4 weeks of TRE. Body composition was meas",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3593",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3593,
+      "sentence": "Participants were invited for body composition measurements at baseline, after 2 weeks of TRE, and after 4 weeks of TRE.",
+      "context_window": "n measurements at baseline, after 2 weeks of TRE, and after 4 weeks of TRE. Body composition was measured via bioelectrical imp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-4088",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4088,
+      "sentence": "Blood samples were collected at baseline and after 4 weeks for biochemical analysis.",
+      "context_window": "g tape. Blood samples were collected at baseline and after 4 weeks for biochemical analysis. Whole blood was collected into se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-4177",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4177,
+      "sentence": "Whole blood was collected into serum-separating tubes (5 mL) and centrifuged to prepare the serum at the Catholic University of Korea Bucheon St.",
+      "context_window": "sis. Whole blood was collected into serum-separating tubes (5 mL) and centrifuged to prepare the serum at the Catholic Unive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-p-8396",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 8396,
+      "sentence": "All statistical analyses were performed using SAS 9.4 (SAS Institute Inc., Cary, NC, USA), and statistical significance was considered when p < 0.05.",
+      "context_window": "NC, USA), and statistical significance was considered when p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-285",
+      "claim_type": "unit_value",
+      "raw_text": "22.5 years",
+      "numeric_values": [
+        22.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 285,
+      "sentence": "The mean age of the subjects was 22.5 years, and the proportion of men was 24%.",
+      "context_window": "nts are shown in Table 1 . The mean age of the subjects was 22.5 years, and the proportion of men was 24%. The average BMI was sig",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-327",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 327,
+      "sentence": "The mean age of the subjects was 22.5 years, and the proportion of men was 24%.",
+      "context_window": "the subjects was 22.5 years, and the proportion of men was 24%. The average BMI was significantly higher in men than in wo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-920",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 1.2",
+      "numeric_values": [
+        1.0,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 920,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "tervention. Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-926",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 926,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "tion. Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-949",
+      "claim_type": "mean_sd",
+      "raw_text": "0.3 \u00b1 0.8",
+      "numeric_values": [
+        0.3,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 949,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "idual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-955",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 kg",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 955,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in wee",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-990",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 3.3",
+      "numeric_values": [
+        1.3,
+        3.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 990,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2. After 4 weeks, we observed signif",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "3.3 cm",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 996,
+      "sentence": "Significant individual changes in body weight (-1.0 \u00b1 1.2 kg), muscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2.",
+      "context_window": "uscle mass (-0.3 \u00b1 0.8 kg), and waist circumference (-1.3 \u00b1 3.3 cm) were found in week 2. After 4 weeks, we observed significa",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1032",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1032,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": "t circumference (-1.3 \u00b1 3.3 cm) were found in week 2. After 4 weeks, we observed significant individual changes in body weight",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1101",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 1.4",
+      "numeric_values": [
+        1.0,
+        1.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1101,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": "we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1107",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 kg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1107,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": "erved significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1122",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 0.5",
+      "numeric_values": [
+        0.4,
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1122,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": "nt individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%). When strat",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1128",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1128,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": "ividual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%). When stratifi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-1168",
+      "claim_type": "mean_sd",
+      "raw_text": "0.4 \u00b1 1.9",
+      "numeric_values": [
+        0.4,
+        1.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1168,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": ".4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%). When stratified by sex, the changes were more prominent",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1174,
+      "sentence": "After 4 weeks, we observed significant individual changes in body weight (-1.0 \u00b1 1.4 kg), BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%).",
+      "context_window": ", BMI (-0.4 \u00b1 0.5 kg/m 2 ), and percent of body fat (-0.4 \u00b1 1.9%). When stratified by sex, the changes were more prominent i",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1335",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1335,
+      "sentence": "Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg.",
+      "context_window": "ht changes are presented in Figure 2 a. Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg. Based on weight change after",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1356",
+      "claim_type": "unit_value",
+      "raw_text": "4.1 kg",
+      "numeric_values": [
+        4.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1356,
+      "sentence": "Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg.",
+      "context_window": "ted in Figure 2 a. Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg. Based on weight change after 4 weeks, participan",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1366",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 kg",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1366,
+      "sentence": "Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg.",
+      "context_window": "ure 2 a. Weight change after 4 weeks ranged from -4.1 kg to 1.1 kg. Based on weight change after 4 weeks, participants were di",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1403",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1403,
+      "sentence": "Based on weight change after 4 weeks, participants were divided into weight loss ( n = 23) or weight gain ( n = 10) groups.",
+      "context_window": "ranged from -4.1 kg to 1.1 kg. Based on weight change after 4 weeks, participants were divided into weight loss ( n = 23) or we",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-n-1457",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1457,
+      "sentence": "Based on weight change after 4 weeks, participants were divided into weight loss ( n = 23) or weight gain ( n = 10) groups.",
+      "context_window": "after 4 weeks, participants were divided into weight loss ( n = 23) or weight gain ( n = 10) groups. The number of men in each",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-n-1482",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1482,
+      "sentence": "Based on weight change after 4 weeks, participants were divided into weight loss ( n = 23) or weight gain ( n = 10) groups.",
+      "context_window": "ts were divided into weight loss ( n = 23) or weight gain ( n = 10) groups. The number of men in each group was the same and t",
+      "claim_role": "population",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1756",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "The weight loss group exhibited weight changes from -4.1 to -0.4 kg, showing significant reductions in body weight, muscle mass, and fat mass after 4 weeks.",
+      "context_window": "he weight loss group exhibited weight changes from -4.1 to -0.4 kg, showing significant reductions in body weight, muscle mass",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1843",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1843,
+      "sentence": "The weight loss group exhibited weight changes from -4.1 to -0.4 kg, showing significant reductions in body weight, muscle mass, and fat mass after 4 weeks.",
+      "context_window": "reductions in body weight, muscle mass, and fat mass after 4 weeks. On the other hand, the weight gain groups exhibited weight",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1929",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 kg",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1929,
+      "sentence": "On the other hand, the weight gain groups exhibited weight changes from 0 to 1.1 kg and showed significant increases in body weight, but with no significant increase in muscle or fat mass.",
+      "context_window": ", the weight gain groups exhibited weight changes from 0 to 1.1 kg and showed significant increases in body weight, but with n",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-2180",
+      "claim_type": "mean_sd",
+      "raw_text": "3.1 \u00b1 6.3",
+      "numeric_values": [
+        3.1,
+        6.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2180,
+      "sentence": "Levels of fasting insulin (-3.1 \u00b1 6.3 \u03bcU/mL) and HOMA-IR (-0.8 \u00b1 1.6) were significantly lower in the weight loss group after 4 weeks of TRE, but showed no significant changes in the weight gain group after intervention.",
+      "context_window": "weight gain groups in Table 3 . Levels of fasting insulin (-3.1 \u00b1 6.3 \u03bcU/mL) and HOMA-IR (-0.8 \u00b1 1.6) were significantly lower in",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-2211",
+      "claim_type": "mean_sd",
+      "raw_text": "0.8 \u00b1 1.6",
+      "numeric_values": [
+        0.8,
+        1.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2211,
+      "sentence": "Levels of fasting insulin (-3.1 \u00b1 6.3 \u03bcU/mL) and HOMA-IR (-0.8 \u00b1 1.6) were significantly lower in the weight loss group after 4 weeks of TRE, but showed no significant changes in the weight gain group after intervention.",
+      "context_window": "Levels of fasting insulin (-3.1 \u00b1 6.3 \u03bcU/mL) and HOMA-IR (-0.8 \u00b1 1.6) were significantly lower in the weight loss group after 4",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2278",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2278,
+      "sentence": "Levels of fasting insulin (-3.1 \u00b1 6.3 \u03bcU/mL) and HOMA-IR (-0.8 \u00b1 1.6) were significantly lower in the weight loss group after 4 weeks of TRE, but showed no significant changes in the weight gain group after intervention.",
+      "context_window": ".6) were significantly lower in the weight loss group after 4 weeks of TRE, but showed no significant changes in the weight gai",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-2431",
+      "claim_type": "mean_sd",
+      "raw_text": "13.0 \u00b1 11.7",
+      "numeric_values": [
+        13.0,
+        11.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2431,
+      "sentence": "Regarding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group after intervention.",
+      "context_window": ". Regarding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2438",
+      "claim_type": "unit_value",
+      "raw_text": "11.7 mg/dL",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2438,
+      "sentence": "Regarding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group after intervention.",
+      "context_window": "ding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels (-4.3",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-msd-2505",
+      "claim_type": "mean_sd",
+      "raw_text": "4.3 \u00b1 7.7",
+      "numeric_values": [
+        4.3,
+        7.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2505,
+      "sentence": "Regarding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group after intervention.",
+      "context_window": "/dL) were significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group af",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2511",
+      "claim_type": "unit_value",
+      "raw_text": "7.7 mg/dL",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 2511,
+      "sentence": "Regarding blood lipid parameters, LDL-cholesterol levels (13.0 \u00b1 11.7 mg/dL) were significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group after intervention.",
+      "context_window": "ere significantly higher and HDL-cholesterol levels (-4.3 \u00b1 7.7 mg/dL) were significantly lower in the weight loss group after in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-2677",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2677,
+      "sentence": "However, in the weight gain group, LDL- and HDL-cholesterol levels were higher after 4 weeks of TRE, but this was not significant.",
+      "context_window": "in group, LDL- and HDL-cholesterol levels were higher after 4 weeks of TRE, but this was not significant. Among the cardiometab",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3134",
+      "claim_type": "percentage",
+      "raw_text": "54.6%",
+      "numeric_values": [
+        54.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3134,
+      "sentence": "Chronotype was reported as evening type (54.6%), or morning type (18.2%), and there was no significant difference in chronotype between the weight change groups ( p = 0.2494).",
+      "context_window": "uration was 7.4 h. Chronotype was reported as evening type (54.6%), or morning type (18.2%), and there was no significant dif",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3159",
+      "claim_type": "percentage",
+      "raw_text": "18.2%",
+      "numeric_values": [
+        18.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3159,
+      "sentence": "Chronotype was reported as evening type (54.6%), or morning type (18.2%), and there was no significant difference in chronotype between the weight change groups ( p = 0.2494).",
+      "context_window": "type was reported as evening type (54.6%), or morning type (18.2%), and there was no significant difference in chronotype bet",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-p-3256",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.2494",
+      "numeric_values": [
+        0.2494
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3256,
+      "sentence": "Chronotype was reported as evening type (54.6%), or morning type (18.2%), and there was no significant difference in chronotype between the weight change groups ( p = 0.2494).",
+      "context_window": "difference in chronotype between the weight change groups ( p = 0.2494). The subjects mostly reported their sleep quality as very",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3332",
+      "claim_type": "percentage",
+      "raw_text": "15.2%",
+      "numeric_values": [
+        15.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3332,
+      "sentence": "The subjects mostly reported their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep within 60 min (87.8%), and experienced difficulty in falling asleep within 30 min less than twice a week (72.8%).",
+      "context_window": "subjects mostly reported their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3355",
+      "claim_type": "percentage",
+      "raw_text": "51.5%",
+      "numeric_values": [
+        51.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3355,
+      "sentence": "The subjects mostly reported their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep within 60 min (87.8%), and experienced difficulty in falling asleep within 30 min less than twice a week (72.8%).",
+      "context_window": "ed their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep within 60 min (87.8%), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3408",
+      "claim_type": "percentage",
+      "raw_text": "87.8%",
+      "numeric_values": [
+        87.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3408,
+      "sentence": "The subjects mostly reported their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep within 60 min (87.8%), and experienced difficulty in falling asleep within 30 min less than twice a week (72.8%).",
+      "context_window": "good (51.5%); most participants fell asleep within 60 min (87.8%), and experienced difficulty in falling asleep within 30 mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-3499",
+      "claim_type": "percentage",
+      "raw_text": "72.8%",
+      "numeric_values": [
+        72.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3499,
+      "sentence": "The subjects mostly reported their sleep quality as very good (15.2%) or fairly good (51.5%); most participants fell asleep within 60 min (87.8%), and experienced difficulty in falling asleep within 30 min less than twice a week (72.8%).",
+      "context_window": "lty in falling asleep within 30 min less than twice a week (72.8%). There was no significant difference in sleep pattern betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-4032",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4032,
+      "sentence": "The average meal frequencies during the 28 days of TRE were 3.6 times for breakfast, 24.6 times for lunch, 22.3 times for dinner, and 21.2 times for snacks; there were no significant differences in meal frequencies between the weight change groups.",
+      "context_window": "ight change groups. The average meal frequencies during the 28 days of TRE were 3.6 times for breakfast, 24.6 times for lunch,",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4399",
+      "claim_type": "percentage",
+      "raw_text": "4.5%",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4399,
+      "sentence": "The energy intake per meal (percentage of total energy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no significant differences between the weight change groups.",
+      "context_window": "percentage of total energy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4420",
+      "claim_type": "percentage",
+      "raw_text": "39.2%",
+      "numeric_values": [
+        39.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4420,
+      "sentence": "The energy intake per meal (percentage of total energy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no significant differences between the weight change groups.",
+      "context_window": "nergy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4438",
+      "claim_type": "percentage",
+      "raw_text": "37.6%",
+      "numeric_values": [
+        37.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4438,
+      "sentence": "The energy intake per meal (percentage of total energy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no significant differences between the weight change groups.",
+      "context_window": "ay) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4461",
+      "claim_type": "percentage",
+      "raw_text": "18.5%",
+      "numeric_values": [
+        18.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4461,
+      "sentence": "The energy intake per meal (percentage of total energy intake per day) was comprised of 4.5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no significant differences between the weight change groups.",
+      "context_window": "5% from breakfast, 39.2% from lunch, 37.6% from dinner, and 18.5% from snacks in all subjects, with no significant difference",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4791",
+      "claim_type": "percentage",
+      "raw_text": "3.1%",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4791,
+      "sentence": "The saturated fat intake from dinner was significantly lower in the weight loss group, who consumed 3.1% of their total energy from saturated fats at dinner, compared to the weight gain group, who received 6.0% of their energy from saturated fats at dinner.",
+      "context_window": "significantly lower in the weight loss group, who consumed 3.1% of their total energy from saturated fats at dinner, compar",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-4897",
+      "claim_type": "percentage",
+      "raw_text": "6.0%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4897,
+      "sentence": "The saturated fat intake from dinner was significantly lower in the weight loss group, who consumed 3.1% of their total energy from saturated fats at dinner, compared to the weight gain group, who received 6.0% of their energy from saturated fats at dinner.",
+      "context_window": "at dinner, compared to the weight gain group, who received 6.0% of their energy from saturated fats at dinner.",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-606",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 606,
+      "sentence": "We demonstrated that TRE is an effective strategy for weight management in healthy young adults, although some subjects (weight gain group, 30%) showed a slight increase in body weight (0 to 1.1 kg) after the intervention.",
+      "context_window": "hy young adults, although some subjects (weight gain group, 30%) showed a slight increase in body weight (0 to 1.1 kg) afte",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-657",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 kg",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 657,
+      "sentence": "We demonstrated that TRE is an effective strategy for weight management in healthy young adults, although some subjects (weight gain group, 30%) showed a slight increase in body weight (0 to 1.1 kg) after the intervention.",
+      "context_window": "n group, 30%) showed a slight increase in body weight (0 to 1.1 kg) after the intervention. Moreover, participants in the weig",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1063",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1063,
+      "sentence": "Two randomized controlled trials of obese adults reported that the TRE group showed a significant reduction in body weight after 12 weeks compared to the non-TRE or control groups [ 9 , 25 ].",
+      "context_window": "E group showed a significant reduction in body weight after 12 weeks compared to the non-TRE or control groups [ 9 , 25 ]. A stu",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1263",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1263,
+      "sentence": "A study of obese adults reported that participants in the 8 h TRE group experienced mild weight loss compared to the control group after 12 weeks [ 8 ], and another study of obese adults also reported that 4 h or 6 h TRE caused a mild reduction in weight after 8 weeks.",
+      "context_window": "ienced mild weight loss compared to the control group after 12 weeks [ 8 ], and another study of obese adults also reported that",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-1387",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1387,
+      "sentence": "A study of obese adults reported that participants in the 8 h TRE group experienced mild weight loss compared to the control group after 12 weeks [ 8 ], and another study of obese adults also reported that 4 h or 6 h TRE caused a mild reduction in weight after 8 weeks.",
+      "context_window": "that 4 h or 6 h TRE caused a mild reduction in weight after 8 weeks. In contrast, studies of adults with prediabetes or metabol",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3293",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3293,
+      "sentence": "Two studies examining early TRE windows reported improved insulin sensitivities; these studies applied an early 6 h TRE window with dinner before 3 p.m. over 5 weeks [ 26 ] and an 8 h TRE window from 8 a.m. to 4 p.m. over 2 weeks [ 28 ].",
+      "context_window": "lied an early 6 h TRE window with dinner before 3 p.m. over 5 weeks [ 26 ] and an 8 h TRE window from 8 a.m. to 4 p.m. over 2 w",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3357",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3357,
+      "sentence": "Two studies examining early TRE windows reported improved insulin sensitivities; these studies applied an early 6 h TRE window with dinner before 3 p.m. over 5 weeks [ 26 ] and an 8 h TRE window from 8 a.m. to 4 p.m. over 2 weeks [ 28 ].",
+      "context_window": "eks [ 26 ] and an 8 h TRE window from 8 a.m. to 4 p.m. over 2 weeks [ 28 ]. By contrast, the results of studies examining late",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3608",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3608,
+      "sentence": "A late TRE study reported no significant differences in body composition changes when TRE was applied in any 4 h window between 4 p.m. and midnight over 8 weeks [ 29 ].",
+      "context_window": "applied in any 4 h window between 4 p.m. and midnight over 8 weeks [ 29 ]. However, 4 h (eating between 3 p.m. and 7 p.m.) or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-3819",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3819,
+      "sentence": "However, 4 h (eating between 3 p.m. and 7 p.m.) or 6 h (eating between 1 p.m. and 7 p.m.) TRE windows were effective, leading to significant reductions in body weight and insulin resistance over 8 weeks [ 30 ]; the authors speculated that enabling the participants to select a later eating window improved overall compliance.",
+      "context_window": "icant reductions in body weight and insulin resistance over 8 weeks [ 30 ]; the authors speculated that enabling the participan",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-pct-6144",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6144,
+      "sentence": "According to previous findings, greater energy intake later in the day is significantly associated with lower insulin sensitivity [ 6 , 34 ] and night-time eating (25% or more of total energy consumed after 9 p.m.) is significantly associated with increased prevalence of metabolic syndrome [ 31 ].",
+      "context_window": "lower insulin sensitivity [ 6 , 34 ] and night-time eating (25% or more of total energy consumed after 9 p.m.) is significa",
+      "claim_role": "background",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8308397_the_effect_of_four_weeks_dietary_intervention_with_8_hour_ti-u-7795",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 7795,
+      "sentence": "To compensate, we obtained 28 days of dietary records that are likely to have represented the usual intakes and meal patterns of the individuals.",
+      "context_window": "that took place during the TRE. To compensate, we obtained 28 days of dietary records that are likely to have represented the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

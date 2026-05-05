@@ -1,0 +1,1881 @@
+{
+  "paper_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas",
+  "doi": "10.1155/2012/810594",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 9,
+    "unit_value": 17,
+    "p_value": 25,
+    "percentage": 36,
+    "sample_size": 12,
+    "confidence_interval": 1,
+    "correlation": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-209",
+      "claim_type": "mean_sd",
+      "raw_text": "43.2 \u00b1 5.1",
+      "numeric_values": [
+        43.2,
+        5.1
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 209,
+      "sentence": "Thirty-five subjects (10 men, body mass index 43.2 \u00b1 5.1 kg/m 2 ) who participated in a 10-month lifestyle treatment programme were included.",
+      "context_window": "en and women. Thirty-five subjects (10 men, body mass index 43.2 \u00b1 5.1 kg/m 2 ) who participated in a 10-month lifestyle treatment",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-216",
+      "claim_type": "unit_value",
+      "raw_text": "5.1 kg",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 216,
+      "sentence": "Thirty-five subjects (10 men, body mass index 43.2 \u00b1 5.1 kg/m 2 ) who participated in a 10-month lifestyle treatment programme were included.",
+      "context_window": "women. Thirty-five subjects (10 men, body mass index 43.2 \u00b1 5.1 kg/m 2 ) who participated in a 10-month lifestyle treatment pr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-377",
+      "claim_type": "p_value",
+      "raw_text": "P = .027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 377,
+      "sentence": "The PA duration correlated only with weight change for men ( r = -0.69, P = .027 versus r = -0.19, P = .372 for women).",
+      "context_window": "ion correlated only with weight change for men ( r = -0.69, P = .027 versus r = -0.19, P = .372 for women). Conversely, the PA i",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-404",
+      "claim_type": "p_value",
+      "raw_text": "P = .372",
+      "numeric_values": [
+        0.372
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 404,
+      "sentence": "The PA duration correlated only with weight change for men ( r = -0.69, P = .027 versus r = -0.19, P = .372 for women).",
+      "context_window": "ight change for men ( r = -0.69, P = .027 versus r = -0.19, P = .372 for women). Conversely, the PA intensity correlated only wi",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-501",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 501,
+      "sentence": "Conversely, the PA intensity correlated only with CRF for women ( r = 0.61, P = .003 versus r = 0.39, P = .340 for men).",
+      "context_window": "PA intensity correlated only with CRF for women ( r = 0.61, P = .003 versus r = 0.39, P = .340 for men). PA explained 55.8 and 5",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-527",
+      "claim_type": "p_value",
+      "raw_text": "P = .340",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 527,
+      "sentence": "Conversely, the PA intensity correlated only with CRF for women ( r = 0.61, P = .003 versus r = 0.39, P = .340 for men).",
+      "context_window": "ly with CRF for women ( r = 0.61, P = .003 versus r = 0.39, P = .340 for men). PA explained 55.8 and 5.6% of weight change for m",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-568",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 568,
+      "sentence": "PA explained 55.8 and 5.6% of weight change for men and women, respectively, whereas the corresponding explained variances for CRF were 15.6 and 36.7%.",
+      "context_window": "3 versus r = 0.39, P = .340 for men). PA explained 55.8 and 5.6% of weight change for men and women, respectively, whereas t",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-691",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 691,
+      "sentence": "PA explained 55.8 and 5.6% of weight change for men and women, respectively, whereas the corresponding explained variances for CRF were 15.6 and 36.7%.",
+      "context_window": "the corresponding explained variances for CRF were 15.6 and 36.7%. We conclude that PA was associated with change in body wei",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-234",
+      "claim_type": "unit_value",
+      "raw_text": "3 kg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 234,
+      "sentence": "However, most studies find limited evidence for a decrease in body weight with physical activity alone (1-3 kg) [ 1 - 3 ] or in combination with dietary interventions (3.5-13 kg) [ 1 - 6 ].",
+      "context_window": "r a decrease in body weight with physical activity alone (1-3 kg) [ 1 - 3 ] or in combination with dietary interventions (3.",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-300",
+      "claim_type": "unit_value",
+      "raw_text": "13 kg",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 300,
+      "sentence": "However, most studies find limited evidence for a decrease in body weight with physical activity alone (1-3 kg) [ 1 - 3 ] or in combination with dietary interventions (3.5-13 kg) [ 1 - 6 ].",
+      "context_window": "[ 1 - 3 ] or in combination with dietary interventions (3.5-13 kg) [ 1 - 6 ]. A limitation when reporting such changes on a g",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-285",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 285,
+      "sentence": "The inclusion criteria for participation in the programme were age between 18 and 60 years old and body mass index (BMI) > 40 kg/m 2 without comorbidity, or a BMI > 35 with comorbidity.",
+      "context_window": "for participation in the programme were age between 18 and 60 years old and body mass index (BMI) > 40 kg/m 2 without comorbidi",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-326",
+      "claim_type": "unit_value",
+      "raw_text": "40 kg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 326,
+      "sentence": "The inclusion criteria for participation in the programme were age between 18 and 60 years old and body mass index (BMI) > 40 kg/m 2 without comorbidity, or a BMI > 35 with comorbidity.",
+      "context_window": "age between 18 and 60 years old and body mass index (BMI) > 40 kg/m 2 without comorbidity, or a BMI > 35 with comorbidity. Th",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-1087",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1087,
+      "sentence": "The present study presents data from the first to the third inpatient period (i.e., 10 months of followup).",
+      "context_window": "ts data from the first to the third inpatient period (i.e., 10 months of followup). An interdisciplinary team of health professi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-2506",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 kg",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2506,
+      "sentence": "Subjects were weighed to the nearest 0.1 kg in light clothing before breakfast, using a digital scale (BWB-800, Tanita Corp., Tokyo, Japan).",
+      "context_window": "hird inpatient period. Subjects were weighed to the nearest 0.1 kg in light clothing before breakfast, using a digital scale (",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-2645",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2645,
+      "sentence": "Height was measured to the nearest 0.5 cm using a wall-mounted stadiometer.",
+      "context_window": "ta Corp., Tokyo, Japan). Height was measured to the nearest 0.5 cm using a wall-mounted stadiometer. Waist circumference was m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-2734",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 cm",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 2734,
+      "sentence": "Waist circumference was measured to the nearest 0.5 cm at the level of the iliac crest at the end of a normal expiration using a nonstretchable tape measure.",
+      "context_window": "tadiometer. Waist circumference was measured to the nearest 0.5 cm at the level of the iliac crest at the end of a normal expi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-3468",
+      "claim_type": "sample_size",
+      "raw_text": "n = 13",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3468,
+      "sentence": "Because we used an indirect measure of VO 2max that has not been validated in severely obese subjects, validity and reliability were examined in a subsample of our subjects ( n = 13).",
+      "context_window": "reliability were examined in a subsample of our subjects ( n = 13). The subjects performed a maximal treadmill test using a m",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-4291",
+      "claim_type": "unit_value",
+      "raw_text": "0.20 mL",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4291,
+      "sentence": "There was no systematic bias compared to direct measurement of VO 2max (-0.20 mL/kg/min difference, P = .900).",
+      "context_window": "systematic bias compared to direct measurement of VO 2max (-0.20 mL/kg/min difference, P = .900). For test-retest reliability,",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-4318",
+      "claim_type": "p_value",
+      "raw_text": "P = .900",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4318,
+      "sentence": "There was no systematic bias compared to direct measurement of VO 2max (-0.20 mL/kg/min difference, P = .900).",
+      "context_window": "direct measurement of VO 2max (-0.20 mL/kg/min difference, P = .900). For test-retest reliability, we found a Pearson correlati",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-4415",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4415,
+      "sentence": "For test-retest reliability, we found a Pearson correlation coefficient of r = 0.92 ( P < .001) and a standard error of measurement (calculated as suggested by Hopkins [ 32 ]) of 1.13 mL/kg/min.",
+      "context_window": "y, we found a Pearson correlation coefficient of r = 0.92 ( P < .001) and a standard error of measurement (calculated as suggest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-4508",
+      "claim_type": "unit_value",
+      "raw_text": "1.13 mL",
+      "numeric_values": [
+        1.13
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4508,
+      "sentence": "For test-retest reliability, we found a Pearson correlation coefficient of r = 0.92 ( P < .001) and a standard error of measurement (calculated as suggested by Hopkins [ 32 ]) of 1.13 mL/kg/min.",
+      "context_window": "measurement (calculated as suggested by Hopkins [ 32 ]) of 1.13 mL/kg/min. These results show that the \u00c5strand/Ryhming test ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-7798",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7798,
+      "sentence": "A two-sided P < .05 indicated significant differences.",
+      "context_window": "d using SPSS v. 17.0 (SPSS Inc., Chicago, USA). A two-sided P < .05 indicated significant differences.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-483",
+      "claim_type": "mean_sd",
+      "raw_text": "39.3 \u00b1 11.1",
+      "numeric_values": [
+        39.3,
+        11.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 483,
+      "sentence": "Subjects without valid training diaries were younger than subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005).",
+      "context_window": "ies were younger than subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005). Dropouts were taller th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-502",
+      "claim_type": "mean_sd",
+      "raw_text": "47.9 \u00b1 8.8",
+      "numeric_values": [
+        47.9,
+        8.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 502,
+      "sentence": "Subjects without valid training diaries were younger than subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005).",
+      "context_window": "an subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005). Dropouts were taller than subjects with v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-509",
+      "claim_type": "unit_value",
+      "raw_text": "8.8 years",
+      "numeric_values": [
+        8.8
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 509,
+      "sentence": "Subjects without valid training diaries were younger than subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005).",
+      "context_window": "ects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005). Dropouts were taller than subjects with valid t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-520",
+      "claim_type": "p_value",
+      "raw_text": "P = .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 520,
+      "sentence": "Subjects without valid training diaries were younger than subjects with valid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005).",
+      "context_window": "alid training diaries (39.3 \u00b1 11.1 versus 47.9 \u00b1 8.8 years, P = .005). Dropouts were taller than subjects with valid training di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-595",
+      "claim_type": "mean_sd",
+      "raw_text": "179.8 \u00b1 8.4",
+      "numeric_values": [
+        179.8,
+        8.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 595,
+      "sentence": "Dropouts were taller than subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029).",
+      "context_window": "outs were taller than subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029). All other baseline- and c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-614",
+      "claim_type": "mean_sd",
+      "raw_text": "168.8 \u00b1 9.5",
+      "numeric_values": [
+        168.8,
+        9.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 614,
+      "sentence": "Dropouts were taller than subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029).",
+      "context_window": "an subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029). All other baseline- and change values were s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-622",
+      "claim_type": "unit_value",
+      "raw_text": "9.5 cm",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 622,
+      "sentence": "Dropouts were taller than subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029).",
+      "context_window": "cts with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029). All other baseline- and change values were simi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-630",
+      "claim_type": "p_value",
+      "raw_text": "P = .029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 630,
+      "sentence": "Dropouts were taller than subjects with valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029).",
+      "context_window": "valid training diaries (179.8 \u00b1 8.4 versus 168.8 \u00b1 9.5 cm, P = .029). All other baseline- and change values were similar betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-1049",
+      "claim_type": "p_value",
+      "raw_text": "P < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1049,
+      "sentence": "All variables changed significantly over time ( P < .001), except for CRF expressed as an absolute value (L/min) ( P = .061).",
+      "context_window": "collapsed. All variables changed significantly over time ( P < .001), except for CRF expressed as an absolute value (L/min) ( P",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-1116",
+      "claim_type": "p_value",
+      "raw_text": "P = .061",
+      "numeric_values": [
+        0.061
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1116,
+      "sentence": "All variables changed significantly over time ( P < .001), except for CRF expressed as an absolute value (L/min) ( P = .061).",
+      "context_window": "1), except for CRF expressed as an absolute value (L/min) ( P = .061). The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-1159",
+      "claim_type": "mean_sd",
+      "raw_text": "8.7 \u00b1 5.8",
+      "numeric_values": [
+        8.7,
+        5.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1159,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "value (L/min) ( P = .061). The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1165",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1165,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "(L/min) ( P = .061). The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-ci-1171",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -10.7 to -6.7",
+      "numeric_values": [
+        -10.7,
+        -6.7
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1171,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "n) ( P = .061). The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1188",
+      "claim_type": "percentage",
+      "raw_text": "6.7%",
+      "numeric_values": [
+        6.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1188,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "he weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-1199",
+      "claim_type": "mean_sd",
+      "raw_text": "7.2 \u00b1 5.5",
+      "numeric_values": [
+        7.2,
+        5.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1199,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "nd WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max increased 9.7 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1205",
+      "claim_type": "percentage",
+      "raw_text": "5.5%",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1205,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max increased 9.7 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1223",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1223,
+      "sentence": "The weight and WC changes were -8.7 \u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively.",
+      "context_window": "\u00b1 5.8% (95% CI -10.7 to -6.7%) and -7.2 \u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-1262",
+      "claim_type": "mean_sd",
+      "raw_text": "9.7 \u00b1 21.1",
+      "numeric_values": [
+        9.7,
+        21.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1262,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "\u00b1 5.5% (CI -9.3 to -5.1%), respectively. VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1268",
+      "claim_type": "percentage",
+      "raw_text": "21.1%",
+      "numeric_values": [
+        21.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1268,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "% (CI -9.3 to -5.1%), respectively. VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1285",
+      "claim_type": "percentage",
+      "raw_text": "17.5%",
+      "numeric_values": [
+        17.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1285,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "1%), respectively. VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as abso",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-msd-1296",
+      "claim_type": "mean_sd",
+      "raw_text": "21.1 \u00b1 25.8",
+      "numeric_values": [
+        21.1,
+        25.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1296,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "tively. VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1303",
+      "claim_type": "percentage",
+      "raw_text": "25.8%",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1303,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-1321",
+      "claim_type": "percentage",
+      "raw_text": "30.7%",
+      "numeric_values": [
+        30.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1321,
+      "sentence": "VO 2max increased 9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respectively.",
+      "context_window": "9.7 \u00b1 21.1% (CI 1.8 to 17.5%) and 21.1 \u00b1 25.8% (CI 11.4 to 30.7%) when expressed as absolute and relative values, respective",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-2360",
+      "claim_type": "p_value",
+      "raw_text": "P = .401",
+      "numeric_values": [
+        0.401
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2360,
+      "sentence": "Changes in the two outcomes were not related ( r = -0.16, P = .401, n = 30).",
+      "context_window": ". Changes in the two outcomes were not related ( r = -0.16, P = .401, n = 30). Individual changes in body weight and cardioresp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-2370",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2370,
+      "sentence": "Changes in the two outcomes were not related ( r = -0.16, P = .401, n = 30).",
+      "context_window": "in the two outcomes were not related ( r = -0.16, P = .401, n = 30). Individual changes in body weight and cardiorespiratory",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-2446",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2446,
+      "sentence": "Individual changes in body weight and cardiorespiratory fitness ( n = 22 for women; n = 8 for men).",
+      "context_window": "dual changes in body weight and cardiorespiratory fitness ( n = 22 for women; n = 8 for men). Subjects are sorted within gende",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-2464",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2464,
+      "sentence": "Individual changes in body weight and cardiorespiratory fitness ( n = 22 for women; n = 8 for men).",
+      "context_window": "dy weight and cardiorespiratory fitness ( n = 22 for women; n = 8 for men). Subjects are sorted within gender with respect to",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-2621",
+      "claim_type": "p_value",
+      "raw_text": "P = .050",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2621,
+      "sentence": "Correlation between the PA duration and weight change was r = -0.33 ( P = .050); the correlation between the PA intensity and weight change was r = -0.17 ( P = .336).",
+      "context_window": "n between the PA duration and weight change was r = -0.33 ( P = .050); the correlation between the PA intensity and weight chang",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-2707",
+      "claim_type": "p_value",
+      "raw_text": "P = .336",
+      "numeric_values": [
+        0.336
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2707,
+      "sentence": "Correlation between the PA duration and weight change was r = -0.33 ( P = .050); the correlation between the PA intensity and weight change was r = -0.17 ( P = .336).",
+      "context_window": "between the PA intensity and weight change was r = -0.17 ( P = .336). The correlation between the PA duration and the change in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-2796",
+      "claim_type": "p_value",
+      "raw_text": "P = .853",
+      "numeric_values": [
+        0.853
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2796,
+      "sentence": "The correlation between the PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30).",
+      "context_window": "tween the PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-2806",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2806,
+      "sentence": "The correlation between the PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30).",
+      "context_window": "PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the change i",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-2893",
+      "claim_type": "p_value",
+      "raw_text": "P = .004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2893,
+      "sentence": "The correlation between the PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30).",
+      "context_window": "tween the PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30). The relationship between the PA duration and weig",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-2903",
+      "claim_type": "sample_size",
+      "raw_text": "n = 30",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2903,
+      "sentence": "The correlation between the PA duration and the change in CRF was r = -0.04 ( P = .853, n = 30); the correlation between the PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30).",
+      "context_window": "PA intensity and the change in CRF was r = 0.51 ( P = .004, n = 30). The relationship between the PA duration and weight chang",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3044",
+      "claim_type": "p_value",
+      "raw_text": "P = .027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3044,
+      "sentence": "The relationship between the PA duration and weight change was much stronger for men than for women ( r = -0.69, CI -0.88 to -0.41, P = .027 versus r = -0.19, CI -0.60 to 0.26, P = .372).",
+      "context_window": "nger for men than for women ( r = -0.69, CI -0.88 to -0.41, P = .027 versus r = -0.19, CI -0.60 to 0.26, P = .372). Conversely,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3089",
+      "claim_type": "p_value",
+      "raw_text": "P = .372",
+      "numeric_values": [
+        0.372
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3089,
+      "sentence": "The relationship between the PA duration and weight change was much stronger for men than for women ( r = -0.69, CI -0.88 to -0.41, P = .027 versus r = -0.19, CI -0.60 to 0.26, P = .372).",
+      "context_window": "0.88 to -0.41, P = .027 versus r = -0.19, CI -0.60 to 0.26, P = .372). Conversely, the relationship between the PA intensity and",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3237",
+      "claim_type": "p_value",
+      "raw_text": "P = .003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3237,
+      "sentence": "Conversely, the relationship between the PA intensity and change in CRF was stronger for women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)).",
+      "context_window": "tronger for women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n =",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-3248",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3248,
+      "sentence": "Conversely, the relationship between the PA intensity and change in CRF was stronger for women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)).",
+      "context_window": "women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)). Sca",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3291",
+      "claim_type": "p_value",
+      "raw_text": "P = .340",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3291,
+      "sentence": "Conversely, the relationship between the PA intensity and change in CRF was stronger for women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)).",
+      "context_window": "0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)). Scatterplots of PA duration versus change in wei",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-3302",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3302,
+      "sentence": "Conversely, the relationship between the PA intensity and change in CRF was stronger for women than for men ( r = 0.61, CI 0.10 to 0.85, P = .003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)).",
+      "context_window": "003 ( n = 22) versus r = 0.39, CI -0.29 to 0.86, P = .340 ( n = 8)). Scatterplots of PA duration versus change in weight and",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3519",
+      "claim_type": "p_value",
+      "raw_text": "P = .624",
+      "numeric_values": [
+        0.624
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3519,
+      "sentence": "There were no relationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28).\n\n(a) Scatterplot showing weight change versus duration of physical activity for men (full regression line) and women (dotted regression line). (b) Scatterplot showing change in cardiorespiratory fitness versus intensity of PA for men (full regression line) and women (dotted regression line).",
+      "context_window": "ere no relationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P =",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-3529",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3529,
+      "sentence": "There were no relationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28).\n\n(a) Scatterplot showing weight change versus duration of physical activity for men (full regression line) and women (dotted regression line). (b) Scatterplot showing change in cardiorespiratory fitness versus intensity of PA for men (full regression line) and women (dotted regression line).",
+      "context_window": "ationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-3583",
+      "claim_type": "p_value",
+      "raw_text": "P = .967",
+      "numeric_values": [
+        0.967
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3583,
+      "sentence": "There were no relationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28).\n\n(a) Scatterplot showing weight change versus duration of physical activity for men (full regression line) and women (dotted regression line). (b) Scatterplot showing change in cardiorespiratory fitness versus intensity of PA for men (full regression line) and women (dotted regression line).",
+      "context_window": ".624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28). (a) Scatterplot showing weight change versus dur",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-3593",
+      "claim_type": "sample_size",
+      "raw_text": "n = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3593,
+      "sentence": "There were no relationship between PA duration and WC ( r = -0.10, P = .624, n = 28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28).\n\n(a) Scatterplot showing weight change versus duration of physical activity for men (full regression line) and women (dotted regression line). (b) Scatterplot showing change in cardiorespiratory fitness versus intensity of PA for men (full regression line) and women (dotted regression line).",
+      "context_window": "28), nor between PA intensity and WC ( r = -0.01, P = .967, n = 28). (a) Scatterplot showing weight change versus duration of",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4199",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4199,
+      "sentence": "For weight change, model 1 (baseline variables) was quite similar for both genders, explaining about 20% of the variance.",
+      "context_window": "ables) was quite similar for both genders, explaining about 20% of the variance. Model 2 (PA duration) yielded remarkably d",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4307",
+      "claim_type": "percentage",
+      "raw_text": "47.8%",
+      "numeric_values": [
+        47.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4307,
+      "sentence": "Model 2 (PA duration) yielded remarkably different results between genders, explaining 47.8% of the variance for men compared to 4% for women.",
+      "context_window": "ed remarkably different results between genders, explaining 47.8% of the variance for men compared to 4% for women. The PA va",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4349",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4349,
+      "sentence": "Model 2 (PA duration) yielded remarkably different results between genders, explaining 47.8% of the variance for men compared to 4% for women.",
+      "context_window": "nders, explaining 47.8% of the variance for men compared to 4% for women. The PA variables together (model 3) explained 55",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4409",
+      "claim_type": "percentage",
+      "raw_text": "55.8%",
+      "numeric_values": [
+        55.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4409,
+      "sentence": "The PA variables together (model 3) explained 55.8% of the weight change for men, whereas 5.6% of the weight change was explained for women.",
+      "context_window": "4% for women. The PA variables together (model 3) explained 55.8% of the weight change for men, whereas 5.6% of the weight ch",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4453",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4453,
+      "sentence": "The PA variables together (model 3) explained 55.8% of the weight change for men, whereas 5.6% of the weight change was explained for women.",
+      "context_window": "el 3) explained 55.8% of the weight change for men, whereas 5.6% of the weight change was explained for women. Together, bas",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-4887",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4887,
+      "sentence": "Independent variables that have a significant contribution ( P < .05) to the model are labeled \u2020 .",
+      "context_window": "ndependent variables that have a significant contribution ( P < .05) to the model are labeled \u2020 . SEE: standard error of the es",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-5238",
+      "claim_type": "p_value",
+      "raw_text": "P < .05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5238,
+      "sentence": "Independent variables that have a significant contribution ( P < .05) to the model are labeled \u2020 .",
+      "context_window": "ndependent variables that have a significant contribution ( P < .05) to the model are labeled \u2020 . SEE: standard error of the es",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-5470",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5470,
+      "sentence": "SEE: standard error of the estimate; SECV: standard error of the cross-validation.\n\n(a)\n\n(b)\n\nCorrelation matrix between independent and dependent variables in the regression analyses for men ( n = 8-10) in the lower left corner and women ( n = 22-25) in the upper right corner (Pearson r ( P value)).",
+      "context_window": "nd dependent variables in the regression analyses for men ( n = 8-10) in the lower left corner and women ( n = 22-25) in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-n-5517",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5517,
+      "sentence": "SEE: standard error of the estimate; SECV: standard error of the cross-validation.\n\n(a)\n\n(b)\n\nCorrelation matrix between independent and dependent variables in the regression analyses for men ( n = 8-10) in the lower left corner and women ( n = 22-25) in the upper right corner (Pearson r ( P value)).",
+      "context_window": "es for men ( n = 8-10) in the lower left corner and women ( n = 22-25) in the upper right corner (Pearson r ( P value)). BMI:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5705",
+      "claim_type": "percentage",
+      "raw_text": "34.2%",
+      "numeric_values": [
+        34.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5705,
+      "sentence": "Regarding the change in CRF, model 1 explained 40.4 and 34.2% of the variance for men and women, respectively.",
+      "context_window": "n. Regarding the change in CRF, model 1 explained 40.4 and 34.2% of the variance for men and women, respectively. The corres",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5823",
+      "claim_type": "percentage",
+      "raw_text": "37.5%",
+      "numeric_values": [
+        37.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5823,
+      "sentence": "The corresponding variances explained by model 2 were 14.5 and 37.5%.",
+      "context_window": "corresponding variances explained by model 2 were 14.5 and 37.5%. For women, the PA variables together (model 3) explained o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5927",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5927,
+      "sentence": "For women, the PA variables together (model 3) explained one-third of the change in CRF, whereas 15.6% was explained for men.",
+      "context_window": "(model 3) explained one-third of the change in CRF, whereas 15.6% was explained for men. Taken together, the baseline variabl",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-6022",
+      "claim_type": "percentage",
+      "raw_text": "81.6%",
+      "numeric_values": [
+        81.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6022,
+      "sentence": "Taken together, the baseline variables and PA variables explained 81.6% of the change in CRF for men and 60.6% for women (model 4).",
+      "context_window": "together, the baseline variables and PA variables explained 81.6% of the change in CRF for men and 60.6% for women (model 4).",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-6061",
+      "claim_type": "percentage",
+      "raw_text": "60.6%",
+      "numeric_values": [
+        60.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6061,
+      "sentence": "Taken together, the baseline variables and PA variables explained 81.6% of the change in CRF for men and 60.6% for women (model 4).",
+      "context_window": "variables explained 81.6% of the change in CRF for men and 60.6% for women (model 4). However, the SEEs for men were general",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-285",
+      "claim_type": "percentage",
+      "raw_text": "55.8%",
+      "numeric_values": [
+        55.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 285,
+      "sentence": "Duration and intensity of PA explained 55.8% of the weight change in men and only 5.6% in women.",
+      "context_window": "RF in men and women. Duration and intensity of PA explained 55.8% of the weight change in men and only 5.6% in women. For CRF",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-328",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 328,
+      "sentence": "Duration and intensity of PA explained 55.8% of the weight change in men and only 5.6% in women.",
+      "context_window": "of PA explained 55.8% of the weight change in men and only 5.6% in women. For CRF the opposite pattern was seen. While PA e",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-406",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 406,
+      "sentence": "While PA explained only 15.6% of the change for men, it explained 36.7% of the change for women.",
+      "context_window": "CRF the opposite pattern was seen. While PA explained only 15.6% of the change for men, it explained 36.7% of the change for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-448",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 448,
+      "sentence": "While PA explained only 15.6% of the change for men, it explained 36.7% of the change for women.",
+      "context_window": "PA explained only 15.6% of the change for men, it explained 36.7% of the change for women. We found a decrease in weight of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-514",
+      "claim_type": "unit_value",
+      "raw_text": "10.7 kg",
+      "numeric_values": [
+        10.7
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 514,
+      "sentence": "We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders.",
+      "context_window": "of the change for women. We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders. This is in line wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-524",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 524,
+      "sentence": "We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders.",
+      "context_window": "nge for women. We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders. This is in line with other",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-535",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 535,
+      "sentence": "We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders.",
+      "context_window": "en. We found a decrease in weight of -10.7 kg (-8.7%) over 10 months in both genders. This is in line with other studies investi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-2367",
+      "claim_type": "percentage",
+      "raw_text": "11.9%",
+      "numeric_values": [
+        11.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2367,
+      "sentence": "The most recent study by Wadden et al. [ 7 ] showed a consistent increase in one-year weight loss of 4.4, 7.1, 9.0, and 11.9% for increasing quartiles of mean weekly minutes of physical activity (25.9, 84.8, 148.7, and 287.1 min) in 2570 subjects with a baseline BMI of about 36, randomised to lifestyle intervention.",
+      "context_window": "tent increase in one-year weight loss of 4.4, 7.1, 9.0, and 11.9% for increasing quartiles of mean weekly minutes of physical",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-2623",
+      "claim_type": "percentage",
+      "raw_text": "16.1%",
+      "numeric_values": [
+        16.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2623,
+      "sentence": "Overall, a correlation of r = 0.41 was found, yielding a 16.1% explained variance in weight change.",
+      "context_window": ". Overall, a correlation of r = 0.41 was found, yielding a 16.1% explained variance in weight change. This relationship is o",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-corr-2792",
+      "claim_type": "correlation",
+      "raw_text": "( r = 0.33)",
+      "numeric_values": [
+        0.33
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2792,
+      "sentence": "This relationship is of approximately the same strength as in the present study when the male and female groups are collapsed ( r = 0.33).",
+      "context_window": "present study when the male and female groups are collapsed ( r = 0.33). However, we found a marked difference between genders. In",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-corr-2909",
+      "claim_type": "correlation",
+      "raw_text": "( r = -0.69)",
+      "numeric_values": [
+        -0.69
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2909,
+      "sentence": "In men, a moderate-to-high correlation was found ( r = -0.69), whereas in women, a nonsignificant association with weight change was found ( r = -0.19).",
+      "context_window": "n genders. In men, a moderate-to-high correlation was found ( r = -0.69), whereas in women, a nonsignificant association with weight",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-corr-2999",
+      "claim_type": "correlation",
+      "raw_text": "( r = -0.19)",
+      "numeric_values": [
+        -0.19
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2999,
+      "sentence": "In men, a moderate-to-high correlation was found ( r = -0.69), whereas in women, a nonsignificant association with weight change was found ( r = -0.19).",
+      "context_window": ", a nonsignificant association with weight change was found ( r = -0.19). Although it should be noted that the CIs overlapped betwee",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-3414",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 mL",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "mL",
+      "source_section": "discussion",
+      "source_offset": 3414,
+      "sentence": "An overall mean increase in CRF of 3.5 mL/kg/min (21.1%) was achieved in the present study.",
+      "context_window": "for women [ 10 - 12 ]. An overall mean increase in CRF of 3.5 mL/kg/min (21.1%) was achieved in the present study. This chan",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-3429",
+      "claim_type": "percentage",
+      "raw_text": "21.1%",
+      "numeric_values": [
+        21.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3429,
+      "sentence": "An overall mean increase in CRF of 3.5 mL/kg/min (21.1%) was achieved in the present study.",
+      "context_window": "- 12 ]. An overall mean increase in CRF of 3.5 mL/kg/min (21.1%) was achieved in the present study. This change parallels o",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-3777",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3777,
+      "sentence": "Such an increase in CRF may reduce the risk of all-cause mortality and the incidence of cardiovascular disease in healthy men and women by 13 and 15%, respectively [ 26 ].",
+      "context_window": "f cardiovascular disease in healthy men and women by 13 and 15%, respectively [ 26 ]. As studies consistently show an espec",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-p-4507",
+      "claim_type": "p_value",
+      "raw_text": "P = .024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4507,
+      "sentence": "This is indicated by the inverse relationship between baseline CRF and PA duration found in the present study ( r = 0.40, P = .024, results not shown).",
+      "context_window": "CRF and PA duration found in the present study ( r = 0.40, P = .024, results not shown). Duration of PA was not correlated wit",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-4912",
+      "claim_type": "percentage",
+      "raw_text": "36.7%",
+      "numeric_values": [
+        36.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4912,
+      "sentence": "The variation in change in CRF explained by PA for women (36.7%) is consistent with nine studies reviewed by Williams [ 37 ] in which PA explained 35% of the variation in CRF.",
+      "context_window": ". The variation in change in CRF explained by PA for women (36.7%) is consistent with nine studies reviewed by Williams [ 37",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5001",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5001,
+      "sentence": "The variation in change in CRF explained by PA for women (36.7%) is consistent with nine studies reviewed by Williams [ 37 ] in which PA explained 35% of the variation in CRF.",
+      "context_window": "e studies reviewed by Williams [ 37 ] in which PA explained 35% of the variation in CRF. The weaker explanation of the vari",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5102",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5102,
+      "sentence": "The weaker explanation of the variation among men in the present study (15.6%) may be a result of men being a relatively small homogenous group, which resulted in a minimal range in PA intensities.",
+      "context_window": "xplanation of the variation among men in the present study (15.6%) may be a result of men being a relatively small homogenous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5329",
+      "claim_type": "percentage",
+      "raw_text": "36.8%",
+      "numeric_values": [
+        36.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5329,
+      "sentence": "We found that regression models based on both baseline measures and PA variables explained 69.4 and 36.8% of the change in weight for men and women, respectively, with corresponding values for the change in CRF of 81.6 and 60.6%.",
+      "context_window": "both baseline measures and PA variables explained 69.4 and 36.8% of the change in weight for men and women, respectively, wi",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5452",
+      "claim_type": "percentage",
+      "raw_text": "60.6%",
+      "numeric_values": [
+        60.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5452,
+      "sentence": "We found that regression models based on both baseline measures and PA variables explained 69.4 and 36.8% of the change in weight for men and women, respectively, with corresponding values for the change in CRF of 81.6 and 60.6%.",
+      "context_window": "with corresponding values for the change in CRF of 81.6 and 60.6%. These values are quite high compared to other prospective",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-5595",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5595,
+      "sentence": "These values are quite high compared to other prospective studies, where explained variances in weight change are in the range of 12 to 38% [ 10 , 41 , 42 ].",
+      "context_window": "lained variances in weight change are in the range of 12 to 38% [ 10 , 41 , 42 ]. However, the residuals are substantial in",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-u-5715",
+      "claim_type": "unit_value",
+      "raw_text": "6 kg",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5715,
+      "sentence": "However, the residuals are substantial in all models for both genders, indicated by the SEEs of \u223c 6 kg for weight and 0.3-0.6 L/min for VO 2max .",
+      "context_window": "in all models for both genders, indicated by the SEEs of \u223c 6 kg for weight and 0.3-0.6 L/min for VO 2max . Therefore, care",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3362060_physical_activity_is_associated_with_weight_loss_and_increas-pct-6442",
+      "claim_type": "percentage",
+      "raw_text": "5.6%",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6442,
+      "sentence": "It can be argued that men and women in our sample used different strategies to lose weight because PA explains 55.8 versus 5.6% of the changes in body weight for men and women, respectively, whereas both genders lose the same amount of weight.",
+      "context_window": "t strategies to lose weight because PA explains 55.8 versus 5.6% of the changes in body weight for men and women, respective",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

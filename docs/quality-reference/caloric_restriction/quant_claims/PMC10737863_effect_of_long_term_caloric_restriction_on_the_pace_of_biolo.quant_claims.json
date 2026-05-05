@@ -1,0 +1,121 @@
+{
+  "paper_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo",
+  "doi": "10.1093/geroni/igad104.0677",
+  "extracted_at": "2026-05-05T22:17:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "percentage": 4,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-n-677",
+      "claim_type": "sample_size",
+      "raw_text": "n=220",
+      "numeric_values": [
+        220.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 677,
+      "sentence": "Here we report results of a post-hoc analysis of the influence of CR on DNAm measures of aging in blood samples from the Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE) trial, a randomized controlled trial in which n=220 non-obese adults were randomized to 25% CR or ad libitum control diet for 2years.",
+      "context_window": "rgy (CALERIE) trial, a randomized controlled trial in which n=220 non-obese adults were randomized to 25% CR or ad libitum co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-pct-719",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 719,
+      "sentence": "Here we report results of a post-hoc analysis of the influence of CR on DNAm measures of aging in blood samples from the Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE) trial, a randomized controlled trial in which n=220 non-obese adults were randomized to 25% CR or ad libitum control diet for 2years.",
+      "context_window": "ed trial in which n=220 non-obese adults were randomized to 25% CR or ad libitum control diet for 2years. We found that CAL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-u-757",
+      "claim_type": "unit_value",
+      "raw_text": "2years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 757,
+      "sentence": "Here we report results of a post-hoc analysis of the influence of CR on DNAm measures of aging in blood samples from the Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE) trial, a randomized controlled trial in which n=220 non-obese adults were randomized to 25% CR or ad libitum control diet for 2years.",
+      "context_window": "ts were randomized to 25% CR or ad libitum control diet for 2years. We found that CALERIE intervention slowed the pace of agin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-pct-1028",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1028,
+      "sentence": "Treatment effects were small; changes in DunedinPACE suggest a ~3% slowing of the pace of aging.",
+      "context_window": "tment effects were small; changes in DunedinPACE suggest a ~3% slowing of the pace of aging. Nevertheless, this small effe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-pct-1154",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1154,
+      "sentence": "Nevertheless, this small effect may be substantive; in an independent study of older adults, 3% slower DunedinPACE is associated with a 15% lower risk of death.",
+      "context_window": "ay be substantive; in an independent study of older adults, 3% slower DunedinPACE is associated with a 15% lower risk of d",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo-pct-1197",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1197,
+      "sentence": "Nevertheless, this small effect may be substantive; in an independent study of older adults, 3% slower DunedinPACE is associated with a 15% lower risk of death.",
+      "context_window": "of older adults, 3% slower DunedinPACE is associated with a 15% lower risk of death. The finding that CR modified DunedinPA",
+      "claim_role": "population",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

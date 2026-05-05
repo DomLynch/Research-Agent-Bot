@@ -1,0 +1,104 @@
+{
+  "paper_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train",
+  "doi": "10.1093/geroni/igz038.2396",
+  "extracted_at": "2026-05-05T21:59:19+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 2,
+    "sample_size": 1,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train-u-291",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 291,
+      "sentence": "This is an exploratory analysis of a single-blind, 12-month randomized controlled trial in 155 omen, aged 65 to 75 years old, who were randomized to: 1x/week progressive RT; or 2x/week progressive RT program; or 2x/week balance and tone (BAT).",
+      "context_window": "2-month randomized controlled trial in 155 omen, aged 65 to 75 years old, who were randomized to: 1x/week progressive RT; or 2x/",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train-pct-803",
+      "claim_type": "percentage",
+      "raw_text": "16.5%",
+      "numeric_values": [
+        16.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 803,
+      "sentence": "Participants were classified as either low risk (<16.5% FCRP score; LCVR) or high risk \u226516.5% FCRP score; HCVR).",
+      "context_window": "the FCRP. Participants were classified as either low risk (<16.5% FCRP score; LCVR) or high risk \u226516.5% FCRP score; HCVR). A",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train-pct-841",
+      "claim_type": "percentage",
+      "raw_text": "16.5%",
+      "numeric_values": [
+        16.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 841,
+      "sentence": "Participants were classified as either low risk (<16.5% FCRP score; LCVR) or high risk \u226516.5% FCRP score; HCVR).",
+      "context_window": "as either low risk (<16.5% FCRP score; LCVR) or high risk \u226516.5% FCRP score; HCVR). A complete case analysis (n=126) was con",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train-n-892",
+      "claim_type": "sample_size",
+      "raw_text": "n=126",
+      "numeric_values": [
+        126.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 892,
+      "sentence": "A complete case analysis (n=126) was conducted using a two-way analysis of covariance (ANCOVA) to evaluate the interaction effect of group by FCRP risk on SPPB scores at trial completion; baseline SPPB scores and age in years were entered as covariates.",
+      "context_window": "gh risk \u226516.5% FCRP score; HCVR). A complete case analysis (n=126) was conducted using a two-way analysis of covariance (ANCO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6845936_cardiovascular_risk_moderates_the_effect_of_resistance_train-p-1179",
+      "claim_type": "p_value",
+      "raw_text": "p=0.027",
+      "numeric_values": [
+        0.027
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1179,
+      "sentence": "There was a significant interaction effect (F(1,126)=3.74, p=0.027).",
+      "context_window": "There was a significant interaction effect (F(1,126)=3.74, p=0.027). At trial completion, both 1x/RT and 2x/RT participants wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,5268 @@
+{
+  "topic": "caloric_restriction",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 599,
+  "n_selected_for_fetch": 599,
+  "n_pmcid_resolved": 285,
+  "n_extracted": 197,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10107279",
+    "PMC10148951",
+    "PMC10164494",
+    "PMC10204925",
+    "PMC10210464",
+    "PMC10272989",
+    "PMC10420884",
+    "PMC10494137",
+    "PMC10544709",
+    "PMC10554067",
+    "PMC10599060",
+    "PMC10609268",
+    "PMC10643761",
+    "PMC10659943",
+    "PMC10708501",
+    "PMC10726801",
+    "PMC10726900",
+    "PMC10736169",
+    "PMC10737863",
+    "PMC10737930",
+    "PMC10804344",
+    "PMC10804887",
+    "PMC10819730",
+    "PMC10820472",
+    "PMC10828374",
+    "PMC10861196",
+    "PMC10936542",
+    "PMC11009534",
+    "PMC11026672",
+    "PMC11046024",
+    "PMC11093702",
+    "PMC11133430",
+    "PMC11356153",
+    "PMC11357322",
+    "PMC11368853",
+    "PMC11369340",
+    "PMC11425986",
+    "PMC11485046",
+    "PMC11510029",
+    "PMC11510157",
+    "PMC11510529",
+    "PMC11632361",
+    "PMC11670075",
+    "PMC11730777",
+    "PMC11763027",
+    "PMC11808004",
+    "PMC11852537",
+    "PMC11880040",
+    "PMC11926029",
+    "PMC11969032",
+    "PMC11990601",
+    "PMC12007730",
+    "PMC12022231",
+    "PMC12067513",
+    "PMC12158682",
+    "PMC12195750",
+    "PMC12251159",
+    "PMC12298767",
+    "PMC12309031",
+    "PMC12348356",
+    "PMC12365256",
+    "PMC12386805",
+    "PMC12430449",
+    "PMC12501569",
+    "PMC12505589",
+    "PMC12545539",
+    "PMC12672340",
+    "PMC12686577",
+    "PMC12761034",
+    "PMC12762004",
+    "PMC12762613",
+    "PMC12762787",
+    "PMC12762792",
+    "PMC12762903",
+    "PMC12827324",
+    "PMC12851108",
+    "PMC12913024",
+    "PMC12937505",
+    "PMC12956928",
+    "PMC12972406",
+    "PMC13029005",
+    "PMC13094879",
+    "PMC1750890",
+    "PMC2424221",
+    "PMC2633586",
+    "PMC2634841",
+    "PMC2638733",
+    "PMC2659568",
+    "PMC2664681",
+    "PMC2677812",
+    "PMC2692623",
+    "PMC2724865",
+    "PMC2748341",
+    "PMC2748345",
+    "PMC2781961",
+    "PMC2807912",
+    "PMC2812811",
+    "PMC2836151",
+    "PMC2874827",
+    "PMC2877146",
+    "PMC2882205",
+    "PMC2974436",
+    "PMC3010676",
+    "PMC3017674",
+    "PMC3058015",
+    "PMC3075130",
+    "PMC3095229",
+    "PMC3167663",
+    "PMC3193874",
+    "PMC3197347",
+    "PMC3200169",
+    "PMC3229089",
+    "PMC3278796",
+    "PMC3287353",
+    "PMC3312759",
+    "PMC3342840",
+    "PMC3362219",
+    "PMC3439843",
+    "PMC3476836",
+    "PMC3478522",
+    "PMC3501879",
+    "PMC3511220",
+    "PMC3514278",
+    "PMC3546025",
+    "PMC3569090",
+    "PMC3598611",
+    "PMC3705772",
+    "PMC3767289",
+    "PMC3771427",
+    "PMC3850092",
+    "PMC39504",
+    "PMC4016246",
+    "PMC4158399",
+    "PMC4234060",
+    "PMC4248142",
+    "PMC4376253",
+    "PMC4409692",
+    "PMC4446567",
+    "PMC4469556",
+    "PMC4512223",
+    "PMC4531066",
+    "PMC4601087",
+    "PMC4717266",
+    "PMC4834845",
+    "PMC4841173",
+    "PMC4850901",
+    "PMC4905696",
+    "PMC4924211",
+    "PMC4959423",
+    "PMC4993339",
+    "PMC5031958",
+    "PMC5042570",
+    "PMC5244361",
+    "PMC5247583",
+    "PMC5295310",
+    "PMC5366044",
+    "PMC5366052",
+    "PMC5377042",
+    "PMC5403510",
+    "PMC5418198",
+    "PMC5514430",
+    "PMC5541637",
+    "PMC5607294",
+    "PMC5627296",
+    "PMC5700089",
+    "PMC5767765",
+    "PMC5795979",
+    "PMC5847862",
+    "PMC5857384",
+    "PMC5861848",
+    "PMC5861948",
+    "PMC5872329",
+    "PMC5877612",
+    "PMC5886711",
+    "PMC5946208",
+    "PMC5966756",
+    "PMC5986503",
+    "PMC6084508",
+    "PMC6275055",
+    "PMC6279208",
+    "PMC6335535",
+    "PMC6351830",
+    "PMC6376083",
+    "PMC6395700",
+    "PMC6412676",
+    "PMC6420603",
+    "PMC6515465",
+    "PMC6579613",
+    "PMC6580693",
+    "PMC6656607",
+    "PMC6766406",
+    "PMC6824325",
+    "PMC6845519",
+    "PMC6950580",
+    "PMC6950657",
+    "PMC7071719",
+    "PMC7138754",
+    "PMC7164528",
+    "PMC7228814",
+    "PMC7284700",
+    "PMC7285957",
+    "PMC7379067",
+    "PMC7407644",
+    "PMC7415503",
+    "PMC7468870",
+    "PMC7580877",
+    "PMC7589692",
+    "PMC7599444",
+    "PMC7602440",
+    "PMC7617461",
+    "PMC7696073",
+    "PMC7727025",
+    "PMC7729921",
+    "PMC7739255",
+    "PMC7739336",
+    "PMC7741721",
+    "PMC7743141",
+    "PMC7749612",
+    "PMC7780671",
+    "PMC7833363",
+    "PMC7882001",
+    "PMC7898726",
+    "PMC7898832",
+    "PMC8052001",
+    "PMC8070587",
+    "PMC8071299",
+    "PMC8152778",
+    "PMC8170788",
+    "PMC8199692",
+    "PMC8233264",
+    "PMC8262777",
+    "PMC8288867",
+    "PMC8308705",
+    "PMC8345941",
+    "PMC8450361",
+    "PMC8467906",
+    "PMC8551193",
+    "PMC8623687",
+    "PMC8634604",
+    "PMC8645192",
+    "PMC8660583",
+    "PMC8680521",
+    "PMC8680671",
+    "PMC8680857",
+    "PMC8681110",
+    "PMC8681193",
+    "PMC8720865",
+    "PMC8741476",
+    "PMC8742721",
+    "PMC8745028",
+    "PMC8792147",
+    "PMC8919571",
+    "PMC8945872",
+    "PMC8969465",
+    "PMC8976757",
+    "PMC8982510",
+    "PMC9002823",
+    "PMC9012799",
+    "PMC9036397",
+    "PMC9070937",
+    "PMC9071468",
+    "PMC9099935",
+    "PMC9108547",
+    "PMC9135899",
+    "PMC9180920",
+    "PMC9216310",
+    "PMC9230116",
+    "PMC9256776",
+    "PMC9265557",
+    "PMC9346980",
+    "PMC9359127",
+    "PMC9364707",
+    "PMC9370806",
+    "PMC9625649",
+    "PMC9678932",
+    "PMC9691536",
+    "PMC9735516",
+    "PMC9766558",
+    "PMC9766598",
+    "PMC9780150",
+    "PMC9819120",
+    "PMC9843895",
+    "PMC9941245",
+    "PMC9962072",
+    "PMC9974606"
+  ],
+  "active_paper_ids": [
+    "PMC10107279_intermittent_fasting_and_protein_pacing_are_superior_to_calo",
+    "PMC10164494_new_insights_into_calorie_restriction_induced_bone_loss",
+    "PMC10204925_intermittent_energy_restriction_vs_continuous_energy_restric",
+    "PMC10210464_the_effect_of_dietary_carbohydrate_and_calorie_restriction_o",
+    "PMC10420884_exploring_caloric_restriction_in_inpatients_with_eating_diso",
+    "PMC10494137_metabolic_impact_of_intermittent_energy_restriction_and_peri",
+    "PMC10554067_fri315_hyperprolactinemia_in_the_presence_of_severe_calorie_",
+    "PMC10599060_does_dietary_nitrate_boost_the_effects_of_caloric_restrictio",
+    "PMC10609268_effect_of_time_restricted_eating_versus_daily_calorie_restri",
+    "PMC10643761_calorie_restriction_mimetic_drugs_could_favorably_influence_",
+    "PMC10659943_the_effects_of_short_term_caloric_restriction_on_cardiometab",
+    "PMC10708501_effectiveness_of_time_restricted_eating_with_caloric_restric",
+    "PMC10726801_diet_composition_adherence_to_calorie_restriction_and_cardio",
+    "PMC10726900_calorie_restriction_modulates_the_transcription_of_genes_rel",
+    "PMC10736169_a_knowledge_driven_bio_behavioral_network_model_of_the_infla",
+    "PMC10737863_effect_of_long_term_caloric_restriction_on_the_pace_of_biolo",
+    "PMC10737930_caloric_restriction_and_aging_from_calories_to_fasting_times",
+    "PMC10804344_the_effects_of_early_time_restricted_eating_plus_daily_calor",
+    "PMC10819730_effect_of_calorie_restriction_and_intermittent_fasting_regim",
+    "PMC10820472_impact_of_intermittent_fasting_and_or_caloric_restriction_on",
+    "PMC10828374_reduction_in_metabolic_noise_reveals_rejuvenation_following_",
+    "PMC10861196_calorie_restriction_reduces_biomarkers_of_cellular_senescenc",
+    "PMC10936542_requirements_for_essential_micronutrients_during_caloric_res",
+    "PMC11009534_do_treats_facilitate_the_interpretation_of_findings_on_calor",
+    "PMC11026672_effect_of_calorie_restriction_and_intermittent_fasting_on_gl",
+    "PMC11046024_caloric_restriction_sirtuins_and_cardiovascular_diseases",
+    "PMC11133430_gut_microbiome_remodeling_and_metabolomic_profile_improves_i",
+    "PMC11356153_unlocking_the_potential_caloric_restriction_caloric_restrict",
+    "PMC11357322_the_effects_of_caloric_restriction_and_clinical_psychologica",
+    "PMC11368853_effect_of_5_2_intermittent_fasting_diet_versus_daily_calorie",
+    "PMC11369340_fasting_and_calorie_restriction_modulate_age_associated_immu",
+    "PMC11425986_comparing_caloric_restriction_regimens_for_effective_weight_",
+    "PMC11485046_clinical_insights_on_caloric_restriction_mimetics_for_mitiga",
+    "PMC11510029_time_restricted_eating_versus_daily_calorie_restriction_effe",
+    "PMC11510157_is_fasting_superior_to_continuous_caloric_restriction_for_we",
+    "PMC11510529_interaction_of_cooking_generated_aerosols_on_the_human_nervo",
+    "PMC11632361_the_impact_of_continuous_calorie_restriction_and_fasting_on_",
+    "PMC11670075_quantitative_analysis_of_the_caloric_restriction_versus_isoc",
+    "PMC11730777_maternal_effect_senescence_and_caloric_restriction_interact_",
+    "PMC11763027_treating_metabolic_dysregulation_and_senescence_by_caloric_r",
+    "PMC11808004_optimal_calorie_restriction_threshold_effect_of_fatmax_exerc",
+    "PMC11852537_evaluating_the_impact_of_caloric_restriction_body_mass_index",
+    "PMC11880040_multi_study_feasibility_analysis_on_a_composite_biomarker_of",
+    "PMC11926029_isolating_the_acute_metabolic_effects_of_carbohydrate_restri",
+    "PMC11969032_latent_trajectories_of_change_in_dietary_restriction_during_",
+    "PMC11990601_time_restricted_eating_versus_daily_calorie_restriction_effe",
+    "PMC12022231_severe_dietary_energy_restriction_for_compensated_cirrhosis_",
+    "PMC12067513_food_insecurity_predicts_excessive_exercise_dietary_restrict",
+    "PMC12158682_comparing_exercise_modalities_during_caloric_restriction_a_s",
+    "PMC12195750_effects_of_intermittent_fasting_and_calorie_restriction_on_e",
+    "PMC12251159_a_secondary_analysis_of_caloric_restriction_and_exercise_eff",
+    "PMC12298767_effects_of_time_restricted_eating_early_and_late_combined_wi",
+    "PMC12309031_comparing_the_influence_of_early_and_late_time_restricted_ea",
+    "PMC12348356_does_energy_restriction_and_loss_of_body_fat_account_for_the",
+    "PMC12365256_effect_of_caloric_restriction_on_organ_size_and_its_contribu",
+    "PMC12386805_a_pilot_randomized_control_trial_evaluating_the_feasibility_",
+    "PMC12430449_effect_of_time_restricted_eating_versus_daily_calorie_restri",
+    "PMC12501569_moderate_to_vigorous_physical_activity_as_a_cause_of_dietary",
+    "PMC12505589_association_between_physical_activity_energy_expenditure_and",
+    "PMC12545539_sun_699_post_intervention_sustainability_of_time_restricted_",
+    "PMC12672340_effects_of_time_restricted_eating_without_caloric_restrictio",
+    "PMC12686577_caloric_restriction_reprograms_adipose_tissues_in_rhesus_mon",
+    "PMC12761034_fibroblasts_exposed_to_serum_collected_after_long_term_calor",
+    "PMC12762004_adaptations_in_energy_expenditure_following_caloric_restrict",
+    "PMC12762613_caloric_restriction_and_changes_in_geroscience_blood_based_b",
+    "PMC12762787_caloric_restriction_and_health_aging_and_later_life_outcomes",
+    "PMC12762792_effect_of_long_term_caloric_restriction_on_epigenetic_proxie",
+    "PMC12762903_creation_of_a_multimorbidity_health_conditions_index_for_cal",
+    "PMC12827324_comparative_effects_of_intermittent_fasting_and_calorie_rest",
+    "PMC12851108_a_case_of_euglycemic_diabetic_ketoacidosis_with_tirzepatide_",
+    "PMC12913024_post_intervention_sustainability_of_time_restricted_eating_v",
+    "PMC12937505_calorie_restriction_effects_on_aging_learning_performance_an",
+    "PMC12956928_effect_of_protein_supplementation_on_hip_bone_mineral_densit",
+    "PMC12972406_development_of_a_multimorbidity_health_conditions_outcome_in",
+    "PMC13029005_adherence_and_metabolic_outcomes_of_early_and_late_time_rest",
+    "PMC2634841_metabolic_and_behavioral_compensations_in_response_to_calori",
+    "PMC3010676_long_term_effect_of_mediterranean_style_diet_and_calorie_res",
+    "PMC3058015_controlled_meal_frequency_without_caloric_restriction_alters",
+    "PMC3200169_impact_of_caloric_and_dietary_restriction_regimens_on_marker",
+    "PMC3478522_effects_of_aerobic_versus_resistance_exercise_without_calori",
+    "PMC3501879_short_term_caloric_restriction_normalizes_hypothalamic_neuro",
+    "PMC3511220_intermittent_fasting_combined_with_calorie_restriction_is_ef",
+    "PMC3514278_improvement_in_coronary_heart_disease_risk_factors_during_an",
+    "PMC3546025_whey_protein_and_essential_amino_acids_promote_the_reduction",
+    "PMC3771427_nutrition_and_healthy_ageing_calorie_restriction_or_polyphen",
+    "PMC3850092_calorie_restriction_and_sirtuins_revisited",
+    "PMC4016246_status_of_selected_nutrients_in_obese_dogs_undergoing_calori",
+    "PMC4234060_reducing_liver_fat_by_low_carbohydrate_caloric_restriction_t",
+    "PMC4446567_caloric_restriction_effect_on_proinflammatory_cytokines_grow",
+    "PMC4512223_a_human_thrifty_phenotype_associated_with_less_weight_loss_d",
+    "PMC4531066_longevity_and_skeletal_muscle_mass_the_role_of_igf_signallin",
+    "PMC4601087_ageing_and_caloric_restriction_in_a_marine_planktonic_copepo",
+    "PMC4717266_effects_of_2_year_calorie_restriction_on_circulating_levels_",
+    "PMC4924211_caloric_restriction_as_a_strategy_to_improve_vascular_dysfun",
+    "PMC4993339_long_term_moderate_calorie_restriction_inhibits_inflammation",
+    "PMC5031958_effect_of_intermittent_versus_chronic_calorie_restriction_on",
+    "PMC5244361_a_signature_of_renal_stress_resistance_induced_by_short_term",
+    "PMC5247583_caloric_restriction_improves_health_and_survival_of_rhesus_m",
+    "PMC5295310_serum_polychlorinated_biphenyls_increase_and_oxidative_stres",
+    "PMC5418198_aging_and_caloric_restriction_impact_adipose_tissue_adiponec",
+    "PMC5514430_aging_and_caloric_restriction_research_a_biological_perspect",
+    "PMC5541637_effect_of_physical_activity_and_dietary_restriction_interven",
+    "PMC5607294_effect_of_caloric_restriction_on_gut_permeability_inflammati",
+    "PMC5627296_sex_dependent_effects_of_caloric_restriction_on_the_ageing_o",
+    "PMC5700089_publisher_correction_sex_dependent_effects_of_caloric_restri",
+    "PMC5767765_mitochondrial_intermediate_peptidase_is_a_novel_regulator_of",
+    "PMC5795979_docosahexaenoic_acid_in_combination_with_dietary_energy_rest",
+    "PMC5847862_effects_of_2_years_of_caloric_restriction_on_oxidative_statu",
+    "PMC5872329_differences_in_sirtuin_regulation_in_response_to_calorie_res",
+    "PMC5877612_caloric_restriction_and_its_effect_on_blood_pressure_heart_r",
+    "PMC5946208_resistance_training_prevents_muscle_loss_induced_by_caloric_",
+    "PMC5986503_pilot_study_examining_the_influence_of_potassium_bicarbonate",
+    "PMC6084508_reversing_the_negative_genomic_effects_of_aging_with_short_t",
+    "PMC6275055_srebp_1c_dependent_metabolic_remodeling_of_white_adipose_tis",
+    "PMC6335535_influence_of_dietary_restriction_and_low_intensity_exercise_",
+    "PMC6351830_autophagy_and_aging_maintaining_the_proteome_through_exercis",
+    "PMC6395700_maternal_age_alters_offspring_lifespan_fitness_and_lifespan_",
+    "PMC6412676_effect_of_energy_restriction_on_eating_behavior_traits_and_p",
+    "PMC6420603_promoting_healthspan_and_lifespan_with_caloric_restriction_i",
+    "PMC6515465_the_impact_of_caloric_restriction_on_the_epigenetic_signatur",
+    "PMC6656607_cognitive_effects_of_adding_caloric_restriction_to_aerobic_e",
+    "PMC6824325_effect_of_weight_loss_via_severe_vs_moderate_energy_restrict",
+    "PMC6845519_nonhuman_primate_gut_microbiome_impact_of_age_and_calorie_re",
+    "PMC6950580_the_effects_of_calorie_restriction_on_autophagy_role_on_agin",
+    "PMC6950657_mechanisms_of_calorie_restriction_a_review_of_genes_required",
+    "PMC7071719_dietary_restriction_of_amino_acids_for_cancer_therapy",
+    "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re",
+    "PMC7284700_shedding_light_on_the_effects_of_calorie_restriction_and_its",
+    "PMC7285957_association_of_fto_and_adrb2_gene_variation_with_energy_rest",
+    "PMC7379067_the_effects_of_meal_timing_and_frequency_caloric_restriction",
+    "PMC7407644_peroxisome_proliferator_activated_receptors_and_caloric_rest",
+    "PMC7415503_changes_in_body_weight_adherence_and_appetite_during_2_years",
+    "PMC7468870_is_caloric_restriction_associated_with_better_healthy_aging_",
+    "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi",
+    "PMC7599444_impacts_of_calorie_restriction_and_intermittent_fasting_on_h",
+    "PMC7602440_long_term_dietary_restriction_of_advanced_glycation_end_prod",
+    "PMC7617461_the_impact_of_intermittent_energy_restriction_on_women_s_hea",
+    "PMC7696073_peroxisome_proliferator_activated_receptors_as_molecular_lin",
+    "PMC7729921_still_living_better_through_chemistry_an_update_on_caloric_r",
+    "PMC7739255_a_reply_to_contrary_to_the_conclusions_stated_in_the_paper_o",
+    "PMC7739336_contrary_to_the_conclusions_stated_in_the_paper_only_dry_fat",
+    "PMC7741721_nicotinamide_and_sugar_metabolism_associated_with_muscle_mas",
+    "PMC7743141_diet_composition_adherence_to_calorie_restriction_and_cardio",
+    "PMC7749612_the_effect_of_fasting_or_calorie_restriction_on_mitophagy_in",
+    "PMC7780671_caloric_restriction_in_female_reproduction_is_it_beneficial_",
+    "PMC7833363_effects_of_caloric_restriction_diet_on_arterial_hypertension",
+    "PMC7898726_effects_of_moderate_sleep_restriction_during_8_week_calorie_",
+    "PMC7898832_two_meal_caloric_restriction_induces_12_hour_rhythms_and_imp",
+    "PMC8052001_the_influence_of_fasting_and_caloric_restriction_on_inflamma",
+    "PMC8070587_the_ability_of_exercise_to_mitigate_caloric_restriction_indu",
+    "PMC8071299_effects_of_calorie_restriction_on_health_span_and_insulin_re",
+    "PMC8152778_iron_beats_electricity_resistance_training_but_not_whole_bod",
+    "PMC8170788_effect_of_probiotic_supplementation_along_with_calorie_restr",
+    "PMC8199692_contribution_of_pgc_1_to_obesity_and_caloric_restriction_rel",
+    "PMC8233264_caloric_restriction_induces_anabolic_resistance_to_resistanc",
+    "PMC8288867_why_does_caloric_restriction_increase_life_and_healthspan_th",
+    "PMC8308705_the_potential_of_calorie_restriction_and_calorie_restriction",
+    "PMC8345941_diabetes_mellitus_and_cardiovascular_diseases_nutraceutical_",
+    "PMC8450361_caloric_restriction_may_help_delay_the_onset_of_frailty_and_",
+    "PMC8467906_effects_of_caloric_restriction_and_rope_skipping_exercise_on",
+    "PMC8551193_daily_caloric_restriction_limits_tumor_growth_more_effective",
+    "PMC8623687_short_term_caloric_restriction_and_biofeedback_enhance_psych",
+    "PMC8634604_calorie_restriction_with_exercise_intervention_improves_infl",
+    "PMC8660583_beneficial_effects_on_brain_micro_environment_by_caloric_res",
+    "PMC8680521_the_first_evaluation_of_a_geroscience_biomarker_index_tame_b",
+    "PMC8680671_appendicular_lean_mass_loss_does_not_impact_physical_perform",
+    "PMC8680857_the_wake_forest_iasdr_a_resource_for_studying_the_effects_of",
+    "PMC8681110_effect_of_baseline_bmi_and_il_6_on_gait_speed_response_to_ca",
+    "PMC8681193_exercise_modality_affects_older_adult_ct_derived_muscle_and_",
+    "PMC8741476_calorie_restriction_improves_lipid_related_emerging_cardiome",
+    "PMC8745028_the_complicated_relationship_between_dieting_dietary_restrai",
+    "PMC8919571_calorie_restriction_improves_metabolic_state_independently_o",
+    "PMC8945872_caloric_restriction_mimetic_2_deoxyglucose_reduces_inflammat",
+    "PMC8969465_new_directions_in_dietary_restriction_remembering_edward_mas",
+    "PMC8982510_early_dinner_time_and_caloric_restriction_lapse_contribute_t",
+    "PMC9002823_the_role_of_intermittent_energy_restriction_diet_on_metaboli",
+    "PMC9012799_lean_mass_sparing_in_resistance_trained_athletes_during_calo",
+    "PMC9070937_estimating_heterogeneity_of_physical_function_treatment_resp",
+    "PMC9071468_effect_of_severe_compared_with_moderate_energy_restriction_o",
+    "PMC9099935_intermittent_fasting_versus_continuous_calorie_restriction_w",
+    "PMC9108547_effects_of_intermittent_fasting_in_human_compared_to_a_non_i",
+    "PMC9180920_the_effectiveness_of_intermittent_fasting_time_restricted_fe",
+    "PMC9230116_overweight_management_through_mild_caloric_restriction_in_mu",
+    "PMC9265557_effects_of_intermittent_energy_restriction_alone_and_in_comb",
+    "PMC9346980_caloric_restriction_and_weight_loss_are_primary_factors_in_t",
+    "PMC9359127_restlessness_and_an_increased_urge_to_move_drive_for_activit",
+    "PMC9364707_after_the_spotlight_are_evidence_based_recommendations_for_r",
+    "PMC9370806_the_effects_of_intermittent_fasting_and_continuous_energy_re",
+    "PMC9625649_odp004_glucose_profiles_and_insulin_sensitivity_in_adults_wi",
+    "PMC9678932_differential_effects_of_intermittent_energy_restriction_vs_c",
+    "PMC9735516_plasma_fgf21_levels_are_not_associated_with_weight_loss_or_i",
+    "PMC9766558_impact_of_calorie_restriction_on_plasma_alzheimer_s_disease_",
+    "PMC9766598_does_caloric_restriction_slow_the_process_of_biological_agin",
+    "PMC9819120_dieting_behavior_characterized_by_caloric_restriction_and_re",
+    "PMC9843895_comparison_of_the_effect_of_modified_intermittent_fasting_an",
+    "PMC9941245_body_shape_perception_in_men_and_women_without_obesity_durin",
+    "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does"
+  ],
+  "failures": [
+    {
+      "title": "Effects of intermittent fasting and caloric restriction on inflammatory biomarke",
+      "doi": "10.1111/obr.13838",
+      "pmid": "39289905",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent dietary carbohydrate restriction versus calorie restriction and car",
+      "doi": "10.1002/oby.23855",
+      "pmid": "37545298",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SGLT2 Inhibitors as Calorie Restriction Mimetics: Insights on Longevity Pathways",
+      "doi": "10.1210/endocr/bqab079",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A systematic review of the separate and combined effects of energy restriction a",
+      "doi": "10.1111/j.1753-4887.2010.00298.x",
+      "pmid": "20591106",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomarkers of dietary energy restriction in women at increased risk of breast ca",
+      "doi": "10.1158/1940-6207.capr-09-0008",
+      "pmid": "19656771",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aging and Survival: The Genetics of Life Span Extension by Dietary Restriction",
+      "doi": "10.1146/annurev.biochem.77.061206.171059",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Minireview: The Role of Oxidative Stress in Relation to Caloric Restriction and ",
+      "doi": "10.1210/en.2005-0378",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "In vivospectrofluorimetry reveals endogenous biomarkers that report healthspan a",
+      "doi": "10.1111/j.1474-9726.2005.00153.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction, Aging, and Cancer Prevention: Mechanisms of Action and Appl",
+      "doi": "10.1146/annurev.med.54.101601.152156",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Subfield History: Caloric Restriction, Slowing Aging, and Extending Life",
+      "doi": "10.1126/sageke.2003.8.re2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Daily Caloric Restriction in ADPKD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone, Exercise, Alendronate, and Caloric Restriction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of caloric restriction on organ-specific biological aging in a randomized",
+      "doi": "10.1016/j.clnu.2026.106625",
+      "pmid": "41895150",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Diet quality and nutritional adequacy during a 2-year calorie restriction interv",
+      "doi": "10.1016/j.ajcnut.2025.101182",
+      "pmid": "41475553",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adaptation of Human Brown Adipose Tissue to Calorie Restriction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Tolerability of a Nutritional Formula Designed to Aid in Maintenance ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone Response to Exercise and Energy Restriction in Young Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Intermittent Dietary Restriction on Cardiometabolic Risk in School-ag",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Eating Patterns and Energy Restriction in Type 2 Diabetes: Comparing Intermitten",
+      "doi": "10.62225/2583049x.2026.6.2.6016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Aging and Anti-Aging Dietary Restriction on Brain Glutathione and",
+      "doi": "10.14336/ad.2025.1505",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Plant-based caloric restriction diets versus conventional calorie-restricted die",
+      "doi": "10.3389/fnut.2026.1805225",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Daily Body (Dis\u2010)Satisfaction and Dietary Restriction in Women Across the Eating",
+      "doi": "10.1002/eat.70110",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional Interventions in Diabesity: From Caloric Restriction to Precision Di",
+      "doi": "10.59298/nijpp/2026/713644",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Intermittent Fasting and Calorie Restriction in Preventing Neurodege",
+      "doi": "10.18863/pgy.1571616",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efek komparatif intermittent fasting dan continuous calorie restriction pada ber",
+      "doi": "10.33024/hjk.v19i11.1861",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Effects of Time-Restricted Eating, Calorie Restriction, and Their Co",
+      "doi": "10.12944/crnfsj.14.1.27",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is isocaloric intermittent fasting superior to calorie restriction? A systematic",
+      "doi": "10.1016/j.numecd.2024.103805",
+      "pmid": "39732588",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent fasting versus continuous caloric restriction for glycemic control ",
+      "doi": "10.1016/j.pcd.2025.02.006",
+      "pmid": "40000314",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Combined Effect of Dietary Nitrate and Caloric Restriction on Cognitive and ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effectiveness of Intermittent Fasting, Caloric Restriction and Physical Acti",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 4345502: Effect of Caloric Restriction on Cardiovascular-Kidney-Metabol",
+      "doi": "10.1161/circ.152.suppl_3.4345502",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional strategies supporting brain health: Intermittent fasting, caloric re",
+      "doi": "10.18510/hssr.2025.13216",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Dietary Restriction on the Healthspan of Caenorhabditis elegans",
+      "doi": "10.17576/mh.2025.2002.23",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evolutionary Implications and Health Consequences of Calorie Restriction: A Revi",
+      "doi": "10.9734/ajriz/2025/v8i2188",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Web-based high-intensity interval training with calorie restriction for workplac",
+      "doi": "10.1093/occmed/kqaf079",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Effects of 16:8 Intermittent Fasting and Continuous Caloric Restrict",
+      "doi": "10.62438/tunismed.v103i8.5777",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "1747-P: Metabolic Benefits of Plant-Based Caloric Restriction Diets in Obesity M",
+      "doi": "10.2337/db25-1747-p",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "1915-LB: Effects of a 6-Month Lifestyle Intervention for Type 2 Diabetes Featuri",
+      "doi": "10.2337/db25-1915-lb",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Partial Body Mass Regain Following Caloric Restriction Reduces Lipid Utilization",
+      "doi": "10.1152/physiol.2025.40.s1.1575",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Systematic Review and Meta-analysis of Randomized Clinical Trials Comparing Time",
+      "doi": "10.1093/nutrit/nuaf053",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fasting and Caloric Restriction in Long COVID Syndrome: A Scoping Review of Inte",
+      "doi": "10.1093/nutrit/nuaf141",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short-term intermittent fasting and energy restriction do not impair rates of mu",
+      "doi": "10.1016/j.clnu.2024.09.034",
+      "pmid": "39418832",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative effects of 8-week combined resistance exercise training and alternat",
+      "doi": "10.1080/08977194.2024.2378889",
+      "pmid": "39007914",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A 2-year calorie restriction intervention reduces glycomic biological age biomar",
+      "doi": "10.1101/2024.12.04.24318451",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Intermittent Fasting: possible strategies for delaying b",
+      "doi": "10.5604/01.3001.0054.2479",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is Time-Restricted Eating (Eating 12\u20138pm) More Effective for Weight Loss and Gly",
+      "doi": "10.1159/000538298",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "2083-LB: Effect of 8-Hour Time-Restricted Eating vs. Daily Calorie Restriction o",
+      "doi": "10.2337/db24-2083-lb",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A 2-Year Calorie Restriction Intervention Improves Diet Quality Without Compromi",
+      "doi": "10.1152/physiol.2024.39.s1.1677",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie restriction improves serum lipid metabolism, colon metabolites and micro",
+      "doi": "10.1017/anr.2024.16",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Unraveling the Health Benefits and Mechanisms of Time-Restricted Feeding: Beyond",
+      "doi": "10.1093/nutrit/nuae074",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does time\u2010restricted eating add benefits to calorie restriction? A systematic re",
+      "doi": "10.1002/oby.23984",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Worldwide research on calorie restriction in aging. A bibliometric study",
+      "doi": "10.12873/443murillo",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sirtuin 1 and Vascular Function in Healthy Women and Men: A Randomized Clinical ",
+      "doi": "10.3390/nu15132949",
+      "pmid": "37447275",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spirulina Platensis Supplementation and Calorie Restriction in Obese Men : A Ran",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Protein Supplementation in Elderly With Sarcopenic Obesity Undergoing Caloric Re",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Energy Restriction and Exercise for Knee Osteoarthritis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent Fasting Compared to Continuous Energy Restriction on Body Weight Lo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Intermittent Fasting versus Continuous Caloric Restriction on Body Wei",
+      "doi": "10.1055/s-0043-1771447",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "S-44-7: CALORIC RESTRICTION AND BLOOD PRESSURE REGULATION DURING METABOLIC SYNDR",
+      "doi": "10.1097/01.hjh.0000913696.43970.98",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cut Calories, Lengthen Life Span? Randomized Trial Uncovers Evidence That Calori",
+      "doi": "10.1001/jama.2023.2437",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction and Extracellular ATP on Health and Longevity- A Perspective",
+      "doi": "10.2174/1573401318666220531111219",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparing an Intermittent Fasting Intervention With a Continuous Energy Restrict",
+      "doi": "10.1158/1055-9965.epi-23-0363",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fasting and Dietary Restriction Impact on Immune System in Aging Population: A N",
+      "doi": "10.69951/proceedingsbookoficeonimeri.v7i-.200",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Major clinical evidence of calorie restriction and intermittent fasting on skin ",
+      "doi": "10.54448/mdnt23406",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract P4-07-52: Caloric Restriction for Oncology Research (CaReFOR): Assessin",
+      "doi": "10.1158/1538-7445.sabcs22-p4-07-52",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Calorie Restriction and Fasting on Macrophage: Potential Impact on Di",
+      "doi": "10.1002/mnfr.202300380",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Determinants of disordered eating behaviors: Body mass index, emotional eating, ",
+      "doi": "10.1590/1678-9865202336e220086",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent energy restriction ameliorates adipose tissue-associated inflammati",
+      "doi": "10.1016/j.clnu.2022.06.021",
+      "pmid": "35772219",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Energy -Sensing Metabolites in Caloric Restriction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Acute Effects of Caloric Restriction on Anthropometrics, Metabolism, and Car",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Open Randomized Clinical Trial to Evaluate the Effects of Intermittent Caloric R",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent Calorie Restriction, Insulin Resistance, and Biomarkers of Brain Fu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of a 4-week Alternate Day Intermittent Energy Restriction Intervention vs",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie restriction causes multiple beneficial metabolic adaptations linearly re",
+      "doi": "10.3233/nha-220180",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Get back\u2013calorie restriction: Dr. Masoro\u2019s legacy",
+      "doi": "10.31491/apt.2022.06.081",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "1418-P: Effect of Eight-Hour Time-Restricted Eating vs. Daily Calorie Restrictio",
+      "doi": "10.2337/db22-1418-p",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of caloric restriction on aging and neurodegenerative diseases",
+      "doi": "10.25557/0031-2991.2022.03.166-176",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "547-P: Changes in Body Weight and Glucoregulatory Markers by Eight-Hour Time-Res",
+      "doi": "10.2337/db22-547-p",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Review of Calorie Restriction and Beneficial Health Effects",
+      "doi": "10.46237/amusbfd.1082140",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "IMPACT OF CALORIE RESTRICTION ON PLASMA ALZHEIMER\u2019S DISEASE BIOMARKERS IN HEALTH",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DOES CALORIC RESTRICTION SLOW THE PROCESS OF BIOLOGICAL AGING? EVIDENCE FROM THE",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of resistance training with and without caloric restriction on visceral f",
+      "doi": "10.1111/obr.13275",
+      "pmid": "33998135",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "2-5 Intermittent Caloric Restriction in HIV",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Exercise for Protection From Anthracycline Toxic Effects",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction Before Surgery in Treating Patients With Endometrial, Prosta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction and Brain Function in Mild Cognitive Impairment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Long-Term Caloric Restriction on DNA Methylation Measures of Biologica",
+      "doi": "10.1101/2021.09.21.21263912",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of calorie restriction and intermittent fasting on periodontal health",
+      "doi": "10.1111/prd.12400",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Caloric Restriction and/or Intermittent Fasting on Bone Health",
+      "doi": "10.29245/2767-5122/2021/2.1128",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Coronary Artery Disease Awareness: Levels of Socioeconomic Status and Dietary Re",
+      "doi": "10.3126/njhs.v1i1.38726",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of calorie restriction or protein intake on circulating levels of insulin",
+      "doi": "10.1016/j.clnu.2019.07.030",
+      "pmid": "31431306",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation with a putative calorie restriction mimetic micronutrient blend ",
+      "doi": "10.1016/j.freeradbiomed.2020.04.017",
+      "pmid": "32335159",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Glucose and Lipid Metabolism Through Caloric Restriction Using Diet or",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent Energy Restriction and Chewing on Neural Stem Cell Ageing and Adult",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does the Energy Restriction Intermittent Fasting Diet Alleviate Metabolic Syndro",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction in Vascular Surgery",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Health benefits of intermittent caloric restriction",
+      "doi": "10.1079/pavsnnr202015024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reduction of Chronic Hyperinsulinemia (Insulin Resistance) for the Prevention an",
+      "doi": "10.33140/ijdmd.05.03.03",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of intermittent dietary restriction on the health-related outcomes of fai",
+      "doi": "10.1186/s42779-020-00047-3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ANTI-AGEING EFFECTS OF DIETARY BEE PRODUCTS AND CALORIE RESTRICTION ON SEMEN PRO",
+      "doi": "10.26873/svr-954-2020",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adolescent Obesity and Eating Disorders: Can Calorie Restriction have a Positive",
+      "doi": "10.2174/1573401315666190114153400",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of dietary restriction on metabolic and cognitive health",
+      "doi": "10.1017/s0029665120007910",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction and Spirulina platensis extract against ferrous ion (Fe2+) i",
+      "doi": "10.33448/rsd-v9i8.6210",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resolving the energy restriction at high altitude: variation in the digestive sy",
+      "doi": "10.1163/15707563-bja10004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Combined Aerobic Exercise and Calorie Restriction on Mood, Cogniti",
+      "doi": "10.1123/jpah.2019-0373",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "2 years of calorie restriction and cardiometabolic risk (CALERIE): exploratory o",
+      "doi": "10.1016/s2213-8587(19)30151-2",
+      "pmid": "31303390",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Caloric Restriction and Protein Intake on Metabolism and Anabolic Sens",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "How to Effectively Boost Fat Oxidation by Calorie Restriction in Overweight and ",
+      "doi": "10.33607/bjshs.v112i1.777",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of caloric restriction on working memory in healthy non-obese adults",
+      "doi": "10.1017/s1092852918001566",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Overweight is a Health Problem to be Tackled with Strict Dietary Restriction and",
+      "doi": "10.3126/jonmc.v8i2.26712",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Retracted: Severe iodine deficiency from dietary restriction and subsequent iodi",
+      "doi": "10.1002/eat.22940",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 270: Long term Caloric Restriction and Myocardial Aging in Non Human Pr",
+      "doi": "10.1161/res.123.suppl_1.270",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise coupled with dietary restriction reduces oxidative stress in male adole",
+      "doi": "10.1080/02640414.2016.1183807",
+      "pmid": "27169897",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction in Older Adults-Differential Effects of Weight Loss and Redu",
+      "doi": "10.1093/cercor/bhw008",
+      "pmid": "26838769",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of short-term energy restriction on liver lipid content and inflammatory",
+      "doi": "10.1111/dom.12918",
+      "pmid": "28230324",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction, Protein Supplementation and Metabolic Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Energy Restriction and Omega-3 Fatty Acids on Mammary Tissue",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutrition and Energy Restriction for Cancer Prevention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a 6-month caloric restriction induced-weight loss program in obese po",
+      "doi": "10.1097/gme.0000000000000862",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Balanced Nutrition Meal Replacement Along With a Caloric Restriction",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can Intermittent Fasting Mimic the Metabolic and Cardiovascular and Anti-aging E",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metformin Induces a Dietary Restriction-like State in Human",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessments of Dietary Restrictions in Young and Elderly Obese Men : Metabolism ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction in Multiple Sclerosis Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NAD+ as the Link Between Oxidative Stress, Inflammation, Caloric Restriction, Ex",
+      "doi": "10.1089/rej.2015.1767",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of dietary modification by calorie restriction on cholesterol levels in l",
+      "doi": "10.1177/0004563216672247",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Caloric Restriction and Dietary Composition on Liver Triglyceride Cont",
+      "doi": "10.1096/fasebj.30.1_supplement.291.4",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of moderate energy restriction on apnoea severity and CVD risk facto",
+      "doi": "10.1017/s0007114515004018",
+      "pmid": "26472571",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a caloric restriction weight loss diet on tryptophan metabolism and i",
+      "doi": "10.1007/s00394-014-0690-3",
+      "pmid": "24687684",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Cognitive Dietary Restraint on Perceived Stress, Appetite Sensations, ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of 24 h Severe Energy Restriction on Appetite Regulation and Ad-libitum E",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Periodic Fasting Versus Daily Energy Restriction on Metabolic Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EFFECTS OF CALORIC RESTRICTION WITH OR WITHOUT RESISTANCE TRAINING IN DYNAPENIC-",
+      "doi": "10.14283/jfa.2015.54",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Manipulation of health span and function by dietary caloric restriction mimetics",
+      "doi": "10.1111/nyas.12834",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of 1 year of alternate day fasting versus daily calorie restriction on ty",
+      "doi": "10.1096/fasebj.29.1_supplement.254.1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alternate\u2010day fasting and daily calorie restriction similarly affect visceral ad",
+      "doi": "10.1096/fasebj.29.1_supplement.254.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Plasma irisin depletion under energy restriction is associated with improvements",
+      "doi": "10.1111/cen.12383",
+      "pmid": "24325584",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Short Term Caloric Restriction on T Cell Activation in Fat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Caloric Restriction and Resveratrol in the Sirtuin System in Women ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction and Changes in Body Composition, Disease, Function, and Qual",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-term Caloric Restriction and Cellular Aging Markers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent Fasting, Caloric Restriction and Body Composition in Obese Men and ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alternateday fasting versus daily calorie restriction for weight loss and cardio",
+      "doi": "10.1096/fasebj.28.1_supplement.120.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CALERIE II: the effect of 25% calorie restriction over two years on cognitive fu",
+      "doi": "10.1096/fasebj.28.1_supplement.629.7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Prediction of Binge Episodes by Modelling Chronicity of Dietary Restri",
+      "doi": "10.1002/erv.2315",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary and caloric restriction and age\u2010related spinal osteoarthritis: a longitu",
+      "doi": "10.1096/fasebj.28.1_supplement.1025.7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Systematic Review of Dietary Protein During Caloric Restriction in Resistance ",
+      "doi": "10.1123/ijsnem.2013-0054",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Benefits of caloric restriction for cardiometabolic health, including type 2 dia",
+      "doi": "10.1002/dmrr.2517",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improvement of metabolic parameters in healthy older adult men following a fasti",
+      "doi": "10.3109/13685538.2013.832191",
+      "pmid": "24044618",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction in Obese Patients With Mild Cognitive Impairment: Effects on",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improvement in coronary heart disease risk factors during an intermittent fastin",
+      "doi": "10.1096/fasebj.27.1_supplement.112.1",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Caloric Restriction on Fat Oxidation in Obese Men and Women (Magellan ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Erythrocytes and Skeletal-muscle Fatty Acids Are Positively Correlated After Cal",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction Retards the Aging Process",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can Fish Oil and Phytochemical Supplements Mimic Anti-Aging Effects of Calorie R",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sleeping Habits Predict the Magnitude of Fat Loss in Adults Exposed to Moderate ",
+      "doi": "10.1159/000342054",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of FTO Genotype on Weight Loss and Metabolic Risk Factors in Response to",
+      "doi": "10.1038/oby.2011.322",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of fasting calorie restriction on quality of life among aging men.",
+      "doi": "10.1016/j.physbeh.2011.07.007",
+      "pmid": "21781980",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction Studies in Humans: Focusing on Obesity, Forgetting Longevity",
+      "doi": "10.1159/000328675",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Advances in calorie restriction in the last 10 years: implications for human lon",
+      "doi": "10.1079/pavsnnr20116030",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie restriction: Decelerating mTOR-driven aging from cells to organisms (inc",
+      "doi": "10.4161/cc.9.4.10766",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Supplementation During Caloric Restriction on Intestinal",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Resvida, a Comparison With Calorie Restriction Regimen",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Longevity, Aging, and Caloric Restriction: Clive Maine McCay and the Constructio",
+      "doi": "10.1525/hsns.2010.40.1.79",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Longevity cost of remaining unmated under dietary restriction",
+      "doi": "10.1111/j.1365-2435.2010.01729.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie restriction\u2010induced maternal longevity is transmitted to their daughters",
+      "doi": "10.1111/j.1365-2435.2010.01773.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of dietary restriction and n\u20103PUFA supplementation on insulin resistance ",
+      "doi": "10.1096/fasebj.24.1_supplement.733.9",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Life span extension by resveratrol, rapamycin, and metformin: The promise of die",
+      "doi": "10.1002/biof.127",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Antiaging, longevity and calorie restriction",
+      "doi": "10.1097/mco.0b013e3283331384",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of attentional training on body dissatisfaction and dietary restricti",
+      "doi": "10.1002/erv.921",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is Poly(A) Tail Length Altered by Aging or Dietary Restriction?",
+      "doi": "10.1159/000213527",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Entropy Generation and Human Aging: Lifespan Entropy and Effect of Diet Composit",
+      "doi": "10.1155/2009/186723",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alterations in proteasome plasticity and biogenesis with aging and dietary restr",
+      "doi": "10.1096/fasebj.23.1_supplement.668.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Longevity",
+      "doi": "10.1111/j.1749-6632.2009.04409.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of physical exercise and caloric restriction on the components of met",
+      "doi": "10.1590/s1984-82502009000300003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of moderate energy restriction and seafood consumption on bone turnove",
+      "doi": "10.1093/ajcn/87.4.1045",
+      "pmid": "18400730",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction attenuates apoptosis in larger type II fibers with aging",
+      "doi": "10.1096/fasebj.22.1_supplement.1163.12",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Expectancies related to thinness, dietary restriction, eating, and alcohol consu",
+      "doi": "10.1002/eat.20594",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of weight loss by energy restriction on metabolic profile and glucose",
+      "doi": "10.1111/j.1439-0396.2007.00744.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long\u2013term effects of caloric restriction on total and resting energy expenditure",
+      "doi": "10.1096/fasebj.22.1_supplement.441.3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aging, Adiposity, and Calorie Restriction",
+      "doi": "10.1001/jama.297.9.986",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction, the Traditional Okinawan Diet, and Healthy Aging",
+      "doi": "10.1196/annals.1396.037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie Restriction, Post\u2010reproductive Life Span, and Programmed Aging",
+      "doi": "10.1196/annals.1404.029",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Energy Restriction and Successful Weight Loss in Obese Client-Owned Dogs",
+      "doi": "10.1111/j.1939-1676.2007.tb01934.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mild dietary restriction of vitamin C does not attenuate the rise in adiponectin",
+      "doi": "10.1096/fasebj.21.5.a349-a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dihydrolipoyl dehydrogenase as a source of reactive oxygen species inhibited by ",
+      "doi": "10.1096/fj.06-6686com",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Body Weight in Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Energy Restriction and Hormones in Premenopausal Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of dietary calcium and lactose maldigestion on fecal fat excretion during",
+      "doi": "10.1096/fasebj.20.5.a1029-c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of dietary glycemic load on mood during caloric restriction",
+      "doi": "10.1096/fasebj.20.4.a426",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Age and Caloric Restriction on Lipid Peroxidation: Measurement of Oxi",
+      "doi": "10.1093/gerona/60.7.847",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Clinical Trial of Home-based Exercise Combined With a Slight Calori",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Energy Restriction and Metabolic Aging in Humans",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction for longevity: I. Paradigm, protocols and physiological find",
+      "doi": "10.1002/erv.594",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction for longevity: II\u2014The systematic neglect of behavioural and ",
+      "doi": "10.1002/erv.604",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Restrained Eating Behavior and the Metabolic Response to Dietary Energy Restrict",
+      "doi": "10.1038/oby.2004.19",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Aging in vertebrates, and the effect of caloric restriction: a mitochondrial fre",
+      "doi": "10.1017/s1464793103006213",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Unchanged fasting and postprandial adiponectin levels following a 4\u2010day caloric ",
+      "doi": "10.1111/j.1365-2265.2004.01997.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic adaptation and hormonal regulation in young rabbit does during long-te",
+      "doi": "10.1017/s1357729800090111",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reproductive Switch and Aging: The Case of Leptin Change in Dietary Restriction",
+      "doi": "10.1196/annals.1297.079",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Decreasing serum concentrations of all\u2010trans, 13\u2010cis retinoic acids and retinol ",
+      "doi": "10.1046/j.1365-2796.2003.01114.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biomarkers of Caloric Restriction May Predict Longevity in Humans",
+      "doi": "10.1126/science.1071851",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Anti\u2010aging effects of caloric restriction: Involvement of neuroendocrine adaptat",
+      "doi": "10.1002/jemt.10211",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction and aging in primates: Relevance to humans and possible CR m",
+      "doi": "10.1002/jemt.10214",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Life history response of Mediterranean fruit flies to dietary restriction",
+      "doi": "10.1046/j.1474-9728.2002.00019.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CALORIE RESTRICTION AND AGING: A LIFE-HISTORY ANALYSIS",
+      "doi": "10.1111/j.0014-3820.2000.tb00076.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of dietary energy restriction on glucose production and substrate utiliza",
+      "doi": "10.2337/diabetes.49.10.1691",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Efficacy of Dietary Fat Vs. Total Energy Restriction for Weight Loss",
+      "doi": "10.1002/j.1550-8528.1998.tb00338.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dehydroepiandrosterone Sulfate: A Biomarker of Primate Aging Slowed by Calorie R",
+      "doi": "10.1210/jcem.82.7.4038",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in the body composition of cats during weight reduction by controlled di",
+      "doi": "10.1136/vr.138.15.354",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Different Percentages of Dietary Fat Intake, Exercise, and Calori",
+      "doi": "10.4278/0890-1171-8.6.442",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of dietary protein and calorie restriction in clinically normal cats and",
+      "doi": "10.2460/ajvr.1993.54.10.1653",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction and Aging: The Initiation of a Primate Study",
+      "doi": "10.1093/geronj/45.5.b148",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of excessive caloric intake and caloric restriction on body weight and e",
+      "doi": "10.1111/j.1748-1716.1982.tb06962.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of calorie restriction on energy expenditure in overweight and obese adul",
+      "doi": "10.3305/nh.2015.31.6.8782",
+      "pmid": "26040348",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of calorie restriction on resting metabolic rate and spontaneous physical",
+      "doi": "10.1038/oby.2007.354",
+      "pmid": "18198305",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Caloric Restriction Combined With Exercise on Lipid Metabolism and Bl",
+      "doi": "10.1093/nutrit/nuaf217",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 2041: Short-term pre-operative caloric restriction downregulates miR-21",
+      "doi": "10.1158/1538-7445.am2026-2041",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can Probiotics Influence Adaptive Thermogenesis Induced by Continuous Energy Res",
+      "doi": "10.1016/j.tjnut.2025.08.026",
+      "pmid": "40902730",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction\u2010mediated reproductive lifespan extension across multiple str",
+      "doi": "10.1002/oik.11699",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Optimizing Body Composition in Soccer Players Through Caloric Restriction: A Ran",
+      "doi": "10.34256/ijk2514",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction improves perceived exertion while conserving immunity, fatig",
+      "doi": "10.55860/3a6khe67",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Intermittent Versus Continuous Energy Restriction on Metabolic Adapta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can caloric restriction improve outcomes of elective surgeries?",
+      "doi": "10.1002/jpen.2642",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction extends lifespan in a clonal plant",
+      "doi": "10.1111/ele.14444",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of caloric restriction and low fructose consumption on oxidative dama",
+      "doi": "10.12873/441beltran",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Caloric Restriction and Aerobic Exercise on Premenstrual Syndrome, Ant",
+      "doi": "10.1002/pri.70015",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring the Evolutionary Disparities: A Case Study on the Psychophysiological ",
+      "doi": "10.3390/app132011140",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "419-P: Glucose-Induced Cellular Resistance to Methylglyoxal Is Lost in Patients ",
+      "doi": "10.2337/db23-419-p",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "12\u2010weeks of caloric restriction diet improves cortical cerebral blood flow in he",
+      "doi": "10.1002/alz.060865",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calorie restriction in cancer patients undergoing chemotherapy: Facts, phantasy ",
+      "doi": "10.1016/j.clnu.2022.04.020",
+      "pmid": "35552051",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Caloric Restriction on Intestinal Microbiota",
+      "doi": "10.54097/hset.v8i.1168",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction has a new player",
+      "doi": "10.1126/science.abn6576",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Co-Administration of Camelina Oil and Caloric Restriction on Ca",
+      "doi": "10.18502/jnfs.v7i3.10204",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the occurrence of metabolic syndrome in obese dogs and the role of",
+      "doi": "10.21708/avb.2022.16.4.10960",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "NOT JUST CALORIC RESTRICTION: A COMPLEX APPROACH TO PROLONG LIFESPAN AND IMPROVE",
+      "doi": "10.47316/cajmhe.2021.2.4.02",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Cardiovascular Health: the Good, the Bad, and the Renin-",
+      "doi": "10.1152/physiol.00002.2021",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regulation of energy intake and mechanisms of metabolic adaptation or maladaptat",
+      "doi": "10.1007/s11154-020-09565-6",
+      "pmid": "32451880",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beyond Simple Caloric Restriction in the Management of Obesity",
+      "doi": "10.22230/ijdrp.2020v2n1a101",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-Intensity Interval Training and Continuous Training with Intermittent Calor",
+      "doi": "10.25307/jssr.819590",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Aerobic Training With No Caloric Restriction on Serum Resistin and Li",
+      "doi": "10.34172/ijbsm.2020.04",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Confetti illuminates the cryptic way calorie restriction protects from cancer",
+      "doi": "10.1126/scitranslmed.abd4765",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Whole-body Electromyostimulation plus Caloric Restriction in Metabolic Syndrome",
+      "doi": "10.1055/a-1171-2003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effects of caloric restriction and its mimetics in Alzheimer's disease throu",
+      "doi": "10.1039/c9fo02611h",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Response of skeletal muscle UCP2-expression during metabolic adaptation to calor",
+      "doi": "10.1038/s41366-018-0085-2",
+      "pmid": "29777235",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of caloric restriction on anthropometrical and specific performance in h",
+      "doi": "10.18502/ajne.v3i3.3669",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction reduces age at menopause: the effect of the 1944-1945 Dutch ",
+      "doi": "10.1097/gme.0000000000001224",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of caloric restriction on anthropometrical and specific performance in h",
+      "doi": "10.15561/20755279.2019.0105",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A review of the molecular pathways mediating the improvement in diabetes mellitu",
+      "doi": "10.1002/jcp.27760",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Dietary Restriction on Irritable Bowel Syndrome",
+      "doi": "10.1038/s41395-018-0241-2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction Protects Against Hepatic Oncogenesis",
+      "doi": "10.1096/fasebj.31.1_supplement.lb349",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regulation of Glucose-6-Phosphate Dehydrogenase Activity during Caloric Restrict",
+      "doi": "10.1159/000459086",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Calorie Restriction on Microglial Activation in a murine model",
+      "doi": "10.1096/fasebj.30.1_supplement.916.21",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic adaptation to caloric restriction and subsequent refeeding: the Minnes",
+      "doi": "10.3945/ajcn.115.109173",
+      "pmid": "26399868",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Middle-aged overweight South Asian men exhibit a different metabolic adaptation ",
+      "doi": "10.1007/s00125-014-3408-4",
+      "pmid": "25316433",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The caloric restriction paradigm",
+      "doi": "10.1042/bio03704020",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Resting energy expenditure adaptation after short-term caloric restriction in mo",
+      "doi": "10.1590/1415-52732015000500005",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hormonal response to energy restriction",
+      "doi": "10.1126/scitranslmed.aad5505",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of feeding a weight loss food beyond a caloric restriction period on body",
+      "doi": "10.2460/javma.247.4.365",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary restriction and the pursuit of effective mimetics",
+      "doi": "10.1017/s0029665113003832",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of exercise training without caloric restriction on inflammation, insulin",
+      "doi": "10.1111/ijpo.255",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Perspective food addiction, caloric restriction, and dopaminergic neurotransmiss",
+      "doi": "10.1017/neu.2013.18",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Response of serum osteocalcin to caloric restriction with and without exercise i",
+      "doi": "10.1096/fasebj.27.1_supplement.1067.13",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction, but not caloric loading, affects circulating fetal and mate",
+      "doi": "10.1071/rd11312",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate caloric restriction results in significant loss of fat mass, limited de",
+      "doi": "10.1096/fasebj.26.1_supplement.820.13",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D supplementation increases true fractional calcium absorption in the ab",
+      "doi": "10.1096/fasebj.26.1_supplement.386.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction and exercise lower plasma triglycerides by different mechani",
+      "doi": "10.1096/fasebj.26.1_supplement.242.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Smaller cerebrovascular arteries have a greater age\u2010related endothelial dysfunct",
+      "doi": "10.1096/fasebj.26.1_supplement.685.31",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Antiaging Effects",
+      "doi": "10.1159/000323748",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular protection afforded by caloric restriction: Essential role of nit",
+      "doi": "10.1111/j.1447-0594.2010.00675.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction in Humans: A Response to Drs. Gavrilova and Gavrilov",
+      "doi": "10.1159/000330405",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Intermittent versus daily calorie restriction: which diet regimen is more effect",
+      "doi": "10.1111/j.1467-789x.2011.00873.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction or Dietary Restriction and Exercise, but Not Exercise Interv",
+      "doi": "10.1096/fasebj.24.1_supplement.343.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of exercise combined with caloric restriction on inflammatory cytokines",
+      "doi": "10.1139/h10-046",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and L\u2010Carnitine Administration Improves Insulin Sensitivity ",
+      "doi": "10.1177/0148607109353440",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction Does Not Offset Age-Associated Changes in the Biophysical Pr",
+      "doi": "10.1152/jn.90617.2008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Restriction \u2013 A Procedure with an Undefined Goal: A Critical Review of T",
+      "doi": "10.1159/000213182",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "IGF\u2010I SYSTEM TEMPORAL RESPONSES TO CALORIC RESTRICTION DURING CONTINUOUS MONITOR",
+      "doi": "10.1096/fasebj.23.1_supplement.991.24",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The influence of a period of caloric restriction due to the Dutch famine on brea",
+      "doi": "10.1002/ijc.24873",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Small Doses of Iodine on Thyroid Function during Caloric Restriction i",
+      "doi": "10.1159/000182713",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Moderate Caloric Restriction Alters the Subcellular Distribution of Somatostatin",
+      "doi": "10.1159/000126885",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Weight loss in obese men by caloric restriction and high\u2010dose diazoxide\u2013mediated",
+      "doi": "10.1111/j.1463-1326.2008.00878.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction and gender modulate cardiac muscle mitochondrial H2O2 produc",
+      "doi": "10.1016/j.cardiores.2007.02.001",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Quality of self\u2010selected diets of non\u2010obese participants in a randomized control",
+      "doi": "10.1096/fasebj.21.5.a155-a",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Increased Dietary Dairy Calcium Combined with Caloric Restriction on ",
+      "doi": "10.1096/fasebj.21.5.a112-c",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of increasing total essential amino acids on nitrogen metabolism durin",
+      "doi": "10.1096/fasebj.21.6.a743",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Conserved and Tissue-Specific Genic and Physiologic Responses to Caloric Restric",
+      "doi": "10.1146/annurev.nutr.27.061406.093743",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Human Reproductive Costs and the Predicted Response to Dietary Restriction",
+      "doi": "10.1089/rej.2007.0519",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise, Caloric Restriction, and Systemic Oxidative Stress",
+      "doi": "10.2310/6650.2005.05024",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of caloric restriction and a moderate or intense physiotherapy program f",
+      "doi": "10.2460/javma.229.11.1756",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction and Caloric Restriction Mimetics: Current Status and Promise",
+      "doi": "10.1111/j.1532-5415.2005.53489.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction Mimetics: The Next Phase",
+      "doi": "10.1196/annals.1356.027",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of caloric restriction on life span of the housefly, Musca domestica",
+      "doi": "10.1096/fj.03-1464fje",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of recombinant human leptin treatment as an adjunct of moderate energy r",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of apolipoprotein E genotype on the response to caloric restriction in",
+      "doi": "10.1046/j.1463-1326.2003.00286.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regional Subcutaneous\u2010Fat Loss Induced by Caloric Restriction in Obese Women",
+      "doi": "10.1038/oby.2002.121",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Homeostasis Is Maintained in Yan Xin Life Science Technology-Optimized Caloric R",
+      "doi": "10.1177/027046702236893",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evidence for a Major Role of Skeletal Muscle Lipolysis in the Regulation of Lipi",
+      "doi": "10.2337/diabetes.50.7.1604",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction in Primates",
+      "doi": "10.1111/j.1749-6632.2001.tb05658.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric restriction of rhesus monkeys lowers oxidative damage in skeletal muscle",
+      "doi": "10.1096/fj.99-0881com",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Short Periods of Caloric Restriction on Weight Loss and Glycemic C",
+      "doi": "10.2337/diacare.21.1.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of body weight and caloric restriction on serum complement proteins, incl",
+      "doi": "10.1046/j.1365-2249.1997.3921287.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Factors That Affect Calorie-Sensitive and Calorie-Insensitive Reduction in Blood",
+      "doi": "10.1161/01.hyp.27.3.408",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Behavioral Weight Loss Program Stressing Calorie Restriction Versus",
+      "doi": "10.2337/diacare.18.9.1241",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interaction of hypertension and caloric restriction on cardiac mass and isomyosi",
+      "doi": "10.1152/ajpregu.1995.268.1.r33",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Caloric Restriction Per Se Is a Significant Factor in Improvements in Glycemic C",
+      "doi": "10.2337/diacare.17.1.30",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alterations in \u03b2-adrenergic sensitivity and platelet \u03b12-adrenoceptors in obese w",
+      "doi": "10.1042/cs0780081",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Short\u2010Term Caloric Restriction on Lactational Performance of Well\u2010Nou",
+      "doi": "10.1111/j.1651-2227.1986.tb10188.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of clofibrate and caloric restriction on kinetics of very low density",
+      "doi": "10.1161/01.atv.5.2.153",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Fenfluramine and Caloric Restriction on Carbohydrate Homeostasis i",
+      "doi": "10.2337/diacare.6.2.160",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ascorbic Acid, Dietary Restriction, and Upper Respiratory Tract Infection",
+      "doi": "10.1542/peds.65.6.1191",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "EVALUATION OF PROTEIN IN FOODS: XII. EFFECTS OF CALORIE RESTRICTION",
+      "doi": "10.1139/o66-155",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Heat exchanges of men during caloric restriction in the cold",
+      "doi": "10.1152/jappl.1962.17.6.947",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Composition and caloric density of weight loss during caloric restriction in col",
+      "doi": "10.1152/jappl.1961.16.4.624",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC2633586": {
+      "title": "Caloric restriction improves memory in elderly humans.",
+      "doi": "10.1073/pnas.0808587106",
+      "pmid": "19171901",
+      "year": 2009,
+      "venue": "Proc Natl Acad Sci U S A",
+      "sources": [
+        "crossref",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12972406": {
+      "title": "Development of a multimorbidity health conditions outcome index for caloric restriction interventional studies in older adults: a preliminary investigation in an observational cohort study.",
+      "doi": "10.1007/s11357-025-01708-4",
+      "pmid": "40447916",
+      "year": 2026,
+      "venue": "Geroscience",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC11510157": {
+      "title": "Is Fasting Superior to Continuous Caloric Restriction for Weight Loss and Metabolic Outcomes in Obese Adults? A Systematic Review and Meta-Analysis of Randomized Clinical Trials.",
+      "doi": "10.3390/nu16203533",
+      "pmid": "39458528",
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC10726900": {
+      "title": "Calorie restriction modulates the transcription of genes related to stress response and longevity in human muscle: The <scp>CALERIE</scp> study",
+      "doi": "10.1111/acel.13963",
+      "pmid": "37823711",
+      "year": 2023,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC10148951": {
+      "title": "Effect of long-term caloric restriction on DNA methylation measures of biological aging in healthy adults from the CALERIE trial.",
+      "doi": "10.1038/s43587-022-00357-y",
+      "pmid": "37118425",
+      "year": 2023,
+      "venue": "Nat Aging",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC10726801": {
+      "title": "Diet composition, adherence to calorie restriction, and cardiometabolic disease risk modification.",
+      "doi": "10.1111/acel.14018",
+      "pmid": "37873687",
+      "year": 2023,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC9370806": {
+      "title": "The Effects of Intermittent Fasting and Continuous Energy Restriction with Exercise on Cardiometabolic Biomarkers, Dietary Compliance, and Perceived Hunger and Mood: Secondary Outcomes of a Randomised, Controlled Trial.",
+      "doi": "10.3390/nu14153071",
+      "pmid": "35893925",
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC8070587": {
+      "title": "The Ability of Exercise to Mitigate Caloric Restriction-Induced Bone Loss in Older Adults: A Structured Review of RCTs and Narrative Review of Exercise-Induced Changes in Bone Biomarkers.",
+      "doi": "10.3390/nu13041250",
+      "pmid": "33920153",
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC7589692": {
+      "title": "Does the Energy Restriction Intermittent Fasting Diet Alleviate Metabolic Syndrome Biomarkers? A Randomized Controlled Trial.",
+      "doi": "10.3390/nu12103213",
+      "pmid": "33096684",
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC6656607": {
+      "title": "Cognitive Effects of Adding Caloric Restriction to Aerobic Exercise Training in Older Adults with Obesity.",
+      "doi": "10.1002/oby.22525",
+      "pmid": "31199592",
+      "year": 2019,
+      "venue": "Obesity (Silver Spring)",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC6515465": {
+      "title": "The Impact of Caloric Restriction on the Epigenetic Signatures of Aging",
+      "doi": "10.3390/ijms20082022",
+      "pmid": null,
+      "year": 2019,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC6950580": {
+      "title": "The Effects of Calorie Restriction on Autophagy: Role on Aging Intervention",
+      "doi": "10.3390/nu11122923",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC5946208": {
+      "title": "Resistance Training Prevents Muscle Loss Induced by Caloric Restriction in Obese Elderly Individuals: A Systematic Review and Meta-Analysis.",
+      "doi": "10.3390/nu10040423",
+      "pmid": "29596307",
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC5847862": {
+      "title": "Effects of 2 years of caloric restriction on oxidative status assessed by urinary F2\u2010isoprostanes: The <scp>CALERIE</scp> 2 randomized clinical trial",
+      "doi": "10.1111/acel.12719",
+      "pmid": "29424490",
+      "year": 2018,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC6351830": {
+      "title": "Autophagy and aging: Maintaining the proteome through exercise and caloric restriction",
+      "doi": "10.1111/acel.12876",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC5861848": {
+      "title": "Change in the Rate of Biological Aging in Response to Caloric Restriction: CALERIE Biobank Analysis.",
+      "doi": "10.1093/gerona/glx096",
+      "pmid": "28531269",
+      "year": 2017,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC5861948": {
+      "title": "Effects of Calorie Restriction in Obese Older Adults: The CROSSROADS Randomized Controlled Trial.",
+      "doi": "10.1093/gerona/glw237",
+      "pmid": "28003374",
+      "year": 2017,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC4834845": {
+      "title": "Effect of Two-Year Caloric Restriction on Bone Metabolism and Bone Mineral Density in Non-Obese Younger Adults: A Randomized Clinical Trial.",
+      "doi": "10.1002/jbmr.2701",
+      "pmid": "26332798",
+      "year": 2016,
+      "venue": "J Bone Miner Res",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC4850901": {
+      "title": "Effects of Resistance Training With and Without Caloric Restriction on Arterial Stiffness in Overweight and Obese Older Adults.",
+      "doi": "10.1093/ajh/hpv139",
+      "pmid": "26297029",
+      "year": 2016,
+      "venue": "Am J Hypertens",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC4841173": {
+      "title": "A 2-Year Randomized Controlled Trial of Human Caloric Restriction: Feasibility and Effects on Predictors of Health Span and Longevity.",
+      "doi": "10.1093/gerona/glv057",
+      "pmid": "26187233",
+      "year": 2015,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC3287353": {
+      "title": "Approaches for quantifying energy intake and %calorie restriction during calorie restriction interventions in humans: the multicenter CALERIE study.",
+      "doi": "10.1152/ajpendo.00290.2011",
+      "pmid": "22127229",
+      "year": 2012,
+      "venue": "Am J Physiol Endocrinol Metab",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC3342840": {
+      "title": "Effects of a caloric restriction weight loss diet and exercise on inflammatory biomarkers in overweight/obese postmenopausal women: a randomized controlled trial.",
+      "doi": "10.1158/0008-5472.can-11-3092",
+      "pmid": "22549948",
+      "year": 2012,
+      "venue": "Cancer Res",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC3705772": {
+      "title": "The caloric restriction paradigm: Implications for healthy human aging",
+      "doi": "10.1002/ajhb.22243",
+      "pmid": null,
+      "year": 2012,
+      "venue": "American Journal of Human Biology",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC3197347": {
+      "title": "Caloric restriction: powerful protection for the aging heart and vasculature",
+      "doi": "10.1152/ajpheart.00685.2011",
+      "pmid": null,
+      "year": 2011,
+      "venue": "American Journal of Physiology-Heart and Circulatory Physiology",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC2882205": {
+      "title": "Impact of 6-month caloric restriction on autonomic nervous system activity in healthy, overweight, individuals.",
+      "doi": "10.1038/oby.2009.408",
+      "pmid": "19910943",
+      "year": 2010,
+      "venue": "Obesity (Silver Spring)",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC2664681": {
+      "title": "Examination of cognitive function during six months of calorie restriction: results of a randomized controlled trial.",
+      "doi": "10.1089/rej.2006.0502",
+      "pmid": "17518698",
+      "year": 2007,
+      "venue": "Rejuvenation Res",
+      "sources": [
+        "crossref",
+        "pubmed"
+      ]
+    },
+    "PMC2692623": {
+      "title": "Effect of 6-month calorie restriction on biomarkers of longevity, metabolic adaptation, and oxidative stress in overweight individuals: a randomized controlled trial.",
+      "doi": "10.1001/jama.295.13.1539",
+      "pmid": "16595757",
+      "year": 2006,
+      "venue": "JAMA",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12956928": {
+      "title": "Effect of protein supplementation on hip bone mineral density, cortical thickness, and bone strength in older adult participants during a caloric restriction and aerobic exercise weight loss intervention: a randomized controlled trial.",
+      "doi": "10.1007/s00198-026-07845-6",
+      "pmid": "41553490",
+      "year": 2026,
+      "venue": "Osteoporos Int",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC13094879": {
+      "title": "Weight Regain Reverses Caloric Restriction-Induced Benefits on the Insulin-IGF-1 Nutrient-Sensing Pathway: Post Hoc Analysis From the CALERIE-2 Randomized Controlled Trial.",
+      "doi": "10.2337/dc25-1911",
+      "pmid": "41838032",
+      "year": 2026,
+      "venue": "Diabetes Care",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC13029005": {
+      "title": "Adherence and Metabolic Outcomes of Early and Late Time-Restricted Eating with Energy Restriction vs. Energy Restriction Alone: A 6-Month Follow-Up",
+      "doi": "10.3390/nu18061004",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12937505": {
+      "title": "Calorie Restriction Effects on Aging, Learning Performance, and Transcription in Aged <scp> Aplysia californica </scp>",
+      "doi": "10.1111/gbb.70046",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Genes, Brain and Behavior",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12365256": {
+      "title": "Effect of caloric restriction on organ size and its contribution to metabolic adaptation: an ancillary analysis of CALERIE 2.",
+      "doi": "10.1038/s41598-024-83762-0",
+      "pmid": "40830369",
+      "year": 2025,
+      "venue": "Sci Rep",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12022231": {
+      "title": "Severe Dietary Energy Restriction for Compensated Cirrhosis Due to Metabolic Dysfunction-Associated Steatotic Liver Disease: A Randomised Controlled Trial.",
+      "doi": "10.1002/jcsm.13783",
+      "pmid": "40275677",
+      "year": 2025,
+      "venue": "J Cachexia Sarcopenia Muscle",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11880040": {
+      "title": "Multi-study feasibility analysis on a composite biomarker of inflammatory resilience to quantify the effects of energy restriction on low-grade inflammation in overweight and obese individuals.",
+      "doi": "10.1007/s00394-025-03627-8",
+      "pmid": "40035864",
+      "year": 2025,
+      "venue": "Eur J Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12762787": {
+      "title": "Caloric Restriction and Health, Aging and Later-Life Outcomes in Older Adults",
+      "doi": "10.1093/geroni/igaf122.1017",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12762792": {
+      "title": "Effect of Long-Term Caloric Restriction on Epigenetic Proxies of Inflammaging: CALERIE\u2122 2 Trial Analysis",
+      "doi": "10.1093/geroni/igaf122.3753",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12762613": {
+      "title": "Caloric Restriction and Changes in Geroscience Blood-Based Biomarkers in Older Adults",
+      "doi": "10.1093/geroni/igaf122.1020",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12762004": {
+      "title": "Adaptations in Energy Expenditure Following Caloric Restriction in Older Adults",
+      "doi": "10.1093/geroni/igaf122.1019",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12762903": {
+      "title": "Creation of a Multimorbidity Health Conditions Index for Caloric Restriction Studies in Older Adults",
+      "doi": "10.1093/geroni/igaf122.1021",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12298767": {
+      "title": "Effects of Time-Restricted Eating (Early and Late) Combined with Energy Restriction vs. Energy Restriction Alone on the Gut Microbiome in Adults with Obesity",
+      "doi": "10.3390/nu17142284",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12827324": {
+      "title": "Comparative effects of intermittent fasting and calorie restriction on cardiovascular health in adults with overweight or obesity",
+      "doi": "10.1038/s41598-025-32673-9",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11926029": {
+      "title": "Isolating the acute metabolic effects of carbohydrate restriction on postprandial metabolism with or without energy restriction: a crossover study",
+      "doi": "10.1007/s00394-025-03646-5",
+      "pmid": null,
+      "year": 2025,
+      "venue": "European Journal of Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11990601": {
+      "title": "Time-Restricted Eating Versus Daily Calorie Restriction: Effects on Inflammatory Markers over 12 Months in Adults with Obesity",
+      "doi": "10.3390/nu17071130",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12545539": {
+      "title": "SUN-699 Post-Intervention Sustainability of Time-Restricted Eating vs Caloric Restriction",
+      "doi": "10.1210/jendso/bvaf149.206",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of the Endocrine Society",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12761034": {
+      "title": "Fibroblasts Exposed to Serum Collected After Long-Term Calorie Restriction Have Lower Mitochondrial Respiration",
+      "doi": "10.1093/geroni/igaf122.2543",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12348356": {
+      "title": "Does Energy Restriction and Loss of Body Fat Account for the Effect of Intermittent Fasting on Cognitive Function?",
+      "doi": "10.3390/nu17152407",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12501569": {
+      "title": "Moderate to Vigorous Physical Activity as a Cause of Dietary Restriction in Eating Disorders",
+      "doi": "10.1002/eat.24494",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Eating Disorders",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12195750": {
+      "title": "Effects of Intermittent Fasting and Calorie Restriction on Exercise Performance: A Systematic Review and Meta-Analysis",
+      "doi": "10.3390/nu17121992",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12430449": {
+      "title": "Effect of Time-Restricted Eating Versus Daily Calorie Restriction on Mood and Quality of Life in Adults with Type 2 Diabetes",
+      "doi": "10.3390/nu17172757",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12672340": {
+      "title": "Effects of time-restricted eating without caloric restriction on blood pressure and cardiometabolic profile in non-diabetic adults: a systematic review and meta-analysis of randomized controlled trials",
+      "doi": "10.3389/fnut.2025.1631477",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11763027": {
+      "title": "Treating Metabolic Dysregulation and Senescence by Caloric Restriction: Killing Two Birds with One Stone?",
+      "doi": "10.3390/antiox14010099",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Antioxidants",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11969032": {
+      "title": "Latent Trajectories of Change in Dietary Restriction During Treatment in Avoidant/Restrictive Food Intake Disorder and Anorexia Nervosa",
+      "doi": "10.1002/eat.24382",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Eating Disorders",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12686577": {
+      "title": "Caloric Restriction Reprograms Adipose Tissues in Rhesus Monkeys",
+      "doi": "10.1111/acel.70254",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12067513": {
+      "title": "Food Insecurity Predicts Excessive Exercise, Dietary Restriction, Cognitive Restraint, and Purging, but Not Binge Eating, in College Students Across 3 Months",
+      "doi": "10.1002/eat.24401",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Eating Disorders",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12251159": {
+      "title": "A Secondary Analysis of Caloric Restriction and Exercise Effects on Cognitive Function in Functionally Limited Postmenopausal Women with Overweight or Obesity",
+      "doi": "10.3390/nu17132075",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12309031": {
+      "title": "Comparing the influence of early and late time-restricted eating with energy restriction and energy restriction alone on cardiometabolic markers, metabolic hormones and appetite in adults with overweight/obesity: per-protocol analysis of a 3-month randomized clinical trial",
+      "doi": "10.1186/s12986-025-00984-3",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrition & Metabolism",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12505589": {
+      "title": "Association between physical activity energy expenditure and markers of healthspan during prolonged calorie restriction in individuals without obesity: observations from the CALERIE\u2122 phase 2 randomized controlled trial",
+      "doi": "10.1186/s12966-025-01825-5",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12007730": {
+      "title": "Histological improvements following energy restriction and exercise: The role of insulin resistance in resolution of MASH.",
+      "doi": "10.1016/j.jhep.2024.06.017",
+      "pmid": "38914313",
+      "year": 2024,
+      "venue": "J Hepatol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11133430": {
+      "title": "Gut microbiome remodeling and metabolomic profile improves in response to protein pacing with intermittent fasting versus continuous caloric restriction.",
+      "doi": "10.1038/s41467-024-48355-5",
+      "pmid": "38806467",
+      "year": 2024,
+      "venue": "Nat Commun",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC11632361": {
+      "title": "The impact of continuous calorie restriction and fasting on cognition in adults without eating disorders",
+      "doi": "10.1093/nutrit/nuad170",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrition Reviews",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11369340": {
+      "title": "Fasting and calorie restriction modulate age\u2010associated immunosenescence and inflammaging",
+      "doi": "10.1002/agm2.12342",
+      "pmid": null,
+      "year": 2024,
+      "venue": "AGING MEDICINE",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11368853": {
+      "title": "Effect of 5:2 intermittent fasting diet versus daily calorie restriction eating on metabolic-associated fatty liver disease\u2014a randomized controlled trial",
+      "doi": "10.3389/fnut.2024.1439473",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10820472": {
+      "title": "Impact of Intermittent Fasting and/or Caloric Restriction on Aging-Related Outcomes in Adults: A Scoping Review of Randomized Controlled Trials",
+      "doi": "10.3390/nu16020316",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10936542": {
+      "title": "Requirements for essential micronutrients during caloric restriction and fasting",
+      "doi": "10.3389/fnut.2024.1363181",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11510029": {
+      "title": "Time-Restricted Eating Versus Daily Calorie Restriction: Effect on Sleep in Adults with Obesity over 12 Months",
+      "doi": "10.3390/nu16203528",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11026672": {
+      "title": "Effect of calorie restriction and intermittent fasting on glucose homeostasis, lipid profile, inflammatory, and hormonal markers in patients with polycystic ovary syndrome: a systematic review",
+      "doi": "10.3389/fnut.2024.1362226",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10819730": {
+      "title": "Effect of Calorie Restriction and Intermittent Fasting Regimens on Brain-Derived Neurotrophic Factor Levels and Cognitive Function in Humans: A Systematic Review",
+      "doi": "10.3390/medicina60010191",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Medicina",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11485046": {
+      "title": "Clinical Insights on Caloric Restriction Mimetics for Mitigating Brain Aging and Related Neurodegeneration",
+      "doi": "10.1007/s10571-024-01493-2",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Cellular and Molecular Neurobiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11425986": {
+      "title": "Comparing caloric restriction regimens for effective weight management in adults: a systematic review and network meta-analysis",
+      "doi": "10.1186/s12966-024-01657-9",
+      "pmid": null,
+      "year": 2024,
+      "venue": "International Journal of Behavioral Nutrition and Physical Activity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10544709": {
+      "title": "Effect of the glucagon-like peptide-1 receptor agonist liraglutide, compared to caloric restriction, on appetite, dietary intake, body fat distribution and cardiometabolic biomarkers: A randomized trial in adults with obesity and prediabetes.",
+      "doi": "10.1111/dom.15113",
+      "pmid": "37188932",
+      "year": 2023,
+      "venue": "Diabetes Obes Metab",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9974606": {
+      "title": "A Randomized, Controlled Trial of Resistance Training Added to Caloric Restriction Plus Aerobic Exercise Training in Obese Heart Failure With Preserved Ejection Fraction.",
+      "doi": "10.1161/circheartfailure.122.010161",
+      "pmid": "36314122",
+      "year": 2023,
+      "venue": "Circ Heart Fail",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10210464": {
+      "title": "The effect of dietary carbohydrate and calorie restriction on weight and metabolic health in overweight/obese individuals: a multi-center randomized controlled trial.",
+      "doi": "10.1186/s12916-023-02869-9",
+      "pmid": "37226271",
+      "year": 2023,
+      "venue": "BMC Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9962072": {
+      "title": "Caloric Restriction (CR) Plus High-Nitrate Beetroot Juice Does Not Amplify CR-Induced Metabolic Adaptation and Improves Vascular and Cognitive Functions in Overweight Adults: A 14-Day Pilot Randomised Trial.",
+      "doi": "10.3390/nu15040890",
+      "pmid": "36839248",
+      "year": 2023,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10804887": {
+      "title": "Effect of Baseline BMI and IL-6 Subgroup Membership on Gait Speed Response to Caloric Restriction in Older Adults with Obesity.",
+      "doi": "10.1007/s12603-023-1909-1",
+      "pmid": "37170436",
+      "year": 2023,
+      "venue": "J Nutr Health Aging",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10861196": {
+      "title": "Calorie restriction reduces biomarkers of cellular senescence in humans",
+      "doi": "10.1111/acel.14038",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10737863": {
+      "title": "EFFECT OF LONG-TERM CALORIC RESTRICTION ON THE PACE OF BIOLOGICAL AGING IN HEALTHY ADULTS FROM THE CALERIE TRIAL",
+      "doi": "10.1093/geroni/igad104.0677",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10737930": {
+      "title": "CALORIC RESTRICTION AND AGING: FROM CALORIES TO FASTING Times",
+      "doi": "10.1093/geroni/igad104.1357",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10708501": {
+      "title": "Effectiveness of Time-Restricted Eating with Caloric Restriction vs. Caloric Restriction for Weight Loss and Health: Meta-Analysis",
+      "doi": "10.3390/nu15234911",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10204925": {
+      "title": "Intermittent energy restriction vs. continuous energy restriction on cardiometabolic risk factors in patients with metabolic syndrome: a meta-analysis and systematic review",
+      "doi": "10.3389/fnut.2023.1090792",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10272989": {
+      "title": "Targeting Energy Intake and Circadian Biology to Engage Mechanisms of Aging in Older Adults With Obesity: Calorie Restriction and Time-Restricted Eating",
+      "doi": "10.1093/gerona/glad069",
+      "pmid": null,
+      "year": 2023,
+      "venue": "The Journals of Gerontology: Series A",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10599060": {
+      "title": "Does dietary nitrate boost the effects of caloric restriction on brain health? Potential physiological mechanisms and implications for future research",
+      "doi": "10.1186/s12986-023-00766-9",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrition & Metabolism",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10609268": {
+      "title": "Effect of Time-Restricted Eating versus Daily Calorie Restriction on Mood and Quality of Life in Adults with Obesity",
+      "doi": "10.3390/nu15204313",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10736169": {
+      "title": "A KNOWLEDGE-DRIVEN BIO-BEHAVIORAL NETWORK MODEL OF THE INFLAMMASOME AND CALORIC RESTRICTION",
+      "doi": "10.1093/geroni/igad104.3140",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10828374": {
+      "title": "Reduction in metabolic noise reveals rejuvenation following transient severe caloric restriction",
+      "doi": "10.1007/s11357-023-00969-1",
+      "pmid": null,
+      "year": 2023,
+      "venue": "GeroScience",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10420884": {
+      "title": "Exploring Caloric Restriction in Inpatients with Eating Disorders: Cross-Sectional and Longitudinal Associations with Body Dissatisfaction, Body Avoidance, Clinical Factors, and Psychopathology",
+      "doi": "10.3390/nu15153409",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11093702": {
+      "title": "Evaluating dietary restriction as a maintaining factor in binge\u2010eating disorder",
+      "doi": "10.1002/eat.24094",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Eating Disorders",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9941245": {
+      "title": "Body shape perception in men and women without obesity during caloric restriction: a secondary analysis from the CALERIE study",
+      "doi": "10.1007/s40519-023-01548-1",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Eating and Weight Disorders - Studies on Anorexia, Bulimia and Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11009534": {
+      "title": "Do treats facilitate the interpretation of findings on caloric restriction?",
+      "doi": "10.1136/bmjnph-2023-000830",
+      "pmid": null,
+      "year": 2023,
+      "venue": "BMJ Nutrition, Prevention & Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10494137": {
+      "title": "Metabolic impact of intermittent energy restriction and periodic fasting in patients with type 2 diabetes: a systematic review",
+      "doi": "10.1093/nutrit/nuad015",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Nutrition Reviews",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9843895": {
+      "title": "Comparison of the effect of modified intermittent fasting and daily calorie restriction on sleep quality, anthropometric data, and body composition in women with obesity or overweight: study protocol of a randomized controlled trial",
+      "doi": "10.1186/s13063-023-07070-0",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Trials",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8976757": {
+      "title": "Challenges in defining successful adherence to calorie restriction goals in humans: Results from CALERIE\u2122 2.",
+      "doi": "10.1016/j.exger.2022.111757",
+      "pmid": "35240264",
+      "year": 2022,
+      "venue": "Exp Gerontol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8919571": {
+      "title": "Calorie restriction improves metabolic state independently of gut microbiome composition: a randomized dietary intervention trial.",
+      "doi": "10.1186/s13073-022-01030-0",
+      "pmid": "35287713",
+      "year": 2022,
+      "venue": "Genome Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9070937": {
+      "title": "Estimating heterogeneity of physical function treatment response to caloric restriction among older adults with obesity.",
+      "doi": "10.1371/journal.pone.0267779",
+      "pmid": "35511858",
+      "year": 2022,
+      "venue": "PLoS One",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8742721": {
+      "title": "Effects of caloric restriction and aerobic exercise on circulating cell-free mitochondrial DNA in patients with moderate to severe chronic kidney disease.",
+      "doi": "10.1152/ajprenal.00270.2021",
+      "pmid": "34843657",
+      "year": 2022,
+      "venue": "Am J Physiol Renal Physiol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9071468": {
+      "title": "Effect of severe compared with moderate energy restriction on physical activity among postmenopausal female adults with obesity: a prespecified secondary analysis of the Type of Energy Manipulation for Promoting optimum metabolic health and body composition in Obesity (TEMPO) Diet randomized control",
+      "doi": "10.1093/ajcn/nqac024",
+      "pmid": "35102380",
+      "year": 2022,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9691536": {
+      "title": "The basis and design for time-restricted eating compared with daily calorie restriction for weight loss and colorectal cancer risk reduction trial (TRE-CRC trial).",
+      "doi": "10.1002/oby.23579",
+      "pmid": "36319597",
+      "year": 2022,
+      "venue": "Obesity (Silver Spring)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8792147": {
+      "title": "Changes in Cardiometabolic Risk Among Older Adults with Obesity: An Ancillary Analysis of a Randomized Controlled Trial Investigating Exercise Plus Weight Maintenance and Exercise Plus Intentional Weight Loss by Caloric Restriction.",
+      "doi": "10.1016/j.jand.2021.07.009",
+      "pmid": "34486528",
+      "year": 2022,
+      "venue": "J Acad Nutr Diet",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9135899": {
+      "title": "Evaluation of a blood-based geroscience biomarker index in a randomized trial of caloric restriction and exercise in older adults with heart failure with preserved ejection fraction.",
+      "doi": "10.1007/s11357-021-00509-9",
+      "pmid": "35013909",
+      "year": 2022,
+      "venue": "Geroscience",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9265557": {
+      "title": "Effects of Intermittent Energy Restriction Alone and in Combination with Sprint Interval Training on Body Composition and Cardiometabolic Biomarkers in Individuals with Overweight and Obesity.",
+      "doi": "10.3390/ijerph19137969",
+      "pmid": "35805627",
+      "year": 2022,
+      "venue": "Int J Environ Res Public Health",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9735516": {
+      "title": "Plasma FGF21 Levels Are Not Associated with Weight Loss or Improvements in Metabolic Health Markers upon 12 Weeks of Energy Restriction: Secondary Analysis of an RCT.",
+      "doi": "10.3390/nu14235061",
+      "pmid": "36501091",
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9766598": {
+      "title": "DOES CALORIC RESTRICTION SLOW THE PROCESS OF BIOLOGICAL AGING? EVIDENCE FROM THE CALERIE TRIAL",
+      "doi": "10.1093/geroni/igac059.391",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9780150": {
+      "title": "Weight strategy in older adults with obesity: calorie restriction or not?",
+      "doi": "10.1097/mco.0000000000000879",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Current Opinion in Clinical Nutrition & Metabolic Care",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9766558": {
+      "title": "IMPACT OF CALORIE RESTRICTION ON PLASMA ALZHEIMER\u2019S DISEASE BIOMARKERS IN HEALTHY YOUNG AND MIDDLE-AGED ADULTS",
+      "doi": "10.1093/geroni/igac059.388",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9625649": {
+      "title": "ODP004 Glucose Profiles and Insulin Sensitivity in Adults with Overweight/Obesity Participating in a Weight Loss Intervention based on Early Time-Restricted Eating plus Daily Caloric Restriction vs Daily Caloric Restriction Alone",
+      "doi": "10.1210/jendso/bvac150.018",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of the Endocrine Society",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9678932": {
+      "title": "Differential effects of intermittent energy restriction vs. continuous energy restriction combined high-intensity interval training on overweight/obese adults: A randomized controlled trial",
+      "doi": "10.3389/fnut.2022.979618",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9002823": {
+      "title": "The Role of Intermittent Energy Restriction Diet on Metabolic Profile and Weight Loss among Obese Adults",
+      "doi": "10.3390/nu14071509",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8745028": {
+      "title": "The Complicated Relationship between Dieting, Dietary Restraint, Caloric Restriction, and Eating Disorders: Is a Shift in Public Health Messaging Warranted?",
+      "doi": "10.3390/ijerph19010491",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8982510": {
+      "title": "Early Dinner Time and Caloric Restriction Lapse Contribute to the Longevity of Nonagenarians and Centenarians of the Italian Abruzzo Region: A Cross-Sectional Study",
+      "doi": "10.3389/fnut.2022.863106",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8945872": {
+      "title": "Caloric Restriction Mimetic 2-Deoxyglucose Reduces Inflammatory Signaling in Human Astrocytes: Implications for Therapeutic Strategies Targeting Neurodegenerative Diseases",
+      "doi": "10.3390/brainsci12030308",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Brain Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9108547": {
+      "title": "Effects of Intermittent Fasting in Human Compared to a Non-intervention Diet and Caloric Restriction: A Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.3389/fnut.2022.871682",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10107279": {
+      "title": "Intermittent fasting and protein pacing are superior to caloric restriction for weight and visceral fat loss",
+      "doi": "10.1002/oby.23660",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9180920": {
+      "title": "The Effectiveness of Intermittent Fasting, Time Restricted Feeding, Caloric Restriction, a Ketogenic Diet and the Mediterranean Diet as Part of the Treatment Plan to Improve Health and Chronic Musculoskeletal Pain: A Systematic Review",
+      "doi": "10.3390/ijerph19116698",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9819120": {
+      "title": "Dieting Behavior Characterized by Caloric Restriction and Relation to Sleep: A Brief Contemporary Review",
+      "doi": "10.3390/ijerph20010276",
+      "pmid": null,
+      "year": 2022,
+      "venue": "International Journal of Environmental Research and Public Health",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9099935": {
+      "title": "Intermittent Fasting versus Continuous Calorie Restriction: Which Is Better for Weight Loss?",
+      "doi": "10.3390/nu14091781",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8741476": {
+      "title": "Calorie restriction improves lipid-related emerging cardiometabolic risk factors in healthy adults without obesity: Distinct influences of BMI and sex from CALERIE\u2122 a multicentre, phase 2, randomised controlled trial",
+      "doi": "10.1016/j.eclinm.2021.101261",
+      "pmid": null,
+      "year": 2022,
+      "venue": "EClinicalMedicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7727025": {
+      "title": "Effects of caloric restriction on human physiological, psychological, and behavioral outcomes: highlights from CALERIE phase 2.",
+      "doi": "10.1093/nutrit/nuaa085",
+      "pmid": "32940695",
+      "year": 2021,
+      "venue": "Nutr Rev",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8645192": {
+      "title": "Effect of 2-year caloric restriction on organ and tissue size in nonobese 21- to 50-year-old adults in a randomized clinical trial: the CALERIE study.",
+      "doi": "10.1093/ajcn/nqab205",
+      "pmid": "34159359",
+      "year": 2021,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8720865": {
+      "title": "Association between the FTO rs9939609 single nucleotide polymorphism and dietary adherence during a 2-year caloric restriction intervention: Exploratory analyses from CALERIE\u2122 phase 2.",
+      "doi": "10.1016/j.exger.2021.111555",
+      "pmid": "34543722",
+      "year": 2021,
+      "venue": "Exp Gerontol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7882001": {
+      "title": "Effect of 2 years of calorie restriction on liver biomarkers: results from the CALERIE phase 2 randomized controlled trial.",
+      "doi": "10.1007/s00394-020-02361-7",
+      "pmid": "32803412",
+      "year": 2021,
+      "venue": "Eur J Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8170788": {
+      "title": "Effect of probiotic supplementation along with calorie restriction on metabolic endotoxemia, and inflammation markers in coronary artery disease patients: a double blind placebo controlled randomized clinical trial.",
+      "doi": "10.1186/s12937-021-00703-7",
+      "pmid": "34074289",
+      "year": 2021,
+      "venue": "Nutr J",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8308705": {
+      "title": "The Potential of Calorie Restriction and Calorie Restriction Mimetics in Delaying Aging: Focus on Experimental Models",
+      "doi": "10.3390/nu13072346",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8680857": {
+      "title": "The Wake Forest IASDR: A Resource for Studying the Effects of Caloric Restriction on Health Outcomes in Older Adults",
+      "doi": "10.1093/geroni/igab046.298",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8071299": {
+      "title": "Effects of Calorie Restriction on Health Span and Insulin Resistance: Classic Calorie Restriction Diet vs. Ketosis-Inducing Diet",
+      "doi": "10.3390/nu13041302",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8680671": {
+      "title": "Appendicular Lean Mass Loss Does Not Impact Physical Performance Change During Caloric Restriction in Older Adults",
+      "doi": "10.1093/geroni/igab046.301",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8681110": {
+      "title": "Effect of Baseline BMI and IL-6 on Gait Speed Response to Caloric Restriction in Older Adults",
+      "doi": "10.1093/geroni/igab046.302",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8450361": {
+      "title": "Caloric Restriction May Help Delay the Onset of Frailty and Support Frailty Management",
+      "doi": "10.3389/fnut.2021.731356",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8969465": {
+      "title": "New Directions in Dietary Restriction: Remembering Edward Masoro",
+      "doi": "10.1093/geroni/igab046.439",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8681193": {
+      "title": "Exercise Modality Affects Older Adult CT-Derived Muscle and Bone Loss During Caloric Restriction",
+      "doi": "10.1093/geroni/igab046.300",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8660583": {
+      "title": "Beneficial Effects on Brain Micro-Environment by Caloric Restriction in Alleviating Neurodegenerative Diseases and Brain Aging",
+      "doi": "10.3389/fphys.2021.715443",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8680521": {
+      "title": "The First Evaluation of a Geroscience Biomarker Index (TAME-BI) in a Trial of Caloric Restriction and Exercise",
+      "doi": "10.1093/geroni/igab046.299",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8052001": {
+      "title": "The influence of fasting and caloric restriction on inflammation levels in humans",
+      "doi": "10.1097/md.0000000000025509",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7898832": {
+      "title": "Two\u2010meal caloric restriction induces 12\u2010hour rhythms and improves glucose homeostasis",
+      "doi": "10.1096/fj.202002470r",
+      "pmid": null,
+      "year": 2021,
+      "venue": "The FASEB Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8634604": {
+      "title": "Calorie Restriction With Exercise Intervention Improves Inflammatory Response in Overweight and Obese Adults: A Systematic Review and Meta-Analysis",
+      "doi": "10.3389/fphys.2021.754731",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8467906": {
+      "title": "Effects of Caloric Restriction and Rope-Skipping Exercise on Cardiometabolic Health: A Pilot Randomized Controlled Trial in Young Adults",
+      "doi": "10.3390/nu13093222",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7468870": {
+      "title": "Is Caloric Restriction Associated with Better Healthy Aging Outcomes? A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+      "doi": "10.3390/nu12082290",
+      "pmid": "32751664",
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7415503": {
+      "title": "Changes in body weight, adherence, and appetite during 2 years of calorie restriction: the CALERIE 2 randomized clinical trial.",
+      "doi": "10.1038/s41430-020-0593-8",
+      "pmid": "32144378",
+      "year": 2020,
+      "venue": "Eur J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7602440": {
+      "title": "Long Term Dietary Restriction of Advanced Glycation End-Products (AGEs) in Older Adults with Type 2 Diabetes Is Feasible and Efficacious-Results from a Pilot RCT.",
+      "doi": "10.3390/nu12103143",
+      "pmid": "33076217",
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7741721": {
+      "title": "Nicotinamide and Sugar Metabolism Associated With Muscle Mass Loss During Calorie Restriction in Older Adults",
+      "doi": "10.1093/geroni/igaa057.415",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7739255": {
+      "title": "A Reply to Contrary to the Conclusions Stated in the Paper, Only Dry Fat-Free Mass Was Different between Groups upon Reanalysis\u2014Comment on: \u201cIntermittent Energy Restriction Attenuates the Loss of Fat-Free Mass in Resistance Trained Individuals: A Randomized Controlled Trial\u201d",
+      "doi": "10.3390/jfmk5040086",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Functional Morphology and Kinesiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7599444": {
+      "title": "Impacts of Calorie Restriction and Intermittent Fasting on Health and Diseases: Current Trends",
+      "doi": "10.3390/nu12102948",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7407644": {
+      "title": "Peroxisome Proliferator-Activated Receptors and Caloric Restriction\u2014Common Pathways Affecting Metabolism, Health, and Longevity",
+      "doi": "10.3390/cells9071708",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Cells",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7739336": {
+      "title": "Contrary to the Conclusions Stated in the Paper, Only Dry Fat-Free Mass Was Different between Groups upon Reanalysis. Comment on: \u201cIntermittent Energy Restriction Attenuates the Loss of Fat-Free Mass in Resistance Trained Individuals. A Randomized Controlled Trial\u201d",
+      "doi": "10.3390/jfmk5040085",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Functional Morphology and Kinesiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7228814": {
+      "title": "Calorie Restriction and Intermittent Fasting: Impact on Glycemic Control in People With Diabetes",
+      "doi": "10.2337/ds19-0064",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Diabetes Spectrum",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7743141": {
+      "title": "Diet Composition, Adherence to Calorie Restriction, and Cardiometabolic Disease Risk Modification",
+      "doi": "10.1093/geroni/igaa057.3104",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7898726": {
+      "title": "Effects of moderate sleep restriction during 8-week calorie restriction on lipoprotein particles and glucose metabolism",
+      "doi": "10.1093/sleepadvances/zpab001",
+      "pmid": null,
+      "year": 2020,
+      "venue": "SLEEP Advances",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7749612": {
+      "title": "The effect of fasting or calorie restriction on mitophagy induction: a literature review",
+      "doi": "10.1002/jcsm.12611",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Cachexia, Sarcopenia and Muscle",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8288867": {
+      "title": "Why does caloric restriction increase life and healthspan? The \u2018clean cupboards\u2019 hypothesis",
+      "doi": "10.1093/nsr/nwaa078",
+      "pmid": null,
+      "year": 2020,
+      "venue": "National Science Review",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7729921": {
+      "title": "Still Living Better through Chemistry: An Update on Caloric Restriction and Caloric Restriction Mimetics as Tools to Promote Health and Lifespan",
+      "doi": "10.3390/ijms21239220",
+      "pmid": null,
+      "year": 2020,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7580877": {
+      "title": "Metabolic adaptation to calorie restriction",
+      "doi": "10.1126/scisignal.abb2490",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Science Signaling",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7379067": {
+      "title": "The Effects of Meal Timing and Frequency, Caloric Restriction, and Fasting on Cardiovascular Health: an Overview",
+      "doi": "10.12997/jla.2020.9.1.140",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Lipid and Atherosclerosis",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6766406": {
+      "title": "Change in self-efficacy, eating behaviors and food cravings during two years of calorie restriction in humans without obesity.",
+      "doi": "10.1016/j.appet.2019.104397",
+      "pmid": "31398376",
+      "year": 2019,
+      "venue": "Appetite",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6580693": {
+      "title": "Effects of Caloric Restriction on Cardiorespiratory Fitness, Fatigue, and Disability Responses to Aerobic Exercise in Older Adults With Obesity: A Randomized Controlled Trial.",
+      "doi": "10.1093/gerona/gly159",
+      "pmid": "29982294",
+      "year": 2019,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6824325": {
+      "title": "Effect of Weight Loss via Severe vs Moderate Energy Restriction on Lean Mass and Body Composition Among Postmenopausal Women With Obesity: The TEMPO Diet Randomized Clinical Trial.",
+      "doi": "10.1001/jamanetworkopen.2019.13733",
+      "pmid": "31664441",
+      "year": 2019,
+      "venue": "JAMA Netw Open",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6376083": {
+      "title": "Relationship of Physical Function to Single Muscle Fiber Contractility in Older Adults: Effects of Resistance Training With and Without Caloric Restriction.",
+      "doi": "10.1093/gerona/gly047",
+      "pmid": "29546320",
+      "year": 2019,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6420603": {
+      "title": "Promoting healthspan and lifespan with caloric restriction in primates",
+      "doi": "10.1038/s42003-019-0348-z",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Communications Biology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6845519": {
+      "title": "NONHUMAN PRIMATE GUT MICROBIOME: IMPACT OF AGE AND CALORIE RESTRICTION",
+      "doi": "10.1093/geroni/igz038.3073",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Innovation in Aging",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6579613": {
+      "title": "The Panacea of Human Aging: Calorie Restriction Versus Exercise",
+      "doi": "10.1249/jes.0000000000000193",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Exercise and Sport Sciences Reviews",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6412676": {
+      "title": "Effect of Energy Restriction on Eating Behavior Traits and Psychobehavioral Factors in the Low Satiety Phenotype",
+      "doi": "10.3390/nu11020245",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6395700": {
+      "title": "Maternal age alters offspring lifespan, fitness, and lifespan extension under caloric restriction",
+      "doi": "10.1038/s41598-019-40011-z",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7138754": {
+      "title": "Differential Effects of Alternate\u2010Day Fasting Versus Daily Calorie Restriction on Insulin Resistance",
+      "doi": "10.1002/oby.22564",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7164528": {
+      "title": "Dietary Restriction Improves Fitness of Aging Parents But Reduces Fitness of Their Offspring in Nematodes",
+      "doi": "10.1093/gerona/glz276",
+      "pmid": null,
+      "year": 2019,
+      "venue": "The Journals of Gerontology: Series A",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6335535": {
+      "title": "Influence of dietary restriction and low\u2010intensity exercise on weight loss and insulin sensitivity in obese equids",
+      "doi": "10.1111/jvim.15374",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Journal of Veterinary Internal Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5966756": {
+      "title": "Significant improvement in cardiometabolic health in healthy nonobese individuals during caloric restriction-induced weight loss and weight loss maintenance.",
+      "doi": "10.1152/ajpendo.00261.2017",
+      "pmid": "29351490",
+      "year": 2018,
+      "venue": "Am J Physiol Endocrinol Metab",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5986503": {
+      "title": "Pilot Study Examining the Influence of Potassium Bicarbonate Supplementation on Nitrogen Balance and Whole-Body Ammonia and Urea Turnover Following Short-Term Energy Restriction in Older Men.",
+      "doi": "10.3390/nu10050624",
+      "pmid": "29772642",
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5886711": {
+      "title": "Metabolic Slowing and Reduced Oxidative Damage with Sustained Caloric Restriction Support the Rate of Living and Oxidative Damage Theories of Aging.",
+      "doi": "10.1016/j.cmet.2018.02.019",
+      "pmid": "29576535",
+      "year": 2018,
+      "venue": "Cell Metab",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5872329": {
+      "title": "Differences in Sirtuin Regulation in Response to Calorie Restriction in Cryptococcus neoformans",
+      "doi": "10.3390/jof4010026",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Journal of Fungi",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5366052": {
+      "title": "Persistence of weight loss and acquired behaviors 2 y after stopping a 2-y calorie restriction intervention.",
+      "doi": "10.3945/ajcn.116.146837",
+      "pmid": "28275127",
+      "year": 2017,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5295310": {
+      "title": "Serum Polychlorinated Biphenyls Increase and Oxidative Stress Decreases with a Protein-Pacing Caloric Restriction Diet in Obese Men and Women.",
+      "doi": "10.3390/ijerph14010059",
+      "pmid": "28075418",
+      "year": 2017,
+      "venue": "Int J Environ Res Public Health",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5366044": {
+      "title": "Body-composition changes in the Comprehensive Assessment of Long-term Effects of Reducing Intake of Energy (CALERIE)-2 study: a 2-y randomized controlled trial of calorie restriction in nonobese humans.",
+      "doi": "10.3945/ajcn.116.137232",
+      "pmid": "28228420",
+      "year": 2017,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5541637": {
+      "title": "Effect of physical activity and dietary restriction interventions on weight loss and the musculoskeletal function of overweight and obese older adults with knee osteoarthritis: a systematic review and mixed method data synthesis.",
+      "doi": "10.1136/bmjopen-2016-014537",
+      "pmid": "28600365",
+      "year": 2017,
+      "venue": "BMJ Open",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5514430": {
+      "title": "Aging and Caloric Restriction Research: A Biological Perspective With Translational Potential",
+      "doi": "10.1016/j.ebiom.2017.06.015",
+      "pmid": null,
+      "year": 2017,
+      "venue": "EBioMedicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5418198": {
+      "title": "Aging and caloric restriction impact adipose tissue, adiponectin, and circulating lipids",
+      "doi": "10.1111/acel.12575",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5244361": {
+      "title": "A signature of renal stress resistance induced by short-term dietary restriction, fasting, and protein restriction",
+      "doi": "10.1038/srep40901",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5377042": {
+      "title": "Dietary restriction increases variability in longevity",
+      "doi": "10.1098/rsbl.2017.0057",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Biology Letters",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5795979": {
+      "title": "Docosahexaenoic Acid in Combination with Dietary Energy Restriction for Reducing the Risk of Obesity Related Breast Cancer",
+      "doi": "10.3390/ijms19010028",
+      "pmid": null,
+      "year": 2017,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4905696": {
+      "title": "Effect of Calorie Restriction on Mood, Quality of Life, Sleep, and Sexual Function in Healthy Nonobese Adults: The CALERIE 2 Randomized Clinical Trial.",
+      "doi": "10.1001/jamainternmed.2016.1189",
+      "pmid": "27136347",
+      "year": 2016,
+      "venue": "JAMA Intern Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6279208": {
+      "title": "Six-month Calorie Restriction in Overweight Individuals Elicits Transcriptomic Response in Subcutaneous Adipose Tissue That is Distinct From Effects of Energy Deficit.",
+      "doi": "10.1093/gerona/glv194",
+      "pmid": "26486851",
+      "year": 2016,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4717266": {
+      "title": "Effects of 2-year calorie restriction on circulating levels of IGF-1, IGF-binding proteins and cortisol in nonobese men and women: a randomized clinical trial.",
+      "doi": "10.1111/acel.12400",
+      "pmid": "26443692",
+      "year": 2016,
+      "venue": "Aging Cell",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4993339": {
+      "title": "Long-term moderate calorie restriction inhibits inflammation without impairing cell-mediated immunity: a randomized controlled trial in non-obese humans.",
+      "doi": "10.18632/aging.100994",
+      "pmid": "27410480",
+      "year": 2016,
+      "venue": "Aging (Albany NY)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5042570": {
+      "title": "A randomized pilot study comparing zero\u2010calorie alternate\u2010day fasting to daily caloric restriction in adults with obesity",
+      "doi": "10.1002/oby.21581",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5031958": {
+      "title": "Effect of Intermittent versus Chronic Calorie Restriction on Tumor Incidence: A Systematic Review and Meta-Analysis of Animal Studies",
+      "doi": "10.1038/srep33739",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4924211": {
+      "title": "Caloric Restriction as a Strategy to Improve Vascular Dysfunction in Metabolic Disorders",
+      "doi": "10.3390/nu8060370",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4469556": {
+      "title": "Effect of 6-month caloric restriction on Cu bound to ceruloplasmin in adult overweight subjects.",
+      "doi": "10.1016/j.jnutbio.2015.03.012",
+      "pmid": "26001545",
+      "year": 2015,
+      "venue": "J Nutr Biochem",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4409692": {
+      "title": "Effects of resistance training with and without caloric restriction on physical function and mobility in overweight and obese older adults: a randomized controlled trial.",
+      "doi": "10.3945/ajcn.114.105270",
+      "pmid": "25762810",
+      "year": 2015,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4531066": {
+      "title": "Longevity and skeletal muscle mass: the role of IGF signalling, the sirtuins, dietary restriction and protein intake",
+      "doi": "10.1111/acel.12342",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4446567": {
+      "title": "Caloric Restriction Effect on Proinflammatory Cytokines, Growth Hormone, and Steroid Hormone Concentrations during Exercise in Judokas",
+      "doi": "10.1155/2015/809492",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Oxidative Medicine and Cellular Longevity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4248142": {
+      "title": "Calorie restriction in overweight seniors: response of older adults to a dieting study: the CROSSROADS randomized controlled clinical trial.",
+      "doi": "10.1080/21551197.2014.965993",
+      "pmid": "25424512",
+      "year": 2014,
+      "venue": "J Nutr Gerontol Geriatr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4158399": {
+      "title": "Effect of dietary restriction and exercise on lower extremity tissue compartments in obese, older women: a pilot study.",
+      "doi": "10.1093/gerona/gls337",
+      "pmid": "23682155",
+      "year": 2014,
+      "venue": "J Gerontol A Biol Sci Med Sci",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4234060": {
+      "title": "Reducing Liver Fat by Low Carbohydrate Caloric Restriction Targets Hepatic Glucose Production in Non-Diabetic Obese Adults with Non-Alcoholic Fatty Liver Disease",
+      "doi": "10.3390/jcm3031050",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3767289": {
+      "title": "A study of caloric restriction versus standard diet in overweight men with newly diagnosed prostate cancer: a randomized controlled trial.",
+      "doi": "10.1002/pros.22682",
+      "pmid": "23775525",
+      "year": 2013,
+      "venue": "Prostate",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5403510": {
+      "title": "Caloric restriction, caloric restriction mimetics, and healthy aging in Okinawa",
+      "doi": "10.1097/mco.0000000000000019",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Current Opinion in Clinical Nutrition & Metabolic Care",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3771427": {
+      "title": "Nutrition and Healthy Ageing: Calorie Restriction or Polyphenol-Rich \u201cMediterrAsian\u201d Diet?",
+      "doi": "10.1155/2013/707421",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Oxidative Medicine and Cellular Longevity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5857384": {
+      "title": "The effect of intermittent energy and carbohydrate restrictionv. daily energy restriction on weight loss and metabolic disease risk markers in overweight women",
+      "doi": "10.1017/s0007114513000792",
+      "pmid": null,
+      "year": 2013,
+      "venue": "British Journal of Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3546025": {
+      "title": "Whey protein and essential amino acids promote the reduction of adipose tissue and increased muscle protein synthesis during caloric restriction-induced weight loss in elderly, obese individuals.",
+      "doi": "10.1186/1475-2891-11-105",
+      "pmid": "23231757",
+      "year": 2012,
+      "venue": "Nutr J",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3511220": {
+      "title": "Intermittent fasting combined with calorie restriction is effective for weight loss and cardio-protection in obese women",
+      "doi": "10.1186/1475-2891-11-98",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3598611": {
+      "title": "Caloric restriction may reverse age\u2010related autonomic decline in humans",
+      "doi": "10.1111/j.1474-9726.2012.00825.x",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3514278": {
+      "title": "Improvement in coronary heart disease risk factors during an intermittent fasting/calorie restriction regimen: Relationship to adipokine modulations",
+      "doi": "10.1186/1743-7075-9-98",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Nutrition & Metabolism",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3017674": {
+      "title": "The effects of intermittent or continuous energy restriction on weight loss and metabolic disease risk markers: a randomized trial in young overweight women.",
+      "doi": "10.1038/ijo.2010.171",
+      "pmid": "20921964",
+      "year": 2011,
+      "venue": "Int J Obes (Lond)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3229089": {
+      "title": "The effect of caloric restriction and glycemic load on measures of oxidative stress and antioxidants in humans: results from the CALERIE Trial of Human Caloric Restriction.",
+      "doi": "10.1007/s12603-011-0002-z",
+      "pmid": "21623467",
+      "year": 2011,
+      "venue": "J Nutr Health Aging",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3439843": {
+      "title": "Calorie restriction and prevention of age\u2010associated chronic disease",
+      "doi": "10.1016/j.febslet.2011.03.015",
+      "pmid": null,
+      "year": 2011,
+      "venue": "FEBS Letters",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3278796": {
+      "title": "Calorie Restriction and Aging in Nonhuman Primates",
+      "doi": "10.1093/ilar.52.1.66",
+      "pmid": null,
+      "year": 2011,
+      "venue": "ILAR Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3362219": {
+      "title": "Comments on Dietary Restriction, Okinawa Diet and Longevity",
+      "doi": "10.1159/000329894",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Gerontology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3200169": {
+      "title": "Impact of caloric and dietary restriction regimens on markers of health and longevity in humans and animals: a summary of available findings",
+      "doi": "10.1186/1475-2891-10-107",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3010676": {
+      "title": "Long-Term Effect of Mediterranean-Style Diet and Calorie Restriction on Biomarkers of Longevity and Oxidative Stress in Overweight Men",
+      "doi": "10.4061/2011/293916",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Cardiology Research and Practice",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2807912": {
+      "title": "The effect of caloric restriction interventions on growth hormone secretion in nonobese men and women",
+      "doi": "10.1111/j.1474-9726.2009.00530.x",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3569090": {
+      "title": "Long\u2010term effects of calorie restriction on serum sex\u2010hormone concentrations in men",
+      "doi": "10.1111/j.1474-9726.2010.00553.x",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2974436": {
+      "title": "Effects of the Dietary Approaches to Stop Hypertension Diet, Exercise, and Caloric Restriction on Neurocognition in Overweight Adults With High Blood Pressure",
+      "doi": "10.1161/hypertensionaha.109.146795",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Hypertension",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3476836": {
+      "title": "Genetic variation in the murine lifespan response to dietary restriction: from life extension to life shortening",
+      "doi": "10.1111/j.1474-9726.2009.00533.x",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2812811": {
+      "title": "Caloric Restriction Delays Disease Onset and Mortality in Rhesus Monkeys",
+      "doi": "10.1126/science.1173635",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2836151": {
+      "title": "Survival Across the Fitness-Stress Continuum Under the Ecological Stress Theory of Aging: Caloric Restriction and Ionizing Radiation",
+      "doi": "10.2203/dose-response.09-018.parsons",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Dose-Response",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2724865": {
+      "title": "Long-term effects of caloric restriction or exercise on DNA and RNA oxidation levels in white blood cells and urine in humans.",
+      "doi": "10.1089/rej.2008.0712",
+      "pmid": "18729811",
+      "year": 2008,
+      "venue": "Rejuvenation Res",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC2748345": {
+      "title": "Calorie restriction and bone health in young, overweight individuals.",
+      "doi": "10.1001/archinte.168.17.1859",
+      "pmid": "18809812",
+      "year": 2008,
+      "venue": "Arch Intern Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC2424221": {
+      "title": "Mechanisms Underlying Caloric Restriction and Lifespan Regulation",
+      "doi": "10.1161/circresaha.107.168369",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Circulation Research",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2748341": {
+      "title": "Effect of 6\u2010Month Calorie Restriction and Exercise on Serum and Liver Lipids and Markers of Liver Function",
+      "doi": "10.1038/oby.2008.201",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2659568": {
+      "title": "Optimal window of caloric restriction onset limits its beneficial impact on T\u2010cell senescence in primates",
+      "doi": "10.1111/j.1474-9726.2008.00440.x",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Aging Cell",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4959423": {
+      "title": "Effects of aging and dietary restriction on ubiquitination, sumoylation, and the proteasome in the spleen",
+      "doi": "10.1016/j.febslet.2007.10.054",
+      "pmid": null,
+      "year": 2007,
+      "venue": "FEBS Letters",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC1750890": {
+      "title": "Calorie restriction up-regulates the plasma membrane redox system in brain cells and suppresses oxidative stress during aging",
+      "doi": "10.1073/pnas.0608008103",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2677812": {
+      "title": "Effect of Calorie Restriction With or Without Exercise on Insulin Sensitivity, \u03b2-Cell Function, Fat Cell Size, and Ectopic Lipid in Overweight Subjects",
+      "doi": "10.2337/dc05-2565",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Diabetes Care",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6084508": {
+      "title": "Reversing the Negative Genomic Effects of Aging with Short-Term Calorie Restriction",
+      "doi": "10.1100/tsw.2001.256",
+      "pmid": null,
+      "year": 2001,
+      "venue": "The Scientific World JOURNAL",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC39504": {
+      "title": "Calorie restriction lowers body temperature in rhesus monkeys, consistent with a postulated anti-aging mechanism in rodents.",
+      "doi": "10.1073/pnas.93.9.4159",
+      "pmid": null,
+      "year": 1996,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7617461": {
+      "title": "The impact of intermittent energy restriction on women\u2019s health",
+      "doi": "10.1017/s0029665125000059",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Proceedings of the Nutrition Society",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3850092": {
+      "title": "Calorie restriction and sirtuins revisited",
+      "doi": "10.1101/gad.227439.113",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Genes & Development",
+      "sources": [
+        "crossref",
+        "openalex"
+      ]
+    },
+    "PMC3167663": {
+      "title": "The fall in leptin concentration is a major determinant of the metabolic adaptation induced by caloric restriction independently of the changes in leptin circadian rhythms.",
+      "doi": "10.1210/jc.2011-1286",
+      "pmid": "21778216",
+      "year": 2011,
+      "venue": "J Clin Endocrinol Metab",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC2634841": {
+      "title": "Metabolic and behavioral compensations in response to caloric restriction: implications for the maintenance of weight loss.",
+      "doi": "10.1371/journal.pone.0004377",
+      "pmid": "19198647",
+      "year": 2009,
+      "venue": "PLoS One",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12851108": {
+      "title": "A Case of Euglycemic Diabetic Ketoacidosis With Tirzepatide Use and Severe Calorie Restriction",
+      "doi": "10.1210/jcemcr/luaf324",
+      "pmid": null,
+      "year": 2026,
+      "venue": "JCEM Case Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11808004": {
+      "title": "Optimal calorie restriction threshold: effect of FATmax exercise combined with different proportions of calorie restriction on hypercholesterolemia",
+      "doi": "10.3389/fphys.2025.1510949",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12158682": {
+      "title": "Comparing exercise modalities during caloric restriction: a systematic review and network meta-analysis on body composition",
+      "doi": "10.3389/fnut.2025.1579024",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12913024": {
+      "title": "Post-intervention sustainability of time-restricted eating versus caloric restriction: a secondary analysis",
+      "doi": "10.1038/s41366-025-01968-2",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC12386805": {
+      "title": "A Pilot Randomized Control Trial Evaluating the Feasibility of a 12-Week Mediterranean Diet Intervention Without Caloric Restriction in Women with Polycystic Ovary Syndrome",
+      "doi": "10.3390/jcm14165842",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11046024": {
+      "title": "Caloric restriction, Sirtuins, and cardiovascular diseases",
+      "doi": "10.1097/cm9.0000000000003056",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Chinese Medical Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11356153": {
+      "title": "Unlocking the Potential: Caloric Restriction, Caloric Restriction Mimetics, and Their Impact on Cancer Prevention and Treatment",
+      "doi": "10.3390/metabo14080418",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Metabolites",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11357322": {
+      "title": "The Effects of Caloric Restriction and Clinical Psychological Intervention on the Interplay of Gut Microbial Composition and Stress in Women",
+      "doi": "10.3390/nu16162584",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11730777": {
+      "title": "Maternal effect senescence and caloric restriction interact to affect fitness through changes in life history timing",
+      "doi": "10.1111/1365-2656.14220",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Journal of Animal Ecology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11670075": {
+      "title": "Quantitative analysis of the caloric restriction versus isocaloric diets models based on macronutrients composition: impacts on body weight regulation, anthropometric, and bioimpedance parameters in women with obesity",
+      "doi": "10.3389/fnut.2024.1493954",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11852537": {
+      "title": "Evaluating the impact of caloric restriction, body mass index and exercise on primary open-angle glaucoma: A review",
+      "doi": "10.1177/11206721241274445",
+      "pmid": null,
+      "year": 2024,
+      "venue": "European Journal of Ophthalmology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC11510529": {
+      "title": "Interaction of Cooking-Generated Aerosols on the Human Nervous System and the Impact of Caloric Restriction Post-Exposure",
+      "doi": "10.3390/nu16203525",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10804344": {
+      "title": "The effects of early time restricted eating plus daily caloric restriction compared to daily caloric restriction alone on continuous glucose levels",
+      "doi": "10.1002/osp4.702",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Obesity Science & Practice",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10164494": {
+      "title": "New Insights into Calorie Restriction Induced Bone Loss",
+      "doi": "10.3803/enm.2023.1673",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Endocrinology and Metabolism",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10643761": {
+      "title": "Calorie restriction mimetic drugs could favorably influence gut microbiota leading to lifespan extension",
+      "doi": "10.1007/s11357-023-00851-0",
+      "pmid": null,
+      "year": 2023,
+      "venue": "GeroScience",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10554067": {
+      "title": "FRI315 Hyperprolactinemia In The Presence Of Severe Calorie Restriction And Stress",
+      "doi": "10.1210/jendso/bvad114.1250",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of the Endocrine Society",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC10659943": {
+      "title": "The effects of <scp>short\u2010term</scp> caloric restriction on cardiometabolic health in overweight/obese men and women: A single\u2010arm trial",
+      "doi": "10.14814/phy2.15856",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Physiological Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9364707": {
+      "title": "After the spotlight: are evidence-based recommendations for refeeding post-contest energy restriction available for physique athletes? A scoping review.",
+      "doi": "10.1080/15502783.2022.2108333",
+      "pmid": "35966021",
+      "year": 2022,
+      "venue": "J Int Soc Sports Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9230116": {
+      "title": "Overweight Management through Mild Caloric Restriction in Multigenerational Long-Tailed Macaque Breeding Groups",
+      "doi": "10.3390/vetsci9060262",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Veterinary Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9346980": {
+      "title": "Caloric Restriction and Weight Loss Are Primary Factors in the Early Tissue-Specific Metabolic Changes After Bariatric Surgery",
+      "doi": "10.2337/dc22-0069",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Diabetes Care",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9012799": {
+      "title": "Lean mass sparing in resistance-trained athletes during caloric restriction: the role of resistance training volume",
+      "doi": "10.1007/s00421-022-04896-5",
+      "pmid": null,
+      "year": 2022,
+      "venue": "European Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9359127": {
+      "title": "Restlessness and an Increased Urge to Move (Drive for Activity) in Anorexia Nervosa May Strengthen Personal Motivation to Maintain Caloric Restriction and May Augment Body Awareness and Proprioception: A Lesson From Leptin Administration in Anorexia Nervosa",
+      "doi": "10.3389/fpsyg.2022.885274",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Psychology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9256776": {
+      "title": "Higher protein intake during caloric restriction improves diet quality and attenuates loss of lean body mass",
+      "doi": "10.1002/oby.23428",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8345941": {
+      "title": "Diabetes Mellitus and Cardiovascular Diseases: Nutraceutical Interventions Related to Caloric Restriction",
+      "doi": "10.3390/ijms22157772",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8262777": {
+      "title": "Mass spectrometric investigations of caloric restriction mimetics",
+      "doi": "10.1002/pmic.202000121",
+      "pmid": null,
+      "year": 2021,
+      "venue": "PROTEOMICS",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9216310": {
+      "title": "Mechanisms of Caloric Restriction-Mediated Stress-Resistance in Acute Kidney Injury",
+      "doi": "10.1159/000517733",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nephron",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7780671": {
+      "title": "Caloric restriction in female reproduction: is it beneficial or detrimental?",
+      "doi": "10.1186/s12958-020-00681-1",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Reproductive Biology and Endocrinology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7833363": {
+      "title": "Effects of Caloric Restriction Diet on Arterial Hypertension and Endothelial Dysfunction",
+      "doi": "10.3390/nu13010274",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8623687": {
+      "title": "Short Term Caloric Restriction and Biofeedback Enhance Psychological Wellbeing and Reduce Overweight in Healthy Women",
+      "doi": "10.3390/jpm11111096",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Journal of Personalized Medicine",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8551193": {
+      "title": "Daily caloric restriction limits tumor growth more effectively than caloric cycling regardless of dietary composition",
+      "doi": "10.1038/s41467-021-26431-4",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nature Communications",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8152778": {
+      "title": "Iron Beats Electricity: Resistance Training but Not Whole-Body Electromyostimulation Improves Cardiometabolic Health in Obese Metabolic Syndrome Patients during Caloric Restriction\u2014A Randomized-Controlled Study",
+      "doi": "10.3390/nu13051640",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8199692": {
+      "title": "Contribution of PGC-1\u03b1 to Obesity- and Caloric Restriction-Related Physiological Changes in White Adipose Tissue",
+      "doi": "10.3390/ijms22116025",
+      "pmid": null,
+      "year": 2021,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC9036397": {
+      "title": "Impact of calorie restriction on energy metabolism in humans.",
+      "doi": "10.1016/j.exger.2020.110875",
+      "pmid": "32057825",
+      "year": 2020,
+      "venue": "Exp Gerontol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7696073": {
+      "title": "Peroxisome Proliferator-Activated Receptors as Molecular Links between Caloric Restriction and Circadian Rhythm",
+      "doi": "10.3390/nu12113476",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7284700": {
+      "title": "Shedding Light on the Effects of Calorie Restriction and Its Mimetics on Skin Biology",
+      "doi": "10.3390/nu12051529",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7071719": {
+      "title": "Dietary restriction of amino acids for Cancer therapy",
+      "doi": "10.1186/s12986-020-00439-x",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrition & Metabolism",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC8233264": {
+      "title": "Caloric restriction induces anabolic resistance to resistance exercise",
+      "doi": "10.1007/s00421-020-04354-0",
+      "pmid": null,
+      "year": 2020,
+      "venue": "European Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7285957": {
+      "title": "Association of FTO and ADRB2 gene variation with energy restriction induced adaptations in resting energy expenditure and physical activity",
+      "doi": "10.1016/j.gene.2019.100019",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Gene",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6950657": {
+      "title": "Mechanisms of Calorie Restriction: A Review of Genes Required for the Life-Extending and Tumor-Inhibiting Effects of Calorie Restriction",
+      "doi": "10.3390/nu11123068",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5877612": {
+      "title": "Caloric Restriction and Its Effect on Blood Pressure, Heart Rate Variability and Arterial Stiffness and Dilatation: A Review of the Evidence",
+      "doi": "10.3390/ijms19030751",
+      "pmid": null,
+      "year": 2018,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC6275055": {
+      "title": "SREBP-1c-Dependent Metabolic Remodeling of White Adipose Tissue by Caloric Restriction",
+      "doi": "10.3390/ijms19113335",
+      "pmid": null,
+      "year": 2018,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5627296": {
+      "title": "Sex-Dependent Effects of Caloric Restriction on the Ageing of an Ambush Feeding Copepod",
+      "doi": "10.1038/s41598-017-12661-4",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5700089": {
+      "title": "Publisher Correction: Sex-Dependent Effects of Caloric Restriction on the Ageing of an Ambush Feeding Copepod",
+      "doi": "10.1038/s41598-017-16206-7",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5767765": {
+      "title": "Mitochondrial intermediate peptidase is a novel regulator of sirtuin\u20103 activation by caloric restriction",
+      "doi": "10.1002/1873-3468.12914",
+      "pmid": null,
+      "year": 2017,
+      "venue": "FEBS Letters",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5607294": {
+      "title": "Effect of caloric restriction on gut permeability, inflammation markers, and fecal microbiota in obese women",
+      "doi": "10.1038/s41598-017-12109-9",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC5247583": {
+      "title": "Caloric restriction improves health and survival of rhesus monkeys",
+      "doi": "10.1038/ncomms14063",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Nature Communications",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4601087": {
+      "title": "Ageing and Caloric Restriction in a Marine Planktonic Copepod",
+      "doi": "10.1038/srep14962",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Scientific Reports",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4512223": {
+      "title": "A Human Thrifty Phenotype Associated With Less Weight Loss During Caloric Restriction",
+      "doi": "10.2337/db14-1881",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Diabetes",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4016246": {
+      "title": "Status of selected nutrients in obese dogs undergoing caloric restriction",
+      "doi": "10.1186/1746-6148-9-219",
+      "pmid": null,
+      "year": 2013,
+      "venue": "BMC Veterinary Research",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3478522": {
+      "title": "Effects of Aerobic Versus Resistance Exercise Without Caloric Restriction on Abdominal Fat, Intrahepatic Lipid, and Insulin Sensitivity in Obese Adolescent Boys",
+      "doi": "10.2337/db12-0214",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Diabetes",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3501879": {
+      "title": "Short-Term Caloric Restriction Normalizes Hypothalamic Neuronal Responsiveness to Glucose Ingestion in Patients With Type 2 Diabetes",
+      "doi": "10.2337/db11-1835",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Diabetes",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3193874": {
+      "title": "Caloric restriction and chronic inflammatory diseases",
+      "doi": "10.1111/j.1601-0825.2011.01830.x",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Oral Diseases",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3075130": {
+      "title": "Effect of calorie restriction on the free-living physical activity levels of nonobese humans: results of three randomized trials",
+      "doi": "10.1152/japplphysiol.00846.2009",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3095229": {
+      "title": "Development of adherence metrics for caloric restriction interventions",
+      "doi": "10.1177/1740774511398369",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Clinical Trials",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3058015": {
+      "title": "Controlled meal frequency without caloric restriction alters peripheral blood mononuclear cell cytokine production",
+      "doi": "10.1186/1476-9255-8-6",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Journal of Inflammation",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2877146": {
+      "title": "Effects of Adiposity and 30 Days of Caloric Restriction Upon Protein Metabolism in Moderately vs. Severely Obese Women",
+      "doi": "10.1038/oby.2009.505",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Obesity",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2874827": {
+      "title": "Effects of the Dietary Approaches to Stop Hypertension Diet Alone and in Combination With Exercise and Caloric Restriction on Insulin Sensitivity and Lipids",
+      "doi": "10.1161/hypertensionaha.109.149153",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Hypertension",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3312759": {
+      "title": "Areal and volumetric bone mineral density and geometry at two levels of protein intake during caloric restriction: A randomized, controlled trial",
+      "doi": "10.1002/jbmr.318",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of Bone and Mineral Research",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2781961": {
+      "title": "Body condition but not dietary restriction prolongs lifespan in a semelparous capital breeder",
+      "doi": "10.1098/rsbl.2009.0335",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Biology Letters",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC2638733": {
+      "title": "Adipose-immune interactions during obesity and caloric restriction: reciprocal mechanisms regulating immunity and health span",
+      "doi": "10.1189/jlb.0108028",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Journal of Leukocyte Biology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4376253": {
+      "title": "Lower extremity muscle size and strength and aerobic capacity decrease with caloric restriction but not with exercise-induced weight loss",
+      "doi": "10.1152/japplphysiol.00853.2006",
+      "pmid": null,
+      "year": 2007,
+      "venue": "Journal of Applied Physiology",
+      "sources": [
+        "crossref"
+      ]
+    }
+  }
+}

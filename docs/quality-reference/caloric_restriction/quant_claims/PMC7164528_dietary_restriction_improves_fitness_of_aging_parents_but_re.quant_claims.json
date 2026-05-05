@@ -1,0 +1,943 @@
+{
+  "paper_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re",
+  "doi": "10.1093/gerona/glz276",
+  "extracted_at": "2026-05-05T22:17:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "mean_sd": 10,
+    "sample_size": 20,
+    "p_value": 15,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-u-579",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Females deprived of food for 6 days indeed had increased fecundity, survival, and stress resistance after re-exposure to food compared with their counterparts with constant food access.",
+      "context_window": "f females and their offspring. Females deprived of food for 6 days indeed had increased fecundity, survival, and stress resist",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-153",
+      "claim_type": "mean_sd",
+      "raw_text": "463.45 \u00b1 20.70",
+      "numeric_values": [
+        463.45,
+        20.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 153,
+      "sentence": "Females in the temporary fasting (TF) treatment produced a significantly higher number of offspring once returned to food and allowed mating (mean \u00b1 se; 463.45 \u00b1 20.70, N = 50) relative to females given complete access to food (330.",
+      "context_window": "spring once returned to food and allowed mating (mean \u00b1 se; 463.45 \u00b1 20.70, N = 50) relative to females given complete access to food",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-169",
+      "claim_type": "sample_size",
+      "raw_text": "N = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 169,
+      "sentence": "Females in the temporary fasting (TF) treatment produced a significantly higher number of offspring once returned to food and allowed mating (mean \u00b1 se; 463.45 \u00b1 20.70, N = 50) relative to females given complete access to food (330.",
+      "context_window": "rned to food and allowed mating (mean \u00b1 se; 463.45 \u00b1 20.70, N = 50) relative to females given complete access to food (330. 76",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-233",
+      "claim_type": "mean_sd",
+      "raw_text": "76 \u00b1 22.73",
+      "numeric_values": [
+        76.0,
+        22.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 233,
+      "sentence": "76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49).",
+      "context_window": "50) relative to females given complete access to food (330. 76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49). There was also an inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-261",
+      "claim_type": "p_value",
+      "raw_text": "p < .005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 261,
+      "sentence": "76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49).",
+      "context_window": "n complete access to food (330. 76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49). There was also an interaction between age at last",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-271",
+      "claim_type": "sample_size",
+      "raw_text": "N = 49",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 271,
+      "sentence": "76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49).",
+      "context_window": "access to food (330. 76 \u00b1 22.73; Wald Z = 19.33, p < .005, N = 49). There was also an interaction between age at last reprodu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-398",
+      "claim_type": "p_value",
+      "raw_text": "p < .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 398,
+      "sentence": "There was also an interaction between age at last reproduction and diet treatment on offspring production ( Z = 3.12, p < .002), suggesting that higher offspring production is partially a result of TF females reproducing to later ages when compared with AL females.",
+      "context_window": "tion and diet treatment on offspring production ( Z = 3.12, p < .002), suggesting that higher offspring production is partially",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-673",
+      "claim_type": "mean_sd",
+      "raw_text": "14.71 \u00b1 0.34",
+      "numeric_values": [
+        14.71,
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 673,
+      "sentence": "Indeed, there is a statistical difference in age at last reproduction between diet treatment ( t = 4.58, p = 1.41 \u00d7 10 -5 ; TF 14.71 \u00b1 0.34 d; AL 12.50 \u00b1 0.34 d).",
+      "context_window": "on between diet treatment ( t = 4.58, p = 1.41 \u00d7 10 -5 ; TF 14.71 \u00b1 0.34 d; AL 12.50 \u00b1 0.34 d). There was no statistical difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-692",
+      "claim_type": "mean_sd",
+      "raw_text": "12.50 \u00b1 0.34",
+      "numeric_values": [
+        12.5,
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 692,
+      "sentence": "Indeed, there is a statistical difference in age at last reproduction between diet treatment ( t = 4.58, p = 1.41 \u00d7 10 -5 ; TF 14.71 \u00b1 0.34 d; AL 12.50 \u00b1 0.34 d).",
+      "context_window": "atment ( t = 4.58, p = 1.41 \u00d7 10 -5 ; TF 14.71 \u00b1 0.34 d; AL 12.50 \u00b1 0.34 d). There was no statistical difference in daily reproducti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-811",
+      "claim_type": "p_value",
+      "raw_text": "p > .52",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 811,
+      "sentence": "There was no statistical difference in daily reproductive output between diet treatments ( Z = 0.650, p > .52, Figure 1A ), though TF females consistently produced a higher median number of offspring per day than AL females accounting for statistical differences in lifetime reproduction (see above).",
+      "context_window": "ly reproductive output between diet treatments ( Z = 0.650, p > .52, Figure 1A ), though TF females consistently produced a hig",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-pct-1183",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1183,
+      "sentence": "Females that were deprived of bacteria had a significantly longer lifespan (median [95% CI], TF: 17 [15, 22] days; Coxph model, Wald\u2019s Z = 2.497, p < .013) relative to females that had access to food (13.5 [13, 16] d; Figure 2A ).",
+      "context_window": "ed of bacteria had a significantly longer lifespan (median [95% CI], TF: 17 [15, 22] days; Coxph model, Wald\u2019s Z = 2.497, p",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-1245",
+      "claim_type": "p_value",
+      "raw_text": "p < .013",
+      "numeric_values": [
+        0.013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1245,
+      "sentence": "Females that were deprived of bacteria had a significantly longer lifespan (median [95% CI], TF: 17 [15, 22] days; Coxph model, Wald\u2019s Z = 2.497, p < .013) relative to females that had access to food (13.5 [13, 16] d; Figure 2A ).",
+      "context_window": "% CI], TF: 17 [15, 22] days; Coxph model, Wald\u2019s Z = 2.497, p < .013) relative to females that had access to food (13.5 [13, 16]",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-1372",
+      "claim_type": "sample_size",
+      "raw_text": "N = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1372,
+      "sentence": "Similarly, females deprived of bacteria ( N = 60) were more heat stress resistant relative to AL females ( N = 59) (Wald\u2019s Z = 3.939, p < .001).",
+      "context_window": "] d; Figure 2A ). Similarly, females deprived of bacteria ( N = 60) were more heat stress resistant relative to AL females ( N",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-1437",
+      "claim_type": "sample_size",
+      "raw_text": "N = 59",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1437,
+      "sentence": "Similarly, females deprived of bacteria ( N = 60) were more heat stress resistant relative to AL females ( N = 59) (Wald\u2019s Z = 3.939, p < .001).",
+      "context_window": "0) were more heat stress resistant relative to AL females ( N = 59) (Wald\u2019s Z = 3.939, p < .001). This effect was dependent up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-1464",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1464,
+      "sentence": "Similarly, females deprived of bacteria ( N = 60) were more heat stress resistant relative to AL females ( N = 59) (Wald\u2019s Z = 3.939, p < .001).",
+      "context_window": "sistant relative to AL females ( N = 59) (Wald\u2019s Z = 3.939, p < .001). This effect was dependent upon the length of exposure (Wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-1548",
+      "claim_type": "p_value",
+      "raw_text": "p < .03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1548,
+      "sentence": "This effect was dependent upon the length of exposure (Wald\u2019s z = 2.192, p < .03), with a difference between TF and AL females up to the third hour of exposure ( Figure 2C ).\n\n(A) The influence of diet treatment on C. remanei (SP8 strain) on daily reproductive output after 6 days of either temporary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food.",
+      "context_window": "as dependent upon the length of exposure (Wald\u2019s z = 2.192, p < .03), with a difference between TF and AL females up to the thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-u-1749",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 1749,
+      "sentence": "This effect was dependent upon the length of exposure (Wald\u2019s z = 2.192, p < .03), with a difference between TF and AL females up to the third hour of exposure ( Figure 2C ).\n\n(A) The influence of diet treatment on C. remanei (SP8 strain) on daily reproductive output after 6 days of either temporary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food.",
+      "context_window": "C. remanei (SP8 strain) on daily reproductive output after 6 days of either temporary fasting (TF in red; N = 50) or ad libit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-1796",
+      "claim_type": "sample_size",
+      "raw_text": "N = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1796,
+      "sentence": "This effect was dependent upon the length of exposure (Wald\u2019s z = 2.192, p < .03), with a difference between TF and AL females up to the third hour of exposure ( Figure 2C ).\n\n(A) The influence of diet treatment on C. remanei (SP8 strain) on daily reproductive output after 6 days of either temporary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food.",
+      "context_window": "output after 6 days of either temporary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food. Data we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-1831",
+      "claim_type": "sample_size",
+      "raw_text": "N = 49",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1831,
+      "sentence": "This effect was dependent upon the length of exposure (Wald\u2019s z = 2.192, p < .03), with a difference between TF and AL females up to the third hour of exposure ( Figure 2C ).\n\n(A) The influence of diet treatment on C. remanei (SP8 strain) on daily reproductive output after 6 days of either temporary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food.",
+      "context_window": "rary fasting (TF in red; N = 50) or ad libitum (AL in blue; N = 49) access to food. Data were analyzed using mixed models in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-2307",
+      "claim_type": "sample_size",
+      "raw_text": "N = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2307,
+      "sentence": "Daily reproduction between diet treatments is not significant, but there is a difference in lifetime reproductive output with TF female producing more lifetime larvae than AL females. (B) The influence of maternal diet treatment on offspring reproduction (TF in red N = 50; AL in blue N = 48) starting at sexual maturity.",
+      "context_window": "aternal diet treatment on offspring reproduction (TF in red N = 50; AL in blue N = 48) starting at sexual maturity. Data were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-2326",
+      "claim_type": "sample_size",
+      "raw_text": "N = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2326,
+      "sentence": "Daily reproduction between diet treatments is not significant, but there is a difference in lifetime reproductive output with TF female producing more lifetime larvae than AL females. (B) The influence of maternal diet treatment on offspring reproduction (TF in red N = 50; AL in blue N = 48) starting at sexual maturity.",
+      "context_window": "ent on offspring reproduction (TF in red N = 50; AL in blue N = 48) starting at sexual maturity. Data were analyzed as in (A).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3015",
+      "claim_type": "sample_size",
+      "raw_text": "N = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3015,
+      "sentence": "Heat stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on heat stress resistance in their offspring (D) (TF N = 58, AL N = 59).",
+      "context_window": "spring. Heat stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on he",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3026",
+      "claim_type": "sample_size",
+      "raw_text": "N = 59",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3026,
+      "sentence": "Heat stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on heat stress resistance in their offspring (D) (TF N = 58, AL N = 59).",
+      "context_window": "t stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on heat stress r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3129",
+      "claim_type": "sample_size",
+      "raw_text": "N = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3129,
+      "sentence": "Heat stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on heat stress resistance in their offspring (D) (TF N = 58, AL N = 59).",
+      "context_window": "atment on heat stress resistance in their offspring (D) (TF N = 58, AL N = 59). Data were analyzed using generalized linear mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3140",
+      "claim_type": "sample_size",
+      "raw_text": "N = 59",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Heat stress resistance of TF and AL females (C) (TF N = 60, AL N = 59) and the impact of maternal diet treatment on heat stress resistance in their offspring (D) (TF N = 58, AL N = 59).",
+      "context_window": "eat stress resistance in their offspring (D) (TF N = 58, AL N = 59). Data were analyzed using generalized linear mixed models.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3558",
+      "claim_type": "sample_size",
+      "raw_text": "N = 50",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3558,
+      "sentence": "Offspring from mothers deprived of bacteria show reduced daily reproductive output during peak reproduction (D2-D4) relative to offspring from mothers in the AL treatment ( Figure 1B ; sample size for all test TF N = 50, AF N = 48).",
+      "context_window": "the AL treatment ( Figure 1B ; sample size for all test TF N = 50, AF N = 48). There was a significant quadratic effect of ag",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-3569",
+      "claim_type": "sample_size",
+      "raw_text": "N = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3569,
+      "sentence": "Offspring from mothers deprived of bacteria show reduced daily reproductive output during peak reproduction (D2-D4) relative to offspring from mothers in the AL treatment ( Figure 1B ; sample size for all test TF N = 50, AF N = 48).",
+      "context_window": "atment ( Figure 1B ; sample size for all test TF N = 50, AF N = 48). There was a significant quadratic effect of age in daily",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-3667",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3667,
+      "sentence": "There was a significant quadratic effect of age in daily reproduction (Wald\u2019s Z = 16.66, p < .001) and this quadratic effect interacted with diet treatment (Wald\u2019s Z = 3.846, p < .001).",
+      "context_window": "atic effect of age in daily reproduction (Wald\u2019s Z = 16.66, p < .001) and this quadratic effect interacted with diet treatment (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-3753",
+      "claim_type": "p_value",
+      "raw_text": "p < .001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3753,
+      "sentence": "There was a significant quadratic effect of age in daily reproduction (Wald\u2019s Z = 16.66, p < .001) and this quadratic effect interacted with diet treatment (Wald\u2019s Z = 3.846, p < .001).",
+      "context_window": "ic effect interacted with diet treatment (Wald\u2019s Z = 3.846, p < .001). In addition, total lifetime reproduction differed between",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-3852",
+      "claim_type": "p_value",
+      "raw_text": "p < .0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3852,
+      "sentence": "In addition, total lifetime reproduction differed between treatments (Wald\u2019s Z = 17.41, p < .0001).",
+      "context_window": "reproduction differed between treatments (Wald\u2019s Z = 17.41, p < .0001). Offspring from AL mothers had a higher lifetime fecundity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-3923",
+      "claim_type": "mean_sd",
+      "raw_text": "751.67 \u00b1 32.96",
+      "numeric_values": [
+        751.67,
+        32.96
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3923,
+      "sentence": "Offspring from AL mothers had a higher lifetime fecundity (751.67 \u00b1 32.96) relative to offspring from TF mothers (690.90 \u00b1 34.46).",
+      "context_window": "Offspring from AL mothers had a higher lifetime fecundity (751.67 \u00b1 32.96) relative to offspring from TF mothers (690.90 \u00b1 34.46). An",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-3978",
+      "claim_type": "mean_sd",
+      "raw_text": "690.90 \u00b1 34.46",
+      "numeric_values": [
+        690.9,
+        34.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3978,
+      "sentence": "Offspring from AL mothers had a higher lifetime fecundity (751.67 \u00b1 32.96) relative to offspring from TF mothers (690.90 \u00b1 34.46).",
+      "context_window": "ity (751.67 \u00b1 32.96) relative to offspring from TF mothers (690.90 \u00b1 34.46). Any difference in age at last reproduction did not accoun",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-4105",
+      "claim_type": "p_value",
+      "raw_text": "p > .65",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4105,
+      "sentence": "Any difference in age at last reproduction did not account for differences in reproduction (Wald\u2019s Z = 3.868, p > .65).",
+      "context_window": "account for differences in reproduction (Wald\u2019s Z = 3.868, p > .65). Correspondingly, there was no statistical difference in a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-4229",
+      "claim_type": "p_value",
+      "raw_text": "p > .10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4229,
+      "sentence": "Correspondingly, there was no statistical difference in age at last reproduction between treatments ( t = 1.5142, p > .10).",
+      "context_window": "n age at last reproduction between treatments ( t = 1.5142, p > .10). Maternal diet treatment did not influence offspring lifes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-4319",
+      "claim_type": "p_value",
+      "raw_text": "p = .924",
+      "numeric_values": [
+        0.924
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4319,
+      "sentence": "Maternal diet treatment did not influence offspring lifespan (Wald\u2019s Z = 0.096, p = .924; median [95% CI], TF: 11 [9, 12]; AL: 11 [9, 13], Figure 2B ).",
+      "context_window": "ent did not influence offspring lifespan (Wald\u2019s Z = 0.096, p = .924; median [95% CI], TF: 11 [9, 12]; AL: 11 [9, 13], Figure 2B",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-pct-4337",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4337,
+      "sentence": "Maternal diet treatment did not influence offspring lifespan (Wald\u2019s Z = 0.096, p = .924; median [95% CI], TF: 11 [9, 12]; AL: 11 [9, 13], Figure 2B ).",
+      "context_window": "nce offspring lifespan (Wald\u2019s Z = 0.096, p = .924; median [95% CI], TF: 11 [9, 12]; AL: 11 [9, 13], Figure 2B ). There was",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-4489",
+      "claim_type": "p_value",
+      "raw_text": "p = .372",
+      "numeric_values": [
+        0.372
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4489,
+      "sentence": "There was also no difference in heat stress resistance based on maternal diet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59).",
+      "context_window": "tress resistance based on maternal diet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59). In contrast, maternal d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-4514",
+      "claim_type": "sample_size",
+      "raw_text": "N = 58",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4514,
+      "sentence": "There was also no difference in heat stress resistance based on maternal diet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59).",
+      "context_window": "maternal diet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59). In contrast, maternal diet has a significant e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-4525",
+      "claim_type": "sample_size",
+      "raw_text": "N = 59",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4525,
+      "sentence": "There was also no difference in heat stress resistance based on maternal diet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59).",
+      "context_window": "iet (Wald\u2019s Z = -0.892, p = .372, Figure 2D ; TF N = 58, AL N = 59). In contrast, maternal diet has a significant effect on bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-4648",
+      "claim_type": "sample_size",
+      "raw_text": "N = 132",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4648,
+      "sentence": "In contrast, maternal diet has a significant effect on both development time and body size ( Figure 3A and B ; TF N = 132, AF N = 132).",
+      "context_window": "both development time and body size ( Figure 3A and B ; TF N = 132, AF N = 132). Offspring from mothers in the TF treatment to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-4660",
+      "claim_type": "sample_size",
+      "raw_text": "N = 132",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4660,
+      "sentence": "In contrast, maternal diet has a significant effect on both development time and body size ( Figure 3A and B ; TF N = 132, AF N = 132).",
+      "context_window": "pment time and body size ( Figure 3A and B ; TF N = 132, AF N = 132). Offspring from mothers in the TF treatment took significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-4751",
+      "claim_type": "mean_sd",
+      "raw_text": "68.6 \u00b1 0.22",
+      "numeric_values": [
+        68.6,
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4751,
+      "sentence": "Offspring from mothers in the TF treatment took significantly longer to develop (68.6 \u00b1 0.22 h) than offspring from mothers in the AL treatment (67.2 \u00b1 0.22; t = 3.07, p = .002).",
+      "context_window": "s in the TF treatment took significantly longer to develop (68.6 \u00b1 0.22 h) than offspring from mothers in the AL treatment (67.2 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-4815",
+      "claim_type": "mean_sd",
+      "raw_text": "67.2 \u00b1 0.22",
+      "numeric_values": [
+        67.2,
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4815,
+      "sentence": "Offspring from mothers in the TF treatment took significantly longer to develop (68.6 \u00b1 0.22 h) than offspring from mothers in the AL treatment (67.2 \u00b1 0.22; t = 3.07, p = .002).",
+      "context_window": "\u00b1 0.22 h) than offspring from mothers in the AL treatment (67.2 \u00b1 0.22; t = 3.07, p = .002). Similarly, offspring from females in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-4838",
+      "claim_type": "p_value",
+      "raw_text": "p = .002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4838,
+      "sentence": "Offspring from mothers in the TF treatment took significantly longer to develop (68.6 \u00b1 0.22 h) than offspring from mothers in the AL treatment (67.2 \u00b1 0.22; t = 3.07, p = .002).",
+      "context_window": "ng from mothers in the AL treatment (67.2 \u00b1 0.22; t = 3.07, p = .002). Similarly, offspring from females in the temporary fastin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-4947",
+      "claim_type": "mean_sd",
+      "raw_text": "0.0293 \u00b1 0.00022",
+      "numeric_values": [
+        0.0293,
+        0.00022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4947,
+      "sentence": "Similarly, offspring from females in the temporary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058).",
+      "context_window": "he temporary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-u-4956",
+      "claim_type": "unit_value",
+      "raw_text": "0.00022 mm",
+      "numeric_values": [
+        0.00022
+      ],
+      "units": "mm",
+      "source_section": "results",
+      "source_offset": 4956,
+      "sentence": "Similarly, offspring from females in the temporary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058).",
+      "context_window": "ary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment (0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-msd-5024",
+      "claim_type": "mean_sd",
+      "raw_text": "0.0302 \u00b1 0.00025",
+      "numeric_values": [
+        0.0302,
+        0.00025
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5024,
+      "sentence": "Similarly, offspring from females in the temporary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058).",
+      "context_window": "mm 2 ) than those with mothers in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058). The impact of maternal temporary fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-p-5052",
+      "claim_type": "p_value",
+      "raw_text": "p < .0058",
+      "numeric_values": [
+        0.0058
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5052,
+      "sentence": "Similarly, offspring from females in the temporary fasting experiment were significantly smaller (0.0293 \u00b1 0.00022 mm 2 ) than those with mothers in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058).",
+      "context_window": "rs in the ad libitum treatment (0.0302 \u00b1 0.00025; t = 2.78, p < .0058). The impact of maternal temporary fasting treatment on of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-5172",
+      "claim_type": "sample_size",
+      "raw_text": "N = 132",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5172,
+      "sentence": "The impact of maternal temporary fasting treatment on offspring development time (A) and body size (B) (TF N = 132; AL N = 132).",
+      "context_window": "ent on offspring development time (A) and body size (B) (TF N = 132; AL N = 132). Data were analyzed using linear mixed-effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-n-5184",
+      "claim_type": "sample_size",
+      "raw_text": "N = 132",
+      "numeric_values": [
+        132.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5184,
+      "sentence": "The impact of maternal temporary fasting treatment on offspring development time (A) and body size (B) (TF N = 132; AL N = 132).",
+      "context_window": "ring development time (A) and body size (B) (TF N = 132; AL N = 132). Data were analyzed using linear mixed-effect models. Deve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7164528_dietary_restriction_improves_fitness_of_aging_parents_but_re-u-1026",
+      "claim_type": "unit_value",
+      "raw_text": "6 days",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1026,
+      "sentence": "A decline in lifetime and peak reproduction in both dietary treatment groups was observed as a result of our preventing reproduction for the first 6 days (cf. x-axis, Figure 1A and B ).",
+      "context_window": "ed as a result of our preventing reproduction for the first 6 days (cf. x-axis, Figure 1A and B ). It could be argued that lif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

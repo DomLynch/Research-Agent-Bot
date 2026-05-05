@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin",
+  "doi": "10.1186/s13256-026-05844-z",
+  "extracted_at": "2026-05-05T21:41:38+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin-u-740",
+      "claim_type": "unit_value",
+      "raw_text": "4 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 740,
+      "sentence": "Amongst the hematological readings, the patient had lactate levels > 4 mmol/ml, indicating lactic acidosis, and ferritin levels > 820 ng/ml, representing hyperferritinemia.",
+      "context_window": "he hematological readings, the patient had lactate levels > 4 mmol/ml, indicating lactic acidosis, and ferritin levels > 820 n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin-u-999",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg/day",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 999,
+      "sentence": "Regular taurine intake (500 mg/day) for years helped the patient control lactate and ferritin levels and avoid more serious clinical decompensation.",
+      "context_window": "ative of mitochondrial dysfunction. Regular taurine intake (500 mg/day) for years helped the patient control lactate and ferritin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin-pct-4885",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4885,
+      "sentence": "The latest multicentered phase III clinical trial by Oshawa et al . reported that, in some cases, there is a 100% reduction of MELAS symptoms lasting for years with continued taurine supplementation [ 29 ].",
+      "context_window": "by Oshawa et al . reported that, in some cases, there is a 100% reduction of MELAS symptoms lasting for years with continue",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin-u-5286",
+      "claim_type": "unit_value",
+      "raw_text": "4 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 5286,
+      "sentence": "Moreover, lactic acidosis occurring in MELAS involves lactate levels in blood over 4 mmol/L.",
+      "context_window": "is occurring in MELAS involves lactate levels in blood over 4 mmol/L. However, a level between 2 and 4 mmol/L, which represent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12924328_taurine_intake_ameliorates_lactic_acidosis_and_hyperferritin-u-5327",
+      "claim_type": "unit_value",
+      "raw_text": "4 mmol",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "mmol",
+      "source_section": "discussion",
+      "source_offset": 5327,
+      "sentence": "However, a level between 2 and 4 mmol/L, which represents hyperlactatemia, is viewed as a less serious clinical condition for the case we describe.",
+      "context_window": "vels in blood over 4 mmol/L. However, a level between 2 and 4 mmol/L, which represents hyperlactatemia, is viewed as a less se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

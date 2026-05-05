@@ -1,0 +1,878 @@
+{
+  "paper_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon",
+  "doi": "10.1002/oby.23577",
+  "extracted_at": "2026-05-05T22:11:30+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 7,
+    "unit_value": 35,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-n-511",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 511,
+      "sentence": "In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were no between\u2010group differences (TRE vs.",
+      "context_window": "ion and by weight loss response. In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were n",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-519",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 519,
+      "sentence": "In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were no between\u2010group differences (TRE vs.",
+      "context_window": "by weight loss response. In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were no bet",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-541",
+      "claim_type": "unit_value",
+      "raw_text": "47 years",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 541,
+      "sentence": "In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were no between\u2010group differences (TRE vs.",
+      "context_window": "e. In the total population ( n = 42, 76% women, median age 47 years [IQR: 31\u201052]), there were no between\u2010group differences (TRE",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-673",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 kg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 673,
+      "sentence": "Among weight loss responders (\u22650.6 kg weight loss), the bone resorption marker \u03b2\u2010carboxyterminal telopeptide of type I collagen tended to decrease after TRE but increase after SDA (between\u2010group differences p = 0.041), whereas changes in the bone formation marker procollagen type I N\u2010propeptide did not differ between groups.",
+      "context_window": "SDA) in any bone parameter. Among weight loss responders (\u22650.6 kg weight loss), the bone resorption marker \u03b2\u2010carboxyterminal",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-p-849",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "Among weight loss responders (\u22650.6 kg weight loss), the bone resorption marker \u03b2\u2010carboxyterminal telopeptide of type I collagen tended to decrease after TRE but increase after SDA (between\u2010group differences p = 0.041), whereas changes in the bone formation marker procollagen type I N\u2010propeptide did not differ between groups.",
+      "context_window": "after TRE but increase after SDA (between\u2010group differences p = 0.041), whereas changes in the bone formation marker procollagen",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-p-1023",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1023,
+      "sentence": "Total body bone mineral content decreased after SDA ( p = 0.028) but remained unchanged after TRE ( p = 0.31) in weight loss responders (between\u2010group differences p = 0.028).",
+      "context_window": "oups. Total body bone mineral content decreased after SDA ( p = 0.028) but remained unchanged after TRE ( p = 0.31) in weight los",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-p-1069",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1069,
+      "sentence": "Total body bone mineral content decreased after SDA ( p = 0.028) but remained unchanged after TRE ( p = 0.31) in weight loss responders (between\u2010group differences p = 0.028).",
+      "context_window": "d after SDA ( p = 0.028) but remained unchanged after TRE ( p = 0.31) in weight loss responders (between\u2010group differences p = 0",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-p-1132",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1132,
+      "sentence": "Total body bone mineral content decreased after SDA ( p = 0.028) but remained unchanged after TRE ( p = 0.31) in weight loss responders (between\u2010group differences p = 0.028).",
+      "context_window": "0.31) in weight loss responders (between\u2010group differences p = 0.028). Among nonresponders (<0.6 kg weight loss), there were no",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-1166",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 kg",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "Among nonresponders (<0.6 kg weight loss), there were no between\u2010group differences in bone outcomes.",
+      "context_window": "between\u2010group differences p = 0.028). Among nonresponders (<0.6 kg weight loss), there were no between\u2010group differences in bo",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3107",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 3107,
+      "sentence": "Conversely, although conventional caloric restrictions result in reductions in body fat, improvements of inflammatory status, and better metabolic control that could benefit bone health, these practices have been associated with reductions in bone mass, at least in RCTs with a duration of <2 years [ 19 , 20 , 21 , 22 , 23 , 24 ].",
+      "context_window": "ductions in bone mass, at least in RCTs with a duration of <2 years [ 19 , 20 , 21 , 22 , 23 , 24 ]. Studies on TRE have only r",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3368",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3368,
+      "sentence": "Total body bone mineral content (BMC) or density (BMD), assessed by dual\u2010energy x\u2010ray absorptiometry (DXA), was not adversely affected after 6 weeks [ 27 ] or 12 weeks [ 28 , 29 ] of TRE.",
+      "context_window": "\u2010ray absorptiometry (DXA), was not adversely affected after 6 weeks [ 27 ] or 12 weeks [ 28 , 29 ] of TRE. Given that a minimum",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3386",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3386,
+      "sentence": "Total body bone mineral content (BMC) or density (BMD), assessed by dual\u2010energy x\u2010ray absorptiometry (DXA), was not adversely affected after 6 weeks [ 27 ] or 12 weeks [ 28 , 29 ] of TRE.",
+      "context_window": "y (DXA), was not adversely affected after 6 weeks [ 27 ] or 12 weeks [ 28 , 29 ] of TRE. Given that a minimum monitoring time in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3464",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 3464,
+      "sentence": "Given that a minimum monitoring time interval of 6 months is recommended for repeating bone mass measurements [ 19 ], it is possible that small changes were not captured in these shorter\u2010term studies.",
+      "context_window": "] of TRE. Given that a minimum monitoring time interval of 6 months is recommended for repeating bone mass measurements [ 19 ],",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-4147",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4147,
+      "sentence": "The only available TRE study that reported BTMs [ 28 ] showed no changes in bone resorption (assessed by cross\u2010linked N\u2010terminal telopeptide of type I collagen) but attenuated reductions in bone formation (assessed by procollagen type 1 N\u2010terminal propeptide [P1NP]) after 12 weeks of TRE (vs. habitual diet).",
+      "context_window": "d by procollagen type 1 N\u2010terminal propeptide [P1NP]) after 12 weeks of TRE (vs. habitual diet). Although these results were int",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-513",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 513,
+      "sentence": "Men and women were included if they were aged \u2265 18 years, they were weight stable (\u00b12 kg within the previous 3 months), and they had at least one component of the MS according to the International Diabetes Federation consensus definition [ 34 ].",
+      "context_window": "7 and 2020. Men and women were included if they were aged \u2265 18 years, they were weight stable (\u00b12 kg within the previous 3 month",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-549",
+      "claim_type": "unit_value",
+      "raw_text": "2 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 549,
+      "sentence": "Men and women were included if they were aged \u2265 18 years, they were weight stable (\u00b12 kg within the previous 3 months), and they had at least one component of the MS according to the International Diabetes Federation consensus definition [ 34 ].",
+      "context_window": "ded if they were aged \u2265 18 years, they were weight stable (\u00b12 kg within the previous 3 months), and they had at least one co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-574",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 574,
+      "sentence": "Men and women were included if they were aged \u2265 18 years, they were weight stable (\u00b12 kg within the previous 3 months), and they had at least one component of the MS according to the International Diabetes Federation consensus definition [ 34 ].",
+      "context_window": "8 years, they were weight stable (\u00b12 kg within the previous 3 months), and they had at least one component of the MS according t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-1879",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1879,
+      "sentence": "They were also asked to record their eating behavior and dietary intake with the smartphone application myCircadianClock over 4 weeks [ 7 ].",
+      "context_window": "ntake with the smartphone application myCircadianClock over 4 weeks [ 7 ]. Participants who ate within a time interval > 14 hou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-n-1969",
+      "claim_type": "sample_size",
+      "raw_text": "n = 54",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1969,
+      "sentence": "Participants who ate within a time interval > 14 hours per 24\u2010hour cycle ( n = 54) were randomized to TRE or SDA (active control) with a 1:1 allocation ratio (Figure 1 ).",
+      "context_window": "o ate within a time interval > 14 hours per 24\u2010hour cycle ( n = 54) were randomized to TRE or SDA (active control) with a 1:1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-2983",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2983,
+      "sentence": "The randomized participants undertook an additional total body DXA scan and they were then followed up for 6 months, with two interim follow\u2010ups over the phone to reinforce the intervention and assess their compliance (Supporting Information Figure S1 ).",
+      "context_window": "onal total body DXA scan and they were then followed up for 6 months, with two interim follow\u2010ups over the phone to reinforce th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3154",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3154,
+      "sentence": "At the closeout visit (6 months after randomization), participants had blood samples taken and they repeated all the assessments performed at baseline, including blood tests and total body DXA scans.",
+      "context_window": "(Supporting Information Figure S1 ). At the closeout visit (6 months after randomization), participants had blood samples taken",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5715",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5715,
+      "sentence": "Because the reference ranges of BTMs differ according to sex, age, and menopausal status, we also normalized BTM levels by dividing the absolute concentrations by the upper bound of reference range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopausal women: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L).",
+      "context_window": "ce range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5751",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5751,
+      "sentence": "Because the reference ranges of BTMs differ according to sex, age, and menopausal status, we also normalized BTM levels by dividing the absolute concentrations by the upper bound of reference range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopausal women: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L).",
+      "context_window": "atory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5786",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 5786,
+      "sentence": "Because the reference ranges of BTMs differ according to sex, age, and menopausal status, we also normalized BTM levels by dividing the absolute concentrations by the upper bound of reference range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopausal women: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L).",
+      "context_window": "58\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopa",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5920",
+      "claim_type": "unit_value",
+      "raw_text": "58.6 \u03bcg/L",
+      "numeric_values": [
+        58.6
+      ],
+      "units": "\u03bcg/L",
+      "source_section": "methods",
+      "source_offset": 5920,
+      "sentence": "Because the reference ranges of BTMs differ according to sex, age, and menopausal status, we also normalized BTM levels by dividing the absolute concentrations by the upper bound of reference range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopausal women: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L).",
+      "context_window": "omen: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L). P values \u2264 0.05 wer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5958",
+      "claim_type": "unit_value",
+      "raw_text": "76.3 \u03bcg/L",
+      "numeric_values": [
+        76.3
+      ],
+      "units": "\u03bcg/L",
+      "source_section": "methods",
+      "source_offset": 5958,
+      "sentence": "Because the reference ranges of BTMs differ according to sex, age, and menopausal status, we also normalized BTM levels by dividing the absolute concentrations by the upper bound of reference range provided by our local laboratory (CTX: men aged 30\u201050 years: 158\u2010442 ng/L, men aged 50\u201070 years: 104\u2010504 ng/L, men aged > 70 years: 164\u2010624 ng/L, premenopausal women: 62\u2010436 ng/L, postmenopausal women: 330\u2010782 ng/L; P1NP: men and premenopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L).",
+      "context_window": "enopausal women: 15.1\u201058.6 \u03bcg/L, postmenopausal women: 20.3\u201076.3 \u03bcg/L). P values \u2264 0.05 were considered statistically significant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-175",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 175,
+      "sentence": "Future TRE studies lasting more than 6 months should assess additional bone phenotypes (bone mineral density and microstructure at clinically relevant sites, fracture risk) and explore the effects of various TRE regimens with different eating windows or timings, especially among individuals at risk for bone fragility such as postmenopausal women and the elderly.",
+      "context_window": "ht preserve bone mass. Future TRE studies lasting more than 6 months should assess additional bone phenotypes (bone mineral dens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-680",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 680,
+      "sentence": "Future TRE studies lasting more than 6 months should assess additional bone phenotypes (bone mineral density and microstructure at clinically relevant sites, fracture risk) and explore the effects of various TRE regimens with different eating windows or timings, especially among individuals at risk for bone fragility such as postmenopausal women and the elderly.",
+      "context_window": "t preserve bone mass. Future TRE studies lasting more than 6 months should assess additional bone phenotypes (bone mineral dens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-65",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 65,
+      "sentence": "In the present study, we found no overall detrimental effects of 6 months of TRE on bone health outcomes.",
+      "context_window": "e present study, we found no overall detrimental effects of 6 months of TRE on bone health outcomes. Those who lost weight follo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-1481",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1481,
+      "sentence": "In a meta\u2010analysis on diet\u2010induced weight loss, Zibellini et al. reported early increases (within 2\u20103 months) in surrogate markers of bone resorption with less clear effects on markers of bone formation (increases in osteocalcin levels, no changes in P1NP levels) [ 19 ].",
+      "context_window": "t loss, Zibellini et al. reported early increases (within 2\u20103 months) in surrogate markers of bone resorption with less clear ef",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-1674",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1674,
+      "sentence": "Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body BMD was reduced in interventions of 6 months (but not in interventions with a longer duration), whereas spine BMD remained largely unaltered.",
+      "context_window": "ls, no changes in P1NP levels) [ 19 ]. Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and tot",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-1682",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1682,
+      "sentence": "Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body BMD was reduced in interventions of 6 months (but not in interventions with a longer duration), whereas spine BMD remained largely unaltered.",
+      "context_window": "hanges in P1NP levels) [ 19 ]. Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-1721",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1721,
+      "sentence": "Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body BMD was reduced in interventions of 6 months (but not in interventions with a longer duration), whereas spine BMD remained largely unaltered.",
+      "context_window": "decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body BMD was reduced in interventions of 6 month",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-1782",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1782,
+      "sentence": "Hip BMD decreased by 1.0% to 1.5% in interventions with a duration \u22656 months, and total body BMD was reduced in interventions of 6 months (but not in interventions with a longer duration), whereas spine BMD remained largely unaltered.",
+      "context_window": "months, and total body BMD was reduced in interventions of 6 months (but not in interventions with a longer duration), whereas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-2537",
+      "claim_type": "unit_value",
+      "raw_text": "5 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 2537,
+      "sentence": "In line with our findings, several other weight loss interventions resulting in comparable amounts of weight loss (3\u20105 kg) have demonstrated unfavorable changes in BTMs and reductions in BMC/BMD (total body or at clinical sites) [ 37 , 38 , 39 , 40 ].",
+      "context_window": "rventions resulting in comparable amounts of weight loss (3\u20105 kg) have demonstrated unfavorable changes in BTMs and reductio",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-3693",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3693,
+      "sentence": "In our study, participants significantly lost weight after 6 months of TRE, albeit with substantial interindividual variability.",
+      "context_window": "In our study, participants significantly lost weight after 6 months of TRE, albeit with substantial interindividual variability",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-4913",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4913,
+      "sentence": "Our study extends recent RCTs with shorter duration (6\u201012 weeks) that have not shown undesirable effects of TRE on bone metabolism and/or total body bone mass in individuals with overweight/obesity [ 28 , 29 ] or in the elderly [ 27 ].",
+      "context_window": "es. Our study extends recent RCTs with shorter duration (6\u201012 weeks) that have not shown undesirable effects of TRE on bone met",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-5201",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5201,
+      "sentence": "Similarly, another form of IF, alternate day fasting (ADF), that involves 24 hours of complete fasting or ~25% of energy requirements followed by 24 hours of feasting has not been reported to affect BTMs or total body bone mass after 3 weeks [ 44 ] or 6 months [ 45 ].",
+      "context_window": "sting (ADF), that involves 24 hours of complete fasting or ~25% of energy requirements followed by 24 hours of feasting has",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5328",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5328,
+      "sentence": "Similarly, another form of IF, alternate day fasting (ADF), that involves 24 hours of complete fasting or ~25% of energy requirements followed by 24 hours of feasting has not been reported to affect BTMs or total body bone mass after 3 weeks [ 44 ] or 6 months [ 45 ].",
+      "context_window": "been reported to affect BTMs or total body bone mass after 3 weeks [ 44 ] or 6 months [ 45 ]. In contrast, in another RCT, the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5346",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5346,
+      "sentence": "Similarly, another form of IF, alternate day fasting (ADF), that involves 24 hours of complete fasting or ~25% of energy requirements followed by 24 hours of feasting has not been reported to affect BTMs or total body bone mass after 3 weeks [ 44 ] or 6 months [ 45 ].",
+      "context_window": "affect BTMs or total body bone mass after 3 weeks [ 44 ] or 6 months [ 45 ]. In contrast, in another RCT, there was a significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-5447",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5447,
+      "sentence": "In contrast, in another RCT, there was a significant decrease in lumbar spine BMD (-0.9%) within the ADF group, but no significant change in the control group (-0.5%) or between groups [ 46 ].",
+      "context_window": "RCT, there was a significant decrease in lumbar spine BMD (-0.9%) within the ADF group, but no significant change in the con",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-5524",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5524,
+      "sentence": "In contrast, in another RCT, there was a significant decrease in lumbar spine BMD (-0.9%) within the ADF group, but no significant change in the control group (-0.5%) or between groups [ 46 ].",
+      "context_window": "ADF group, but no significant change in the control group (-0.5%) or between groups [ 46 ]. Although the latter study is dis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-pct-5692",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5692,
+      "sentence": "Although the latter study is dissimilar from our and other studies because ADF resulted in substantial reductions in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese individuals, it indicates similar BMD changes in response to longer\u2010term periods of milder (continuous) energy restrictions [ 19 , 24 ].",
+      "context_window": "DF resulted in substantial reductions in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese indi",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5720",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 kg",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 5720,
+      "sentence": "Although the latter study is dissimilar from our and other studies because ADF resulted in substantial reductions in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese individuals, it indicates similar BMD changes in response to longer\u2010term periods of milder (continuous) energy restrictions [ 19 , 24 ].",
+      "context_window": "eductions in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese individuals, it indicates similar B",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-5730",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5730,
+      "sentence": "Although the latter study is dissimilar from our and other studies because ADF resulted in substantial reductions in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese individuals, it indicates similar BMD changes in response to longer\u2010term periods of milder (continuous) energy restrictions [ 19 , 24 ].",
+      "context_window": "in caloric intake (by 37%) and rapid weight loss (3.5 kg in 4 weeks) in nonobese individuals, it indicates similar BMD changes",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-6363",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 6363,
+      "sentence": "Our study is strengthened by its RCT design, its pragmatic nature (i.e., an easy to follow, real\u2010world\u2010based intervention), a longer\u2010term duration (6 months) compared with the 4\u2010 to 12\u2010week duration of most available TRE interventions (for a review see [ 3 ]), and the assessment of BTMs (CTX, P1NP) according to international standards [ 47 ].",
+      "context_window": "ow, real\u2010world\u2010based intervention), a longer\u2010term duration (6 months) compared with the 4\u2010 to 12\u2010week duration of most available",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-7716",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 7716,
+      "sentence": "In conclusion, the present study suggests that, overall, 6 months of TRE does not have negative effects on bone metabolism (assessed by BTMs and bone\u2010related hormones) or bone loss (assessed by DXA total body BMC/BMD).",
+      "context_window": ". In conclusion, the present study suggests that, overall, 6 months of TRE does not have negative effects on bone metabolism (a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10092311_the_effects_of_time_restricted_eating_and_weight_loss_on_bon-u-8019",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8019,
+      "sentence": "Future studies of longer duration (>6 months) assessing multiple bone phenotypes (e.g., BMD at clinically relevant sites, bone microstructure and fracture risk) are needed to confirm these findings and explore the effects of various TRE regimens (e.g., different eating windows, different timings), especially among individuals at risk for bone fragility such as postmenopausal women and the elderly.",
+      "context_window": "ects compared with SDA. Future studies of longer duration (>6 months) assessing multiple bone phenotypes (e.g., BMD at clinicall",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

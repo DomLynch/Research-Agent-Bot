@@ -1,0 +1,2305 @@
+{
+  "paper_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua",
+  "doi": "10.3390/nu16132075",
+  "extracted_at": "2026-05-05T22:11:16+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 20,
+    "unit_value": 21,
+    "percentage": 41,
+    "mean_sd": 3,
+    "p_value": 22,
+    "hazard_ratio": 20
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-579",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5227",
+      "numeric_values": [
+        5227.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 579,
+      "sentence": "Methods: Patients enrolled in the INSPIRE registry from February 2013 to March 2020 provided periodic fasting information and were followed into the pandemic ( n = 5227).",
+      "context_window": "c fasting information and were followed into the pandemic ( n = 5227). Between March 2020 and February 2023, N = 2373 patients w",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-628",
+      "claim_type": "sample_size",
+      "raw_text": "N = 2373",
+      "numeric_values": [
+        2373.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 628,
+      "sentence": "Between March 2020 and February 2023, N = 2373 patients were studied, with n = 601 COVID-positive patients being the primary study population (2836 had no COVID-19 test; 18 were excluded due to fasting <5 years).",
+      "context_window": "pandemic ( n = 5227). Between March 2020 and February 2023, N = 2373 patients were studied, with n = 601 COVID-positive patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-665",
+      "claim_type": "sample_size",
+      "raw_text": "n = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 665,
+      "sentence": "Between March 2020 and February 2023, N = 2373 patients were studied, with n = 601 COVID-positive patients being the primary study population (2836 had no COVID-19 test; 18 were excluded due to fasting <5 years).",
+      "context_window": "020 and February 2023, N = 2373 patients were studied, with n = 601 COVID-positive patients being the primary study population",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 793,
+      "sentence": "Between March 2020 and February 2023, N = 2373 patients were studied, with n = 601 COVID-positive patients being the primary study population (2836 had no COVID-19 test; 18 were excluded due to fasting <5 years).",
+      "context_window": "2836 had no COVID-19 test; 18 were excluded due to fasting <5 years). A Cox regression was used to evaluate HF admissions, MACE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1057",
+      "claim_type": "percentage",
+      "raw_text": "30.0%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1057,
+      "sentence": "Results: In patients positive for COVID-19, periodic fasting was reported by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (min: 7, max: 83).",
+      "context_window": "ositive for COVID-19, periodic fasting was reported by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-msd-1101",
+      "claim_type": "mean_sd",
+      "raw_text": "43.1 \u00b1 19.2",
+      "numeric_values": [
+        43.1,
+        19.2
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1101,
+      "sentence": "Results: In patients positive for COVID-19, periodic fasting was reported by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (min: 7, max: 83).",
+      "context_window": "eported by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (min: 7, max: 83). HF hospitalization ( n = 117, 19.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-1108",
+      "claim_type": "unit_value",
+      "raw_text": "19.2 years",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1108,
+      "sentence": "Results: In patients positive for COVID-19, periodic fasting was reported by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (min: 7, max: 83).",
+      "context_window": "by 180 (30.0% of 601), who periodically fasted over 43.1 \u00b1 19.2 years (min: 7, max: 83). HF hospitalization ( n = 117, 19.5%) occ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1159",
+      "claim_type": "sample_size",
+      "raw_text": "n = 117",
+      "numeric_values": [
+        117.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1159,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044].",
+      "context_window": "r 43.1 \u00b1 19.2 years (min: 7, max: 83). HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-faste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1168",
+      "claim_type": "percentage",
+      "raw_text": "19.5%",
+      "numeric_values": [
+        19.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1168,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044].",
+      "context_window": "19.2 years (min: 7, max: 83). HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1187",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1187,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044].",
+      "context_window": "max: 83). HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1208",
+      "claim_type": "percentage",
+      "raw_text": "22.1%",
+      "numeric_values": [
+        22.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1208,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044].",
+      "context_window": "lization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1283",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1283,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) occurred in 13.3% of fasters and 22.1% of non-fasters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044].",
+      "context_window": "sters [adjusted hazard ratio (aHR) = 0.63, CI = 0.40, 0.99; p = 0.044]. Most HF admissions were exacerbations, with a prior HF di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1368",
+      "claim_type": "percentage",
+      "raw_text": "94.9%",
+      "numeric_values": [
+        94.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1368,
+      "sentence": "Most HF admissions were exacerbations, with a prior HF diagnosis in 111 (94.9%) patients hospitalized for HF.",
+      "context_window": "sions were exacerbations, with a prior HF diagnosis in 111 (94.9%) patients hospitalized for HF. Fasting was also associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-1457",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1457,
+      "sentence": "Fasting was also associated with a lower MACE risk (aHR = 0.64, CI = 0.43, 0.96; p = 0.030).",
+      "context_window": "for HF. Fasting was also associated with a lower MACE risk (aHR = 0.64, CI = 0.43, 0.96; p = 0.030). In n = 1772 COVID-negative pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1486",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1486,
+      "sentence": "Fasting was also associated with a lower MACE risk (aHR = 0.64, CI = 0.43, 0.96; p = 0.030).",
+      "context_window": "ciated with a lower MACE risk (aHR = 0.64, CI = 0.43, 0.96; p = 0.030). In n = 1772 COVID-negative patients (29.7% fasters), fast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1501",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1772",
+      "numeric_values": [
+        1772.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1501,
+      "sentence": "In n = 1772 COVID-negative patients (29.7% fasters), fasting was not associated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": "ower MACE risk (aHR = 0.64, CI = 0.43, 0.96; p = 0.030). In n = 1772 COVID-negative patients (29.7% fasters), fasting was not as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1535",
+      "claim_type": "percentage",
+      "raw_text": "29.7%",
+      "numeric_values": [
+        29.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1535,
+      "sentence": "In n = 1772 COVID-negative patients (29.7% fasters), fasting was not associated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": ".43, 0.96; p = 0.030). In n = 1772 COVID-negative patients (29.7% fasters), fasting was not associated with HF hospitalizatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-1603",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 0.82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1603,
+      "sentence": "In n = 1772 COVID-negative patients (29.7% fasters), fasting was not associated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": "sters), fasting was not associated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12). In COVID-positive and negative",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1632",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1632,
+      "sentence": "In n = 1772 COVID-negative patients (29.7% fasters), fasting was not associated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": "iated with HF hospitalization (aHR = 0.82, CI = 0.64, 1.05; p = 0.12). In COVID-positive and negative patients combined, periodi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-1747",
+      "claim_type": "hazard_ratio",
+      "raw_text": "aHR = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1747,
+      "sentence": "In COVID-positive and negative patients combined, periodic fasting was associated with lower mortality (aHR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "ined, periodic fasting was associated with lower mortality (aHR = 0.60, CI = 0.39, 0.93; p = 0.021). Conclusions: Routine periodic",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1776",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1776,
+      "sentence": "In COVID-positive and negative patients combined, periodic fasting was associated with lower mortality (aHR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "sociated with lower mortality (aHR = 0.60, CI = 0.39, 0.93; p = 0.021). Conclusions: Routine periodic fasting was associated with",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-283",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 283,
+      "sentence": "Common fasting practices include not eating for 16 h per day every day (i.e., time-restricted eating) or not eating 1-3 days per week (e.g., twice-per-week fasting or alternate-day fasting) [ 2 , 3 , 4 , 5 , 6 , 7 ].",
+      "context_window": "ay every day (i.e., time-restricted eating) or not eating 1-3 days per week (e.g., twice-per-week fasting or alternate-day fas",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-1581",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1581,
+      "sentence": "In a series of studies, periodic fasting of about one day per month for religious purposes over an average of 40 years was associated in a pre-pandemic population with greater longevity and a lower incidence of a new heart failure (HF) diagnosis [ 8 ].",
+      "context_window": "one day per month for religious purposes over an average of 40 years was associated in a pre-pandemic population with greater lo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-398",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 398,
+      "sentence": "Other objectives evaluated whether fasting was associated with a lower risk of major adverse cardiovascular events (MACEs), greater longevity, and a lower risk of post-acute outcomes that occurred more than 30 days after COVID-19 diagnosis.",
+      "context_window": "a lower risk of post-acute outcomes that occurred more than 30 days after COVID-19 diagnosis. The INSPIRE registry (clinicaltr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1445",
+      "claim_type": "sample_size",
+      "raw_text": "n = 568",
+      "numeric_values": [
+        568.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1445,
+      "sentence": "The first local case of COVID-19 was reported on 6 March 2020; thus, n = 568 patients (9.8%) who died prior to that date were excluded.",
+      "context_window": "local case of COVID-19 was reported on 6 March 2020; thus, n = 568 patients (9.8%) who died prior to that date were excluded.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1463",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1463,
+      "sentence": "The first local case of COVID-19 was reported on 6 March 2020; thus, n = 568 patients (9.8%) who died prior to that date were excluded.",
+      "context_window": "ID-19 was reported on 6 March 2020; thus, n = 568 patients (9.8%) who died prior to that date were excluded. The remaining n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1526",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5227",
+      "numeric_values": [
+        5227.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1526,
+      "sentence": "The remaining n = 5227 patients were followed into the pandemic to assess their COVID-19 diagnosis, acute events, and PASC.",
+      "context_window": "%) who died prior to that date were excluded. The remaining n = 5227 patients were followed into the pandemic to assess their CO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1822",
+      "claim_type": "sample_size",
+      "raw_text": "n = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1822,
+      "sentence": "Between 6 March, 2020, and 15 February, 2023, COVID-19 testing was performed in mobile, outpatient, emergency, or inpatient settings for clinical indications, with COVID-19 diagnosed in n = 601 ( n = 1772 were COVID-negative).",
+      "context_window": "ttings for clinical indications, with COVID-19 diagnosed in n = 601 ( n = 1772 were COVID-negative). The n = 2836 with no COVID",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1832",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1772",
+      "numeric_values": [
+        1772.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1832,
+      "sentence": "Between 6 March, 2020, and 15 February, 2023, COVID-19 testing was performed in mobile, outpatient, emergency, or inpatient settings for clinical indications, with COVID-19 diagnosed in n = 601 ( n = 1772 were COVID-negative).",
+      "context_window": "clinical indications, with COVID-19 diagnosed in n = 601 ( n = 1772 were COVID-negative). The n = 2836 with no COVID-19 test re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1867",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2836",
+      "numeric_values": [
+        2836.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1867,
+      "sentence": "The n = 2836 with no COVID-19 test result in the Intermountain Health electronic medical record were excluded.",
+      "context_window": "9 diagnosed in n = 601 ( n = 1772 were COVID-negative). The n = 2836 with no COVID-19 test result in the Intermountain Health el",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-2523",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2523,
+      "sentence": "To ensure that the fasting was a long-term behavior, patients had to report a history of 5 years or more of routine periodic fasting; thus, patients with <5 years of fasting ( n = 18) were excluded.",
+      "context_window": "s a long-term behavior, patients had to report a history of 5 years or more of routine periodic fasting; thus, patients with <5",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-2589",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2589,
+      "sentence": "To ensure that the fasting was a long-term behavior, patients had to report a history of 5 years or more of routine periodic fasting; thus, patients with <5 years of fasting ( n = 18) were excluded.",
+      "context_window": "s or more of routine periodic fasting; thus, patients with <5 years of fasting ( n = 18) were excluded. Prior studies showed th",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-2610",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2610,
+      "sentence": "To ensure that the fasting was a long-term behavior, patients had to report a history of 5 years or more of routine periodic fasting; thus, patients with <5 years of fasting ( n = 18) were excluded.",
+      "context_window": "periodic fasting; thus, patients with <5 years of fasting ( n = 18) were excluded. Prior studies showed that about 90% of thos",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-2665",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2665,
+      "sentence": "Prior studies showed that about 90% of those reporting periodic fasting fasted for religious purposes and were members of the Church of Jesus Christ of Latter-day Saints (LDS, or Mormon) who fasted for one day about once per month [ 8 ].",
+      "context_window": "ng ( n = 18) were excluded. Prior studies showed that about 90% of those reporting periodic fasting fasted for religious pu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-2882",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2882,
+      "sentence": "The other \u224810% fasted for religious purposes using various other fasting frequencies or fasted for health purposes using a variety of more frequent intermittent fasting regimens.",
+      "context_window": "o fasted for one day about once per month [ 8 ]. The other \u224810% fasted for religious purposes using various other fasting f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3062",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3062,
+      "sentence": "Notably, 33-41% of LDS people report periodic fasting [ 8 ]; thus, religious affiliation and shared behaviors (e.g., not smoking and alcohol non-use) do not confound fasting associations.",
+      "context_window": "of more frequent intermittent fasting regimens. Notably, 33-41% of LDS people report periodic fasting [ 8 ]; thus, religiou",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-4734",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4734,
+      "sentence": "This event was registered during the acute and PASC phases of COVID-19 that corresponded to the first 30 days after diagnosis and >30 days after diagnosis, respectively.",
+      "context_window": "and PASC phases of COVID-19 that corresponded to the first 30 days after diagnosis and >30 days after diagnosis, respectively.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-4763",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4763,
+      "sentence": "This event was registered during the acute and PASC phases of COVID-19 that corresponded to the first 30 days after diagnosis and >30 days after diagnosis, respectively.",
+      "context_window": "that corresponded to the first 30 days after diagnosis and >30 days after diagnosis, respectively. Event follow-up was conducte",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-5329",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5329,
+      "sentence": "Based on prior unpublished data, >90% of endpoints were captured through Intermountain\u2019s electronic health record, which serves the healthcare needs of more than two-thirds of residents in urban and rural regions across Utah and southeastern Idaho.",
+      "context_window": "h and southeastern Idaho. Based on prior unpublished data, >90% of endpoints were captured through Intermountain\u2019s electron",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6566",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6566,
+      "sentence": "The statistical significance of comparisons between those groups and in analyses of HF hospitalization and other outcomes was at p -values of p \u2264 0.05, and the analyses were performed in SPSS v.29.0 (IBM SPSS, Inc., Armonk, NY, USA).",
+      "context_window": "f HF hospitalization and other outcomes was at p -values of p \u2264 0.05, and the analyses were performed in SPSS v.29.0 (IBM SPSS,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-7191",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7191,
+      "sentence": "Further analyses utilized Cox regressions to calculate univariable and multivariable adjusted hazard ratios (HRs) and 95% confidence intervals (CIs).",
+      "context_window": "variable and multivariable adjusted hazard ratios (HRs) and 95% confidence intervals (CIs). Multivariable models for period",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-8568",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8568,
+      "sentence": "A covariable was defined as a confounder if it induced a change of >10% in the \u03b2-coefficient of periodic fasting.",
+      "context_window": "able was defined as a confounder if it induced a change of >10% in the \u03b2-coefficient of periodic fasting. Secondary analyse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-82",
+      "claim_type": "sample_size",
+      "raw_text": "N = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 82,
+      "sentence": "Participant characteristics are provided in Table 1 and Table 2 for individuals ( N = 601) who were diagnosed with COVID-19.",
+      "context_window": "stics are provided in Table 1 and Table 2 for individuals ( N = 601) who were diagnosed with COVID-19. Among the limited number",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-458",
+      "claim_type": "percentage",
+      "raw_text": "30.0%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 458,
+      "sentence": "Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years).",
+      "context_window": ", and have less COPD. Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-msd-520",
+      "claim_type": "mean_sd",
+      "raw_text": "43.1 \u00b1 19.2",
+      "numeric_values": [
+        43.1,
+        19.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 520,
+      "sentence": "Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years).",
+      "context_window": ".0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years). The time from COVID-19",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-527",
+      "claim_type": "unit_value",
+      "raw_text": "19.2 years",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 527,
+      "sentence": "Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years).",
+      "context_window": "the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years). The time from COVID-19 diagn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-544",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 544,
+      "sentence": "Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years).",
+      "context_window": ", and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years). The time from COVID-19 diagnosis until HF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-558",
+      "claim_type": "unit_value",
+      "raw_text": "83 years",
+      "numeric_values": [
+        83.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 558,
+      "sentence": "Periodic fasting was reported by 180 (30.0%) of the 601 subjects, and they had fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years).",
+      "context_window": "fasted routinely for 43.1 \u00b1 19.2 years (min: 7 years, max: 83 years). The time from COVID-19 diagnosis until HF admission or ce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-msd-643",
+      "claim_type": "mean_sd",
+      "raw_text": "0.80 \u00b1 0.59",
+      "numeric_values": [
+        0.8,
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 643,
+      "sentence": "The time from COVID-19 diagnosis until HF admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years).",
+      "context_window": "COVID-19 diagnosis until HF admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years). HF hospitalization ( n = 117,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-650",
+      "claim_type": "unit_value",
+      "raw_text": "0.59 years",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 650,
+      "sentence": "The time from COVID-19 diagnosis until HF admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years).",
+      "context_window": "9 diagnosis until HF admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years). HF hospitalization ( n = 117, 19.5%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-671",
+      "claim_type": "unit_value",
+      "raw_text": "2.38 years",
+      "numeric_values": [
+        2.38
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 671,
+      "sentence": "The time from COVID-19 diagnosis until HF admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years).",
+      "context_window": "admission or censoring averaged 0.80 \u00b1 0.59 years (maximum: 2.38 years). HF hospitalization ( n = 117, 19.5%) was lower ( Figure",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-706",
+      "claim_type": "sample_size",
+      "raw_text": "n = 117",
+      "numeric_values": [
+        117.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 706,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) was lower ( Figure 2 A) in fasters compared to non-fasters (13.3% vs.",
+      "context_window": "0 \u00b1 0.59 years (maximum: 2.38 years). HF hospitalization ( n = 117, 19.5%) was lower ( Figure 2 A) in fasters compared to non-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-715",
+      "claim_type": "percentage",
+      "raw_text": "19.5%",
+      "numeric_values": [
+        19.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 715,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) was lower ( Figure 2 A) in fasters compared to non-fasters (13.3% vs.",
+      "context_window": "years (maximum: 2.38 years). HF hospitalization ( n = 117, 19.5%) was lower ( Figure 2 A) in fasters compared to non-fasters",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-782",
+      "claim_type": "percentage",
+      "raw_text": "13.3%",
+      "numeric_values": [
+        13.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 782,
+      "sentence": "HF hospitalization ( n = 117, 19.5%) was lower ( Figure 2 A) in fasters compared to non-fasters (13.3% vs.",
+      "context_window": "was lower ( Figure 2 A) in fasters compared to non-fasters (13.3% vs. 22.1%; HR = 0.57, CI = 0.37, 0.90; Table 3 ). The major",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-792",
+      "claim_type": "percentage",
+      "raw_text": "22.1%",
+      "numeric_values": [
+        22.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 792,
+      "sentence": "22.1%; HR = 0.57, CI = 0.37, 0.90; Table 3 ).",
+      "context_window": "( Figure 2 A) in fasters compared to non-fasters (13.3% vs. 22.1%; HR = 0.57, CI = 0.37, 0.90; Table 3 ). The majority of HF",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-799",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 799,
+      "sentence": "22.1%; HR = 0.57, CI = 0.37, 0.90; Table 3 ).",
+      "context_window": "e 2 A) in fasters compared to non-fasters (13.3% vs. 22.1%; HR = 0.57, CI = 0.37, 0.90; Table 3 ). The majority of HF hospitaliza",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-967",
+      "claim_type": "percentage",
+      "raw_text": "94.9%",
+      "numeric_values": [
+        94.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 967,
+      "sentence": "The majority of HF hospitalization events were HF exacerbations, with a prior HF diagnosis present for 111 of the 117 HF admits (94.9%).",
+      "context_window": "a prior HF diagnosis present for 111 of the 117 HF admits (94.9%). AN adjustment for COVID-19 vaccination had minimal effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-1169",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.63",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1169,
+      "sentence": "Fasting remained protective in multivariable analyses (adjusted HR = 0.63, CI = 0.40, 0.99; p = 0.044), including with adjustments for prior HF diagnosis and the other variables in Table 1 and Table 2 .\n\n( A ) Kaplan-Meier survival curves for heart failure (HF) hospitalization among COVID-positive patients who reported participating in periodic fasting compared to those who did not fast (non-fasters).",
+      "context_window": "ing remained protective in multivariable analyses (adjusted HR = 0.63, CI = 0.40, 0.99; p = 0.044), including with adjustments fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1197",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1197,
+      "sentence": "Fasting remained protective in multivariable analyses (adjusted HR = 0.63, CI = 0.40, 0.99; p = 0.044), including with adjustments for prior HF diagnosis and the other variables in Table 1 and Table 2 .\n\n( A ) Kaplan-Meier survival curves for heart failure (HF) hospitalization among COVID-positive patients who reported participating in periodic fasting compared to those who did not fast (non-fasters).",
+      "context_window": "ultivariable analyses (adjusted HR = 0.63, CI = 0.40, 0.99; p = 0.044), including with adjustments for prior HF diagnosis and the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1583",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1583,
+      "sentence": "This comparison of crude HF hospitalization-free survival rates measured p = 0.014 by the log-rank test. ( B ) Kaplan-Meier survival curves for major adverse cardiovascular events (MACEs) among COVID-positive patients who reported periodic fasting compared to those who did not (non-fasters), which measured p = 0.008 by the log-rank test.",
+      "context_window": "on of crude HF hospitalization-free survival rates measured p = 0.014 by the log-rank test. ( B ) Kaplan-Meier survival curves fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-1818",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1818,
+      "sentence": "This comparison of crude HF hospitalization-free survival rates measured p = 0.014 by the log-rank test. ( B ) Kaplan-Meier survival curves for major adverse cardiovascular events (MACEs) among COVID-positive patients who reported periodic fasting compared to those who did not (non-fasters), which measured p = 0.008 by the log-rank test.",
+      "context_window": "compared to those who did not (non-fasters), which measured p = 0.008 by the log-rank test. In patients positive for COVID-19 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1887",
+      "claim_type": "sample_size",
+      "raw_text": "n = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1887,
+      "sentence": "In patients positive for COVID-19 ( n = 601), the associations between periodic fasting and the primary endpoint of heart failure hospitalization and the secondary endpoint of major adverse cardiovascular events.",
+      "context_window": "by the log-rank test. In patients positive for COVID-19 ( n = 601), the associations between periodic fasting and the primary",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-2139",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2139,
+      "sentence": "These endpoints include events occurring during both the acute COVID-19 (0-30 days after COVID-19 diagnosis) and post-acute phases (>30 days after COVID-19 diagnosis).\n\n* All factors in Table 1 and Table 2 were considered in building multivariable models (see statistical methods), and the final heart failure hospitalization model entered periodic fasting, time-varying COVID-19 vaccination status, age, race, prior heart failure diagnosis, prior myocardial infarction, history of diabetes, and history of atrial fibrillation. \u2020 The final major adverse cardiovascular events model entered periodic fasting, time-varying COVID-19 vaccination status, age, race, prior heart failure diagnosis, prior myocardial infarction, history of diabetes, history of atrial fibrillation, and history of renal failure.",
+      "context_window": "include events occurring during both the acute COVID-19 (0-30 days after COVID-19 diagnosis) and post-acute phases (>30 days a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-2197",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2197,
+      "sentence": "These endpoints include events occurring during both the acute COVID-19 (0-30 days after COVID-19 diagnosis) and post-acute phases (>30 days after COVID-19 diagnosis).\n\n* All factors in Table 1 and Table 2 were considered in building multivariable models (see statistical methods), and the final heart failure hospitalization model entered periodic fasting, time-varying COVID-19 vaccination status, age, race, prior heart failure diagnosis, prior myocardial infarction, history of diabetes, and history of atrial fibrillation. \u2020 The final major adverse cardiovascular events model entered periodic fasting, time-varying COVID-19 vaccination status, age, race, prior heart failure diagnosis, prior myocardial infarction, history of diabetes, history of atrial fibrillation, and history of renal failure.",
+      "context_window": "0-30 days after COVID-19 diagnosis) and post-acute phases (>30 days after COVID-19 diagnosis). * All factors in Table 1 and Ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3008",
+      "claim_type": "percentage",
+      "raw_text": "17.8%",
+      "numeric_values": [
+        17.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3008,
+      "sentence": "Secondary endpoint analysis for MACEs ( Figure 2 B) found a lower risk among fasters (17.8% vs.",
+      "context_window": "s for MACEs ( Figure 2 B) found a lower risk among fasters (17.8% vs. 26.8%; HR = 0.59, Table 3 ). In multivariable analysis,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3018",
+      "claim_type": "percentage",
+      "raw_text": "26.8%",
+      "numeric_values": [
+        26.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3018,
+      "sentence": "26.8%; HR = 0.59, Table 3 ).",
+      "context_window": "s ( Figure 2 B) found a lower risk among fasters (17.8% vs. 26.8%; HR = 0.59, Table 3 ). In multivariable analysis, this asso",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3025",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3025,
+      "sentence": "26.8%; HR = 0.59, Table 3 ).",
+      "context_window": "ure 2 B) found a lower risk among fasters (17.8% vs. 26.8%; HR = 0.59, Table 3 ). In multivariable analysis, this association rem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3122",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.64",
+      "numeric_values": [
+        0.64
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3122,
+      "sentence": "In multivariable analysis, this association remained significant (adjusted HR = 0.64, CI = 0.43, 0.96).",
+      "context_window": "e analysis, this association remained significant (adjusted HR = 0.64, CI = 0.43, 0.96). For each MACE endpoint individually (oth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3341",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3341,
+      "sentence": "For each MACE endpoint individually (other than HF hospitalization), qualitative differences but a non-significantly lower risk for fasting compared to non-fasters were found for mortality (2.8% vs.",
+      "context_window": "r fasting compared to non-fasters were found for mortality (2.8% vs. 4.0% for fasting vs. non-fasting, respectively; HR = 0.",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3350",
+      "claim_type": "percentage",
+      "raw_text": "4.0%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3350,
+      "sentence": "4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs.",
+      "context_window": "compared to non-fasters were found for mortality (2.8% vs. 4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3398",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3398,
+      "sentence": "4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs.",
+      "context_window": "y (2.8% vs. 4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs. 3.6%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3426",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3426,
+      "sentence": "4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs.",
+      "context_window": "vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs. 3.6%; HR = 0.62, CI = 0.20, 1.8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3454",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3454,
+      "sentence": "4.0% for fasting vs. non-fasting, respectively; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs.",
+      "context_window": "ly; HR = 0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs. 3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3463",
+      "claim_type": "percentage",
+      "raw_text": "3.6%",
+      "numeric_values": [
+        3.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3463,
+      "sentence": "3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs.",
+      "context_window": "0.67, CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs. 3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3469",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.62",
+      "numeric_values": [
+        0.62
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3469,
+      "sentence": "3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs.",
+      "context_window": "CI = 0.25, 1.83; p = 0.44), unstable angina (2.2% vs. 3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.1%; HR = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3497",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.39",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3497,
+      "sentence": "3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs.",
+      "context_window": "unstable angina (2.2% vs. 3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.1%; HR = 0.028, CI = 0.00, 12.40; p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3518",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3518,
+      "sentence": "3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs.",
+      "context_window": "vs. 3.6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3525",
+      "claim_type": "percentage",
+      "raw_text": "2.1%",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3525,
+      "sentence": "2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs.",
+      "context_window": "6%; HR = 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3531",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.028",
+      "numeric_values": [
+        0.028
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3531,
+      "sentence": "2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs.",
+      "context_window": "= 0.62, CI = 0.20, 1.86; p = 0.39), acute MI (0% vs. 2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs. 3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3561",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3561,
+      "sentence": "2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs.",
+      "context_window": "0.39), acute MI (0% vs. 2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs. 3.8%; HR = 0.56, CI = 0.19, 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3591",
+      "claim_type": "percentage",
+      "raw_text": "2.8%",
+      "numeric_values": [
+        2.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "2.1%; HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs.",
+      "context_window": "HR = 0.028, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs. 3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3600",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3600,
+      "sentence": "3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs.",
+      "context_window": "8, CI = 0.00, 12.40; p = 0.25), revascularization (2.8% vs. 3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3606",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.56",
+      "numeric_values": [
+        0.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3606,
+      "sentence": "3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs.",
+      "context_window": "= 0.00, 12.40; p = 0.25), revascularization (2.8% vs. 3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs. 2.4%; HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3634",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.31",
+      "numeric_values": [
+        0.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3634,
+      "sentence": "3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs.",
+      "context_window": "vascularization (2.8% vs. 3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs. 2.4%; HR = 0.67, CI = 0.18, 2.43; p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "1.7%",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3657,
+      "sentence": "3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs.",
+      "context_window": "s. 3.8%; HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs. 2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54). Mortality",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-3666",
+      "claim_type": "percentage",
+      "raw_text": "2.4%",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3666,
+      "sentence": "2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54).",
+      "context_window": "HR = 0.56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs. 2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54). Mortality was limit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3672",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.67",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3672,
+      "sentence": "2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54).",
+      "context_window": ".56, CI = 0.19, 1.69; p = 0.31), and stroke (1.7% vs. 2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54). Mortality was limited in COVID",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3700",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3700,
+      "sentence": "2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54).",
+      "context_window": "31), and stroke (1.7% vs. 2.4%; HR = 0.67, CI = 0.18, 2.43; p = 0.54). Mortality was limited in COVID-positive patients due to a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3880",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.37",
+      "numeric_values": [
+        0.37
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3880,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": ", COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-3908",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.030",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3908,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": "ssociated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitali",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-3985",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.91",
+      "numeric_values": [
+        0.91
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3985,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": "ugh vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56,",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-4013",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.63",
+      "numeric_values": [
+        0.63
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4013,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": "ciated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22). In explor",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-4033",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.80",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4033,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": "talization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22). In exploratory analyses of pat",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-4061",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4061,
+      "sentence": "Mortality was limited in COVID-positive patients due to a relatively small number of events, but despite this, COVID-19 vaccination was associated with lower mortality (HR = 0.37, CI = 0.15, 0.91; p = 0.030), although vaccination was not associated with HF hospitalization (HR = 0.91, CI = 0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22).",
+      "context_window": "0.61, 1.36, p = 0.63) or MACEs (HR = 0.80, CI = 0.56, 1.14; p = 0.22). In exploratory analyses of patients with COVID-19, the as",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-4209",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4209,
+      "sentence": "In exploratory analyses of patients with COVID-19, the association between fasting and cardiovascular and PASC outcomes occurring after >30 days post-infection was not statistically significant ( Table 4 ).",
+      "context_window": "sting and cardiovascular and PASC outcomes occurring after >30 days post-infection was not statistically significant ( Table 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-4418",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 4418,
+      "sentence": "Exploratory associations of periodic fasting with various cardiovascular outcomes and post-acute sequelae of COVID-19 occurring more than 30 days after the diagnosis of acute COVID-19 ( n = 601).",
+      "context_window": "mes and post-acute sequelae of COVID-19 occurring more than 30 days after the diagnosis of acute COVID-19 ( n = 601). These res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-4466",
+      "claim_type": "sample_size",
+      "raw_text": "n = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4466,
+      "sentence": "Exploratory associations of periodic fasting with various cardiovascular outcomes and post-acute sequelae of COVID-19 occurring more than 30 days after the diagnosis of acute COVID-19 ( n = 601).",
+      "context_window": "g more than 30 days after the diagnosis of acute COVID-19 ( n = 601). These results require further evaluation in other populat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-5595",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1771",
+      "numeric_values": [
+        1771.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5595,
+      "sentence": "Other exploratory analyses examined the n = 1771 patients who were COVID-negative (29.7% fasted routinely).",
+      "context_window": "uelae of COVID-19. Other exploratory analyses examined the n = 1771 patients who were COVID-negative (29.7% fasted routinely).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-5638",
+      "claim_type": "percentage",
+      "raw_text": "29.7%",
+      "numeric_values": [
+        29.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5638,
+      "sentence": "Other exploratory analyses examined the n = 1771 patients who were COVID-negative (29.7% fasted routinely).",
+      "context_window": "ses examined the n = 1771 patients who were COVID-negative (29.7% fasted routinely). These patients were older and more likel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-5872",
+      "claim_type": "sample_size",
+      "raw_text": "n = 360",
+      "numeric_values": [
+        360.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5872,
+      "sentence": "In COVID-negative patients, periodic fasting was associated with a lower risk of HF hospitalization [ n = 360 HF hospitalizations: 15.9% vs.",
+      "context_window": "ng was associated with a lower risk of HF hospitalization [ n = 360 HF hospitalizations: 15.9% vs. 22.2% for fasting vs. non-fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-5901",
+      "claim_type": "percentage",
+      "raw_text": "15.9%",
+      "numeric_values": [
+        15.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5901,
+      "sentence": "In COVID-negative patients, periodic fasting was associated with a lower risk of HF hospitalization [ n = 360 HF hospitalizations: 15.9% vs.",
+      "context_window": "r risk of HF hospitalization [ n = 360 HF hospitalizations: 15.9% vs. 22.2% for fasting vs. non-fasting; 334 were exacerbatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-5911",
+      "claim_type": "percentage",
+      "raw_text": "22.2%",
+      "numeric_values": [
+        22.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5911,
+      "sentence": "22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014].",
+      "context_window": "HF hospitalization [ n = 360 HF hospitalizations: 15.9% vs. 22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-5970",
+      "claim_type": "percentage",
+      "raw_text": "92.8%",
+      "numeric_values": [
+        92.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5970,
+      "sentence": "22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014].",
+      "context_window": "22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014]. Fasting was weakl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-5978",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.74",
+      "numeric_values": [
+        0.74
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5978,
+      "sentence": "22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014].",
+      "context_window": "or fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014]. Fasting was weakly associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6006",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6006,
+      "sentence": "22.2% for fasting vs. non-fasting; 334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014].",
+      "context_window": "334 were exacerbations (92.8%); HR = 0.74, CI = 0.58, 0.94; p = 0.014]. Fasting was weakly associated with HF hospitalization aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-6137",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6137,
+      "sentence": "HR = 0.79, CI = 0.61, 1.01; p = 0.06) and was further reduced when adjusting for HF history (adj.",
+      "context_window": "adjustment for all covariables except for HF history (adj. HR = 0.79, CI = 0.61, 1.01; p = 0.06) and was further reduced when ad",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6165",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6165,
+      "sentence": "HR = 0.79, CI = 0.61, 1.01; p = 0.06) and was further reduced when adjusting for HF history (adj.",
+      "context_window": "les except for HF history (adj. HR = 0.79, CI = 0.61, 1.01; p = 0.06) and was further reduced when adjusting for HF history (adj",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-6235",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.82",
+      "numeric_values": [
+        0.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6235,
+      "sentence": "HR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": "and was further reduced when adjusting for HF history (adj. HR = 0.82, CI = 0.64, 1.05; p = 0.12). Because overall mortality even",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6263",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6263,
+      "sentence": "HR = 0.82, CI = 0.64, 1.05; p = 0.12).",
+      "context_window": "adjusting for HF history (adj. HR = 0.82, CI = 0.64, 1.05; p = 0.12). Because overall mortality events were greater when consid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-6378",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1771",
+      "numeric_values": [
+        1771.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6378,
+      "sentence": "Because overall mortality events were greater when considering patients testing negative for COVID-19 ( n = 1771; mortality: 3.8% vs.",
+      "context_window": "r when considering patients testing negative for COVID-19 ( n = 1771; mortality: 3.8% vs. 7.6% for fasting vs. non-fasting, resp",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-6399",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6399,
+      "sentence": "Because overall mortality events were greater when considering patients testing negative for COVID-19 ( n = 1771; mortality: 3.8% vs.",
+      "context_window": "tients testing negative for COVID-19 ( n = 1771; mortality: 3.8% vs. 7.6% for fasting vs. non-fasting, respectively), these",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-6408",
+      "claim_type": "percentage",
+      "raw_text": "7.6%",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6408,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "sting negative for COVID-19 ( n = 1771; mortality: 3.8% vs. 7.6% for fasting vs. non-fasting, respectively), these were comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-6486",
+      "claim_type": "sample_size",
+      "raw_text": "n = 601",
+      "numeric_values": [
+        601.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6486,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "s. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-6695",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.53",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6695,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "o be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6723",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6723,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-hr-a-6762",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.60",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6762,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021). Kaplan-Meier survival curve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-6790",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6790,
+      "sentence": "7.6% for fasting vs. non-fasting, respectively), these were combined with the n = 601 COVID-positive (see prior paragraph) for a total of 2372 patients, and periodic fasting was found in this combined patient set ( Figure 3 ) to be associated with greater longevity in both univariable (HR = 0.53, CI = 0.35, 0.82; p = 0.004) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021).",
+      "context_window": "04) and multivariable analyses (HR = 0.60, CI = 0.39, 0.93; p = 0.021). Kaplan-Meier survival curve for all-cause mortality amon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-p-7024",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7024,
+      "sentence": "Kaplan-Meier survival curve for all-cause mortality among patients who participated in periodic fasting compared to those who did not (non-fasters) in analyses for all patients testing positive or negative for COVID-19 ( p = 0.003 by the log-rank test).",
+      "context_window": "or all patients testing positive or negative for COVID-19 ( p = 0.003 by the log-rank test). This association between periodic fa",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-123",
+      "claim_type": "percentage",
+      "raw_text": "37%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 123,
+      "sentence": "Summary: Among patients with a COVID-19 diagnosis, those who reported an average 43-year history of periodic fasting had a 37% lower risk of being hospitalized for the primary diagnosis of HF during an average of 10 months in post-COVID follow-up.",
+      "context_window": "ported an average 43-year history of periodic fasting had a 37% lower risk of being hospitalized for the primary diagnosis",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-213",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 213,
+      "sentence": "Summary: Among patients with a COVID-19 diagnosis, those who reported an average 43-year history of periodic fasting had a 37% lower risk of being hospitalized for the primary diagnosis of HF during an average of 10 months in post-COVID follow-up.",
+      "context_window": "alized for the primary diagnosis of HF during an average of 10 months in post-COVID follow-up. Almost all HF hospitalizations (95",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-280",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 280,
+      "sentence": "Almost all HF hospitalizations (95%) were exacerbations in people with a prior HF diagnosis.",
+      "context_window": "hs in post-COVID follow-up. Almost all HF hospitalizations (95%) were exacerbations in people with a prior HF diagnosis. Pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-385",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 385,
+      "sentence": "Periodic fasting was also associated with a 36% lower risk of MACE in COVID-positive patients, with the majority of events being HF hospitalizations and lesser numbers of each of five other endpoints.",
+      "context_window": "r HF diagnosis. Periodic fasting was also associated with a 36% lower risk of MACE in COVID-positive patients, with the maj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-n-1030",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2373",
+      "numeric_values": [
+        2373.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1030,
+      "sentence": "In the combined population of COVID-positive and COVID-negative patients ( n = 2373), though, greater longevity was demonstrated, with periodic fasters having a 40% lower risk of mortality, validating pre-pandemic evidence that fasting extends longevity [ 8 ].",
+      "context_window": "population of COVID-positive and COVID-negative patients ( n = 2373), though, greater longevity was demonstrated, with periodic",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-1116",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1116,
+      "sentence": "In the combined population of COVID-positive and COVID-negative patients ( n = 2373), though, greater longevity was demonstrated, with periodic fasters having a 40% lower risk of mortality, validating pre-pandemic evidence that fasting extends longevity [ 8 ].",
+      "context_window": "longevity was demonstrated, with periodic fasters having a 40% lower risk of mortality, validating pre-pandemic evidence t",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-pct-8376",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8376,
+      "sentence": "Although periodic fasting is a religious teaching, and more than 60% of the source population are LDS, based on external population statistics, fewer than half of LDS in prior studies reported participation in periodic fasting [ 8 ].",
+      "context_window": "ugh periodic fasting is a religious teaching, and more than 60% of the source population are LDS, based on external populat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-137",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 137,
+      "sentence": "Routine periodic fasting was associated with a lower risk of HF hospitalization among patients with COVID-19 who were followed for up to 3 years after a COVID-19 diagnosis.",
+      "context_window": "on among patients with COVID-19 who were followed for up to 3 years after a COVID-19 diagnosis. Fasting was also associated wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11243697_periodic_fasting_and_acute_cardiac_events_in_patients_evalua-u-537",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "conclusion",
+      "source_offset": 537,
+      "sentence": "The separation of the fasting and non-fasting survival curves for HF hospitalization and for MACEs began early, around 7-10 days after COVID-19 diagnosis.",
+      "context_window": "for HF hospitalization and for MACEs began early, around 7-10 days after COVID-19 diagnosis. Given the non-randomized nature o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

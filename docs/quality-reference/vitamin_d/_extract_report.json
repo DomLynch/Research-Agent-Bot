@@ -1,0 +1,4358 @@
+{
+  "topic": "vitamin_d",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 618,
+  "n_selected_for_fetch": 618,
+  "n_pmcid_resolved": 109,
+  "n_extracted": 84,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10221881",
+    "PMC10510082",
+    "PMC10556715",
+    "PMC10757289",
+    "PMC10853433",
+    "PMC11285307",
+    "PMC11379551",
+    "PMC11442836",
+    "PMC11755341",
+    "PMC12101332",
+    "PMC12293739",
+    "PMC12423549",
+    "PMC12445228",
+    "PMC12447467",
+    "PMC12482873",
+    "PMC150177",
+    "PMC1523417",
+    "PMC1773629",
+    "PMC2539939",
+    "PMC2576234",
+    "PMC2755728",
+    "PMC2806633",
+    "PMC2812815",
+    "PMC2863968",
+    "PMC2938469",
+    "PMC2959005",
+    "PMC3022855",
+    "PMC3046611",
+    "PMC3057108",
+    "PMC3125705",
+    "PMC3198705",
+    "PMC3257656",
+    "PMC3257679",
+    "PMC3325895",
+    "PMC3417158",
+    "PMC3427195",
+    "PMC3440067",
+    "PMC3497950",
+    "PMC3513873",
+    "PMC3571641",
+    "PMC3652186",
+    "PMC3748757",
+    "PMC3765249",
+    "PMC3798915",
+    "PMC3872479",
+    "PMC3924041",
+    "PMC3947886",
+    "PMC3972415",
+    "PMC3972416",
+    "PMC3979692",
+    "PMC4030388",
+    "PMC4053858",
+    "PMC4061380",
+    "PMC4235628",
+    "PMC4238742",
+    "PMC4281138",
+    "PMC437077",
+    "PMC4399494",
+    "PMC4426898",
+    "PMC4427016",
+    "PMC4521671",
+    "PMC4587070",
+    "PMC4594209",
+    "PMC4623450",
+    "PMC4624748",
+    "PMC4715837",
+    "PMC5021966",
+    "PMC5068478",
+    "PMC5256876",
+    "PMC5312926",
+    "PMC557150",
+    "PMC5583753",
+    "PMC5618598",
+    "PMC5820727",
+    "PMC6075634",
+    "PMC6093588",
+    "PMC6103509",
+    "PMC6266123",
+    "PMC6303903",
+    "PMC6490896",
+    "PMC6626501",
+    "PMC6689821",
+    "PMC6722905",
+    "PMC6769474",
+    "PMC6785780",
+    "PMC6800555",
+    "PMC6813046",
+    "PMC6991219",
+    "PMC7032685",
+    "PMC7230756",
+    "PMC7295196",
+    "PMC7352679",
+    "PMC7412964",
+    "PMC7479967",
+    "PMC7656284",
+    "PMC7693938",
+    "PMC7761812",
+    "PMC7775021",
+    "PMC7914453",
+    "PMC7915474",
+    "PMC7922814",
+    "PMC8273061",
+    "PMC8629001",
+    "PMC9198671",
+    "PMC9333362",
+    "PMC9346334",
+    "PMC9716320",
+    "PMC9716639",
+    "PMC9944083"
+  ],
+  "active_paper_ids": [
+    "PMC10221881_vitamin_d_and_osteogenesis_imperfecta_in_pediatrics",
+    "PMC10510082_prospective_effects_of_cholecalciferol_supplementation_on_ir",
+    "PMC10556715_effectiveness_of_vitamin_d_supplements_in_reducing_the_risk_",
+    "PMC10757289_nutritional_strategies_to_optimise_musculoskeletal_health_fo",
+    "PMC10853433_vitamin_d_supplementation_in_later_life_a_systematic_review_",
+    "PMC11379551_real_world_effectiveness_and_safety_of_combined_calcium_600_",
+    "PMC11442836_effect_of_vitamin_d_supplementation_on_clinical_outcomes_in_",
+    "PMC11755341_effects_of_vitamin_d_supplementation_on_cardiac_biomarkers_r",
+    "PMC12101332_vitamin_d_serum_levels_and_the_development_of_intensive_care",
+    "PMC12293739_the_role_of_vitamin_d_and_vitamin_d_receptor_in_sepsis",
+    "PMC12423549_impact_of_polymorphisms_in_genes_related_to_vitamin_d_metabo",
+    "PMC12445228_vitamin_d_insufficiency_and_cardiovascular_involvement_in_sy",
+    "PMC12447467_single_high_dose_vitamin_d_supplementation_impacts_ultramara",
+    "PMC12482873_clinical_randomized_trial_of_vitamin_d_and_c_supplementation",
+    "PMC2576234_low_wintertime_vitamin_d_levels_in_a_sample_of_healthy_young",
+    "PMC2755728_fall_prevention_with_supplemental_and_active_forms_of_vitami",
+    "PMC2806633_patient_level_pooled_analysis_of_68_500_patients_from_seven_",
+    "PMC2938469_vitamin_d_deficiency_is_associated_with_sudden_cardiac_death",
+    "PMC2959005_fall_prevention_and_vitamin_d_in_the_elderly_an_overview_of_",
+    "PMC3022855_vitamin_d_status_among_adults_in_the_aegean_region_of_turkey",
+    "PMC3046611_the_2011_report_on_dietary_reference_intakes_for_calcium_and",
+    "PMC3198705_high_prevalence_of_vitamin_d_insufficiency_and_its_associati",
+    "PMC3257656_nonclassical_vitamin_d_action",
+    "PMC3257679_vitamin_d_and_bone_health_potential_mechanisms",
+    "PMC3325895_different_doses_of_supplemental_vitamin_d_maintain_interleuk",
+    "PMC3427195_influence_of_drugs_on_vitamin_d_and_calcium_metabolism",
+    "PMC3440067_role_of_vitamin_d_in_insulin_resistance",
+    "PMC3497950_sports_health_benefits_of_vitamin_d",
+    "PMC3571641_vitamin_d_effects_on_skeletal_and_extraskeletal_health_and_t",
+    "PMC3652186_vitamin_d_receptor_agonists_target_cxcl10_new_therapeutic_to",
+    "PMC3748757_vitamin_d_status_in_patients_operated_for_primary_hyperparat",
+    "PMC3798915_increased_plasma_concentrations_of_vitamin_d_metabolites_and",
+    "PMC3947886_association_of_high_vitamin_d_status_with_low_circulating_th",
+    "PMC3972415_vitamin_d_and_multiple_health_outcomes_umbrella_review_of_sy",
+    "PMC3972416_vitamin_d_and_risk_of_cause_specific_death_systematic_review",
+    "PMC3979692_vitamin_d_and_neurocognitive_function",
+    "PMC4061380_vitamin_d_and_mortality_meta_analysis_of_individual_particip",
+    "PMC4238742_genetically_low_vitamin_d_concentrations_and_increased_morta",
+    "PMC4281138_a_case_study_of_discordant_overlapping_meta_analyses_vitamin",
+    "PMC4399494_the_role_of_vitamin_d_in_the_aging_adult",
+    "PMC4426898_vitamin_d_deficiency_in_hiv_infection_not_only_a_bone_disord",
+    "PMC4427016_vitamin_d_a_review_on_its_effects_on_muscle_strength_the_ris",
+    "PMC4521671_effects_of_vitamin_d_and_quercetin_alone_and_in_combination_",
+    "PMC4587070_vitamin_d_and_bone_minerals_status_in_the_long_term_survivor",
+    "PMC4623450_vitamin_d_serum_levels_in_children_with_allergic_and_vasomot",
+    "PMC4624748_the_importance_of_vitamin_d_in_the_pathology_of_bone_metabol",
+    "PMC4715837_calcium_plus_vitamin_d_supplementation_and_risk_of_fractures",
+    "PMC5021966_genetically_low_vitamin_d_levels_bone_mineral_density_and_bo",
+    "PMC5068478_vitamin_d_calcium_homeostasis_and_aging",
+    "PMC5256876_pharmacokinetic_evaluation_of_a_single_intramuscular_high_do",
+    "PMC5312926_vitamin_d_and_mortality_individual_participant_data_meta_ana",
+    "PMC5583753_change_in_serum_level_of_vitamin_d_and_associated_factors_at",
+    "PMC5618598_the_role_of_vitamin_d_in_thyroid_diseases",
+    "PMC6075634_prevalence_of_vitamin_d_deficiency_and_associated_risk_facto",
+    "PMC6093588_x_linked_vitamin_d_resistant_rickets_12_years_of_follow_up",
+    "PMC6103509_vitamin_d_status_and_functional_parameters_a_cross_sectional",
+    "PMC6266123_vitamin_d_nutrient_hormone_and_immunomodulator",
+    "PMC6303903_identification_of_vitamin_d_and_other_bone_metabolism_parame",
+    "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_",
+    "PMC6626501_skeletal_and_extraskeletal_actions_of_vitamin_d_current_evid",
+    "PMC6689821_association_between_vitamin_d_supplementation_and_mortality_",
+    "PMC6722905_vitamin_d_skeletal_muscle_function_and_athletic_performance_",
+    "PMC6769474_influence_of_vitamin_d_on_islet_autoimmunity_and_beta_cell_f",
+    "PMC6785780_the_effects_of_vitamin_d_supplementation_on_muscle_function_",
+    "PMC6800555_vitamin_d_deficiency_is_associated_with_impaired_muscle_stre",
+    "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young",
+    "PMC6991219_vitamin_d_and_calcium_for_the_prevention_of_fracture",
+    "PMC7230756_bone_metabolism_and_vitamin_d_implication_in_gastroenteropan",
+    "PMC7295196_risk_of_eczema_wheezing_and_respiratory_tract_infections_in_",
+    "PMC7352679_cholecalciferol_or_calcifediol_in_the_management_of_vitamin_",
+    "PMC7412964_calcium_and_cholecalciferol_levels_in_late_phase_laying_hens",
+    "PMC7693938_vitamin_d_supplementation_associated_to_better_survival_in_h",
+    "PMC7761812_the_role_of_vitamin_d_in_small_animal_bone_metabolism",
+    "PMC7775021_vitamin_d_deficiency_among_patients_visiting_a_tertiary_care",
+    "PMC7914453_do_only_calcium_and_vitamin_d_matter_micronutrients_in_the_d",
+    "PMC7915474_medication_related_osteonecrosis_of_the_jaw_mronj_are_antire",
+    "PMC7922814_vitamin_d_bone_metabolism_and_fracture_risk_in_polycystic_ov",
+    "PMC8273061_vitamin_d_supplementation_for_patients_with_chronic_kidney_d",
+    "PMC8629001_effects_of_12_months_of_vitamin_d_supplementation_on_physica",
+    "PMC9198671_impact_of_vitamin_d_therapy_on_the_progress_covid_19_six_wee",
+    "PMC9333362_genetically_proxied_levels_of_vitamin_d_and_risk_of_intracer",
+    "PMC9346334_cholecalciferol_supplementation_effectively_improved_tertiar",
+    "PMC9716320_the_role_of_vitamin_d_on_rotator_cuff_tear_with_osteoporosis",
+    "PMC9944083_vitamin_d_and_calcium_in_osteoporosis_and_the_role_of_bone_t"
+  ],
+  "failures": [
+    {
+      "title": "Vitamin D and Type 2 Diabetes - Treat-To-Target",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D for Prostate Endocrine Therapy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation During Pregnancy for Prevention of Asthma in Childhood",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Between Vitamin D Deficiency and Inflammatory Bowel Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Outcomes Of Mega-dosage Supplementations Of Cholecalciferol In Critical",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "REstoration of VItamin D in Pulmonary Arterial Hypertension",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Monthly Boluses Versus Daily Doses for Correcting Blood Vitamin D Deficit in Obe",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Urinary RhoA, NGF, and BDNF Levels in Overactive Bladder and Vitamin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D3 Supplementation on Symptomatic Uterine Fibroid in Women Wit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of a Patient Education Program on Vitamin D Levels and Health Beliefs",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-dose Vitamin D Supplements in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Regime for Vitamin D Maintenance in Post-Operative Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status in Hemodialysis Transplant Candidates and Living Donors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, Nerve Growth Factor and Nerve Conduction Studies in Adult Male Type 2",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VItamin D in pregnanCy for prevenTion Of eaRlY Childhood Asthma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D and Folic Acid on Mild Cognitive Impairment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Bone Metabolism in Non-Alcoholic, Non-Viral Liver Cirrhosis: A Pil",
+      "doi": "10.14341/omet13306",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beneficial Effects of Vitamin D Combined With Oral Iron Supplementation in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "ViDES Trial (Vitamin D Extra Supplementation)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Impact of Selective Vitamin D Receptor Activation on Clinical Outcomes in Se",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Versus Desmopressin Versus Combination Therapy in Children With Primar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Of Serum Vitamin D Level With Isthmic Spondylolysis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "OASIS Study: Vitamin D Deficiency Prevention Among Older Adults in Ireland",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Follow-up Study With Clinical Vitamin D Supplementation Trial on Patients With D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects Of 8-Week Core Stabilization Exercise With Vitamin D On Pain and Functio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D in School Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can Vitamin D Treatment Help Treat Moderate to Severe Atopic Dermatitis in Young",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Estimation of the Dietary Requirement for Vitamin D in Ethnic Groups",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immediate Implant Placement Using Xenograft Mixed with Vitamin D Versus Hyaluron",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effectiveness of Vitamin D Supplementation in Patients With End-stage Knee O",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Immunonutrition With Synbiotics, Omega 3 and Vitamin D in Patients Undergoi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Health Status of British African-Caribbean Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin B12, Folic Acid and Vitamin D Status in Women of Reproductive Age",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Vitamin D Status With Metabolic Markers in Adolescents With Polyc",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prephase Treatment With Prednisone +/- Vitamin D Supplementation Followed by Imm",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Plan D- Vitamin D Supplementation in Psychotic Disorders",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D on Gene Expression in Atlantic Salmon Skin and Potential Imm",
+      "doi": "10.1101/2025.09.01.673453",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Vitamin D for COVID-19: A Living Evidence Synthesis Basel",
+      "doi": "10.1101/2025.10.24.25338314",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Circannual prevalence of vitamin D insufficiency in older and minoritized ethnic",
+      "doi": "10.1101/2025.11.17.25340416",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency, Supplementation, and Risk of Mortality and Chronic Disease",
+      "doi": "10.1101/2025.05.29.25328548",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Non-linear Mendelian randomization of vitamin D and C-Reactive Protein: an inter",
+      "doi": "10.1101/2025.09.10.25335520",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u201cSome alterations in vitamin D metabolism during the COVID-19 pandemic\u201d",
+      "doi": "10.1101/2025.07.08.25331143",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuroprotective Effects of Vitamin D Supplementation on Outcomes in Traumatic Br",
+      "doi": "10.1101/2025.10.07.25337269",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Determining fragility and robustness to missing data in binary outcome meta-anal",
+      "doi": "10.1101/2025.08.15.25333793",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The interaction and joint effect of serum melatonin and vitamin D on the risk of",
+      "doi": "10.16190/j.cnki.45-1211/r.2025.06.013",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect Vitamin D on the Recovery Rate of Bell Palsy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Individuals With a Chronic Spinal Cord Injury",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D on Health Promotion During Pregnancy and Its Impact on Prem",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Substitution on the Development of Chronic Pancreatitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationships Between Vitamin D and Orthopedic Trauma",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "SLE Severity Linked to Vitamin D Via Treg Cells in Pediatric Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is Vitamin D Deficiency Linked to Functional Constipation In Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and COVID-19 Management",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D In the Prevention of Viral-induced Asthma in Preschoolers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Roles of Vitamin D and Microbiome in Children With Post-acute COVID-19 Syndr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Human Transdermal Vitamin D Supplement Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Testosterone Level in Women With Polycyst",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency as Independent Predictor for Plaque Vulnerability",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Vitamin D Supplementation for Children With Bronchiolitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association Between Vitamin D and Perioperative Hemoglobin Levels in Patients Un",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapid Normalization of Vitamin D Deficiency in PICU",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcifediol in the Treatment of SARS-CoV-2 Disease (COVID-19).",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Electrical Stimulation and Vitamin D Supplementation on Bone Health F",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early Pandemic Associations of Latitude, Sunshine Duration, and Vitamin D Status",
+      "doi": "10.1101/2024.11.29.24318208",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D supplementation on cognition in adults with mild to moderate",
+      "doi": "10.1101/2024.11.21.24317708",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A study of Vitamin D and parathyroid hormone levels in patients with prostatic c",
+      "doi": "10.3126/ajms.v15i3.60561",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The significance of Vitamin D in dentistry - rewiew",
+      "doi": "10.12775/jehs.2024.67.55046",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of vitamin D supplementation",
+      "doi": "10.12775/jehs.2024.76.56537",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum vitamin D levels in older adults with and without dyslipidemia: A comparis",
+      "doi": "10.1016/j.nutos.2024.10.004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Evaluate the Effect of Vitamin D on PFS in Indolent Non-Hodgkin's Lym",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in the Armed Forces",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcifediol in the Treatment of COVID 19",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison Between Effect of Vitamin D Versus Dexmedetomidine in Patients with H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Vitamin D in Prevention of Dengue Haemorrhagic Fever and Dengue Shock Sy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study on Prevention Strategies for CKD-SHPT and Related Complications Based on",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITamin D and OmegA-3 TriaL: Interrelationship of Vitamin D and Vitamin K on Bon",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "25OH Vitamin D Overdoses and Risk of Bronchopulmonary Dysplasia or Death",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D in Health and Disease: A Literature Review",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Different Doses of Vitamin D on Cancer-related Cognitive Impairment i",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITamin D and OmegA-3 TriaL (VITAL): Fractures, Vitamin D and Genetic Markers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Calcium Supplementation at Danish Nursing Homes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Antiresorptive Effect of Treatment With Risedronate and Vitamin D in Postmenopau",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Vitamin D and Gingival Crevicular Fluid Levels of Osteocalcin and N-Termin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency and Dysautonomia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D on Skeletal Muscle Strength in Resistance Trained Adult Fem",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of High Intensity Statin Therapy on Steroid Hormones and Vitamin D in Ty",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega-3 and Vitamin D Supplementation in Breast Cancer Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Levels of Vitamin D,Calcium and Magnesium in Preschool Recurrent Wheezers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Adjuvant Effects of Vitamin A and Vitamin D Supplementation on Treatment of Chil",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of Calcium and Vitamin D, With and Without Collagen Peptide, in En",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D and Calcium Supplementation on the Prevention of Stress ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation for Adults With Neurofibromatosis Type 1 (NF1)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Clinical Outcomes in Severe COVID-19 Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status in Patients With Severe Sepsis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Efficacy and Safety of Topical Vitamin D Drop on Meibomian Gland Function in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Curcumin Piperine Attenuates Disease Activity and Cytokine Levels ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D3 Supplementation for Vitamin D Deficiency in Rotator Cuff Repair Surge",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of a Screening Tool for the Risk of Vitamin D Deficiency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Results From the REsCue Trial: A Randomized Controlled Trial with Extended-Relea",
+      "doi": "10.1101/2022.01.31.22270036",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative assessment of cognitive impairment and oxidative stress markers amon",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITAL-DEP: Depression Endpoint Prevention in the VITamin D and OmegA-3 TriaL",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low and High Doses of Prophylactic Vitamin D in Prevention of Osteopenia of Prem",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cholecalciferol to Improve the Outcomes of COVID-19 Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone Health and Vitamin D Status",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITACOV: Vitamin D Polymorphisms and Severity of COVID-19 Infection",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Arterial Stiffness in Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Benefits of Vitamin D 5000 IU as Add on Therapy in the Management of Painful",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cholecalciferol on Depressive Symptoms in Type 2 Diabetes Mellitus Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D and Denosumab on Bone Remodelling in Women With Postmenopaus",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Trial of Vitamin D Supplementation in Cape Town Primary Schoolchildren",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Vitamin D Treatment in Mortality Reduction Due to COVID-19.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Tibia Fracture. Does it Improve Healing Rate?",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Single High Dose of Cholecalciferol on Serum Metabolites of Vitamin D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Children With Sickle Cell Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "COVID-19 and Vitamin D: Length of Hospital Stay and Mortality",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Replenishing and Maintaining Vitamin D Status in Older Adults in Residential Car",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Bone Health of Older Adults in Care Facilities",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Preeclampsia Research on Vitamin D, Inflammation, & Depression",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation Effect In Children With Pulmonary Tuberculosis Treatme",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D and Omega-3 Supplementation on Telomeres in VITAL",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Real world evidence of calcifediol use and mortality rate of COVID-19 hospitaliz",
+      "doi": "10.1101/2021.04.27.21255937",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Activated Vitamin D for the Prevention and Treatment of Acute Kidney Injury",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Independent and Combined Effects of Resistance Exercise Training and \u03b2-hydroxy \u03b2",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Observational Study Assessing Effects in Patients With Combination Therapy Wi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Transdermal Testosterone and/or Monthly Vitamin D on Fall Risk in Pre",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Balance in CKD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Case Control Study of Vitamin D Status and Adult Multidrug-resistant Pulmonary T",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevalence of Deficiency of Vitamin D in Critically Ill Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The LEAD COVID-19 Trial: Low-risk, Early Aspirin and Vitamin D to Reduce COVID-1",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Morbidity and Mortality of the COVID-19",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Study of Vitamin D Screening Use in Peripheral Arterial Disease Patient Ov",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "N-terminal Pro B-type Natriuretic Peptide and Vitamin D Levels as Prognostic Mar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D Insufficiency in Man",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D on Prevention and Treatment of COVID-19",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Bone Homeostasis in Ortho Polytrauma Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Association of Vitamin D Supplementation With the Outcome in Critically Ill ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fracture Healing Assessed by HR-pQCT After Administration of Calcium and Vitamin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D as a Factor Modifying Adaptation to Exercise",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Aerobic Interval Training With Vitamin D Supplement on Functional Capa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Supplementation of Vitamin D in Patients With Crohn's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Effect on A Disintegrin-like And Metalloprotease Thrombospondin1 Motif",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Single Large Dose of Vitamin D Could be Used as a Means of Coronavirus Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevalence of metabolic syndrome, vitamin D level, and their association among e",
+      "doi": "10.4103/mjdrdypu.mjdrdypu_229_19",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Current vitamin D status in European and Middle East countries and strategies to",
+      "doi": "10.1530/eje-18-0736",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Vitamin D in Untreated Metastatic Colorectal Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Resistance Exercise in Elderly (NUTRIAGINGVitD)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A New Paradigm for Vitamin D Sufficiency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Supplementation of Vitamin D Deficiency in Older People With Acute",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study To Understand Fall Reduction and Vitamin D in You",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Improvement of Pneumonic Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in TB Prevention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Resistance Exercise Training; Effects on Musculoskeletal Health in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nutritional aspects of bone health: Not only a matter of vitamin D",
+      "doi": "10.4081/br.2019.2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the effect of vitamin D on osteoporosis and osteoporotic patients ",
+      "doi": "10.1515/bmc-2019-0005",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation in Patients With Heart Failure and Vitamin D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D to Improve Outcomes by Leveraging Early Treatment",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and WBV in Inflammatory Markers, Strength and Body Com",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study on the Correlation of Free Vitamin d With BMD and Fracture",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "To Test the Effect of Calcifediol Hy.D Supplementation on Muscle Function and Bo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Muscle Function in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Muscle Metabolic Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Maternal Body Weight on Vitamin D Status During Pregnancy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D Supplementation in Muscle Strength and Balance Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency in Subjects With Chronic Hepatitis C Compared to Healthy Vo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Inflammatory Markers",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Granheim COPD Study - Vitamin D and Strength Training",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Level and Risk of Infections in Cirrhotic Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short Term Effect of Vitamin D Supplementation on the Clinical Outcomes in Patie",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Change in Free 25(OH)D After High Dose in Vitamin D Deficient Postmenopausal Wom",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Immunomodulatory Vitamin D in Thalassemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THE IMPACT OF VITAMIN D SUPPLEMENTATION IN PAEDIATRIC PRIMARY CARE ON RECURRENT ",
+      "doi": "10.3269/1970-5492.2018.13.44",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Effect on Subarachnoid Hemorrhage",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Vitamin D in the Prevention and Treatment of Diseases Associated With In",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Older Adults With Urinary Incontinence",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Treatment and Hypogonadism in Men",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Omega 3 and Vitamin D Dosage in a Population With Moderate to High Risk of AMD",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Vitamin D and Calcium Supplementation on the Prevention of Recurrenc",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Levels in Liver Transplantation Recipients Prospective Observational S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Drug Resistant Helicobacter Pylori (HP) Eradication Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D on 25-hydroxyvitamin D Levels and Physical Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Hand Grip Strength at 5 Years in Odense Child Cohort",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Changes in Serum 25(OH)D Concentrations Following Vitamin D Supple",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety, Feasibility and Efficacy of Vitamin D Supplementation in Women With Meta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Sunlight Exposure in Brazilian Women Living in Opp",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy Of Ergocalciferol In Adults According To BMI",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "S0812 High Dose Cholecalciferol in Premenopausal Women at High-Risk for Breast C",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D for Enhancing the Immune System in Cystic Fibrosis (DISC Study)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Maternal Vitamin D for Infant Growth (MDIG) Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose-dependent Effects of Vitamin D on Bone Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapid Normalization of Vitamin D in Critically Ill Children: A Phase II Dose Eva",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Monthly High-Dose Vitamin D Treatment for the Prevention of Functional Decline",
+      "doi": "10.1001/jamainternmed.2015.7148",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Physical Activity and Vitamin D on Osteoarthritic Knee Pain",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Deferasirox, Cholecalciferol, and Azacitidine in the Treatment of Newly Diagnose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Evaluation of the Effect of Vitamin D Supplementation on the Cognitive Functi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "D-tecting Disease - From Exposure to Vitamin D During Critical Periods of Life",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Determination of Vitamin D Dose to Maintain Sufficiency Amongst Indian and Malay",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Cardiovascular Events in Rheumatoid Arthritis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D Supplementation on Cardiac Structure and Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Large Randomized Trial of Vitamin D, Omega-3 Fatty Acids and Cognitive Decline",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Magnesium Treatment on Vitamin D Metabolism in Participants Completed Personaliz",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status in Lower Extremity Joint Replacement Surgery Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Vitamin D and Leucine-Enriched Whey Protein Nutritional Supplement ",
+      "doi": "10.1016/j.jamda.2015.05.021",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Exercise Adaptations in Patients on Stati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, SSRIs and the Musculoskeletal System",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Vitamin D Supplementation on Aerobic Fitness in Athletes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplement for Patients With Tibial Fracture",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Vitamin D for the Prevention of Acute Respiratory Infections in Childre",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship Between Ca Intake , Blood Level of Ca, PTH, TSH, Vitamin D, and",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Vitamin D Levels (Serum 25-hydroxyvitamin D) and Cognitive Impairment in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Mortality: an Individual Participant Data Meta-analysis of Standar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Calcifediol (Hy.D 25 SD/S) and Vitamin D3 on Muscle Strength in a ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy Study of Vitamin D and Statins to Treat Hypercholesterolemia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Serum Concentrations & Supplementation in Children With Cerebral Palsy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Postmenopausal Women With Osteoporosis: Proposal of",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Trial on Different Dosages of Vitamin D in Preterm Infants With Late-onset Sep",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of Vitamin D Deficiency in Intestinal Rehabilitation Clinic Patients W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Cardiac Autonomic Tone in Hemodialysis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle-Related Side Effects of Statins: Functional Impact, Mechanisms, and Poten",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Supplement Enriched in Hydroxymethylbutyrate and Vitamin D on Muscl",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D's Effect on Physical Performance in the Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency is independently associated with mortality among critically",
+      "doi": "10.6061/clinics/2015(05)04",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D in Ventilated ICU Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Cirrhotic Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Male Infertility: The CBG-study a Randomized Clini",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Optimizing Vitamin D in the Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D to Reduce Colds and Asthma Attacks in Young Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Diabetic Nephropathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Insufficiency and Deficiency in Chronic Kidney Disease (CKD) Patients ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DIetary Supplements, Executive funcTions and Vitamin D (DIET-D)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency and Placental Calcification in Low-risk Obstetric Populatio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cholecalciferol Supplementation for Sepsis in the ICU",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency Still Growing",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status in Males in Jerusalem Area and Its Correlation to Parathyroid H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Active VItamin D on Left Atrial Volume Index",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Breast Cancer Biomarkers in Female Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Follow-up Patients With End Stage Renal Disease Undergoing Hemodialys",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship Between Vitamin D Biomarkers and Survival in Blood Samples From Pat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and the Immune Response",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation in Young South African Children Hospitalized",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "How Much Vitamin D is Required to be Protective Against Deficiency During the Wi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Recommendations Abstracted from the American Geriatrics Society Consensus Statem",
+      "doi": "10.1111/jgs.12631",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D supplementation in elderly or postmenopausal women: a 2013 update of t",
+      "doi": "10.1185/03007995.2013.766162",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A systematic review of vitamin D status in populations worldwide",
+      "doi": "10.1017/s0007114513001840",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Exercise in Falls Prevention",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of High-Dose Vitamin D on Bone Density in Osteogenesis Imperfecta",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Metabolism in Vitamin D Deficient Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Chronic Obstructive Lung Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Blood Pressure in Elderly People",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Non-invasive Method for Quantifying Vitamin D Levels in the Body ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Chronic Stable Heart Failure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Swiss Study on Vitamin D and Calcium in Nursing Homes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Single Wintertime Dose of Vitamin D3 to Prevent Winter Decline in Vitamin D St",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparing Different Amounts of Vitamin D Supplementation to Preschool Children L",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D of Chinese Children and Adolescents",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Development of Non-invasive Method for Quantifying Vitamin D Levels in the Body ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioavailability of Vitamin D Encapsulated in Casein Micelles, Compared to Its Bi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inter-relationship Between Vitamin D Requirements and Calcium Intake in Older Ad",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum, Dietary and Supplemental Vitamin D's Association With Cognitive Decline",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Glycemic Outcomes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Muscle Metabolic Function in Older Adults With Different Vitamin D Status Before",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Level in Children Is Correlated with Severity of Atopic Dermatitis but",
+      "doi": "10.1111/pde.12058",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Pooled Analysis of Vitamin D Dose Requirements for Fracture Prevention",
+      "doi": "10.1056/nejmoa1109617",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of a Vitamin D Analogue vs Placebo on p-NT-proBNP in Patients With Type 1",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in HIV-infected Youth",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Levels in Frail Elderly Patients With a Hip Fracture",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Fortified Cheese and Well-being in the Institutionalized Elderly",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "How Vitamin D Analogues Affect Endothelial Cells in Patients on Dialysis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Calcium Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Asthma, Missed Immunizations, and Vitamin D Deficiency in Atopic Dermatitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Vitamin D Treatment on Multi-systemic Functions in Young Men With V",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sleep Apnea Syndrome and Vitamin D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementary Intake of Vitamin D During 12 Weeks Strength Training in Younger a",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D Supplementation on Lactation Associated Bone Loss",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Role of Vitamin D in Menopause: Relationship to Menopausal Symptoms in Body ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of a Meal on Vitamin D Absorption",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sunlight Exposure and Vitamin D in Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Trial to Study the Effect of Long Term Vitamin D Supplementation on Insulin Se",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation, Treatment, and Prevention of Vitamin D Deficiency: an Endocrine Soci",
+      "doi": "10.1210/jc.2011-0385",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D on Falls: A Systematic Review and Meta-Analysis",
+      "doi": "10.1210/jc.2011-1193",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D With or Without Calcium Supplementation for Prevention of Cancer and F",
+      "doi": "10.7326/0003-4819-155-12-201112200-00005",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hemodialysis Vitamin D Pilot",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improving Vitamin D Status in Home-bound Elders",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Falls and Fractures in Old People by Administration of Calcium and",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ph I/II of Vitamin D on Bone Mineral Density & Markers of Bone Resorption",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Zinc Levels in Patients Undergoing Ergometry Test",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D in Treating Patients With Prostate Cancer",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High Dose Vitamin D for Sickle Cell Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Ergocalciferol Therapy in Calcidiol Deficient, Hemodialysis Patients on Therapeu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Daily Vitamin D Supplementation Compared to a Loading Dose and Monthly Supplemen",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D Supplementation in Obesity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Blood Pressure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VItamin D Metabolism in SEnescent Cardiac Surgery Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Critically Ill Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Physical Function in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Defining Vitamin D Insufficiency in School Age Children: A Randomized Placebo Co",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Inadequacy in Rural Populations, Evaluation of Correction by Food Supp",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Weight on Vitamin D Dose Response",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Calcium and Vitamin D in Patients With Heart Failure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation in Older Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Physical Activity for Prevention of Sarcopenia in Osteoporosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D for Painful Nocturnal Leg Cramps",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Utility of a Urine Screening Tool for Vitamin D Deficiency in Infants and Toddle",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Physical Function in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Trial of Vitamin D Therapy in Patients With Heart Failure",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Evaluate Oral Salmon Calcitonin in the Treatment of Osteoporosis in P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Annual High-Dose Oral Vitamin D and Falls and Fractures in Older Women",
+      "doi": "10.1001/jama.2010.594",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of High-Dosage Cholecalciferol and Extended Physiotherapy on Complication",
+      "doi": "10.1001/archinternmed.2010.67",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "REVIEW ARTICLE: Reducing fracture risk with calcium and vitamin D",
+      "doi": "10.1111/j.1365-2265.2009.03701.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Statues on Endothelial Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mineral Metabolism and Vascular Effects of Vitamin D Therapy in Kidney Transplan",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Supplementation During Caloric Restriction on Intestinal",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "DIagnostics, Fatty Acids and Vitamin D in SCA",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Thiazolidinedione Intervention With Vitamin D Evaluation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Potential Vitamin D Effects on Muscle: a Pilot Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Health of Low Birth Weight Infants",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Inflammatory Cytokine Levels After Acute Myocardial Infraction (MI",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Examining the Role of Vitamin D in Asthma and Chronic Obstructive Pulmonary Dise",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Pilot Pharmacokinetic Study of Daily Versus Monthly High-Dose Cholecalciferol Su",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Nonvertebral Fractures With Oral Vitamin D and Dose Dependency",
+      "doi": "10.1001/archinternmed.2008.600",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and vitamin D analogues for preventing fractures associated with invol",
+      "doi": "10.1002/14651858.cd000227.pub3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and mortality in older men and women",
+      "doi": "10.1111/j.1365-2265.2009.03548.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Kabul Vitamin D Supplementation Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety of Vitamin D Supplementation in Older Persons",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin d Levels and Coronary Catheterization",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplementation on Muscle Mass and Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short and Long-Term Variations in Serum Calciotropic Hormones after a Single Ver",
+      "doi": "10.1210/jc.2008-0350",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Ergocalciferol Added to Calcium on the Risk of Falls in Elderly High-",
+      "doi": "10.1001/archinternmed.2007.31",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcium and Vitamin D Supplementation Decreases Incidence of Stress Fractures in",
+      "doi": "10.1359/jbmr.080102",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D on Renin Expression in Hypertensive Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Approaches to Correcting Vitamin D Inadequacy and Maintaining Adequacy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A New Active Vitamin D, ED-71 for Osteoporosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Active Vitamin D Effect on Left Ventricular Hypertrophy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation Prevents Elderly Pneumonia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Total Mortality<subtitle>A Meta-analysis of Random",
+      "doi": "10.1001/archinte.167.16.1730",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of annual intramuscular vitamin D on fracture risk in elderly men and wom",
+      "doi": "10.1093/rheumatology/kem240",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Need for Additional Calcium to Reduce the Risk of Hip Fracture with Vitamin D Su",
+      "doi": "10.1210/jc.2006-1404",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prospective Study of Serum Vitamin D and Cancer Mortality in the United States",
+      "doi": "10.1093/jnci/djm204",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Higher Dose of Vitamin D Reduces the Risk of Falls in Nursing Home Residents: ",
+      "doi": "10.1111/j.1532-5415.2007.01048.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, Parathyroid Hormone Levels, and the Prevalence of Metabolic Syndrome ",
+      "doi": "10.2337/dc06-2438",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Muscle Function",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Fat Tissue in Vitamin D Metabolism",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Oral Vitamin D Supplementation in Elderly Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency in Elderly African American Women in Central Texas",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcium plus Vitamin D Supplementation and the Risk of Fractures",
+      "doi": "10.1056/nejmoa055218",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prospective Study of Predictors of Vitamin D Status and Cancer Incidence and Mor",
+      "doi": "10.1093/jnci/djj101",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D supplementation and the prevention of fractures and falls: results of ",
+      "doi": "10.1093/ageing/afj080",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Levels and Vitamin D Education in Geriatric Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Assess the Effectiveness of an Investigational Drug in Elderly Subjec",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcium and Vitamin D Supplementation Decreases Incidence of Stress Fractures in",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Levels and Survival in Cancer Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Fracture Prevention With Vitamin D Supplementation",
+      "doi": "10.1001/jama.293.18.2257",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and the elderly",
+      "doi": "10.1111/j.1365-2265.2005.02226.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Retracted Paper - Low-Dose Vitamin D Prevents Muscular Atrophy and Reduces Falls",
+      "doi": "10.1159/000087203",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Should Older People in Residential Care Receive Vitamin D to Prevent Falls? Resu",
+      "doi": "10.1111/j.1532-5415.2005.00468.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Calcium, Vitamin D, and the Prevalence of Metabolic Syndrome in Middle-A",
+      "doi": "10.2337/diacare.28.12.2926",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Falls",
+      "doi": "10.1001/jama.291.16.1999",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Calcium Supplementation Prevents Osteoporotic Fractures in Elderly",
+      "doi": "10.1359/jbmr.0301240",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D supplementation improves neuromuscular function in older people who fa",
+      "doi": "10.1093/ageing/afh209",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Administration in the Nursing Home",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D and Calcium Supplementation on Falls: A Randomized Controll",
+      "doi": "10.1359/jbmr.2003.18.2.343",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Age-Related Changes in the 25-Hydroxyvitamin D Versus Parathyroid Hormone Relati",
+      "doi": "10.1210/jc.2002-021064",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A randomised, controlled comparison of different calcium and vitamin D supplemen",
+      "doi": "10.1093/ageing/afh002",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized, Controlled Trial of Quadriceps Resistance Exercise and Vitamin D i",
+      "doi": "10.1046/j.1532-5415.2003.51101.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Low Vitamin D and High Parathyroid Hormone Levels as Determinants of Loss of Mus",
+      "doi": "10.1210/jc.2003-030604",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D in preventive medicine: are we ignoring the evidence?",
+      "doi": "10.1079/bjn2003837",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Vitamin D and Falls in Older Women in Residential Care in Australia",
+      "doi": "10.1046/j.1532-5415.2003.51510.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D on Bone Accretion and Turn-Over in Young Girls",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Can Vitamin D Supplementation Reduce the Risk of Fracture in the Elderly? A Rand",
+      "doi": "10.1359/jbmr.2002.17.4.709",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Neuromuscular and Psychomotor Function in Elderly Subjects Who Fall and the Rela",
+      "doi": "10.1359/jbmr.2002.17.5.891",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency and Secondary Hyperparathyroidism in the Elderly: Consequen",
+      "doi": "10.1210/edrv.22.4.0437",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency and Secondary Hyperparathyroidism in the Elderly: Consequen",
+      "doi": "10.1210/er.22.4.477",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D status, trunk muscle strength, body sway, falls, and fractures among 2",
+      "doi": "10.1055/s-2001-14831",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Redefining Serum Parathyroid Hormone Reference Range in the",
+      "doi": "10.1210/jcem.86.7.7689",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a Short-Term Vitamin D and Calcium Supplementation on Body Sway and S",
+      "doi": "10.1359/jbmr.2000.15.6.1113",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Insufficiency and Hyperparathyroidism in a Low Income, Multiracial, El",
+      "doi": "10.1210/jcem.85.11.6962",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Relationship Between Vitamin D, Fingernail Thickness and Bone Density",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Occult Vitamin D Deficiency in Postmenopausal US Women With Acute Hip Fracture",
+      "doi": "10.1001/jama.281.16.1505",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Falls Relate to Vitamin D and Parathyroid Hormone in an Australian Nursing Home ",
+      "doi": "10.1111/j.1532-5415.1999.tb05199.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Calcium and Vitamin D Supplementation on Bone Density in Men and Women",
+      "doi": "10.1056/nejm199709043371003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Supplementation and Fracture Incidence in Elderly Persons",
+      "doi": "10.7326/0003-4819-124-4-199602150-00003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Calcium and Vitamin D on Bone Loss From the Hip",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency in Homebound Elderly Persons",
+      "doi": "10.1001/jama.1995.03530210037027",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of bone loss by vitamin D supplementation in elderly women: a randomi",
+      "doi": "10.1210/jcem.80.4.7714065",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Supplementation on Vitamin D Status and Parathyroid Func",
+      "doi": "10.1210/jcem-67-4-644",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Role of Vitamin D in Skeletal Muscle Function*",
+      "doi": "10.1210/edrv-7-4-434",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Intake, Sunlight Exposure and 25-Hydroxyvitamin D Levels in the Elderl",
+      "doi": "10.1159/000176796",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Multi-Omics Profiles in Primary Osteoporosis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Non-inferiority RCT on Fish Waste-Derived vs. Synthetic Vitamin D Supplementatio",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of the Effect of Vitamin D on Breast Cancer Development: its Associat",
+      "doi": "10.26505/djm.v30i1.1364",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Serum Vitamin D on MARPE Treatment Response",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Document the Phenomenon of Vitamin D Deficiency and Its Added Value in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Skeletal Muscle Function and Qol in Patients With Chronic",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The The impact of vitamin D on muscle function and bone health in postmenopausal",
+      "doi": "10.12775/qs.2025.41.60135",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessing the impact of levetiracetam and sodium valproate monotherapy on serum ",
+      "doi": "10.71152/ajms.v16i12.4865",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and cognitive impairment in geriatric practice",
+      "doi": "10.37586/2686-8636-2-2025-164-166",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Research Progress on the Relationship between Vitamin D and Type 1 Diabetes Mell",
+      "doi": "10.12114/j.issn.1007-9572.2024.0224",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Body Composition and Functionality of Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Physical Activity on Bone Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Correction of 25 OH-VITAmin D With Cholecalciferol Supplementation Increase",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The impact of genetic variation within the vitamin D pathway upon skeletal muscl",
+      "doi": "10.1016/j.jsbmb.2023.106266",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Bone Metabolism Status in Children With Congenital Epidermo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparative Evaluation of the Effectiveness of Diclofenac Sodium Versus Vitamin ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D Supplementation on Muscle Function Among Grave's Disease Pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Computational Study of a Prebiotic Synthesis of Ergosterol, Ergocalciferol & C",
+      "doi": "10.37394/23208.2023.20.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exploring the Role of Vitamin D and the Vitamin D Receptor in the Composition of",
+      "doi": "10.31083/j.fbl2806116",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Supplementation on Dental Implant Osseointegration: A Ra",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Raloxifene Plus Cholecalciferol and Cholecalciferol Alone on the Bone ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High dose dietary vitamin D allocates surplus calories to muscle and growth inst",
+      "doi": "10.1101/2022.05.19.492715",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency and SARS\u2011CoV\u20112 infection: Big-data analysis from March 2020",
+      "doi": "10.1101/2022.10.27.514012",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of vitamin D deficiency on blood lipids and bone metabolism: a large cro",
+      "doi": "10.1101/2022.04.12.22273773",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Frequency of Rapid Virological Response in Patients of Hepatitis C",
+      "doi": "10.53350/pjmhs22166342",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Vitamin D and Calcium Supplementation on Bone Mineral Density and Bone",
+      "doi": "10.1093/cid/ciab547",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship Between Serum 1,25-dihydroxy Vitamin D and Markers of Bone Metaboli",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Short Term, High Dose Vitamin D Supplementation in Moderate to Severe COVID-19 D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Socio-demographic and knowledge-related determinants of vitamin D supplementatio",
+      "doi": "10.1101/2021.04.21.21255553",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of high versus conventional dose of ergocalciferol supplementation on s",
+      "doi": "10.1111/1744-9987.13722",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum Vitamin D in Patients with Chronic Periodontitis and Healthy Periodontium",
+      "doi": "10.33314/jnhrc.v18i4.2904",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Milk Protein and Vitamin D on Children's Growth and Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of bone metabolic disorders in patients with vitamin D-resistant ricke",
+      "doi": "10.22141/2224-0551.15.2.2020.200271",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Vitamin D Level Affect Grip Strength: A Cross-Sectional Descriptive Study",
+      "doi": "10.14744/etd.2019.15428",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D metabolism in dogs and cats and its relation to diseases not associate",
+      "doi": "10.1111/jpn.13259",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, menopause, and aging:quo vadis?",
+      "doi": "10.1080/13697137.2019.1682543",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The prevalence of vitamin D deficiency between Saudis and non-Saudis in Al-Madin",
+      "doi": "10.1101/613729",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, Calcium, or Combined Supplementation for the Primary Prevention of Fr",
+      "doi": "10.1001/jama.2018.3185",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and orthodontics: an insight review",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Muscle Function Among Adolescent and Young Swimmers",
+      "doi": "10.1123/ijsnem.2016-0248",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of prepartum dietary cation-anion difference and source of vitamin D in ",
+      "doi": "10.3168/jds.2017-13737",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone metabolism in non-alcoholic fatty liver disease: vitamin D status and bone ",
+      "doi": "10.23736/s0391-1977.16.02587-6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation with 2000 IU of Cholecalciferol Is Associated with Improvement o",
+      "doi": "10.1097/mib.0000000000001047",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High-intensity Interval Training and Vitamin D Effects on Bone Metabolism Among ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Antarctic Environment on Vitamin D Status and Health Risk Biomarkers ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Vitamin D Supplementation on Cardiovascular Risk Factors",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency, oxidative stress and antioxidant status: only weak associa",
+      "doi": "10.1017/s000711451700188x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and extraskeletal effects",
+      "doi": "10.37897/rjmp.2017.1.6",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency and cardiometabolic syndrome: Is the evidence solid?",
+      "doi": "10.4103/amhs.amhs_80_17",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D Supplement on Osteoprotegin Expression and Disease Progressi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Periodontitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Osteoporosis Prevention in Elderly African American Women",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Periodontal Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Impact of Vitamin D, Calcium, Protein Supplementation, and Physical Exercise",
+      "doi": "10.1002/jbmr.2707",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D, Muscle Function, and Cardiorespiratory Fitness in Adolescents From th",
+      "doi": "10.1210/jc.2015-2956",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "No beneficial effects of vitamin D supplementation on muscle function or quality",
+      "doi": "10.1530/eje-14-0940",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dietary Requirement for Vitamin D in Adolescents Aged 14-18 Years",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "MECHANISMS OF VITAMIN D ACTION ON THE IMMUNE SYSTEM",
+      "doi": "10.15789/1563-0625-2014-6-499-530",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Vitamin D on Skeletal Muscle Strength, Muscle Mass, and Muscle Po",
+      "doi": "10.1210/jc.2014-1742",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Treatment in Primary Hyperparathyroidism: A Randomized Placebo Control",
+      "doi": "10.1210/jc.2013-3978",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and obesity: current perspectives and future directions",
+      "doi": "10.1017/s0029665114001578",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and skeletal muscle function in athletes",
+      "doi": "10.1097/mco.0000000000000105",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Physical Activity Status: Associations With Five-Year Changes in B",
+      "doi": "10.1210/jc.2014-3519",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and muscle function in the elderly",
+      "doi": "10.1097/mco.0000000000000104",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Its Affect on Growth Rates and Bone Mineral Density Until Age 5",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Cord Blood 25-hydroxy-vitamin D Level on Early Neonatal Morbidities",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of Vitamin D Insufficiency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Zurich Multiple Endpoint Vitamin D Trial in Knee OA Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Extraskeletal Effects of Vitamin D",
+      "doi": "10.22141/2224-1507.1-2.13-14.2014.80057",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Bioavailability: State of the Art",
+      "doi": "10.1080/10408398.2012.688897",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of altitude on vitamin D and bone metabolism of lactating sheep and go",
+      "doi": "10.2527/jas.2013-6702",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D status and muscle function in children with neurofibromatosis type 1 (",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Vitamin D on Renal Blood Flow, Proteinuria and Inflammation in Patien",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Maternal and Neonatal Vitamin D Levels on Respiratory Distress Syn",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of Maternal and Neonatal Vitamin D Levels in Term Neonates With and W",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Vitamin D Supplementation in Bariatric Surgery Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Vitamin D and Bone Loss in Parkinson's Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of dairy intake on bone mineral density (BMD) is only beneficial with hig",
+      "doi": "10.1096/fasebj.27.1_supplement.106.5",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Randomized controlled trial of cholecalciferol supplementation in chronic kidney",
+      "doi": "10.1093/ndt/gfs138",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessment of vitamin D concentration in non-supplemented professional athletes ",
+      "doi": "10.1080/02640414.2012.733822",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Seasonal variation in vitamin D status in professional soccer players of the Eng",
+      "doi": "10.1139/h2012-037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Vitamin D on Metabolic Parameters in Patients With the Metabolic Syndr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Calcium Plus Vitamin D Supplementation on Adolescent Mother and Infant",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Glucose Metabolism in Pediatrics",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Deficiency Epidemiological Research in Sichuan, China",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency and stroke",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Health Effects Related to Low Vitamin D Concentrations: Beyond Bone Metabolism",
+      "doi": "10.1159/000332070",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "THERAPEUTIC HOTLINE: Does isotretinoin have effect on vitamin D physiology and b",
+      "doi": "10.1111/j.1529-8019.2011.01406.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Using Ca-41 Methodology to Assess the Impact of Different Vitamin D Supplementat",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Human Intervention Study With Calcium Phosphate and Vitamin D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Supplemental Vitamin D on Skeletal Muscle Function in Chronic Obstruct",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of vitamin D status of rheumatoid arthritis patients Rationale and design ",
+      "doi": "10.4081/reumatismo.2006.314",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized, Controlled Trial of Vitamin D Supplementation upon Musculoskeletal",
+      "doi": "10.1210/jc.2009-2725",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Controlled Trial of the Effects of Vitamin D on Muscle Strength and",
+      "doi": "10.1111/j.1532-5415.2010.03142.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D deficiency is endemic in Middle Eastern sportsmen",
+      "doi": "10.1017/s136898000999320x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Athletes",
+      "doi": "10.1249/jsr.0b013e3181e7dd45",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Vitamin D Supplementation to Male HIV Sero-positive Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Dose Response in Infants",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Substitution for Patients With Chronic Pancreatitis and Malabsorption",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D: An Evidence-Based Review",
+      "doi": "10.3122/jabfm.2009.06.090037",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VITAMIN D STATUS IN RELATION TO NUTRITIONAL DEPLETION AND MUSCLE FUNCTION IN PAT",
+      "doi": "10.1080/01902140902763193",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Calcium and Vitamin D Intakes in Children",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and Chronic Renal Insufficiency",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Muscle Function in Post-Menarchal Adolescent Girls",
+      "doi": "10.1210/jc.2008-1284",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "What is Next for the Dietary Reference Intakes for Bone Metabolism Related Nutri",
+      "doi": "10.1080/10408390701764468",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status of Females in an Elite Gymnastics Program",
+      "doi": "10.1097/jsm.0b013e3181650eee",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interventional Trial of Vitamin D Deficiency in the Patients of General Departme",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Phase 2 Safety and Efficacy Study of a Vitamin D Compound (DP001) in Postmenopau",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D and the skin: an ancient friend, revisited",
+      "doi": "10.1111/j.1600-0625.2007.00570.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association between vitamin D receptor gene haplotypes and chronic periodontitis",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Measurement of vitamin D status: background, clinical use, and methodologies.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Serum 25(OH)-vitamin D levels and bone metabolism in patients on maintenance hem",
+      "doi": "10.5414/cnp64288",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of a high-protein, high-sodium diet on calcium and bone metabolism in",
+      "doi": "10.1079/bjn20031016",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Normal range of vitamin D: relationship between serum PTH and bone mineral densi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bone mineral density and serum levels of 25 OH vitamin D in chronic users of ant",
+      "doi": "10.1590/s0004-282x2004000600003",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D: the underappreciated D-lightful hormone that is important for skeleta",
+      "doi": "10.1097/00060793-200202000-00011",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status, Parathyroid Hormone and Bone Mineral Density in Patients with ",
+      "doi": "10.1080/003655202753416876",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Genetic Contribution to Bone Metabolism, Calcium Excretion, and Vitamin D and Pa",
+      "doi": "10.1359/jbmr.2001.16.2.371",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relation Between Vitamin D Insufficiency, Bone Density, and Bone Metabolism in H",
+      "doi": "10.1359/jbmr.2001.16.8.1408",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Vitamin D Status and Bone Mineral Density of Veiled and Unveiled Turkish Women",
+      "doi": "10.1089/15246090152636523",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Controlled Trial of Vitamin D Supplementation on Preventing Postmen",
+      "doi": "10.1359/jbmr.2000.15.11.2276",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Interaction of the effects between vitamin D receptor polymorphism and exercise ",
+      "doi": "10.1152/jappl.2000.88.4.1271",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "High prevalence of vitamin D deficiency and reduced bone mass in multiple sclero",
+      "doi": "10.1212/wnl.44.9.1687",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC12423549": {
+      "title": "Impact of Polymorphisms in Genes Related to Vitamin D Metabolism on Serum Response to Supplementation in Adults and Elderly: A Systematic Review and Meta\u2010Analysis Protocol",
+      "doi": "10.1002/hsr2.70948",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Health Science Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12293739": {
+      "title": "The Role of Vitamin D and Vitamin D Receptor in Sepsis",
+      "doi": "10.3390/cimb47070500",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Current Issues in Molecular Biology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12482873": {
+      "title": "Clinical randomized trial of vitamin D and C supplementation in critically ill patients with respiratory failure",
+      "doi": "10.1186/s12937-025-01214-5",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10853433": {
+      "title": "Vitamin D supplementation in later life: a systematic review of efficacy and safety in movement disorders",
+      "doi": "10.3389/fnagi.2024.1333217",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11755341": {
+      "title": "Effects of vitamin D supplementation on cardiac biomarkers: Results from the STURDY trial",
+      "doi": "10.1016/j.ajpc.2024.100871",
+      "pmid": null,
+      "year": 2024,
+      "venue": "American Journal of Preventive Cardiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11442836": {
+      "title": "Effect of vitamin D supplementation on clinical outcomes in adult patients with COVID\u201019: A GRADE\u2010assessed systematic review and meta\u2010analysis of randomized controlled trials",
+      "doi": "10.1002/prp2.70013",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Pharmacology Research & Perspectives",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10510082": {
+      "title": "Prospective effects of cholecalciferol supplementation on irisin levels in sedentary postmenopausal women: A pilot study",
+      "doi": "10.1016/j.jcte.2023.100324",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Journal of Clinical & Translational Endocrinology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10556715": {
+      "title": "Effectiveness of Vitamin D Supplements in Reducing the Risk of Falls among Older Adults: A Meta-Analysis of Randomized Controlled Trials",
+      "doi": "10.4235/agmr.23.0047",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Annals of Geriatric Medicine and Research",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9716639": {
+      "title": "Supplemental Vitamin D and Incident Fractures in Midlife and Older Adults",
+      "doi": "10.1056/nejmoa2202106",
+      "pmid": null,
+      "year": 2022,
+      "venue": "New England Journal of Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9198671": {
+      "title": "Impact of Vitamin D Therapy on the Progress COVID-19: Six Weeks Follow-Up Study of Vitamin D Deficient Elderly Diabetes Patients",
+      "doi": "10.1177/20101058211041405",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Proceedings of Singapore Healthcare",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9333362": {
+      "title": "Genetically\u2010Proxied Levels of Vitamin D and Risk of Intracerebral Hemorrhage",
+      "doi": "10.1161/jaha.121.024141",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of the American Heart Association: Cardiovascular and Cerebrovascular Disease",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8629001": {
+      "title": "Effects of 12 Months of Vitamin D Supplementation on Physical Fitness Levels in Postmenopausal Women with Type 2 Diabetes",
+      "doi": "10.3390/jfmk6040087",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Journal of Functional Morphology and Kinesiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7656284": {
+      "title": "Effect of Vitamin D Supplementation, Omega-3 Fatty Acid Supplementation, or a Strength-Training Exercise Program on Clinical Outcomes in Older Adults",
+      "doi": "10.1001/jama.2020.16909",
+      "pmid": null,
+      "year": 2020,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7693938": {
+      "title": "Vitamin D Supplementation Associated to Better Survival in Hospitalized Frail Elderly COVID-19 Patients: The GERIA-COVID Quasi-Experimental Study",
+      "doi": "10.3390/nu12113377",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7775021": {
+      "title": "Vitamin D Deficiency among Patients Visiting a Tertiary Care Hospital: A Descriptive Cross-sectional Study",
+      "doi": "10.31729/jnma.5645",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of Nepal Medical Association",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7412964": {
+      "title": "Calcium and Cholecalciferol Levels in Late-Phase Laying Hens: Effects on Productive Traits, Egg Quality, Blood Biochemistry, and Immune Responses",
+      "doi": "10.3389/fvets.2020.00389",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Frontiers in Veterinary Science",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7295196": {
+      "title": "Risk of eczema, wheezing and respiratory tract infections in the first year of life: A systematic review of vitamin D concentrations during pregnancy and at birth.",
+      "doi": "10.1371/journal.pone.0233890",
+      "pmid": null,
+      "year": 2020,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6991219": {
+      "title": "Vitamin D and Calcium for the Prevention of Fracture",
+      "doi": "10.1001/jamanetworkopen.2019.17789",
+      "pmid": null,
+      "year": 2019,
+      "venue": "JAMA Network Open",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6689821": {
+      "title": "Association between vitamin D supplementation and mortality: systematic review and meta-analysis",
+      "doi": "10.1136/bmj.l4673",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6626501": {
+      "title": "Skeletal and Extraskeletal Actions of Vitamin D: Current Evidence and Outstanding Questions",
+      "doi": "10.1210/er.2018-00126",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Endocrine Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6103509": {
+      "title": "Vitamin D status and functional parameters: A cross-sectional study in an older population.",
+      "doi": "10.1371/journal.pone.0201840",
+      "pmid": null,
+      "year": 2018,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6093588": {
+      "title": "X-linked vitamin D-resistant rickets: 12 years of follow-up",
+      "doi": "10.11604/pamj.2018.30.9.14762",
+      "pmid": null,
+      "year": 2018,
+      "venue": "The Pan African Medical Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5820727": {
+      "title": "Association Between Calcium or Vitamin D Supplementation and Fracture Incidence in Community-Dwelling Older Adults",
+      "doi": "10.1001/jama.2017.19344",
+      "pmid": null,
+      "year": 2017,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5312926": {
+      "title": "Vitamin D and mortality: Individual participant data meta-analysis of standardized 25-hydroxyvitamin D in 26916 individuals from a European consortium",
+      "doi": "10.1371/journal.pone.0170791",
+      "pmid": null,
+      "year": 2017,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5583753": {
+      "title": "Change in serum level of vitamin D and associated factors at early phase of bone healing among fractured adult patients at University of Gondar teaching hospital, Northwest Ethiopia: a prospective follow up study",
+      "doi": "10.1186/s12937-017-0277-y",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Nutrition Journal",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC5256876": {
+      "title": "Pharmacokinetic Evaluation of a Single Intramuscular High Dose versus an Oral Long-Term Supplementation of Cholecalciferol.",
+      "doi": "10.1371/journal.pone.0169620",
+      "pmid": null,
+      "year": 2017,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7479967": {
+      "title": "Effect of Prenatal Supplementation With Vitamin D on Asthma or Recurrent Wheezing in Offspring by Age 3 Years",
+      "doi": "10.1001/jama.2015.18589",
+      "pmid": null,
+      "year": 2016,
+      "venue": "JAMA",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5068478": {
+      "title": "Vitamin D, calcium homeostasis and aging",
+      "doi": "10.1038/boneres.2016.41",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Bone Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4715837": {
+      "title": "Calcium plus vitamin D supplementation and risk of fractures: an updated meta-analysis from the National Osteoporosis Foundation",
+      "doi": "10.1007/s00198-015-3386-5",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Osteoporosis International",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4427016": {
+      "title": "Vitamin D: A Review on Its Effects on Muscle Strength, the Risk of Fall, and Frailty",
+      "doi": "10.1155/2015/953241",
+      "pmid": null,
+      "year": 2015,
+      "venue": "BioMed Research International",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4587070": {
+      "title": "Vitamin D and bone minerals status in the long-term survivors of childhood acute lymphoblastic leukemia",
+      "doi": "10.4103/2008-7802.164691",
+      "pmid": null,
+      "year": 2015,
+      "venue": "International Journal of Preventive Medicine",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11285307": {
+      "title": "Vitamin D supplementation for prevention of mortality in adults",
+      "doi": "10.1002/14651858.cd007470.pub3",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7032685": {
+      "title": "Vitamin D and vitamin D analogues for preventing fractures in post-menopausal women and older men",
+      "doi": "10.1002/14651858.cd000227.pub4",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Cochrane Database of Systematic Reviews",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3972416": {
+      "title": "Vitamin D and risk of cause specific death: systematic review and meta-analysis of observational cohort and randomised intervention studies",
+      "doi": "10.1136/bmj.g1903",
+      "pmid": null,
+      "year": 2014,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3972415": {
+      "title": "Vitamin D and multiple health outcomes: umbrella review of systematic reviews and meta-analyses of observational studies and randomised trials",
+      "doi": "10.1136/bmj.g2035",
+      "pmid": null,
+      "year": 2014,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4061380": {
+      "title": "Vitamin D and mortality: meta-analysis of individual participant data from a large consortium of cohort studies from Europe and the United States",
+      "doi": "10.1136/bmj.g3656",
+      "pmid": null,
+      "year": 2014,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4238742": {
+      "title": "Genetically low vitamin D concentrations and increased mortality: mendelian randomisation analysis in three large cohorts",
+      "doi": "10.1136/bmj.g6330",
+      "pmid": null,
+      "year": 2014,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4399494": {
+      "title": "The Role of Vitamin D in the Aging Adult",
+      "doi": "10.12974/2309-6128.2014.02.02.1",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Journal of Aging and Gerontology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4281138": {
+      "title": "A case study of discordant overlapping meta-analyses: vitamin d supplements and fracture.",
+      "doi": "10.1371/journal.pone.0115934",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3947886": {
+      "title": "Association of High Vitamin D Status with Low Circulating Thyroid-Stimulating Hormone Independent of Thyroid Hormone Levels in Middle-Aged and Elderly Males",
+      "doi": "10.1155/2014/631819",
+      "pmid": null,
+      "year": 2014,
+      "venue": "International Journal of Endocrinology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC4030388": {
+      "title": "Vitamin D\u2013Binding Protein and Vitamin D Status of Black Americans and White Americans",
+      "doi": "10.1056/nejmoa1306357",
+      "pmid": null,
+      "year": 2013,
+      "venue": "New England Journal of Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3571641": {
+      "title": "Vitamin D \u2014 Effects on Skeletal and Extraskeletal Health and the Need for Supplementation",
+      "doi": "10.3390/nu5010111",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3417158": {
+      "title": "Evaluation of Ergocalciferol or Cholecalciferol Dosing, 1,600 IU Daily or 50,000 IU Monthly in Older Adults",
+      "doi": "10.1210/jc.2010-0015",
+      "pmid": null,
+      "year": 2011,
+      "venue": "The Journal of Clinical Endocrinology & Metabolism",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3046611": {
+      "title": "The 2011 Report on Dietary Reference Intakes for Calcium and Vitamin D from the Institute of Medicine: What Clinicians Need to Know",
+      "doi": "10.1210/jc.2010-2704",
+      "pmid": null,
+      "year": 2010,
+      "venue": "The Journal of Clinical Endocrinology & Metabolism",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3125705": {
+      "title": "Vitamin D Treatment for the Prevention of Falls in Older Adults: Systematic Review and Meta\u2010Analysis",
+      "doi": "10.1111/j.1532-5415.2010.02949.x",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of the American Geriatrics Society",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4053858": {
+      "title": "Vitamin D and Risk of Cognitive Decline in Elderly Persons",
+      "doi": "10.1001/archinternmed.2010.173",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Archives of Internal Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3057108": {
+      "title": "Vitamin D deficiency and frailty in older Americans",
+      "doi": "10.1111/j.1365-2796.2010.02248.x",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of Internal Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2806633": {
+      "title": "Patient level pooled analysis of 68 500 patients from seven major vitamin D fracture trials in US and Europe",
+      "doi": "10.1136/bmj.b5463",
+      "pmid": null,
+      "year": 2010,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2959005": {
+      "title": "Fall prevention and vitamin D in the elderly: an overview of the key role of the non-bone effects",
+      "doi": "10.1186/1743-0003-7-50",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Journal of NeuroEngineering and Rehabilitation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2938469": {
+      "title": "Vitamin D deficiency is associated with sudden cardiac death, combined cardiovascular events, and mortality in haemodialysis patients",
+      "doi": "10.1093/eurheartj/ehq246",
+      "pmid": null,
+      "year": 2010,
+      "venue": "European Heart Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2755728": {
+      "title": "Fall prevention with supplemental and active forms of vitamin D: a meta-analysis of randomised controlled trials",
+      "doi": "10.1136/bmj.b3692",
+      "pmid": null,
+      "year": 2009,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3765249": {
+      "title": "Serum 25-Hydroxyvitamin D Levels Among US Children Aged 1 to 11 Years: Do Children Need More Vitamin D?",
+      "doi": "10.1542/peds.2008-2041",
+      "pmid": null,
+      "year": 2009,
+      "venue": "PEDIATRICS",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC557150": {
+      "title": "Randomised controlled trial of calcium and supplementation with cholecalciferol (vitamin D 3 ) for prevention of fractures in primary care",
+      "doi": "10.1136/bmj.330.7498.1003",
+      "pmid": null,
+      "year": 2005,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC150177": {
+      "title": "Effect of four monthly oral vitamin D 3 (cholecalciferol) supplementation on fractures and mortality in men and women living in the community: randomised double blind controlled trial",
+      "doi": "10.1136/bmj.326.7387.469",
+      "pmid": null,
+      "year": 2003,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2539939": {
+      "title": "Effect of calcium and cholecalciferol treatment for three years on hip fractures in elderly women",
+      "doi": "10.1136/bmj.308.6936.1081",
+      "pmid": null,
+      "year": 1994,
+      "venue": "BMJ",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC437077": {
+      "title": "Impaired vitamin D metabolism with aging in women. Possible role in pathogenesis of senile osteoporosis.",
+      "doi": "10.1172/jci111373",
+      "pmid": null,
+      "year": 1984,
+      "venue": "Journal of Clinical Investigation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12447467": {
+      "title": "Single high-dose vitamin D supplementation impacts ultramarathon-induced changes in serum levels of bone turnover markers: a double-blind randomized controlled trial",
+      "doi": "10.1080/15502783.2025.2561661",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Journal of the International Society of Sports Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12445228": {
+      "title": "Vitamin D insufficiency and cardiovascular involvement in systemic sclerosis: Association with echocardiographic parameters and risk factors",
+      "doi": "10.1016/j.ijcrp.2025.200502",
+      "pmid": null,
+      "year": 2025,
+      "venue": "International Journal of Cardiology. Cardiovascular Risk and Prevention",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12101332": {
+      "title": "Vitamin D Serum Levels and the Development of Intensive Care Unit-Acquired Weakness: Insights from a COVID-19 Intensive Care Cohort",
+      "doi": "10.3390/pathophysiology32020021",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Pathophysiology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11379551": {
+      "title": "Real-world effectiveness and safety of combined calcium 600 mg and cholecalciferol 2000 IU for treating vitamin D deficiency: Results from a nationwide study with focus in osteoporosis",
+      "doi": "10.1016/j.bonr.2024.101796",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Bone Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9944083": {
+      "title": "Vitamin D and Calcium in Osteoporosis, and the Role of Bone Turnover Markers: A Narrative Review of Recent Data from RCTs",
+      "doi": "10.3390/diseases11010029",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Diseases",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10221881": {
+      "title": "Vitamin D and Osteogenesis Imperfecta in Pediatrics",
+      "doi": "10.3390/ph16050690",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Pharmaceuticals",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10757289": {
+      "title": "Nutritional strategies to optimise musculoskeletal health for fall and fracture prevention: Looking beyond calcium, vitamin D and protein",
+      "doi": "10.1016/j.bonr.2023.101684",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Bone Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9346334": {
+      "title": "Cholecalciferol supplementation effectively improved tertiary hyperparathyroidism, FGF23 resistance and lowered coronary calcification score: a prospective study",
+      "doi": "10.1530/ec-22-0123",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Endocrine Connections",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9716320": {
+      "title": "The role of vitamin D on rotator cuff tear with osteoporosis",
+      "doi": "10.3389/fendo.2022.1017835",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Endocrinology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8273061": {
+      "title": "Vitamin D Supplementation for Patients with Chronic Kidney Disease: A Systematic Review and Meta-analyses of Trials Investigating the Response to Supplementation and an Overview of Guidelines",
+      "doi": "10.1007/s00223-021-00844-1",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Calcified Tissue International",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7922814": {
+      "title": "Vitamin D, Bone Metabolism, and Fracture Risk in Polycystic Ovary Syndrome",
+      "doi": "10.3390/metabo11020116",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Metabolites",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7915474": {
+      "title": "Medication-Related Osteonecrosis of the Jaw (MRONJ): Are Antiresorptive Drugs the Main Culprits or Only Accomplices? The Triggering Role of Vitamin D Deficiency",
+      "doi": "10.3390/nu13020561",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7914453": {
+      "title": "Do Only Calcium and Vitamin D Matter? Micronutrients in the Diet of Inflammatory Bowel Diseases Patients and the Risk of Osteoporosis",
+      "doi": "10.3390/nu13020525",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7230756": {
+      "title": "Bone Metabolism and Vitamin D Implication in Gastroenteropancreatic Neuroendocrine Tumors",
+      "doi": "10.3390/nu12041021",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7352679": {
+      "title": "Cholecalciferol or Calcifediol in the Management of Vitamin D Deficiency",
+      "doi": "10.3390/nu12061617",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nutrients",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7761812": {
+      "title": "The Role of Vitamin D in Small Animal Bone Metabolism",
+      "doi": "10.3390/metabo10120496",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Metabolites",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6722905": {
+      "title": "Vitamin D, Skeletal Muscle Function and Athletic Performance in Athletes\u2014A Narrative Review",
+      "doi": "10.3390/nu11081800",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6769474": {
+      "title": "Influence of Vitamin D on Islet Autoimmunity and Beta-Cell Function in Type 1 Diabetes",
+      "doi": "10.3390/nu11092185",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6800555": {
+      "title": "<p>Vitamin D Deficiency Is Associated With Impaired Muscle Strength And Physical Performance In Community-Dwelling Older Adults: Findings From The English Longitudinal Study Of Ageing</p>",
+      "doi": "10.2147/cia.s222143",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Clinical Interventions in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6785780": {
+      "title": "The effects of vitamin D supplementation on muscle function among postmenopausal women: a systematic review and meta-analysis of randomized controlled trials",
+      "doi": "10.17179/excli2019-1386",
+      "pmid": null,
+      "year": 2019,
+      "venue": "PubMed",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6490896": {
+      "title": "Effect of vitamin D supplementation on upper and lower limb muscle strength and muscle power in athletes: A meta-analysis.",
+      "doi": "10.1371/journal.pone.0215826",
+      "pmid": null,
+      "year": 2019,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6813046": {
+      "title": "Evaluation of the vitamin D and biomedical statuses of young children with \u03b2-thalassemia major at a single center in southern China",
+      "doi": "10.1186/s12887-019-1744-8",
+      "pmid": null,
+      "year": 2019,
+      "venue": "BMC Pediatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6266123": {
+      "title": "Vitamin D: Nutrient, Hormone, and Immunomodulator",
+      "doi": "10.3390/nu10111656",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6075634": {
+      "title": "Prevalence of Vitamin D Deficiency and Associated Risk Factors in the US Population (2011-2012)",
+      "doi": "10.7759/cureus.2741",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Cureus",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6303903": {
+      "title": "Identification of vitamin D and other bone metabolism parameters as risk factors for primary bone marrow oedema syndrome",
+      "doi": "10.1186/s12891-018-2379-x",
+      "pmid": null,
+      "year": 2018,
+      "venue": "BMC Musculoskeletal Disorders",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5618598": {
+      "title": "The Role of Vitamin D in Thyroid Diseases",
+      "doi": "10.3390/ijms18091949",
+      "pmid": null,
+      "year": 2017,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5021966": {
+      "title": "Genetically Low Vitamin D Levels, Bone Mineral Density, and Bone Metabolism Markers: a Mendelian Randomisation Study",
+      "doi": "10.1038/srep33202",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4521671": {
+      "title": "Effects of vitamin D and quercetin, alone and in combination, on cardiorespiratory fitness and muscle function in physically active male adults",
+      "doi": "10.2147/oajsm.s83159",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Open Access Journal of Sports Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4594209": {
+      "title": "Treatment of Vitamin D Insufficiency in Postmenopausal Women",
+      "doi": "10.1001/jamainternmed.2015.3874",
+      "pmid": null,
+      "year": 2015,
+      "venue": "JAMA Internal Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4624748": {
+      "title": "The importance of vitamin D in the pathology of bone metabolism in inflammatory bowel diseases.",
+      "doi": "10.5114/aoms.2015.54858",
+      "pmid": null,
+      "year": 2015,
+      "venue": "PubMed",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4426898": {
+      "title": "Vitamin D Deficiency in HIV Infection: Not Only a Bone Disorder",
+      "doi": "10.1155/2015/735615",
+      "pmid": null,
+      "year": 2015,
+      "venue": "BioMed Research International",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC4623450": {
+      "title": "Vitamin D serum levels in children with allergic and vasomotor rhinitis",
+      "doi": "10.3345/kjp.2015.58.9.325",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Korean Journal of Pediatrics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3979692": {
+      "title": "Vitamin D and neurocognitive function",
+      "doi": "10.2147/cia.s51785",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Clinical Interventions in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3924041": {
+      "title": "Vitamin D and cardiovascular disease: is the evidence solid?",
+      "doi": "10.1093/eurheartj/eht166",
+      "pmid": null,
+      "year": 2013,
+      "venue": "European Heart Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3872479": {
+      "title": "Review article: vitamin D and inflammatory bowel diseases",
+      "doi": "10.1111/apt.12553",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Alimentary Pharmacology & Therapeutics",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3798915": {
+      "title": "Increased Plasma Concentrations of Vitamin D Metabolites and Vitamin D Binding Protein in Women Using Hormonal Contraceptives: A Cross-Sectional Study",
+      "doi": "10.3390/nu5093470",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3748757": {
+      "title": "Vitamin D Status in Patients Operated for Primary Hyperparathyroidism: Comparison of Patients from Southern and Northern Europe",
+      "doi": "10.1155/2013/164939",
+      "pmid": null,
+      "year": 2013,
+      "venue": "International Journal of Endocrinology",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3652186": {
+      "title": "Vitamin D Receptor Agonists Target CXCL10: New Therapeutic Tools for Resolution of Inflammation",
+      "doi": "10.1155/2013/876319",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Mediators of Inflammation",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3440067": {
+      "title": "Role of Vitamin D in Insulin Resistance",
+      "doi": "10.1155/2012/634195",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Journal of Biomedicine and Biotechnology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3427195": {
+      "title": "Influence of drugs on vitamin D and calcium metabolism",
+      "doi": "10.4161/derm.20731",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Dermato-Endocrinology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3497950": {
+      "title": "Sports Health Benefits of Vitamin D",
+      "doi": "10.1177/1941738112461621",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Sports Health A Multidisciplinary Approach",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3325895": {
+      "title": "Different doses of supplemental vitamin D maintain interleukin-5 without altering skeletal muscle strength: a randomized, double-blind, placebo-controlled study in vitamin D sufficient adults",
+      "doi": "10.1186/1743-7075-9-16",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Nutrition & Metabolism",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3198705": {
+      "title": "High prevalence of vitamin D insufficiency and its association with obesity and metabolic syndrome among Malay adults in Kuala Lumpur, Malaysia",
+      "doi": "10.1186/1471-2458-11-735",
+      "pmid": null,
+      "year": 2011,
+      "venue": "BMC Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3513873": {
+      "title": "Effects of vitamin D on muscle function and performance: a review of evidence from randomized controlled trials",
+      "doi": "10.1177/2040622310381934",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Therapeutic Advances in Chronic Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3257679": {
+      "title": "Vitamin D and Bone Health; Potential Mechanisms",
+      "doi": "10.3390/nu2070693",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2863968": {
+      "title": "Cholecalciferol Supplementation in Hemodialysis Patients",
+      "doi": "10.2215/cjn.06510909",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Clinical Journal of the American Society of Nephrology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3257656": {
+      "title": "Nonclassical Vitamin D Actions",
+      "doi": "10.3390/nu2040408",
+      "pmid": null,
+      "year": 2010,
+      "venue": "Nutrients",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3022855": {
+      "title": "Vitamin D status among adults in the Aegean region of Turkey",
+      "doi": "10.1186/1471-2458-10-782",
+      "pmid": null,
+      "year": 2010,
+      "venue": "BMC Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2812815": {
+      "title": "Vitamin D, the immune system and asthma",
+      "doi": "10.1586/eci.09.53",
+      "pmid": null,
+      "year": 2009,
+      "venue": "Expert Review of Clinical Immunology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2576234": {
+      "title": "Low wintertime vitamin D levels in a sample of healthy young adults of diverse ancestry living in the Toronto area: associations with vitamin D intake and skin pigmentation",
+      "doi": "10.1186/1471-2458-8-336",
+      "pmid": null,
+      "year": 2008,
+      "venue": "BMC Public Health",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4235628": {
+      "title": "The noncalciotropic actions of vitamin D: recent clinical developments",
+      "doi": "10.1097/mnh.0b013e3283040c99",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Current Opinion in Nephrology & Hypertension",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1523417": {
+      "title": "Resurrection of vitamin D deficiency and rickets",
+      "doi": "10.1172/jci29449",
+      "pmid": null,
+      "year": 2006,
+      "venue": "Journal of Clinical Investigation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1773629": {
+      "title": "Vitamin D status and measurements of markers of bone metabolism in patients with small intestinal resection",
+      "doi": "10.1136/gut.52.5.653",
+      "pmid": null,
+      "year": 2003,
+      "venue": "Gut",
+      "sources": [
+        "openalex"
+      ]
+    }
+  }
+}

@@ -1,0 +1,612 @@
+{
+  "paper_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste",
+  "doi": "10.1186/s12937-024-00995-5",
+  "extracted_at": "2026-05-05T21:41:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 4,
+    "percentage": 13,
+    "p_value": 12,
+    "confidence_interval": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-u-1479",
+      "claim_type": "unit_value",
+      "raw_text": "3.579 bpm",
+      "numeric_values": [
+        3.579
+      ],
+      "units": "bpm",
+      "source_section": "abstract",
+      "source_offset": 1479,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "nificant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-1490",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1490,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "duction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SB",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1539",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1539,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-u-1563",
+      "claim_type": "unit_value",
+      "raw_text": "3.999 mm",
+      "numeric_values": [
+        3.999
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1563,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "e interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-1576",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1576,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "I] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg,",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1603",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1603,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.0",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-u-1626",
+      "claim_type": "unit_value",
+      "raw_text": "1.435 mm",
+      "numeric_values": [
+        1.435
+      ],
+      "units": "mm",
+      "source_section": "abstract",
+      "source_offset": 1626,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "99 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-ci-1639",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.484 to -0.386",
+      "numeric_values": [
+        -2.484,
+        -0.386
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1639,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1665",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1665,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "= 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001),",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-ci-1696",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.522 to -0.283",
+      "numeric_values": [
+        -0.522,
+        -0.283
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1696,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "g, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1722",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1722,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "6, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI:",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-1775",
+      "claim_type": "percentage",
+      "raw_text": "4.981%",
+      "numeric_values": [
+        4.981
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1775,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004). Meta-regression indica",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-ci-1783",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.556 to 8.407",
+      "numeric_values": [
+        1.556,
+        8.407
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1783,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "< 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004). Meta-regression indicated a dose-dependent red",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1807",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1807,
+      "sentence": "Taurine demonstrated a significant reduction in HR (weighted mean difference [WMD] = -3.579 bpm, 95% confidence interval [CI] = -6.044 to -1.114, p = 0.004), SBP (WMD = -3.999 mm Hg, 95% CI = -7.293 to -0.706, p = 0.017), DBP (WMD: -1.435 mm Hg, 95% CI: -2.484 to -0.386, p = 0.007), NYHA (WMD: -0.403, 95% CI: -0.522 to -0.283, p < 0.001), and a significant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004).",
+      "context_window": "cant increase in LVEF (WMD: 4.981%, 95% CI: 1.556 to 8.407, p = 0.004). Meta-regression indicated a dose-dependent reduction in H",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1908",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.333",
+      "numeric_values": [
+        0.333
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1908,
+      "sentence": "Meta-regression indicated a dose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308).",
+      "context_window": "ose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coeffi",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1954",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.113",
+      "numeric_values": [
+        0.113
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1954,
+      "sentence": "Meta-regression indicated a dose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308).",
+      "context_window": "0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (c",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-2000",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.110",
+      "numeric_values": [
+        0.11
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2000,
+      "sentence": "Meta-regression indicated a dose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308).",
+      "context_window": "0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-2051",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.111",
+      "numeric_values": [
+        0.111
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2051,
+      "sentence": "Meta-regression indicated a dose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308).",
+      "context_window": "9 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.028",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-2129",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.308",
+      "numeric_values": [
+        0.308
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2129,
+      "sentence": "Meta-regression indicated a dose-dependent reduction in HR (coefficient = -0.0150 per g, p = 0.333), SBP (coefficient = -0.0239 per g, p = 0.113), DBP (coefficient = -0.0089 per g, p = 0.110), and NYHA (coefficient = -0.0016 per g, p = 0.111), and a positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308).",
+      "context_window": "positive correlation with LVEF (coefficient = 0.0285 per g, p = 0.308). No significant adverse effects were observed compared to",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-284",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 284,
+      "sentence": "CVD is a leading cause of global mortality, accounting for approximately 17.9 million deaths in 2019, or approximately 32% of all deaths worldwide [ 1 ].",
+      "context_window": "approximately 17.9 million deaths in 2019, or approximately 32% of all deaths worldwide [ 1 ]. The impact of CVDs extends b",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-5271",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5271,
+      "sentence": "For all numerical outcomes, the weighted mean difference (WMD) and its corresponding 95% confidence interval (CI) were computed.",
+      "context_window": "s, the weighted mean difference (WMD) and its corresponding 95% confidence interval (CI) were computed. Odds ratios (ORs) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-5354",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5354,
+      "sentence": "Odds ratios (ORs) and their associated 95% CIs were applied to analyze categorical outcomes, specifically the rates of adverse events associated with the treatment.",
+      "context_window": "(CI) were computed. Odds ratios (ORs) and their associated 95% CIs were applied to analyze categorical outcomes, specifica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-5610",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5610,
+      "sentence": "Examining the I 2 and Cochran's Q statistics allowed us to assess the degree of heterogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and high heterogeneity, respectively [ 16 ].",
+      "context_window": "degree of heterogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-5615",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5615,
+      "sentence": "Examining the I 2 and Cochran's Q statistics allowed us to assess the degree of heterogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and high heterogeneity, respectively [ 16 ].",
+      "context_window": "ee of heterogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and high",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-5624",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5624,
+      "sentence": "Examining the I 2 and Cochran's Q statistics allowed us to assess the degree of heterogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and high heterogeneity, respectively [ 16 ].",
+      "context_window": "erogeneity between trials, with I 2 values of 25%, 50%, and 75% regarded as indicating minimal, moderate, and high heteroge",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-1755",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1755,
+      "sentence": "These findings align with a previous meta-analysis by Waldron et al. [ 42 ], which included seven trials and reported a decrease in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001).",
+      "context_window": "ls and reported a decrease in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1781",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1781,
+      "sentence": "These findings align with a previous meta-analysis by Waldron et al. [ 42 ], which included seven trials and reported a decrease in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001).",
+      "context_window": "in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p <",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-1822",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1822,
+      "sentence": "These findings align with a previous meta-analysis by Waldron et al. [ 42 ], which included seven trials and reported a decrease in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001).",
+      "context_window": "- 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001). Subgroup analysis of the",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-p-1848",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1848,
+      "sentence": "These findings align with a previous meta-analysis by Waldron et al. [ 42 ], which included seven trials and reported a decrease in both SBP (Hedges\u2019 g = - 0.70, 95% CI: - 0.98 to - 0.41, p < 0.0001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001).",
+      "context_window": "001) and DBP (Hedges\u2019 g = - 0.62, 95% CI: - 0.91 to - 0.34, p < 0.0001). Subgroup analysis of the SBP data revealed that taurine e",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-ci-3062",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.38 to 0.89",
+      "numeric_values": [
+        -0.38,
+        0.89
+      ],
+      "units": "95%CI",
+      "source_section": "discussion",
+      "source_offset": 3062,
+      "sentence": "In a previous meta-analysis conducted by McGurk et al. [ 45 ] that encompassed three studies, there was a tendency towards LVEF improvement, although it did not reach statistical significance (standardized mean difference = 0.25, 95% CI -0.38 to 0.89).",
+      "context_window": "tistical significance (standardized mean difference = 0.25, 95% CI -0.38 to 0.89). Taurine exerts positive inotropic effects on the heart by",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-4088",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4088,
+      "sentence": "In studies involving patients with heart failure, most participants were classified as NYHA class 2 or 3 and displayed either moderate (40-50%) or decreased (< 40%) LVEF.",
+      "context_window": "fied as NYHA class 2 or 3 and displayed either moderate (40-50%) or decreased (< 40%) LVEF. These results highlight the pot",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-pct-4109",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4109,
+      "sentence": "In studies involving patients with heart failure, most participants were classified as NYHA class 2 or 3 and displayed either moderate (40-50%) or decreased (< 40%) LVEF.",
+      "context_window": "or 3 and displayed either moderate (40-50%) or decreased (< 40%) LVEF. These results highlight the potential of taurine in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11325608_insights_into_the_cardiovascular_benefits_of_taurine_a_syste-u-5002",
+      "claim_type": "unit_value",
+      "raw_text": "90 days",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 5002,
+      "sentence": "There were no significant negative effects of taurine in our study, despite the varying range of doses (1.5-6 g/day) and lengths of supplementation periods (5-90 days).",
+      "context_window": "ses (1.5-6 g/day) and lengths of supplementation periods (5-90 days). All negative effects of taurine (potentially) were modera",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

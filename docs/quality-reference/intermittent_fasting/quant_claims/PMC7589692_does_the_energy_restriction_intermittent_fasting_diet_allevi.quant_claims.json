@@ -1,0 +1,716 @@
+{
+  "paper_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi",
+  "doi": "10.3390/nu12103213",
+  "extracted_at": "2026-05-05T22:11:23+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 10,
+    "sample_size": 2,
+    "percentage": 23,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-276",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 276,
+      "sentence": "This randomized controlled study was performed with metabolic syndrome patients, aged 18-65 years, at an academic institution in Istanbul, Turkey ( n = 70).",
+      "context_window": "udy was performed with metabolic syndrome patients, aged 18-65 years, at an academic institution in Istanbul, Turkey ( n = 70).",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-n-335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 70",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 335,
+      "sentence": "This randomized controlled study was performed with metabolic syndrome patients, aged 18-65 years, at an academic institution in Istanbul, Turkey ( n = 70).",
+      "context_window": "-65 years, at an academic institution in Istanbul, Turkey ( n = 70). All participants were randomized to the Intermittent Ener",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-940",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 940,
+      "sentence": "Changes in body weight (\u22487% weight loss) and composition were similar in both groups.",
+      "context_window": "ith the Healthy Eating Index-2010. Changes in body weight (\u22487% weight loss) and composition were similar in both groups. B",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-p-1154",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1154,
+      "sentence": "Blood pressure, total cholesterol, triglyceride, low-density lipoprotein (LDL), fasting glucose, and insulin at the 12th week decreased in both groups ( p < 0.05).",
+      "context_window": "se, and insulin at the 12th week decreased in both groups ( p < 0.05). No significant differences were observed in metabolic syn",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-834",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 834,
+      "sentence": "Depending on the difference in the diagnostic criteria used, the incidence of metabolic syndrome in adults in varied populations has been reported to range from 28 to 50% [ 6 , 7 , 8 , 9 , 10 ].",
+      "context_window": "in varied populations has been reported to range from 28 to 50% [ 6 , 7 , 8 , 9 , 10 ]. Turkey, whose adult obesity prevale",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-904",
+      "claim_type": "percentage",
+      "raw_text": "28.8%",
+      "numeric_values": [
+        28.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 904,
+      "sentence": "Turkey, whose adult obesity prevalence is 28.8%, is in the top ten of the adult obesity prevalence ranking in Organization for Economic Cooperation and Development (OECD) countries [ 11 ].",
+      "context_window": "7 , 8 , 9 , 10 ]. Turkey, whose adult obesity prevalence is 28.8%, is in the top ten of the adult obesity prevalence ranking",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1160",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1160,
+      "sentence": "Consistent with this high prevalence of obesity, metabolic syndrome prevalence is found to be between 30 and 50% [ 12 , 13 , 14 ].",
+      "context_window": "metabolic syndrome prevalence is found to be between 30 and 50% [ 12 , 13 , 14 ]. In individuals suffering from metabolic",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1235",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1235,
+      "sentence": "In individuals suffering from metabolic syndrome, 5-10% weight loss is recommended for blood glucose regulation, improvement of dyslipidemia, and lowering blood pressure [ 15 ].",
+      "context_window": "14 ]. In individuals suffering from metabolic syndrome, 5-10% weight loss is recommended for blood glucose regulation, im",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1113",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1113,
+      "sentence": "As no comparable study has been performed comparing the effects of the 16:8 model of 25% energy restriction diet versus continuous 25% energy restriction diet in diagnosed metabolic syndrome patients, prospective power calculations were not possible.",
+      "context_window": "s been performed comparing the effects of the 16:8 model of 25% energy restriction diet versus continuous 25% energy restri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1159",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1159,
+      "sentence": "As no comparable study has been performed comparing the effects of the 16:8 model of 25% energy restriction diet versus continuous 25% energy restriction diet in diagnosed metabolic syndrome patients, prospective power calculations were not possible.",
+      "context_window": "16:8 model of 25% energy restriction diet versus continuous 25% energy restriction diet in diagnosed metabolic syndrome pat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1433",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1433,
+      "sentence": "To assess the possibility of type 2 error, retrospective power calculations were conducted according to change weight loss, in which it is known that a 5-10% decrease results in significant improvements in metabolic syndrome components [ 16 ].",
+      "context_window": "ording to change weight loss, in which it is known that a 5-10% decrease results in significant improvements in metabolic s",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1750",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1750,
+      "sentence": "We calculated that 30 participants per group would provide 80% power to detect a significant difference of 5% in body weight between the intermittent energy restriction fasting group and the only calorie restriction group at the 12th week, using a 2-tailed independent samples t -test with \u03b1 = 0.05.",
+      "context_window": "We calculated that 30 participants per group would provide 80% power to detect a significant difference of 5% in body weig",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1798",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1798,
+      "sentence": "We calculated that 30 participants per group would provide 80% power to detect a significant difference of 5% in body weight between the intermittent energy restriction fasting group and the only calorie restriction group at the 12th week, using a 2-tailed independent samples t -test with \u03b1 = 0.05.",
+      "context_window": "uld provide 80% power to detect a significant difference of 5% in body weight between the intermittent energy restriction",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-2024",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2024,
+      "sentence": "We anticipated a dropout rate of 15%.",
+      "context_window": "les t -test with \u03b1 = 0.05. We anticipated a dropout rate of 15%. Thus, we initially aimed to recruit 70 participants (35 pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-2859",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2859,
+      "sentence": "The criteria of inclusion were metabolic syndrome patients, aged 18-65 years, with a body mass index (BMI) \u2265 27 kg/m 2 .",
+      "context_window": "eria of inclusion were metabolic syndrome patients, aged 18-65 years, with a body mass index (BMI) \u2265 27 kg/m 2 . Inclusion crit",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-2900",
+      "claim_type": "unit_value",
+      "raw_text": "27 kg",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2900,
+      "sentence": "The criteria of inclusion were metabolic syndrome patients, aged 18-65 years, with a body mass index (BMI) \u2265 27 kg/m 2 .",
+      "context_window": "patients, aged 18-65 years, with a body mass index (BMI) \u2265 27 kg/m 2 . Inclusion criteria: Being between the ages of 18-65",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-2963",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2963,
+      "sentence": "Inclusion criteria:\n\nBeing between the ages of 18-65 years;\n\nBody mass index of 27 and above;\n\nReferred by a clinician, with a diagnosis of metabolic syndrome according to the criteria of IDF 2005 or NCEP-ATP III.",
+      "context_window": "kg/m 2 . Inclusion criteria: Being between the ages of 18-65 years; Body mass index of 27 and above; Referred by a clinician",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-3327",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3327,
+      "sentence": "Exclusion criteria:\n\nBeing pregnant, lactating, pre-menopausal, or menopausal;\n\nFollowing a special diet (such as Celiac, type 1 diabetes) or having changed their dietary pattern within the previous 12 weeks of the study\u2019s start date;\n\nUsing a special nutritional supplement (omega-3, probiotic, teff seed, etc.);\n\nUse of insulin or sulfonamide derivative oral antidiabetic drugs;\n\nDoing heavy physical activity or working in a physically demanding job;\n\nPresence of liver or kidney disease, or immune deficiency;\n\nConditions that will seriously affect weight management such as having had bariatric surgery;\n\nDetermined to have had an unintentional sudden weight loss of more than 5% in the last three months;\n\nIntellectual disability or significant medical or psychiatric illness as documented by the referring doctor.",
+      "context_window": "or having changed their dietary pattern within the previous 12 weeks of the study\u2019s start date; Using a special nutritional sup",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-3810",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3810,
+      "sentence": "Exclusion criteria:\n\nBeing pregnant, lactating, pre-menopausal, or menopausal;\n\nFollowing a special diet (such as Celiac, type 1 diabetes) or having changed their dietary pattern within the previous 12 weeks of the study\u2019s start date;\n\nUsing a special nutritional supplement (omega-3, probiotic, teff seed, etc.);\n\nUse of insulin or sulfonamide derivative oral antidiabetic drugs;\n\nDoing heavy physical activity or working in a physically demanding job;\n\nPresence of liver or kidney disease, or immune deficiency;\n\nConditions that will seriously affect weight management such as having had bariatric surgery;\n\nDetermined to have had an unintentional sudden weight loss of more than 5% in the last three months;\n\nIntellectual disability or significant medical or psychiatric illness as documented by the referring doctor.",
+      "context_window": "o have had an unintentional sudden weight loss of more than 5% in the last three months; Intellectual disability or signi",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-4933",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4933,
+      "sentence": "All participants needed to adhere to a dietary regime, with a reduction of 25% from habitual energy intake for the 12-week intervention period, and maintain their present lifestyle without any change in physical activity levels.",
+      "context_window": "s needed to adhere to a dietary regime, with a reduction of 25% from habitual energy intake for the 12-week intervention pe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-5587",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5587,
+      "sentence": "When preparing the diet menus, a 25% reduction was made on habitual energy consumption.",
+      "context_window": "n energy restriction diet. When preparing the diet menus, a 25% reduction was made on habitual energy consumption. The menu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-10970",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 10970,
+      "sentence": "All participants visited their clinicians before the dietary intervention and after 12 weeks.",
+      "context_window": "their clinicians before the dietary intervention and after 12 weeks. Biochemical test results were obtained from participants\u2019",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-12004",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12004,
+      "sentence": "Results are expressed as the mean \u00b1 standard error of the mean (SEM) 95% confidence interval.",
+      "context_window": "re expressed as the mean \u00b1 standard error of the mean (SEM) 95% confidence interval. Normality tests were evaluated using t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-n-113",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 113,
+      "sentence": "Participants were randomized to IER or CER groups ( n = 35) equally.",
+      "context_window": "study. Participants were randomized to IER or CER groups ( n = 35) equally. Five participants did not complete the whole prot",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1212",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1212,
+      "sentence": "The IER group lost a significant amount of weight loss during the 12-week study period (about 8%, p < 0.001).",
+      "context_window": "mount of weight loss during the 12-week study period (about 8%, p < 0.001). Further, the CER group lost weight and the cha",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-p-1216",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1216,
+      "sentence": "The IER group lost a significant amount of weight loss during the 12-week study period (about 8%, p < 0.001).",
+      "context_window": "t of weight loss during the 12-week study period (about 8%, p < 0.001). Further, the CER group lost weight and the changes signif",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1309",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1309,
+      "sentence": "Further, the CER group lost weight and the changes significantly occurred (about 6%, p < 0.001).",
+      "context_window": "p lost weight and the changes significantly occurred (about 6%, p < 0.001). In the 12-weeks measurements, there is a signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-p-1313",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1313,
+      "sentence": "Further, the CER group lost weight and the changes significantly occurred (about 6%, p < 0.001).",
+      "context_window": "st weight and the changes significantly occurred (about 6%, p < 0.001). In the 12-weeks measurements, there is a significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-1480",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 kg",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1480,
+      "sentence": "While a decrease of approximately 5.5 kg was observed in the amount of body fat in the IER group, a decrease of approximately 4 kg was observed in the CER group.",
+      "context_window": "f the IER and CER groups. While a decrease of approximately 5.5 kg was observed in the amount of body fat in the IER group, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-1572",
+      "claim_type": "unit_value",
+      "raw_text": "4 kg",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1572,
+      "sentence": "While a decrease of approximately 5.5 kg was observed in the amount of body fat in the IER group, a decrease of approximately 4 kg was observed in the CER group.",
+      "context_window": "t of body fat in the IER group, a decrease of approximately 4 kg was observed in the CER group. Although the participants ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-89",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 89,
+      "sentence": "This randomized controlled trial investigated for the first time the clinical effects of 12 weeks of intermittent fasting therapy in patients with metabolic syndrome.",
+      "context_window": "ial investigated for the first time the clinical effects of 12 weeks of intermittent fasting therapy in patients with metabolic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-233",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 233,
+      "sentence": "The intervention of intermittent energy restriction caused a mean 8% weight loss, reduced waist/hip ratio, and was not associated with any adverse effects.",
+      "context_window": "tervention of intermittent energy restriction caused a mean 8% weight loss, reduced waist/hip ratio, and was not associate",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1210,
+      "sentence": "According to a study in which there was intermittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabolic risk, and body composition in metabolic risk in women with overweight, a 70% energy restriction fasting diet displayed greater reductions in fat mass, weight, cholesterol, and LDL values compared with continuous 70% energy restriction or eucaloric fasting [ 31 ].",
+      "context_window": "was intermittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabo",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1218",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1218,
+      "sentence": "According to a study in which there was intermittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabolic risk, and body composition in metabolic risk in women with overweight, a 70% energy restriction fasting diet displayed greater reductions in fat mass, weight, cholesterol, and LDL values compared with continuous 70% energy restriction or eucaloric fasting [ 31 ].",
+      "context_window": "rmittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabolic ris",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1351,
+      "sentence": "According to a study in which there was intermittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabolic risk, and body composition in metabolic risk in women with overweight, a 70% energy restriction fasting diet displayed greater reductions in fat mass, weight, cholesterol, and LDL values compared with continuous 70% energy restriction or eucaloric fasting [ 31 ].",
+      "context_window": "y composition in metabolic risk in women with overweight, a 70% energy restriction fasting diet displayed greater reduction",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-1490",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1490,
+      "sentence": "According to a study in which there was intermittent fasting versus continuous energy intake at 100% or 70% of requirements on insulin sensitivity, cardiometabolic risk, and body composition in metabolic risk in women with overweight, a 70% energy restriction fasting diet displayed greater reductions in fat mass, weight, cholesterol, and LDL values compared with continuous 70% energy restriction or eucaloric fasting [ 31 ].",
+      "context_window": "eight, cholesterol, and LDL values compared with continuous 70% energy restriction or eucaloric fasting [ 31 ]. Chow et al.",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-p-1880",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1880,
+      "sentence": "Compared with the non-time-restricted diet intervention, the time-restricted diet reduced weight, lean mass, and visceral fat ( p \u2264 0.05).",
+      "context_window": "stricted diet reduced weight, lean mass, and visceral fat ( p \u2264 0.05). Blood pressure, glycemic measure as HbA1c %, HOMA-IR, fas",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-pct-3101",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3101,
+      "sentence": "Both diet groups in this study similarly performed a 25% energy restriction of habitual energy intake, not the ad libitum or non-energy-restricted diet like other studies.",
+      "context_window": "pancy. Both diet groups in this study similarly performed a 25% energy restriction of habitual energy intake, not the ad li",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7589692_does_the_energy_restriction_intermittent_fasting_diet_allevi-u-5884",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5884,
+      "sentence": "Both groups succeeded in meeting the recommended average intakes of fiber in 12 weeks (25 g/day for adults).",
+      "context_window": "eded in meeting the recommended average intakes of fiber in 12 weeks (25 g/day for adults). According to the Turkish National Nu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

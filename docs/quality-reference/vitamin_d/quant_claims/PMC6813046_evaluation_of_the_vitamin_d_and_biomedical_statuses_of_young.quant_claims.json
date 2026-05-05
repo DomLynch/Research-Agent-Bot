@@ -1,0 +1,920 @@
+{
+  "paper_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young",
+  "doi": "10.1186/s12887-019-1744-8",
+  "extracted_at": "2026-05-05T21:50:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "p_value": 10,
+    "mean_sd": 24,
+    "percentage": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-885",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 885,
+      "sentence": "Although all patients exhibited moderately to strongly elevated serum ferritin levels, this biomarker was significantly higher in children older than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "biomarker was significantly higher in children older than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-926",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 926,
+      "sentence": "Although all patients exhibited moderately to strongly elevated serum ferritin levels, this biomarker was significantly higher in children older than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "ildren older than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-936",
+      "claim_type": "mean_sd",
+      "raw_text": "1512 \u00b1 192.6",
+      "numeric_values": [
+        1512.0,
+        192.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 936,
+      "sentence": "Although all patients exhibited moderately to strongly elevated serum ferritin levels, this biomarker was significantly higher in children older than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "er than \u22655 years, compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test). Older childre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-953",
+      "claim_type": "mean_sd",
+      "raw_text": "2337 \u00b1 299.8",
+      "numeric_values": [
+        2337.0,
+        299.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 953,
+      "sentence": "2337 \u00b1 299.8 ng/ml, Mann-Whitney U test).",
+      "context_window": "compared to younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test). Older children had a significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-1111",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1111,
+      "sentence": "Older children had a significantly lower 25-hydroxy vitamin D3 (25(OH)D 3 ) level, compared to younger children (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "min D3 (25(OH)D 3 ) level, compared to younger children (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1121",
+      "claim_type": "mean_sd",
+      "raw_text": "34.25 \u00b1 11.06",
+      "numeric_values": [
+        34.25,
+        11.06
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1121,
+      "sentence": "Older children had a significantly lower 25-hydroxy vitamin D3 (25(OH)D 3 ) level, compared to younger children (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "(OH)D 3 ) level, compared to younger children (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test). No age-relate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1139",
+      "claim_type": "mean_sd",
+      "raw_text": "23.05 \u00b1 9.95",
+      "numeric_values": [
+        23.05,
+        9.95
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1139,
+      "sentence": "23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test).",
+      "context_window": "ompared to younger children (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test). No age-related differences wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-1393",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1393,
+      "sentence": "Regarding liver function, the serum alanine aminotransferase (ALT) level was significantly increased in children older than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "context_window": ") level was significantly increased in children older than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-1434",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1434,
+      "sentence": "Regarding liver function, the serum alanine aminotransferase (ALT) level was significantly increased in children older than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "context_window": "ildren older than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82I U/ml, Mann-Whitney U test).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1444",
+      "claim_type": "mean_sd",
+      "raw_text": "19.17 \u00b1 2.44",
+      "numeric_values": [
+        19.17,
+        2.44
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1444,
+      "sentence": "Regarding liver function, the serum alanine aminotransferase (ALT) level was significantly increased in children older than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "context_window": "er than \u22655 years, compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82I U/ml, Mann-Whitney U test). However, no a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1461",
+      "claim_type": "mean_sd",
+      "raw_text": "43.45 \u00b1 9.82",
+      "numeric_values": [
+        43.45,
+        9.82
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1461,
+      "sentence": "43.45 \u00b1 9.82I U/ml, Mann-Whitney U test).",
+      "context_window": "compared to younger children (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82I U/ml, Mann-Whitney U test). However, no age-related differ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-693",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 693,
+      "sentence": "Most such patients develop symptoms of \u03b2-TM during early childhood, generally between the ages of 6 and 24 months.",
+      "context_window": "during early childhood, generally between the ages of 6 and 24 months. These clinical symptoms may include poor growth, feeding d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-262",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 262,
+      "sentence": "The patients ranged in age from < 1 to 12 years old (yo), with a mean age (\u00b1 standard deviation) of 5 \u00b1 3 yo.",
+      "context_window": "ut the study period. The patients ranged in age from < 1 to 12 years old (yo), with a mean age (\u00b1 standard deviation) of 5 \u00b1 3 y",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-323",
+      "claim_type": "mean_sd",
+      "raw_text": "5 \u00b1 3",
+      "numeric_values": [
+        5.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 323,
+      "sentence": "The patients ranged in age from < 1 to 12 years old (yo), with a mean age (\u00b1 standard deviation) of 5 \u00b1 3 yo.",
+      "context_window": "2 years old (yo), with a mean age (\u00b1 standard deviation) of 5 \u00b1 3 yo. Thirteen patients were < 5 yo, while 19 were \u2265 5 yo. Mo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-493",
+      "claim_type": "mean_sd",
+      "raw_text": "14 \u00b1 15",
+      "numeric_values": [
+        14.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 493,
+      "sentence": "Most patients had been diagnosed with \u03b2-TM at an age < 2 yo, and the mean age at the time of diagnosis was 14 \u00b1 15 months.",
+      "context_window": "n age < 2 yo, and the mean age at the time of diagnosis was 14 \u00b1 15 months. Demographic characteristics of the patients Child",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-498",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 498,
+      "sentence": "Most patients had been diagnosed with \u03b2-TM at an age < 2 yo, and the mean age at the time of diagnosis was 14 \u00b1 15 months.",
+      "context_window": "< 2 yo, and the mean age at the time of diagnosis was 14 \u00b1 15 months. Demographic characteristics of the patients Children wit",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-951",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 951,
+      "sentence": "The patients\u2019 demographic characteristics were reviewed retrospectively\n\nAll patients received regular blood transfusions at a volume of 15 ml/kg at intervals of 2-4 weeks to maintain a hemoglobin level > 90 g/L, and most had received the first blood transfusion almost concomitantly with the diagnosis.",
+      "context_window": "lood transfusions at a volume of 15 ml/kg at intervals of 2-4 weeks to maintain a hemoglobin level > 90 g/L, and most had recei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1629",
+      "claim_type": "mean_sd",
+      "raw_text": "2002 \u00b1 1161",
+      "numeric_values": [
+        2002.0,
+        1161.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1629,
+      "sentence": "All children recruited for this study exhibited moderate to severe iron overload, with a mean serum ferritin level of 2002 \u00b1 1161 ng/ml.",
+      "context_window": "o severe iron overload, with a mean serum ferritin level of 2002 \u00b1 1161 ng/ml. Consistent with many previous studies, the severity",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-1963",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1963,
+      "sentence": "A comparison revealed significantly higher serum ferritin concentrations in the older children, compared to the younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "in the older children, compared to the younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1973",
+      "claim_type": "mean_sd",
+      "raw_text": "1512 \u00b1 192.6",
+      "numeric_values": [
+        1512.0,
+        192.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1973,
+      "sentence": "A comparison revealed significantly higher serum ferritin concentrations in the older children, compared to the younger children (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "der children, compared to the younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test) (Fig. 1 ). Ag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-1990",
+      "claim_type": "mean_sd",
+      "raw_text": "2337 \u00b1 299.8",
+      "numeric_values": [
+        2337.0,
+        299.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1990,
+      "sentence": "2337 \u00b1 299.8 ng/ml, Mann-Whitney U test) (Fig.",
+      "context_window": "pared to the younger children (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test) (Fig. 1 ). Age-related differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-2152",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2152,
+      "sentence": "Patients \u22655 years of age had significantly higher serum ferritin concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "centrations of patients with \u03b2-thalassemia major. Patients \u22655 years of age had significantly higher serum ferritin concentratio",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-2246",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2246,
+      "sentence": "Patients \u22655 years of age had significantly higher serum ferritin concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "igher serum ferritin concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Ma",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-2264",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2264,
+      "sentence": "Patients \u22655 years of age had significantly higher serum ferritin concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "in concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-2274",
+      "claim_type": "mean_sd",
+      "raw_text": "1512 \u00b1 192.6",
+      "numeric_values": [
+        1512.0,
+        192.6
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2274,
+      "sentence": "Patients \u22655 years of age had significantly higher serum ferritin concentrations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs.",
+      "context_window": "rations, compared to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test) Iron accumula",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-2291",
+      "claim_type": "mean_sd",
+      "raw_text": "2337 \u00b1 299.8",
+      "numeric_values": [
+        2337.0,
+        299.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2291,
+      "sentence": "2337 \u00b1 299.8 ng/ml, Mann-Whitney U test)\n\nIron accumulation in tissues is associated with functional dysregulation in many organs, including the liver, kidney, and endocrine organs such as the thyroid and pancreas.",
+      "context_window": "to patients < 5 years of age (* p < 0.05, 1512 \u00b1 192.6 vs. 2337 \u00b1 299.8 ng/ml, Mann-Whitney U test) Iron accumulation in tissues i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-3075",
+      "claim_type": "mean_sd",
+      "raw_text": "28.3 \u00b1 10.9",
+      "numeric_values": [
+        28.3,
+        10.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3075,
+      "sentence": "Notably, only the overall mean serum concentration of 25(OH)D 3 , 28.3 \u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol/L) (Table 2 ).",
+      "context_window": "y, only the overall mean serum concentration of 25(OH)D 3 , 28.3 \u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-3082",
+      "claim_type": "unit_value",
+      "raw_text": "10.9 mmol",
+      "numeric_values": [
+        10.9
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3082,
+      "sentence": "Notably, only the overall mean serum concentration of 25(OH)D 3 , 28.3 \u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol/L) (Table 2 ).",
+      "context_window": "the overall mean serum concentration of 25(OH)D 3 , 28.3 \u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol/L) (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-3139",
+      "claim_type": "unit_value",
+      "raw_text": "30 mmol",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 3139,
+      "sentence": "Notably, only the overall mean serum concentration of 25(OH)D 3 , 28.3 \u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol/L) (Table 2 ).",
+      "context_window": "\u00b1 10.9 mmol/L, was slightly below the laboratory standard (30 mmol/L) (Table 2 ). Laboratory evaluations of the patients Ser",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-3748",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3748,
+      "sentence": "In analyses of bone metabolism, the mean serum concentration of 25(OH)D 3 was significantly higher in patients < 5 yo, compared to those aged \u22655 yo (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "higher in patients < 5 yo, compared to those aged \u22655 yo (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-3758",
+      "claim_type": "mean_sd",
+      "raw_text": "34.25 \u00b1 11.06",
+      "numeric_values": [
+        34.25,
+        11.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3758,
+      "sentence": "In analyses of bone metabolism, the mean serum concentration of 25(OH)D 3 was significantly higher in patients < 5 yo, compared to those aged \u22655 yo (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "patients < 5 yo, compared to those aged \u22655 yo (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test). Moreover, the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-3776",
+      "claim_type": "mean_sd",
+      "raw_text": "23.05 \u00b1 9.95",
+      "numeric_values": [
+        23.05,
+        9.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3776,
+      "sentence": "23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test).",
+      "context_window": "ompared to those aged \u22655 yo (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test). Moreover, the mean serum conce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-4369",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4369,
+      "sentence": "Serum biomarkers of bone metabolism, including 25-hydroxy vitamin D3 (25(OH)D3), calcium (Ca), phosphorus (P), and parathyroid hormone (PTH), were compared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "roid hormone (PTH), were compared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Man",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-4385",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4385,
+      "sentence": "Serum biomarkers of bone metabolism, including 25-hydroxy vitamin D3 (25(OH)D3), calcium (Ca), phosphorus (P), and parathyroid hormone (PTH), were compared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "H), were compared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4395",
+      "claim_type": "mean_sd",
+      "raw_text": "34.25 \u00b1 11.06",
+      "numeric_values": [
+        34.25,
+        11.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4395,
+      "sentence": "Serum biomarkers of bone metabolism, including 25-hydroxy vitamin D3 (25(OH)D3), calcium (Ca), phosphorus (P), and parathyroid hormone (PTH), were compared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs.",
+      "context_window": "ompared between patients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test) All patients",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4413",
+      "claim_type": "mean_sd",
+      "raw_text": "23.05 \u00b1 9.95",
+      "numeric_values": [
+        23.05,
+        9.95
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4413,
+      "sentence": "23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test)\n\nAll patients were found to be hepatitis B and C seronegative.",
+      "context_window": "tients \u22655 and < 5 years old (** p < 0.01, 34.25 \u00b1 11.06 vs. 23.05 \u00b1 9.95 ng/ml, Mann-Whitney U test) All patients were found to be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-4718",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4718,
+      "sentence": "Patients < 5 yo had a significantly lower mean ALT concentration, compared to older patients (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "context_window": "lower mean ALT concentration, compared to older patients (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82 IU/ml, Mann-Whitney U test).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4728",
+      "claim_type": "mean_sd",
+      "raw_text": "19.17 \u00b1 2.44",
+      "numeric_values": [
+        19.17,
+        2.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4728,
+      "sentence": "Patients < 5 yo had a significantly lower mean ALT concentration, compared to older patients (* p < 0.05, 19.17 \u00b1 2.44 vs.",
+      "context_window": "ALT concentration, compared to older patients (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82 IU/ml, Mann-Whitney U test). A significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4745",
+      "claim_type": "mean_sd",
+      "raw_text": "43.45 \u00b1 9.82",
+      "numeric_values": [
+        43.45,
+        9.82
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4745,
+      "sentence": "43.45 \u00b1 9.82 IU/ml, Mann-Whitney U test).",
+      "context_window": "n, compared to older patients (* p < 0.05, 19.17 \u00b1 2.44 vs. 43.45 \u00b1 9.82 IU/ml, Mann-Whitney U test). A significant increase of TP l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-4866",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4866,
+      "sentence": "A significant increase of TP level was observed in the older patient group (** p < 0.01, 61.73 \u00b1 4.06 vs.",
+      "context_window": "ase of TP level was observed in the older patient group (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test). H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4876",
+      "claim_type": "mean_sd",
+      "raw_text": "61.73 \u00b1 4.06",
+      "numeric_values": [
+        61.73,
+        4.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4876,
+      "sentence": "A significant increase of TP level was observed in the older patient group (** p < 0.01, 61.73 \u00b1 4.06 vs.",
+      "context_window": "level was observed in the older patient group (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test). However, no sig",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-4893",
+      "claim_type": "mean_sd",
+      "raw_text": "65.77 \u00b1 4.08",
+      "numeric_values": [
+        65.77,
+        4.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4893,
+      "sentence": "65.77 \u00b1 4.08 g/L, Mann-Whitney U test).",
+      "context_window": "d in the older patient group (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test). However, no significant age-rela",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-5449",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5449,
+      "sentence": "Serum biomarkers of liver, kidney, and thyroid functions were assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs.",
+      "context_window": "y, and thyroid functions were assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Man",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-p-5468",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5468,
+      "sentence": "Serum biomarkers of liver, kidney, and thyroid functions were assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs.",
+      "context_window": "tions were assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-5478",
+      "claim_type": "mean_sd",
+      "raw_text": "61.73 \u00b1 4.06",
+      "numeric_values": [
+        61.73,
+        4.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5478,
+      "sentence": "Serum biomarkers of liver, kidney, and thyroid functions were assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs.",
+      "context_window": "assessed in patients \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-msd-5495",
+      "claim_type": "mean_sd",
+      "raw_text": "65.77 \u00b1 4.08",
+      "numeric_values": [
+        65.77,
+        4.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5495,
+      "sentence": "65.77 \u00b1 4.08 g/L, Mann-Whitney U test)",
+      "context_window": "ents \u22655 and < 5 years of age (** p < 0.01, 61.73 \u00b1 4.06 vs. 65.77 \u00b1 4.08 g/L, Mann-Whitney U test)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-pct-1077",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1077,
+      "sentence": "Previous studies found that thalassemia patients who had received multiple blood transfusions exhibited significant reductions in vitamin D levels of approximately 90%.",
+      "context_window": "significant reductions in vitamin D levels of approximately 90%. In these patients, the upregulated absorption of iron lead",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-u-4204",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4204,
+      "sentence": "The clinical findings from our study suggest that iron overload may become apparent beyond 5 years of age, suggesting that T2* MRI of the liver may be considered at this time.",
+      "context_window": "study suggest that iron overload may become apparent beyond 5 years of age, suggesting that T2* MRI of the liver may be conside",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6813046_evaluation_of_the_vitamin_d_and_biomedical_statuses_of_young-pct-4579",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4579,
+      "sentence": "Nearly 60% of patients in our study were receiving regular iron chelation therapy with multiple chelating agents.",
+      "context_window": "se agents may be associated with hypocalcemia [ 4 ]. Nearly 60% of patients in our study were receiving regular iron chelat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "paper_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le",
+  "doi": "10.17159/2078-516X/2024/v36i1a15245",
+  "extracted_at": "2026-05-05T22:04:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 1,
+    "percentage": 8,
+    "p_value": 14,
+    "sample_size": 7,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-msd-1235",
+      "claim_type": "mean_sd",
+      "raw_text": "29.1 \u00b1 5.9",
+      "numeric_values": [
+        29.1,
+        5.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1235,
+      "sentence": "Both groups had low cardiorespiratory fitness when compared to norm values (GEMPI VO2 peak was 29.1 \u00b1 5.9 ml.kg-1.min-1 and GEMPIII VO2 peak was 30.0[11.0] ml.kg-1.min-1).",
+      "context_window": "ry fitness when compared to norm values (GEMPI VO2 peak was 29.1 \u00b1 5.9 ml.kg-1.min-1 and GEMPIII VO2 peak was 30.0[11.0] ml.kg-1.m",
+      "claim_role": "unknown",
+      "endpoint": "cardiorespiratory fitness",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1387",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1387,
+      "sentence": "Most participants did not meet WHO physical activity requirements (GEMP I: 72%; GEMP III: 78%).",
+      "context_window": "ts did not meet WHO physical activity requirements (GEMP I: 72%; GEMP III: 78%). There were significant differences in BMI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1402",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1402,
+      "sentence": "Most participants did not meet WHO physical activity requirements (GEMP I: 72%; GEMP III: 78%).",
+      "context_window": "WHO physical activity requirements (GEMP I: 72%; GEMP III: 78%). There were significant differences in BMI (p=0.046), dias",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-1451",
+      "claim_type": "p_value",
+      "raw_text": "p=0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1451,
+      "sentence": "There were significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not meeting WHO physical activity requirements (p<0.05).",
+      "context_window": "GEMP III: 78%). There were significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.0000",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-1487",
+      "claim_type": "p_value",
+      "raw_text": "p=0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1487,
+      "sentence": "There were significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not meeting WHO physical activity requirements (p<0.05).",
+      "context_window": "ant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-1510",
+      "claim_type": "p_value",
+      "raw_text": "p=0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "There were significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not meeting WHO physical activity requirements (p<0.05).",
+      "context_window": "(p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not meeting WHO physical acti",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-1598",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1598,
+      "sentence": "There were significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034) and VO2 peak (p=0.00001) between students meeting and not meeting WHO physical activity requirements (p<0.05).",
+      "context_window": "meeting and not meeting WHO physical activity requirements (p<0.05). Third- and fifth-year medical students at a South Africa",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-117",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 117,
+      "sentence": "Seventy-one per cent (71%) and sixty-five per cent (65%) of the participants were female in the GEMP I and GEMP III groups, respectively.",
+      "context_window": "istics of the medical student groups. Seventy-one per cent (71%) and sixty-five per cent (65%) of the participants were fem",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-147",
+      "claim_type": "percentage",
+      "raw_text": "65%",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 147,
+      "sentence": "Seventy-one per cent (71%) and sixty-five per cent (65%) of the participants were female in the GEMP I and GEMP III groups, respectively.",
+      "context_window": "groups. Seventy-one per cent (71%) and sixty-five per cent (65%) of the participants were female in the GEMP I and GEMP III",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-750",
+      "claim_type": "p_value",
+      "raw_text": "p =0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 750,
+      "sentence": "Mann-Whitney U tests showed a significant difference in age between the GEMP I and III groups (U = 3824, p =0.001).",
+      "context_window": "ference in age between the GEMP I and III groups (U = 3824, p =0.001). No other significant difference was identified between th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-903",
+      "claim_type": "sample_size",
+      "raw_text": "n=123",
+      "numeric_values": [
+        123.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 903,
+      "sentence": "Comparison of physical and physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups\n\nData are expressed as median [interquartile range] for data not normally distributed or mean \u00b1 standard deviation for normally distributed data.\n\nindicates p < 0.05;\n\nindicates VO 2 peak data outside of reference ranges. [ 10 ] Reference values for age group (20-29 years): Men: 44 mlO 2 .kg -1 .min -1 and Women: 31.6 mlO 2 .kg -1 .min -1 .",
+      "context_window": "of physical and physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups Data are exp",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-920",
+      "claim_type": "sample_size",
+      "raw_text": "n=139",
+      "numeric_values": [
+        139.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 920,
+      "sentence": "Comparison of physical and physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups\n\nData are expressed as median [interquartile range] for data not normally distributed or mean \u00b1 standard deviation for normally distributed data.\n\nindicates p < 0.05;\n\nindicates VO 2 peak data outside of reference ranges. [ 10 ] Reference values for age group (20-29 years): Men: 44 mlO 2 .kg -1 .min -1 and Women: 31.6 mlO 2 .kg -1 .min -1 .",
+      "context_window": "physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups Data are expressed as median",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1112,
+      "sentence": "Comparison of physical and physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups\n\nData are expressed as median [interquartile range] for data not normally distributed or mean \u00b1 standard deviation for normally distributed data.\n\nindicates p < 0.05;\n\nindicates VO 2 peak data outside of reference ranges. [ 10 ] Reference values for age group (20-29 years): Men: 44 mlO 2 .kg -1 .min -1 and Women: 31.6 mlO 2 .kg -1 .min -1 .",
+      "context_window": "tandard deviation for normally distributed data. indicates p < 0.05; indicates VO 2 peak data outside of reference ranges. [ 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-u-1219",
+      "claim_type": "unit_value",
+      "raw_text": "29 years",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1219,
+      "sentence": "Comparison of physical and physiological characteristics of the 3 rd (n=123) and 5 th (n=139) year medical student groups\n\nData are expressed as median [interquartile range] for data not normally distributed or mean \u00b1 standard deviation for normally distributed data.\n\nindicates p < 0.05;\n\nindicates VO 2 peak data outside of reference ranges. [ 10 ] Reference values for age group (20-29 years): Men: 44 mlO 2 .kg -1 .min -1 and Women: 31.6 mlO 2 .kg -1 .min -1 .",
+      "context_window": "reference ranges. [ 10 ] Reference values for age group (20-29 years): Men: 44 mlO 2 .kg -1 .min -1 and Women: 31.6 mlO 2 .kg -1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-1547",
+      "claim_type": "sample_size",
+      "raw_text": "n=106",
+      "numeric_values": [
+        106.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1547,
+      "sentence": "One hundred and six (n=106) and one hundred and forty-eight (n=148) of the students in GEMP I and III, respectively, fully completed the PAVS questionnaire.",
+      "context_window": "udents; GEMP III, 5 th year students. One hundred and six (n=106) and one hundred and forty-eight (n=148) of the students in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-1587",
+      "claim_type": "sample_size",
+      "raw_text": "n=148",
+      "numeric_values": [
+        148.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1587,
+      "sentence": "One hundred and six (n=106) and one hundred and forty-eight (n=148) of the students in GEMP I and III, respectively, fully completed the PAVS questionnaire.",
+      "context_window": "ne hundred and six (n=106) and one hundred and forty-eight (n=148) of the students in GEMP I and III, respectively, fully com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-1793",
+      "claim_type": "sample_size",
+      "raw_text": "n= 76",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1793,
+      "sentence": "The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requirements.",
+      "context_window": "centage of physical inactivity. The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1801",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1801,
+      "sentence": "The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requirements.",
+      "context_window": "of physical inactivity. The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-1821",
+      "claim_type": "sample_size",
+      "raw_text": "n=115",
+      "numeric_values": [
+        115.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1821,
+      "sentence": "The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requirements.",
+      "context_window": "ty. The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1829",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1829,
+      "sentence": "The majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requirements.",
+      "context_window": "majority of the GEMP I (n= 76) (72%), and GEMP III (n=115) (78%) students did not meet the WHO physical activity requiremen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-2066",
+      "claim_type": "p_value",
+      "raw_text": "p=0.275",
+      "numeric_values": [
+        0.275
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2066,
+      "sentence": "A Chi-square test showed no significant difference in the percentage of students not meeting the WHO physical activity requirements between the 3rd- and 5th-year groups (p=0.275).",
+      "context_window": "activity requirements between the 3rd- and 5th-year groups (p=0.275). Table 2 depicts the combined results of the GEMP I and G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-2331",
+      "claim_type": "p_value",
+      "raw_text": "p=0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2331,
+      "sentence": "T-tests and Mann-Whitney U tests showed significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00001) parameters between students who met the WHO physical activity requirements and those who did not meet the WHO requirements ( Table 2 ).",
+      "context_window": "Mann-Whitney U tests showed significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-2367",
+      "claim_type": "p_value",
+      "raw_text": "p=0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2367,
+      "sentence": "T-tests and Mann-Whitney U tests showed significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00001) parameters between students who met the WHO physical activity requirements and those who did not meet the WHO requirements ( Table 2 ).",
+      "context_window": "ant differences in BMI (p=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00001) parameters between students who",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-2392",
+      "claim_type": "p_value",
+      "raw_text": "p=0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2392,
+      "sentence": "T-tests and Mann-Whitney U tests showed significant differences in BMI (p=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00001) parameters between students who met the WHO physical activity requirements and those who did not meet the WHO requirements ( Table 2 ).",
+      "context_window": "=0.046), diastolic blood pressure (p=0.034), and VO 2 peak (p=0.00001) parameters between students who met the WHO physical activ",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-2963",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2963,
+      "sentence": "Comparison of students who were meeting WHO physical activity requirements to those who were not meeting the requirements (combined GEMP I and GEMP III groups)\n\nData are expressed as median [interquartile range] for data not normally distributed or mean \u00b1 standard deviation for normally distributed data.\n\nindicates p < 0.05;\n\nindicates effect size >0.2.",
+      "context_window": "tandard deviation for normally distributed data. indicates p < 0.05; indicates effect size >0.2. WHO physical activity requir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1174,
+      "sentence": "Kunene and Taukobong reported similar findings in healthcare workers, where 29% participated in moderate physical activity, while 40% presented with low physical activity levels per week. [ 12 ]\n\nA study by Prioreschi et al. reported that the majority of young South African adults spent a concerning amount of time engaging in sedentary behaviour and did not show accumulating activity in prolonged bouts. [ 13 ] These findings agree with this study\u2019s results, as the medical students had healthy characteristics but were unfit, with low physical activity levels.",
+      "context_window": "bong reported similar findings in healthcare workers, where 29% participated in moderate physical activity, while 40% prese",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-pct-1228",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1228,
+      "sentence": "Kunene and Taukobong reported similar findings in healthcare workers, where 29% participated in moderate physical activity, while 40% presented with low physical activity levels per week. [ 12 ]\n\nA study by Prioreschi et al. reported that the majority of young South African adults spent a concerning amount of time engaging in sedentary behaviour and did not show accumulating activity in prolonged bouts. [ 13 ] These findings agree with this study\u2019s results, as the medical students had healthy characteristics but were unfit, with low physical activity levels.",
+      "context_window": "where 29% participated in moderate physical activity, while 40% presented with low physical activity levels per week. [ 12",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-n-1753",
+      "claim_type": "sample_size",
+      "raw_text": "n=619",
+      "numeric_values": [
+        619.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1753,
+      "sentence": "Furthermore, a study by Gresse et al. also found that health science university students (n=619) at another South African university (Nelson Mandela University) had reduced physical activity levels and were not meeting WHO guidelines. [ 14 ] Similar to our study, Penpid et al. found that university students presented with high levels of physical inactivity. [ 15 ]\n\nContrary to our findings, several studies have reported a significant proportion of medical students meeting WHO physical activity guidelines, particularly in developed countries.",
+      "context_window": "et al. also found that health science university students (n=619) at another South African university (Nelson Mandela Univer",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-4118",
+      "claim_type": "p_value",
+      "raw_text": "p=0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4118,
+      "sentence": "Low- and Middle-Income Countries (LMIC), including South Africa, are undergoing a rapid transition to urbanisation, which poses a negative impact on lifestyles, such as physical inactivity, poor dietary habits, and sleeping patterns. [ 17 ] Medical students have also been affected by urbanisation and a struggle to lead a healthy lifestyle due to increased demands of academic responsibilities and expectations. [ 18 , 19 ] Furthermore, Belfrage et al. emphasised that the health and lifestyle practices of future medical doctors might influence their patient counselling and interaction abilities. [ 20 ]\n\nAlthough the majority of participants in this study presented with BMI and blood pressure values within the normal range (for both the GEMP I and III groups respectively), this study showed significant differences in BMI (Body Mass Index) (p=0.046), diastolic blood pressure (p=0.034), as well as VO 2 peak (p=0.00001) parameters between students that either met or did not meet the WHO physical activity recommendations.",
+      "context_window": "dy showed significant differences in BMI (Body Mass Index) (p=0.046), diastolic blood pressure (p=0.034), as well as VO 2 peak",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-4154",
+      "claim_type": "p_value",
+      "raw_text": "p=0.034",
+      "numeric_values": [
+        0.034
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4154,
+      "sentence": "Low- and Middle-Income Countries (LMIC), including South Africa, are undergoing a rapid transition to urbanisation, which poses a negative impact on lifestyles, such as physical inactivity, poor dietary habits, and sleeping patterns. [ 17 ] Medical students have also been affected by urbanisation and a struggle to lead a healthy lifestyle due to increased demands of academic responsibilities and expectations. [ 18 , 19 ] Furthermore, Belfrage et al. emphasised that the health and lifestyle practices of future medical doctors might influence their patient counselling and interaction abilities. [ 20 ]\n\nAlthough the majority of participants in this study presented with BMI and blood pressure values within the normal range (for both the GEMP I and III groups respectively), this study showed significant differences in BMI (Body Mass Index) (p=0.046), diastolic blood pressure (p=0.034), as well as VO 2 peak (p=0.00001) parameters between students that either met or did not meet the WHO physical activity recommendations.",
+      "context_window": "BMI (Body Mass Index) (p=0.046), diastolic blood pressure (p=0.034), as well as VO 2 peak (p=0.00001) parameters between stude",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10878414_comparing_cardiorespiratory_fitness_and_physical_activity_le-p-4186",
+      "claim_type": "p_value",
+      "raw_text": "p=0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4186,
+      "sentence": "Low- and Middle-Income Countries (LMIC), including South Africa, are undergoing a rapid transition to urbanisation, which poses a negative impact on lifestyles, such as physical inactivity, poor dietary habits, and sleeping patterns. [ 17 ] Medical students have also been affected by urbanisation and a struggle to lead a healthy lifestyle due to increased demands of academic responsibilities and expectations. [ 18 , 19 ] Furthermore, Belfrage et al. emphasised that the health and lifestyle practices of future medical doctors might influence their patient counselling and interaction abilities. [ 20 ]\n\nAlthough the majority of participants in this study presented with BMI and blood pressure values within the normal range (for both the GEMP I and III groups respectively), this study showed significant differences in BMI (Body Mass Index) (p=0.046), diastolic blood pressure (p=0.034), as well as VO 2 peak (p=0.00001) parameters between students that either met or did not meet the WHO physical activity recommendations.",
+      "context_window": ", diastolic blood pressure (p=0.034), as well as VO 2 peak (p=0.00001) parameters between students that either met or did not mee",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

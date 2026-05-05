@@ -1,0 +1,809 @@
+{
+  "paper_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas",
+  "doi": "10.1186/1475-2840-13-81",
+  "extracted_at": "2026-05-05T22:20:09+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 14,
+    "unit_value": 18,
+    "confidence_interval": 3,
+    "p_value": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-901",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 901,
+      "sentence": "The latter was based mainly on metformin and/or sulphonylurea therapy and yielded a 0.3% higher mean HbA1c value [ 4 ].",
+      "context_window": "nly on metformin and/or sulphonylurea therapy and yielded a 0.3% higher mean HbA1c value [ 4 ]. Conversely, the CV benefits",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-1021",
+      "claim_type": "percentage",
+      "raw_text": "120%",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1021,
+      "sentence": "Conversely, the CV benefits seen with metformin therapy in a subset of overweight (>120% ideal boody weight) patients in the United Kingdom Prospecitve Diabetes Study (UKPDS, [ 5 ]), seem to be largely confined to the comparison without other antidiabetic drug treatment only or to younger patients, according to a recent meta-analysis including 35 RCTs [ 6 ].",
+      "context_window": "its seen with metformin therapy in a subset of overweight (>120% ideal boody weight) patients in the United Kingdom Prospeci",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-4149",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4149,
+      "sentence": "Intact acarbose is poorly absorbed and is excreted in the feces, mostly intact but with up to 30% undergoing metabolism predominantly via fermentation by colonic microbiota [ 12 ].\n\n\u2022 Acarbose\n\n\u2022 Has shown efficacy on the full spectrum of diurnal dysglycemia.\n\n\u2022 Is the only oral antidiabetic drug approved in many countries for use in IGT, besides its approval in the treatment of diabetes.\n\n\u2022 Provides sustainable glucose control.\n\n\u2022 Lowers postprandial hyperglycemia and improves glycemic control.\n\n\u2022 Can be combined with other oral antidiabetic drugs and with insulin.\n\n\u2022 Has mild to moderate GI side-effects that may be minimized by a stepwise dose regimen.\n\n\u2022 Has been shown to be more effective in Asian than in Western populations.",
+      "context_window": "and is excreted in the feces, mostly intact but with up to 30% undergoing metabolism predominantly via fermentation by col",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-5495",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 5495,
+      "sentence": "A scheme of 50 to 100 mg tid is usually recommended as effective maintenance therapy.",
+      "context_window": "calation concept of \u2018start low, go slow\u2019. A scheme of 50 to 100 mg tid is usually recommended as effective maintenance therapy",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-6737",
+      "claim_type": "percentage",
+      "raw_text": "0.8%",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6737,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "acebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l red",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-6743",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 6743,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reductio",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-6787",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 mmol",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "mmol",
+      "source_section": "introduction",
+      "source_offset": 6787,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "herapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-ci-6833",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 1.92-2.73",
+      "numeric_values": [
+        1.92,
+        2.73
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 6833,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.8",
+      "claim_role": "background",
+      "endpoint": "fasting glucose",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-6858",
+      "claim_type": "unit_value",
+      "raw_text": "1.1 mmol",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "mmol",
+      "source_section": "introduction",
+      "source_offset": 6858,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35). In addit",
+      "claim_role": "background",
+      "endpoint": "fasting glucose",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-ci-6899",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.83-1.35",
+      "numeric_values": [
+        0.83,
+        1.35
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 6899,
+      "sentence": "In terms of quantifying the glucose-lowering efficacy, a Cochrane systematic [ 28 ] review has confirmed a placebo-subtracted decrease of HbA1c with acarbose therapy of 0.8% (95% confidence intervals (CI) 0.64-0.90), a 2.3 mmol/l reduction in postprandial glucose (95% CI 1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35).",
+      "context_window": "1.92-2.73), and a 1.1 mmol/l reduction in fasting glucose (95% CI 0.83-1.35). In addition, acarbose therapy significantly associates wi",
+      "claim_role": "background",
+      "endpoint": "fasting glucose",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-ci-7040",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -60.6, -21.0",
+      "numeric_values": [
+        -60.6,
+        -21.0
+      ],
+      "units": "95%CI",
+      "source_section": "introduction",
+      "source_offset": 7040,
+      "sentence": "In addition, acarbose therapy significantly associates with reduced 1-h post-load insulin concentrations by -40.8 pmol/l [95% CI: -60.6, -21.0] [ 28 ].",
+      "context_window": "duced 1-h post-load insulin concentrations by -40.8 pmol/l [95% CI: -60.6, -21.0] [ 28 ]. Based on 46 studies, a recent systematic meta-ana",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7396",
+      "claim_type": "percentage",
+      "raw_text": "1.02%",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7396,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": "bA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7441",
+      "claim_type": "percentage",
+      "raw_text": "1.54%",
+      "numeric_values": [
+        1.54
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7441,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": "reater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7448",
+      "claim_type": "percentage",
+      "raw_text": "2.00%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7448,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": "extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%])",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7499",
+      "claim_type": "percentage",
+      "raw_text": "0.52%",
+      "numeric_values": [
+        0.52
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7499,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": ", 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001). The ability of acarbose to reduce HbA",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7506",
+      "claim_type": "percentage",
+      "raw_text": "1.20%",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7506,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": "[2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001). The ability of acarbose to reduce HbA1c leve",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7515",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 7515,
+      "sentence": "The results revealed that, compared with placebo, mean HbA1c levels were reduced to a significantly greater extent (1.02%) in the Eastern diet group (mean [SD], 1.54% [2.00%]) than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001).",
+      "context_window": "than in the Western diet group (mean [SD], 0.52% [1.20%]); P < 0.001). The ability of acarbose to reduce HbA1c levels in the Eas",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7590",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.20",
+      "numeric_values": [
+        0.2
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 7590,
+      "sentence": "The ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
+      "context_window": "ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7613",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 7613,
+      "sentence": "The ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
+      "context_window": "reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-7723",
+      "claim_type": "percentage",
+      "raw_text": "0.39%",
+      "numeric_values": [
+        0.39
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 7723,
+      "sentence": "The ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
+      "context_window": "nylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-7730",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 7730,
+      "sentence": "The ability of acarbose to reduce HbA1c levels in the Eastern (P = 0.20) and Western (P = 0.10) diet groups was similar to that of sulfonylureas, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group.",
+      "context_window": "s, and HbA1c levels were reduced significantly more (0.39%; P < 0.001) in the Eastern than in the Western diet group. It is not s",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-9440",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 9440,
+      "sentence": "The GLP-1 enhancing effect is particularly seen also in type 2 diabetic patients during standardized meal tests, when administration of AGIs generates significantly lower plasma glucose, serum insulin and total GIP levels, whereas concentrations of active GLP-1, the key incretin hormone, are significantly higher - up to 50% [ 33 ].",
+      "context_window": "the key incretin hormone, are significantly higher - up to 50% [ 33 ]. This notion has been recently reinforced by the fin",
+      "claim_role": "background",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-9513",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 9513,
+      "sentence": "This notion has been recently reinforced by the finding that 24 weeks of acarbose monotherapy in newly diagnosed patients with T2D was associated with increased levels of both fasting and postprandial GLP-1, NO levels and NOS activity [ 37 ]; the benefits of acarbose on cardiovascular risk may, therefore, be related to its stimulation of GLP-1 secretion.",
+      "context_window": "his notion has been recently reinforced by the finding that 24 weeks of acarbose monotherapy in newly diagnosed patients with T2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-13161",
+      "claim_type": "unit_value",
+      "raw_text": "1 kg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 13161,
+      "sentence": "In contrast, treatment with acarbose has been shown to associate with a moderate weight loss of about 1 kg, on average, compared to placebo, alongside improved glycemic control in most randomized controlled trials [ 24 , 49 , 50 ].",
+      "context_window": "een shown to associate with a moderate weight loss of about 1 kg, on average, compared to placebo, alongside improved glycem",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-16035",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 16035,
+      "sentence": "Likewise, significant reduction of blood pressure was observed in the acarbose-treated patients in the MeRia Study [ 66 ], a phenomenon that had been noted also earlier in another randomised controlled trial lasting over 6 months, in comparison with glibenclamide [ 67 ].",
+      "context_window": "earlier in another randomised controlled trial lasting over 6 months, in comparison with glibenclamide [ 67 ]. Although this eff",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-18236",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 18236,
+      "sentence": "The effects of acarbose on platelet activation and its determinants have been recently examined in newly diagnosed, drug-naive type 2 diabetic patients (baseline HbA1c < 7%), as hyperglycemia is a major contributor to in vivo platelet activation in diabetes mellitus [ 74 ].",
+      "context_window": "osed, drug-naive type 2 diabetic patients (baseline HbA1c < 7%), as hyperglycemia is a major contributor to in vivo platel",
+      "claim_role": "background",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-18511",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 18511,
+      "sentence": "As compared with the placebo group, acarbose-treated patients showed statistically significant reductions in urinary 11-dehydro-TXB2 and 8-iso-PGF2a excretion rate after 8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 weeks), following earlier decreases in postprandial hyperglycemia and MAGE.",
+      "context_window": "rinary 11-dehydro-TXB2 and 8-iso-PGF2a excretion rate after 8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 week",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-18547",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 18547,
+      "sentence": "As compared with the placebo group, acarbose-treated patients showed statistically significant reductions in urinary 11-dehydro-TXB2 and 8-iso-PGF2a excretion rate after 8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 weeks), following earlier decreases in postprandial hyperglycemia and MAGE.",
+      "context_window": "2a excretion rate after 8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 weeks), following earlier decreases in pos",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-18571",
+      "claim_type": "unit_value",
+      "raw_text": "20 weeks",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 18571,
+      "sentence": "As compared with the placebo group, acarbose-treated patients showed statistically significant reductions in urinary 11-dehydro-TXB2 and 8-iso-PGF2a excretion rate after 8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 weeks), following earlier decreases in postprandial hyperglycemia and MAGE.",
+      "context_window": "8 weeks of treatment (between-group P < 0.001 at 12, 16 and 20 weeks), following earlier decreases in postprandial hyperglycemia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-25375",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 25375,
+      "sentence": "Finally, Ceriello et al. went on to in vitro studies using human endothelial cells and exposing them to various glucose patterns, i.e. normal or constantly high glucose for 21 days vs. oscillating high and normal glucose for 21 days vs. oscillating high and low or permanently high glucose for 14 days followed by normal glucose by 7 days [ 89 ].",
+      "context_window": "lucose patterns, i.e. normal or constantly high glucose for 21 days vs. oscillating high and normal glucose for 21 days vs. osc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-25427",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 25427,
+      "sentence": "Finally, Ceriello et al. went on to in vitro studies using human endothelial cells and exposing them to various glucose patterns, i.e. normal or constantly high glucose for 21 days vs. oscillating high and normal glucose for 21 days vs. oscillating high and low or permanently high glucose for 14 days followed by normal glucose by 7 days [ 89 ].",
+      "context_window": "ose for 21 days vs. oscillating high and normal glucose for 21 days vs. oscillating high and low or permanently high glucose fo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-25496",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 25496,
+      "sentence": "Finally, Ceriello et al. went on to in vitro studies using human endothelial cells and exposing them to various glucose patterns, i.e. normal or constantly high glucose for 21 days vs. oscillating high and normal glucose for 21 days vs. oscillating high and low or permanently high glucose for 14 days followed by normal glucose by 7 days [ 89 ].",
+      "context_window": "s. oscillating high and low or permanently high glucose for 14 days followed by normal glucose by 7 days [ 89 ]. They consisten",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-25534",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 25534,
+      "sentence": "Finally, Ceriello et al. went on to in vitro studies using human endothelial cells and exposing them to various glucose patterns, i.e. normal or constantly high glucose for 21 days vs. oscillating high and normal glucose for 21 days vs. oscillating high and low or permanently high glucose for 14 days followed by normal glucose by 7 days [ 89 ].",
+      "context_window": "ntly high glucose for 14 days followed by normal glucose by 7 days [ 89 ]. They consistently showed that the highest up-regula",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-28096",
+      "claim_type": "unit_value",
+      "raw_text": "10 year",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 28096,
+      "sentence": "So far, only the Verona Diabetes Study, based on laboratory determinations of FPG, not of postprandial glucose, has published evidence indicating that FPG variability predicted 10 year mortality of type 2 diabetic patients [ 98 ].",
+      "context_window": "ublished evidence indicating that FPG variability predicted 10 year mortality of type 2 diabetic patients [ 98 ]. Conversely, t",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-29327",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 29327,
+      "sentence": "More than 15,000 patients have been enrolled in China, Taiwan, the Middle-East, Morocco, Poland, Indonesia, Pakistan and the Philippines and followed up to 3 years [ 50 ].",
+      "context_window": "Indonesia, Pakistan and the Philippines and followed up to 3 years [ 50 ]. Specific advantages were seen in terms of attenuati",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-34798",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 34798,
+      "sentence": "The Study to Prevent Non-Insulin-Dependent Diabetes Mellitus (STOP-NIDDM) Trial evaluated the efficacy of 3 years of treatment with acarbose vs. placebo in preventing the transition to overt diabetes among 1429 patients with IGT [ 64 , 72 ].",
+      "context_window": "betes Mellitus (STOP-NIDDM) Trial evaluated the efficacy of 3 years of treatment with acarbose vs. placebo in preventing the tr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-pct-35029",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 35029,
+      "sentence": "Targeting postprandial hyperglycaemia with acarbose was not only found to be associated with a 36% reduction in the incidence of new onset diabetes as the primary objective of this study, but also with a highly significant reduction of myocardial infarction (1 vs.",
+      "context_window": "ia with acarbose was not only found to be associated with a 36% reduction in the incidence of new onset diabetes as the pri",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35203",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0226",
+      "numeric_values": [
+        0.0226
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 35203,
+      "sentence": "12, p = 0.0226) and any CV event (15 vs.",
+      "context_window": "y significant reduction of myocardial infarction (1 vs. 12, p = 0.0226) and any CV event (15 vs. 32, p = 0.0326), as assessed by a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35244",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0326",
+      "numeric_values": [
+        0.0326
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 35244,
+      "sentence": "32, p = 0.0326), as assessed by a planned post hoc analysis of predefined secondary outcomes.",
+      "context_window": "arction (1 vs. 12, p = 0.0226) and any CV event (15 vs. 32, p = 0.0326), as assessed by a planned post hoc analysis of predefined",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-35495",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 35495,
+      "sentence": "Consistent with these findings, another post hoc meta-analysis of seven randomised trials with acarbose in 2180 patients with type 2 diabetes and a follow-up of 1 year or longer ([ 66 ], MeRia Study), likewise revealed a significant decrease of myocardial infarction (9 vs.",
+      "context_window": "se in 2180 patients with type 2 diabetes and a follow-up of 1 year or longer ([ 66 ], MeRia Study), likewise revealed a signif",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35612",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 35612,
+      "sentence": "19, p = 0.012) and any CV event (76 vs.",
+      "context_window": "a significant decrease of myocardial infarction (9 vs. 19, p = 0.012) and any CV event (76 vs. 88, p = 0.006). Although these d",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-p-35652",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 35652,
+      "sentence": "88, p = 0.006).",
+      "context_window": "farction (9 vs. 19, p = 0.012) and any CV event (76 vs. 88, p = 0.006). Although these data might be suggestive for a favorable",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-36884",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 36884,
+      "sentence": "Patients are randomized to 50 mg acarbose tid or matching placebo in a 1:1 fashion on top of optimized guideline based CV care and at least 3 months out from a prior MI.",
+      "context_window": "angina or current stable angina. Patients are randomized to 50 mg acarbose tid or matching placebo in a 1:1 fashion on top of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas-u-36997",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 36997,
+      "sentence": "Patients are randomized to 50 mg acarbose tid or matching placebo in a 1:1 fashion on top of optimized guideline based CV care and at least 3 months out from a prior MI.",
+      "context_window": "on on top of optimized guideline based CV care and at least 3 months out from a prior MI. The primary composite CV outcome is th",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

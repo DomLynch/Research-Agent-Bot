@@ -1,0 +1,3683 @@
+{
+  "paper_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn",
+  "doi": "10.1007/s40279-025-02292-5",
+  "extracted_at": "2026-05-05T21:39:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 34,
+    "mean_sd": 32,
+    "unit_value": 28,
+    "p_value": 60,
+    "percentage": 48
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-480",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 480,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 ,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-488",
+      "claim_type": "mean_sd",
+      "raw_text": "27.2 \u00b1 1.0",
+      "numeric_values": [
+        27.2,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 488,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-495",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 years",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 495,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "83207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-517",
+      "claim_type": "mean_sd",
+      "raw_text": "66.4 \u00b1 0.6",
+      "numeric_values": [
+        66.4,
+        0.6
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 517,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "ale distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-524",
+      "claim_type": "unit_value",
+      "raw_text": "0.6 mL",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 524,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "tance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume eith",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-593",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 593,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "-1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-613",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 613,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude tra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-637",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 637,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "In this double-blind, parallel group, placebo-controlled clinical trial ( NCT04783207 ), competitive male distance runners ( n = 42, 27.2 \u00b1 1.0 years, V \u02d9 O 2max 66.4 \u00b1 0.6 mL.kg -1 .min -1 , mean \u00b1 SEM) were randomized to consume either 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m).",
+      "context_window": "her 1000 mg.day -1 UA ( n = 22) or placebo (PL; n = 20) for 4 weeks during an altitude training camp (~ 1700-2200 m). Physiolog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-1285",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "A subset of athletes also either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the effect of UA on running performance and for exploration of alterations in skeletal muscle proteome and mitochondrial function, respectively.",
+      "context_window": "athletes also either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n =",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-1296",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1296,
+      "sentence": "A subset of athletes also either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the effect of UA on running performance and for exploration of alterations in skeletal muscle proteome and mitochondrial function, respectively.",
+      "context_window": "lso either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 1",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-1347",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1347,
+      "sentence": "A subset of athletes also either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the effect of UA on running performance and for exploration of alterations in skeletal muscle proteome and mitochondrial function, respectively.",
+      "context_window": "= 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the ef",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-1357",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1357,
+      "sentence": "A subset of athletes also either completed a 3000 m track time trial ( n = 11 PL, n = 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the effect of UA on running performance and for exploration of alterations in skeletal muscle proteome and mitochondrial function, respectively.",
+      "context_window": "= 11 UA) or had skeletal muscle biopsies taken ( n = 9 PL, n = 11 UA) pre/post supplementation to determine the effect of UA",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1654",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.116",
+      "numeric_values": [
+        0.116
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1654,
+      "sentence": "Running performance (3000 m time trial) was not significantly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly lowered ratings of perceived exertion (RPE, p = 0.02) and reduced indirect markers of post-exercise muscle damage (CK, total area under the curve p < 0.0001) following the 3000 m time trial compared with PL.",
+      "context_window": "s not significantly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1669",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.771",
+      "numeric_values": [
+        0.771
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1669,
+      "sentence": "Running performance (3000 m time trial) was not significantly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly lowered ratings of perceived exertion (RPE, p = 0.02) and reduced indirect markers of post-exercise muscle damage (CK, total area under the curve p < 0.0001) following the 3000 m time trial compared with PL.",
+      "context_window": "ntly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly lowered ratings",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1767",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1767,
+      "sentence": "Running performance (3000 m time trial) was not significantly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly lowered ratings of perceived exertion (RPE, p = 0.02) and reduced indirect markers of post-exercise muscle damage (CK, total area under the curve p < 0.0001) following the 3000 m time trial compared with PL.",
+      "context_window": "n significantly lowered ratings of perceived exertion (RPE, p = 0.02) and reduced indirect markers of post-exercise muscle damag",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1869",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1869,
+      "sentence": "Running performance (3000 m time trial) was not significantly improved in either treatment group (UA; p = 0.116, PL; p = 0.771), although UA supplementation significantly lowered ratings of perceived exertion (RPE, p = 0.02) and reduced indirect markers of post-exercise muscle damage (CK, total area under the curve p < 0.0001) following the 3000 m time trial compared with PL.",
+      "context_window": "post-exercise muscle damage (CK, total area under the curve p < 0.0001) following the 3000 m time trial compared with PL. Although",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2031",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.138",
+      "numeric_values": [
+        0.138
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2031,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "ificant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase i",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2114",
+      "claim_type": "mean_sd",
+      "raw_text": "5.4 \u00b1 0.9",
+      "numeric_values": [
+        5.4,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2114,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "ntation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-2120",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2120,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "n showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d =",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2126",
+      "claim_type": "mean_sd",
+      "raw_text": "66.4 \u00b1 0.8",
+      "numeric_values": [
+        66.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2126,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "ed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), wi",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2140",
+      "claim_type": "mean_sd",
+      "raw_text": "70.0 \u00b1 1.0",
+      "numeric_values": [
+        70.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2140,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "hin-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller i",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2147",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 2147,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "up increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller incr",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2170",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2170,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "ax (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2235",
+      "claim_type": "mean_sd",
+      "raw_text": "3.6 \u00b1 1.3",
+      "numeric_values": [
+        3.6,
+        1.3
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2235,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": ".009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-2241",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 2241,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d =",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2247",
+      "claim_type": "mean_sd",
+      "raw_text": "66.4 \u00b1 0.9",
+      "numeric_values": [
+        66.4,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2247,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54). Pr",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2261",
+      "claim_type": "mean_sd",
+      "raw_text": "68.7 \u00b1 1.0",
+      "numeric_values": [
+        68.7,
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2261,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54). Proteomic screen",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2268",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "abstract",
+      "source_offset": 2268,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54). Proteomic screening",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2291",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 2291,
+      "sentence": "Although there was no statistically significant time \u00d7 treatment interaction for aerobic capacity ( p = 0.138), UA supplementation showed a large within-group increase in V \u02d9 O 2max (5.4 \u00b1 0.9%, 66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), with a smaller increase in the PL group (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54).",
+      "context_window": "up (3.6 \u00b1 1.3%, 66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.54). Proteomic screening of skeletal muscle biopsi",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2649",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 2649,
+      "sentence": "Our results show that 4 weeks of daily UA supplementation facilitates recovery by downregulating inflammatory pathways and indirect markers of muscle damage.",
+      "context_window": "t changes in mitochondrial function. Our results show that 4 weeks of daily UA supplementation facilitates recovery by downreg",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-940",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 940,
+      "sentence": "Specifically, daily supplementation with 1000 mg UA for 4 months improved muscle resistance to fatigue, muscle strength, and maximal aerobic capacity ( V \u02d9 O 2max ) by ~ 10%, leading to clinically meaningful improvements in a 6-min walk, a proxy for whole-body function and performance [ 3 , 4 ].",
+      "context_window": "health [ 3 , 4 ]. Specifically, daily supplementation with 1000 mg UA for 4 months improved muscle resistance to fatigue, musc",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-955",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 955,
+      "sentence": "Specifically, daily supplementation with 1000 mg UA for 4 months improved muscle resistance to fatigue, muscle strength, and maximal aerobic capacity ( V \u02d9 O 2max ) by ~ 10%, leading to clinically meaningful improvements in a 6-min walk, a proxy for whole-body function and performance [ 3 , 4 ].",
+      "context_window": "]. Specifically, daily supplementation with 1000 mg UA for 4 months improved muscle resistance to fatigue, muscle strength, and",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-1069",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1069,
+      "sentence": "Specifically, daily supplementation with 1000 mg UA for 4 months improved muscle resistance to fatigue, muscle strength, and maximal aerobic capacity ( V \u02d9 O 2max ) by ~ 10%, leading to clinically meaningful improvements in a 6-min walk, a proxy for whole-body function and performance [ 3 , 4 ].",
+      "context_window": "strength, and maximal aerobic capacity ( V \u02d9 O 2max ) by ~ 10%, leading to clinically meaningful improvements in a 6-min w",
+      "claim_role": "effect",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-3740",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 3740,
+      "sentence": "Therefore, in the current study, we tested the hypothesis that supplementation with 1000 mg.day -1 UA for 4 weeks would enhance recovery through decreases in inflammation and indirect markers of muscle damage while improving mitochondrial function.",
+      "context_window": "t study, we tested the hypothesis that supplementation with 1000 mg.day -1 UA for 4 weeks would enhance recovery through decrea",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-3762",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3762,
+      "sentence": "Therefore, in the current study, we tested the hypothesis that supplementation with 1000 mg.day -1 UA for 4 weeks would enhance recovery through decreases in inflammation and indirect markers of muscle damage while improving mitochondrial function.",
+      "context_window": "hypothesis that supplementation with 1000 mg.day -1 UA for 4 weeks would enhance recovery through decreases in inflammation an",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-761",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 761,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n =",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-775",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 775,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-786",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 786,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL)",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-824",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 824,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-832",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 832,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "l; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determi",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-843",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 843,
+      "sentence": "Participants in Cohort A completed a 3000 m time trial (TT) on a synthetic rubberized track ( n = 22 total; n = 11 UA, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the impact of UA supplementation on global protein expression and in situ mitochondrial respiration in permeabilized muscle fiber bundles (PmFB) using high-resolution respirometry.",
+      "context_window": "A, n = 11 placebo; PL), while Cohort B ( n = 20; n = 11 UA, n = 9 PL) had skeletal muscle biopsies taken to determine the imp",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-1541",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1541,
+      "sentence": "Upon completion of baseline testing, athletes within each cohort (i.e., Cohort A and Cohort B) were pair-matched on the basis of V \u02d9 O 2max , lifetime running personal bests, and training volume and randomized using a random number generator in a 1:1 ratio to receive either 1000 mg.day -1 UA or placebo (PL; composed of the same inert excipients as the active treatment) for 4 weeks.",
+      "context_window": "a random number generator in a 1:1 ratio to receive either 1000 mg.day -1 UA or placebo (PL; composed of the same inert excipi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-1642",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1642,
+      "sentence": "Upon completion of baseline testing, athletes within each cohort (i.e., Cohort A and Cohort B) were pair-matched on the basis of V \u02d9 O 2max , lifetime running personal bests, and training volume and randomized using a random number generator in a 1:1 ratio to receive either 1000 mg.day -1 UA or placebo (PL; composed of the same inert excipients as the active treatment) for 4 weeks.",
+      "context_window": "d of the same inert excipients as the active treatment) for 4 weeks. Pair-matching was done to limit differences between groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-1968",
+      "claim_type": "unit_value",
+      "raw_text": "250 mg",
+      "numeric_values": [
+        250.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1968,
+      "sentence": "Participants consumed 4 \u00d7 250 mg capsules (1000 mg total) each morning on an empty stomach with a glass of water.",
+      "context_window": "ally identical soft gel capsules. Participants consumed 4 \u00d7 250 mg capsules (1000 mg total) each morning on an empty stomach w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-1985",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1985,
+      "sentence": "Participants consumed 4 \u00d7 250 mg capsules (1000 mg total) each morning on an empty stomach with a glass of water.",
+      "context_window": "ft gel capsules. Participants consumed 4 \u00d7 250 mg capsules (1000 mg total) each morning on an empty stomach with a glass of wat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2468",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2468,
+      "sentence": "Athletes were randomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week training camp performed at low altitude (~ 1700-2200 m)\n\nA total of 44 highly trained (tier 3-4 [ 21 ]) male middle- and long-distance runners were recruited between March 2021 and October 2022 to participate in this study.",
+      "context_window": "clinical trial. Athletes were randomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-2500",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2500,
+      "sentence": "Athletes were randomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week training camp performed at low altitude (~ 1700-2200 m)\n\nA total of 44 highly trained (tier 3-4 [ 21 ]) male middle- and long-distance runners were recruited between March 2021 and October 2022 to participate in this study.",
+      "context_window": "andomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an in",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-2524",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2524,
+      "sentence": "Athletes were randomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week training camp performed at low altitude (~ 1700-2200 m)\n\nA total of 44 highly trained (tier 3-4 [ 21 ]) male middle- and long-distance runners were recruited between March 2021 and October 2022 to participate in this study.",
+      "context_window": "her 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week trainin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2536",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2536,
+      "sentence": "Athletes were randomized to receive either 1000 mg.day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week training camp performed at low altitude (~ 1700-2200 m)\n\nA total of 44 highly trained (tier 3-4 [ 21 ]) male middle- and long-distance runners were recruited between March 2021 and October 2022 to participate in this study.",
+      "context_window": "day -1 urolithin A (UA, n = 22) or placebo (PL, n = 20) for 4 weeks while completing an intensified 3-week training camp perfor",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-2912",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2912,
+      "sentence": "To be eligible, participants were required to be currently running > 70 km.week -1 , have a V \u02d9 O 2max > 60 mL.kg -1 .min -1 and have an official 3000 m personal best time of less than 9:00 (Cohort A; performance arm) or 10:00 min (Cohort B; muscle biopsy arm), and agree to participate in the training camp.",
+      "context_window": "be currently running > 70 km.week -1 , have a V \u02d9 O 2max > 60 mL.kg -1 .min -1 and have an official 3000 m personal best tim",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-4613",
+      "claim_type": "percentage",
+      "raw_text": "0.65%",
+      "numeric_values": [
+        0.65
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4613,
+      "sentence": "The test-retest technical error of measurement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass.",
+      "context_window": "echnical error of measurement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, an",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-4635",
+      "claim_type": "percentage",
+      "raw_text": "0.95%",
+      "numeric_values": [
+        0.95
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4635,
+      "sentence": "The test-retest technical error of measurement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass.",
+      "context_window": "urement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass.",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-4656",
+      "claim_type": "percentage",
+      "raw_text": "1.82%",
+      "numeric_values": [
+        1.82
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4656,
+      "sentence": "The test-retest technical error of measurement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass.",
+      "context_window": "at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass. The erythropoietic",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-4680",
+      "claim_type": "percentage",
+      "raw_text": "0.47%",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4680,
+      "sentence": "The test-retest technical error of measurement for the iDXA at our center is 0.65% for total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass.",
+      "context_window": "or total mass, 0.95% for lean mass, 1.82% for fat mass, and 0.47% for bone mass. The erythropoietic response to altitude exp",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-4925",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 mL",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4925,
+      "sentence": "Briefly, a CO bolus (1.2 mL.kg -1 body mass) was rebreathed with 4 L 100% oxygen through a glass spirometer for 2 min.",
+      "context_window": "rbon monoxide (CO) rebreathing method. Briefly, a CO bolus (1.2 mL.kg -1 body mass) was rebreathed with 4 L 100% oxygen throug",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-4973",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4973,
+      "sentence": "Briefly, a CO bolus (1.2 mL.kg -1 body mass) was rebreathed with 4 L 100% oxygen through a glass spirometer for 2 min.",
+      "context_window": "a CO bolus (1.2 mL.kg -1 body mass) was rebreathed with 4 L 100% oxygen through a glass spirometer for 2 min. Carboxyhemoglo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-6944",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6944,
+      "sentence": "The incremental test commenced at either 13 (Cohort B) or 15 km.h -1 (Cohort A) and was increased by 0.5 km.h -1 every 30 s until the speed corresponding to the individual\u2019s final submaximal stage was reached (17 or 19 km.h -1 ), with treadmill gradient increased by 0.5% every 30 s thereafter until exhaustion.",
+      "context_window": "d (17 or 19 km.h -1 ), with treadmill gradient increased by 0.5% every 30 s thereafter until exhaustion. Expired gas was col",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-7724",
+      "claim_type": "percentage",
+      "raw_text": "85%",
+      "numeric_values": [
+        85.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7724,
+      "sentence": "These equations are based on the premise that V \u02d9 O 2 and V \u02d9 CO 2 accurately reflect tissue O 2 consumption and CO 2 production, and that indirect calorimetry is a valid method for quantifying rates of substrate oxidation in well-trained athletes during strenuous exercise of up to 85% of V \u02d9 O 2max [ 25 ].",
+      "context_window": "in well-trained athletes during strenuous exercise of up to 85% of V \u02d9 O 2max [ 25 ]. Prior to (Race 1) and following (Rac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-8834",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8834,
+      "sentence": "The run consisted of a self-selected warm-up that was replicated across trials, followed by a ~4.5-km run on an asphalt surface with an average decline of 4%.",
+      "context_window": "4.5-km run on an asphalt surface with an average decline of 4%. Participants were instructed to run this as hard as possib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-9761",
+      "claim_type": "unit_value",
+      "raw_text": "1 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 9761,
+      "sentence": "A 1 mL capillary blood sample was collected into a serum separator tube (Minicollect, Greiner Vacuette, Austria), which was left to clot for 30 min before being centrifuged at 1500 g for 10 min.",
+      "context_window": "ed, and an incision made into a fingertip using a lancet. A 1 mL capillary blood sample was collected into a serum separator",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10356",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10356,
+      "sentence": "Local anesthetic (1% lignocaine hydrochloride in saline; McFarlane; Surrey Hills, Victoria Australia; 11037-AS) was administered to the vastus lateralis, after which two percutaneous skeletal muscle biopsies were collected using a Bergstrom needle modified with suction.",
+      "context_window": "hol, and exercise for the preceding 24 h. Local anesthetic (1% lignocaine hydrochloride in saline; McFarlane; Surrey Hills",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-11333",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 11333,
+      "sentence": "Fiber bundles were then treated with 30 \u03bcg.mL -1 saponin for 30 min at 4\u00b0C, then washed for 15 min in MiR05 respiration buffer (0.5 mM EGTA, 10 mM KH 2 .PO 4 , 110 mM sucrose, and 1 mg.mL -1 fatty acid-free bovine serum albumin (BSA); pH 7.1).",
+      "context_window": "buffer (0.5 mM EGTA, 10 mM KH 2 .PO 4 , 110 mM sucrose, and 1 mg.mL -1 fatty acid-free bovine serum albumin (BSA); pH 7.1).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-12103",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12103,
+      "sentence": "Experiments with a cytochrome c response greater than 10% were omitted from final analysis.",
+      "context_window": "rity. Experiments with a cytochrome c response greater than 10% were omitted from final analysis. Human muscle samples wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-12840",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12840,
+      "sentence": "Peptides were resuspended in 1% acetonitrile/0.1% formic acid in water and spiked with Biognosys\u2019 iRT kit calibration peptides.",
+      "context_window": "plate (Waters) and dried down. Peptides were resuspended in 1% acetonitrile/0.1% formic acid in water and spiked with Biog",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-12856",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12856,
+      "sentence": "Peptides were resuspended in 1% acetonitrile/0.1% formic acid in water and spiked with Biognosys\u2019 iRT kit calibration peptides.",
+      "context_window": "nd dried down. Peptides were resuspended in 1% acetonitrile/0.1% formic acid in water and spiked with Biognosys\u2019 iRT kit cal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13421",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13421,
+      "sentence": "LC solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water.",
+      "context_window": "y device (ThermoScientific). LC solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water. The nonlinear LC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13433",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13433,
+      "sentence": "LC solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water.",
+      "context_window": "ermoScientific). LC solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water. The nonlinear LC gradient w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13451",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13451,
+      "sentence": "LC solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water.",
+      "context_window": "C solvents were A: water with 0.1% FA; B: 80% acetonitrile, 0.1% FA in water. The nonlinear LC gradient was 1-50% solvent B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13501",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13501,
+      "sentence": "The nonlinear LC gradient was 1-50% solvent B for 172 min followed by a column washing step at 90% B for 5 min, and a final equilibration step of 1% B for one column volume at 64\u00b0C with a flow rate set to ramp from 500 to 250 nL.min -1 (min 0: 500 nL/min, min 172: 250 nL/min, washing at 500 nL/min).",
+      "context_window": "onitrile, 0.1% FA in water. The nonlinear LC gradient was 1-50% solvent B for 172 min followed by a column washing step at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13564",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13564,
+      "sentence": "The nonlinear LC gradient was 1-50% solvent B for 172 min followed by a column washing step at 90% B for 5 min, and a final equilibration step of 1% B for one column volume at 64\u00b0C with a flow rate set to ramp from 500 to 250 nL.min -1 (min 0: 500 nL/min, min 172: 250 nL/min, washing at 500 nL/min).",
+      "context_window": "solvent B for 172 min followed by a column washing step at 90% B for 5 min, and a final equilibration step of 1% B for one",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-13615",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13615,
+      "sentence": "The nonlinear LC gradient was 1-50% solvent B for 172 min followed by a column washing step at 90% B for 5 min, and a final equilibration step of 1% B for one column volume at 64\u00b0C with a flow rate set to ramp from 500 to 250 nL.min -1 (min 0: 500 nL/min, min 172: 250 nL/min, washing at 500 nL/min).",
+      "context_window": "step at 90% B for 5 min, and a final equilibration step of 1% B for one column volume at 64\u00b0C with a flow rate set to ram",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-14080",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14080,
+      "sentence": "For whole-proteome analysis, DIA mass spectrometric data were analyzed using the software Spectronaut (version 17.1, Biognosys) with the default settings, including a 1% false discovery rate control at PSM, peptide, and protein level, allowing for two missed cleavages and variable modifications (N term acetylation, methionine and proline oxidation, ammonia loss, deamidation (NQ)).",
+      "context_window": "ion 17.1, Biognosys) with the default settings, including a 1% false discovery rate control at PSM, peptide, and protein l",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-14587",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14587,
+      "sentence": "The false discovery rate on peptide and protein level was set to 1% on experiment level, and data were filtered using row-based extraction.",
+      "context_window": "alse discovery rate on peptide and protein level was set to 1% on experiment level, and data were filtered using row-based",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-18209",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18209,
+      "sentence": "Membranes were washed in Tris-buffered saline containing 0.05% Tween 20 (TBS-T) and blocked for 1 h with 5% bovine serum albumin (Panobiotech, PANP06-1391100).",
+      "context_window": "). Membranes were washed in Tris-buffered saline containing 0.05% Tween 20 (TBS-T) and blocked for 1 h with 5% bovine serum a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-18257",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 18257,
+      "sentence": "Membranes were washed in Tris-buffered saline containing 0.05% Tween 20 (TBS-T) and blocked for 1 h with 5% bovine serum albumin (Panobiotech, PANP06-1391100).",
+      "context_window": "containing 0.05% Tween 20 (TBS-T) and blocked for 1 h with 5% bovine serum albumin (Panobiotech, PANP06-1391100). The fol",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-19251",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19251,
+      "sentence": "Muscle samples were lysed in homogenization buffer containing 50 mM Tris-HCl (pH 7.5), 1 mM EDTA, 1 mM EGTA, 10% glycerol, 1% Triton-X, 50 mM sodium fluoride, 5 mM sodium pyrophosphate with cOmplete Protease Inhibitor Cocktail, and PhosSTOP phosphatase inhibitor (Sigma-Aldrich, St.",
+      "context_window": "r containing 50 mM Tris-HCl (pH 7.5), 1 mM EDTA, 1 mM EGTA, 10% glycerol, 1% Triton-X, 50 mM sodium fluoride, 5 mM sodium p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-19265",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19265,
+      "sentence": "Muscle samples were lysed in homogenization buffer containing 50 mM Tris-HCl (pH 7.5), 1 mM EDTA, 1 mM EGTA, 10% glycerol, 1% Triton-X, 50 mM sodium fluoride, 5 mM sodium pyrophosphate with cOmplete Protease Inhibitor Cocktail, and PhosSTOP phosphatase inhibitor (Sigma-Aldrich, St.",
+      "context_window": "0 mM Tris-HCl (pH 7.5), 1 mM EDTA, 1 mM EGTA, 10% glycerol, 1% Triton-X, 50 mM sodium fluoride, 5 mM sodium pyrophosphate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-20640",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 20640,
+      "sentence": "Pharmacokinetics of the main urolithin A metabolite UA-glucuronide were analyzed in a subset of participants ( n = 6 UA, n = 4 PL) using dried blot spots (DBS) collected on blood collection cards (Whatman Filter Paper 903 spots card).",
+      "context_window": "UA-glucuronide were analyzed in a subset of participants ( n = 6 UA, n = 4 PL) using dried blot spots (DBS) collected on blo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-20650",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 20650,
+      "sentence": "Pharmacokinetics of the main urolithin A metabolite UA-glucuronide were analyzed in a subset of participants ( n = 6 UA, n = 4 PL) using dried blot spots (DBS) collected on blood collection cards (Whatman Filter Paper 903 spots card).",
+      "context_window": "onide were analyzed in a subset of participants ( n = 6 UA, n = 4 PL) using dried blot spots (DBS) collected on blood collect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-22318",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 22318,
+      "sentence": "The 95% CIs for treatment differences and corresponding nonadjusted p -values were calculated.",
+      "context_window": "mance was subsequently tested as a co-primary endpoint. The 95% CIs for treatment differences and corresponding nonadjusted",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-22411",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 22411,
+      "sentence": "A 5% significance level ( \u03b1 = 0.05 or two-sided p < 0 0.05) was applied for the comparison of treatment groups. p -values represent the interaction between treatment and time.",
+      "context_window": "and corresponding nonadjusted p -values were calculated. A 5% significance level ( \u03b1 = 0.05 or two-sided p < 0 0.05) was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-22844",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 22844,
+      "sentence": "Point estimates, 80% CIs, and 95% CIs were extracted from the analysis of covariance model.",
+      "context_window": "d homoscedasticity using diagnostic plots. Point estimates, 80% CIs, and 95% CIs were extracted from the analysis of covari",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-22857",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 22857,
+      "sentence": "Point estimates, 80% CIs, and 95% CIs were extracted from the analysis of covariance model.",
+      "context_window": "icity using diagnostic plots. Point estimates, 80% CIs, and 95% CIs were extracted from the analysis of covariance model. A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-24504",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 24504,
+      "sentence": "Skeletal muscle biopsy samples were collected at rest from a subset of participants (Cohort B) following 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) including a 3-week training camp performed at 1,700-2,200 m elevation ( A ).",
+      "context_window": "at rest from a subset of participants (Cohort B) following 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) inc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-24545",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 24545,
+      "sentence": "Skeletal muscle biopsy samples were collected at rest from a subset of participants (Cohort B) following 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) including a 3-week training camp performed at 1,700-2,200 m elevation ( A ).",
+      "context_window": "ohort B) following 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) including a 3-week training camp performed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-24561",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 24561,
+      "sentence": "Skeletal muscle biopsy samples were collected at rest from a subset of participants (Cohort B) following 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) including a 3-week training camp performed at 1,700-2,200 m elevation ( A ).",
+      "context_window": "ng 4 weeks supplementation with either UA ( n = 11) or PL ( n = 9) including a 3-week training camp performed at 1,700-2,200",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-207",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 207,
+      "sentence": "Within the PL group, serum CK levels measured 24 h after the downhill run were lower in Week 2 ( p = 0.029, d = 0.72) and Week 3 ( p = 0.042, d = 0.66) compared with Week 1 (Fig.",
+      "context_window": "measured 24 h after the downhill run were lower in Week 2 ( p = 0.029, d = 0.72) and Week 3 ( p = 0.042, d = 0.66) compared with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-241",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.042",
+      "numeric_values": [
+        0.042
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 241,
+      "sentence": "Within the PL group, serum CK levels measured 24 h after the downhill run were lower in Week 2 ( p = 0.029, d = 0.72) and Week 3 ( p = 0.042, d = 0.66) compared with Week 1 (Fig.",
+      "context_window": "un were lower in Week 2 ( p = 0.029, d = 0.72) and Week 3 ( p = 0.042, d = 0.66) compared with Week 1 (Fig. 2 A). Within the UA g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-408",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.037",
+      "numeric_values": [
+        0.037
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 408,
+      "sentence": "Within the UA group, a significant decrease in CK was observed 24 h post exercise in Week 3 relative to Week 1 ( p = 0.037, d = 0.65; Fig.",
+      "context_window": "observed 24 h post exercise in Week 3 relative to Week 1 ( p = 0.037, d = 0.65; Fig. 2 E). CK levels returned to baseline 36 h p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-635",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 635,
+      "sentence": "2 I) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.137) or interaction (time \u00d7 treatment, p = 0.891).",
+      "context_window": "wnhill run (Fig. 2 I) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.137) or interaction (t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-677",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.137",
+      "numeric_values": [
+        0.137
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 677,
+      "sentence": "2 I) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.137) or interaction (time \u00d7 treatment, p = 0.891).",
+      "context_window": "effect of time ( p < 0.0001), but no effect of treatment ( p = 0.137) or interaction (time \u00d7 treatment, p = 0.891). Capillary b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-722",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.891",
+      "numeric_values": [
+        0.891
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 722,
+      "sentence": "2 I) showed a significant effect of time ( p < 0.0001), but no effect of treatment ( p = 0.137) or interaction (time \u00d7 treatment, p = 0.891).",
+      "context_window": "of treatment ( p = 0.137) or interaction (time \u00d7 treatment, p = 0.891). Capillary blood samples were collected from all particip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-801",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 801,
+      "sentence": "Capillary blood samples were collected from all participants (UA, n = 22; PL , n = 20) following a weekly downhill run and assessed for markers of muscle damage (creatine kinase, CK; A , E , I ) and inflammation (C-reactive protein, CRP; B , F , J ).",
+      "context_window": "ary blood samples were collected from all participants (UA, n = 22; PL , n = 20) following a weekly downhill run and assessed",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-814",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 814,
+      "sentence": "Capillary blood samples were collected from all participants (UA, n = 22; PL , n = 20) following a weekly downhill run and assessed for markers of muscle damage (creatine kinase, CK; A , E , I ) and inflammation (C-reactive protein, CRP; B , F , J ).",
+      "context_window": "ples were collected from all participants (UA, n = 22; PL , n = 20) following a weekly downhill run and assessed for markers o",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-1066",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1066,
+      "sentence": "These markers were also assessed prior to and following the 3000 m time trial ( n = 11 per group, CK; C , G , K , CRP; D , H , L ).",
+      "context_window": "lso assessed prior to and following the 3000 m time trial ( n = 11 per group, CK; C , G , K , CRP; D , H , L ). Data are prese",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1183",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1183,
+      "sentence": "A - H statistical difference a p < 0.05 Week 2 versus Week 1, b p < 0.05 Week 3 versus Week 1.",
+      "context_window": "are presented as mean \u00b1 SEM. A - H statistical difference a p < 0.05 Week 2 versus Week 1, b p < 0.05 Week 3 versus Week 1. I -",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1216",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1216,
+      "sentence": "A - H statistical difference a p < 0.05 Week 2 versus Week 1, b p < 0.05 Week 3 versus Week 1.",
+      "context_window": "H statistical difference a p < 0.05 Week 2 versus Week 1, b p < 0.05 Week 3 versus Week 1. I - L main effect of time, ## p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1277",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1277,
+      "sentence": "I - L main effect of time, ## p < 0.01, ### p < 0.0001.",
+      "context_window": "< 0.05 Week 3 versus Week 1. I - L main effect of time, ## p < 0.01, ### p < 0.0001. Statistically different within group compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1291",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1291,
+      "sentence": "I - L main effect of time, ## p < 0.01, ### p < 0.0001.",
+      "context_window": "versus Week 1. I - L main effect of time, ## p < 0.01, ### p < 0.0001. Statistically different within group compared with baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1367",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1367,
+      "sentence": "Statistically different within group compared with baseline, ** p < 0.01, ***p < 0.0001\n\nThere were no significant changes in absolute CK concentrations in the PL group at any time point during Race 2 compared with Race 1 (Fig.",
+      "context_window": "istically different within group compared with baseline, ** p < 0.01, ***p < 0.0001 There were no significant changes in absolu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1380",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1380,
+      "sentence": "Statistically different within group compared with baseline, ** p < 0.01, ***p < 0.0001\n\nThere were no significant changes in absolute CK concentrations in the PL group at any time point during Race 2 compared with Race 1 (Fig.",
+      "context_window": "ferent within group compared with baseline, ** p < 0.01, ***p < 0.0001 There were no significant changes in absolute CK concentra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1620",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.008",
+      "numeric_values": [
+        0.008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1620,
+      "sentence": "However, there was a significant time \u00d7 treatment interaction effect at both 1 h ( p = 0.008) and 24 h ( p = 0.035).",
+      "context_window": "gnificant time \u00d7 treatment interaction effect at both 1 h ( p = 0.008) and 24 h ( p = 0.035). While the decreases in the UA group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1642",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1642,
+      "sentence": "However, there was a significant time \u00d7 treatment interaction effect at both 1 h ( p = 0.008) and 24 h ( p = 0.035).",
+      "context_window": "ment interaction effect at both 1 h ( p = 0.008) and 24 h ( p = 0.035). While the decreases in the UA group between Race 1 and Ra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1822",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.056",
+      "numeric_values": [
+        0.056
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1822,
+      "sentence": "While the decreases in the UA group between Race 1 and Race 2 did not reach statistical significance, a large and potentially meaningful effect was found at both 1 h ( p = 0.056, d = 0.87) and 24 h ( p = 0.055, d = 0.87) (Fig.",
+      "context_window": "e and potentially meaningful effect was found at both 1 h ( p = 0.056, d = 0.87) and 24 h ( p = 0.055, d = 0.87) (Fig. 2 G). Anal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1854",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1854,
+      "sentence": "While the decreases in the UA group between Race 1 and Race 2 did not reach statistical significance, a large and potentially meaningful effect was found at both 1 h ( p = 0.056, d = 0.87) and 24 h ( p = 0.055, d = 0.87) (Fig.",
+      "context_window": "ect was found at both 1 h ( p = 0.056, d = 0.87) and 24 h ( p = 0.055, d = 0.87) (Fig. 2 G). Analysis of tAUC (Fig. 2 K) revealed",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1960",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1960,
+      "sentence": "2 K) revealed a significant main effect of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK levels were lower following Race 2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40).",
+      "context_window": "AUC (Fig. 2 K) revealed a significant main effect of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2008",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0489",
+      "numeric_values": [
+        0.0489
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2008,
+      "sentence": "2 K) revealed a significant main effect of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK levels were lower following Race 2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40).",
+      "context_window": "t of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK levels were lower following Race 2 in the UA group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2080",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0016",
+      "numeric_values": [
+        0.0016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2080,
+      "sentence": "2 K) revealed a significant main effect of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK levels were lower following Race 2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40).",
+      "context_window": "as CK levels were lower following Race 2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40). No signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2119",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.450",
+      "numeric_values": [
+        0.45
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2119,
+      "sentence": "2 K) revealed a significant main effect of time ( p = 0.005) and a time \u00d7 treatment interaction ( p = 0.0489), as CK levels were lower following Race 2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40).",
+      "context_window": "2 in the UA group ( p = 0.0016, d = 0.81), but not in PL ( p = 0.450, d = 0.40). No significant changes in serum CRP concentrati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2425",
+      "claim_type": "mean_sd",
+      "raw_text": "513.9 \u00b1 5.2",
+      "numeric_values": [
+        513.9,
+        5.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "ormance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2444",
+      "claim_type": "mean_sd",
+      "raw_text": "526.0 \u00b1 5.2",
+      "numeric_values": [
+        526.0,
+        5.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2444,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not rea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2463",
+      "claim_type": "mean_sd",
+      "raw_text": "532.5 \u00b1 10.5",
+      "numeric_values": [
+        532.5,
+        10.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2463,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "ed with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2483",
+      "claim_type": "mean_sd",
+      "raw_text": "535.9 \u00b1 4.9",
+      "numeric_values": [
+        535.9,
+        4.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2483,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2548",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.116",
+      "numeric_values": [
+        0.116
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2548,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "\u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig. 3 A). RPE was nume",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2573",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.771",
+      "numeric_values": [
+        0.771
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2573,
+      "sentence": "While TT performance improved in both groups compared with baseline (UA; 513.9 \u00b1 5.2 versus 526.0 \u00b1 5.2 s, PL; 532.5 \u00b1 10.5 versus 535.9 \u00b1 4.9 s), this did not reach statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig.",
+      "context_window": "each statistical significance (UA; p = 0.116, d = 0.70, PL; p = 0.771, d = 0.13, Fig. 3 A). RPE was numerically lower following t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2732",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.064",
+      "numeric_values": [
+        0.064
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2732,
+      "sentence": "3 B, p = 0.064, d = 0.84), with a significant time \u00d7 treatment effect detected between groups ( p = 0.020).",
+      "context_window": "ed with Race 1 in athletes supplementing with UA (Fig. 3 B, p = 0.064, d = 0.84), with a significant time \u00d7 treatment effect dete",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2823",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2823,
+      "sentence": "3 B, p = 0.064, d = 0.84), with a significant time \u00d7 treatment effect detected between groups ( p = 0.020).",
+      "context_window": "gnificant time \u00d7 treatment effect detected between groups ( p = 0.020). Although no interaction effect was detected for aerobic c",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-2902",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.138",
+      "numeric_values": [
+        0.138
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2902,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "h no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2979",
+      "claim_type": "mean_sd",
+      "raw_text": "66.4 \u00b1 0.8",
+      "numeric_values": [
+        66.4,
+        0.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2979,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "A group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), co",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-2993",
+      "claim_type": "mean_sd",
+      "raw_text": "70.0 \u00b1 1.0",
+      "numeric_values": [
+        70.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2993,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-3000",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 3000,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "e within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a mod",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-3023",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3023,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL gro",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3096",
+      "claim_type": "mean_sd",
+      "raw_text": "66.4 \u00b1 0.9",
+      "numeric_values": [
+        66.4,
+        0.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3096,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "= - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55). Hb",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3110",
+      "claim_type": "mean_sd",
+      "raw_text": "68.7 \u00b1 1.0",
+      "numeric_values": [
+        68.7,
+        1.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3110,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "pared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55). Hbmass was simil",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-3117",
+      "claim_type": "unit_value",
+      "raw_text": "1.0 mL",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mL",
+      "source_section": "results",
+      "source_offset": 3117,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "ith a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55). Hbmass was similarl",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-3140",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Although no interaction effect was detected for aerobic capacity ( p = 0.138), the UA group showed a large within-group increase in V \u02d9 O 2max (66.4 \u00b1 0.8 to 70.0 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.009, d = - 0.83), compared with a moderate change in the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55).",
+      "context_window": "n the PL group (66.4 \u00b1 0.9 to 68.7 \u00b1 1.0 mL.kg -1 .min -1 , p = 0.098, d = - 0.55). Hbmass was similarly increased in both UA and",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3249",
+      "claim_type": "mean_sd",
+      "raw_text": "14.2 \u00b1 0.2",
+      "numeric_values": [
+        14.2,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3249,
+      "sentence": "Hbmass was similarly increased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig.",
+      "context_window": "eased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3263",
+      "claim_type": "mean_sd",
+      "raw_text": "14.8 \u00b1 0.2",
+      "numeric_values": [
+        14.8,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3263,
+      "sentence": "Hbmass was similarly increased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig.",
+      "context_window": "UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 ,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3299",
+      "claim_type": "mean_sd",
+      "raw_text": "13.8 \u00b1 0.2",
+      "numeric_values": [
+        13.8,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3299,
+      "sentence": "Hbmass was similarly increased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig.",
+      "context_window": "ing camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-3313",
+      "claim_type": "mean_sd",
+      "raw_text": "14.4 \u00b1 0.2",
+      "numeric_values": [
+        14.4,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3313,
+      "sentence": "Hbmass was similarly increased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig.",
+      "context_window": "\u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus bas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-3364",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3364,
+      "sentence": "Hbmass was similarly increased in both UA and PL groups following the training camp (14.2 \u00b1 0.2 to 14.8 \u00b1 0.2 g.kg -1 , d = - 0.63 and 13.8 \u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig.",
+      "context_window": "\u00b1 0.2 to 14.4 \u00b1 0.2 g.kg -1 , d = - 0.80 respectively, both p < 0.05 versus baseline, Fig. 3 D), with no difference between grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-3437",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.877",
+      "numeric_values": [
+        0.877
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3437,
+      "sentence": "3 D), with no difference between groups ( p = 0.877).",
+      "context_window": "us baseline, Fig. 3 D), with no difference between groups ( p = 0.877). There were no changes in body composition (total body mas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-3682",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3682,
+      "sentence": "There were no changes in body composition (total body mass, lean mass, fat, or fat free mass) or submaximal running economy (assessed at 16 km.h -1 ) following the camp, and no differences were detected between groups (Table 1 , all p > 0.05).",
+      "context_window": "no differences were detected between groups (Table 1 , all p > 0.05). Whole-body physiological outcomes were measured at basel",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-4092",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4092,
+      "sentence": "Differences between groups are indicated by brackets, # p < 0.05.",
+      "context_window": "EM. Differences between groups are indicated by brackets, # p < 0.05. Statistically different within group compared to baseline,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-4163",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4163,
+      "sentence": "Statistically different within group compared to baseline, * p < 0.05, **p < 0.01\n\nProteomic analysis was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected prior to and following the 4-week intervention (Fig.",
+      "context_window": "tatistically different within group compared to baseline, * p < 0.05, **p < 0.01 Proteomic analysis was performed in individual",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-4175",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4175,
+      "sentence": "Statistically different within group compared to baseline, * p < 0.05, **p < 0.01\n\nProteomic analysis was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected prior to and following the 4-week intervention (Fig.",
+      "context_window": "different within group compared to baseline, * p < 0.05, **p < 0.01 Proteomic analysis was performed in individuals from Cohor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-4252",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "Statistically different within group compared to baseline, * p < 0.05, **p < 0.01\n\nProteomic analysis was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected prior to and following the 4-week intervention (Fig.",
+      "context_window": "ic analysis was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-4264",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4264,
+      "sentence": "Statistically different within group compared to baseline, * p < 0.05, **p < 0.01\n\nProteomic analysis was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected prior to and following the 4-week intervention (Fig.",
+      "context_window": "was performed in individuals from Cohort B (UA; n = 11, PL; n = 9) from skeletal muscle biopsy samples collected prior to and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6229",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6229,
+      "sentence": "5 C, all p < 0.05), while proteins associated with immunoglobin complex and blood microparticles were significantly downregulated ( p < 0.05).",
+      "context_window": "ed in athletes consuming UA compared with PL (Fig. 5 C, all p < 0.05), while proteins associated with immunoglobin complex and b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6352",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6352,
+      "sentence": "5 C, all p < 0.05), while proteins associated with immunoglobin complex and blood microparticles were significantly downregulated ( p < 0.05).",
+      "context_window": "and blood microparticles were significantly downregulated ( p < 0.05). Validation of targets belonging to the upregulated pathwa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6562",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.023",
+      "numeric_values": [
+        0.023
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6562,
+      "sentence": "5 D) showed statistically significant increases in the expression of proteins responsible for mitochondrial gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochondrial ribosome protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL).",
+      "context_window": "eins responsible for mitochondrial gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6597",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.032",
+      "numeric_values": [
+        0.032
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6597,
+      "sentence": "5 D) showed statistically significant increases in the expression of proteins responsible for mitochondrial gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochondrial ribosome protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL).",
+      "context_window": "gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochondrial ribosome protein subunits (MR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6672",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6672,
+      "sentence": "5 D) showed statistically significant increases in the expression of proteins responsible for mitochondrial gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochondrial ribosome protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL).",
+      "context_window": "s PL), and mitochondrial ribosome protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL). Gene ontology (GO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-6701",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6701,
+      "sentence": "5 D) showed statistically significant increases in the expression of proteins responsible for mitochondrial gene expression (POLRMT; p = 0.023 UA post versus baseline, p = 0.032 versus PL), and mitochondrial ribosome protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL).",
+      "context_window": "some protein subunits (MRPS11; p = 0.012 versus PL, MRPL39; p = 0.001 versus PL). Gene ontology (GO) pathway analysis revealing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-7646",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7646,
+      "sentence": "Differences between groups are indicated by brackets, # p < 0.05.",
+      "context_window": "t). Differences between groups are indicated by brackets, # p < 0.05. Statistically different within group compared with baselin",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-7719",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7719,
+      "sentence": "Statistically different within group compared with baseline, * p < 0.05, ** p < 0.01\n\nRates of whole-body substrate oxidation were calculated during submaximal exercise across the entire cohort ( n = 42).",
+      "context_window": "tistically different within group compared with baseline, * p < 0.05, ** p < 0.01 Rates of whole-body substrate oxidation were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-7732",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7732,
+      "sentence": "Statistically different within group compared with baseline, * p < 0.05, ** p < 0.01\n\nRates of whole-body substrate oxidation were calculated during submaximal exercise across the entire cohort ( n = 42).",
+      "context_window": "fferent within group compared with baseline, * p < 0.05, ** p < 0.01 Rates of whole-body substrate oxidation were calculated du",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-7852",
+      "claim_type": "sample_size",
+      "raw_text": "n = 42",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7852,
+      "sentence": "Statistically different within group compared with baseline, * p < 0.05, ** p < 0.01\n\nRates of whole-body substrate oxidation were calculated during submaximal exercise across the entire cohort ( n = 42).",
+      "context_window": "lated during submaximal exercise across the entire cohort ( n = 42). Fat oxidation increased relative to baseline testing (Pre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-7937",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.021",
+      "numeric_values": [
+        0.021
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7937,
+      "sentence": "Fat oxidation increased relative to baseline testing (Pre) during stage 3 ( p = 0.021) and 4 ( p = 0.039) in the PL group (Table 2 ), but there were no differences detected between treatment groups (UA versus PL, p > 0.05).",
+      "context_window": "creased relative to baseline testing (Pre) during stage 3 ( p = 0.021) and 4 ( p = 0.039) in the PL group (Table 2 ), but there w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-7956",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7956,
+      "sentence": "Fat oxidation increased relative to baseline testing (Pre) during stage 3 ( p = 0.021) and 4 ( p = 0.039) in the PL group (Table 2 ), but there were no differences detected between treatment groups (UA versus PL, p > 0.05).",
+      "context_window": "baseline testing (Pre) during stage 3 ( p = 0.021) and 4 ( p = 0.039) in the PL group (Table 2 ), but there were no differences",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-8074",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8074,
+      "sentence": "Fat oxidation increased relative to baseline testing (Pre) during stage 3 ( p = 0.021) and 4 ( p = 0.039) in the PL group (Table 2 ), but there were no differences detected between treatment groups (UA versus PL, p > 0.05).",
+      "context_window": "ifferences detected between treatment groups (UA versus PL, p > 0.05). Rates of CHO oxidation increased with increasing exercise",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-8242",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8242,
+      "sentence": "Rates of CHO oxidation increased with increasing exercise intensity (Table 2 ), but there were no changes following the training camp or between groups (all p > 0.05).",
+      "context_window": "changes following the training camp or between groups (all p > 0.05). In support of these whole-body exercise-induced responses",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-8507",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8507,
+      "sentence": "In support of these whole-body exercise-induced responses, we did not detect a difference in maximal lipid- or pyruvate-supported mitochondrial respiration in PmFB following the 3-week altitude training camp and supplementation with either UA or PL (all p > 0.05, Table 2 ).",
+      "context_window": "training camp and supplementation with either UA or PL (all p > 0.05, Table 2 ). While citrate synthase activity increased in bo",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-8629",
+      "claim_type": "mean_sd",
+      "raw_text": "11 \u00b1 2",
+      "numeric_values": [
+        11.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8629,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.2",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-8634",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8634,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "oth groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.26",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-8653",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.260",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8653,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "d not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262). There were also no cha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-8664",
+      "claim_type": "mean_sd",
+      "raw_text": "16 \u00b1 3",
+      "numeric_values": [
+        16.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8664,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262). There were also no changes in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-8669",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8669,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "ificance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262). There were also no changes in p",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-8688",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.262",
+      "numeric_values": [
+        0.262
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8688,
+      "sentence": "While citrate synthase activity increased in both groups, this did not reach significance (Table 2 , 11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262).",
+      "context_window": "11 \u00b1 2% increase in UA, p = 0.260; 16 \u00b1 3% increase in PL, p = 0.262). There were also no changes in protein expression of the e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-9133",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.098",
+      "numeric_values": [
+        0.098
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9133,
+      "sentence": "6 C, D, p = 0.098, d = - 0.74) with a significant time \u00d7 treatment effect detected between groups ( p = 0.019).",
+      "context_window": "uggesting a potentially meaningful difference (Fig. 6 C, D, p = 0.098, d = - 0.74) with a significant time \u00d7 treatment effect det",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-9225",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9225,
+      "sentence": "6 C, D, p = 0.098, d = - 0.74) with a significant time \u00d7 treatment effect detected between groups ( p = 0.019).",
+      "context_window": "gnificant time \u00d7 treatment effect detected between groups ( p = 0.019). Assessment of substrate oxidation patterns and mitochond",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9436",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9436,
+      "sentence": "Indirect calorimetry data: UA, n = 22; PL, n = 20.",
+      "context_window": "d 14-16 (Cohort B) km.h -1 . Indirect calorimetry data: UA, n = 22; PL, n = 20. Mitochondrial respiration data are normalized",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9448",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9448,
+      "sentence": "Indirect calorimetry data: UA, n = 22; PL, n = 20.",
+      "context_window": "ort B) km.h -1 . Indirect calorimetry data: UA, n = 22; PL, n = 20. Mitochondrial respiration data are normalized to tissue we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9533",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9533,
+      "sentence": "Mitochondrial respiration data are normalized to tissue wet weight (ww): UA, n = 7-11; PL, n = 8-9.",
+      "context_window": "piration data are normalized to tissue wet weight (ww): UA, n = 7-11; PL, n = 8-9. Citrate synthase activity: UA, n = 11; PL,",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9547",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9547,
+      "sentence": "Mitochondrial respiration data are normalized to tissue wet weight (ww): UA, n = 7-11; PL, n = 8-9.",
+      "context_window": "are normalized to tissue wet weight (ww): UA, n = 7-11; PL, n = 8-9. Citrate synthase activity: UA, n = 11; PL, n = 9. Data a",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9587",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9587,
+      "sentence": "Citrate synthase activity: UA, n = 11; PL, n = 9.",
+      "context_window": ": UA, n = 7-11; PL, n = 8-9. Citrate synthase activity: UA, n = 11; PL, n = 9. Data are means \u00b1 SEM Quantified protein expres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9599",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9599,
+      "sentence": "Citrate synthase activity: UA, n = 11; PL, n = 9.",
+      "context_window": "11; PL, n = 8-9. Citrate synthase activity: UA, n = 11; PL, n = 9. Data are means \u00b1 SEM Quantified protein expression assess",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9809",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9809,
+      "sentence": "Data are means \u00b1 SEM\n\nQuantified protein expression assessed in skeletal muscle biopsy samples collected from well-trained endurance athletes following a 4-week supplementation with either urolithin A ( n = 11) or placebo ( n = 9).",
+      "context_window": "ollowing a 4-week supplementation with either urolithin A ( n = 11) or placebo ( n = 9). Electron transport chain complexes (O",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-9830",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9830,
+      "sentence": "Data are means \u00b1 SEM\n\nQuantified protein expression assessed in skeletal muscle biopsy samples collected from well-trained endurance athletes following a 4-week supplementation with either urolithin A ( n = 11) or placebo ( n = 9).",
+      "context_window": "plementation with either urolithin A ( n = 11) or placebo ( n = 9). Electron transport chain complexes (OXPHOS, A ) and repre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-10196",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10196,
+      "sentence": "Differences between groups are indicated by brackets, # p < 0.05",
+      "context_window": "EM. Differences between groups are indicated by brackets, # p < 0.05",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-27",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 27,
+      "sentence": "We evaluated the impact of 4 weeks of daily supplementation with UA on markers of recovery, aerobic capacity, mitochondrial function, and running performance in highly trained male distance runners following a training camp performed at 1700-2200 m altitude.",
+      "context_window": "We evaluated the impact of 4 weeks of daily supplementation with UA on markers of recovery, ae",
+      "claim_role": "duration",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-936",
+      "claim_type": "mean_sd",
+      "raw_text": "5.4 \u00b1 0.9",
+      "numeric_values": [
+        5.4,
+        0.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 936,
+      "sentence": "While no interaction effect was detected for aerobic capacity, the percentage increase and calculated effect size for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increases in Hbmass (~4-5%).",
+      "context_window": "ze for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = -",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-942",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 942,
+      "sentence": "While no interaction effect was detected for aerobic capacity, the percentage increase and calculated effect size for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increases in Hbmass (~4-5%).",
+      "context_window": "the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = -",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-988",
+      "claim_type": "mean_sd",
+      "raw_text": "3.6 \u00b1 1.3",
+      "numeric_values": [
+        3.6,
+        1.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 988,
+      "sentence": "While no interaction effect was detected for aerobic capacity, the percentage increase and calculated effect size for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increases in Hbmass (~4-5%).",
+      "context_window": "group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increa",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-994",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 994,
+      "sentence": "While no interaction effect was detected for aerobic capacity, the percentage increase and calculated effect size for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increases in Hbmass (~4-5%).",
+      "context_window": "(5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increas",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-1075",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1075,
+      "sentence": "While no interaction effect was detected for aerobic capacity, the percentage increase and calculated effect size for the change in V \u02d9 O 2max was larger in the UA group (5.4 \u00b1 0.9%, d = - 0.83) compared with the PL group (3.6 \u00b1 1.3%, d = - 0.55) despite both groups displaying similar increases in Hbmass (~4-5%).",
+      "context_window": "pite both groups displaying similar increases in Hbmass (~4-5%). Collectively, these physiological changes highlight the s",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-p-1648",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1648,
+      "sentence": "While CK levels (an indirect measure for muscle damage) were not impacted by UA supplementation in response to a ~4.5 km downhill run, the 24-h tAUC was significantly reduced following a 3000 m TT in individuals supplementing with UA compared with PL ( p < 0.0001), providing evidence of a beneficial effect of UA on recovery from exercise-induced muscle damage.",
+      "context_window": "TT in individuals supplementing with UA compared with PL ( p < 0.0001), providing evidence of a beneficial effect of UA on recove",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-3679",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3679,
+      "sentence": "This may be due in part to the increased intensity of the race, as the average race pace intensity of a 3000 m in highly trained athletes is estimated to be \u2265 100% V \u02d9 O 2max [ 45 ], or due to the differences in footwear between modalities (e.g., racing in track spikes compared with performing the downhill run in cushioned running shoes).",
+      "context_window": "of a 3000 m in highly trained athletes is estimated to be \u2265 100% V \u02d9 O 2max [ 45 ], or due to the differences in footwear be",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-6211",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6211,
+      "sentence": "As a result, participants\u2019 body mass and composition remained stable, which likely also contributed to significant hematological adaptations including the ~4-5% increase in Hbmass across the participant cohort.",
+      "context_window": "d to significant hematological adaptations including the ~4-5% increase in Hbmass across the participant cohort. Neverthel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-8572",
+      "claim_type": "unit_value",
+      "raw_text": "28 days",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 8572,
+      "sentence": "This is consistent with previous work showing no effect of 9-11-days exposure to high-altitude (\u2265 3500 m) on mitochondrial function [ 55 ], whereas prolonged (28 days) exposure has had equivocal effects on mitochondrial capacity [ 56 , 57 ] but may increase mitochondrial efficiency [ 56 ].",
+      "context_window": "500 m) on mitochondrial function [ 55 ], whereas prolonged (28 days) exposure has had equivocal effects on mitochondrial capaci",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-9510",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9510,
+      "sentence": "This occurred despite Hbmass increasing in both treatment groups to a similar extent (~4-5%), suggesting additional non-hematological adaptations may underpin the augmented aerobic power in UA supplemented athletes as outlined above in our GSEA data.",
+      "context_window": "increasing in both treatment groups to a similar extent (~4-5%), suggesting additional non-hematological adaptations may u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-9824",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9824,
+      "sentence": "Furthermore, while the Hbmass- V \u02d9 O 2max relationship may uncouple following altitude training, there is a weak but significant correlation in which a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group.",
+      "context_window": "ing, there is a weak but significant correlation in which a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-9880",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9880,
+      "sentence": "Furthermore, while the Hbmass- V \u02d9 O 2max relationship may uncouple following altitude training, there is a weak but significant correlation in which a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group.",
+      "context_window": "h a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) ob",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-9930",
+      "claim_type": "mean_sd",
+      "raw_text": "3.6 \u00b1 1.3",
+      "numeric_values": [
+        3.6,
+        1.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 9930,
+      "sentence": "Furthermore, while the Hbmass- V \u02d9 O 2max relationship may uncouple following altitude training, there is a weak but significant correlation in which a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group.",
+      "context_window": "y by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group. However, the increase in maxima",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-9936",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 9936,
+      "sentence": "Furthermore, while the Hbmass- V \u02d9 O 2max relationship may uncouple following altitude training, there is a weak but significant correlation in which a 1% increase in Hbmass enhances aerobic capacity by ~0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group.",
+      "context_window": "0.6-0.7% [ 58 ], consistent with the V \u02d9 O 2 changes (3.6 \u00b1 1.3%) observed in the PL group. However, the increase in maximal",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10035",
+      "claim_type": "mean_sd",
+      "raw_text": "5.4 \u00b1 0.9",
+      "numeric_values": [
+        5.4,
+        0.9
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10035,
+      "sentence": "However, the increase in maximal aerobic capacity in the UA group (5.4 \u00b1 0.9%) failed to result in a clear performance improvement.",
+      "context_window": ", the increase in maximal aerobic capacity in the UA group (5.4 \u00b1 0.9%) failed to result in a clear performance improvement. The",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10041",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10041,
+      "sentence": "However, the increase in maximal aerobic capacity in the UA group (5.4 \u00b1 0.9%) failed to result in a clear performance improvement.",
+      "context_window": "increase in maximal aerobic capacity in the UA group (5.4 \u00b1 0.9%) failed to result in a clear performance improvement. The",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10183",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10183,
+      "sentence": "The outcomes of races in elite sport are determined by very small margins, with < 1% often separating medalists in championship distance races.",
+      "context_window": "in elite sport are determined by very small margins, with < 1% often separating medalists in championship distance races.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10488",
+      "claim_type": "percentage",
+      "raw_text": "1.6%",
+      "numeric_values": [
+        1.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10488,
+      "sentence": "The coefficient of variation (CV) of performance in elite athletes in middle distance/distance events, which determines whether the observed effect of an intervention might cause a meaningful change in race outcomes, has been reported at ~1.1-1.6% [ 59 , 60 ].",
+      "context_window": "aningful change in race outcomes, has been reported at ~1.1-1.6% [ 59 , 60 ]. The performance CV of the current cohort ( n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-n-10549",
+      "claim_type": "sample_size",
+      "raw_text": "n = 22",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10549,
+      "sentence": "The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM).",
+      "context_window": ".6% [ 59 , 60 ]. The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10561",
+      "claim_type": "mean_sd",
+      "raw_text": "1.5 \u00b1 4.4",
+      "numeric_values": [
+        1.5,
+        4.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10561,
+      "sentence": "The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM).",
+      "context_window": "0 ]. The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10567",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10567,
+      "sentence": "The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM).",
+      "context_window": "he performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10573",
+      "claim_type": "mean_sd",
+      "raw_text": "7.6 \u00b1 1.4",
+      "numeric_values": [
+        7.6,
+        1.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10573,
+      "sentence": "The performance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM).",
+      "context_window": "formance CV of the current cohort ( n = 22) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10614",
+      "claim_type": "mean_sd",
+      "raw_text": "2.3 \u00b1 0.6",
+      "numeric_values": [
+        2.3,
+        0.6
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10614,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "2) was 1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10620",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10620,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "1.5 \u00b1 4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10626",
+      "claim_type": "mean_sd",
+      "raw_text": "12.1 \u00b1 3.1",
+      "numeric_values": [
+        12.1,
+        3.1
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10626,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "4.4% (7.6 \u00b1 1.4 s, mean \u00b1 SEM). Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10826",
+      "claim_type": "mean_sd",
+      "raw_text": "0.6 \u00b1 1.4",
+      "numeric_values": [
+        0.6,
+        1.4
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10826,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-pct-10832",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 10832,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "mallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-msd-10838",
+      "claim_type": "mean_sd",
+      "raw_text": "3.4 \u00b1 7.3",
+      "numeric_values": [
+        3.4,
+        7.3
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10838,
+      "sentence": "Therefore the ~2.3 \u00b1 0.6% (12.1 \u00b1 3.1 s, d = 0.70) improvement in the UA group likely represents a meaningful real-world improvement for highly trained athletes based on a smallest worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ].",
+      "context_window": "t worthwhile change of ~3.6 s compared with the 0.6 \u00b1 1.4% (3.4 \u00b1 7.3 s, d = 0.13) change detected in the PL group [ 61 ]. Howeve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-14477",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 14477,
+      "sentence": "As our supplementation period was only 4 weeks, future work should explore the impact of longer-term supplementation with UA in individuals and situations where physiological recovery processes may be challenged owing to high training demands and/or scenarios in which exercise induces more substantial muscle damage, while also exploring the impact of UA on cognitive function, perception, and pacing effort.",
+      "context_window": "ochondrial function. As our supplementation period was only 4 weeks, future work should explore the impact of longer-term suppl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12628386_evaluating_the_impact_of_urolithin_a_supplementation_on_runn-u-1158",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 1158,
+      "sentence": "As our supplementation period was only 4 weeks, future work should explore the impact of longer-term supplementation with UA in individuals and situations where physiological recovery processes may be challenged owing to high training demands and/or scenarios in which exercise induces more substantial muscle damage, while also exploring the impact of UA on cognitive function, perception, and pacing effort.",
+      "context_window": "ochondrial function. As our supplementation period was only 4 weeks, future work should explore the impact of longer-term suppl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,1861 @@
+{
+  "paper_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i",
+  "doi": "10.1038/s41430-025-01693-z",
+  "extracted_at": "2026-05-05T22:11:24+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 10,
+    "unit_value": 21,
+    "percentage": 40,
+    "p_value": 21,
+    "mean_sd": 10
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-449",
+      "claim_type": "sample_size",
+      "raw_text": "N = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 449,
+      "sentence": "Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51).",
+      "context_window": "nth, single-center randomized clinical trial. Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-461",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 461,
+      "sentence": "Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51).",
+      "context_window": "center randomized clinical trial. Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (12-hour IF + C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-532",
+      "claim_type": "sample_size",
+      "raw_text": "N = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 532,
+      "sentence": "Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51).",
+      "context_window": "th T2D, were randomly assigned to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51). Anthropometric evaluations",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-562",
+      "claim_type": "sample_size",
+      "raw_text": "N = 51",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 562,
+      "sentence": "Participants (N = 99), 21-60 years with T2D, were randomly assigned to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51).",
+      "context_window": "to Group 1 (12-hour IF + CR, N = 48) or Group 2 (CR alone, N = 51). Anthropometric evaluations included weight, height, waist",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-937",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 937,
+      "sentence": "Both groups experienced significant weight loss after 12 weeks.",
+      "context_window": "ire. Both groups experienced significant weight loss after 12 weeks. The IF + CR group showed a more pronounced weight reductio",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1009",
+      "claim_type": "percentage",
+      "raw_text": "6.51%",
+      "numeric_values": [
+        6.51
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "e IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and signific",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1043",
+      "claim_type": "percentage",
+      "raw_text": "4.41%",
+      "numeric_values": [
+        4.41
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1043,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "ounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels,",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1051",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "eight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduc",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1128",
+      "claim_type": "percentage",
+      "raw_text": "6.51%",
+      "numeric_values": [
+        6.51
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "gnificant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035). The absolute",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1146",
+      "claim_type": "percentage",
+      "raw_text": "6.86%",
+      "numeric_values": [
+        6.86
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1146,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "ents in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035). The absolute reduction in HbA1",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1169",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1169,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%) (P < 0.001) and significant improvements in HbA1c levels, with a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035).",
+      "context_window": "ith a reduction to 6.51% compared to 6.86% in the CR group (P = 0.035). The absolute reduction in HbA1c showed a significantly gr",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1369",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1369,
+      "sentence": "The absolute reduction in HbA1c showed a significantly greater median decrease in the IF + CR group [-0.50 (IQR - 0.60 to -0.35)] compared with the CR group [-0.20 (IQR - 0.40 to -0.10)] (P = 0.002).",
+      "context_window": "] compared with the CR group [-0.20 (IQR - 0.40 to -0.10)] (P = 0.002). IF + CR demonstrated significant reductions in waist circ",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1450",
+      "claim_type": "percentage",
+      "raw_text": "4.64%",
+      "numeric_values": [
+        4.64
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "IF + CR demonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05).",
+      "context_window": "emonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1481",
+      "claim_type": "percentage",
+      "raw_text": "3.12%",
+      "numeric_values": [
+        3.12
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1481,
+      "sentence": "IF + CR demonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05).",
+      "context_window": "ons in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1509",
+      "claim_type": "percentage",
+      "raw_text": "2.70%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1509,
+      "sentence": "IF + CR demonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05).",
+      "context_window": "-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05). Furthermore, IF + CR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1520",
+      "claim_type": "percentage",
+      "raw_text": "0.86%",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1520,
+      "sentence": "IF + CR demonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05).",
+      "context_window": "hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05). Furthermore, IF + CR showed grea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1542",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1542,
+      "sentence": "IF + CR demonstrated significant reductions in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05).",
+      "context_window": ".12%) compared to the CR (-2.70% and -0.86%, respectively) (P < 0.05). Furthermore, IF + CR showed greater reductions in body fa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1619",
+      "claim_type": "percentage",
+      "raw_text": "9.39%",
+      "numeric_values": [
+        9.39
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1619,
+      "sentence": "Furthermore, IF + CR showed greater reductions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001).",
+      "context_window": "rmore, IF + CR showed greater reductions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001). Physical activity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1647",
+      "claim_type": "percentage",
+      "raw_text": "5.32%",
+      "numeric_values": [
+        5.32
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1647,
+      "sentence": "Furthermore, IF + CR showed greater reductions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001).",
+      "context_window": "r reductions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001). Physical activity levels were comparable, wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1655",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1655,
+      "sentence": "Furthermore, IF + CR showed greater reductions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001).",
+      "context_window": "ions in body fat mass (-9.39%) compared to the CR (-5.32%) (P < 0.001). Physical activity levels were comparable, with average ME",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1807",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.134",
+      "numeric_values": [
+        0.134
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1807,
+      "sentence": "Physical activity levels were comparable, with average MET of 100 and sedentary hours of 15.7 ( \u00b1 3) for IF + CR and 16.2 ( \u00b1 2.3) for CR, (P = 0.134).",
+      "context_window": "hours of 15.7 ( \u00b1 3) for IF + CR and 16.2 ( \u00b1 2.3) for CR, (P = 0.134). A 12-hour intermittent fasting (IF) regimen combined wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-685",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 685,
+      "sentence": "Eligible participants were adults aged 21 to 60 years, diagnosed with type 2 DM, and classified as obese with a body mass index (BMI) ranging from 30 to 50 kg/m\u00b2.",
+      "context_window": "sinki [ 13 ]. Eligible participants were adults aged 21 to 60 years, diagnosed with type 2 DM, and classified as obese with a b",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-793",
+      "claim_type": "unit_value",
+      "raw_text": "50 kg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 793,
+      "sentence": "Eligible participants were adults aged 21 to 60 years, diagnosed with type 2 DM, and classified as obese with a body mass index (BMI) ranging from 30 to 50 kg/m\u00b2.",
+      "context_window": "ed as obese with a body mass index (BMI) ranging from 30 to 50 kg/m\u00b2. All participants had been on metformin only therapy for",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-1779",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1779,
+      "sentence": "These comorbidities included severe cardiovascular conditions (e.g., heart failure, myocardial infarction), respiratory diseases (e.g., chronic obstructive pulmonary disease), psychiatric disorders (e.g., major depressive disorder, schizophrenia), musculoskeletal disorders (e.g., rheumatoid arthritis), individuals with chronic liver disease, severe renal impairment (GFR < 30 mL/min/1.73 m\u00b2), or thyroid disorders.",
+      "context_window": "with chronic liver disease, severe renal impairment (GFR < 30 mL/min/1.73 m\u00b2), or thyroid disorders. Those receiving treatment w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-2126",
+      "claim_type": "sample_size",
+      "raw_text": "N = 125",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2126,
+      "sentence": "Eligible participants (N = 125) were randomly assigned to one of two study groups using computer-generated random numbers (Research Randomizer version 4.0).",
+      "context_window": "cognitive impairment were excluded. Eligible participants (N = 125) were randomly assigned to one of two study groups using co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-2377",
+      "claim_type": "sample_size",
+      "raw_text": "N = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2377,
+      "sentence": "Group 1 (N = 48) followed a 12-hour night intermittent fasting regimen combined with calorie restriction, while Group 2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks.",
+      "context_window": "1:1 ratio to maintain balanced group sizes [ 14 ]. Group 1 (N = 48) followed a 12-hour night intermittent fasting regimen comb",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-2489",
+      "claim_type": "sample_size",
+      "raw_text": "N = 51",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2489,
+      "sentence": "Group 1 (N = 48) followed a 12-hour night intermittent fasting regimen combined with calorie restriction, while Group 2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks.",
+      "context_window": "g regimen combined with calorie restriction, while Group 2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-2546",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2546,
+      "sentence": "Group 1 (N = 48) followed a 12-hour night intermittent fasting regimen combined with calorie restriction, while Group 2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks.",
+      "context_window": "2 (N = 51) followed a calorie-restricted diet only (CR) for 12 weeks. Participants in Group 1 (night IF combined with CR) adhere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-3141",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3141,
+      "sentence": "Participants in both groups followed the same macronutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ].",
+      "context_window": "n both groups followed the same macronutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ]. Caloric in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-3160",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3160,
+      "sentence": "Participants in both groups followed the same macronutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ].",
+      "context_window": "wed the same macronutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ]. Caloric intake for both group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-3177",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3177,
+      "sentence": "Participants in both groups followed the same macronutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ].",
+      "context_window": "onutrient distribution: 45% carbohydrates, 20% protein, and 35% fats [ 15 ]. Caloric intake for both groups was personalize",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-4716",
+      "claim_type": "unit_value",
+      "raw_text": "130 mg/dL",
+      "numeric_values": [
+        130.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 4716,
+      "sentence": "Metformin dose reduction was considered when patients exhibited improvement in glycemic control, reflected by fasting blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a reduction in body weight.",
+      "context_window": "ic control, reflected by fasting blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a re",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4749",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4749,
+      "sentence": "Metformin dose reduction was considered when patients exhibited improvement in glycemic control, reflected by fasting blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a reduction in body weight.",
+      "context_window": "blood glucose levels below 130 mg/dL and HbA1c values under 7% at follow-up, accompanied by a reduction in body weight. Up",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4953",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4953,
+      "sentence": "Upon meeting these criteria, the treating physician exercised clinical judgment to determine the extent of dose reduction, typically between 25-50%, based on the patient\u2019s overall glycemic status and clinical condition [ 18 ] Body weight was measured at baseline and every 2 weeks, with the percentage change in weight calculated.",
+      "context_window": "etermine the extent of dose reduction, typically between 25-50%, based on the patient\u2019s overall glycemic status and clinica",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5082",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5082,
+      "sentence": "Upon meeting these criteria, the treating physician exercised clinical judgment to determine the extent of dose reduction, typically between 25-50%, based on the patient\u2019s overall glycemic status and clinical condition [ 18 ] Body weight was measured at baseline and every 2 weeks, with the percentage change in weight calculated.",
+      "context_window": "ition [ 18 ] Body weight was measured at baseline and every 2 weeks, with the percentage change in weight calculated. HbA1c lev",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5189",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5189,
+      "sentence": "HbA1c levels were analyzed at baseline and after 12 weeks.",
+      "context_window": "alculated. HbA1c levels were analyzed at baseline and after 12 weeks. Fasting blood glucose (FBS) was assessed after an overnigh",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5520",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5520,
+      "sentence": "BMI, waist, and hip circumferences were recorded at baseline and every 2 weeks.",
+      "context_window": "and hip circumferences were recorded at baseline and every 2 weeks. Body composition was evaluated every 2 weeks using a Body",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5566",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5566,
+      "sentence": "Body composition was evaluated every 2 weeks using a Body Composition Analyzer that employs bioelectrical impedance analysis (BIA) to measure the body\u2019s resistance to a low-level electrical current, allowing for the calculation of fat mass, lean mass, and total body water [ 19 ].",
+      "context_window": "ine and every 2 weeks. Body composition was evaluated every 2 weeks using a Body Composition Analyzer that employs bioelectrica",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-6149",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 6149,
+      "sentence": "Adherence to both the fasting protocol and dietary restrictions was closely monitored by the research team at the follow-up visits every 2 weeks.",
+      "context_window": "onitored by the research team at the follow-up visits every 2 weeks. These visits included regular check-ins where participants",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-7930",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7930,
+      "sentence": "Based on this effect size, significance level (\u03b1 = 0.05), and 80% power (\u03b2 = 0.20), a minimum of 98 participants was required to detect a statistically significant difference in HbA1c between the two groups.",
+      "context_window": "sed on this effect size, significance level (\u03b1 = 0.05), and 80% power (\u03b2 = 0.20), a minimum of 98 participants was required",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-8122",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8122,
+      "sentence": "Accounting for an anticipated dropout rate of 10%, the final required sample size was increased to 108 participants to ensure adequate statistical power [ 22 , 23 ].",
+      "context_window": "e two groups. Accounting for an anticipated dropout rate of 10%, the final required sample size was increased to 108 partic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-758",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.134",
+      "numeric_values": [
+        0.134
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 758,
+      "sentence": "Physical activity levels were comparable, with average MET minutes of 100 and sedentary hours of 15.7 ( \u00b1 3) hours for IF + CR and 16.2 ( \u00b1 2.3) hours for CR, showing no significant differences (P = 0.134) (Table 1 ).",
+      "context_window": "( \u00b1 2.3) hours for CR, showing no significant differences (P = 0.134) (Table 1 ). This figure illustrates the flow of participa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-1023",
+      "claim_type": "sample_size",
+      "raw_text": "n = 62",
+      "numeric_values": [
+        62.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1023,
+      "sentence": "One hundred twenty-five participants were randomized to either the intermittent fasting (IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63).",
+      "context_window": "randomized to either the intermittent fasting (IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63). Final ana",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-1071",
+      "claim_type": "sample_size",
+      "raw_text": "n = 63",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1071,
+      "sentence": "One hundred twenty-five participants were randomized to either the intermittent fasting (IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63).",
+      "context_window": "IF) group ( n = 62) or the calorie restriction (CR) group ( n = 63). Final analyses included 48 participants in the IF group a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1586",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1586,
+      "sentence": "Level of significance P < 0.05.\n\na Unpaired t-test for between-group comparison.\n\nb Chi-square test for categorical data.\n\nc Mann-Whitney U test for between-group comparison.",
+      "context_window": "n \u00b1 SD, Count (%), and Median (IQR). Level of significance P < 0.05. a Unpaired t-test for between-group comparison. b Chi-sq",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-1780",
+      "claim_type": "mean_sd",
+      "raw_text": "1493 \u00b1 204",
+      "numeric_values": [
+        1493.0,
+        204.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1780,
+      "sentence": "At baseline, the IF + CR group consumed 1493 \u00b1 204 kcals, and the CR group consumed 1505 \u00b1 218 kcals, with no statistically significant difference (p = 0.327).",
+      "context_window": "-group comparison. At baseline, the IF + CR group consumed 1493 \u00b1 204 kcals, and the CR group consumed 1505 \u00b1 218 kcals, with no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-1824",
+      "claim_type": "mean_sd",
+      "raw_text": "1505 \u00b1 218",
+      "numeric_values": [
+        1505.0,
+        218.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1824,
+      "sentence": "At baseline, the IF + CR group consumed 1493 \u00b1 204 kcals, and the CR group consumed 1505 \u00b1 218 kcals, with no statistically significant difference (p = 0.327).",
+      "context_window": "group consumed 1493 \u00b1 204 kcals, and the CR group consumed 1505 \u00b1 218 kcals, with no statistically significant difference (p = 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1888",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.327",
+      "numeric_values": [
+        0.327
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1888,
+      "sentence": "At baseline, the IF + CR group consumed 1493 \u00b1 204 kcals, and the CR group consumed 1505 \u00b1 218 kcals, with no statistically significant difference (p = 0.327).",
+      "context_window": "\u00b1 218 kcals, with no statistically significant difference (p = 0.327). After 12 weeks, the IF group maintained an average calori",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-1906",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1906,
+      "sentence": "After 12 weeks, the IF group maintained an average caloric intake of 1482 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669).",
+      "context_window": "no statistically significant difference (p = 0.327). After 12 weeks, the IF group maintained an average caloric intake of 1482",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-1969",
+      "claim_type": "mean_sd",
+      "raw_text": "1482 \u00b1 204",
+      "numeric_values": [
+        1482.0,
+        204.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1969,
+      "sentence": "After 12 weeks, the IF group maintained an average caloric intake of 1482 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669).",
+      "context_window": "weeks, the IF group maintained an average caloric intake of 1482 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-2032",
+      "claim_type": "mean_sd",
+      "raw_text": "1435 \u00b1 203",
+      "numeric_values": [
+        1435.0,
+        203.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2032,
+      "sentence": "After 12 weeks, the IF group maintained an average caloric intake of 1482 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669).",
+      "context_window": "2 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-2091",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.669",
+      "numeric_values": [
+        0.669
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2091,
+      "sentence": "After 12 weeks, the IF group maintained an average caloric intake of 1482 \u00b1 204 kcal, while the CR group slightly reduced intake to 1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669).",
+      "context_window": "1435 \u00b1 203 kcal; this difference was also not significant (p = 0.669). The use of a personalized nutrition plan ensured that eac",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-3568",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3568,
+      "sentence": "Significance level: P < 0.05.",
+      "context_window": "Data are represented as Median [IQR]. Significance level: P < 0.05. BMI Body Mass Index, FBG Fasting Blood Glucose, HOMA-IR H",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4176",
+      "claim_type": "percentage",
+      "raw_text": "6.51%",
+      "numeric_values": [
+        6.51
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4176,
+      "sentence": "The IF + CR group demonstrated a significant reduction in HbA1c, achieving a mean level of 6.51% compared with 6.86% in the CR group, with P = 0.035.",
+      "context_window": "a significant reduction in HbA1c, achieving a mean level of 6.51% compared with 6.86% in the CR group, with P = 0.035. Analys",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4196",
+      "claim_type": "percentage",
+      "raw_text": "6.86%",
+      "numeric_values": [
+        6.86
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4196,
+      "sentence": "The IF + CR group demonstrated a significant reduction in HbA1c, achieving a mean level of 6.51% compared with 6.86% in the CR group, with P = 0.035.",
+      "context_window": "ion in HbA1c, achieving a mean level of 6.51% compared with 6.86% in the CR group, with P = 0.035. Analysis of the absolute r",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-4224",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4224,
+      "sentence": "The IF + CR group demonstrated a significant reduction in HbA1c, achieving a mean level of 6.51% compared with 6.86% in the CR group, with P = 0.035.",
+      "context_window": "an level of 6.51% compared with 6.86% in the CR group, with P = 0.035. Analysis of the absolute reduction in HbA1c showed a signi",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-4435",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4435,
+      "sentence": "Analysis of the absolute reduction in HbA1c showed a significantly greater median decrease in the IF + CR group [-0.50 (IQR - 0.60 to -0.35)] compared with the CR group [-0.20 (IQR - 0.40 to -0.10)] (P = 0.002), confirming the higher glycemic improvement with the IF + CR intervention.",
+      "context_window": "] compared with the CR group [-0.20 (IQR - 0.40 to -0.10)] (P = 0.002), confirming the higher glycemic improvement with the IF +",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4645",
+      "claim_type": "percentage",
+      "raw_text": "6.94%",
+      "numeric_values": [
+        6.94
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4645,
+      "sentence": "In terms of percentage change of HbA1c from baseline, the IF + CR group exhibited a greater median percentage reduction of -6.94% (IQR -8.84 to -4.79) versus -3.08% (IQR -6.06 to -1.47) in the CR group), with P = 0.001.",
+      "context_window": "R group exhibited a greater median percentage reduction of -6.94% (IQR -8.84 to -4.79) versus -3.08% (IQR -6.06 to -1.47) in",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4680",
+      "claim_type": "percentage",
+      "raw_text": "3.08%",
+      "numeric_values": [
+        3.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4680,
+      "sentence": "In terms of percentage change of HbA1c from baseline, the IF + CR group exhibited a greater median percentage reduction of -6.94% (IQR -8.84 to -4.79) versus -3.08% (IQR -6.06 to -1.47) in the CR group), with P = 0.001.",
+      "context_window": "percentage reduction of -6.94% (IQR -8.84 to -4.79) versus -3.08% (IQR -6.06 to -1.47) in the CR group), with P = 0.001. The",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-4730",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4730,
+      "sentence": "In terms of percentage change of HbA1c from baseline, the IF + CR group exhibited a greater median percentage reduction of -6.94% (IQR -8.84 to -4.79) versus -3.08% (IQR -6.06 to -1.47) in the CR group), with P = 0.001.",
+      "context_window": ") versus -3.08% (IQR -6.06 to -1.47) in the CR group), with P = 0.001. The IF + CR group showed a more pronounced weight reductio",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4803",
+      "claim_type": "percentage",
+      "raw_text": "6.51%",
+      "numeric_values": [
+        6.51
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4803,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "e IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4837",
+      "claim_type": "percentage",
+      "raw_text": "4.41%",
+      "numeric_values": [
+        4.41
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4837,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "ounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-4852",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4852,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "eduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-4970",
+      "claim_type": "percentage",
+      "raw_text": "4.64%",
+      "numeric_values": [
+        4.64
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4970,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "ficantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-5001",
+      "claim_type": "percentage",
+      "raw_text": "3.12%",
+      "numeric_values": [
+        3.12
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5001,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "nge in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-5035",
+      "claim_type": "percentage",
+      "raw_text": "2.70%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5035,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": ") and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0. 01",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-5046",
+      "claim_type": "percentage",
+      "raw_text": "0.86%",
+      "numeric_values": [
+        0.86
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5046,
+      "sentence": "The IF + CR group showed a more pronounced weight reduction (-6.51%) compared to the CR group (-4.41%), with a P < 0.001.Moreover, the IF + CR group demonstrated a significantly greater percentage change in waist circumference (-4.64%) and hip circumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0.",
+      "context_window": "ircumference (-3.12%) compared to the CR group (-2.70% and -0.86%, respectively), with P-values of 0.020 and 0. 013 (Fig. 2 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-5232",
+      "claim_type": "mean_sd",
+      "raw_text": "94.16 \u00b1 14.32",
+      "numeric_values": [
+        94.16,
+        14.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5232,
+      "sentence": "At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118).",
+      "context_window": "t values across all follow-up weeks. At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5240",
+      "claim_type": "unit_value",
+      "raw_text": "14.32 kg",
+      "numeric_values": [
+        14.32
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5240,
+      "sentence": "At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118).",
+      "context_window": "across all follow-up weeks. At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-5271",
+      "claim_type": "mean_sd",
+      "raw_text": "98.55 \u00b1 13.42",
+      "numeric_values": [
+        98.55,
+        13.42
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5271,
+      "sentence": "At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118).",
+      "context_window": "week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118). Right Panel: Waist Circumf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5279",
+      "claim_type": "unit_value",
+      "raw_text": "13.42 kg",
+      "numeric_values": [
+        13.42
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5279,
+      "sentence": "At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118).",
+      "context_window": ", weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118). Right Panel: Waist Circumfere",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-5306",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.118",
+      "numeric_values": [
+        0.118
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5306,
+      "sentence": "At week 12, weight was 94.16 \u00b1 14.32 kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118).",
+      "context_window": "kg in the IF+CRgroup and 98.55 \u00b1 13.42 kg in the CR group ( p = 0.118). Right Panel: Waist Circumference (cm). Mean \u00b1 SD waist ci",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-5491",
+      "claim_type": "mean_sd",
+      "raw_text": "105.18 \u00b1 12.18",
+      "numeric_values": [
+        105.18,
+        12.18
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5491,
+      "sentence": "At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621).",
+      "context_window": "e 12-week intervention. At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5500",
+      "claim_type": "unit_value",
+      "raw_text": "12.18 cm",
+      "numeric_values": [
+        12.18
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 5500,
+      "sentence": "At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621).",
+      "context_window": "intervention. At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-5532",
+      "claim_type": "mean_sd",
+      "raw_text": "106.40 \u00b1 12.31",
+      "numeric_values": [
+        106.4,
+        12.31
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5532,
+      "sentence": "At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621).",
+      "context_window": "circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621). Between group comparisons",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-5541",
+      "claim_type": "unit_value",
+      "raw_text": "12.31 cm",
+      "numeric_values": [
+        12.31
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 5541,
+      "sentence": "At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621).",
+      "context_window": "rence was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621). Between group comparisons ove",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-5568",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.621",
+      "numeric_values": [
+        0.621
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5568,
+      "sentence": "At week 12, waist circumference was 105.18 \u00b1 12.18 cm in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621).",
+      "context_window": "in the IF+CR group and 106.40 \u00b1 12.31 cm in the CR group ( p = 0.621). Between group comparisons over time were analyzed using r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-5774",
+      "claim_type": "percentage",
+      "raw_text": "33%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5774,
+      "sentence": "The body fat percentages of both the IF + CR and CR groups were significantly higher than the healthy range (21-33% for females and 8-24% for males), representing obesity and an increased risk of metabolic and cardiovascular diseases [ 24 ].",
+      "context_window": "groups were significantly higher than the healthy range (21-33% for females and 8-24% for males), representing obesity and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-5796",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5796,
+      "sentence": "The body fat percentages of both the IF + CR and CR groups were significantly higher than the healthy range (21-33% for females and 8-24% for males), representing obesity and an increased risk of metabolic and cardiovascular diseases [ 24 ].",
+      "context_window": "tly higher than the healthy range (21-33% for females and 8-24% for males), representing obesity and an increased risk of m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-6008",
+      "claim_type": "percentage",
+      "raw_text": "9.39%",
+      "numeric_values": [
+        9.39
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6008,
+      "sentence": "Body composition changes revealed that the IF + CR group had a significant reduction in body fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001.",
+      "context_window": "F + CR group had a significant reduction in body fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001. Both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-6042",
+      "claim_type": "percentage",
+      "raw_text": "5.32%",
+      "numeric_values": [
+        5.32
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6042,
+      "sentence": "Body composition changes revealed that the IF + CR group had a significant reduction in body fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001.",
+      "context_window": "uction in body fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001. Both groups experienced significant red",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-6057",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6057,
+      "sentence": "Body composition changes revealed that the IF + CR group had a significant reduction in body fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001.",
+      "context_window": "fat mass (-9.39%) compared to the CR group (-5.32%), with a P < 0.001. Both groups experienced significant reductions in BMI, wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-6177",
+      "claim_type": "percentage",
+      "raw_text": "5.93%",
+      "numeric_values": [
+        5.93
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6177,
+      "sentence": "Both groups experienced significant reductions in BMI, with the IF + CR group achieving a greater decrease (-5.93%) compared to the CR group (-4.08%).",
+      "context_window": "BMI, with the IF + CR group achieving a greater decrease (-5.93%) compared to the CR group (-4.08%). The difference between",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-6211",
+      "claim_type": "percentage",
+      "raw_text": "4.08%",
+      "numeric_values": [
+        4.08
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6211,
+      "sentence": "Both groups experienced significant reductions in BMI, with the IF + CR group achieving a greater decrease (-5.93%) compared to the CR group (-4.08%).",
+      "context_window": "ving a greater decrease (-5.93%) compared to the CR group (-4.08%). The difference between the groups was statistically signi",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-759",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 759,
+      "sentence": "In our study, the absolute median reduction in HbA1c was also significantly greater in the IF + CR group ( - 0.50 [IQR - 0.60 to -0.35]) compared with the CR group ( - 0.20 [IQR - 0.40 to -0.10]; P = 0.002), indicating greater short-term glycemic improvement with the combined intervention.",
+      "context_window": "compared with the CR group ( - 0.20 [IQR - 0.40 to -0.10]; P = 0.002), indicating greater short-term glycemic improvement with t",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1109",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1109,
+      "sentence": "Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between groups was not statistically significant (P = 0.308).",
+      "context_window": "ol over roughly a three-month period. Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-1114",
+      "claim_type": "sample_size",
+      "raw_text": "N = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1114,
+      "sentence": "Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between groups was not statistically significant (P = 0.308).",
+      "context_window": "er roughly a three-month period. Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compar",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-1187",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1187,
+      "sentence": "Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between groups was not statistically significant (P = 0.308).",
+      "context_window": "ion in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference betwe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-n-1192",
+      "claim_type": "sample_size",
+      "raw_text": "N = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1192,
+      "sentence": "Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between groups was not statistically significant (P = 0.308).",
+      "context_window": "n medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between grou",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-1295",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.308",
+      "numeric_values": [
+        0.308
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1295,
+      "sentence": "Our study observed a 16% (N = 8) reduction in medication use in the (IF + CR) group, compared to a 13% (N = 7) reduction in the CR group, but the difference between groups was not statistically significant (P = 0.308).",
+      "context_window": "ifference between groups was not statistically significant (P = 0.308). Che et al. noted medication dose reductions in a 10-hour",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-2259",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2259,
+      "sentence": "For instance, Che et al. demonstrated that 12 weeks of 10-hour IF resulted in a 3% reduction in body weight among people living with obesity and T2D [ 25 ].",
+      "context_window": "28 , 29 , 32 ]. For instance, Che et al. demonstrated that 12 weeks of 10-hour IF resulted in a 3% reduction in body weight amo",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-2296",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2296,
+      "sentence": "For instance, Che et al. demonstrated that 12 weeks of 10-hour IF resulted in a 3% reduction in body weight among people living with obesity and T2D [ 25 ].",
+      "context_window": "al. demonstrated that 12 weeks of 10-hour IF resulted in a 3% reduction in body weight among people living with obesity a",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-2413",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2413,
+      "sentence": "Similarly, Andriessen et al. reported a 1.1% weight loss after 3 weeks of 14-hour IF in a small cohort of men and women with obesity and T2D [ 26 ].",
+      "context_window": "ity and T2D [ 25 ]. Similarly, Andriessen et al. reported a 1.1% weight loss after 3 weeks of 14-hour IF in a small cohort o",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-2436",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2436,
+      "sentence": "Similarly, Andriessen et al. reported a 1.1% weight loss after 3 weeks of 14-hour IF in a small cohort of men and women with obesity and T2D [ 26 ].",
+      "context_window": "ilarly, Andriessen et al. reported a 1.1% weight loss after 3 weeks of 14-hour IF in a small cohort of men and women with obesi",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-2561",
+      "claim_type": "percentage",
+      "raw_text": "6.51%",
+      "numeric_values": [
+        6.51
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2561,
+      "sentence": "The weight loss observed in our study (6.51% from baseline) was greater than these previous reports, likely due to both calorie restriction and the intervention period of 12 weeks.",
+      "context_window": "sity and T2D [ 26 ]. The weight loss observed in our study (6.51% from baseline) was greater than these previous reports, lik",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-2693",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2693,
+      "sentence": "The weight loss observed in our study (6.51% from baseline) was greater than these previous reports, likely due to both calorie restriction and the intervention period of 12 weeks.",
+      "context_window": "to both calorie restriction and the intervention period of 12 weeks. The significant reduction in HbA1c levels in the IF + CR",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-2768",
+      "claim_type": "mean_sd",
+      "raw_text": "6.51 \u00b1 0.67",
+      "numeric_values": [
+        6.51,
+        0.67
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2768,
+      "sentence": "The significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 , 32 ].",
+      "context_window": "significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-2775",
+      "claim_type": "percentage",
+      "raw_text": "0.67%",
+      "numeric_values": [
+        0.67
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2775,
+      "sentence": "The significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 , 32 ].",
+      "context_window": "cant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 i",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-msd-2808",
+      "claim_type": "mean_sd",
+      "raw_text": "6.86 \u00b1 0.94",
+      "numeric_values": [
+        6.86,
+        0.94
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2808,
+      "sentence": "The significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 , 32 ].",
+      "context_window": "the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other s",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-pct-2815",
+      "claim_type": "percentage",
+      "raw_text": "0.94%",
+      "numeric_values": [
+        0.94
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2815,
+      "sentence": "The significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 , 32 ].",
+      "context_window": "+ CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other st",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-p-2829",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.035",
+      "numeric_values": [
+        0.035
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2829,
+      "sentence": "The significant reduction in HbA1c levels in the IF + CR group (6.51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 , 32 ].",
+      "context_window": ".51 \u00b1 0.67%) compared to the CR group (6.86 \u00b1 0.94%) with a P = 0.035 is consistent with findings from other studies [ 28 , 29 ,",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13008765_the_impact_of_intermittent_fasting_during_weight_reduction_i-u-3274",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 3274,
+      "sentence": "This is in line with the findings of Andriessen et al., who reported that 3 weeks of time-restricted eating improved glucose homeostasis but did not significantly improve insulin sensitivity [ 26 ].",
+      "context_window": "e with the findings of Andriessen et al., who reported that 3 weeks of time-restricted eating improved glucose homeostasis but",
+      "claim_role": "protocol",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

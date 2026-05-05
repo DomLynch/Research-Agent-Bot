@@ -1,0 +1,398 @@
+{
+  "paper_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten",
+  "doi": "10.3390/biom11040516",
+  "extracted_at": "2026-05-05T22:11:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "percentage": 13,
+    "mean_sd": 7
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-u-16262",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 16262,
+      "sentence": "After 8 weeks of intervention they detected a highly significant increase in adiponectin levels whereas leptin levels were lowered, which is in accordance with other literature [ 132 ].",
+      "context_window": "lar diet group and to TRF (16 h fasting, 8 h eating). After 8 weeks of intervention they detected a highly significant increase",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-22753",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22753,
+      "sentence": "For example, in a ramp test performed in 11 cyclists, up to 95% of the maximum power (P max ), the time to exhaustion (TTE) was determined [ 166 ].",
+      "context_window": "For example, in a ramp test performed in 11 cyclists, up to 95% of the maximum power (P max ), the time to exhaustion (TTE)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-22899",
+      "claim_type": "mean_sd",
+      "raw_text": "270 \u00b1 105",
+      "numeric_values": [
+        270.0,
+        105.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22899,
+      "sentence": "Thus, TTE in the evening (6:00 p.m.) was on average 40 s (270 \u00b1 105 s vs.",
+      "context_window": ". Thus, TTE in the evening (6:00 p.m.) was on average 40 s (270 \u00b1 105 s vs. 234 \u00b1 85 s) longer than in the morning (6:00 a.m.). I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-22915",
+      "claim_type": "mean_sd",
+      "raw_text": "234 \u00b1 85",
+      "numeric_values": [
+        234.0,
+        85.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22915,
+      "sentence": "234 \u00b1 85 s) longer than in the morning (6:00 a.m.).",
+      "context_window": "he evening (6:00 p.m.) was on average 40 s (270 \u00b1 105 s vs. 234 \u00b1 85 s) longer than in the morning (6:00 a.m.). In contrast to 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-22982",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 22982,
+      "sentence": "In contrast to 15% increase in power output (\u00b116%), no difference was measured in VO 2mean and VO 2peak .",
+      "context_window": "5 s) longer than in the morning (6:00 a.m.). In contrast to 15% increase in power output (\u00b116%), no difference was measured",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-23013",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23013,
+      "sentence": "In contrast to 15% increase in power output (\u00b116%), no difference was measured in VO 2mean and VO 2peak .",
+      "context_window": "(6:00 a.m.). In contrast to 15% increase in power output (\u00b116%), no difference was measured in VO 2mean and VO 2peak . Sim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-23125",
+      "claim_type": "percentage",
+      "raw_text": "3.66%",
+      "numeric_values": [
+        3.66
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23125,
+      "sentence": "Similar results were obtained in a TTE (increase of 3.66% VO 2max /s to a maximum load of 95% of VO 2max ) in eight women.",
+      "context_window": "2peak . Similar results were obtained in a TTE (increase of 3.66% VO 2max /s to a maximum load of 95% of VO 2max ) in eight w",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-23163",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23163,
+      "sentence": "Similar results were obtained in a TTE (increase of 3.66% VO 2max /s to a maximum load of 95% of VO 2max ) in eight women.",
+      "context_window": "in a TTE (increase of 3.66% VO 2max /s to a maximum load of 95% of VO 2max ) in eight women. This is in agreement with othe",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-23861",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23861,
+      "sentence": "When comparing a force-velocity and a multi-jump test at three different times of the day (9:00 a.m., 2:00 p.m. and 6:00 p.m.; 23 subjects), a 3% increase in performance was detected in the wheel test and 5-7% in the jump test [ 175 ].",
+      "context_window": "he day (9:00 a.m., 2:00 p.m. and 6:00 p.m.; 23 subjects), a 3% increase in performance was detected in the wheel test and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-23925",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 23925,
+      "sentence": "When comparing a force-velocity and a multi-jump test at three different times of the day (9:00 a.m., 2:00 p.m. and 6:00 p.m.; 23 subjects), a 3% increase in performance was detected in the wheel test and 5-7% in the jump test [ 175 ].",
+      "context_window": "ncrease in performance was detected in the wheel test and 5-7% in the jump test [ 175 ]. A further investigation on 19 sub",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-24132",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 24132,
+      "sentence": "A further investigation on 19 subjects with extended test times (2:00 a.m., 6:00 a.m., 10:00 a.m., 2:00 p.m., 6:00 p.m., 10:00 p.m.) demonstrated that for P max , an increase of 7% at the peak clock time at 17:10 \u00b1 00:52 h was observed.",
+      "context_window": "., 10:00 p.m.) demonstrated that for P max , an increase of 7% at the peak clock time at 17:10 \u00b1 00:52 h was observed. Fur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-24164",
+      "claim_type": "mean_sd",
+      "raw_text": "10 \u00b1 00",
+      "numeric_values": [
+        10.0,
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24164,
+      "sentence": "A further investigation on 19 subjects with extended test times (2:00 a.m., 6:00 a.m., 10:00 a.m., 2:00 p.m., 6:00 p.m., 10:00 p.m.) demonstrated that for P max , an increase of 7% at the peak clock time at 17:10 \u00b1 00:52 h was observed.",
+      "context_window": "for P max , an increase of 7% at the peak clock time at 17:10 \u00b1 00:52 h was observed. Furthermore, P peak and P mean , determi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-24279",
+      "claim_type": "percentage",
+      "raw_text": "7.6%",
+      "numeric_values": [
+        7.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 24279,
+      "sentence": "Furthermore, P peak and P mean , determined by Wingate test, resulted in an increase of 7.6% and 11.3% and a peak clock time at 5:24 p.m. \u00b1 00:36 h and 6:00 p.m. \u00b1 01:01 h, respectively [ 176 ].",
+      "context_window": "an , determined by Wingate test, resulted in an increase of 7.6% and 11.3% and a peak clock time at 5:24 p.m. \u00b1 00:36 h and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-24288",
+      "claim_type": "percentage",
+      "raw_text": "11.3%",
+      "numeric_values": [
+        11.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 24288,
+      "sentence": "Furthermore, P peak and P mean , determined by Wingate test, resulted in an increase of 7.6% and 11.3% and a peak clock time at 5:24 p.m. \u00b1 00:36 h and 6:00 p.m. \u00b1 01:01 h, respectively [ 176 ].",
+      "context_window": "rmined by Wingate test, resulted in an increase of 7.6% and 11.3% and a peak clock time at 5:24 p.m. \u00b1 00:36 h and 6:00 p.m.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-27790",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 27790,
+      "sentence": "Thus, in a dehydrated state (hypohydrated by 5% of body mass), cortisol concentrations were higher than in euhydrated state.",
+      "context_window": "Maresh et al. Thus, in a dehydrated state (hypohydrated by 5% of body mass), cortisol concentrations were higher than in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-27922",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 27922,
+      "sentence": "Furthermore, an increase in exercise intensity from 70% to 80% VO 2max resulted in higher cortisol concentrations before and 20 min after exercise [ 192 ].",
+      "context_window": "state. Furthermore, an increase in exercise intensity from 70% to 80% VO 2max resulted in higher cortisol concentrations b",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-pct-27929",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 27929,
+      "sentence": "Furthermore, an increase in exercise intensity from 70% to 80% VO 2max resulted in higher cortisol concentrations before and 20 min after exercise [ 192 ].",
+      "context_window": "Furthermore, an increase in exercise intensity from 70% to 80% VO 2max resulted in higher cortisol concentrations before a",
+      "claim_role": "unknown",
+      "endpoint": "VO2max",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-29402",
+      "claim_type": "mean_sd",
+      "raw_text": "127.64 \u00b1 6.46",
+      "numeric_values": [
+        127.64,
+        6.46
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29402,
+      "sentence": "The greatest influence on the increase in cortisol between rest days and exercise days was observed in the measurement at 12:00 a.m., since a lower basal cortisol concentration was determined here, due to the circadian rhythmicity of cortisol secretion (integrated cortisol concentrations 07:00 a.m.: 127.64 \u00b1 6.46 vs.",
+      "context_window": "l secretion (integrated cortisol concentrations 07:00 a.m.: 127.64 \u00b1 6.46 vs. 135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs. 103.94 \u00b1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-29420",
+      "claim_type": "mean_sd",
+      "raw_text": "135.91 \u00b1 12.23",
+      "numeric_values": [
+        135.91,
+        12.23
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29420,
+      "sentence": "135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs.",
+      "context_window": "rated cortisol concentrations 07:00 a.m.: 127.64 \u00b1 6.46 vs. 135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs. 103.94 \u00b1 13.36 min.nmol/L on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-29448",
+      "claim_type": "mean_sd",
+      "raw_text": "74.77 \u00b1 14.29",
+      "numeric_values": [
+        74.77,
+        14.29
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29448,
+      "sentence": "135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs.",
+      "context_window": "s 07:00 a.m.: 127.64 \u00b1 6.46 vs. 135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs. 103.94 \u00b1 13.36 min.nmol/L on control vs. exercise days)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8065500_eat_train_sleep_retreat_hormonal_interactions_of_intermitten-msd-29466",
+      "claim_type": "mean_sd",
+      "raw_text": "103.94 \u00b1 13.36",
+      "numeric_values": [
+        103.94,
+        13.36
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 29466,
+      "sentence": "103.94 \u00b1 13.36 min.nmol/L on control vs. exercise days).",
+      "context_window": "64 \u00b1 6.46 vs. 135.91 \u00b1 12.23; 12:00 a.m.: 74.77 \u00b1 14.29 vs. 103.94 \u00b1 13.36 min.nmol/L on control vs. exercise days). Subsequently, in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,866 @@
+{
+  "paper_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity",
+  "doi": "10.1186/s12877-021-02212-y",
+  "extracted_at": "2026-05-05T21:59:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 10,
+    "mean_sd": 5,
+    "unit_value": 5,
+    "p_value": 19,
+    "percentage": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-489",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 489,
+      "sentence": "The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms.",
+      "context_window": "on average. The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms. Muscle strength (via handg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-515",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 515,
+      "sentence": "The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms.",
+      "context_window": "oked at differences between HUR ( n = 3) and conventional ( n = 1) gyms. Muscle strength (via handgrip strength and chair sta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-msd-853",
+      "claim_type": "mean_sd",
+      "raw_text": "76.5 \u00b1 6.5",
+      "numeric_values": [
+        76.5,
+        6.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 853,
+      "sentence": "Muscle strength (via handgrip strength and chair stands), appendicular lean mass (ALM; via dual energy X-ray absorptiometry) and physical performance (via gait speed over a 4-m distance, short physical performance battery, timed up and go and 400-m walk tests) were evaluated in 80 community-dwelling older adults (mean \u00b1 SD 76.5 \u00b1 6.5 years).",
+      "context_window": "evaluated in 80 community-dwelling older adults (mean \u00b1 SD 76.5 \u00b1 6.5 years). Pearson correlations explored associations for sarc",
+      "claim_role": "population",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-860",
+      "claim_type": "unit_value",
+      "raw_text": "6.5 years",
+      "numeric_values": [
+        6.5
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 860,
+      "sentence": "Muscle strength (via handgrip strength and chair stands), appendicular lean mass (ALM; via dual energy X-ray absorptiometry) and physical performance (via gait speed over a 4-m distance, short physical performance battery, timed up and go and 400-m walk tests) were evaluated in 80 community-dwelling older adults (mean \u00b1 SD 76.5 \u00b1 6.5 years).",
+      "context_window": "ted in 80 community-dwelling older adults (mean \u00b1 SD 76.5 \u00b1 6.5 years). Pearson correlations explored associations for sarcopenia",
+      "claim_role": "population",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-msd-1285",
+      "claim_type": "mean_sd",
+      "raw_text": "108 \u00b1 39",
+      "numeric_values": [
+        108.0,
+        39.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1285,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "ts had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-msd-1299",
+      "claim_type": "mean_sd",
+      "raw_text": "88 \u00b1 27",
+      "numeric_values": [
+        88.0,
+        27.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1299,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "ficantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (969",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1310",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1310,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "gher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-msd-1363",
+      "claim_type": "mean_sd",
+      "raw_text": "9698 \u00b1 3006",
+      "numeric_values": [
+        9698.0,
+        3006.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1363,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055). In both gym groups, gait",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-msd-1381",
+      "claim_type": "mean_sd",
+      "raw_text": "8266 \u00b1 2904",
+      "numeric_values": [
+        8266.0,
+        2904.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1381,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055). In both gym groups, gait speed was positive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1397",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1397,
+      "sentence": "No differences in PASE and the Australian Recommended Food Score (ARFS) were observed between HUR and conventional gyms, however HUR gym participants had a significantly higher self-reported protein intake (108 \u00b1 39 g vs 88 \u00b1 27 g; p = 0.029) and a trend to have higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055).",
+      "context_window": "ave higher energy intake (9698 \u00b1 3006 kJ vs 8266 \u00b1 2904 kJ; p = 0.055). In both gym groups, gait speed was positively associated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1515",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.039",
+      "numeric_values": [
+        0.039
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1515,
+      "sentence": "In both gym groups, gait speed was positively associated with self-reported physical activity (r = 0.275; p = 0.039 and r = 0.423; p = 0.044 for HUR and conventional gyms, respectively).",
+      "context_window": "associated with self-reported physical activity (r = 0.275; p = 0.039 and r = 0.423; p = 0.044 for HUR and conventional gyms, res",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1540",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1540,
+      "sentence": "In both gym groups, gait speed was positively associated with self-reported physical activity (r = 0.275; p = 0.039 and r = 0.423; p = 0.044 for HUR and conventional gyms, respectively).",
+      "context_window": "rted physical activity (r = 0.275; p = 0.039 and r = 0.423; p = 0.044 for HUR and conventional gyms, respectively). ALM was posit",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1641",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1641,
+      "sentence": "ALM was positively associated with protein ( p = 0.047, r = 0.418) and energy ( p = 0.038, r = 0.435) intake in the conventional gym group.",
+      "context_window": "respectively). ALM was positively associated with protein ( p = 0.047, r = 0.418) and energy ( p = 0.038, r = 0.435) intake in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1676",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1676,
+      "sentence": "ALM was positively associated with protein ( p = 0.047, r = 0.418) and energy ( p = 0.038, r = 0.435) intake in the conventional gym group.",
+      "context_window": "ssociated with protein ( p = 0.047, r = 0.418) and energy ( p = 0.038, r = 0.435) intake in the conventional gym group. Similar a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-97",
+      "claim_type": "unit_value",
+      "raw_text": "91 years",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 97,
+      "sentence": "We applied a cross-sectional design using convenience sampling to observe participants (range 61-91 years of age) that were undergoing training exercises under supervision of exercise physiologists and physiotherapists at four gyms of Uniting AgeWell in Melbourne, Australia.",
+      "context_window": "sing convenience sampling to observe participants (range 61-91 years of age) that were undergoing training exercises under super",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-322",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 322,
+      "sentence": "The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms.",
+      "context_window": "e, Australia. The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms. The recruitment for this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-348",
+      "claim_type": "sample_size",
+      "raw_text": "n = 1",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 348,
+      "sentence": "The study looked at differences between HUR ( n = 3) and conventional ( n = 1) gyms.",
+      "context_window": "oked at differences between HUR ( n = 3) and conventional ( n = 1) gyms. The recruitment for this study came from a pool of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-592",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 592,
+      "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
+      "context_window": ", with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-635",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 635,
+      "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
+      "context_window": "and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-696",
+      "claim_type": "sample_size",
+      "raw_text": "n = 67",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 696,
+      "sentence": "3.1 [ 19 ], with muscle mass as the primary end point and an expected 20% variation around the mean, detecting a 10% difference with alpha of 0.05 and beta 0.2 would require n = 67.",
+      "context_window": "0% difference with alpha of 0.05 and beta 0.2 would require n = 67. As mass was the slowest measure to change, this number ens",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5912",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 5912,
+      "sentence": "Participants were also asked to complete the Australian Eating Survey (AES) for adults, providing a comparison of food and nutritional intake with nutrition targets in the past 3-6 months.",
+      "context_window": "and nutritional intake with nutrition targets in the past 3-6 months. In this study, we analysed the Australian Recommended Food",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-7531",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7531,
+      "sentence": "A p -value < 0.05 at 95% confidence intervals was considered statistically significant.",
+      "context_window": "derate (0.3-0.7) and strong (0.7-1.0). A p -value < 0.05 at 95% confidence intervals was considered statistically significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1133",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.055",
+      "numeric_values": [
+        0.055
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1133,
+      "sentence": "Similarly, no significant difference was observed in ARFS between the gyms, but the HUR group tended ( p = 0.055) to have higher self-reported energy intake than the conventional group.",
+      "context_window": "served in ARFS between the gyms, but the HUR group tended ( p = 0.055) to have higher self-reported energy intake than the conven",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1336",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1336,
+      "sentence": "The only significant difference in function was the HUR group took significantly longer to complete five chair stands ( p = 0.024) compared to the conventional gym group.",
+      "context_window": "p took significantly longer to complete five chair stands ( p = 0.024) compared to the conventional gym group. This helps to expl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-1464",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1464,
+      "sentence": "This helps to explain the tendency for a lower SPPB score in the HUR group ( p = 0.06), although both gym results are close to maximum SPPB scores, so well above values linked with poor outcomes.",
+      "context_window": "lain the tendency for a lower SPPB score in the HUR group ( p = 0.06), although both gym results are close to maximum SPPB score",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-1667",
+      "claim_type": "sample_size",
+      "raw_text": "n = 80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1667,
+      "sentence": "Comparison of baseline characteristics between HUR and conventional gym training ( n = 80)\n\nAll data are mean (SD) or frequency (%).",
+      "context_window": "characteristics between HUR and conventional gym training ( n = 80) All data are mean (SD) or frequency (%). HUR Helsinki Uni",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-2396",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2396,
+      "sentence": "Analyses are independent sample t-tests for normally distributed data and Mann-Whitney tests for non-normally distributed data; * p < 0.05\n\nDue to gender-specific cut-offs for muscle strength (HGS) and mass (ALM, ALM/BMI, ALM/h 2 ), a comparison by gender is demonstrated in Table 2 .",
+      "context_window": "and Mann-Whitney tests for non-normally distributed data; * p < 0.05 Due to gender-specific cut-offs for muscle strength (HGS)",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-2640",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2640,
+      "sentence": "As expected, both muscle strength and mass were significantly higher in men than women ( p < 0.001).",
+      "context_window": "ngth and mass were significantly higher in men than women ( p < 0.001). There were no differences between the gyms. Comparison o",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-2807",
+      "claim_type": "sample_size",
+      "raw_text": "n = 80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2807,
+      "sentence": "Comparison of muscle strength and lean mass between HUR and conventional gym training by gender at baseline ( n = 80)\n\nHUR Helsinki University Research, HGS hand grip strength, ALM appendicular lean mass, BMI body mass index, FNIH Foundation for the National Institutes of Health Sarcopenia Project, EWGSOP2 European Working Group on Sarcopenia in Older People (January 2019 update).",
+      "context_window": "n HUR and conventional gym training by gender at baseline ( n = 80) HUR Helsinki University Research, HGS hand grip strength,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-3395",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3395,
+      "sentence": "Energy intake was significantly higher in men compared to women in both HUR ( p = 0.001) and conventional gyms ( p = 0.014), with similar higher protein intake in men at the HUR gyms ( p = 0.019).",
+      "context_window": "significantly higher in men compared to women in both HUR ( p = 0.001) and conventional gyms ( p = 0.014), with similar higher pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-3430",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.014",
+      "numeric_values": [
+        0.014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3430,
+      "sentence": "Energy intake was significantly higher in men compared to women in both HUR ( p = 0.001) and conventional gyms ( p = 0.014), with similar higher protein intake in men at the HUR gyms ( p = 0.019).",
+      "context_window": "d to women in both HUR ( p = 0.001) and conventional gyms ( p = 0.014), with similar higher protein intake in men at the HUR gyms",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-3502",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.019",
+      "numeric_values": [
+        0.019
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3502,
+      "sentence": "Energy intake was significantly higher in men compared to women in both HUR ( p = 0.001) and conventional gyms ( p = 0.014), with similar higher protein intake in men at the HUR gyms ( p = 0.019).",
+      "context_window": "with similar higher protein intake in men at the HUR gyms ( p = 0.019). No differences between the gyms were observed for either",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-3745",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.090",
+      "numeric_values": [
+        0.09
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3745,
+      "sentence": "No differences between the gyms were observed for either men or women for self-reported physical activity, ARFS or energy intake (Table 3 ), although protein intake tended to be lower in the conventional compared to the HUR gyms ( p = 0.090 and 0.059 for men and women, respectively).",
+      "context_window": "to be lower in the conventional compared to the HUR gyms ( p = 0.090 and 0.059 for men and women, respectively). Comparison of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-3917",
+      "claim_type": "sample_size",
+      "raw_text": "n = 80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3917,
+      "sentence": "Comparison of self-reported function and nutrition between HUR and conventional gym training by gender at baseline ( n = 80)\n\nHUR Helsinki University Research, PASE Physical Activity Scale for the Elderly, AES Australian Eating Survey, ARFS Australian Recommended Food Score.",
+      "context_window": "n HUR and conventional gym training by gender at baseline ( n = 80) HUR Helsinki University Research, PASE Physical Activity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-4967",
+      "claim_type": "sample_size",
+      "raw_text": "n = 57",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4967,
+      "sentence": "Associations of self-reported sarcopenia risk, physical activity, HRQoL and nutrition with sarcopenia components at baseline for HUR gym participants ( n = 57)\n\nHUR Helsinki University Research, HGS hand grip strength, CS chair stand, ALM appendicular lean mass, BMI body mass index, SPPB short physical performance battery, TUG timed up and go, PASE Physical Activity Scale for the Elderly, AES Australian Eating Survey, ARFS Australian Recommended Food Score.",
+      "context_window": "arcopenia components at baseline for HUR gym participants ( n = 57) HUR Helsinki University Research, HGS hand grip strength,",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-5319",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5319,
+      "sentence": "All analyses are Pearson correlations; ** p < 0.01, * p < 0.05\n\nFor conventional gym participants, GS also had a significant moderate, positive correlation with PASE (Table 5 ).",
+      "context_window": "ended Food Score. All analyses are Pearson correlations; ** p < 0.01, * p < 0.05 For conventional gym participants, GS also had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-5331",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5331,
+      "sentence": "All analyses are Pearson correlations; ** p < 0.01, * p < 0.05\n\nFor conventional gym participants, GS also had a significant moderate, positive correlation with PASE (Table 5 ).",
+      "context_window": "core. All analyses are Pearson correlations; ** p < 0.01, * p < 0.05 For conventional gym participants, GS also had a significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-n-6565",
+      "claim_type": "sample_size",
+      "raw_text": "n = 23",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6565,
+      "sentence": "Associations of self-reported physical activity and nutrition with sarcopenia components at baseline for conventional gym participants ( n = 23)\n\nHGS hand grip strength, CS chair stand, ALM appendicular lean mass, BMI body mass index, SPPB short physical performance battery, TUG timed up and go, PASE Physical Activity Scale for the Elderly, AES Australian Eating Survey, ARFS Australian Recommended Food Score.",
+      "context_window": "components at baseline for conventional gym participants ( n = 23) HGS hand grip strength, CS chair stand, ALM appendicular",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-6883",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6883,
+      "sentence": "All analyses are Pearson correlations; ** p < 0.01, * p < 0.05",
+      "context_window": "ended Food Score. All analyses are Pearson correlations; ** p < 0.01, * p < 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-p-6895",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6895,
+      "sentence": "All analyses are Pearson correlations; ** p < 0.01, * p < 0.05",
+      "context_window": "core. All analyses are Pearson correlations; ** p < 0.01, * p < 0.05",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-2060",
+      "claim_type": "unit_value",
+      "raw_text": "92 years",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2060,
+      "sentence": "A recent study asked 103 Australians aged 50-92 years about sustainable lifestyles [ 35 ].",
+      "context_window": "ical activity. A recent study asked 103 Australians aged 50-92 years about sustainable lifestyles [ 35 ]. Thirty percent regarde",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-2163",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2163,
+      "sentence": "Thirty percent regarded exercise as a priority; of which 11% mentioned irregular activities (e.g., gardening and walking), another 11% purposeful exercise (e.g., gym and water aerobics) and 8% regular exercise (e.g., golf and tennis) [ 35 ].",
+      "context_window": "]. Thirty percent regarded exercise as a priority; of which 11% mentioned irregular activities (e.g., gardening and walking",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-2237",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2237,
+      "sentence": "Thirty percent regarded exercise as a priority; of which 11% mentioned irregular activities (e.g., gardening and walking), another 11% purposeful exercise (e.g., gym and water aerobics) and 8% regular exercise (e.g., golf and tennis) [ 35 ].",
+      "context_window": "irregular activities (e.g., gardening and walking), another 11% purposeful exercise (e.g., gym and water aerobics) and 8% r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-2296",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2296,
+      "sentence": "Thirty percent regarded exercise as a priority; of which 11% mentioned irregular activities (e.g., gardening and walking), another 11% purposeful exercise (e.g., gym and water aerobics) and 8% regular exercise (e.g., golf and tennis) [ 35 ].",
+      "context_window": "11% purposeful exercise (e.g., gym and water aerobics) and 8% regular exercise (e.g., golf and tennis) [ 35 ]. Boulton-Le",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-3205",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3205,
+      "sentence": "Indeed, 33 and 39% of HUR and conventional gyms, respectively, achieved ARFS 39 and over, which is higher than that reported (21%) of middle-aged Australian women with ARFS over 40 [ 37 ].",
+      "context_window": "ey may be outperforming younger ages [ 37 ]. Indeed, 33 and 39% of HUR and conventional gyms, respectively, achieved ARFS 3",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-pct-3316",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3316,
+      "sentence": "Indeed, 33 and 39% of HUR and conventional gyms, respectively, achieved ARFS 39 and over, which is higher than that reported (21%) of middle-aged Australian women with ARFS over 40 [ 37 ].",
+      "context_window": "ieved ARFS 39 and over, which is higher than that reported (21%) of middle-aged Australian women with ARFS over 40 [ 37 ].",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8077926_associations_of_sarcopenia_components_with_physical_activity-u-5931",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5931,
+      "sentence": "A recent meta-analysis reports that muscle mass increase required protein intakes of up to 1.6 g/kg/day and was more effective in resistance-trained people but less effective in people over 60 years [ 45 ].",
+      "context_window": "resistance-trained people but less effective in people over 60 years [ 45 ]. Protein synthesis is higher with whey protein, whic",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

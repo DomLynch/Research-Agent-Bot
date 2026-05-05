@@ -1,0 +1,1295 @@
+{
+  "paper_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv",
+  "doi": "10.3390/sports7070167",
+  "extracted_at": "2026-05-05T21:59:15+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 2,
+    "unit_value": 18,
+    "p_value": 22,
+    "percentage": 26,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-msd-438",
+      "claim_type": "mean_sd",
+      "raw_text": "66.5 \u00b1 5.0",
+      "numeric_values": [
+        66.5,
+        5.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 438,
+      "sentence": "Twenty-eight healthy older adults (10 males, 18 females; 66.5 \u00b1 5.0 years) were randomly assigned to three groups: Control (CON), resistance training (RT), resistance training with FO (RTFO).",
+      "context_window": "s. Twenty-eight healthy older adults (10 males, 18 females; 66.5 \u00b1 5.0 years) were randomly assigned to three groups: Control (CON",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-445",
+      "claim_type": "unit_value",
+      "raw_text": "5.0 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 445,
+      "sentence": "Twenty-eight healthy older adults (10 males, 18 females; 66.5 \u00b1 5.0 years) were randomly assigned to three groups: Control (CON), resistance training (RT), resistance training with FO (RTFO).",
+      "context_window": "ty-eight healthy older adults (10 males, 18 females; 66.5 \u00b1 5.0 years) were randomly assigned to three groups: Control (CON), res",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-803",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 803,
+      "sentence": "ANOVA was used with significance set at P \u2264 0.05.",
+      "context_window": "post-intervention. ANOVA was used with significance set at P \u2264 0.05. Handgrip strength significantly increased in RT (+5.3%) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-863",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 863,
+      "sentence": "Handgrip strength significantly increased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%).",
+      "context_window": "P \u2264 0.05. Handgrip strength significantly increased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%). All physica",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-880",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "Handgrip strength significantly increased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%).",
+      "context_window": "p strength significantly increased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%). All physical function outcom",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-909",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 909,
+      "sentence": "Handgrip strength significantly increased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%).",
+      "context_window": "eased in RT (+5.3%) and RTFO (+9.4%) but decreased in CON (-3.9%). All physical function outcomes increased in RT and RTFO.",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-1128",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmHg",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1128,
+      "sentence": "BP substantially decreased only in RTFO, systolic blood pressure (-7.8 mmHg), diastolic blood pressure (-4.5 mmHg), mean arterial pressure (-5.6 mmHg), while no change was found in CON and RT.",
+      "context_window": "tantially decreased only in RTFO, systolic blood pressure (-7.8 mmHg), diastolic blood pressure (-4.5 mmHg), mean arterial press",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-1166",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 mmHg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1166,
+      "sentence": "BP substantially decreased only in RTFO, systolic blood pressure (-7.8 mmHg), diastolic blood pressure (-4.5 mmHg), mean arterial pressure (-5.6 mmHg), while no change was found in CON and RT.",
+      "context_window": "olic blood pressure (-7.8 mmHg), diastolic blood pressure (-4.5 mmHg), mean arterial pressure (-5.6 mmHg), while no change was f",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-1202",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 mmHg",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "mmHg",
+      "source_section": "abstract",
+      "source_offset": 1202,
+      "sentence": "BP substantially decreased only in RTFO, systolic blood pressure (-7.8 mmHg), diastolic blood pressure (-4.5 mmHg), mean arterial pressure (-5.6 mmHg), while no change was found in CON and RT.",
+      "context_window": "stolic blood pressure (-4.5 mmHg), mean arterial pressure (-5.6 mmHg), while no change was found in CON and RT. Chronic RT enhan",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-928",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "introduction",
+      "source_offset": 928,
+      "sentence": "A previous study reported that the lifetime risks for developing high blood pressure (BP) (\u2265140/90 mmHg) would be approximately 90% in older adults aged 55 to 65 years [ 10 ].",
+      "context_window": "ifetime risks for developing high blood pressure (BP) (\u2265140/90 mmHg) would be approximately 90% in older adults aged 55 to 65 y",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-960",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 960,
+      "sentence": "A previous study reported that the lifetime risks for developing high blood pressure (BP) (\u2265140/90 mmHg) would be approximately 90% in older adults aged 55 to 65 years [ 10 ].",
+      "context_window": "h blood pressure (BP) (\u2265140/90 mmHg) would be approximately 90% in older adults aged 55 to 65 years [ 10 ]. While sedentary",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 991,
+      "sentence": "A previous study reported that the lifetime risks for developing high blood pressure (BP) (\u2265140/90 mmHg) would be approximately 90% in older adults aged 55 to 65 years [ 10 ].",
+      "context_window": "mmHg) would be approximately 90% in older adults aged 55 to 65 years [ 10 ]. While sedentary lifestyle would accelerate the deve",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-msd-179",
+      "claim_type": "mean_sd",
+      "raw_text": "66.75 \u00b1 5.49",
+      "numeric_values": [
+        66.75,
+        5.49
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 179,
+      "sentence": "Twenty-eight healthy older adults (10 males, 18 females; 66.75 \u00b1 5.49 years) were enrolled in this study.",
+      "context_window": "s. Twenty-eight healthy older adults (10 males, 18 females; 66.75 \u00b1 5.49 years) were enrolled in this study. They were considered el",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-187",
+      "claim_type": "unit_value",
+      "raw_text": "5.49 years",
+      "numeric_values": [
+        5.49
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 187,
+      "sentence": "Twenty-eight healthy older adults (10 males, 18 females; 66.75 \u00b1 5.49 years) were enrolled in this study.",
+      "context_window": "y-eight healthy older adults (10 males, 18 females; 66.75 \u00b1 5.49 years) were enrolled in this study. They were considered eligible",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-n-1253",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1253,
+      "sentence": "Upon completion of all assessments, they were randomly assigned to one of three groups: (1) control (CON, n = 8; male = 3, female = 5), (2) resistance training (RT, n = 10; male = 3, female = 7) or (3) RT with FO supplementation (RTFO, n = 10; male = 4, female = 6) for 12-weeks of intervention.",
+      "context_window": "randomly assigned to one of three groups: (1) control (CON, n = 8; male = 3, female = 5), (2) resistance training (RT, n = 10",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-n-1312",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1312,
+      "sentence": "Upon completion of all assessments, they were randomly assigned to one of three groups: (1) control (CON, n = 8; male = 3, female = 5), (2) resistance training (RT, n = 10; male = 3, female = 7) or (3) RT with FO supplementation (RTFO, n = 10; male = 4, female = 6) for 12-weeks of intervention.",
+      "context_window": "n = 8; male = 3, female = 5), (2) resistance training (RT, n = 10; male = 3, female = 7) or (3) RT with FO supplementation (R",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-n-1383",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1383,
+      "sentence": "Upon completion of all assessments, they were randomly assigned to one of three groups: (1) control (CON, n = 8; male = 3, female = 5), (2) resistance training (RT, n = 10; male = 3, female = 7) or (3) RT with FO supplementation (RTFO, n = 10; male = 4, female = 6) for 12-weeks of intervention.",
+      "context_window": "e = 3, female = 7) or (3) RT with FO supplementation (RTFO, n = 10; male = 4, female = 6) for 12-weeks of intervention. After",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-1839",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1839,
+      "sentence": "The RT and RTFO groups performed programed RT twice per week for 12 weeks.",
+      "context_window": "T and RTFO groups performed programed RT twice per week for 12 weeks. We evaluated the one-repetition maximum (1 RM) of each par",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-2390",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2390,
+      "sentence": "Exercise intensity was set at 50% of their 1 RM for the initial week.",
+      "context_window": "the potential risk of injury. Exercise intensity was set at 50% of their 1 RM for the initial week. Then, training load was",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-2466",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2466,
+      "sentence": "Then, training load was elevated to 70% of 1 RM on the second week and progressively increased (+5% weekly if they were able to complete the given work load) to promote the maximal adaptive hypertrophic response.",
+      "context_window": "M for the initial week. Then, training load was elevated to 70% of 1 RM on the second week and progressively increased (+5%",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-2527",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2527,
+      "sentence": "Then, training load was elevated to 70% of 1 RM on the second week and progressively increased (+5% weekly if they were able to complete the given work load) to promote the maximal adaptive hypertrophic response.",
+      "context_window": "0% of 1 RM on the second week and progressively increased (+5% weekly if they were able to complete the given work load) t",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-2865",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2865,
+      "sentence": "Each exercise session was initiated with a warm-up with stretching and one set of low intensity (30% of 1 RM, 10 repetitions).",
+      "context_window": "ith a warm-up with stretching and one set of low intensity (30% of 1 RM, 10 repetitions). Each training session was recorde",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-3961",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3961,
+      "sentence": "The tablet counts revealed >90% compliance in each group.",
+      "context_window": "der to ensure their compliance. The tablet counts revealed >90% compliance in each group. Handgrip strength measurements w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-4717",
+      "claim_type": "unit_value",
+      "raw_text": "43 cm",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4717,
+      "sentence": "Physical function was evaluated using following tests: (1) Five times sit-to-stand (5X-STS): participants performed the test on a hard, straight-backed, arm-less chair (43 cm in height) placed against the wall.",
+      "context_window": "formed the test on a hard, straight-backed, arm-less chair (43 cm in height) placed against the wall. With both arms crossed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-5037",
+      "claim_type": "unit_value",
+      "raw_text": "43 cm",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5037,
+      "sentence": "The time was stopped with completion of fifth repetition. (2) Timed up and go (TUG): participants were instructed to sit on the chair (43 cm height) and rise, walk around a cone (2.44 m from the chair), and return back to the chair at their maximal walking speed.",
+      "context_window": "go (TUG): participants were instructed to sit on the chair (43 cm height) and rise, walk around a cone (2.44 m from the chair",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-6011",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6011,
+      "sentence": "If the two measurements provided values that varied greater than 2%, a third measurement was performed and the mean value of the two closest was selected for the data analysis.",
+      "context_window": "e two measurements provided values that varied greater than 2%, a third measurement was performed and the mean value of th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-6448",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6448,
+      "sentence": "Statistical significance was set at p \u2264 0.05.",
+      "context_window": "l outcome measurements. Statistical significance was set at p \u2264 0.05. When the significant interaction was noted, Tuckey\u2019s post",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-266",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 266,
+      "sentence": "We observed greater than 90% adherence with similar progression of the work load in both training groups over the intervention period.",
+      "context_window": "training is provided in Table 2 . We observed greater than 90% adherence with similar progression of the work load in both",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-788",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 788,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "ion. Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53)",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-794",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 794,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "andgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from basel",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-826",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 826,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "ncreased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-832",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 832,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "ed in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-910",
+      "claim_type": "percentage",
+      "raw_text": "3.9%",
+      "numeric_values": [
+        3.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 910,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "3) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17). There was a significant group \u00d7 tim",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-916",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 916,
+      "sentence": "Handgrip strength significantly increased in both RT (+5.3%, p = 0.007, d = 0.21) and RTFO (+9.4%, p < 0.001, d = 0.53) from baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17).",
+      "context_window": "m baseline, while it significantly decreased in CON (-3.9%, p = 0.003, d = 0.17). There was a significant group \u00d7 time interacti",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1174",
+      "claim_type": "percentage",
+      "raw_text": "8.5%",
+      "numeric_values": [
+        8.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1174,
+      "sentence": "The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON.",
+      "context_window": "t baseline. The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63),",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1180",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1180,
+      "sentence": "The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON.",
+      "context_window": "line. The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no cha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1212",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1212,
+      "sentence": "The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON.",
+      "context_window": "lly decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON. Simi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1217",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1217,
+      "sentence": "The 5X-STS time substantially decreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON.",
+      "context_window": "ecreased in RT (-8.5%, p = 0.001, d = 0.41) and RTFO (-21%, p = 0.001, d = 1.63), but no change was found in CON. Similarly, The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1331",
+      "claim_type": "percentage",
+      "raw_text": "8.7%",
+      "numeric_values": [
+        8.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1331,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1337",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1337,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "rly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1369",
+      "claim_type": "percentage",
+      "raw_text": "17.2%",
+      "numeric_values": [
+        17.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1369,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "tly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1376",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1376,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "reased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1477",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1477,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "tervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21). CON demonstrated the significantly sl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1483",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1483,
+      "sentence": "Similarly, The TUG time was significantly decreased in RT (-8.7%, p < 0.001, d = 0.77) and RTFO (-17.2%, p = 0.001, d = 1.58) from pre- to post-intervention, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21).",
+      "context_window": "tion, while CON exhibited an increase from baseline (+6.6%, p = 0.01, d = 0.21). CON demonstrated the significantly slower TUG t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1565",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1565,
+      "sentence": "CON demonstrated the significantly slower TUG time than RT ( p = 0.015) and RTFO ( p = 0.005) post-intervention.",
+      "context_window": "ON demonstrated the significantly slower TUG time than RT ( p = 0.015) and RTFO ( p = 0.005) post-intervention. The 6MW time was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1587",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1587,
+      "sentence": "CON demonstrated the significantly slower TUG time than RT ( p = 0.015) and RTFO ( p = 0.005) post-intervention.",
+      "context_window": "gnificantly slower TUG time than RT ( p = 0.015) and RTFO ( p = 0.005) post-intervention. The 6MW time was significantly shorter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1664",
+      "claim_type": "percentage",
+      "raw_text": "9.1%",
+      "numeric_values": [
+        9.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1664,
+      "sentence": "The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was observed in CON.",
+      "context_window": "ntervention. The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1670",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1670,
+      "sentence": "The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was observed in CON.",
+      "context_window": "ntion. The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than basel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1702",
+      "claim_type": "percentage",
+      "raw_text": "15.6%",
+      "numeric_values": [
+        15.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1702,
+      "sentence": "The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was observed in CON.",
+      "context_window": "antly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was obs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1709",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1709,
+      "sentence": "The 6MW time was significantly shorter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was observed in CON.",
+      "context_window": "horter in RT (-9.1%, p = 0.006, d = 0.73) and RTFO (-15.6%, p < 0.001, d = 2.5) than baseline, while no change was observed in CO",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1839",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1839,
+      "sentence": "CON exhibited the significantly slower 6MW time than RT ( p = 0.003) and RTFO ( p < 0.001).",
+      "context_window": ". CON exhibited the significantly slower 6MW time than RT ( p = 0.003) and RTFO ( p < 0.001). The numbers of 30S-STS were substan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1861",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1861,
+      "sentence": "CON exhibited the significantly slower 6MW time than RT ( p = 0.003) and RTFO ( p < 0.001).",
+      "context_window": "gnificantly slower 6MW time than RT ( p = 0.003) and RTFO ( p < 0.001). The numbers of 30S-STS were substantially increased in RT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1933",
+      "claim_type": "percentage",
+      "raw_text": "10.6%",
+      "numeric_values": [
+        10.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1933,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1940",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1940,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": "bers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from base",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1972",
+      "claim_type": "percentage",
+      "raw_text": "21.2%",
+      "numeric_values": [
+        21.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1972,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": "ly increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a signi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-1979",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1979,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": "eased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-2055",
+      "claim_type": "percentage",
+      "raw_text": "4.3%",
+      "numeric_values": [
+        4.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2055,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": ".46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5). The data for blood pressure are pres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-2061",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.018",
+      "numeric_values": [
+        0.018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2061,
+      "sentence": "The numbers of 30S-STS were substantially increased in RT (+10.6%, p < 0.001, d = 0.49) and RTFO (+21.2%, p < 0.001, d = 1.46) from baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5).",
+      "context_window": "rom baseline, but CON showed a significant decrease (-4.3%, p = 0.018, d = 0.5). The data for blood pressure are presented in Fi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-2357",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmHg",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 2357,
+      "sentence": "RTFO exhibited a remarkable decrease in SBP (-7.8 mmHg, p < 0.001, d = 0.69) from baseline, but no notable change was found in CON and RT.",
+      "context_window": "at baseline. RTFO exhibited a remarkable decrease in SBP (-7.8 mmHg, p < 0.001, d = 0.69) from baseline, but no notable change",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-2367",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2367,
+      "sentence": "RTFO exhibited a remarkable decrease in SBP (-7.8 mmHg, p < 0.001, d = 0.69) from baseline, but no notable change was found in CON and RT.",
+      "context_window": "ne. RTFO exhibited a remarkable decrease in SBP (-7.8 mmHg, p < 0.001, d = 0.69) from baseline, but no notable change was found i",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-2498",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 mmHg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 2498,
+      "sentence": "Similarly, DBP greatly decreased only in RTFO (-4.5 mmHg, p = 0.032, d = 0.56) from pre- to post-intervention with no change in CON and RT.",
+      "context_window": "CON and RT. Similarly, DBP greatly decreased only in RTFO (-4.5 mmHg, p = 0.032, d = 0.56) from pre- to post-intervention with n",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-2508",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.032",
+      "numeric_values": [
+        0.032
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2508,
+      "sentence": "Similarly, DBP greatly decreased only in RTFO (-4.5 mmHg, p = 0.032, d = 0.56) from pre- to post-intervention with no change in CON and RT.",
+      "context_window": ". Similarly, DBP greatly decreased only in RTFO (-4.5 mmHg, p = 0.032, d = 0.56) from pre- to post-intervention with no change in",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-2641",
+      "claim_type": "unit_value",
+      "raw_text": "5.8 mmHg",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 2641,
+      "sentence": "MAP substantially reduced over time only in RTFO (-5.8 mmHg, p = 0.002, d = 0.64), while no change was observed in CON and RT.",
+      "context_window": "and RT. MAP substantially reduced over time only in RTFO (-5.8 mmHg, p = 0.002, d = 0.64), while no change was observed in CON",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-p-2651",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2651,
+      "sentence": "MAP substantially reduced over time only in RTFO (-5.8 mmHg, p = 0.002, d = 0.64), while no change was observed in CON and RT.",
+      "context_window": "AP substantially reduced over time only in RTFO (-5.8 mmHg, p = 0.002, d = 0.64), while no change was observed in CON and RT.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-993",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 993,
+      "sentence": "Their findings were supported by a current study, which described markedly lower grip strength in older adults (\u226580 years) than young adults (30-39 years) [ 31 ].",
+      "context_window": "ch described markedly lower grip strength in older adults (\u226580 years) than young adults (30-39 years) [ 31 ]. We observed a sign",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-1025",
+      "claim_type": "unit_value",
+      "raw_text": "39 years",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1025,
+      "sentence": "Their findings were supported by a current study, which described markedly lower grip strength in older adults (\u226580 years) than young adults (30-39 years) [ 31 ].",
+      "context_window": "strength in older adults (\u226580 years) than young adults (30-39 years) [ 31 ]. We observed a significant decrease in handgrip str",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1227",
+      "claim_type": "percentage",
+      "raw_text": "5.3%",
+      "numeric_values": [
+        5.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1227,
+      "sentence": "We observed a significant decrease in handgrip strength in CON, which agreed with the previous evidence, while the strength decline was greatly improved by 12-weeks of programmed RT (+5.3%, d = 0.2) alone and combined with FO administration (+9.4%, d = 0.5).",
+      "context_window": "decline was greatly improved by 12-weeks of programmed RT (+5.3%, d = 0.2) alone and combined with FO administration (+9.4%,",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-pct-1286",
+      "claim_type": "percentage",
+      "raw_text": "9.4%",
+      "numeric_values": [
+        9.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1286,
+      "sentence": "We observed a significant decrease in handgrip strength in CON, which agreed with the previous evidence, while the strength decline was greatly improved by 12-weeks of programmed RT (+5.3%, d = 0.2) alone and combined with FO administration (+9.4%, d = 0.5).",
+      "context_window": "+5.3%, d = 0.2) alone and combined with FO administration (+9.4%, d = 0.5). As grip strength is highly associated with muscl",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-3831",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmHg",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 3831,
+      "sentence": "On the other hand, we observed a significant decrease in BP when RT was combined with FO supplementation in older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg).",
+      "context_window": "was combined with FO supplementation in older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg). These findings are",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-3848",
+      "claim_type": "unit_value",
+      "raw_text": "4.5 mmHg",
+      "numeric_values": [
+        4.5
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 3848,
+      "sentence": "On the other hand, we observed a significant decrease in BP when RT was combined with FO supplementation in older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg).",
+      "context_window": "FO supplementation in older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg). These findings are in accordance wit",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6680896_chronic_fish_oil_consumption_with_resistance_training_improv-u-3869",
+      "claim_type": "unit_value",
+      "raw_text": "5.6 mmHg",
+      "numeric_values": [
+        5.6
+      ],
+      "units": "mmHg",
+      "source_section": "discussion",
+      "source_offset": 3869,
+      "sentence": "On the other hand, we observed a significant decrease in BP when RT was combined with FO supplementation in older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg).",
+      "context_window": "n older adults: SBP (-7.8 mmHg), DBP (-4.5 mmHg), and MAP (-5.6 mmHg). These findings are in accordance with previous evidence t",
+      "claim_role": "population",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

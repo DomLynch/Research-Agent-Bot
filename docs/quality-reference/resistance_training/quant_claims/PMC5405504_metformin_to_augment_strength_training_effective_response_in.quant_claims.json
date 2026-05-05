@@ -1,0 +1,1472 @@
+{
+  "paper_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in",
+  "doi": "10.1186/s13063-017-1932-5",
+  "extracted_at": "2026-05-05T21:59:25+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 55,
+    "percentage": 20,
+    "sample_size": 5,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1037",
+      "claim_type": "unit_value",
+      "raw_text": "1700 mg",
+      "numeric_values": [
+        1700.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1037,
+      "sentence": "Participants consume 1700 mg of metformin per day or placebo for 2 weeks before engaging in a 14-week progressive resistance training regimen, with continued metformin or placebo.",
+      "context_window": "ogressive resistance training program. Participants consume 1700 mg of metformin per day or placebo for 2 weeks before engaging",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1081",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1081,
+      "sentence": "Participants consume 1700 mg of metformin per day or placebo for 2 weeks before engaging in a 14-week progressive resistance training regimen, with continued metformin or placebo.",
+      "context_window": "cipants consume 1700 mg of metformin per day or placebo for 2 weeks before engaging in a 14-week progressive resistance trainin",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-710",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 710,
+      "sentence": "Muscle mass and strength decrease approximately 10% per decade after the age of 50, with strength loss being even more pronounced after the age of 70 [ 1 ].",
+      "context_window": "population. Muscle mass and strength decrease approximately 10% per decade after the age of 50, with strength loss being ev",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-1041",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1041,
+      "sentence": "In fact, up to 38% of older adults do not respond with significant muscle growth when performing resistance exercises alone [ 4 ].",
+      "context_window": "can be very low in aging cohorts [ 2 , 3 ]. In fact, up to 38% of older adults do not respond with significant muscle grow",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-4076",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 4076,
+      "sentence": "We showed that resistance exercise in humans that promotes muscle growth results in an increase in the relative proportion of alternatively activated M2 macrophages, with only a small subpopulation expressing classical, pro-inflammatory M1 characteristics 3 days after the exercise bout, and this response was impaired in the elderly [ 10 ].",
+      "context_window": "n expressing classical, pro-inflammatory M1 characteristics 3 days after the exercise bout, and this response was impaired in",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-5111",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 5111,
+      "sentence": "The diabetic subjects receiving metformin monotherapy demonstrated a 15% higher survival rate than the aged matched population over the 10+ years under observation [ 19 ].",
+      "context_window": "tic subjects receiving metformin monotherapy demonstrated a 15% higher survival rate than the aged matched population over",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-n-6462",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 6462,
+      "sentence": "Interestingly, our preliminary analyses of muscle from insulin resistant participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effectively increased M2 macrophage abundance (Fig.",
+      "context_window": "ry analyses of muscle from insulin resistant participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effect",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-6481",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 6481,
+      "sentence": "Interestingly, our preliminary analyses of muscle from insulin resistant participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effectively increased M2 macrophage abundance (Fig.",
+      "context_window": "le from insulin resistant participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effectively increased M2 mac",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-6504",
+      "claim_type": "unit_value",
+      "raw_text": "1700 mg",
+      "numeric_values": [
+        1700.0
+      ],
+      "units": "mg",
+      "source_section": "introduction",
+      "source_offset": 6504,
+      "sentence": "Interestingly, our preliminary analyses of muscle from insulin resistant participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effectively increased M2 macrophage abundance (Fig.",
+      "context_window": "nt participants ( n = 6) showed that 10 weeks of metformin (1700 mg per day) effectively increased M2 macrophage abundance (Fig",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-p-7200",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 7200,
+      "sentence": "Effects of metformin on muscle tissue M2 macrophage (CD68 + CD206+) frequency ( a ) and IL-1\u03b2 inflammatory gene expression ( b ). *Different from pre-treatment, p < 0.05.",
+      "context_window": "atory gene expression ( b ). *Different from pre-treatment, p < 0.05. Values are mean \u00b1 standard error ( SE )",
+      "claim_role": "background",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-548",
+      "claim_type": "unit_value",
+      "raw_text": "19 weeks",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 548,
+      "sentence": "Complete participation requires that each individual spend approximately 19 weeks attending 8 study assessments and finishing 42 resistance exercise sessions and, thus, approximately 50 total study visits.",
+      "context_window": "icipation requires that each individual spend approximately 19 weeks attending 8 study assessments and finishing 42 resistance e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1015",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1015,
+      "sentence": "This time includes a 2-week pre-treatment or baseline period involving a detailed screening and physical exam for inclusion/exclusion clearance as well as baseline testing for glucose tolerance, body composition, and muscle function, a 2-week medication ramp-up period prior to exercise along with medicationonly testing, followed by 14 weeks of supervised PRT.",
+      "context_window": "to exercise along with medicationonly testing, followed by 14 weeks of supervised PRT. All post-intervention assessments are co",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1098",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1098,
+      "sentence": "All post-intervention assessments are completed within 3 days following training.",
+      "context_window": "PRT. All post-intervention assessments are completed within 3 days following training. In addition, participants can opt to co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1287",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1287,
+      "sentence": "In addition, participants can opt to complete two follow-up assessments of muscle function, quality of life, and physical activity levels at approximately 10 and 36 weeks post-training.",
+      "context_window": "life, and physical activity levels at approximately 10 and 36 weeks post-training. The effects of metformin or placebo on the m",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1379",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1379,
+      "sentence": "The effects of metformin or placebo on the muscle environment after 2 weeks of ramped medication and when combined with 14 weeks of PRT are measured.",
+      "context_window": "cts of metformin or placebo on the muscle environment after 2 weeks of ramped medication and when combined with 14 weeks of PRT",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1431",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1431,
+      "sentence": "The effects of metformin or placebo on the muscle environment after 2 weeks of ramped medication and when combined with 14 weeks of PRT are measured.",
+      "context_window": "t after 2 weeks of ramped medication and when combined with 14 weeks of PRT are measured. The protocol is designed in accordance",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-2272",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "methods",
+      "source_offset": 2272,
+      "sentence": "Summary of human subject participation and data collection schedule\n\nEach individual can participate in the study for approximately 1 year.",
+      "context_window": "h individual can participate in the study for approximately 1 year. Participation includes pre-treatment, medication- or place",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-2362",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2362,
+      "sentence": "Participation includes pre-treatment, medication- or placebo-only ramping period, 14 weeks of PRT, and optional post-training follow-up at 10 weeks (week 26) and 36 weeks (week 52) post-training.",
+      "context_window": "pre-treatment, medication- or placebo-only ramping period, 14 weeks of PRT, and optional post-training follow-up at 10 weeks (w",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-2419",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2419,
+      "sentence": "Participation includes pre-treatment, medication- or placebo-only ramping period, 14 weeks of PRT, and optional post-training follow-up at 10 weeks (week 26) and 36 weeks (week 52) post-training.",
+      "context_window": "d, 14 weeks of PRT, and optional post-training follow-up at 10 weeks (week 26) and 36 weeks (week 52) post-training. Once subjec",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-2442",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2442,
+      "sentence": "Participation includes pre-treatment, medication- or placebo-only ramping period, 14 weeks of PRT, and optional post-training follow-up at 10 weeks (week 26) and 36 weeks (week 52) post-training.",
+      "context_window": "optional post-training follow-up at 10 weeks (week 26) and 36 weeks (week 52) post-training. Once subjects start medication or",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-3075",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3075,
+      "sentence": "CMP comprehensive metabolic panel, SPPB Short Physical Performance Battery, DXA dual-energy X-ray absorptiometry, CT computed tomography, SF-36 Short-Form 36, PASE Physical Activity Survey for the Elderly, PROMIS Patient-Reported Outcomes Measurement Information System, 1RM one repetition maximum\n\nMASTERS Flow Diagram\n\nOne hundred and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of the racial and ethnic makeup of greater Birmingham, Alabama and greater Lexington, Kentucky, are being recruited through general advertisements and volunteer databases.",
+      "context_window": "MASTERS Flow Diagram One hundred and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of th",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-n-3093",
+      "claim_type": "sample_size",
+      "raw_text": "n = 72",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3093,
+      "sentence": "CMP comprehensive metabolic panel, SPPB Short Physical Performance Battery, DXA dual-energy X-ray absorptiometry, CT computed tomography, SF-36 Short-Form 36, PASE Physical Activity Survey for the Elderly, PROMIS Patient-Reported Outcomes Measurement Information System, 1RM one repetition maximum\n\nMASTERS Flow Diagram\n\nOne hundred and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of the racial and ethnic makeup of greater Birmingham, Alabama and greater Lexington, Kentucky, are being recruited through general advertisements and volunteer databases.",
+      "context_window": "am One hundred and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of the racial and eth",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-n-3108",
+      "claim_type": "sample_size",
+      "raw_text": "n = 48",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3108,
+      "sentence": "CMP comprehensive metabolic panel, SPPB Short Physical Performance Battery, DXA dual-energy X-ray absorptiometry, CT computed tomography, SF-36 Short-Form 36, PASE Physical Activity Survey for the Elderly, PROMIS Patient-Reported Outcomes Measurement Information System, 1RM one repetition maximum\n\nMASTERS Flow Diagram\n\nOne hundred and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of the racial and ethnic makeup of greater Birmingham, Alabama and greater Lexington, Kentucky, are being recruited through general advertisements and volunteer databases.",
+      "context_window": "and twenty men and women \u226565 years of age ( n = 72 at UAB, n = 48 at UK), representative of the racial and ethnic makeup of g",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-3350",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3350,
+      "sentence": "Given the anticipated attrition rate of 20%, this will allow us to achieve a final sample size of 100.",
+      "context_window": "olunteer databases. Given the anticipated attrition rate of 20%, this will allow us to achieve a final sample size of 100.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-6815",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6815,
+      "sentence": "There are many different manufacturers of metformin, and the VA facility in New Mexico has provided us with a tablet which is identical to metformin 850 mg tablets that are manufactured by Amneal Pharmaceuticals, an established generic drug maker.",
+      "context_window": "s provided us with a tablet which is identical to metformin 850 mg tablets that are manufactured by Amneal Pharmaceuticals, an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-6953",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6953,
+      "sentence": "Therefore, we purchased generic Amneal 850 mg metformin tablets through our investigational pharmacy.",
+      "context_window": "generic drug maker. Therefore, we purchased generic Amneal 850 mg metformin tablets through our investigational pharmacy. Sub",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7116",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7116,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "ke increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7191",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7191,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "ce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7223",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7223,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "fects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7253",
+      "claim_type": "unit_value",
+      "raw_text": "1700 mg",
+      "numeric_values": [
+        1700.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7253,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "0 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7278",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7278,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "d of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7354",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 7354,
+      "sentence": "Subjects randomized to metformin will take increasing doses during the medication ramp-up period of 2 weeks to reduce gastrointestinal (GI) side effects as follows: 1 tablet (850 mg) per day for a period of 7 days and 2 tablets per day (1700 mg) for a period of 7 days, the latter being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments.",
+      "context_window": "er being the target clinical dose, continued throughout the 14 weeks of PRT and final week of post-intervention assessments. In",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7490",
+      "claim_type": "unit_value",
+      "raw_text": "1700 mg/day",
+      "numeric_values": [
+        1700.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 7490,
+      "sentence": "In some subjects, the dose progression may be slower and may not reach 1700 mg/day due to GI side effects.",
+      "context_window": "jects, the dose progression may be slower and may not reach 1700 mg/day due to GI side effects. The study physician makes individua",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-7671",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg/day",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 7671,
+      "sentence": "Subjects remain in the study as long as they can tolerate at least 850 mg/day.",
+      "context_window": "s remain in the study as long as they can tolerate at least 850 mg/day. These data will be collected and reported. The placebo tab",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-8226",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8226,
+      "sentence": "This allows for a compliance schedule of approximately 4 weeks where subjects return any unused product.",
+      "context_window": "red. This allows for a compliance schedule of approximately 4 weeks where subjects return any unused product. Extra doses are g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-8810",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8810,
+      "sentence": "Subjects complete these assessments during pre-treatment, following the resistance exercise program, and during follow-up assessments at 10 and 36 weeks post-training.",
+      "context_window": "xercise program, and during follow-up assessments at 10 and 36 weeks post-training. The Physical Activity Survey for the Elderl",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-9732",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 9732,
+      "sentence": "The physical activity monitor being used in this study is the Fitbit Flex; it is worn on the non-dominant wrist for an assessment of daily step counts over a period of at least 5 days.",
+      "context_window": "n assessment of daily step counts over a period of at least 5 days. The day given and day of return are excluded from the anal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-10162",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 10162,
+      "sentence": "Subjects also complete these measures during their optional follow-up visits by wearing the monitors for a period of 1 week before returning to complete strength and functional measures.",
+      "context_window": "al follow-up visits by wearing the monitors for a period of 1 week before returning to complete strength and functional measur",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-10662",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 10662,
+      "sentence": "The 14 weeks of PRT (42 sessions \u00b15 sessions), summarized in Table 3 , are supervised by trained personnel such as exercise physiologists or senior-level physical therapy or athletic training graduate students under the supervision of an exercise physiologist.",
+      "context_window": "d to help improve the validity of dietary data [ 27 ]. The 14 weeks of PRT (42 sessions \u00b15 sessions), summarized in Table 3 , a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-12011",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 12011,
+      "sentence": "We are implementing a variable-intensity prescription: \u201chigh-low-high\u201d 3 days/week program which has previously been shown to optimize muscle mass and strength gains in older adults [ 28 ].",
+      "context_window": "ementing a variable-intensity prescription: \u201chigh-low-high\u201d 3 days/week program which has previously been shown to optimize mu",
+      "claim_role": "population",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-12432",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12432,
+      "sentence": "On Wednesdays, resistance loads are reduced ~30% with 30- to -60-s rest periods with the emphasis on more rapid, concentric training (with controlled eccentric loading) to develop explosive power while providing a protracted recovery period between high resistance sessions.",
+      "context_window": "r 2 of 3 sets. On Wednesdays, resistance loads are reduced ~30% with 30- to -60-s rest periods with the emphasis on more ra",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-14298",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 14298,
+      "sentence": "RM repetition maximum\n\nSubjects have three biopsies during this protocol: at pretreatment, after 2 weeks of metformin or placebo, and at3 days following the last resistance exercise bout.",
+      "context_window": "three biopsies during this protocol: at pretreatment, after 2 weeks of metformin or placebo, and at3 days following the last re",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-14337",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 14337,
+      "sentence": "RM repetition maximum\n\nSubjects have three biopsies during this protocol: at pretreatment, after 2 weeks of metformin or placebo, and at3 days following the last resistance exercise bout.",
+      "context_window": "pretreatment, after 2 weeks of metformin or placebo, and at3 days following the last resistance exercise bout. Subjects takin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-14486",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 14486,
+      "sentence": "Subjects taking blood thinning medications are asked to stop those medications for a period of 3-5 days prior to each biopsy.",
+      "context_window": "tions are asked to stop those medications for a period of 3-5 days prior to each biopsy. Muscle tissue is obtained from the va",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-14609",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 14609,
+      "sentence": "Muscle tissue is obtained from the vastus lateralis after administration of local anesthetic (1% lidocaine premixed with bicarbonate) using a 5 mm Bergstrom needle with suction.",
+      "context_window": "vastus lateralis after administration of local anesthetic (1% lidocaine premixed with bicarbonate) using a 5 mm Bergstrom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-14657",
+      "claim_type": "unit_value",
+      "raw_text": "5 mm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 14657,
+      "sentence": "Muscle tissue is obtained from the vastus lateralis after administration of local anesthetic (1% lidocaine premixed with bicarbonate) using a 5 mm Bergstrom needle with suction.",
+      "context_window": "anesthetic (1% lidocaine premixed with bicarbonate) using a 5 mm Bergstrom needle with suction. A small incision is made in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-14823",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 14823,
+      "sentence": "A small incision is made in the skin to allow the needle to be briefly inserted into the muscle so as to obtain approximately 200-300 mg of tissue, usually occurring over two passes.",
+      "context_window": "inserted into the muscle so as to obtain approximately 200-300 mg of tissue, usually occurring over two passes. Direct pressu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15169",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 15169,
+      "sentence": "Muscle tissue is divided as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA and protein isolation, and ~50 mg is mounted in tragacanth gum and frozen in liquid nitrogen-cooled isopentane for detailed immunohistochemical (IHC) analyses.",
+      "context_window": "requests differently. Muscle tissue is divided as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15217",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 15217,
+      "sentence": "Muscle tissue is divided as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA and protein isolation, and ~50 mg is mounted in tragacanth gum and frozen in liquid nitrogen-cooled isopentane for detailed immunohistochemical (IHC) analyses.",
+      "context_window": "as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15241",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 15241,
+      "sentence": "Muscle tissue is divided as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA and protein isolation, and ~50 mg is mounted in tragacanth gum and frozen in liquid nitrogen-cooled isopentane for detailed immunohistochemical (IHC) analyses.",
+      "context_window": "ocessed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA and protein isolation,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15312",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 15312,
+      "sentence": "Muscle tissue is divided as follows: 100 mg is processed for muscle cell isolation, ~100 mg is snap-frozen (~30 mg aliquots) in liquid nitrogen for RNA and protein isolation, and ~50 mg is mounted in tragacanth gum and frozen in liquid nitrogen-cooled isopentane for detailed immunohistochemical (IHC) analyses.",
+      "context_window": "ots) in liquid nitrogen for RNA and protein isolation, and ~50 mg is mounted in tragacanth gum and frozen in liquid nitrogen-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15591",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 15591,
+      "sentence": "The subjects remain in the study after completion of the training program for an additional 36 weeks to be contacted for optional follow-up visits.",
+      "context_window": "after completion of the training program for an additional 36 weeks to be contacted for optional follow-up visits. These visits",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15683",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 15683,
+      "sentence": "These visits occur at approximately 10 weeks and 36 weeks following the training period but are optional for the subjects.",
+      "context_window": "ional follow-up visits. These visits occur at approximately 10 weeks and 36 weeks following the training period but are optional",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-15696",
+      "claim_type": "unit_value",
+      "raw_text": "36 weeks",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 15696,
+      "sentence": "These visits occur at approximately 10 weeks and 36 weeks following the training period but are optional for the subjects.",
+      "context_window": "up visits. These visits occur at approximately 10 weeks and 36 weeks following the training period but are optional for the subj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-16356",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16356,
+      "sentence": "Muscle power is assessed from the isotonic mode on the Biodex set at 40% of each subject\u2019s maximum voluntary isometric contraction.",
+      "context_window": "wer is assessed from the isotonic mode on the Biodex set at 40% of each subject\u2019s maximum voluntary isometric contraction.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-19208",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19208,
+      "sentence": "The primary outcomes are as follows:\n\nMuscle size Myofiber cross-sectional area (CSA) Computed tomography (CT) skeletal muscle area of the right thigh CT skeletal muscle area of the vastus lateralis\n\nMyofiber cross-sectional area (CSA)\n\nComputed tomography (CT) skeletal muscle area of the right thigh\n\nCT skeletal muscle area of the vastus lateralis\n\nMuscle strength and power 1 RM on the leg extension exercise Biodex maximum voluntary isometric contraction (MVIC) Biodex isotonic power at 40% MVIC\n\n1 RM on the leg extension exercise\n\nBiodex maximum voluntary isometric contraction (MVIC)\n\nBiodex isotonic power at 40% MVIC\n\nThis involves individual fiber CSA and total thigh muscle size/mass.",
+      "context_window": "ntary isometric contraction (MVIC) Biodex isotonic power at 40% MVIC 1 RM on the leg extension exercise Biodex maximum vo",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-19334",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19334,
+      "sentence": "The primary outcomes are as follows:\n\nMuscle size Myofiber cross-sectional area (CSA) Computed tomography (CT) skeletal muscle area of the right thigh CT skeletal muscle area of the vastus lateralis\n\nMyofiber cross-sectional area (CSA)\n\nComputed tomography (CT) skeletal muscle area of the right thigh\n\nCT skeletal muscle area of the vastus lateralis\n\nMuscle strength and power 1 RM on the leg extension exercise Biodex maximum voluntary isometric contraction (MVIC) Biodex isotonic power at 40% MVIC\n\n1 RM on the leg extension exercise\n\nBiodex maximum voluntary isometric contraction (MVIC)\n\nBiodex isotonic power at 40% MVIC\n\nThis involves individual fiber CSA and total thigh muscle size/mass.",
+      "context_window": "tary isometric contraction (MVIC) Biodex isotonic power at 40% MVIC This involves individual fiber CSA and total thigh mu",
+      "claim_role": "unknown",
+      "endpoint": "thigh muscle mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-21351",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 21351,
+      "sentence": "Each subject receives a CT scan during pre-treatment and 1-3 days following the last resistance training session.",
+      "context_window": "Each subject receives a CT scan during pre-treatment and 1-3 days following the last resistance training session. The total s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-21858",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 21858,
+      "sentence": "After 2 sets of warm-ups at an estimated 40-50% for the first set and 70-80% for the second set, single repetition trials, separated by 1-2 min of rest, are performed with increasing resistance until two failed attempts at a given load.",
+      "context_window": "8 , 29 , 30 ]. After 2 sets of warm-ups at an estimated 40-50% for the first set and 70-80% for the second set, single rep",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-21887",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 21887,
+      "sentence": "After 2 sets of warm-ups at an estimated 40-50% for the first set and 70-80% for the second set, single repetition trials, separated by 1-2 min of rest, are performed with increasing resistance until two failed attempts at a given load.",
+      "context_window": "of warm-ups at an estimated 40-50% for the first set and 70-80% for the second set, single repetition trials, separated by",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-22645",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 22645,
+      "sentence": "One set of 5 reps is also being completed by the subjects to determine knee extension concentric power using the Biodex set on isotonic mode to allow for variable velocities with a constant external load equal to 40% of maximum voluntary isometric strength.",
+      "context_window": "variable velocities with a constant external load equal to 40% of maximum voluntary isometric strength. Peak power is reco",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-22901",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 22901,
+      "sentence": "Subjects complete these assessments 5 times throughout the protocol including a familiarization session during pre-treatment, after 2 weeks of metformin or placebo, after 2 weeks of resistance training (week 4), at the midpoint of the resistance training program (week 9), and during their last week of training (week 16).",
+      "context_window": "uding a familiarization session during pre-treatment, after 2 weeks of metformin or placebo, after 2 weeks of resistance traini",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-22940",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 22940,
+      "sentence": "Subjects complete these assessments 5 times throughout the protocol including a familiarization session during pre-treatment, after 2 weeks of metformin or placebo, after 2 weeks of resistance training (week 4), at the midpoint of the resistance training program (week 9), and during their last week of training (week 16).",
+      "context_window": "pre-treatment, after 2 weeks of metformin or placebo, after 2 weeks of resistance training (week 4), at the midpoint of the res",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-23437",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 23437,
+      "sentence": "Week 4, after 2 weeks of resistance training, is used as the baseline 1RM strength to account for the initial neuromuscular adaptations occurring at the beginning of the resistance training program.",
+      "context_window": "e 2-week metformin or placebo testing period. Week 4, after 2 weeks of resistance training, is used as the baseline 1RM strengt",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-27209",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 27209,
+      "sentence": "The following exploratory outcomes are included:\n\nMacrophage profiling Macrophage abundance Macrophage polarization state\n\nMacrophage abundance\n\nMacrophage polarization state\n\nSatellite cells Abundance Activation state Fusion\n\nAbundance\n\nActivation state\n\nFusion\n\nAssessment of inflammation Cytokine gene expression Signal transduction\n\nCytokine gene expression\n\nSignal transduction\n\nResident muscle macrophage number and polarization state at baseline (first biopsy), after metformin or placebo only (second biopsy), and after 14 weeks of PRT (third biopsy) are determined with IHC.",
+      "context_window": "after metformin or placebo only (second biopsy), and after 14 weeks of PRT (third biopsy) are determined with IHC. Subjects are",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-27444",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 27444,
+      "sentence": "Subjects are asked to continue their normal activities of daily living but to refrain from any unaccustomed activity or exercise, including resistance training, through the first 2 weeks of the protocol to prevent any exercise-induced muscle inflammation.",
+      "context_window": "exercise, including resistance training, through the first 2 weeks of the protocol to prevent any exercise-induced muscle infl",
+      "claim_role": "duration",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-29342",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 29342,
+      "sentence": "We intend to recruit 120 participants to account for a 20% attrition rate (84 UAB and 36 UK) to achieve a final sample size of 100 (50 metformin, 50 placebo).",
+      "context_window": "ed. We intend to recruit 120 participants to account for a 20% attrition rate (84 UAB and 36 UK) to achieve a final sample",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30270",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30270,
+      "sentence": "A two-sample t test will have at least 80% power to detect an effect size of 0.6 when the sample size is 50 per group ( n = 100), assuming a two-sided significance level of 0.05.",
+      "context_window": "compared across sex. A two-sample t test will have at least 80% power to detect an effect size of 0.6 when the sample size",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-n-30351",
+      "claim_type": "sample_size",
+      "raw_text": "n = 100",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 30351,
+      "sentence": "A two-sample t test will have at least 80% power to detect an effect size of 0.6 when the sample size is 50 per group ( n = 100), assuming a two-sided significance level of 0.05.",
+      "context_window": "n effect size of 0.6 when the sample size is 50 per group ( n = 100), assuming a two-sided significance level of 0.05. Based up",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-30485",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 30485,
+      "sentence": "Based upon our prior resistance training trials in older adults, we expect 14 weeks of PRT alone to be associated with an approximately 20% increase in type II myofiber CSA in both men and women.",
+      "context_window": "prior resistance training trials in older adults, we expect 14 weeks of PRT alone to be associated with an approximately 20% inc",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30546",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30546,
+      "sentence": "Based upon our prior resistance training trials in older adults, we expect 14 weeks of PRT alone to be associated with an approximately 20% increase in type II myofiber CSA in both men and women.",
+      "context_window": "4 weeks of PRT alone to be associated with an approximately 20% increase in type II myofiber CSA in both men and women. We",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30666",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30666,
+      "sentence": "We predict that adjuvant metformin will yield an additional 25% increase in myofiber CSA (above the 20% due to PRT alone).",
+      "context_window": "We predict that adjuvant metformin will yield an additional 25% increase in myofiber CSA (above the 20% due to PRT alone).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30706",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30706,
+      "sentence": "We predict that adjuvant metformin will yield an additional 25% increase in myofiber CSA (above the 20% due to PRT alone).",
+      "context_window": "yield an additional 25% increase in myofiber CSA (above the 20% due to PRT alone). Prior work (25 men and 25 women, age 65-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-30769",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 30769,
+      "sentence": "Prior work (25 men and 25 women, age 65-80 years) showed pre-treatment type II CSA means (SD) of 4095 (1213) \u03bcm 2 in men and 2458 (690) \u03bcm 2 in women.",
+      "context_window": "due to PRT alone). Prior work (25 men and 25 women, age 65-80 years) showed pre-treatment type II CSA means (SD) of 4095 (1213)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30887",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30887,
+      "sentence": "With a 20% increase in PRT alone and an additional 25% increase with metformin, the mean difference between treatment groups would be at least 730 \u03bcm 2 , assuming a common SD of 950.",
+      "context_window": "095 (1213) \u03bcm 2 in men and 2458 (690) \u03bcm 2 in women. With a 20% increase in PRT alone and an additional 25% increase with m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-30931",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 30931,
+      "sentence": "With a 20% increase in PRT alone and an additional 25% increase with metformin, the mean difference between treatment groups would be at least 730 \u03bcm 2 , assuming a common SD of 950.",
+      "context_window": "n women. With a 20% increase in PRT alone and an additional 25% increase with metformin, the mean difference between treatm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-32041",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 32041,
+      "sentence": "Strength is measured at weeks 2, 4, 9, and 16 (training begins after 2 weeks of metformin or placebo).",
+      "context_window": "is measured at weeks 2, 4, 9, and 16 (training begins after 2 weeks of metformin or placebo). The primary analysis for strength",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-33323",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 33323,
+      "sentence": "Non-compliant subjects are included in the ITT analysis; however, a modified ITT may also be conducted utilizing an ITT randomization principle but limited to those who achieved at least 1000 mg per day.",
+      "context_window": "zation principle but limited to those who achieved at least 1000 mg per day. Thus, analyses are conducted comparing groups with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-n-33626",
+      "claim_type": "sample_size",
+      "raw_text": "n = 120",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 33626,
+      "sentence": "Thus, analyses are conducted comparing groups without imputed data (\u201cas observed\u201d), which will be impacted by attrition as well as ITT analysis using the randomized sample in which all participants are used, potentially allowing us to detect a smaller effect size (approximately 0.5 if n = 120) with 80% power.",
+      "context_window": "ng us to detect a smaller effect size (approximately 0.5 if n = 120) with 80% power.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-pct-33640",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 33640,
+      "sentence": "Thus, analyses are conducted comparing groups without imputed data (\u201cas observed\u201d), which will be impacted by attrition as well as ITT analysis using the randomized sample in which all participants are used, potentially allowing us to detect a smaller effect size (approximately 0.5 if n = 120) with 80% power.",
+      "context_window": "t a smaller effect size (approximately 0.5 if n = 120) with 80% power.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5405504_metformin_to_augment_strength_training_effective_response_in-u-1010",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1010,
+      "sentence": "Furthermore, metformin was shown to enhance mitochondrial respiration in skeletal muscle of AMPK-deficient mice after just 2 weeks of treatment [ 38 ].",
+      "context_window": "ration in skeletal muscle of AMPK-deficient mice after just 2 weeks of treatment [ 38 ]. Based on the wealth of research on the",
+      "claim_role": "duration",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

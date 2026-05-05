@@ -1,0 +1,84 @@
+{
+  "paper_id": "PMC8419605_effects_of_intermittent_fasting_on_the_circulating_levels_an",
+  "doi": "10.3803/EnM.2021.405",
+  "extracted_at": "2026-05-05T22:11:17+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8419605_effects_of_intermittent_fasting_on_the_circulating_levels_an-u-971",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 971,
+      "sentence": "Whole-day fasting (periodic fasting) involves complete or considerable food restriction for 1 to 2 days in a week: for example, the 5:2 diet is to restrict calories by around 75% for 2 days a week.",
+      "context_window": "involves complete or considerable food restriction for 1 to 2 days in a week: for example, the 5:2 diet is to restrict calorie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8419605_effects_of_intermittent_fasting_on_the_circulating_levels_an-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1049,
+      "sentence": "Whole-day fasting (periodic fasting) involves complete or considerable food restriction for 1 to 2 days in a week: for example, the 5:2 diet is to restrict calories by around 75% for 2 days a week.",
+      "context_window": "for example, the 5:2 diet is to restrict calories by around 75% for 2 days a week. Time-restricted feeding (TRF) allows sub",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8419605_effects_of_intermittent_fasting_on_the_circulating_levels_an-u-1057",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 1057,
+      "sentence": "Whole-day fasting (periodic fasting) involves complete or considerable food restriction for 1 to 2 days in a week: for example, the 5:2 diet is to restrict calories by around 75% for 2 days a week.",
+      "context_window": "ple, the 5:2 diet is to restrict calories by around 75% for 2 days a week. Time-restricted feeding (TRF) allows subjects to ea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8419605_effects_of_intermittent_fasting_on_the_circulating_levels_an-u-532",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 532,
+      "sentence": "However, another study testing the effect of 5:2 diet on type 2 diabetic patients over 12 weeks reported that this diet increased the risk of hypoglycemia [ 114 ].",
+      "context_window": "ing the effect of 5:2 diet on type 2 diabetic patients over 12 weeks reported that this diet increased the risk of hypoglycemia",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

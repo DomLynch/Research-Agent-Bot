@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC9002823_the_role_of_intermittent_energy_restriction_diet_on_metaboli",
+  "doi": "10.3390/nu14071509",
+  "extracted_at": "2026-05-05T22:17:47+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9002823_the_role_of_intermittent_energy_restriction_diet_on_metaboli-pct-296",
+      "claim_type": "percentage",
+      "raw_text": "52.7%",
+      "numeric_values": [
+        52.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 296,
+      "sentence": "The problem with excessive body weight is still growing, and in 2019, about 52.7% of the European Union\u2019s population was overweight [ 3 ].",
+      "context_window": "excessive body weight is still growing, and in 2019, about 52.7% of the European Union\u2019s population was overweight [ 3 ]. Ob",
+      "claim_role": "background",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9002823_the_role_of_intermittent_energy_restriction_diet_on_metaboli-u-319",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "limitations",
+      "source_offset": 319,
+      "sentence": "First, high-quality, strong scientific evidence regarding the long-term effects of IER is limited since the vast majority of studies had a duration of fewer than 6 months.",
+      "context_window": "e the vast majority of studies had a duration of fewer than 6 months. Second, it is not yet known whether IER protocols are a sa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

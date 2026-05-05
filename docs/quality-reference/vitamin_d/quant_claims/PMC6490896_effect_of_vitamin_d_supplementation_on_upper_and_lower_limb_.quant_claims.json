@@ -1,0 +1,1124 @@
+{
+  "paper_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_",
+  "doi": "10.1371/journal.pone.0215826",
+  "extracted_at": "2026-05-05T21:50:11+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 11,
+    "confidence_interval": 12,
+    "p_value": 18,
+    "unit_value": 20
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-721",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 721,
+      "sentence": "By a meta-analysis, effect sizes (standardized mean differences, SMD) with 95% confidence intervals (CI) was calculated to compare reported outcomes across studies, I 2 index was used to assessing heterogeneity, and heterogeneity factors were identified by regression analysis.",
+      "context_window": "sis, effect sizes (standardized mean differences, SMD) with 95% confidence intervals (CI) was calculated to compare reporte",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-1334",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.39 to 0.48",
+      "numeric_values": [
+        -0.39,
+        0.48
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1334,
+      "sentence": "The results indicated that vitamin D supplementation had no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84).",
+      "context_window": "ad no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84). In subgroup analysis, vitamin D supplementation",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-1357",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1357,
+      "sentence": "The results indicated that vitamin D supplementation had no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84).",
+      "context_window": "muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84). In subgroup analysis, vitamin D supplementation had an ef",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-1471",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:0.12 to 0.98",
+      "numeric_values": [
+        0.12,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1471,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": "tion had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 9",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-1492",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1492,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": "lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.7",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-1549",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-0.73 to 0.36",
+      "numeric_values": [
+        -0.73,
+        0.36
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1549,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": "8, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.2",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-1571",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1571,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": "pper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-1618",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:-0.24 to 0.34",
+      "numeric_values": [
+        -0.24,
+        0.34
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1618,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": ".73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73). Vitamin D supplementation was more effective fo",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-1640",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.73",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1640,
+      "sentence": "In subgroup analysis, vitamin D supplementation had an effect on lower-limb muscle strength (SMD 0.55, 95% CI:0.12 to 0.98, p = 0.01) but not upper-limb muscle strength (SMD -0.19, 95% CI:-0.73 to 0.36, p = 0.50) or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73).",
+      "context_window": "or muscle explosive power (SMD 0.05, 95% CI:-0.24 to 0.34, p = 0.73). Vitamin D supplementation was more effective for athletes",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-1736",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI:0.06 to 0.90",
+      "numeric_values": [
+        0.06,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1736,
+      "sentence": "Vitamin D supplementation was more effective for athletes trained indoors (SMD 0.48, 95% CI:0.06 to 0.90, p = 0.02).",
+      "context_window": "was more effective for athletes trained indoors (SMD 0.48, 95% CI:0.06 to 0.90, p = 0.02). Vitamin D supplementation positively affected",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-1757",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1757,
+      "sentence": "Vitamin D supplementation was more effective for athletes trained indoors (SMD 0.48, 95% CI:0.06 to 0.90, p = 0.02).",
+      "context_window": "or athletes trained indoors (SMD 0.48, 95% CI:0.06 to 0.90, p = 0.02). Vitamin D supplementation positively affected lower limb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1015",
+      "claim_type": "unit_value",
+      "raw_text": "30 ng/mL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 1015,
+      "sentence": "In this study, we used the definition that vitamin D sufficiency as 25(OH)D concentration above 75 nmol/L (30 ng/mL), vitamin D insufficiency from 50 to 75 nmol/L (20-30 ng/mL) and vitamin D deficiency below 50 nmol/L (20 ng/mL).",
+      "context_window": "min D sufficiency as 25(OH)D concentration above 75 nmol/L (30 ng/mL), vitamin D insufficiency from 50 to 75 nmol/L (20-30 ng/mL",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1075",
+      "claim_type": "unit_value",
+      "raw_text": "30 ng/mL",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 1075,
+      "sentence": "In this study, we used the definition that vitamin D sufficiency as 25(OH)D concentration above 75 nmol/L (30 ng/mL), vitamin D insufficiency from 50 to 75 nmol/L (20-30 ng/mL) and vitamin D deficiency below 50 nmol/L (20 ng/mL).",
+      "context_window": "30 ng/mL), vitamin D insufficiency from 50 to 75 nmol/L (20-30 ng/mL) and vitamin D deficiency below 50 nmol/L (20 ng/mL). Vitam",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1127",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "introduction",
+      "source_offset": 1127,
+      "sentence": "In this study, we used the definition that vitamin D sufficiency as 25(OH)D concentration above 75 nmol/L (30 ng/mL), vitamin D insufficiency from 50 to 75 nmol/L (20-30 ng/mL) and vitamin D deficiency below 50 nmol/L (20 ng/mL).",
+      "context_window": "l/L (20-30 ng/mL) and vitamin D deficiency below 50 nmol/L (20 ng/mL). Vitamin D insufficiency and deficiency is very common in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-1242",
+      "claim_type": "percentage",
+      "raw_text": "67%",
+      "numeric_values": [
+        67.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1242,
+      "sentence": "A recent meta-analysis found that 44-67% of athletes had inadequate 25(OH)D concentration [ 15 ], which may decrease skeletal muscle function, athletic performance [ 16 , 17 ], and recovery after training [ 18 ], and increase the incidence of muscle injury [ 19 , 20 ].",
+      "context_window": "ry common in athletes. A recent meta-analysis found that 44-67% of athletes had inadequate 25(OH)D concentration [ 15 ], wh",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-2841",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2841,
+      "sentence": "The change in means and standard deviation of muscle strength or muscle power between vitamin D and placebo was used to calculate effect sizes (standardized mean differences, SMD) with 95% confidence intervals (CI) to compare reported outcomes across studies by a meta-analysis.",
+      "context_window": "late effect sizes (standardized mean differences, SMD) with 95% confidence intervals (CI) to compare reported outcomes acro",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-3344",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3344,
+      "sentence": "The I 2 statistic was used to quantify total variation across studies attributed to heterogeneity rather than sampling error ( I 2 >50% used as a threshold for significant heterogeneity).",
+      "context_window": "tributed to heterogeneity rather than sampling error ( I 2 >50% used as a threshold for significant heterogeneity). Regress",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-753",
+      "claim_type": "p_value",
+      "raw_text": "p <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 753,
+      "sentence": "Table 1 lists the characteristics of the included studies.\n\na Values are presented as mean \u00b1 standard deviation (SD), range, median or unless otherwise specified.\n\nb Treatment group significantly lower than control group ( p <0.05).",
+      "context_window": "b Treatment group significantly lower than control group ( p <0.05). IU/day: international unit per day. IU: international un",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-960",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 960,
+      "sentence": "TRE1: treatment group with oral vitamin D 3 20,000 IU/week for 12 weeks.",
+      "context_window": "1: treatment group with oral vitamin D 3 20,000 IU/week for 12 weeks. TRE2: treatment group with oral vitamin D 3 40,000 IU/week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1033",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1033,
+      "sentence": "TRE2: treatment group with oral vitamin D 3 40,000 IU/week for 12 weeks.",
+      "context_window": "2: treatment group with oral vitamin D 3 40,000 IU/week for 12 weeks. RM: one-repetition maximum. Six studies involving 214 sub",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1354",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1354,
+      "sentence": "The average age of participants in the 8 studies was 19 years old.",
+      "context_window": "31 ]. The average age of participants in the 8 studies was 19 years old. Sporting activities that subjects engaged in included",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1776",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 years",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1776,
+      "sentence": "Training experience, reported only in two studies, was 4.4 [ 29 ] and 5.5 years [ 33 ] respectively.",
+      "context_window": "xperience, reported only in two studies, was 4.4 [ 29 ] and 5.5 years [ 33 ] respectively. All included studies reported the seas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-2753",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2753,
+      "sentence": "Supplement dosages ranged from 600 international units (IU) per day to 40,000 IU per week (equivalent to 5714 IU per day) over 6-12 weeks, or 150,000 IU once.",
+      "context_window": "o 40,000 IU per week (equivalent to 5714 IU per day) over 6-12 weeks, or 150,000 IU once. At the end of the intervention, the v",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-4087",
+      "claim_type": "percentage",
+      "raw_text": "82.5%",
+      "numeric_values": [
+        82.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4087,
+      "sentence": "High heterogeneity was present among studies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78).",
+      "context_window": "ng studies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-4094",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.00",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4094,
+      "sentence": "High heterogeneity was present among studies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78).",
+      "context_window": "ies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower limb muscl",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-4181",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4181,
+      "sentence": "High heterogeneity was present among studies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78).",
+      "context_window": "neity in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78). Thus, effect sizes were calculated using a rand",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-4187",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.78",
+      "numeric_values": [
+        0.78
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4187,
+      "sentence": "High heterogeneity was present among studies investigating upper limb muscle strength ( I 2 = 82.5%, p = 0.00), with no heterogeneity in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78).",
+      "context_window": "in those reporting lower limb muscle strength ( I 2 = 0.0%, p = 0.78). Thus, effect sizes were calculated using a random-effects",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-4390",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.39 to 0.48",
+      "numeric_values": [
+        -0.39,
+        0.48
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4390,
+      "sentence": "The meta-analysis results indicated that vitamin D supplementation had no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84).",
+      "context_window": "ad no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84). In the subgroup analysis, vitamin D supplementa",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-4413",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.84",
+      "numeric_values": [
+        0.84
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4413,
+      "sentence": "The meta-analysis results indicated that vitamin D supplementation had no impact on overall muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84).",
+      "context_window": "muscle strength outcomes (SMD 0.05, 95% CI: -0.39 to 0.48, p = 0.84). In the subgroup analysis, vitamin D supplementation had a",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-4509",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.12 to 0.98",
+      "numeric_values": [
+        0.12,
+        0.98
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4509,
+      "sentence": "In the subgroup analysis, vitamin D supplementation had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athletes, compared with placebo intake; but no statistically significant effect on upper limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50).\n\n(a) Effect of vitamin D supplementation on upper and lower limb muscle strength. (b) Effect of vitamin D supplementation on muscle power.",
+      "context_window": "vitamin D supplementation had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athl",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-4531",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4531,
+      "sentence": "In the subgroup analysis, vitamin D supplementation had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athletes, compared with placebo intake; but no statistically significant effect on upper limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50).\n\n(a) Effect of vitamin D supplementation on upper and lower limb muscle strength. (b) Effect of vitamin D supplementation on muscle power.",
+      "context_window": "tion had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athletes, comp",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-4707",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.73 to 0.36",
+      "numeric_values": [
+        -0.73,
+        0.36
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4707,
+      "sentence": "In the subgroup analysis, vitamin D supplementation had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athletes, compared with placebo intake; but no statistically significant effect on upper limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50).\n\n(a) Effect of vitamin D supplementation on upper and lower limb muscle strength. (b) Effect of vitamin D supplementation on muscle power.",
+      "context_window": "ignificant effect on upper limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50). (a) Effect of vitamin D supplementation on upp",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-4730",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.50",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4730,
+      "sentence": "In the subgroup analysis, vitamin D supplementation had a moderate effect (SMD 0.55, 95% CI: 0.12 to 0.98, p = 0.01) on increasing lower limb muscle strength in athletes, compared with placebo intake; but no statistically significant effect on upper limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50).\n\n(a) Effect of vitamin D supplementation on upper and lower limb muscle strength. (b) Effect of vitamin D supplementation on muscle power.",
+      "context_window": "per limb muscle strength (SMD -0.19, 95% CI: -0.73 to 0.36, p = 0.50). (a) Effect of vitamin D supplementation on upper and low",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-4916",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4916,
+      "sentence": "95% CI: 95% confidence interval.",
+      "context_window": "tation on muscle power. SMD: standardized mean differences. 95% CI: 95% confidence interval. I 2 : I-squared test of hetero",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-4924",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4924,
+      "sentence": "95% CI: 95% confidence interval.",
+      "context_window": "n muscle power. SMD: standardized mean differences. 95% CI: 95% confidence interval. I 2 : I-squared test of heterogeneity.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5051",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5051,
+      "sentence": "Bench press1 / Leg press 1: oral vitamin D 3 20000 IU/week for 12 weeks.",
+      "context_window": "ch press1 / Leg press 1: oral vitamin D 3 20000 IU/week for 12 weeks. Bench press 2/ Leg press 2: oral vitamin D 3 40000 IU/week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5124",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5124,
+      "sentence": "Bench press 2/ Leg press 2: oral vitamin D 3 40000 IU/week for 12 weeks.",
+      "context_window": "ch press 2/ Leg press 2: oral vitamin D 3 40000 IU/week for 12 weeks. ICQ: isokinetic concentric quadriceps peak torque. ICH: is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5286",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5286,
+      "sentence": "Vertical jump1: oral vitamin D 3 20000 IU/week for 12 weeks.",
+      "context_window": "torque. Vertical jump1: oral vitamin D 3 20000 IU/week for 12 weeks. Vertical jump2: oral vitamin D 3 40000 IU/week for 12 week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5347",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5347,
+      "sentence": "Vertical jump2: oral vitamin D 3 40000 IU/week for 12 weeks.",
+      "context_window": "2 weeks. Vertical jump2: oral vitamin D 3 40000 IU/week for 12 weeks. Meta-regression analysis for heterogeneity among studies",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-5698",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5698,
+      "sentence": "95% Conf.",
+      "context_window": "td. Err.: the standard error of the regression coefficient. 95% Conf. Interval: 95% confidence interval. In first column, M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-5718",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5718,
+      "sentence": "Interval: 95% confidence interval.",
+      "context_window": "rd error of the regression coefficient. 95% Conf. Interval: 95% confidence interval. In first column, Measure indicates reg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-6657",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.06 to 0.90",
+      "numeric_values": [
+        0.06,
+        0.9
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6657,
+      "sentence": "Vitamin D supplementation had a small effect (SMD 0.48, 95% CI: 0.06 to 0.90, p = 0.024) on increasing muscle strength in athletes training indoors, compared with outdoors or combination training.",
+      "context_window": "es. Vitamin D supplementation had a small effect (SMD 0.48, 95% CI: 0.06 to 0.90, p = 0.024) on increasing muscle strength in athletes train",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-6679",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6679,
+      "sentence": "Vitamin D supplementation had a small effect (SMD 0.48, 95% CI: 0.06 to 0.90, p = 0.024) on increasing muscle strength in athletes training indoors, compared with outdoors or combination training.",
+      "context_window": "ntation had a small effect (SMD 0.48, 95% CI: 0.06 to 0.90, p = 0.024) on increasing muscle strength in athletes training indoors",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-6856",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6856,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": ". Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of mus",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-6948",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.23 to 1.25",
+      "numeric_values": [
+        0.23,
+        1.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6948,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": "cally significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (S",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-6970",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.00",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6970,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": "ovement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18,",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-7009",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7009,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": "5% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by ran",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-7038",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.68 to 0.31",
+      "numeric_values": [
+        -0.68,
+        0.31
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7038,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": "), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of e",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-7061",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.47",
+      "numeric_values": [
+        0.47
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7061,
+      "sentence": "Furthermore, vitamin D supplementation duration less than 3 months demonstrated a statistically significant improvement of muscle strength (SMD 0.74, 95% CI: 0.23 to 1.25, p = 0.00), whereas supplementation for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect sizes.",
+      "context_window": "ion for 3 months did not (SMD -0.18, 95% CI: -0.68 to 0.31, p = 0.47) by random-effects models in the calculation of effect size",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-ci-7324",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.24 to 0.34",
+      "numeric_values": [
+        -0.24,
+        0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 7324,
+      "sentence": "No significant effect of vitamin D supplementation on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44).",
+      "context_window": "amin D supplementation on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-7347",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.73",
+      "numeric_values": [
+        0.73
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7347,
+      "sentence": "No significant effect of vitamin D supplementation on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44).",
+      "context_window": "on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-pct-7408",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7408,
+      "sentence": "No significant effect of vitamin D supplementation on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44).",
+      "context_window": "= 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44). The results showed that vitamin D supplementati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-7414",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7414,
+      "sentence": "No significant effect of vitamin D supplementation on muscle power was found (SMD 0.05, 95% CI: -0.24 to 0.34, p = 0.73; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44).",
+      "context_window": "3; Fig 2B ), and no heterogeneity was present ( I 2 = 0.0%, p = 0.44). The results showed that vitamin D supplementation had no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-7646",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.17",
+      "numeric_values": [
+        0.17
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7646,
+      "sentence": "Using Egger\u2019s adjusted rank correlation, no publication bias was observed for muscle strength ( p = 0.17) or muscle power ( p = 0.59).",
+      "context_window": "ion, no publication bias was observed for muscle strength ( p = 0.17) or muscle power ( p = 0.59). Sensitivity analysis revealed",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-p-7674",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.59",
+      "numeric_values": [
+        0.59
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7674,
+      "sentence": "Using Egger\u2019s adjusted rank correlation, no publication bias was observed for muscle strength ( p = 0.17) or muscle power ( p = 0.59).",
+      "context_window": "observed for muscle strength ( p = 0.17) or muscle power ( p = 0.59). Sensitivity analysis revealed that both muscle strength a",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-729",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 729,
+      "sentence": "Farrokhyar et al. [ 21 ] found hand grip strength increased significantly after 12 weeks of vitamin D supplementation.",
+      "context_window": "21 ] found hand grip strength increased significantly after 12 weeks of vitamin D supplementation. Tomlinson et al. [ 34 ] obser",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-1093",
+      "claim_type": "unit_value",
+      "raw_text": "19 years",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 1093,
+      "sentence": "The previous review of Tomlinson et al. contained highly heterogeneous populations, including athletic and non-athletic populations, while our participants were healthy, active athletes with an average age of 19 years, supplemented by vitamin D alone.",
+      "context_window": "ipants were healthy, active athletes with an average age of 19 years, supplemented by vitamin D alone. Our study performed the q",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-2709",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "conclusion",
+      "source_offset": 2709,
+      "sentence": "A longitudinal study showed that cholecalciferol therapy for 10-12 weeks augmented muscle mitochondrial maximal oxidative phosphorylation in vitamin D-deficient individuals [ 7 ].",
+      "context_window": "ngitudinal study showed that cholecalciferol therapy for 10-12 weeks augmented muscle mitochondrial maximal oxidative phosphoryl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5140",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 5140,
+      "sentence": "We also found that vitamin D supplementation duration of less than 3 months demonstrated a statistically significant improvement of muscle strength, whereas supplementation for 3 months did not.",
+      "context_window": "found that vitamin D supplementation duration of less than 3 months demonstrated a statistically significant improvement of mus",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5250",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 5250,
+      "sentence": "We also found that vitamin D supplementation duration of less than 3 months demonstrated a statistically significant improvement of muscle strength, whereas supplementation for 3 months did not.",
+      "context_window": "improvement of muscle strength, whereas supplementation for 3 months did not. However, this result should be interpreted with ca",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6490896_effect_of_vitamin_d_supplementation_on_upper_and_lower_limb_-u-5345",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "conclusion",
+      "source_offset": 5345,
+      "sentence": "All studies lasting 3 months, included seven upper limb muscle strength tests and one lower limb muscle strength; thus, the merged results may be influenced by the higher number of upper limb muscle strength tests.",
+      "context_window": "ult should be interpreted with caution. All studies lasting 3 months, included seven upper limb muscle strength tests and one lo",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

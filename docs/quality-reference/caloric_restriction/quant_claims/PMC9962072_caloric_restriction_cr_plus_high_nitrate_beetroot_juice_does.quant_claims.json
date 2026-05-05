@@ -1,0 +1,1985 @@
+{
+  "paper_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does",
+  "doi": "10.3390/nu15040890",
+  "extracted_at": "2026-05-05T22:17:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 3,
+    "unit_value": 36,
+    "p_value": 31,
+    "percentage": 12,
+    "mean_sd": 26
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-n-435",
+      "claim_type": "sample_size",
+      "raw_text": "n = 15",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 435,
+      "sentence": "This was a two-arm, parallel randomized clinical trial including 29 participants allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days.",
+      "context_window": "cal trial including 29 participants allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days. Body composition, resti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-n-457",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 457,
+      "sentence": "This was a two-arm, parallel randomized clinical trial including 29 participants allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days.",
+      "context_window": "participants allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days. Body composition, resting energy expenditure",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-469",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 469,
+      "sentence": "This was a two-arm, parallel randomized clinical trial including 29 participants allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days.",
+      "context_window": "s allocated to CR + BRJ ( n = 15) or CR alone ( n = 14) for 14 days. Body composition, resting energy expenditure (REE), and ha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-927",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 927,
+      "sentence": "Changes in body composition, REE, and systolic and diastolic BP were similar between the two interventions ( p > 0.05).",
+      "context_window": "d diastolic BP were similar between the two interventions ( p > 0.05). The CR + BRJ intervention produced greater changes in ave",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1021",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1021,
+      "sentence": "The CR + BRJ intervention produced greater changes in average microvascular flux ( p = 0.03), NO-dependent endothelial activity ( p = 0.02), and TMT-B cognitive scores ( p = 0.012) compared to CR alone.",
+      "context_window": "on produced greater changes in average microvascular flux ( p = 0.03), NO-dependent endothelial activity ( p = 0.02), and TMT-B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1068",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1068,
+      "sentence": "The CR + BRJ intervention produced greater changes in average microvascular flux ( p = 0.03), NO-dependent endothelial activity ( p = 0.02), and TMT-B cognitive scores ( p = 0.012) compared to CR alone.",
+      "context_window": "cular flux ( p = 0.03), NO-dependent endothelial activity ( p = 0.02), and TMT-B cognitive scores ( p = 0.012) compared to CR al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1108",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1108,
+      "sentence": "The CR + BRJ intervention produced greater changes in average microvascular flux ( p = 0.03), NO-dependent endothelial activity ( p = 0.02), and TMT-B cognitive scores ( p = 0.012) compared to CR alone.",
+      "context_window": "othelial activity ( p = 0.02), and TMT-B cognitive scores ( p = 0.012) compared to CR alone. Changes in urinary 8-isoprostane wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1211",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1211,
+      "sentence": "Changes in urinary 8-isoprostane were greater in the CR + BRJ group ( p = 0.02), and they were inversely associated with changes in average microvascular flux (r = -0.53, p = 0.003).",
+      "context_window": "urinary 8-isoprostane were greater in the CR + BRJ group ( p = 0.02), and they were inversely associated with changes in averag",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1312",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1312,
+      "sentence": "Changes in urinary 8-isoprostane were greater in the CR + BRJ group ( p = 0.02), and they were inversely associated with changes in average microvascular flux (r = -0.53, p = 0.003).",
+      "context_window": "ated with changes in average microvascular flux (r = -0.53, p = 0.003). These preliminary findings suggest that greater effects o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-852",
+      "claim_type": "unit_value",
+      "raw_text": "40 kg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 852,
+      "sentence": "The study was conducted on 36 (18 per arm) overweight and obese (BMI: 25-40 kg/m 2 ) middle-aged and older (50-75 years) men and women attending the research facilities.",
+      "context_window": "conducted on 36 (18 per arm) overweight and obese (BMI: 25-40 kg/m 2 ) middle-aged and older (50-75 years) men and women att",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-890",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 890,
+      "sentence": "The study was conducted on 36 (18 per arm) overweight and obese (BMI: 25-40 kg/m 2 ) middle-aged and older (50-75 years) men and women attending the research facilities.",
+      "context_window": "ht and obese (BMI: 25-40 kg/m 2 ) middle-aged and older (50-75 years) men and women attending the research facilities. Participa",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-1471",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1471,
+      "sentence": "The prescribed energy deficit was 40% of the total energy requirements, and the macronutrient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%.",
+      "context_window": "ergy requirements [ 44 ]. The prescribed energy deficit was 40% of the total energy requirements, and the macronutrient com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-1570",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1570,
+      "sentence": "The prescribed energy deficit was 40% of the total energy requirements, and the macronutrient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%.",
+      "context_window": "nd the macronutrient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%. Participants were asked to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-1584",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1584,
+      "sentence": "The prescribed energy deficit was 40% of the total energy requirements, and the macronutrient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%.",
+      "context_window": "trient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%. Participants were asked to maintain thei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-1602",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1602,
+      "sentence": "The prescribed energy deficit was 40% of the total energy requirements, and the macronutrient composition was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%.",
+      "context_window": "was approximately CHO = 55-60%, FAT = 20-25%, and PRO = 15-20%. Participants were asked to maintain their habitual physica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1795",
+      "claim_type": "unit_value",
+      "raw_text": "70 mL",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1795,
+      "sentence": "Participants in CR + BRJ group were asked to drink 70 mL of concentrated beetroot juice (~400 mg of inorganic nitrate daily) every morning (Beet It, James White Ltd., Ashbocking, Suffolk, UK).",
+      "context_window": "verages. Participants in CR + BRJ group were asked to drink 70 mL of concentrated beetroot juice (~400 mg of inorganic nitrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1834",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1834,
+      "sentence": "Participants in CR + BRJ group were asked to drink 70 mL of concentrated beetroot juice (~400 mg of inorganic nitrate daily) every morning (Beet It, James White Ltd., Ashbocking, Suffolk, UK).",
+      "context_window": "were asked to drink 70 mL of concentrated beetroot juice (~400 mg of inorganic nitrate daily) every morning (Beet It, James W",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-2613",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2613,
+      "sentence": "Total energy requirements were determined to calculate the 40% caloric-restricted diet.",
+      "context_window": "Total energy requirements were determined to calculate the 40% caloric-restricted diet. Subjects were then randomised into",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-3644",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3644,
+      "sentence": "The subjects started the intervention the day after the visit and continued for 14 days.",
+      "context_window": "the intervention the day after the visit and continued for 14 days. On the 15th day, subjects arrived early in the morning fas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-4067",
+      "claim_type": "unit_value",
+      "raw_text": "0.1 cm",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 4067,
+      "sentence": "Height was measured using a wall-mounted stadiometer to the nearest 0.1 cm.",
+      "context_window": "as measured using a wall-mounted stadiometer to the nearest 0.1 cm. Waist circumference (WC) was measured at the midpoint betw",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-4751",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 3",
+      "numeric_values": [
+        22.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4751,
+      "sentence": "Measurements were performed between 8:00 and 9:00 a.m. in a quiet, temperature-controlled room (22 \u00b1 3 \u00b0C).",
+      "context_window": "8:00 and 9:00 a.m. in a quiet, temperature-controlled room (22 \u00b1 3 \u00b0C). The readings were analysed to see if the subject reach",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-5505",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 3",
+      "numeric_values": [
+        22.0,
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5505,
+      "sentence": "All measurements were undertaken in a temperature-controlled room (22 \u00b1 3 \u00b0C).",
+      "context_window": "surements were undertaken in a temperature-controlled room (22 \u00b1 3 \u00b0C). Skin microvascular blood flow (SBF) was measured using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-6137",
+      "claim_type": "unit_value",
+      "raw_text": "50 mmHg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 6137,
+      "sentence": "Next, for the measurement of post-occlusive reactive hyperemia, the brachial artery was occluded by a BP cuff placed on the right upper arm and inflated up to 50 mmHg above the SBP.",
+      "context_window": "a BP cuff placed on the right upper arm and inflated up to 50 mmHg above the SBP. The BP cuff was rapidly deflated after 3 min",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-9686",
+      "claim_type": "percentage",
+      "raw_text": "1.75%",
+      "numeric_values": [
+        1.75
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9686,
+      "sentence": "The assay\u2019s sensitivity and precision (CV%) were 1 pg/mL and 1.75%, respectively.",
+      "context_window": "he assay\u2019s sensitivity and precision (CV%) were 1 pg/mL and 1.75%, respectively. The sample size calculation was performed u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-324",
+      "claim_type": "mean_sd",
+      "raw_text": "61.3 \u00b1 5.9",
+      "numeric_values": [
+        61.3,
+        5.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 324,
+      "sentence": "The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years.",
+      "context_window": "cluded in the final analysis ( Figure 1 ). The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years. The mean BMI was 34.5 \u00b1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-331",
+      "claim_type": "unit_value",
+      "raw_text": "5.9 years",
+      "numeric_values": [
+        5.9
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 331,
+      "sentence": "The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years.",
+      "context_window": "in the final analysis ( Figure 1 ). The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years. The mean BMI was 34.5 \u00b1 5.8 k",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-361",
+      "claim_type": "unit_value",
+      "raw_text": "74 years",
+      "numeric_values": [
+        74.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 361,
+      "sentence": "The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years.",
+      "context_window": "1 ). The mean age was 61.3 \u00b1 5.9 years, ranging from 52 to 74 years. The mean BMI was 34.5 \u00b1 5.8 kg/m 2 . Seventeen participant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-388",
+      "claim_type": "mean_sd",
+      "raw_text": "34.5 \u00b1 5.8",
+      "numeric_values": [
+        34.5,
+        5.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 388,
+      "sentence": "The mean BMI was 34.5 \u00b1 5.8 kg/m 2 .",
+      "context_window": "\u00b1 5.9 years, ranging from 52 to 74 years. The mean BMI was 34.5 \u00b1 5.8 kg/m 2 . Seventeen participants were taking medications or",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-395",
+      "claim_type": "unit_value",
+      "raw_text": "5.8 kg",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 395,
+      "sentence": "The mean BMI was 34.5 \u00b1 5.8 kg/m 2 .",
+      "context_window": "years, ranging from 52 to 74 years. The mean BMI was 34.5 \u00b1 5.8 kg/m 2 . Seventeen participants were taking medications or nut",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-n-484",
+      "claim_type": "sample_size",
+      "raw_text": "n = 17",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 484,
+      "sentence": "Seventeen participants were taking medications or nutritional supplements ( n = 17); they were equally distributed between the CR + BRJ and CR intervention groups (64% vs.",
+      "context_window": "ipants were taking medications or nutritional supplements ( n = 17); they were equally distributed between the CR + BRJ and CR",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-572",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 572,
+      "sentence": "Seventeen participants were taking medications or nutritional supplements ( n = 17); they were equally distributed between the CR + BRJ and CR intervention groups (64% vs.",
+      "context_window": "istributed between the CR + BRJ and CR intervention groups (64% vs. 53%, respectively, p = 0.55). There were no significant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-580",
+      "claim_type": "percentage",
+      "raw_text": "53%",
+      "numeric_values": [
+        53.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 580,
+      "sentence": "53%, respectively, p = 0.55).",
+      "context_window": "ed between the CR + BRJ and CR intervention groups (64% vs. 53%, respectively, p = 0.55). There were no significant differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-599",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.55",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 599,
+      "sentence": "53%, respectively, p = 0.55).",
+      "context_window": "BRJ and CR intervention groups (64% vs. 53%, respectively, p = 0.55). There were no significant differences between the groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1466",
+      "claim_type": "mean_sd",
+      "raw_text": "2.8 \u00b1 1.7",
+      "numeric_values": [
+        2.8,
+        1.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1466,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "-value; WC, waist circumference. Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.0",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1472",
+      "claim_type": "unit_value",
+      "raw_text": "1.7 kg",
+      "numeric_values": [
+        1.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1472,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "; WC, waist circumference. Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001)",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1481",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1481,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "st circumference. Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR a",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1513",
+      "claim_type": "mean_sd",
+      "raw_text": "2.2 \u00b1 1.2",
+      "numeric_values": [
+        2.2,
+        1.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1513,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "ecreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1519",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1519,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "ed by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body wei",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1528",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1528,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1639",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.32",
+      "numeric_values": [
+        0.32
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1639,
+      "sentence": "Body weight decreased by -2.8 \u00b1 1.7 kg ( p < 0.001) in the CR + BRJ and -2.2 \u00b1 1.2 kg ( p < 0.001) in the CR alone group, but changes in body weight were not significantly different between groups ( p = 0.32).",
+      "context_window": "dy weight were not significantly different between groups ( p = 0.32). Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1677",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 2.1",
+      "numeric_values": [
+        1.3,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1677,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "rent between groups ( p = 0.32). Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1683",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 kg",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1683,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "etween groups ( p = 0.32). Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1707",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 2.1",
+      "numeric_values": [
+        1.2,
+        2.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1707,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "). Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1713",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 kg",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1713,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "ilarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1737",
+      "claim_type": "mean_sd",
+      "raw_text": "1.4 \u00b1 2.0",
+      "numeric_values": [
+        1.4,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1737,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1743",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 kg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1743,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were sig",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-1767",
+      "claim_type": "mean_sd",
+      "raw_text": "1.0 \u00b1 2.3",
+      "numeric_values": [
+        1.0,
+        2.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1767,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1773",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 kg",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 1773,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1820",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1820,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": "J vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1834",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1834,
+      "sentence": "Similarly, changes in FM (-1.3 \u00b1 2.1 kg in CR + BRJ vs. -1.2 \u00b1 2.1 kg in CR) and FFM (-1.4 \u00b1 2.0 kg in CR + BRJ vs. -1.0 \u00b1 2.3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference between the two groups for both FM and FFM.",
+      "context_window": ".3 kg in CR) in each group were significant ( p = 0.003 and p = 0.006, respectively), but there was no significant difference bet",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-1988",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1988,
+      "sentence": "HGS improved significantly in both groups ( p < 0.001), and the percentage increase from the baseline was significantly higher in the CR + BRJ group ( p = 0.04).",
+      "context_window": "oth FM and FFM. HGS improved significantly in both groups ( p < 0.001), and the percentage increase from the baseline was signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-2095",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2095,
+      "sentence": "HGS improved significantly in both groups ( p < 0.001), and the percentage increase from the baseline was significantly higher in the CR + BRJ group ( p = 0.04).",
+      "context_window": "e baseline was significantly higher in the CR + BRJ group ( p = 0.04). The CR + BRJ and CR groups showed a similar decrease in R",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-2168",
+      "claim_type": "mean_sd",
+      "raw_text": "26.5 \u00b1 133.8",
+      "numeric_values": [
+        26.5,
+        133.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2168,
+      "sentence": "The CR + BRJ and CR groups showed a similar decrease in REE (-26.5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71) post-weight loss.",
+      "context_window": "e CR + BRJ and CR groups showed a similar decrease in REE (-26.5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71)",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-2195",
+      "claim_type": "mean_sd",
+      "raw_text": "42.4 \u00b1 93.4",
+      "numeric_values": [
+        42.4,
+        93.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2195,
+      "sentence": "The CR + BRJ and CR groups showed a similar decrease in REE (-26.5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71) post-weight loss.",
+      "context_window": "owed a similar decrease in REE (-26.5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71) post-weight loss. Post-we",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-2231",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.71",
+      "numeric_values": [
+        0.71
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2231,
+      "sentence": "The CR + BRJ and CR groups showed a similar decrease in REE (-26.5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71) post-weight loss.",
+      "context_window": "5 \u00b1 133.8 kcal/day and -42.4 \u00b1 93.4 kcal/day, respectively, p = 0.71) post-weight loss. Post-weight loss changes in REE/FFM were",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-2353",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.66",
+      "numeric_values": [
+        0.66
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2353,
+      "sentence": "Post-weight loss changes in REE/FFM were not significantly different between the two groups ( p = 0.66) ( Table 2 ).",
+      "context_window": "M were not significantly different between the two groups ( p = 0.66) ( Table 2 ). Anthropometry, body composition, hand-grip s",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3036",
+      "claim_type": "mean_sd",
+      "raw_text": "7.9 \u00b1 6.7",
+      "numeric_values": [
+        7.9,
+        6.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3036,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "age. SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3051",
+      "claim_type": "mean_sd",
+      "raw_text": "2.9 \u00b1 4.2",
+      "numeric_values": [
+        2.9,
+        4.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3051,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "BP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg,",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-3057",
+      "claim_type": "unit_value",
+      "raw_text": "4.2 mmHg",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3057,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "e significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, resp",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3090",
+      "claim_type": "mean_sd",
+      "raw_text": "3.5 \u00b1 5.9",
+      "numeric_values": [
+        3.5,
+        5.9
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3090,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3105",
+      "claim_type": "mean_sd",
+      "raw_text": "1.6 \u00b1 5.1",
+      "numeric_values": [
+        1.6,
+        5.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3105,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a tr",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-3111",
+      "claim_type": "unit_value",
+      "raw_text": "5.1 mmHg",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "mmHg",
+      "source_section": "results",
+      "source_offset": 3111,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend t",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-3137",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3137,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "ly) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-3249",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3249,
+      "sentence": "SBP and DBP were significantly improved in CR + BRJ (-7.9 \u00b1 6.7 and -2.9 \u00b1 4.2 mmHg, respectively) and CR (-3.5 \u00b1 5.9 and -1.6 \u00b1 5.1 mmHg, respectively) ( p < 0.01 for all), and there was a trend towards greater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06).",
+      "context_window": "ater reductions in SBP in CR + BRJ compared with CR alone ( p = 0.06). The average flux increased significantly in the CR + BRJ",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3346",
+      "claim_type": "mean_sd",
+      "raw_text": "1.3 \u00b1 2.4",
+      "numeric_values": [
+        1.3,
+        2.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3346,
+      "sentence": "The average flux increased significantly in the CR + BRJ group compared to CR alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03).",
+      "context_window": "significantly in the CR + BRJ group compared to CR alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03). The NO-",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3364",
+      "claim_type": "mean_sd",
+      "raw_text": "1.2 \u00b1 1.3",
+      "numeric_values": [
+        1.2,
+        1.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3364,
+      "sentence": "The average flux increased significantly in the CR + BRJ group compared to CR alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03).",
+      "context_window": "the CR + BRJ group compared to CR alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03). The NO-dependent endothel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-3397",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3397,
+      "sentence": "The average flux increased significantly in the CR + BRJ group compared to CR alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03).",
+      "context_window": "alone (+1.3 \u00b1 2.4 PU vs. -1.2 \u00b1 1.3 PU, respectively: T*I, p = 0.03). The NO-dependent endothelial activity derived from the sp",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-3533",
+      "claim_type": "mean_sd",
+      "raw_text": "7.0 \u00b1 6.8",
+      "numeric_values": [
+        7.0,
+        6.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3533,
+      "sentence": "The NO-dependent endothelial activity derived from the spectral analysis was significantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ).",
+      "context_window": "nalysis was significantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ). Vascular function. Repeated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-3539",
+      "claim_type": "percentage",
+      "raw_text": "6.8%",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3539,
+      "sentence": "The NO-dependent endothelial activity derived from the spectral analysis was significantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ).",
+      "context_window": "s was significantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ). Vascular function. Repeated",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-3550",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3550,
+      "sentence": "The NO-dependent endothelial activity derived from the spectral analysis was significantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ).",
+      "context_window": "ficantly increased in the CR + BRJ group (+7.0 \u00b1 6.8%, T*I, p = 0.02) ( Table 3 ). Vascular function. Repeated measure ANOVA w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-4106",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4106,
+      "sentence": "TMT-A improved significantly (T, p < 0.005) in all groups but there was no significant difference between the two intervention groups (T*I, p = 0.54).",
+      "context_window": "n; \u2206%, change percentage. TMT-A improved significantly (T, p < 0.005) in all groups but there was no significant difference betw",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-4213",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.54",
+      "numeric_values": [
+        0.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "TMT-A improved significantly (T, p < 0.005) in all groups but there was no significant difference between the two intervention groups (T*I, p = 0.54).",
+      "context_window": "ficant difference between the two intervention groups (T*I, p = 0.54). The time to completion of the TMT-B was significantly red",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-4311",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4311,
+      "sentence": "The time to completion of the TMT-B was significantly reduced by the interventions (T, p = 0.002) with greater improvements observed in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ).",
+      "context_window": "he TMT-B was significantly reduced by the interventions (T, p = 0.002) with greater improvements observed in the CR + BRJ (-12.6",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-4375",
+      "claim_type": "mean_sd",
+      "raw_text": "12.6 \u00b1 6.8",
+      "numeric_values": [
+        12.6,
+        6.8
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4375,
+      "sentence": "The time to completion of the TMT-B was significantly reduced by the interventions (T, p = 0.002) with greater improvements observed in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ).",
+      "context_window": "0.002) with greater improvements observed in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Tab",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-4412",
+      "claim_type": "mean_sd",
+      "raw_text": "4.3 \u00b1 9.7",
+      "numeric_values": [
+        4.3,
+        9.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4412,
+      "sentence": "The time to completion of the TMT-B was significantly reduced by the interventions (T, p = 0.002) with greater improvements observed in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ).",
+      "context_window": "rved in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ). Cognitive function. Repeat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-4431",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4431,
+      "sentence": "The time to completion of the TMT-B was significantly reduced by the interventions (T, p = 0.002) with greater improvements observed in the CR + BRJ (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ).",
+      "context_window": "J (-12.6 \u00b1 6.8 s) compared to CR alone (-4.3 \u00b1 9.7 s) (T*I, p = 0.012; Table 4 ). Cognitive function. Repeated measure ANOVA wa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-4954",
+      "claim_type": "mean_sd",
+      "raw_text": "1660 \u00b1 1520",
+      "numeric_values": [
+        1660.0,
+        1520.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4954,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR g",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-4961",
+      "claim_type": "unit_value",
+      "raw_text": "1520 \u00b5mol",
+      "numeric_values": [
+        1520.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 4961,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": "ry nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-4996",
+      "claim_type": "mean_sd",
+      "raw_text": "294 \u00b1 1879",
+      "numeric_values": [
+        294.0,
+        1879.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4996,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": "significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant dif",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-5002",
+      "claim_type": "unit_value",
+      "raw_text": "1879 \u00b5mol",
+      "numeric_values": [
+        1879.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 5002,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": "ficantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant differen",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-5034",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5034,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": "n the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p =",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-5099",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.04",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5099,
+      "sentence": "Salivary nitrate concentrations increased significantly by 1660 \u00b1 1520 \u00b5mol/L in the CR + BRJ and by 294 \u00b1 1879 \u00b5mol/L in the CR group (T, p < 0.005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A).",
+      "context_window": ".005), with significant difference between the groups (T*I, p = 0.04, Figure 2 A). Salivary nitrite concentrations were higher i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-5237",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.26",
+      "numeric_values": [
+        0.26
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5237,
+      "sentence": "Salivary nitrite concentrations were higher in the CR + BRJ group but did not reach statistical significance (T*I, p = 0.26, ( Figure 2 B).",
+      "context_window": "BRJ group but did not reach statistical significance (T*I, p = 0.26, ( Figure 2 B). Changes in urinary nitrate concentrations w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-5348",
+      "claim_type": "mean_sd",
+      "raw_text": "6344 \u00b1 6233",
+      "numeric_values": [
+        6344.0,
+        6233.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5348,
+      "sentence": "Changes in urinary nitrate concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C).",
+      "context_window": "concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-5355",
+      "claim_type": "unit_value",
+      "raw_text": "6233 \u00b5mol",
+      "numeric_values": [
+        6233.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 5355,
+      "sentence": "Changes in urinary nitrate concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C).",
+      "context_window": "trations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-5391",
+      "claim_type": "mean_sd",
+      "raw_text": "1206 \u00b1 6012",
+      "numeric_values": [
+        1206.0,
+        6012.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5391,
+      "sentence": "Changes in urinary nitrate concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C).",
+      "context_window": "n the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C). Similarly, a greater de",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-5398",
+      "claim_type": "unit_value",
+      "raw_text": "6012 \u00b5mol",
+      "numeric_values": [
+        6012.0
+      ],
+      "units": "\u00b5mol",
+      "source_section": "results",
+      "source_offset": 5398,
+      "sentence": "Changes in urinary nitrate concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C).",
+      "context_window": "R + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C). Similarly, a greater decreas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-5416",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5416,
+      "sentence": "Changes in urinary nitrate concentrations were significantly higher in the CR + BRJ (+6344 \u00b1 6233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C).",
+      "context_window": "233 \u00b5mol/L) compared to CR alone (+1206 \u00b1 6012 \u00b5mol/L, T*I, p = 0.03; Figure 2 C). Similarly, a greater decrease in urinary 8-is",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-msd-5547",
+      "claim_type": "mean_sd",
+      "raw_text": "294 \u00b1 277",
+      "numeric_values": [
+        294.0,
+        277.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5547,
+      "sentence": "Similarly, a greater decrease in urinary 8-isoprostane was observed in the combined CR + BRJ intervention (-294 \u00b1 277 pg/mL, T*I, p = 0.02; Figure 2 D).",
+      "context_window": "ostane was observed in the combined CR + BRJ intervention (-294 \u00b1 277 pg/mL, T*I, p = 0.02; Figure 2 D). The effect of the inter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-5569",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5569,
+      "sentence": "Similarly, a greater decrease in urinary 8-isoprostane was observed in the combined CR + BRJ intervention (-294 \u00b1 277 pg/mL, T*I, p = 0.02; Figure 2 D).",
+      "context_window": "the combined CR + BRJ intervention (-294 \u00b1 277 pg/mL, T*I, p = 0.02; Figure 2 D). The effect of the interventions (CR + BRJ an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-6358",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6358,
+      "sentence": "However, a significant negative correlation between urinary 8-isoprostane and average microvascular flux (r = -0.53, p = 0.003) was observed ( Figure 3 ).",
+      "context_window": "ry 8-isoprostane and average microvascular flux (r = -0.53, p = 0.003) was observed ( Figure 3 ). Moreover, there was no modifica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-p-6546",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6546,
+      "sentence": "Moreover, there was no modification of the association between 8-isoprostane and average flux after adjustment for changes in body weight (r = -0.53, p = 0.003).",
+      "context_window": "lux after adjustment for changes in body weight (r = -0.53, p = 0.003). Correlation between changes in the urinary isoprostanes",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-1074",
+      "claim_type": "percentage",
+      "raw_text": "4.2%",
+      "numeric_values": [
+        4.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1074,
+      "sentence": "The macroscopic effect of these mechanisms was tested in a 3-day dietary nitrate supplementation trial showing a reduction of REE by 4.2% (-82 kcal/day) measured by indirect calorimetry in healthy subjects [ 52 ].",
+      "context_window": "nitrate supplementation trial showing a reduction of REE by 4.2% (-82 kcal/day) measured by indirect calorimetry in healthy",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1270",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1270,
+      "sentence": "However, these initial findings have not been replicated in subsequent studies of different duration (i.e., 2 h or 7 days) as no significant changes were found for REE after nitrate supplementation [ 53 , 54 ].",
+      "context_window": "d in subsequent studies of different duration (i.e., 2 h or 7 days) as no significant changes were found for REE after nitrate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-3967",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3967,
+      "sentence": "Justice et al. [ 72 ] showed a similar result in healthy older subjects as time to complete TMT-B was improved by 18% and 14% in response to supplementation with high and low doses of sodium nitrite for 10 weeks, respectively.",
+      "context_window": "hy older subjects as time to complete TMT-B was improved by 18% and 14% in response to supplementation with high and low do",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-pct-3975",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3975,
+      "sentence": "Justice et al. [ 72 ] showed a similar result in healthy older subjects as time to complete TMT-B was improved by 18% and 14% in response to supplementation with high and low doses of sodium nitrite for 10 weeks, respectively.",
+      "context_window": "subjects as time to complete TMT-B was improved by 18% and 14% in response to supplementation with high and low doses of s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-4056",
+      "claim_type": "unit_value",
+      "raw_text": "10 weeks",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4056,
+      "sentence": "Justice et al. [ 72 ] showed a similar result in healthy older subjects as time to complete TMT-B was improved by 18% and 14% in response to supplementation with high and low doses of sodium nitrite for 10 weeks, respectively.",
+      "context_window": "pplementation with high and low doses of sodium nitrite for 10 weeks, respectively. Potential mechanisms explaining the cognitiv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-4497",
+      "claim_type": "unit_value",
+      "raw_text": "13 weeks",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4497,
+      "sentence": "Babateen et al. [ 78 ] showed that different doses of beetroot supplementation for 13 weeks did not improve cognitive function and CBF.",
+      "context_window": "showed that different doses of beetroot supplementation for 13 weeks did not improve cognitive function and CBF. Therefore, the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-6575",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 mg/kg/day",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "mg/kg/day",
+      "source_section": "discussion",
+      "source_offset": 6575,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-6631",
+      "claim_type": "unit_value",
+      "raw_text": "260 mg/day",
+      "numeric_values": [
+        260.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 6631,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-6645",
+      "claim_type": "unit_value",
+      "raw_text": "370 mg/day",
+      "numeric_values": [
+        370.0
+      ],
+      "units": "mg/day",
+      "source_section": "discussion",
+      "source_offset": 6645,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-6716",
+      "claim_type": "unit_value",
+      "raw_text": "100 kg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 6716,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "of nitrate in individuals with a body weight between 70 and 100 kg. The daily dose of nitrate provided to the participants in",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-7142",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 7142,
+      "sentence": "Hord et al. have also calculated the nitrate content of healthy dietary patterns, such as the Mediterranean diet or DASH diet, which could contain up to 1000 mg of dietary nitrate [ 43 ].",
+      "context_window": "Mediterranean diet or DASH diet, which could contain up to 1000 mg of dietary nitrate [ 43 ].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1754",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 mg/kg/day",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "mg/kg/day",
+      "source_section": "limitations",
+      "source_offset": 1754,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1810",
+      "claim_type": "unit_value",
+      "raw_text": "260 mg/day",
+      "numeric_values": [
+        260.0
+      ],
+      "units": "mg/day",
+      "source_section": "limitations",
+      "source_offset": 1810,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1824",
+      "claim_type": "unit_value",
+      "raw_text": "370 mg/day",
+      "numeric_values": [
+        370.0
+      ],
+      "units": "mg/day",
+      "source_section": "limitations",
+      "source_offset": 1824,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-1895",
+      "claim_type": "unit_value",
+      "raw_text": "100 kg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "kg",
+      "source_section": "limitations",
+      "source_offset": 1895,
+      "sentence": "The current WHO acceptable and recommended daily intake for nitrate is 3.7 mg/kg/day or lower, which approximately ranges from 260 mg/day to 370 mg/day of nitrate in individuals with a body weight between 70 and 100 kg.",
+      "context_window": "of nitrate in individuals with a body weight between 70 and 100 kg. The daily dose of nitrate provided to the participants in",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9962072_caloric_restriction_cr_plus_high_nitrate_beetroot_juice_does-u-2321",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "limitations",
+      "source_offset": 2321,
+      "sentence": "Hord et al. have also calculated the nitrate content of healthy dietary patterns, such as the Mediterranean diet or DASH diet, which could contain up to 1000 mg of dietary nitrate [ 43 ].",
+      "context_window": "Mediterranean diet or DASH diet, which could contain up to 1000 mg of dietary nitrate [ 43 ].",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

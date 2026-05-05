@@ -1,0 +1,1305 @@
+{
+  "paper_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus",
+  "doi": "10.3390/nu16152511",
+  "extracted_at": "2026-05-05T21:38:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 8,
+    "p_value": 21,
+    "confidence_interval": 10,
+    "percentage": 30,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-948",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 948,
+      "sentence": "The creatine supplementation protocol consisted of 20 g/day of creatine monohydrate for 5 days (loading dose) and 3-5 g/day for 7 weeks (maintenance dose).",
+      "context_window": "protocol consisted of 20 g/day of creatine monohydrate for 5 days (loading dose) and 3-5 g/day for 7 weeks (maintenance dose)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-988",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 988,
+      "sentence": "The creatine supplementation protocol consisted of 20 g/day of creatine monohydrate for 5 days (loading dose) and 3-5 g/day for 7 weeks (maintenance dose).",
+      "context_window": "ine monohydrate for 5 days (loading dose) and 3-5 g/day for 7 weeks (maintenance dose). Anthropometric characteristics (body ma",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1452",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1452,
+      "sentence": "The results showed that the allelic frequencies of ACE and AMPD1 differed between responders and non-responders in muscle mass increase (all p < 0.05).",
+      "context_window": "responders and non-responders in muscle mass increase (all p < 0.05). Players with a TGS exceeding 54.16 a.u. had an odds ratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-1536",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.560-5.711",
+      "numeric_values": [
+        1.56,
+        5.711
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1536,
+      "sentence": "Players with a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95%CI: 1.560-5.711; p = 0.001) for muscle mass increase.",
+      "context_window": "a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95%CI: 1.560-5.711; p = 0.001) for muscle mass increase. By contrast, those wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1556",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1556,
+      "sentence": "Players with a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95%CI: 1.560-5.711; p = 0.001) for muscle mass increase.",
+      "context_window": "6 a.u. had an odds ratio (OR) of 2.985 (95%CI: 1.560-5.711; p = 0.001) for muscle mass increase. By contrast, those with a TGS be",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-1660",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 4.535-19.425",
+      "numeric_values": [
+        4.535,
+        19.425
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1660,
+      "sentence": "By contrast, those with a TGS below 54.16 a.u. had an OR of 9.385 (95%CI: 4.535-19.425; p < 0.001) for suffering non-contact muscle injuries during the season.",
+      "context_window": "rast, those with a TGS below 54.16 a.u. had an OR of 9.385 (95%CI: 4.535-19.425; p < 0.001) for suffering non-contact muscle injuries durin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1681",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1681,
+      "sentence": "By contrast, those with a TGS below 54.16 a.u. had an OR of 9.385 (95%CI: 4.535-19.425; p < 0.001) for suffering non-contact muscle injuries during the season.",
+      "context_window": "S below 54.16 a.u. had an OR of 9.385 (95%CI: 4.535-19.425; p < 0.001) for suffering non-contact muscle injuries during the seaso",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-274",
+      "claim_type": "unit_value",
+      "raw_text": "70 kg",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "kg",
+      "source_section": "introduction",
+      "source_offset": 274,
+      "sentence": "It is estimated that the daily requirement of creatine for a 70 kg male is 2 g/day and that up to half may be obtained from a typical omnivorous diet, the remaining amount being produced by the body [ 2 , 3 ].",
+      "context_window": "t is estimated that the daily requirement of creatine for a 70 kg male is 2 g/day and that up to half may be obtained from a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-2387",
+      "claim_type": "unit_value",
+      "raw_text": "40 ng/mL",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 2387,
+      "sentence": "DNA extraction was performed at the VIVOLabs laboratory (Madrid, Spain) using the automated QIACube system (QIAGEN, Venlo, The Netherlands), yielding a DNA concentration of 25-40 ng/mL.",
+      "context_window": "Venlo, The Netherlands), yielding a DNA concentration of 25-40 ng/mL. The DNA was kept in a 100 \u03bcL solution at -20 \u00b0C until geno",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-4577",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4577,
+      "sentence": "The medical staff of each football club administered the protocol, which consisted of a loading dose of around 20 g/day during 5 days followed by a maintenance dose of 3-5 g/day during 7 weeks (equivalent to approximately 0.3 g/kg/day and 0.03 g/kg/day, respectively0), which was previously used for sports performance and football training [ 22 , 46 ].",
+      "context_window": "which consisted of a loading dose of around 20 g/day during 5 days followed by a maintenance dose of 3-5 g/day during 7 weeks",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-4635",
+      "claim_type": "unit_value",
+      "raw_text": "7 weeks",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4635,
+      "sentence": "The medical staff of each football club administered the protocol, which consisted of a loading dose of around 20 g/day during 5 days followed by a maintenance dose of 3-5 g/day during 7 weeks (equivalent to approximately 0.3 g/kg/day and 0.03 g/kg/day, respectively0), which was previously used for sports performance and football training [ 22 , 46 ].",
+      "context_window": "g 5 days followed by a maintenance dose of 3-5 g/day during 7 weeks (equivalent to approximately 0.3 g/kg/day and 0.03 g/kg/day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-4979",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 4979,
+      "sentence": "The supplementation consisted of Creatine Monohydrate (C 4 H 9 N 3 O 2 *H 2 O) (Myprotein, Manchester, UK) in a mixture of the previously shown creatine dose in a shaker with 500 mL of water.",
+      "context_window": "ture of the previously shown creatine dose in a shaker with 500 mL of water. Muscle injury data were collected from the concl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-8790",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8790,
+      "sentence": "The area under the ROC curve (AUC) was calculated with 95% confidence intervals (95%CI).",
+      "context_window": "5 ]. The area under the ROC curve (AUC) was calculated with 95% confidence intervals (95%CI). Lastly, a binary logistic reg",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-8816",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8816,
+      "sentence": "The area under the ROC curve (AUC) was calculated with 95% confidence intervals (95%CI).",
+      "context_window": "C curve (AUC) was calculated with 95% confidence intervals (95%CI). Lastly, a binary logistic regression model was used to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-44",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 44,
+      "sentence": "The polymorphisms analysed met the HWE (all p > 0.05; Table 2 ).",
+      "context_window": "The polymorphisms analysed met the HWE (all p > 0.05; Table 2 ). Of the players included, 18 were goalkeepers (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-112",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 112,
+      "sentence": "Of the players included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%).",
+      "context_window": "; Table 2 ). Of the players included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-139",
+      "claim_type": "percentage",
+      "raw_text": "31.1%",
+      "numeric_values": [
+        31.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 139,
+      "sentence": "Of the players included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%).",
+      "context_window": "s included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-168",
+      "claim_type": "percentage",
+      "raw_text": "26.6%",
+      "numeric_values": [
+        26.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 168,
+      "sentence": "Of the players included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%).",
+      "context_window": "rs (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%). All the professional footba",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-197",
+      "claim_type": "percentage",
+      "raw_text": "31.1%",
+      "numeric_values": [
+        31.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 197,
+      "sentence": "Of the players included, 18 were goalkeepers (11.2%), 50 were defenders (31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%).",
+      "context_window": "(31.1%), 43 were midfielders (26.6%) and 50 were forwards (31.1%). All the professional football players were in good hydra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-msd-339",
+      "claim_type": "mean_sd",
+      "raw_text": "1016.52 \u00b1 4.15",
+      "numeric_values": [
+        1016.52,
+        4.15
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 339,
+      "sentence": "All the professional football players were in good hydration condition, both before and after the creatine supplementation protocol (1016.52 \u00b1 4.15 vs.",
+      "context_window": "oth before and after the creatine supplementation protocol (1016.52 \u00b1 4.15 vs. 1017.22 \u00b1 3.88, respectively; p = 0.854). Of the 161 p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-msd-358",
+      "claim_type": "mean_sd",
+      "raw_text": "1017.22 \u00b1 3.88",
+      "numeric_values": [
+        1017.22,
+        3.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 358,
+      "sentence": "1017.22 \u00b1 3.88, respectively; p = 0.854).",
+      "context_window": "r the creatine supplementation protocol (1016.52 \u00b1 4.15 vs. 1017.22 \u00b1 3.88, respectively; p = 0.854). Of the 161 professional footbal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-388",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.854",
+      "numeric_values": [
+        0.854
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 388,
+      "sentence": "1017.22 \u00b1 3.88, respectively; p = 0.854).",
+      "context_window": "protocol (1016.52 \u00b1 4.15 vs. 1017.22 \u00b1 3.88, respectively; p = 0.854). Of the 161 professional football players, 41 players (25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-455",
+      "claim_type": "percentage",
+      "raw_text": "25.5%",
+      "numeric_values": [
+        25.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 455,
+      "sentence": "Of the 161 professional football players, 41 players (25.5%) had a positive adaptation according to the SWC value (0.168 kg/m 2 ) in BMI, responding after the creatine supplementation protocol, whereas 120 players were non-responders.",
+      "context_window": "54). Of the 161 professional football players, 41 players (25.5%) had a positive adaptation according to the SWC value (0.16",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-u-516",
+      "claim_type": "unit_value",
+      "raw_text": "0.168 kg",
+      "numeric_values": [
+        0.168
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 516,
+      "sentence": "Of the 161 professional football players, 41 players (25.5%) had a positive adaptation according to the SWC value (0.168 kg/m 2 ) in BMI, responding after the creatine supplementation protocol, whereas 120 players were non-responders.",
+      "context_window": "5.5%) had a positive adaptation according to the SWC value (0.168 kg/m 2 ) in BMI, responding after the creatine supplementation",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1140",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1140,
+      "sentence": "The difference in TGS values between responders and non-responders in BMI after creatine supplementation was statistically significant ( p < 0.001) ( Figure 1 ).",
+      "context_window": "er creatine supplementation was statistically significant ( p < 0.001) ( Figure 1 ). TGS value in BMI responders and non-respond",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-1444",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.592-0.779",
+      "numeric_values": [
+        0.592,
+        0.779
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1444,
+      "sentence": "ROC analysis demonstrated that the TGS had a significant discriminatory power in identifying BMI increases among professional football players undergoing creatine supplementation (AUC = 0.685; 95% CI: 0.592-0.779; p = 0.001), with sensitivity at 0.951 and specificity at 0.758 ( Figure 2 ).",
+      "context_window": "l players undergoing creatine supplementation (AUC = 0.685; 95% CI: 0.592-0.779; p = 0.001), with sensitivity at 0.951 and specificity at 0",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1465",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1465,
+      "sentence": "ROC analysis demonstrated that the TGS had a significant discriminatory power in identifying BMI increases among professional football players undergoing creatine supplementation (AUC = 0.685; 95% CI: 0.592-0.779; p = 0.001), with sensitivity at 0.951 and specificity at 0.758 ( Figure 2 ).",
+      "context_window": "creatine supplementation (AUC = 0.685; 95% CI: 0.592-0.779; p = 0.001), with sensitivity at 0.951 and specificity at 0.758 ( Figu",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-1706",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.426-12.890",
+      "numeric_values": [
+        1.426,
+        12.89
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1706,
+      "sentence": "Binary logistic regression revealed that players with a TGS above 41.66 a.u. had an odds ratio (OR) of 4.287 (95% CI: 1.426-12.890; p = 0.010) for being responders with increased BMI after the creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "ith a TGS above 41.66 a.u. had an odds ratio (OR) of 4.287 (95% CI: 1.426-12.890; p = 0.010) for being responders with increased BMI after t",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-1728",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.010",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1728,
+      "sentence": "Binary logistic regression revealed that players with a TGS above 41.66 a.u. had an odds ratio (OR) of 4.287 (95% CI: 1.426-12.890; p = 0.010) for being responders with increased BMI after the creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "a.u. had an odds ratio (OR) of 4.287 (95% CI: 1.426-12.890; p = 0.010) for being responders with increased BMI after the creatine",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-2416",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.046",
+      "numeric_values": [
+        0.046
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2416,
+      "sentence": "For the ACTN3 c.1729C>T polymorphism, a significant difference was observed ( p = 0.046), with a higher frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (46.3%) compared to non-responders (26.7%).",
+      "context_window": "29C>T polymorphism, a significant difference was observed ( p = 0.046), with a higher frequency of the \u2018optimal\u2019 genotype (CC) in",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2502",
+      "claim_type": "percentage",
+      "raw_text": "46.3%",
+      "numeric_values": [
+        46.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2502,
+      "sentence": "For the ACTN3 c.1729C>T polymorphism, a significant difference was observed ( p = 0.046), with a higher frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (46.3%) compared to non-responders (26.7%).",
+      "context_window": "frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (46.3%) compared to non-responders (26.7%). Similarly, significant",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2537",
+      "claim_type": "percentage",
+      "raw_text": "26.7%",
+      "numeric_values": [
+        26.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2537,
+      "sentence": "For the ACTN3 c.1729C>T polymorphism, a significant difference was observed ( p = 0.046), with a higher frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (46.3%) compared to non-responders (26.7%).",
+      "context_window": "(CC) in BMI responders (46.3%) compared to non-responders (26.7%). Similarly, significant differences were noted for the CKM",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-2628",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.044",
+      "numeric_values": [
+        0.044
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "Similarly, significant differences were noted for the CKM c.*800A>G polymorphism ( p = 0.044), where the \u2018optimal\u2019 genotype (GG) was more prevalent among players with increased BMI (22.0%) versus those without (8.3%).",
+      "context_window": "differences were noted for the CKM c.*800A>G polymorphism ( p = 0.044), where the \u2018optimal\u2019 genotype (GG) was more prevalent amon",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2727",
+      "claim_type": "percentage",
+      "raw_text": "22.0%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2727,
+      "sentence": "Similarly, significant differences were noted for the CKM c.*800A>G polymorphism ( p = 0.044), where the \u2018optimal\u2019 genotype (GG) was more prevalent among players with increased BMI (22.0%) versus those without (8.3%).",
+      "context_window": "e (GG) was more prevalent among players with increased BMI (22.0%) versus those without (8.3%). The MLCK c.37885C>A polymorph",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2756",
+      "claim_type": "percentage",
+      "raw_text": "8.3%",
+      "numeric_values": [
+        8.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2756,
+      "sentence": "Similarly, significant differences were noted for the CKM c.*800A>G polymorphism ( p = 0.044), where the \u2018optimal\u2019 genotype (GG) was more prevalent among players with increased BMI (22.0%) versus those without (8.3%).",
+      "context_window": "ng players with increased BMI (22.0%) versus those without (8.3%). The MLCK c.37885C>A polymorphism also showed significant",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2907",
+      "claim_type": "percentage",
+      "raw_text": "7.3%",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2907,
+      "sentence": "The MLCK c.37885C>A polymorphism also showed significant differences, with a higher frequency of the \u2018optimal\u2019 genotype (AA) in BMI responders (7.3%) compared to non-responders (0.0%).",
+      "context_window": "frequency of the \u2018optimal\u2019 genotype (AA) in BMI responders (7.3%) compared to non-responders (0.0%). Although the AMPD1 c.34",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-2941",
+      "claim_type": "percentage",
+      "raw_text": "0.0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2941,
+      "sentence": "The MLCK c.37885C>A polymorphism also showed significant differences, with a higher frequency of the \u2018optimal\u2019 genotype (AA) in BMI responders (7.3%) compared to non-responders (0.0%).",
+      "context_window": "e (AA) in BMI responders (7.3%) compared to non-responders (0.0%). Although the AMPD1 c.34C>T polymorphism did not reach sta",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-3054",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.082",
+      "numeric_values": [
+        0.082
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3054,
+      "sentence": "Although the AMPD1 c.34C>T polymorphism did not reach statistical significance, it demonstrated a trend ( p = 0.082) with a greater frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (78.0%) compared to non-responders (59.2%).",
+      "context_window": "t reach statistical significance, it demonstrated a trend ( p = 0.082) with a greater frequency of the \u2018optimal\u2019 genotype (CC) in",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3140",
+      "claim_type": "percentage",
+      "raw_text": "78.0%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Although the AMPD1 c.34C>T polymorphism did not reach statistical significance, it demonstrated a trend ( p = 0.082) with a greater frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (78.0%) compared to non-responders (59.2%).",
+      "context_window": "frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (78.0%) compared to non-responders (59.2%). No significant differe",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3175",
+      "claim_type": "percentage",
+      "raw_text": "59.2%",
+      "numeric_values": [
+        59.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3175,
+      "sentence": "Although the AMPD1 c.34C>T polymorphism did not reach statistical significance, it demonstrated a trend ( p = 0.082) with a greater frequency of the \u2018optimal\u2019 genotype (CC) in BMI responders (78.0%) compared to non-responders (59.2%).",
+      "context_window": "(CC) in BMI responders (78.0%) compared to non-responders (59.2%). No significant differences were found for other muscle pe",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3578",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3578,
+      "sentence": "Thirty-six football players (11.2%) were responders with a decrease in fat mass after the creatine supplementation protocol according to the SWC value (0.218%), whereas 125 players were non-responders, with an increase in fat mass.",
+      "context_window": "statistical lower frequency. Thirty-six football players (11.2%) were responders with a decrease in fat mass after the crea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3701",
+      "claim_type": "percentage",
+      "raw_text": "0.218%",
+      "numeric_values": [
+        0.218
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3701,
+      "sentence": "Thirty-six football players (11.2%) were responders with a decrease in fat mass after the creatine supplementation protocol according to the SWC value (0.218%), whereas 125 players were non-responders, with an increase in fat mass.",
+      "context_window": "eatine supplementation protocol according to the SWC value (0.218%), whereas 125 players were non-responders, with an increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-4260",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.100",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4260,
+      "sentence": "The difference in TGS values between responders and non-responders in fat mass decrease was not statistically significant ( p = 0.100).",
+      "context_window": "rs in fat mass decrease was not statistically significant ( p = 0.100). ROC analysis revealed that the TGS did not significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-4424",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.484-0.699",
+      "numeric_values": [
+        0.484,
+        0.699
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4424,
+      "sentence": "ROC analysis revealed that the TGS did not significantly distinguish between different injury locations in professional football players (AUC = 0.591; 95% CI: 0.484-0.699; p = 0.096), with sensitivity at 0.611 and specificity at 0.440 ( Figure 3 ).",
+      "context_window": "ry locations in professional football players (AUC = 0.591; 95% CI: 0.484-0.699; p = 0.096), with sensitivity at 0.611 and specificity at 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-4445",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.096",
+      "numeric_values": [
+        0.096
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4445,
+      "sentence": "ROC analysis revealed that the TGS did not significantly distinguish between different injury locations in professional football players (AUC = 0.591; 95% CI: 0.484-0.699; p = 0.096), with sensitivity at 0.611 and specificity at 0.440 ( Figure 3 ).",
+      "context_window": "ssional football players (AUC = 0.591; 95% CI: 0.484-0.699; p = 0.096), with sensitivity at 0.611 and specificity at 0.440 ( Figu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-4684",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.938-4.266",
+      "numeric_values": [
+        0.938,
+        4.266
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4684,
+      "sentence": "Binary logistic regression indicated that players with a TGS above 54.16 a.u. had an odds ratio (OR) of 2.012 (95% CI: 0.938-4.266; p = 0.073) for a decrease in fat mass following creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "ith a TGS above 54.16 a.u. had an odds ratio (OR) of 2.012 (95% CI: 0.938-4.266; p = 0.073) for a decrease in fat mass following creatine s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-4705",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.073",
+      "numeric_values": [
+        0.073
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4705,
+      "sentence": "Binary logistic regression indicated that players with a TGS above 54.16 a.u. had an odds ratio (OR) of 2.012 (95% CI: 0.938-4.266; p = 0.073) for a decrease in fat mass following creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "a.u. had an odds ratio (OR) of 2.012 (95% CI: 0.938-4.266; p = 0.073) for a decrease in fat mass following creatine supplementat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-5518",
+      "claim_type": "percentage",
+      "raw_text": "42.2%",
+      "numeric_values": [
+        42.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5518,
+      "sentence": "Sixty-eight professional football players (42.2%) were responders in muscle mass increase after the creatine supplementation protocol according to the SWC value (0.521%), whereas 93 players (57.8%) were non-responders.",
+      "context_window": "non-responders. Sixty-eight professional football players (42.2%) were responders in muscle mass increase after the creatine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-5637",
+      "claim_type": "percentage",
+      "raw_text": "0.521%",
+      "numeric_values": [
+        0.521
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5637,
+      "sentence": "Sixty-eight professional football players (42.2%) were responders in muscle mass increase after the creatine supplementation protocol according to the SWC value (0.521%), whereas 93 players (57.8%) were non-responders.",
+      "context_window": "eatine supplementation protocol according to the SWC value (0.521%), whereas 93 players (57.8%) were non-responders. For the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-5666",
+      "claim_type": "percentage",
+      "raw_text": "57.8%",
+      "numeric_values": [
+        57.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5666,
+      "sentence": "Sixty-eight professional football players (42.2%) were responders in muscle mass increase after the creatine supplementation protocol according to the SWC value (0.521%), whereas 93 players (57.8%) were non-responders.",
+      "context_window": "ol according to the SWC value (0.521%), whereas 93 players (57.8%) were non-responders. For the genotype scores of all polym",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-6154",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6154,
+      "sentence": "The difference in TGS values between responders and non-responders in muscle mass increase among professional football players was statistically significant ( p < 0.001) ( Figure 4 ).",
+      "context_window": "ofessional football players was statistically significant ( p < 0.001) ( Figure 4 ). TGS value in muscle mass responders and non",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-6468",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.584-0.751",
+      "numeric_values": [
+        0.584,
+        0.751
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6468,
+      "sentence": "ROC analysis demonstrated that the TGS effectively distinguished between professional football players who experienced an increase in muscle mass following creatine supplementation (AUC = 0.668; 95% CI: 0.584-0.751; p < 0.001), with a sensitivity of 0.632 and specificity of 0.366 ( Figure 5 ), and other players.",
+      "context_window": "uscle mass following creatine supplementation (AUC = 0.668; 95% CI: 0.584-0.751; p < 0.001), with a sensitivity of 0.632 and specificity of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-6489",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6489,
+      "sentence": "ROC analysis demonstrated that the TGS effectively distinguished between professional football players who experienced an increase in muscle mass following creatine supplementation (AUC = 0.668; 95% CI: 0.584-0.751; p < 0.001), with a sensitivity of 0.632 and specificity of 0.366 ( Figure 5 ), and other players.",
+      "context_window": "creatine supplementation (AUC = 0.668; 95% CI: 0.584-0.751; p < 0.001), with a sensitivity of 0.632 and specificity of 0.366 ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-6770",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.560-5.711",
+      "numeric_values": [
+        1.56,
+        5.711
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6770,
+      "sentence": "Binary logistic regression further indicated that players with a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95% CI: 1.560-5.711; p = 0.001) for showing a response in muscle mass increase after creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95% CI: 1.560-5.711; p = 0.001) for showing a response in muscle mass increase",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-6791",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6791,
+      "sentence": "Binary logistic regression further indicated that players with a TGS exceeding 54.16 a.u. had an odds ratio (OR) of 2.985 (95% CI: 1.560-5.711; p = 0.001) for showing a response in muscle mass increase after creatine supplementation, compared to those with a TGS below this threshold.",
+      "context_window": "a.u. had an odds ratio (OR) of 2.985 (95% CI: 1.560-5.711; p = 0.001) for showing a response in muscle mass increase after creat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7468",
+      "claim_type": "percentage",
+      "raw_text": "77.9%",
+      "numeric_values": [
+        77.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7468,
+      "sentence": "For the AMPD1 c.34C>T polymorphism, responders showed a higher frequency of the \u2018optimal\u2019 genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005).",
+      "context_window": "ers showed a higher frequency of the \u2018optimal\u2019 genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005). Additi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7506",
+      "claim_type": "percentage",
+      "raw_text": "52.7%",
+      "numeric_values": [
+        52.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7506,
+      "sentence": "For the AMPD1 c.34C>T polymorphism, responders showed a higher frequency of the \u2018optimal\u2019 genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005).",
+      "context_window": "optimal\u2019 genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005). Additionally, the heterozygous genotype (CT)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-7515",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7515,
+      "sentence": "For the AMPD1 c.34C>T polymorphism, responders showed a higher frequency of the \u2018optimal\u2019 genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005).",
+      "context_window": "genotype (CC 77.9%) compared to non-responders (CC 52.7%) ( p = 0.005). Additionally, the heterozygous genotype (CT) was more com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7618",
+      "claim_type": "percentage",
+      "raw_text": "45.2%",
+      "numeric_values": [
+        45.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7618,
+      "sentence": "Additionally, the heterozygous genotype (CT) was more common among muscle mass responders (45.2%) than non-responders (20.6%).",
+      "context_window": "genotype (CT) was more common among muscle mass responders (45.2%) than non-responders (20.6%). The ACE I/D polymorphism disp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7646",
+      "claim_type": "percentage",
+      "raw_text": "20.6%",
+      "numeric_values": [
+        20.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7646,
+      "sentence": "Additionally, the heterozygous genotype (CT) was more common among muscle mass responders (45.2%) than non-responders (20.6%).",
+      "context_window": "n among muscle mass responders (45.2%) than non-responders (20.6%). The ACE I/D polymorphism displayed a statistical trend (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-7711",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.065",
+      "numeric_values": [
+        0.065
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7711,
+      "sentence": "The ACE I/D polymorphism displayed a statistical trend ( p = 0.065), with a higher frequency of the \u2018optimal\u2019 genotype (DD 42.6%) in players who experienced muscle mass increase compared to those who did not (DD 25.8%).",
+      "context_window": "). The ACE I/D polymorphism displayed a statistical trend ( p = 0.065), with a higher frequency of the \u2018optimal\u2019 genotype (DD 42.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7777",
+      "claim_type": "percentage",
+      "raw_text": "42.6%",
+      "numeric_values": [
+        42.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7777,
+      "sentence": "The ACE I/D polymorphism displayed a statistical trend ( p = 0.065), with a higher frequency of the \u2018optimal\u2019 genotype (DD 42.6%) in players who experienced muscle mass increase compared to those who did not (DD 25.8%).",
+      "context_window": "065), with a higher frequency of the \u2018optimal\u2019 genotype (DD 42.6%) in players who experienced muscle mass increase compared t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-7866",
+      "claim_type": "percentage",
+      "raw_text": "25.8%",
+      "numeric_values": [
+        25.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7866,
+      "sentence": "The ACE I/D polymorphism displayed a statistical trend ( p = 0.065), with a higher frequency of the \u2018optimal\u2019 genotype (DD 42.6%) in players who experienced muscle mass increase compared to those who did not (DD 25.8%).",
+      "context_window": "nced muscle mass increase compared to those who did not (DD 25.8%). No significant differences were observed for other muscle",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-8281",
+      "claim_type": "percentage",
+      "raw_text": "57.4%",
+      "numeric_values": [
+        57.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8281,
+      "sentence": "Out of the total football players, 92 (57.4%) experienced non-contact muscle injuries following the creatine supplementation protocol during the season.",
+      "context_window": "al lower frequency. Out of the total football players, 92 (57.4%) experienced non-contact muscle injuries following the crea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-8626",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 3.838-24.067",
+      "numeric_values": [
+        3.838,
+        24.067
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 8626,
+      "sentence": "Binary logistic regression analysis indicated that players with a TGS below 41.66 a.u. had an odds ratio (OR) of 11.435 (95% CI: 3.838-24.067; p < 0.001) for sustaining muscle injuries during the season compared to those with a TGS above this threshold.",
+      "context_window": "th a TGS below 41.66 a.u. had an odds ratio (OR) of 11.435 (95% CI: 3.838-24.067; p < 0.001) for sustaining muscle injuries during the seaso",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-8648",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8648,
+      "sentence": "Binary logistic regression analysis indicated that players with a TGS below 41.66 a.u. had an odds ratio (OR) of 11.435 (95% CI: 3.838-24.067; p < 0.001) for sustaining muscle injuries during the season compared to those with a TGS above this threshold.",
+      "context_window": ".u. had an odds ratio (OR) of 11.435 (95% CI: 3.838-24.067; p < 0.001) for sustaining muscle injuries during the season compared",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-ci-9023",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 4.535-19.425",
+      "numeric_values": [
+        4.535,
+        19.425
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 9023,
+      "sentence": "Binary logistic regression analysis revealed that players with a TGS below 54.16 a.u. had an OR of 9.385 (95% CI: 4.535-19.425; p < 0.001) for experiencing muscle injuries during the season, relative to those with a TGS above this value.",
+      "context_window": "hat players with a TGS below 54.16 a.u. had an OR of 9.385 (95% CI: 4.535-19.425; p < 0.001) for experiencing muscle injuries during the sea",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-p-9045",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9045,
+      "sentence": "Binary logistic regression analysis revealed that players with a TGS below 54.16 a.u. had an OR of 9.385 (95% CI: 4.535-19.425; p < 0.001) for experiencing muscle injuries during the season, relative to those with a TGS above this value.",
+      "context_window": "below 54.16 a.u. had an OR of 9.385 (95% CI: 4.535-19.425; p < 0.001) for experiencing muscle injuries during the season, relati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3922",
+      "claim_type": "percentage",
+      "raw_text": "11.2%",
+      "numeric_values": [
+        11.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3922,
+      "sentence": "Despite the similar characteristics of the professional football players, only 11.2% were responders to a decrease in fat mass, 25.5% were responders to an increase in BMI, and 42.2% were responders to a muscle mass increase.",
+      "context_window": "characteristics of the professional football players, only 11.2% were responders to a decrease in fat mass, 25.5% were respo",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-3971",
+      "claim_type": "percentage",
+      "raw_text": "25.5%",
+      "numeric_values": [
+        25.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3971,
+      "sentence": "Despite the similar characteristics of the professional football players, only 11.2% were responders to a decrease in fat mass, 25.5% were responders to an increase in BMI, and 42.2% were responders to a muscle mass increase.",
+      "context_window": "yers, only 11.2% were responders to a decrease in fat mass, 25.5% were responders to an increase in BMI, and 42.2% were respo",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11313812_association_of_genetic_profile_with_muscle_mass_gain_and_mus-pct-4020",
+      "claim_type": "percentage",
+      "raw_text": "42.2%",
+      "numeric_values": [
+        42.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4020,
+      "sentence": "Despite the similar characteristics of the professional football players, only 11.2% were responders to a decrease in fat mass, 25.5% were responders to an increase in BMI, and 42.2% were responders to a muscle mass increase.",
+      "context_window": "fat mass, 25.5% were responders to an increase in BMI, and 42.2% were responders to a muscle mass increase. This current inv",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

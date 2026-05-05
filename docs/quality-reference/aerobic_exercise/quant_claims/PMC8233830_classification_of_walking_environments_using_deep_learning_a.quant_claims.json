@@ -1,0 +1,629 @@
+{
+  "paper_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a",
+  "doi": "10.3390/s21124204",
+  "extracted_at": "2026-05-05T22:04:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 26,
+    "mean_sd": 4,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-961",
+      "claim_type": "percentage",
+      "raw_text": "96.3%",
+      "numeric_values": [
+        96.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 961,
+      "sentence": "The result shows that the ANN was able to classify the current walking environment with high accuracy of 96.3% when using activation from all muscles.",
+      "context_window": "ssify the current walking environment with high accuracy of 96.3% when using activation from all muscles. When muscle activat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1243",
+      "claim_type": "percentage",
+      "raw_text": "88.9%",
+      "numeric_values": [
+        88.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1243,
+      "sentence": "When muscle activation from flexor/extensor groups in the knee, ankle, and metatarsophalangeal joints were used individually to classify the environment, the triceps surae muscle activation showed the highest classification accuracy of 88.9%.",
+      "context_window": "le activation showed the highest classification accuracy of 88.9%. In conclusion, a current walking environment was classifie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-msd-33",
+      "claim_type": "mean_sd",
+      "raw_text": "24.5 \u00b1 2.7",
+      "numeric_values": [
+        24.5,
+        2.7
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 33,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-u-40",
+      "claim_type": "unit_value",
+      "raw_text": "2.7 years",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 40,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-msd-59",
+      "claim_type": "mean_sd",
+      "raw_text": "1.73 \u00b1 0.04",
+      "numeric_values": [
+        1.73,
+        0.04
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 59,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participa",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-msd-80",
+      "claim_type": "mean_sd",
+      "raw_text": "69.0 \u00b1 7.99",
+      "numeric_values": [
+        69.0,
+        7.99
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 80,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "udents (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study. Pr",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-u-87",
+      "claim_type": "unit_value",
+      "raw_text": "7.99 kg",
+      "numeric_values": [
+        7.99
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 87,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "(age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study. Prior",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-msd-101",
+      "claim_type": "mean_sd",
+      "raw_text": "22.9 \u00b1 2.2",
+      "numeric_values": [
+        22.9,
+        2.2
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 101,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": ".7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study. Prior to participation",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-u-108",
+      "claim_type": "unit_value",
+      "raw_text": "2.2 kg",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 108,
+      "sentence": "Twenty-seven male students (age: 24.5 \u00b1 2.7 years, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study.",
+      "context_window": "s, height: 1.73 \u00b1 0.04 m, mass: 69.0 \u00b1 7.99 kg, BMI: 22.9 \u00b1 2.2 kg/m 2 ) participated in this study. Prior to participation, a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-u-3232",
+      "claim_type": "unit_value",
+      "raw_text": "20 mm",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3232,
+      "sentence": "The sEMG sensors were attached to the muscle bellies, while an inter-electrode distance of 20 mm at the recommended locations was maintained ( Figure 2 ).",
+      "context_window": "to the muscle bellies, while an inter-electrode distance of 20 mm at the recommended locations was maintained ( Figure 2 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-7023",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7023,
+      "sentence": "The input data was divided into 2 parts: 80% was used for training the classification model and 20% was used for testing it.",
+      "context_window": "ssification model. The input data was divided into 2 parts: 80% was used for training the classification model and 20% was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-7078",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7078,
+      "sentence": "The input data was divided into 2 parts: 80% was used for training the classification model and 20% was used for testing it.",
+      "context_window": "rts: 80% was used for training the classification model and 20% was used for testing it. Labeling table. The walking envir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-114",
+      "claim_type": "percentage",
+      "raw_text": "96.3%",
+      "numeric_values": [
+        96.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 114,
+      "sentence": "The ANN was able to classify each walking environment with a high degree of accuracy, achieving a success rate of 96.3% when using activation data from all the muscles being monitored (RF, VL, VM, ST, BF, MG, LG, Sol, TA, EDL, and FHL) ( Table 3 and Table 4 ).",
+      "context_window": "with a high degree of accuracy, achieving a success rate of 96.3% when using activation data from all the muscles being monit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-902",
+      "claim_type": "percentage",
+      "raw_text": "88.9%",
+      "numeric_values": [
+        88.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 902,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": "ieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-920",
+      "claim_type": "percentage",
+      "raw_text": "75.6%",
+      "numeric_values": [
+        75.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 920,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": "classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-943",
+      "claim_type": "percentage",
+      "raw_text": "68.1%",
+      "numeric_values": [
+        68.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 943,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": "(MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ). The confusi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-955",
+      "claim_type": "percentage",
+      "raw_text": "67.4%",
+      "numeric_values": [
+        67.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 955,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": "d Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ). The confusion matrix fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-966",
+      "claim_type": "percentage",
+      "raw_text": "63.0%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 966,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": "%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ). The confusion matrix for classifyi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-978",
+      "claim_type": "percentage",
+      "raw_text": "45.2%",
+      "numeric_values": [
+        45.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 978,
+      "sentence": "When separate flexor and extensor muscle group activations for each joint were used as the classifying parameters, data from MG, LG, and Sol, which are the ankle extensor muscles, achieved the highest classification accuracy (MG, LG, and Sol: 88.9%; ST and BF: 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ).",
+      "context_window": ": 75.6%; VL, VM, and RF: 68.1%; FHL: 67.4%, TA: 63.0%; EDL: 45.2%; Table 5 ). The confusion matrix for classifying the walki",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1856",
+      "claim_type": "percentage",
+      "raw_text": "81.5%",
+      "numeric_values": [
+        81.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1856,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "racy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1867",
+      "claim_type": "percentage",
+      "raw_text": "77.0%",
+      "numeric_values": [
+        77.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1867,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "tained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1878",
+      "claim_type": "percentage",
+      "raw_text": "72.6%",
+      "numeric_values": [
+        72.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1878,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1889",
+      "claim_type": "percentage",
+      "raw_text": "68.9%",
+      "numeric_values": [
+        68.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1889,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "uscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, V",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1901",
+      "claim_type": "percentage",
+      "raw_text": "68.1%",
+      "numeric_values": [
+        68.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1901,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "tion data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1912",
+      "claim_type": "percentage",
+      "raw_text": "67.4%",
+      "numeric_values": [
+        67.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1912,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1924",
+      "claim_type": "percentage",
+      "raw_text": "67.4%",
+      "numeric_values": [
+        67.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1924,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "G: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1935",
+      "claim_type": "percentage",
+      "raw_text": "66.7%",
+      "numeric_values": [
+        66.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1935,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "T: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ). The conf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1946",
+      "claim_type": "percentage",
+      "raw_text": "63.0%",
+      "numeric_values": [
+        63.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1946,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "M: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ). The confusion matri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1957",
+      "claim_type": "percentage",
+      "raw_text": "57.0%",
+      "numeric_values": [
+        57.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1957,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "ol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ). The confusion matrix for class",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1973",
+      "claim_type": "percentage",
+      "raw_text": "45.2%",
+      "numeric_values": [
+        45.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1973,
+      "sentence": "When individual muscle activation was used as the classifying parameter, the highest classification accuracy was obtained when using MG muscle activation data (MG: 81.5%, LG: 77.0%, ST: 72.6%, VM: 68.9%, Sol: 68.1%, RF: 67.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ).",
+      "context_window": "7.4%, FHL: 67.4%, BF: 66.7%, TA: 63.0%, VL: 57.0%, and EDL: 45.2%; Table 6 ). The confusion matrix for classifying the walki",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-660",
+      "claim_type": "percentage",
+      "raw_text": "96.3%",
+      "numeric_values": [
+        96.3
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 660,
+      "sentence": "The results of this study show that classification accuracy was highest (96.3%) when using muscle activation data from all monitored muscles: the VM, VL, RF, ST, BF, TA, MG, LG, Sol, FHL, and EDL.",
+      "context_window": "f this study show that classification accuracy was highest (96.3%) when using muscle activation data from all monitored muscl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1001",
+      "claim_type": "percentage",
+      "raw_text": "96.1%",
+      "numeric_values": [
+        96.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1001,
+      "sentence": "Kyeong et al. reported a classification accuracy of 96.1% when training and testing the model using the data obtained from multiple sensors (including sEMG, position sensors, GRF sensors, and interaction force sensors).",
+      "context_window": "sensor. Kyeong et al. reported a classification accuracy of 96.1% when training and testing the model using the data obtained",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1210",
+      "claim_type": "percentage",
+      "raw_text": "76.7%",
+      "numeric_values": [
+        76.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1210,
+      "sentence": "However, the classification accuracy was 76.7% when training and testing the model using only the data obtained from the sEMG sensors [ 19 ].",
+      "context_window": "on force sensors). However, the classification accuracy was 76.7% when training and testing the model using only the data obt",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8233830_classification_of_walking_environments_using_deep_learning_a-pct-1400",
+      "claim_type": "percentage",
+      "raw_text": "67.1%",
+      "numeric_values": [
+        67.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1400,
+      "sentence": "Joshi et al. reported on their model, which classified the walking environment correctly 67.1% of the time when only relying on data from sEMG sensors [ 44 ].",
+      "context_window": "r model, which classified the walking environment correctly 67.1% of the time when only relying on data from sEMG sensors [ 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,2247 @@
+{
+  "topic": "acarbose",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 312,
+  "n_selected_for_fetch": 312,
+  "n_pmcid_resolved": 59,
+  "n_extracted": 51,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10433190",
+    "PMC10664642",
+    "PMC10859317",
+    "PMC10978946",
+    "PMC1144989",
+    "PMC12068756",
+    "PMC12088947",
+    "PMC12430303",
+    "PMC2040135",
+    "PMC2663450",
+    "PMC2861640",
+    "PMC3210010",
+    "PMC3476372",
+    "PMC3506243",
+    "PMC3671627",
+    "PMC3827349",
+    "PMC3830342",
+    "PMC3890482",
+    "PMC3919386",
+    "PMC3956023",
+    "PMC3996310",
+    "PMC4020235",
+    "PMC4023585",
+    "PMC4062388",
+    "PMC4085335",
+    "PMC4141807",
+    "PMC4149239",
+    "PMC4153962",
+    "PMC4316590",
+    "PMC4427275",
+    "PMC4620230",
+    "PMC4684859",
+    "PMC4998782",
+    "PMC5011653",
+    "PMC5380489",
+    "PMC5501494",
+    "PMC5585474",
+    "PMC5655259",
+    "PMC5781294",
+    "PMC6031526",
+    "PMC6517235",
+    "PMC6581543",
+    "PMC6691948",
+    "PMC6717369",
+    "PMC6798440",
+    "PMC7081202",
+    "PMC7291873",
+    "PMC7378448",
+    "PMC7537614",
+    "PMC7672964",
+    "PMC7921127",
+    "PMC8217281",
+    "PMC8235473",
+    "PMC8406605",
+    "PMC9314577",
+    "PMC9501035",
+    "PMC9571713",
+    "PMC9612090",
+    "PMC9812564"
+  ],
+  "active_paper_ids": [
+    "PMC10433190_the_effects_of_acarbose_treatment_on_cardiovascular_risk_fac",
+    "PMC10664642_the_effect_of_acarbose_on_lipid_profiles_in_adults_a_systema",
+    "PMC10859317_comparison_of_medical_resources_and_costs_among_patients_wit",
+    "PMC10978946_coumarin_linked_to_2_phenylbenzimidazole_derivatives_as_pote",
+    "PMC12068756_comparison_of_glucose_fluctuation_between_metformin_combined",
+    "PMC12088947_effect_of_acarbose_and_vildagliptin_on_plasma_trimethylamine",
+    "PMC12430303_design_and_evaluation_of_indole_based_schiff_bases_as_glucos",
+    "PMC2040135_cardiovascular_benefits_and_safety_profile_of_acarbose_thera",
+    "PMC2663450_alpha_glucosidase_inhibitors_in_the_early_treatment_of_type_",
+    "PMC2861640_postprandial_endothelial_dysfunction_in_subjects_with_new_on",
+    "PMC3210010_glucosidase_inhibitors_from_plants_a_natural_approach_to_tre",
+    "PMC3476372_critical_evaluation_of_the_role_of_acarbose_in_the_treatment",
+    "PMC3506243_glucosidase_inhibitors_and_their_use_in_clinical_practice",
+    "PMC3827349_comparisons_of_the_efficacy_of_alpha_glucosidase_inhibitors_",
+    "PMC3830342_alpha_glucosidase_inhibitor_acarbose_improves_glycamic_contr",
+    "PMC3890482_comparison_of_acarbose_and_voglibose_in_diabetes_patients_wh",
+    "PMC3996310_on_the_potential_of_acarbose_to_reduce_cardiovascular_diseas",
+    "PMC4020235_efficacy_of_glucosidase_inhibitors_combined_with_dipeptidyl_",
+    "PMC4023585_comparison_of_three_glucosidase_inhibitors_for_glycemic_cont",
+    "PMC4085335_safety_and_efficacy_of_acarbose_in_the_treatment_of_diabetes",
+    "PMC4141807_march2_comparative_assessment_of_therapeutic_effects_of_acar",
+    "PMC4149239_dpp_4_inhibitor_and_alpha_glucosidase_inhibitor_equally_impr",
+    "PMC4153962_switching_glucosidase_inhibitors_to_miglitol_reduced_glucose",
+    "PMC4316590_acarbose_lente_carbohydrate_and_prebiotics_promote_metabolic",
+    "PMC4427275_comparison_of_glucose_lowering_effect_of_metformin_and_acarb",
+    "PMC4620230_acarbose_safe_and_effective_for_lowering_postprandial_hyperg",
+    "PMC4684859_effect_of_acarbose_on_long_term_prognosis_in_acute_coronary_",
+    "PMC4998782_comparison_of_acarbose_and_metformin_on_albumin_excretion_in",
+    "PMC5011653_alpha_glucosidase_inhibitors_and_hepatotoxicity_in_type_2_di",
+    "PMC5380489_effects_of_acarbose_on_the_gut_microbiota_of_prediabetic_pat",
+    "PMC5501494_glucosidase_inhibitor_miglitol_attenuates_glucose_fluctuatio",
+    "PMC5585474_comparative_assessment_of_the_efficacy_and_safety_of_acarbos",
+    "PMC5655259_alpha_glucosidase_inhibitors_and_risk_of_cancer_in_patients_",
+    "PMC5781294_glitazones_and_alpha_glucosidase_inhibitors_as_the_second_li",
+    "PMC6031526_efficacy_and_safety_of_combination_therapy_with_an_glucosida",
+    "PMC6581543_acarbose_add_on_therapy_in_patients_with_type_2_diabetes_mel",
+    "PMC6691948_effects_of_acarbose_and_metformin_on_the_inflammatory_state_",
+    "PMC6717369_a_randomized_crossover_study_of_the_acute_effects_of_acarbos",
+    "PMC6798440_meta_analysis_of_the_impact_of_alpha_glucosidase_inhibitors_",
+    "PMC7081202_a_severe_leakage_of_intermediates_to_shunt_products_in_acarb",
+    "PMC7291873_acarbose_with_comparable_glucose_lowering_but_superior_weigh",
+    "PMC7378448_impact_of_baseline_characteristics_on_glycemic_effects_of_ad",
+    "PMC7537614_acarbose_metformin_is_more_effective_in_glycemic_variability",
+    "PMC7672964_altering_the_inhibitory_kinetics_and_molecular_conformation_",
+    "PMC7921127_the_effects_of_acarbose_therapy_on_reductions_of_myocardial_",
+    "PMC8235473_habitual_dietary_intake_affects_the_altered_pattern_of_gut_m",
+    "PMC9314577_efficacy_and_safety_of_alogliptin_versus_acarbose_in_chinese",
+    "PMC9501035_synthesis_of_novel_n_methylmorpholine_substituted_benzimidaz",
+    "PMC9571713_pneumatosis_intestinalis_induced_by_alpha_glucosidase_inhibi",
+    "PMC9612090_recent_updates_on_phytoconstituent_alpha_glucosidase_inhibit",
+    "PMC9812564_liver_related_long_term_outcomes_of_alpha_glucosidase_inhibi"
+  ],
+  "failures": [
+    {
+      "title": "Exploring plant-based alpha-glucosidase inhibitors: promising contenders for com",
+      "doi": "10.1080/13813455.2023.2262167",
+      "pmid": "37767958",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The role of GLP-1 in the postprandial effects of acarbose in type 2 diabetes.",
+      "doi": "10.1530/eje-20-1121",
+      "pmid": "33449919",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose treatment affects the serum levels of inflammatory cytokines and the gu",
+      "doi": "10.1111/1753-0407.12232",
+      "pmid": "25327485",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of the alpha glucosidase inhibitor acarbose on endothelial function afte",
+      "doi": "10.1055/s-0028-1103276",
+      "pmid": "19061152",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose treatment increases serum total adiponectin levels in patients with typ",
+      "doi": "10.1507/endocrj.k07e-107",
+      "pmid": "18480556",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of vildagliptin and acarbose monotherapy in patients with Type 2 diab",
+      "doi": "10.1111/j.1464-5491.2008.02391.x",
+      "pmid": "18341596",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose, an alpha-glucosidase inhibitor, on serum lipoprotein lipase ",
+      "doi": "10.5551/jat.e549",
+      "pmid": "18603822",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alpha-glucosidase inhibitors for people with impaired glucose tolerance or impai",
+      "doi": "10.1002/14651858.cd005061.pub2",
+      "pmid": "17054235",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combined treatment with exercise training and acarbose improves metabolic contro",
+      "doi": "10.2337/dc05-2513",
+      "pmid": "16801564",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a single administration of acarbose on postprandial glucose excursion",
+      "doi": "10.1210/jc.2005-1566",
+      "pmid": "16368744",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alpha-glucosidase inhibitors for patients with type 2 diabetes: results from a C",
+      "doi": "10.2337/diacare.28.1.154",
+      "pmid": "15616251",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose slows progression of intima-media thickness of the carotid arteries in ",
+      "doi": "10.1161/01.str.0000125864.01546.f2",
+      "pmid": "15073402",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose reduces the risk for myocardial infarction in type 2 diabetic patients:",
+      "doi": "10.1016/s0195-668x(03)00468-8",
+      "pmid": "14683737",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose lowers serum triglyceride and postprandial chylomicron levels in type 2",
+      "doi": "10.1111/j.1462-8902.2004.00362.x",
+      "pmid": "15287932",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of acarbose on insulin resistance in obese hypertensive subjects with",
+      "doi": "10.1111/j.1463-1326.2004.00317.x",
+      "pmid": "14686965",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose treatment and the risk of cardiovascular disease and hypertension in pa",
+      "doi": "10.1001/jama.290.4.486",
+      "pmid": "12876091",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of acarbose on the colonic transit time of elderly long-term care pat",
+      "doi": "10.1093/gerona/57.2.m111",
+      "pmid": "11818430",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose on insulin sensitivity in elderly patients with diabetes.",
+      "doi": "10.2337/diacare.23.8.1162",
+      "pmid": "10937515",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Multicenter, Randomized, Open-Label, Parallel-Controlled Clinical Study Compar",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hepatic portal venous gas in a patient with diabetes on GLP-1 receptor agonist a",
+      "doi": "10.1210/jcemcr/luag070",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Baseline glucagon impacts glucose-lowering effects of acarbose but not metformin",
+      "doi": "10.1016/j.diabres.2025.112207",
+      "pmid": "40319921",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose and metformin on thyroid function and thyroid hormone sensit",
+      "doi": "10.1007/s40618-024-02463-7",
+      "pmid": "39400888",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Acarbose on the Postprandial Hypotensive Response in Older Adults",
+      "doi": "10.1017/s0714980825100056",
+      "pmid": "40719030",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CGM-Guided Acarbose for Painful Diabetic Neuropathy",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical features of pneumatosis intestinalis induced by alpha- glucosidase inhi",
+      "doi": "10.3389/fendo.2025.1470523",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of Acarbose Bioequivalence in Healthy Chinese Populations Using Novel",
+      "doi": "10.1002/cpdd.1362",
+      "pmid": "38197734",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of dual combination therapy of acarbose plus metformin and acarbos",
+      "doi": "10.1016/j.ejogrb.2024.07.001",
+      "pmid": "38972164",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose diminishes postprandial suppression of bone resorption in patients with",
+      "doi": "10.1016/j.bone.2023.116687",
+      "pmid": "36754130",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Acarbose and Mixture of Pioglitazone and Metformin in Patients With Ty",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Learn More About How Acarbose and Metformin Work When Taken Together ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Effects of Insulin Glargine and Acarbose Tablets in the Treatment of Di",
+      "doi": "10.26689/cr.v1i1.5028",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Enhancement of Impaired Olfactory Neural Activation and Cognitive Capacity by Li",
+      "doi": "10.2337/dc21-2064",
+      "pmid": "35263425",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "All-cause mortality and cardiovascular events in patients with type 2 diabetes t",
+      "doi": "10.1016/j.numecd.2021.10.010",
+      "pmid": "34893404",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioequivalence Evaluation Between Acarbose and Metformin Fixed-Dose Combination ",
+      "doi": "10.1002/cpdd.994",
+      "pmid": "34255938",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Efficacy and Tolerability of Acarbose in Healthy Individuals",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u03b1-Glucosidase-Mediated Glucometer Readout for Portable Monitoring of Acarbose an",
+      "doi": "10.3390/chemosensors10060198",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Acarbose on Non-Diabetic Overweight and Obese Patients: A Meta-An",
+      "doi": "10.1007/s12325-020-01602-9",
+      "pmid": "33421022",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Gender-differential effects on blood glucose levels between acarbose and metform",
+      "doi": "10.1507/endocrj.ej20-0006",
+      "pmid": "32908086",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Design, Synthesis, and Molecular Docking of Novel Hybrids of Coumarin-Dithiocarb",
+      "doi": "10.1080/10406638.2021.1887295",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the FGM Profiles in Patients of Type 2 Diabetes Treated With Sitag",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Real-world Study Comparing the Adherence and Effectiveness of Linagliptin vs. Ac",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose and Older Adults With Postprandial Hypotension",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A time to revisit the two oldest prandial anti-diabetes agents: acarbose and rep",
+      "doi": "10.1007/s12020-020-02396-0",
+      "pmid": "32621047",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Acarbose on Glycemic Variability in Patients with Type 2 Diabetes ",
+      "doi": "10.1089/dia.2019.0290",
+      "pmid": "31638433",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Acarbose on Incident Diabetes and Regression to Normoglycemia in Peopl",
+      "doi": "10.2337/dc19-2046",
+      "pmid": "32641379",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Predicting heart failure events in patients with coronary heart disease and impa",
+      "doi": "10.1016/j.diabres.2020.108488",
+      "pmid": "33035598",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Cardiovascular Safety of Alpha Glucosidase Inhibitors",
+      "doi": "10.2174/1574886315666201217100445",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study for Sufficient Acarbose Decreased Glucose Excursion in Type 2 Diabetic P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Alogliptin vs. Acarbose in Chinese Type 2 Diabetes Mellit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Liraglutid, Dapagliflozin and Acarbose on the Cognitive Function, Olf",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of therapeutic effects of acarbose and metformin under different \u03b2-ce",
+      "doi": "10.1507/endocrj.ej18-0466",
+      "pmid": "30944269",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose and siglitine on blood glucose fluctuation and islet \u03b2-cell ",
+      "doi": null,
+      "pmid": "30972995",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Considerations when using alpha-glucosidase inhibitors in the treatment of type ",
+      "doi": "10.1080/14656566.2019.1672660",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Recent Developments in Alpha-Glucosidase Inhibitors for Management of Type-2 Dia",
+      "doi": "10.2174/1381612825666190717104547",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study of Acarbose in Longevity",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Loose-dose Combination of Acarbose and Metformin for T2DM in Metformin-failure P",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An \u03b1-glucosidase inhibitor could reduce T-wave alternans in type 2 diabetes pati",
+      "doi": "10.1016/j.jelectrocard.2017.08.016",
+      "pmid": "28918212",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular Benefits of Acarbose vs Sulfonylureas in Patients With Type 2 Dia",
+      "doi": "10.1210/jc.2018-00040",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glycemic excursions are positively associated with HbA1c reduction from baseline",
+      "doi": "10.1111/1753-0407.12406",
+      "pmid": "27043224",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effectiveness of acarbose in treating elderly patients with diabetes with postpr",
+      "doi": "10.1136/jim-2016-000295",
+      "pmid": "28213385",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sitagliptin but not alpha glucosidase inhibitor reduced the serum soluble CD163,",
+      "doi": "10.1016/j.diabres.2017.02.010",
+      "pmid": "28237860",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose on cardiovascular and diabetes outcomes in patients with cor",
+      "doi": "10.1016/s2213-8587(17)30309-1",
+      "pmid": "28917545",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of saxagliptin compared with acarbose in Chinese patients wi",
+      "doi": "10.1111/dom.12942",
+      "pmid": "28296055",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of exenatide and acarbose on intra-abdominal fat content in patients ",
+      "doi": "10.1016/j.orcp.2017.01.003",
+      "pmid": "28161303",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A randomized clinical trial of the safety and efficacy of sitagliptin in patient",
+      "doi": "10.1080/03007995.2016.1277200",
+      "pmid": "28035868",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose Treatment and the Risk of Cardiovascular Disease and Hypertension in Pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects (Substudy B & C)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Acarbose and Vildagliptin on Visceral Fat Distribution in Newly Diagno",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose Cardiovascular Evaluation Trial",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose reduces body weight irrespective of glycemic control in patients with d",
+      "doi": "10.1016/j.jdiacomp.2016.01.023",
+      "pmid": "26935335",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Factors that influence the efficacy of acarbose and metformin as initial therapy",
+      "doi": "10.1185/03007995.2015.1136819",
+      "pmid": "26714411",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Reappraisal and perspectives of clinical drug\u2013drug interaction potential of \u03b1-gl",
+      "doi": "10.1080/00498254.2016.1275063",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "the Efficacy of Acarbose and Metformin on Blood Glucose Fluctuation When Combine",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combining Saxagliptin and Acarbose to Improve Postprandial Glycaemia in Type 2 D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Efficacy of Acarbose+Saxagliptin Compared With Metformin+Saxagliptin ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Voglibose Compared With Acarbose in Participants With Typ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Assess the Dietary Carbohydrate Content of Indian Diabetics With Specia",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of acarbose in different geographical regions of the world: analysis of",
+      "doi": "10.1002/dmrr.2576",
+      "pmid": "25044702",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hydrogen gas production is associated with reduced interleukin-1\u03b2 mRNA in periph",
+      "doi": "10.1016/j.ejphar.2015.04.051",
+      "pmid": "25962664",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose Monotherapy and Type 2 Diabetes Prevention in Eastern and Western Predi",
+      "doi": "10.1016/j.clinthera.2015.05.504",
+      "pmid": "26118669",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Saxagliptin is similar in glycaemic variability more effective in metabolic cont",
+      "doi": "10.1016/j.diabres.2015.02.022",
+      "pmid": "25841300",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Differential therapeutic effects of nateglinide and acarbose on fasting and post",
+      "doi": "10.1089/dia.2014.0299",
+      "pmid": "25781235",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Acarbose on Glycemic Variability in Patients with Poorly Controlled Ty",
+      "doi": "10.1002/phar.1648",
+      "pmid": "26598090",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Therapeutic potential of \u03b1-glucosidase inhibitors in type 2 diabetes mellitus: a",
+      "doi": "10.1517/14656566.2015.1070827",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cerebrovascular Complications of Diabetes: Alpha Glucosidase Inhibitor as Potent",
+      "doi": "10.1055/s-0035-1565181",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of an \u03b1-Glucosidase Inhibitor and the Risk of Colorectal Cancer in Patients ",
+      "doi": "10.2337/dc15-0563",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Mitiglinide vs Acarbose in Patients With Type 2 Diabetes ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study of the Safety and Efficacy of Glimepiride, Gliclazide, Repaglinide or Ac",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "24-Week, Multicenter, Randomized, Parallel-group, Open-label, Active Controlled ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Gemigliptin or Acarbose on Endothelial Function in Type 2 DM Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigation of bioequivalence of a new fixed-dose combination of acarbose and ",
+      "doi": "10.1111/jcpt.12166",
+      "pmid": "24806030",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rationale for and design of the Acarbose Cardiovascular Evaluation (ACE) trial.",
+      "doi": "10.1016/j.ahj.2014.03.021",
+      "pmid": "24952856",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of the dipeptidyl peptidase-4 inhibitor sitagliptin compared",
+      "doi": "10.1111/dom.12264",
+      "pmid": "24447683",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose compared with metformin as initial therapy in patients with newly diagn",
+      "doi": "10.1016/s2213-8587(13)70021-4",
+      "pmid": "24622668",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cotreatment with the \u03b1-glucosidase inhibitor miglitol and DPP-4 inhibitor sitagl",
+      "doi": "10.1016/j.metabol.2013.12.014",
+      "pmid": "24559582",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of sitagliptin or mitiglinide as an add-on to acarbose on daily blood gl",
+      "doi": "10.1517/14656566.2014.920323",
+      "pmid": "24866329",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Acarbose on Postprandial Lipoprotein Levels in Glucose Intolerant Pati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Study to Evaluate the Efficacy of Acarbose,Metformin,Sitagliptin Combination Tre",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synthesis of Sulochrin-125I and Its Binding Affinity as \u03b1-Glucosidase Inhibitor ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and efficacy of acarbose in the treatment of diabetes in Chinese patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose plus metformin fixed-dose combination outperforms acarbose monotherapy ",
+      "doi": "10.1016/j.diabres.2013.08.001",
+      "pmid": "23993469",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the hypoglycemic effect of acarbose monotherapy in patients with t",
+      "doi": "10.1016/j.clinthera.2013.03.020",
+      "pmid": "23602502",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glycemic control after addition of the dipeptidyl peptidase-4 inhibitor aloglipt",
+      "doi": "10.1517/14656566.2013.790365",
+      "pmid": "23600363",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A prospective, randomized, open-label study comparing the efficacy and safety of",
+      "doi": "10.1089/dia.2012.0275",
+      "pmid": "23530576",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of additional administration of acarbose on blood glucose fluctuations an",
+      "doi": null,
+      "pmid": "23220949",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Oral Acarbose Treatment in Patients With Type 2 Diabetes ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of Acarbose on Intestinal Microbiome and Incretins of Type 2 Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose, Postprandial Hypotension and Type 2 Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Trial to Evaluate the Safety and Efficacy of the Addition of Sitaglipti",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An observational study of acarbose treatment in patients with type 2 diabetes fr",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Early improvement in carotid plaque echogenicity by acarbose in patients with ac",
+      "doi": "10.1253/circj.cj-11-1524",
+      "pmid": "22453003",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects on lipid profile of dipeptidyl peptidase 4 inhibitors, pioglitazone, aca",
+      "doi": "10.1007/s12325-012-0045-5",
+      "pmid": "22923161",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety profile evaluation of acarbose alone and in association with",
+      "doi": "10.1016/j.clinthera.2012.04.012",
+      "pmid": "22560622",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of acarbose chewable tablet in patients with type 2 diabetes",
+      "doi": "10.1111/j.1756-5391.2012.01188.x",
+      "pmid": "23672220",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of Acarbose on Abnormal Glucose Regulation in Patients With Coronary Arte",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Assessment of an Alpha-glucosidase Inhibitor to Block Cardiac Events in Patients",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glucose Reduction by Early Acarbose Treatment in Basal Insulin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Study to Assess the Safety and Efficacy of ASP1941 in Combination With \u03b1-gluco",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Bioequivalence Study for Acarbose / Metformin FDC",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose treatment on markers of insulin sensitivity and systemic inf",
+      "doi": "10.1089/dia.2010.0235",
+      "pmid": "21488802",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose actions on insulin resistance and inflammatory parameters during an ora",
+      "doi": "10.1016/j.ejphar.2010.11.015",
+      "pmid": "21118681",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "RETRACTED: Acarbose on insulin resistance after an oral fat load: a double-blind",
+      "doi": "10.1016/j.jdiacomp.2011.01.003",
+      "pmid": "21367625",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glycemic variability in insulin treated type 2 diabetes with well-controlled hem",
+      "doi": null,
+      "pmid": "21362322",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose versus glibenclamide on glycemic excursion and oxidative str",
+      "doi": "10.1016/j.clinthera.2011.10.014",
+      "pmid": "22078152",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Nateglinide and acarbose for postprandial glucose control after optimizing fasti",
+      "doi": "10.1016/j.diabres.2011.01.022",
+      "pmid": "21376417",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The beneficial effect of \u03b1-glucosidase inhibitor on glucose variability compared",
+      "doi": "10.1016/j.jdiacomp.2011.06.004",
+      "pmid": "21813293",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparing the efficacy of \u03b1-glucosidase inhibitors in suppressing postprandial h",
+      "doi": "10.1089/dia.2010.0099",
+      "pmid": "21291335",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evaluation of efficacy of acarbose on glucose fluctuation and postprandial gluco",
+      "doi": "10.1089/dia.2010.0153",
+      "pmid": "21355714",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Alpha ( )-Glucosidase Inhibitor, Acarbose, Attenuates the Blood Pressure and",
+      "doi": "10.1093/gerona/glr086",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "REVIEW ON ROLE OF NATURAL \u0391LPHA-GLUCOSIDASE INHIBITORS FOR MANAGEMENT OF DIABETE",
+      "doi": "10.7439/ijbr.v2i6.121",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Phase III Randomized, Double-blind, Parallel-group Study to Evaluate the Effic",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "HYPERURICEMIA CORRECTION IN MEN WITH METABOLIC SYNDROME: ACARBOSE POTENTIAL",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose reduces the risk of pre-lunch hypoglycemia in elderly people with diabe",
+      "doi": "10.1016/j.diabres.2010.05.030",
+      "pmid": "20619914",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glipizide controlled-release tablets, with or without acarbose, improve glycaemi",
+      "doi": "10.1111/j.1440-1681.2010.05361.x",
+      "pmid": "20082624",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Impact of acarbose on carotid intima-media thickness in patients with newly diag",
+      "doi": "10.1016/j.clinthera.2010.07.015",
+      "pmid": "20974318",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of pioglitazone and acarbose on endothelial inflammation biomarkers durin",
+      "doi": "10.1111/j.1365-2710.2009.01132.x",
+      "pmid": "20831680",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A prospective, parallel group, open-labeled, comparative, multi-centric, active ",
+      "doi": null,
+      "pmid": "21510461",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Natural Products as &#945;-Amylase and &#945;-Glucosidase Inhibitors and their H",
+      "doi": "10.2174/138955710791331007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Nateglinide vs Acarbose on Postprandial Glucose Fluctuation, Dyslipid",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose on platelet-derived microparticles, soluble selectins, and ad",
+      "doi": "10.1007/s11239-008-0301-3",
+      "pmid": "19137265",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Modulation of adipokines and vascular remodelling markers during OGTT with acarb",
+      "doi": "10.1016/j.biopha.2009.04.044",
+      "pmid": "19906504",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose on postmeal mononuclear blood cell response in patients with ",
+      "doi": "10.1055/s-0028-1119407",
+      "pmid": "19214923",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "New Glucosidase Inhibitors from an Ayurvedic Herbal Treatment for Type 2 Diabete",
+      "doi": "10.1021/bi9016457",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Are the effects of \u03b1\u2010glucosidase inhibitors on cardiovascular events related to ",
+      "doi": "10.1016/j.febslet.2009.05.052",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Acarbose on Proinsulin and Insulin Secretion and their Potential Sign",
+      "doi": "10.2174/157339909788920910",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical Utility of Acarbose, an &#945;-Glucosidase Inhibitor in Cardiometabolic",
+      "doi": "10.2174/138920009787522133",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of Different Approaches to Dietary Advising on the Effects of Acarbose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Acarbose Versus Glibenclamide on MAGE and Oxidative Stress in Patient",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The alpha-glucosidase inhibitor acarbose reduces the net electronegative charge ",
+      "doi": "10.1016/j.cca.2008.01.005",
+      "pmid": "18230353",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A study of the effects of acarbose on glucose metabolism in patients predisposed",
+      "doi": "10.1002/dmrr.839",
+      "pmid": "18756586",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose: oral antidiabetes drug with additional cardiovascular benefits",
+      "doi": "10.1586/14779072.6.2.153",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u03b1-Glucosidase inhibitory activity of cyanidin-3-galactoside and synergistic effe",
+      "doi": "10.1080/14756360801906947",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of acarbose in the treatment of elderly patients with postpr",
+      "doi": "10.1097/00029330-200810020-00021",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevention of Postprandial Hyperglycemia by Acarbose May be a Promising Therapeu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Nateglinide and Acarbose on the Post-Prandial Glucose Control in ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-term Safety Study of Alogliptin Used in Combination With \u03b1-glucosidase Inhi",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Alogliptin Used in Combination With \u03b1-glucosidase Inhibit",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Postprandial hyperglycemia and cardiovascular events. Acarbose therapy in patien",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cardiovascular risk factors are reduced with a low dose of acarbose in obese pat",
+      "doi": "10.1016/j.fertnstert.2006.11.073",
+      "pmid": "17418836",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Beneficial metabolic effects of nateglinide versus acarbose in patients with new",
+      "doi": "10.1111/j.1745-7254.2007.00534.x",
+      "pmid": "17376293",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose and metabolic control in patients with type 2 diabetes with newly initi",
+      "doi": "10.1111/j.1463-1326.2006.00666.x",
+      "pmid": "17924867",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of insulin monotherapy and combination therapy with insulin and metfo",
+      "doi": "10.1007/s00592-007-0004-9",
+      "pmid": "17726570",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of Acarbose on Endothelial Function After a Mixed Meal in Newly Diagnose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "AI(I)DA Acarbose and the Subclinical Inflammation",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Additional Glucose Lowering and Anti-Inflammatory Effects by Acarbose and Alcoho",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prevent/Delay Development of Type 2 Diabetes in Subjects With Impaired Glucose H",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synergistic effect of doxazosin and acarbose in improving metabolic control in p",
+      "doi": "10.2165/00044011-200626090-00006",
+      "pmid": "17163286",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An alpha-glucosidase inhibitor, voglibose, reduces oxidative stress markers and ",
+      "doi": "10.1016/j.metabol.2006.01.016",
+      "pmid": "16713439",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Blood glucose-lowering activity of colestimide in patients with type 2 diabetes ",
+      "doi": "10.1272/jnms.73.277",
+      "pmid": "17106179",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Voglibose (Basen&#174;, AO-128), One of the Most Important &#945;-Glucosidase In",
+      "doi": "10.2174/092986706789803035",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alpha-glucosidase Inhibitors for Type 2 Diabetes Mellitus: A Systematic Review",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Vildagliptin Compared to Acarbose in Drug Naive Patients ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of the effects of acarbose and metformin use on ovulation rates in cl",
+      "doi": "10.1093/humrep/deh580",
+      "pmid": "15513975",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A randomized controlled trial of acarbose in hepatic encephalopathy.",
+      "doi": "10.1016/s1542-3565(04)00667-6",
+      "pmid": "15704053",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "alpha-Glucosidase inhibitor reduces the progression of carotid intima-media thic",
+      "doi": "10.1016/j.diabres.2004.07.012",
+      "pmid": "15713352",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose in obese patients with polycystic ovarian syndrome: a double-blind, ran",
+      "doi": "10.1093/humrep/dei104",
+      "pmid": "16006454",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of a medical food containing an herbal alpha-glucosidase inhibitor on po",
+      "doi": "10.1016/j.jada.2004.11.001",
+      "pmid": "15635348",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Alpha-glucosidase inhibitors for type 2 diabetes mellitus (Review)",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose, an alpha-glucosidase inhibitor, improves insulin resistance in fructos",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose in patients with beta-thalassaemia major and abnormal glucos",
+      "doi": null,
+      "pmid": "16462708",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of acarbose in beta-thalassaemia major patients with normal glucose tole",
+      "doi": null,
+      "pmid": "16462710",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose treatment on the risk of silent myocardial infarctions in pat",
+      "doi": "10.1097/01.hjr.0000140712.71649.5a",
+      "pmid": "15616415",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Modification of beta-cell response to different postprandial blood glucose conce",
+      "doi": null,
+      "pmid": "15334790",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Different effects of two alpha-glucosidase inhibitors, acarbose and voglibose, o",
+      "doi": "10.1016/s1056-8727(03)00055-2",
+      "pmid": "15145332",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The addition of acarbose to insulin lispro reduces acute glycaemic responses in ",
+      "doi": "10.1055/s-2004-820908",
+      "pmid": "15216448",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose for the prevention of Type 2 diabetes, hypertension and cardiovascular ",
+      "doi": "10.1007/s00125-004-1409-4",
+      "pmid": "15164169",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Coefficient of beta-cell failure in patients with type 2 diabetes treated with p",
+      "doi": "10.1055/s-2004-815767",
+      "pmid": "15031778",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Is acarbose equivalent to tolbutamide as first treatment for newly diagnosed typ",
+      "doi": "10.1016/j.diabres.2003.08.006",
+      "pmid": "14693413",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise and Acarbose in Type 2 Diabetes",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of acarbose in Chinese subjects with impaired glucose tolerance.",
+      "doi": "10.1016/s0168-8227(03)00117-7",
+      "pmid": "12965108",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose improves glycemic control in overweight type 2 diabetic patients insuff",
+      "doi": "10.2337/diacare.26.2.269",
+      "pmid": "12547847",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose in the treatment of elderly patients with type 2 diabetes.",
+      "doi": "10.1016/s0168-8227(02)00176-6",
+      "pmid": "12482640",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of treatment with acarbose or glibenclamide on insulin sensitivity in ",
+      "doi": "10.1046/j.1463-1326.2003.00239.x",
+      "pmid": "12542723",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical effect of combination therapy of pioglitazone and an alpha-glucosidase ",
+      "doi": "10.1185/030079903125002423",
+      "pmid": "14687436",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and tolerability of acarbose in Asian patients with type 2 diabetes ina",
+      "doi": "10.1016/s1056-8727(02)00258-1",
+      "pmid": "12810240",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Prospective multicentre trial comparing the efficacy of, and compliance with, gl",
+      "doi": null,
+      "pmid": "14768770",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical evaluation of pioglitazone in patients with type 2 diabetes using alpha",
+      "doi": "10.1046/j.1463-1326.2003.00244.x",
+      "pmid": "12542726",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of feline diabetes mellitus using an \u03b1-glucosidase inhibitor and a low",
+      "doi": "10.1016/s1098-612x(03)00006-8",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Review of acarbose therapeutic strategies in the long-term treatment and in the ",
+      "doi": "10.5414/cpp41421",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose for prevention of type 2 diabetes mellitus: the STOP-NIDDM randomised t",
+      "doi": "10.1016/s0140-6736(02)08905-5",
+      "pmid": "12086760",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improved glycemic control by acarbose therapy in hypertensive diabetic patients:",
+      "doi": "10.1590/s0100-879x2002000800004",
+      "pmid": "12185379",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of voglibose in comparison with acarbose in type 2 diabetic ",
+      "doi": "10.1016/s0168-8227(01)00286-8",
+      "pmid": "11796175",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose improves indirectly both insulin resistance and secretion in obese type",
+      "doi": null,
+      "pmid": "12149599",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Combination therapy of alpha-glucosidase inhibitor and a sulfonylurea compound p",
+      "doi": "10.1053/meta.2002.36310",
+      "pmid": "12489066",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Different effects of acarbose and glibenclamide on proinsulin and insulin profil",
+      "doi": "10.1016/s0168-8227(01)00347-3",
+      "pmid": "11850098",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Dose-dependent efficacy of miglitol, an alpha-glucosidase inhibitor, in type 2 d",
+      "doi": null,
+      "pmid": "12173729",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of combination treatment with acarbose and glibenclamide on postprand",
+      "doi": null,
+      "pmid": "12173728",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Improved glycemic control and lipid profile in a randomized study of pioglitazon",
+      "doi": "10.2165/00024677-200201050-00005",
+      "pmid": "15832486",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose improves indirectly both insulin resistance and secretion in obese type",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of acarbose and gliclazide as first-line agents in patients with type",
+      "doi": "10.1185/030079901750120231",
+      "pmid": "11268714",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and efficacy of acarbose in the treatment of Type 2 diabetes: data from a",
+      "doi": "10.1016/s0168-8227(01)00221-2",
+      "pmid": "11323089",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of treatment with acarbose and insulin in patients with non-insulin-depen",
+      "doi": "10.1046/j.1463-1326.2001.00103.x",
+      "pmid": "11213597",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Treatment of familial hypertriglyceridaemia with acarbose.",
+      "doi": "10.1046/j.1463-1326.2000.00065.x",
+      "pmid": "11220352",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The efficacy of acarbose in type 2 diabetes mellitus in Jamaica.",
+      "doi": null,
+      "pmid": "11211536",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Influence of acarbose on post-prandial insulin requirements in patients with Typ",
+      "doi": null,
+      "pmid": "10824717",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose treatment does not change the habitual diet of patients with Type 2 dia",
+      "doi": "10.1046/j.1464-5491.2000.00210.x",
+      "pmid": "10691155",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of acarbose on glycemic control, serum lipids and lipoproteins in type 2 ",
+      "doi": null,
+      "pmid": "11242714",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and safety of acarbose add-on therapy in the treatment of overweight pa",
+      "doi": "10.1016/s0168-8227(00)00163-7",
+      "pmid": "10936668",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Paralytic Ileus Accompanied by Pneumatosis Cystoides Intestinalis after Acarbose",
+      "doi": "10.2169/internalmedicine.39.826",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of the \u03b1-glucosidase inhibitor acarbose on control of glycemia in dogs wi",
+      "doi": "10.2460/javma.2000.216.1265",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A randomized double-blind trial of acarbose in type 2 diabetes shows improved gl",
+      "doi": "10.2337/diacare.22.6.960",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of the \u03b1-glucosidase inhibitor acarbose on postprandial serum glucose an",
+      "doi": "10.2460/ajvr.1999.60.05.541",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The STOP-NIDDM Trial: An international study on the efficacy of an \u03b1-glucosidase",
+      "doi": "10.2337/diacare.21.10.1720",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of an \u03b1-Glucosidase Inhibitor (Voglibose), in Combination with Sulphonylu",
+      "doi": "10.1177/030006059802600501",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Long-term effectiveness of a new \u03b1-glucosidase inhibitor (BAY m1099-miglitol) in",
+      "doi": "10.1002/(sici)1096-9136(199808)15:8<657::aid-dia652>3.0.co;2-7",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Acarbose in Insulin-Treated Patients With Type 2 Diabetes",
+      "doi": "10.2337/diacare.21.12.2056",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Clinical efficacy of acarbose in diabetes mellitus: a critical review of control",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy and Safety of Acarbose in Metformin-Treated Patients With Type 2 Diabet",
+      "doi": "10.2337/diacare.21.12.2050",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose in the Treatment of Type I Diabetes",
+      "doi": "10.2337/diacare.20.3.248",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose: Its Role in the Treatment of Diabetes Mellitus",
+      "doi": "10.1177/106002809603001110",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Review of the Safety and Efficacy of Acarbose in Diabetes Mellitus",
+      "doi": "10.1002/j.1875-9114.1996.tb02997.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Does Suppression of Postprandial Blood Glucose Excursions by the \u03b1-Glucosidase I",
+      "doi": "10.2337/diacare.19.6.559",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of an \u03b1-Glucosidase Inhibitor and Insulin on Glucose Metabolism and L",
+      "doi": "10.1177/030006059602400506",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Use of an \u03b1-Glucosidase Inhibitor to Synchronize Sugar Absorption with Delayed I",
+      "doi": "10.1177/030006059602400122",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effects of alpha-glucosidase inhibitor (acarbose) combined with sulfonylurea or ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Insulin Secretion Levels Necessary for Efficacy of an \u03b1-Glucosidase Inhibitor on",
+      "doi": "10.1177/030006059502300613",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Efficacy of Acarbose in the Treatment of Patients with Non\u2013Insulin-Dependent",
+      "doi": "10.7326/0003-4819-121-12-199412150-00004",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An evaluation of the potential side\u2010effects of \u03b1\u2010glucosidase inhibitors used for",
+      "doi": "10.1111/j.1365-2362.1994.tb02251.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "\u03b1\u2010Glucosidase inhibitors in diabetes: efficacy in NIDDM subjects",
+      "doi": "10.1111/j.1365-2362.1994.tb02253.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Efficacy of 24-Week Monotnerapy With Acarbose, Glibenclamide, or Placebo in NIDD",
+      "doi": "10.2337/diacare.17.6.561",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Utilization of Oral Sucrose Load During Exercise in Humans: Effect of the \u03b1-Gluc",
+      "doi": "10.2337/diab.35.11.1294",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Chemistry and Biochemistry of Microbial \u03b1\u2010Glucosidase Inhibitors",
+      "doi": "10.1002/anie.198107441",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Comparison of acarbose and metformin therapy in newly diagnosed type 2 diabetic ",
+      "doi": "10.1080/03007995.2016.1176013",
+      "pmid": "27052634",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Usefulness of acarbose and dietary modifications to limit glycemic variability f",
+      "doi": "10.1089/dia.2011.0302",
+      "pmid": "22853724",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "What does the Acarbose Cardiovascular Evaluation (ACE) trial tell us?",
+      "doi": "10.1111/1753-0407.12770",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose revisited for efficacy, safety and cardiovascular benefits: a key role ",
+      "doi": "10.1586/eem.12.35",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Glycemic variability in insulin treated type 2 diabetes with well-controlled hem",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Postprandial Glycemic Control, Hormonal Effects and Carbohydrate Malabsorption d",
+      "doi": "10.1159/000200476",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Acarbose, an \u03b1-Glucosidase Inhibitor, Attenuates Postprandial Hypotension in Aut",
+      "doi": "10.1161/hypertensionaha.107.091355",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An\u00e1lisis de la relaci\u00f3n coste-efectividad de la acarbosa en el tratamiento de pa",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The preventive effect of Acarbose and Metformin on the IGT population from becom",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "[Info-Meeting. Pharmacologic prevention of the progression from impaired glucose",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship Between Gastric Emptying and an \u03b1-Glucosidase Inhibitor Effect on P",
+      "doi": "10.2337/diacare.20.10.1529",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC9812564": {
+      "title": "Liver-related long-term outcomes of alpha-glucosidase inhibitors in patients with diabetes and liver cirrhosis",
+      "doi": "10.3389/fphar.2022.1049094",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Pharmacology",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC7378448": {
+      "title": "Impact of baseline characteristics on glycemic effects of add-on saxagliptin or acarbose to metformin therapy: Subgroup analysis of the SMART study in Chinese patients with type 2 diabetes mellitus.",
+      "doi": "10.1111/jdi.13224",
+      "pmid": "32020731",
+      "year": 2020,
+      "venue": "J Diabetes Investig",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC6798440": {
+      "title": "Meta-analysis of the impact of alpha-glucosidase inhibitors on incident diabetes and cardiovascular outcomes.",
+      "doi": "10.1186/s12933-019-0933-y",
+      "pmid": "31623625",
+      "year": 2019,
+      "venue": "Cardiovasc Diabetol",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC6517235": {
+      "title": "Alpha-glucosidase inhibitors for prevention or delay of type 2 diabetes mellitus and its associated complications in people at increased risk of developing type 2 diabetes mellitus.",
+      "doi": "10.1002/14651858.cd005061.pub3",
+      "pmid": "30592787",
+      "year": 2018,
+      "venue": "Cochrane Database Syst Rev",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC4149239": {
+      "title": "DPP-4 inhibitor and alpha-glucosidase inhibitor equally improve endothelial function in patients with type 2 diabetes: EDGE study.",
+      "doi": "10.1186/s12933-014-0110-2",
+      "pmid": "25074318",
+      "year": 2014,
+      "venue": "Cardiovasc Diabetol",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC2861640": {
+      "title": "Postprandial endothelial dysfunction in subjects with new-onset type 2 diabetes: an acarbose and nateglinide comparative study.",
+      "doi": "10.1186/1475-2840-9-12",
+      "pmid": "20334663",
+      "year": 2010,
+      "venue": "Cardiovasc Diabetol",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC8406605": {
+      "title": "Alpha-glucosidase inhibitors for type 2 diabetes mellitus.",
+      "doi": "10.1002/14651858.cd003639.pub2",
+      "pmid": "15846673",
+      "year": 2005,
+      "venue": "Cochrane Database Syst Rev",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12088947": {
+      "title": "Effect of acarbose and vildagliptin on plasma trimethylamine N-oxide levels in patients with type 2 diabetes mellitus: a 6-month, two-arm randomized controlled trial.",
+      "doi": "10.3389/fendo.2025.1575087",
+      "pmid": "40395816",
+      "year": 2025,
+      "venue": "Front Endocrinol (Lausanne)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12068756": {
+      "title": "Comparison of glucose fluctuation between metformin combined with acarbose or sitagliptin in Chinese patients with type 2 diabetes: A multicenter, randomized, active-controlled, open-label, parallel design clinical trial.",
+      "doi": "10.1097/cm9.0000000000003477",
+      "pmid": "40178116",
+      "year": 2025,
+      "venue": "Chin Med J (Engl)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12430303": {
+      "title": "Design and Evaluation of Indole-Based Schiff Bases as \u03b1-Glucosidase Inhibitors: CNN-Enhanced Docking, MD Simulations, ADMET Profiling, and SAR Analysis",
+      "doi": "10.3390/molecules30173651",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Molecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10859317": {
+      "title": "Comparison of medical resources and costs among patients with coronary heart disease and impaired glucose tolerance in the Acarbose Cardiovascular Evaluation trial.",
+      "doi": "10.1111/1753-0407.13473",
+      "pmid": "37915263",
+      "year": 2024,
+      "venue": "J Diabetes",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10978946": {
+      "title": "Coumarin linked to 2-phenylbenzimidazole derivatives as potent \u03b1-glucosidase inhibitors",
+      "doi": "10.1038/s41598-024-57673-z",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10664642": {
+      "title": "The effect of acarbose on lipid profiles in adults: a systematic review and meta-analysis of randomized clinical trials.",
+      "doi": "10.1186/s40360-023-00706-6",
+      "pmid": "37990256",
+      "year": 2023,
+      "venue": "BMC Pharmacol Toxicol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC10433190": {
+      "title": "The effects of acarbose treatment on cardiovascular risk factors in impaired glucose tolerance and diabetic patients: a systematic review and dose\u2013response meta-analysis of randomized clinical trials",
+      "doi": "10.3389/fnut.2023.1084084",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9314577": {
+      "title": "Efficacy and safety of alogliptin versus acarbose in Chinese type 2 diabetes patients with high cardiovascular risk or coronary heart disease treated with aspirin and inadequately controlled with metformin monotherapy or drug-naive: A multicentre, randomized, open-label, prospective study (ACADEMIC)",
+      "doi": "10.1111/dom.14661",
+      "pmid": "35112779",
+      "year": 2022,
+      "venue": "Diabetes Obes Metab",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9612090": {
+      "title": "Recent Updates on Phytoconstituent Alpha-Glucosidase Inhibitors: An Approach towards the Treatment of Type Two Diabetes",
+      "doi": "10.3390/plants11202722",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Plants",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9571713": {
+      "title": "Pneumatosis Intestinalis Induced by Alpha-Glucosidase Inhibitors in Patients with Diabetes Mellitus",
+      "doi": "10.3390/jcm11195918",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Journal of Clinical Medicine",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9501035": {
+      "title": "Synthesis of Novel N-Methylmorpholine-Substituted Benzimidazolium Salts as Potential \u03b1-Glucosidase Inhibitors",
+      "doi": "10.3390/molecules27186012",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Molecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8235473": {
+      "title": "Habitual Dietary Intake Affects the Altered Pattern of Gut Microbiome by Acarbose in Patients with Type 2 Diabetes.",
+      "doi": "10.3390/nu13062107",
+      "pmid": "34205413",
+      "year": 2021,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC8217281": {
+      "title": "Thiazolidinediones, alpha-glucosidase inhibitors, meglitinides, sulfonylureas, and hepatocellular carcinoma risk: A meta-analysis.",
+      "doi": "10.1016/j.metabol.2021.154780",
+      "pmid": "33891949",
+      "year": 2021,
+      "venue": "Metabolism",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7921127": {
+      "title": "The effects of acarbose therapy on reductions of myocardial infarction and all-cause death in T2DM during 10-year multifactorial interventions (The Beijing Community Diabetes Study 24).",
+      "doi": "10.1038/s41598-021-84015-0",
+      "pmid": "33649485",
+      "year": 2021,
+      "venue": "Sci Rep",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7291873": {
+      "title": "Acarbose With Comparable Glucose-Lowering but Superior Weight-Loss Efficacy to Dipeptidyl Peptidase-4 Inhibitors: A Systematic Review and Network Meta-Analysis of Randomized Controlled Trials.",
+      "doi": "10.3389/fendo.2020.00288",
+      "pmid": "32582019",
+      "year": 2020,
+      "venue": "Front Endocrinol (Lausanne)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC7672964": {
+      "title": "Altering the inhibitory kinetics and molecular conformation of maltase by Tangzhiqing (TZQ), a natural \u03b1-glucosidase inhibitor",
+      "doi": "10.1186/s12906-020-03156-3",
+      "pmid": null,
+      "year": 2020,
+      "venue": "BMC Complementary Medicine and Therapies",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC7081202": {
+      "title": "A severe leakage of intermediates to shunt products in acarbose biosynthesis",
+      "doi": "10.1038/s41467-020-15234-8",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Nature Communications",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6717369": {
+      "title": "A randomized, crossover study of the acute effects of acarbose and gastric distension, alone and combined, on postprandial blood pressure in healthy older adults.",
+      "doi": "10.1186/s12877-019-1251-7",
+      "pmid": "31470806",
+      "year": 2019,
+      "venue": "BMC Geriatr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6581543": {
+      "title": "Acarbose Add-on Therapy in Patients with Type 2 Diabetes Mellitus with Metformin and Sitagliptin Failure: A Multicenter, Randomized, Double-Blind, Placebo-Controlled Study.",
+      "doi": "10.4093/dmj.2018.0054",
+      "pmid": "30604599",
+      "year": 2019,
+      "venue": "Diabetes Metab J",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6691948": {
+      "title": "Effects of acarbose and metformin on the inflammatory state in newly diagnosed type 2 diabetes patients: a one-year randomized clinical study.",
+      "doi": "10.2147/dddt.s208327",
+      "pmid": "31496653",
+      "year": 2019,
+      "venue": "Drug Des Devel Ther",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6031526": {
+      "title": "Efficacy and safety of combination therapy with an \u03b1-glucosidase inhibitor and a dipeptidyl peptidase-4 inhibitor in patients with type 2 diabetes mellitus: A systematic review with meta-analysis.",
+      "doi": "10.1111/jdi.12754",
+      "pmid": "28950431",
+      "year": 2018,
+      "venue": "J Diabetes Investig",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5781294": {
+      "title": "Glitazones and alpha-glucosidase inhibitors as the second-line oral anti-diabetic agents added to metformin reduce cardiovascular risk in Type 2 diabetes patients: a nationwide cohort observational study",
+      "doi": "10.1186/s12933-018-0663-6",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Cardiovascular Diabetology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5585474": {
+      "title": "Comparative assessment of the efficacy and safety of acarbose and metformin combined with premixed insulin in patients with type 2 diabetes mellitus.",
+      "doi": "10.1097/md.0000000000007533",
+      "pmid": "28858080",
+      "year": 2017,
+      "venue": "Medicine (Baltimore)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5501494": {
+      "title": "\u03b1-Glucosidase inhibitor miglitol attenuates glucose fluctuation, heart rate variability and sympathetic activity in patients with type 2 diabetes and acute coronary syndrome: a multicenter randomized controlled (MACS) study.",
+      "doi": "10.1186/s12933-017-0571-1",
+      "pmid": "28683829",
+      "year": 2017,
+      "venue": "Cardiovasc Diabetol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5655259": {
+      "title": "Alpha-glucosidase inhibitors and risk of cancer in patients with diabetes mellitus: a systematic review and meta-analysis",
+      "doi": "10.18632/oncotarget.17515",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Oncotarget",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5380489": {
+      "title": "Effects of Acarbose on the Gut Microbiota of Prediabetic Patients: A Randomized, Double-blind, Controlled Crossover Trial",
+      "doi": "10.1007/s13300-017-0226-y",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Diabetes Therapy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4684859": {
+      "title": "Effect of Acarbose on Long-Term Prognosis in Acute Coronary Syndromes Patients with Newly Diagnosed Impaired Glucose Tolerance.",
+      "doi": "10.1155/2016/1602083",
+      "pmid": "26770983",
+      "year": 2016,
+      "venue": "J Diabetes Res",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4998782": {
+      "title": "Comparison of Acarbose and Metformin on Albumin Excretion in Patients With Newly Diagnosed Type 2 Diabetes: A Randomized Controlled Trial.",
+      "doi": "10.1097/md.0000000000003247",
+      "pmid": "27057866",
+      "year": 2016,
+      "venue": "Medicine (Baltimore)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5011653": {
+      "title": "Alpha-glucosidase inhibitors and hepatotoxicity in type 2 diabetes: a systematic review and meta-analysis",
+      "doi": "10.1038/srep32649",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4620230": {
+      "title": "Acarbose: safe and effective for lowering postprandial hyperglycaemia and improving cardiovascular outcomes",
+      "doi": "10.1136/openhrt-2015-000327",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Open Heart",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4316590": {
+      "title": "Acarbose, lente carbohydrate, and prebiotics promote metabolic health and longevity by stimulating intestinal production of GLP-1",
+      "doi": "10.1136/openhrt-2014-000205",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Open Heart",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4153962": {
+      "title": "Switching \u03b1-glucosidase inhibitors to miglitol reduced glucose fluctuations and circulating cardiovascular disease risk factors in type 2 diabetic Japanese patients.",
+      "doi": "10.1007/s40268-014-0055-7",
+      "pmid": "25079671",
+      "year": 2014,
+      "venue": "Drugs R D",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC4141807": {
+      "title": "MARCH2: comparative assessment of therapeutic effects of acarbose and metformin in newly diagnosed type 2 diabetes patients.",
+      "doi": "10.1371/journal.pone.0105698",
+      "pmid": "25148570",
+      "year": 2014,
+      "venue": "PLoS One",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3890482": {
+      "title": "Comparison of acarbose and voglibose in diabetes patients who are inadequately controlled with basal insulin treatment: randomized, parallel, open-label, active-controlled study.",
+      "doi": "10.3346/jkms.2014.29.1.90",
+      "pmid": "24431911",
+      "year": 2014,
+      "venue": "J Korean Med Sci",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3996310": {
+      "title": "On the potential of acarbose to reduce cardiovascular disease",
+      "doi": "10.1186/1475-2840-13-81",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Cardiovascular Diabetology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4085335": {
+      "title": "Safety and efficacy of acarbose in the treatment of diabetes in Chinese patients",
+      "doi": "10.2147/tcrm.s50362",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Therapeutics and Clinical Risk Management",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4062388": {
+      "title": "Effect of acarbose to delay progression of carotid intima-media thickness in early diabetes.",
+      "doi": "10.1002/dmrr.2433",
+      "pmid": "23908125",
+      "year": 2013,
+      "venue": "Diabetes Metab Res Rev",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3671627": {
+      "title": "Nateglinide and acarbose are comparably effective reducers of postprandial glycemic excursions in chinese antihyperglycemic agent-naive subjects with type 2 diabetes.",
+      "doi": "10.1089/dia.2013.0046",
+      "pmid": "23631607",
+      "year": 2013,
+      "venue": "Diabetes Technol Ther",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC3919386": {
+      "title": "Voglibose: An Alpha Glucosidase Inhibitor",
+      "doi": "10.7860/jcdr/2013/6373.3838",
+      "pmid": null,
+      "year": 2013,
+      "venue": "JOURNAL OF CLINICAL AND DIAGNOSTIC RESEARCH",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3827349": {
+      "title": "Comparisons of the Efficacy of Alpha Glucosidase Inhibitors on Type 2 Diabetes Patients between Asian and Caucasian",
+      "doi": "10.1371/journal.pone.0079421",
+      "pmid": null,
+      "year": 2013,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4023585": {
+      "title": "Comparison of three \u03b1\u2010glucosidase inhibitors for glycemic control and bodyweight reduction in <scp>J</scp>apanese patients with obese type 2 diabetes",
+      "doi": "10.1111/jdi.12135",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of Diabetes Investigation",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3956023": {
+      "title": "Use of the Alpha-Glucosidase Inhibitor Acarbose in Patients with \u2018Middleton Syndrome\u2019: Normal Gastric Anatomy But with Accelerated Gastric Emptying Causing Postprandial Reactive Hypoglycemia and Diarrhea",
+      "doi": "10.1155/2013/791803",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Canadian Journal of Gastroenterology",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC3830342": {
+      "title": "Alpha-glucosidase inhibitor, acarbose, improves glycamic control and reduces body weight in type 2 diabetes: Findings on indian patients from the pooled data analysis",
+      "doi": "10.4103/2230-8210.119634",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Indian Journal of Endocrinology and Metabolism",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC3476372": {
+      "title": "Critical evaluation of the role of acarbose in the treatment of diabetes: patient considerations",
+      "doi": "10.2147/dmso.s28340",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Diabetes Metabolic Syndrome and Obesity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3506243": {
+      "title": "Mini-Special Issue paper Management of diabetic patients with hypoglycemic agents \u03b1-Glucosidase inhibitors and their use in clinical practice",
+      "doi": "10.5114/aoms.2012.31621",
+      "pmid": null,
+      "year": 2012,
+      "venue": "Archives of Medical Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3210010": {
+      "title": "\u03b1-glucosidase inhibitors from plants: A natural approach to treat diabetes",
+      "doi": "10.4103/0973-7847.79096",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Pharmacognosy Reviews/Bioinformatics Trends/Pharmacognosy review",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2663450": {
+      "title": "Alpha-glucosidase inhibitors in the early treatment of type 2 diabetes",
+      "doi": "10.2147/vhrm.s3119",
+      "pmid": null,
+      "year": 2008,
+      "venue": "Vascular Health and Risk Management",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC2040135": {
+      "title": "Cardiovascular benefits and safety profile of acarbose therapy in prediabetes and established type 2 diabetes",
+      "doi": "10.1186/1475-2840-6-20",
+      "pmid": null,
+      "year": 2007,
+      "venue": "Cardiovascular Diabetology",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1144989": {
+      "title": "Lysosomal glycogen storage induced by Acarbose, a 1,4-\u03b1-glucosidase inhibitor",
+      "doi": "10.1042/bj2280319",
+      "pmid": null,
+      "year": 1985,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "crossref"
+      ]
+    },
+    "PMC7537614": {
+      "title": "Acarbose-metformin is more effective in glycemic variability control than repaglinide-metformin in T2DM patients inadequately controlled with metformin: a retrospective cohort study",
+      "doi": "10.7717/peerj.9905",
+      "pmid": null,
+      "year": 2020,
+      "venue": "PeerJ",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC4427275": {
+      "title": "Comparison of Glucose Lowering Effect of Metformin and Acarbose in Type 2 Diabetes Mellitus: A Meta-Analysis",
+      "doi": "10.1371/journal.pone.0126704",
+      "pmid": null,
+      "year": 2015,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4020235": {
+      "title": "Efficacy of \u03b1\u2010glucosidase inhibitors combined with dipeptidyl\u2010peptidase\u20104 inhibitor (alogliptin) for glucose fluctuation in patients with type 2 diabetes mellitus by continuous glucose monitoring",
+      "doi": "10.1111/jdi.12059",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Journal of Diabetes Investigation",
+      "sources": [
+        "crossref"
+      ]
+    }
+  }
+}

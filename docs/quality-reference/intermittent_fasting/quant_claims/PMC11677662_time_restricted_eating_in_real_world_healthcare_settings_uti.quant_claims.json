@@ -1,0 +1,1351 @@
+{
+  "paper_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti",
+  "doi": "10.3390/nu16244426",
+  "extracted_at": "2026-05-05T22:11:29+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 41,
+    "unit_value": 12,
+    "p_value": 10,
+    "sample_size": 7,
+    "confidence_interval": 3,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-678",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 678,
+      "sentence": "Results: Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese.",
+      "context_window": "e who received TRE advice. Results: Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese. Of al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-695",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 695,
+      "sentence": "Results: Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese.",
+      "context_window": "E advice. Results: Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese. Of all patients, 47.2%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-714",
+      "claim_type": "percentage",
+      "raw_text": "94%",
+      "numeric_values": [
+        94.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 714,
+      "sentence": "Results: Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese.",
+      "context_window": "Among the 271 patients, 76% were female, 90% Caucasian, and 94% overweight/obese. Of all patients, 47.2% received TRE advic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-753",
+      "claim_type": "percentage",
+      "raw_text": "47.2%",
+      "numeric_values": [
+        47.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 753,
+      "sentence": "Of all patients, 47.2% received TRE advice, mainly using the 16:8 method, alongside additional dietary guidance for 60% of patients.",
+      "context_window": ", 90% Caucasian, and 94% overweight/obese. Of all patients, 47.2% received TRE advice, mainly using the 16:8 method, alongsid",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-852",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 852,
+      "sentence": "Of all patients, 47.2% received TRE advice, mainly using the 16:8 method, alongside additional dietary guidance for 60% of patients.",
+      "context_window": "the 16:8 method, alongside additional dietary guidance for 60% of patients. Working status and baseline metabolic profiles",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1012",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1012,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "associated with TRE adoption. Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-1074",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1074,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumf",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-1082",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1082,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "enced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-1099",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-1112",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1112,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "eductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01). Conclusions:",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-1149",
+      "claim_type": "unit_value",
+      "raw_text": "3.7 cm",
+      "numeric_values": [
+        3.7
+      ],
+      "units": "cm",
+      "source_section": "abstract",
+      "source_offset": 1149,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "1), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01). Conclusions: This study highlights TRE as a fea",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-1157",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1157,
+      "sentence": "Among those who followed TRE, 81% experienced modest but significant reductions in weight (-1.2 kg, p < 0.01), BMI (-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01).",
+      "context_window": "(-0.4 kg/m 2 , p < 0.01), and waist circumference (-3.7 cm, p < 0.01). Conclusions: This study highlights TRE as a feasible and",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 907,
+      "sentence": "Stage 1, referred to as the \u2018baseline cohort analysis\u2019, included data from adults (aged \u226518 years) who attended the clinic between 2019 and mid-2023, provided informed consent for research use of their data, and had key data points available.",
+      "context_window": "baseline cohort analysis\u2019, included data from adults (aged \u226518 years) who attended the clinic between 2019 and mid-2023, provide",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2695",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2695,
+      "sentence": "Patients with an RQ value below 0.85, corresponding to a fat oxidation level greater than 50%, were considered to have a \u201cgood\u201d RQ.",
+      "context_window": "w 0.85, corresponding to a fat oxidation level greater than 50%, were considered to have a \u201cgood\u201d RQ. These individuals, te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-444",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 444,
+      "sentence": "In terms of the distribution of TRE introduction timings, 50 patients (39%) were classified as \u201cFirst-visit TRE\u201d, 61 (48%) started TRE during their second visit (classified as \u201cSecond-visit TRE\u201d), and the remaining 13% comprised the \u201cSubsequent TRE\u201d.",
+      "context_window": "the distribution of TRE introduction timings, 50 patients (39%) were classified as \u201cFirst-visit TRE\u201d, 61 (48%) started TRE",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-491",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 491,
+      "sentence": "In terms of the distribution of TRE introduction timings, 50 patients (39%) were classified as \u201cFirst-visit TRE\u201d, 61 (48%) started TRE during their second visit (classified as \u201cSecond-visit TRE\u201d), and the remaining 13% comprised the \u201cSubsequent TRE\u201d.",
+      "context_window": "50 patients (39%) were classified as \u201cFirst-visit TRE\u201d, 61 (48%) started TRE during their second visit (classified as \u201cSeco",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-588",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 588,
+      "sentence": "In terms of the distribution of TRE introduction timings, 50 patients (39%) were classified as \u201cFirst-visit TRE\u201d, 61 (48%) started TRE during their second visit (classified as \u201cSecond-visit TRE\u201d), and the remaining 13% comprised the \u201cSubsequent TRE\u201d.",
+      "context_window": "visit (classified as \u201cSecond-visit TRE\u201d), and the remaining 13% comprised the \u201cSubsequent TRE\u201d. The interval between initia",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-709",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 709,
+      "sentence": "The interval between initiation visits and follow-up visits varied, with a median of 30 days (IQR 21, 49).",
+      "context_window": "iation visits and follow-up visits varied, with a median of 30 days (IQR 21, 49). Among patients in the Stage 1 Cohort, the me",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-787",
+      "claim_type": "unit_value",
+      "raw_text": "47.4 years",
+      "numeric_values": [
+        47.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 787,
+      "sentence": "Among patients in the Stage 1 Cohort, the mean age was 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%).",
+      "context_window": "9). Among patients in the Stage 1 Cohort, the mean age was 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-844",
+      "claim_type": "sample_size",
+      "raw_text": "n = 207",
+      "numeric_values": [
+        207.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 844,
+      "sentence": "Among patients in the Stage 1 Cohort, the mean age was 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%).",
+      "context_window": "as 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%). Most were employed",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-853",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 853,
+      "sentence": "Among patients in the Stage 1 Cohort, the mean age was 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%).",
+      "context_window": "ears (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%). Most were employed eithe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-886",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 886,
+      "sentence": "Among patients in the Stage 1 Cohort, the mean age was 47.4 years (SD = 12.6), with the majority being female ( n = 207, 76%) and of Caucasian ethnicity (90%).",
+      "context_window": "ty being female ( n = 207, 76%) and of Caucasian ethnicity (90%). Most were employed either full-time (\u226540 h/week) ( n = 69",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-943",
+      "claim_type": "sample_size",
+      "raw_text": "n = 69",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 943,
+      "sentence": "Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working.",
+      "context_window": "y (90%). Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-951",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 951,
+      "sentence": "Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working.",
+      "context_window": "Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-971",
+      "claim_type": "sample_size",
+      "raw_text": "n = 157",
+      "numeric_values": [
+        157.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 971,
+      "sentence": "Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working.",
+      "context_window": "either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working. The proportion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-980",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 980,
+      "sentence": "Most were employed either full-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working.",
+      "context_window": "ll-time (\u226540 h/week) ( n = 69, 25%) or part-time ( n = 157, 58%), while the remainder were not working. The proportion of s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1116",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1116,
+      "sentence": "The proportion of self-reported medical problems varied among patients, including diabetes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Table 1 ).",
+      "context_window": "medical problems varied among patients, including diabetes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Ta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1147,
+      "sentence": "The proportion of self-reported medical problems varied among patients, including diabetes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Table 1 ).",
+      "context_window": "atients, including diabetes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Table 1 ). Approximately 69% of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1170",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1170,
+      "sentence": "The proportion of self-reported medical problems varied among patients, including diabetes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Table 1 ).",
+      "context_window": "etes (21%), cardiovascular problems (30%), and fatty liver (17%) ( Table 1 ). Approximately 69% of the patients were on med",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1202",
+      "claim_type": "percentage",
+      "raw_text": "69%",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1202,
+      "sentence": "Approximately 69% of the patients were on medications related to their medical conditions, including antihypertensives (e.g., candesartan, amlodipine), antidiabetics (e.g., metformin), lipid-lowering agents (e.g., atorvastatin, rosuvastatin), thyroid hormone replacement (e.g., thyroxine), and antidepressants (e.g., sertraline, escitalopram).",
+      "context_window": "ems (30%), and fatty liver (17%) ( Table 1 ). Approximately 69% of the patients were on medications related to their medica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1553",
+      "claim_type": "percentage",
+      "raw_text": "97%",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1553,
+      "sentence": "Almost all patients (97%) visited the clinic for weight loss, with 68% reporting weight gain over the previous year.",
+      "context_window": "ants (e.g., sertraline, escitalopram). Almost all patients (97%) visited the clinic for weight loss, with 68% reporting wei",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1599",
+      "claim_type": "percentage",
+      "raw_text": "68%",
+      "numeric_values": [
+        68.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1599,
+      "sentence": "Almost all patients (97%) visited the clinic for weight loss, with 68% reporting weight gain over the previous year.",
+      "context_window": "all patients (97%) visited the clinic for weight loss, with 68% reporting weight gain over the previous year. A minority ha",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1756",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1756,
+      "sentence": "A minority had specific dietary preferences prior to the clinic visit, such as following a ketogenic diet (11%) or being vegan/vegetarian (3%).",
+      "context_window": "or to the clinic visit, such as following a ketogenic diet (11%) or being vegan/vegetarian (3%). Baseline characteristics",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1788",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1788,
+      "sentence": "A minority had specific dietary preferences prior to the clinic visit, such as following a ketogenic diet (11%) or being vegan/vegetarian (3%).",
+      "context_window": "following a ketogenic diet (11%) or being vegan/vegetarian (3%). Baseline characteristics of patients ( n = 271). Note:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-1833",
+      "claim_type": "sample_size",
+      "raw_text": "n = 271",
+      "numeric_values": [
+        271.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1833,
+      "sentence": "Baseline characteristics of patients ( n = 271).",
+      "context_window": "an/vegetarian (3%). Baseline characteristics of patients ( n = 271). Note: * p < 0.05 indicates a statistically significant d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-1852",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1852,
+      "sentence": "Note: * p < 0.05 indicates a statistically significant difference compared to the non-TRE group. \u201cFirst-visit TRE\u201d were introduced to TRE during their first visit, \u201cSecond-visit TRE\u201d during their second visit, \u201cSubsequent TRE\u201d after their third visit.",
+      "context_window": "Baseline characteristics of patients ( n = 271). Note: * p < 0.05 indicates a statistically significant difference compared t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2259",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2259,
+      "sentence": "At baseline, most patients were overweight (22%) or obese (72%).",
+      "context_window": "ith RQ < 0.85. At baseline, most patients were overweight (22%) or obese (72%). The mean BMI and body fat percentage were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2274",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2274,
+      "sentence": "At baseline, most patients were overweight (22%) or obese (72%).",
+      "context_window": "At baseline, most patients were overweight (22%) or obese (72%). The mean BMI and body fat percentage were 34.1 kg/m 2 (SD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-2322",
+      "claim_type": "unit_value",
+      "raw_text": "34.1 kg",
+      "numeric_values": [
+        34.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2322,
+      "sentence": "The mean BMI and body fat percentage were 34.1 kg/m 2 (SD = 6.8) and 38.8% (SD = 7.6), respectively.",
+      "context_window": ") or obese (72%). The mean BMI and body fat percentage were 34.1 kg/m 2 (SD = 6.8) and 38.8% (SD = 7.6), respectively. Measurem",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2349",
+      "claim_type": "percentage",
+      "raw_text": "38.8%",
+      "numeric_values": [
+        38.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2349,
+      "sentence": "The mean BMI and body fat percentage were 34.1 kg/m 2 (SD = 6.8) and 38.8% (SD = 7.6), respectively.",
+      "context_window": "BMI and body fat percentage were 34.1 kg/m 2 (SD = 6.8) and 38.8% (SD = 7.6), respectively. Measurement from indirect calorim",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2508",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2508,
+      "sentence": "Measurement from indirect calorimetry showed a mean RQ among patients of 0.89 (SD = 0.11) with a median fat oxidation level of 38% (IQR = 15-59).",
+      "context_window": "ts of 0.89 (SD = 0.11) with a median fat oxidation level of 38% (IQR = 15-59). Thus, 28% of patients were classified as goo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-2533",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2533,
+      "sentence": "Thus, 28% of patients were classified as good fat burners based on an RQ level < 0.85 at baseline.",
+      "context_window": "th a median fat oxidation level of 38% (IQR = 15-59). Thus, 28% of patients were classified as good fat burners based on an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-3695",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3695,
+      "sentence": "There was no significant difference in the use of TRE by diabetic status, although TRE use was non-significantly lower in those with diabetes (39% vs.",
+      "context_window": "TRE use was non-significantly lower in those with diabetes (39% vs. 49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152). Although",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-3703",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3703,
+      "sentence": "49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152).",
+      "context_window": "was non-significantly lower in those with diabetes (39% vs. 49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152). Although the diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-ci-3717",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.36, 1.17",
+      "numeric_values": [
+        0.36,
+        1.17
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3717,
+      "sentence": "49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152).",
+      "context_window": "icantly lower in those with diabetes (39% vs. 49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152). Although the difference was not significant, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-3737",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.152",
+      "numeric_values": [
+        0.152
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3737,
+      "sentence": "49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152).",
+      "context_window": "se with diabetes (39% vs. 49%, OR 0.65, 95% CI: 0.36, 1.17, p = 0.152). Although the difference was not significant, a higher pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-3907",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3907,
+      "sentence": "Although the difference was not significant, a higher proportion of TRE use was observed among those who reported routinely eating breakfast in the baseline (51% vs.",
+      "context_window": "se who reported routinely eating breakfast in the baseline (51% vs. 35%, OR 1.89, 95% CI 0.90, 3.94) ( Table 2 ). Univaria",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-3915",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3915,
+      "sentence": "35%, OR 1.89, 95% CI 0.90, 3.94) ( Table 2 ).",
+      "context_window": "eported routinely eating breakfast in the baseline (51% vs. 35%, OR 1.89, 95% CI 0.90, 3.94) ( Table 2 ). Univariate relat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-ci-3929",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.90, 3.94",
+      "numeric_values": [
+        0.9,
+        3.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3929,
+      "sentence": "35%, OR 1.89, 95% CI 0.90, 3.94) ( Table 2 ).",
+      "context_window": "ely eating breakfast in the baseline (51% vs. 35%, OR 1.89, 95% CI 0.90, 3.94) ( Table 2 ). Univariate relationships of patients\u2019 baseli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-4115",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4115,
+      "sentence": "Univariate relationships of patients\u2019 baseline characteristics with TRE.\n\n^ adjusted with all sociodemographic and baseline respiratory quotient (RQ), * p < 0.05 indicates a statistically significant difference.",
+      "context_window": "sociodemographic and baseline respiratory quotient (RQ), * p < 0.05 indicates a statistically significant difference. The mult",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-or-a-4300",
+      "claim_type": "odds_ratio",
+      "raw_text": "aOR = 23.02",
+      "numeric_values": [
+        23.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4300,
+      "sentence": "The multivariable logistic regression found that baseline RQ emerged as the only significant factor associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000).",
+      "context_window": "ged as the only significant factor associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000). A complete model analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-ci-4313",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI [8.79, 60.25",
+      "numeric_values": [
+        8.79,
+        60.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4313,
+      "sentence": "The multivariable logistic regression found that baseline RQ emerged as the only significant factor associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000).",
+      "context_window": "ly significant factor associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000). A complete model analysis of TRE use determin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-4335",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4335,
+      "sentence": "The multivariable logistic regression found that baseline RQ emerged as the only significant factor associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000).",
+      "context_window": "associated with TRE use (aOR = 23.02, 95% CI [8.79, 60.25], p = 0.000). A complete model analysis of TRE use determinants is show",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-4665",
+      "claim_type": "sample_size",
+      "raw_text": "n = 112",
+      "numeric_values": [
+        112.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4665,
+      "sentence": "In our TRE cohort (Stage 2), almost all patients included were prescribed the 16:8 TRE method ( n = 112, 88%), although three patients opted for the One Meal a Day (OMAD) type with a small eating window.",
+      "context_window": "all patients included were prescribed the 16:8 TRE method ( n = 112, 88%), although three patients opted for the One Meal a Day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-4674",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4674,
+      "sentence": "In our TRE cohort (Stage 2), almost all patients included were prescribed the 16:8 TRE method ( n = 112, 88%), although three patients opted for the One Meal a Day (OMAD) type with a small eating window.",
+      "context_window": "nts included were prescribed the 16:8 TRE method ( n = 112, 88%), although three patients opted for the One Meal a Day (OMA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-5050",
+      "claim_type": "sample_size",
+      "raw_text": "n = 128",
+      "numeric_values": [
+        128.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5050,
+      "sentence": "Profile of interventions utilised among patients advised to follow TRE ( n = 128).",
+      "context_window": "terventions utilised among patients advised to follow TRE ( n = 128). Note: eTRE: early Time-Restricted Eating, OMAD: One Meal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-5192",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5192,
+      "sentence": "There was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follow-up visit.",
+      "context_window": "was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-5200",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5200,
+      "sentence": "There was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follow-up visit.",
+      "context_window": "atistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95%",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-5221",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.000",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5221,
+      "sentence": "There was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follow-up visit.",
+      "context_window": "nt decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between T",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-5249",
+      "claim_type": "unit_value",
+      "raw_text": "0.4 kg/m2",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "kg/m2",
+      "source_section": "results",
+      "source_offset": 5249,
+      "sentence": "There was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follow-up visit.",
+      "context_window": "f -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-5260",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5260,
+      "sentence": "There was a statistically significant decrease in mean weight of -1.2 kg (95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follow-up visit.",
+      "context_window": "95% CI = -1.5, -0.9, p = 0.000) and mean BMI by -0.4 kg/m2 (95% CI = -0.5, -0.3) between TRE initiation visit and the follo",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-5444",
+      "claim_type": "unit_value",
+      "raw_text": "107 cm",
+      "numeric_values": [
+        107.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 5444,
+      "sentence": "Similarly, among those with waist circumference recorded at two visits, we found a significant decrease from 107 cm (SD = 14) to 104 (SD = 14).",
+      "context_window": "ecorded at two visits, we found a significant decrease from 107 cm (SD = 14) to 104 (SD = 14). No significant changes in fat o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-n-5688",
+      "claim_type": "sample_size",
+      "raw_text": "n = 97",
+      "numeric_values": [
+        97.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5688,
+      "sentence": "Metabolic profile changes from introduction of TRE to next follow-up visit among those who were advised to follow TRE ( n = 97), by TRE timing.",
+      "context_window": "ollow-up visit among those who were advised to follow TRE ( n = 97), by TRE timing. Note: * p < 0.05 indicates statistical si",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-5721",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5721,
+      "sentence": "Note: * p < 0.05 indicates statistical significance.",
+      "context_window": "re advised to follow TRE ( n = 97), by TRE timing. Note: * p < 0.05 indicates statistical significance. When classified based",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-6078",
+      "claim_type": "percentage",
+      "raw_text": "68.6%",
+      "numeric_values": [
+        68.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6078,
+      "sentence": "However, there was a significant difference in the initial fat oxidation level between those in the \u201cFirst-visit\u201d TRE and the \u201cSecond-visit\u201d TRE group, with the latter showing a lower fat oxidation level (68.6% \u00b1 14 vs.",
+      "context_window": "group, with the latter showing a lower fat oxidation level (68.6% \u00b1 14 vs. 53.4% \u00b1 23.1, p = 0.003). Among patients who had",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-6093",
+      "claim_type": "percentage",
+      "raw_text": "53.4%",
+      "numeric_values": [
+        53.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6093,
+      "sentence": "53.4% \u00b1 23.1, p = 0.003).",
+      "context_window": "latter showing a lower fat oxidation level (68.6% \u00b1 14 vs. 53.4% \u00b1 23.1, p = 0.003). Among patients who had complete initia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-p-6107",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6107,
+      "sentence": "53.4% \u00b1 23.1, p = 0.003).",
+      "context_window": "g a lower fat oxidation level (68.6% \u00b1 14 vs. 53.4% \u00b1 23.1, p = 0.003). Among patients who had complete initial and follow-up da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-6189",
+      "claim_type": "percentage",
+      "raw_text": "81%",
+      "numeric_values": [
+        81.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6189,
+      "sentence": "Among patients who had complete initial and follow-up data recorded, 81% experienced weight loss, and the proportion varied slightly between the different timings of TRE introduction.",
+      "context_window": "ients who had complete initial and follow-up data recorded, 81% experienced weight loss, and the proportion varied slightly",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-6399",
+      "claim_type": "percentage",
+      "raw_text": "87%",
+      "numeric_values": [
+        87.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6399,
+      "sentence": "The highest proportion of patients experiencing weight loss was in the \u201cSubsequent TRE\u201d group (87%), although the time between visits in that group was also the longest (64 days, IQR = 42-113).",
+      "context_window": "experiencing weight loss was in the \u201cSubsequent TRE\u201d group (87%), although the time between visits in that group was also t",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-6474",
+      "claim_type": "unit_value",
+      "raw_text": "64 days",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 6474,
+      "sentence": "The highest proportion of patients experiencing weight loss was in the \u201cSubsequent TRE\u201d group (87%), although the time between visits in that group was also the longest (64 days, IQR = 42-113).",
+      "context_window": "the time between visits in that group was also the longest (64 days, IQR = 42-113). Some individuals across different groups (1",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-6543",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6543,
+      "sentence": "Some individuals across different groups (13-20%) experienced weight gain ( Figure 2 ).",
+      "context_window": "IQR = 42-113). Some individuals across different groups (13-20%) experienced weight gain ( Figure 2 ). Weight changes amon",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-188",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 188,
+      "sentence": "Approximately 50% of clinic attendees were advised to follow TRE, with varying timings of introduction and predominantly using the 16:8 method.",
+      "context_window": "althcare setting focused on metabolic health. Approximately 50% of clinic attendees were advised to follow TRE, with varyin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-pct-1928",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1928,
+      "sentence": "Additionally, research has shown that TRE often leads to an inadvertent calorie reduction of 200-500 calories [ 4 ], or around 10-30% [ 21 ], thereby contributing to improved metabolic processes and weight loss.",
+      "context_window": "t calorie reduction of 200-500 calories [ 4 ], or around 10-30% [ 21 ], thereby contributing to improved metabolic processe",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11677662_time_restricted_eating_in_real_world_healthcare_settings_uti-u-2174",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2174,
+      "sentence": "Moreover, a previous study demonstrated significant weight loss with TRE over a 12-month period, despite a slight regain after the peak weight loss phase (around 3-6 months) [ 22 ].",
+      "context_window": "a slight regain after the peak weight loss phase (around 3-6 months) [ 22 ]. Our study also found a similar proportion of TRE",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

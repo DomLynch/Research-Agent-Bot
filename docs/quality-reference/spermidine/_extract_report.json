@@ -1,0 +1,1058 @@
+{
+  "topic": "spermidine",
+  "retrieval_mode": "calibrated",
+  "n_queries": 5,
+  "n_unique_candidates": 108,
+  "n_selected_for_fetch": 108,
+  "n_pmcid_resolved": 64,
+  "n_extracted": 54,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC10049002",
+    "PMC10216053",
+    "PMC10272464",
+    "PMC10339180",
+    "PMC10607840",
+    "PMC10630827",
+    "PMC10652861",
+    "PMC11216588",
+    "PMC11246659",
+    "PMC1146560",
+    "PMC11587830",
+    "PMC11591374",
+    "PMC11634715",
+    "PMC11673406",
+    "PMC11673770",
+    "PMC11750915",
+    "PMC12117157",
+    "PMC12183340",
+    "PMC1218558",
+    "PMC12812037",
+    "PMC12881085",
+    "PMC12917199",
+    "PMC12935480",
+    "PMC12963084",
+    "PMC12963641",
+    "PMC13013224",
+    "PMC2756025",
+    "PMC3184975",
+    "PMC3655973",
+    "PMC4092136",
+    "PMC4227379",
+    "PMC4515861",
+    "PMC5349183",
+    "PMC5454378",
+    "PMC5489339",
+    "PMC5807879",
+    "PMC6333461",
+    "PMC6492385",
+    "PMC6566626",
+    "PMC6637774",
+    "PMC6831702",
+    "PMC6904859",
+    "PMC6977682",
+    "PMC6978435",
+    "PMC6980402",
+    "PMC7238090",
+    "PMC7377836",
+    "PMC7429012",
+    "PMC7512001",
+    "PMC7827520",
+    "PMC8103277",
+    "PMC8116233",
+    "PMC8156773",
+    "PMC8162569",
+    "PMC8293435",
+    "PMC8386697",
+    "PMC8525995",
+    "PMC8612618",
+    "PMC9323341",
+    "PMC9380894",
+    "PMC9575633",
+    "PMC9775183",
+    "PMC9775384",
+    "PMC9964041"
+  ],
+  "active_paper_ids": [
+    "PMC10049002_spermidine_rescues_bioenergetic_and_mitophagy_deficits_induc",
+    "PMC10216053_whole_blood_spermine_spermidine_ratio_as_a_new_indicator_of_",
+    "PMC10272464_genetic_portrait_of_polyamine_transporters_in_barley_insight",
+    "PMC10339180_spermidine_alleviating_oxidative_stress_and_apoptosis_by_ind",
+    "PMC10607840_polyamines_in_ovarian_aging_and_disease",
+    "PMC10630827_wheat_germ_a_byproduct_of_the_wheat_milling_industry_as_a_be",
+    "PMC11216588_spermidine_supplementation_in_honey_bees_autophagy_and_epige",
+    "PMC11587830_a_surge_in_endogenous_spermidine_is_essential_for_rapamycin_",
+    "PMC11591374_human_supplementation_with_am3_spermidine_and_hesperidin_enh",
+    "PMC11634715_the_longevity_factor_spermidine_is_part_of_a_highly_heritabl",
+    "PMC11673406_spermidine_enhances_mitochondrial_bioenergetics_in_young_and",
+    "PMC11673770_polyamine_metabolism_and_functions_key_roles_in_cellular_hea",
+    "PMC11750915_role_of_polyamines_in_intestinal_mucosal_barrier_function",
+    "PMC12117157_genetically_encoded_fluorescent_reporter_for_polyamines",
+    "PMC12183340_di_p_coumaroyl_spermidine_from_bee_pollen_alleviates_chronic",
+    "PMC12812037_crystal_structure_of_apo_human_spermidine_synthase_reveals_d",
+    "PMC12881085_polyamine_metabolism_as_a_regulator_of_cellular_and_organism",
+    "PMC12917199_the_role_of_spermidine_in_plants_and_humans_a_pathway_from_c",
+    "PMC12935480_polyamine_metabolism_in_cancer_drivers_of_immune_evasion_fer",
+    "PMC12963084_probiotic_and_microbial_modulation_of_polyamine_production_a",
+    "PMC12963641_polyamines_as_a_universal_language_of_host_microbiota_symbio",
+    "PMC13013224_dysregulation_of_sirt1_polyamines_and_mirna_editing_in_cance",
+    "PMC3184975_polyamines_in_aging_and_disease",
+    "PMC3655973_increased_polyamine_intake_inhibits_age_associated_alteratio",
+    "PMC4092136_spermidine_feeding_decreases_age_related_locomotor_activity_",
+    "PMC4227379_exercise_training_preserves_ischemic_preconditioning_in_aged",
+    "PMC5349183_new_roles_for_autophagy_and_spermidine_in_t_cells",
+    "PMC5454378_histone_deacetylase_10_structure_and_molecular_function_as_a",
+    "PMC5807879_polyamines_bio_molecules_with_diverse_functions_in_plant_and",
+    "PMC6492385_effects_of_spermidine_supplementation_on_cognition_and_bioma",
+    "PMC6566626_endothelial_function_is_improved_by_inducing_microbial_polya",
+    "PMC6637774_polyamines_in_food",
+    "PMC6831702_response_of_roses_rosa_hybrida_l_herbert_stevens_to_foliar_a",
+    "PMC6977682_spermidine_alleviates_cardiac_aging_by_improving_mitochondri",
+    "PMC6978435_spermidine_in_dementia",
+    "PMC6980402_dysregulation_of_multiple_metabolic_networks_related_to_brai",
+    "PMC7238090_plant_polyamines",
+    "PMC7377836_spermine_and_spermidine_modulate_t_cell_function_in_older_ad",
+    "PMC7429012_n8_acetylspermidine_a_polyamine_biomarker_in_ischemic_cardio",
+    "PMC7512001_correlation_of_polyamines_acrolein_conjugated_lysine_and_pol",
+    "PMC7827520_spermidine_and_rapamycin_reveal_distinct_autophagy_flux_resp",
+    "PMC8103277_polyamine_rich_diet_elevates_blood_spermine_levels_and_inhib",
+    "PMC8116233_the_positive_effect_of_spermidine_in_older_adults_suffering_",
+    "PMC8156773_characterising_the_response_of_human_breast_cancer_cells_to_",
+    "PMC8162569_polyamine_homeostasis_in_development_and_disease",
+    "PMC8293435_polyamines_functions_metabolism_and_role_in_human_disease_ma",
+    "PMC8386697_spermidine_induced_hypusination_preserves_mitochondrial_and_",
+    "PMC8612618_new_insights_into_the_roles_and_mechanisms_of_spermidine_in_",
+    "PMC9323341_research_progress_and_potential_applications_of_spermidine_i",
+    "PMC9380894_non_linear_association_between_serum_spermidine_and_mild_cog",
+    "PMC9575633_the_role_of_polyamines_in_the_mechanisms_of_cognitive_impair",
+    "PMC9775183_one_carbon_and_polyamine_metabolism_as_cancer_therapy_target",
+    "PMC9775384_the_polyamine_spermine_potentiates_the_propagation_of_negati",
+    "PMC9964041_spermidine_eugenol_supplement_preserved_inflammation_challen"
+  ],
+  "failures": [
+    {
+      "title": "Polyamine Treatment in Elderly Patients With Coronary Artery Disease",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Randomized Controlled Trial of Spermidine for the Prevention of Radiation-Indu",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Investigation of the Correlation Between Polyamine Levels and Their Key Enzymati",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Association of Serum Polyamines with Cardiovascular Events and All-Cause Mortali",
+      "doi": "10.1159/000545054",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Supplementation of spermidine at 40 mg/day has minimal effects on circulating po",
+      "doi": "10.1016/j.nutres.2024.09.012",
+      "pmid": "39405978",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spermidine as an epigenetic regulator of autophagy in neurodegenerative disorder",
+      "doi": "10.1016/j.ejphar.2024.176823",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Identification of SLC45A4 as a pain gene encoding a neuronal polyamine transport",
+      "doi": "10.1101/2024.09.25.615046",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The mitochondrial unfolded protein response promotes senescence in human microgl",
+      "doi": "10.1101/2024.09.03.610925",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Gut microbiota and anti-aging: Focusing on spermidine",
+      "doi": "10.1080/10408398.2023.2224867",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamines in Parkinson's Disease: Balancing Between Neurotoxicity and Neuroprot",
+      "doi": "10.1146/annurev-biochem-071322-021330",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Molecular Role of Polyamines in Age-Related Diseases: An Update",
+      "doi": "10.3390/ijms242216469",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Metabolic Responses to Spermidine Supplementation.",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effect of Foliar Application of Salicylic Acid, Spermidine and Sodium Nitrop",
+      "doi": "10.22067/jhs.2022.74334.1118",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "An Exploratory Clinical Study on Autophagy and Multi-level Molecular Profiling D",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spermidine activates authophagy but does not rescue human neuroblastoma SH-SY5Y ",
+      "doi": "10.30970/sbi.1603.691",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamine-enriched Diet in Elderly Individuals With Subjective Cognitive Decline",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The effect of spermidine on memory performance in older adults at risk for demen",
+      "doi": "10.1016/j.cortex.2018.09.014",
+      "pmid": "30388439",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spermidine in health and disease",
+      "doi": "10.1126/science.aan2788",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Consumption effect of a synbiotic beverage made from soy and yacon extracts cont",
+      "doi": "10.1016/j.foodres.2017.06.005",
+      "pmid": "28784510",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamine-enriched Diet in Healthy Older Adults With Subjective Cognitive Declin",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Remaining Mysteries of Molecular Biology: The Role of Polyamines in the Cell",
+      "doi": "10.1016/j.jmb.2015.06.020",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spermidine Intake and All-cause Mortality",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relationship between food polyamines and gross domestic product in association w",
+      "doi": "10.4236/health.2010.212206",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mediterranean diet and polyamine intake: possible contribution of increased poly",
+      "doi": "10.2147/nds.s15349",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Hyperbranched Polyamine as Multipurpose Polymeric Additives for LDPE and Plastic",
+      "doi": "10.18321/ectj161",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Spatial and Temporal Distribution of Polyamine Levels and Polyamine Anabolism in",
+      "doi": "10.1104/pp.104.055483",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Changes in polyamine concentration associated with aging in Pinus radiata and Pr",
+      "doi": "10.1093/treephys/24.11.1221",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamines in Human Brain: Regional Distribution and Influence of Aging",
+      "doi": "10.1046/j.1471-4159.1995.65020636.x",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamine Profiles in Human Milk, Infant Artificial Formulas, and Semi-elemental",
+      "doi": "10.1097/00005176-199507000-00007",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Osmotic Stress-Induced Polyamine Accumulation in Cereal Leaves",
+      "doi": "10.1104/pp.75.1.102",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Effects of Inhibitors of Polyamine and Ethylene Biosynthesis on Senescence, ",
+      "doi": "10.1093/oxfordjournals.pcp.a076716",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Relation of Polyamine Synthesis and Titer to Aging and Senescence in Oat Leaves",
+      "doi": "10.1104/pp.69.2.405",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Inhibition of Ethylene Biosynthesis by Aminoethoxyvinylglycine and by Polyamines",
+      "doi": "10.1104/pp.69.2.385",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamines in Mammalian Biology and Medicine",
+      "doi": "10.1353/pbm.1979.0013",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Stabilization of Oat Leaf Protoplasts through Polyamine-mediated Inhibition of S",
+      "doi": "10.1104/pp.60.4.570",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Genetically encoded fluorescent reporter for polyamines",
+      "doi": "10.1101/2024.08.24.609500",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamine-Mediated Growth Regulation in Microalgae: Integrating Redox Balance an",
+      "doi": "10.3390/synbio3020008",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Biochemistry and Physiology of Polyamines in Plants",
+      "doi": "10.1201/9781003574927",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "A Historical Perspective on Research in Plant Polyamine Biology",
+      "doi": "10.1201/9781003574927-2",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Abstract 14213: The Polyamine Spermidine Enhances the Contractile Force of \u03bc-Pat",
+      "doi": "10.1161/circ.146.suppl_1.14213",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Polyamine\u2010independent growth and biofilm formation, and functional spermidine/sp",
+      "doi": "10.1111/mmi.14145",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Mechanism of Spermidine Uptake in Cultured Mammalian Cells and Its Inhibition by",
+      "doi": "10.1159/000163579",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Targeting polyamine metabolism and function in cancer and other hyperproliferati",
+      "doi": "10.1038/nrd2243",
+      "pmid": "17464296",
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Evidence for a Multistep Model for Eukaryotic Polyamine Transport",
+      "doi": "10.1007/978-1-59745-145-1_24",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    }
+  ],
+  "papers_resolved": {
+    "PMC10216053": {
+      "title": "Whole Blood Spermine/Spermidine Ratio as a New Indicator of Sarcopenia Status in Older Adults",
+      "doi": "10.3390/biomedicines11051403",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Biomedicines",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC8116233": {
+      "title": "The positive effect of spermidine in older adults suffering from dementia : First results of a 3-month trial.",
+      "doi": "10.1007/s00508-020-01758-y",
+      "pmid": "33211152",
+      "year": 2021,
+      "venue": "Wien Klin Wochenschr",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC7827520": {
+      "title": "Spermidine and Rapamycin Reveal Distinct Autophagy Flux Response and Cargo Receptor Clearance Profile",
+      "doi": "10.3390/cells10010095",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Cells",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC7377836": {
+      "title": "Spermine and spermidine modulate T-cell function in older adults with and without cognitive decline ex vivo.",
+      "doi": "10.18632/aging.103527",
+      "pmid": "32603310",
+      "year": 2020,
+      "venue": "Aging (Albany NY)",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC6980402": {
+      "title": "Dysregulation of multiple metabolic networks related to brain transmethylation and polyamine pathways in Alzheimer disease: A targeted metabolomic and transcriptomic study.",
+      "doi": "10.1371/journal.pmed.1003012",
+      "pmid": "31978055",
+      "year": 2020,
+      "venue": "PLoS Med",
+      "sources": [
+        "doaj",
+        "pubmed"
+      ]
+    },
+    "PMC6492385": {
+      "title": "Effects of spermidine supplementation on cognition and biomarkers in older adults with subjective cognitive decline (SmartAge)-study protocol for a randomized controlled trial.",
+      "doi": "10.1186/s13195-019-0484-1",
+      "pmid": "31039826",
+      "year": 2019,
+      "venue": "Alzheimers Res Ther",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC6637774": {
+      "title": "Polyamines in Food",
+      "doi": "10.3389/fnut.2019.00108",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Frontiers in Nutrition",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC4092136": {
+      "title": "Spermidine feeding decreases age-related locomotor activity loss and induces changes in lipid composition.",
+      "doi": "10.1371/journal.pone.0102435",
+      "pmid": null,
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC13013224": {
+      "title": "Dysregulation of SIRT1, polyamines and miRNA editing in cancer and aging",
+      "doi": "10.1007/s00726-026-03515-3",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Amino Acids",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12963641": {
+      "title": "Polyamines as a Universal Language of Host\u2013Microbiota Symbiosis",
+      "doi": "10.34133/research.1184",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Research",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12812037": {
+      "title": "Crystal structure of apo human spermidine synthase reveals dynamic rearrangement at the active site",
+      "doi": "10.1063/4.0001199",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Structural Dynamics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12963084": {
+      "title": "Probiotic and microbial modulation of polyamine production: an emerging avenue for neuroprotection in neurodegenerative disorders",
+      "doi": "10.1007/s00726-026-03505-5",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Amino Acids",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC12881085": {
+      "title": "Polyamine metabolism as a regulator of cellular and organismal aging",
+      "doi": "10.1007/s00726-026-03497-2",
+      "pmid": null,
+      "year": 2026,
+      "venue": "Amino Acids",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11216588": {
+      "title": "Spermidine supplementation in honey bees: Autophagy and epigenetic modifications",
+      "doi": "10.1371/journal.pone.0306430",
+      "pmid": null,
+      "year": 2024,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11587830": {
+      "title": "A surge in endogenous spermidine is essential for rapamycin-induced autophagy and longevity",
+      "doi": "10.1080/15548627.2024.2396793",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Autophagy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11673406": {
+      "title": "Spermidine Enhances Mitochondrial Bioenergetics in Young and Aged Human-Induced Pluripotent Stem Cell-Derived Neurons",
+      "doi": "10.3390/antiox13121482",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Antioxidants",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11634715": {
+      "title": "The longevity factor spermidine is part of a highly heritable complex erythrocyte phenotype associated with longevity",
+      "doi": "10.1111/acel.14311",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11591374": {
+      "title": "Human Supplementation with AM3, Spermidine, and Hesperidin Enhances Immune Function, Decreases Biological Age, and Improves Oxidative\u2013Inflammatory State: A Randomized Controlled Trial",
+      "doi": "10.3390/antiox13111391",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Antioxidants",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC11673770": {
+      "title": "Polyamine Metabolism and Functions: Key Roles in Cellular Health and Disease",
+      "doi": "10.3390/biom14121570",
+      "pmid": null,
+      "year": 2024,
+      "venue": "Biomolecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC10339180": {
+      "title": "Spermidine alleviating oxidative stress and apoptosis by inducing autophagy of granulosa cells in Sichuan white geese",
+      "doi": "10.1016/j.psj.2023.102879",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Poultry Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10049002": {
+      "title": "Spermidine Rescues Bioenergetic and Mitophagy Deficits Induced by Disease-Associated Tau Protein",
+      "doi": "10.3390/ijms24065297",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10607840": {
+      "title": "Polyamines in Ovarian Aging and Disease",
+      "doi": "10.3390/ijms242015330",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10630827": {
+      "title": "Wheat germ, a byproduct of the wheat milling industry, as a beneficial source of anti\u2010aging polyamines: A quantitative comparison of various forms",
+      "doi": "10.1002/fsn3.3650",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Food Science & Nutrition",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC11246659": {
+      "title": "Association of spermidine plasma levels with brain aging in a population\u2010based study",
+      "doi": "10.1002/alz.12815",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Alzheimer s & Dementia",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9775384": {
+      "title": "The Polyamine Spermine Potentiates the Propagation of Negatively Charged Molecules through the Astrocytic Syncytium",
+      "doi": "10.3390/biom12121812",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Biomolecules",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9380894": {
+      "title": "Non-linear association between serum spermidine and mild cognitive impairment: Results from a cross-sectional and longitudinal study",
+      "doi": "10.3389/fnagi.2022.924984",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Frontiers in Aging Neuroscience",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC9323341": {
+      "title": "Research Progress and Potential Applications of Spermidine in Ocular Diseases",
+      "doi": "10.3390/pharmaceutics14071500",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Pharmaceutics",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8612618": {
+      "title": "New Insights into the Roles and Mechanisms of Spermidine in Aging and Age-Related Diseases",
+      "doi": "10.14336/ad.2021.0603",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Aging and Disease",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8293435": {
+      "title": "Polyamines: Functions, Metabolism, and Role in Human Disease Management",
+      "doi": "10.3390/medsci9020044",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Medical Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8386697": {
+      "title": "Spermidine-induced hypusination preserves mitochondrial and cognitive function during aging",
+      "doi": "10.1080/15548627.2021.1933299",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Autophagy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8162569": {
+      "title": "Polyamine Homeostasis in Development and Disease",
+      "doi": "10.3390/medsci9020028",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Medical Sciences",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8103277": {
+      "title": "Polyamine-Rich Diet Elevates Blood Spermine Levels and Inhibits Pro-Inflammatory Status: An Interventional Study",
+      "doi": "10.3390/medsci9020022",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Medical Sciences",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC8525995": {
+      "title": "Hydrogen peroxide mediates spermidine-induced autophagy to alleviate salt stress in cucumber",
+      "doi": "10.1080/15548627.2020.1847797",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Autophagy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6977682": {
+      "title": "Spermidine alleviates cardiac aging by improving mitochondrial biogenesis and function",
+      "doi": "10.18632/aging.102647",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7512001": {
+      "title": "Correlation of polyamines, acrolein-conjugated lysine and polyamine metabolic enzyme levels with age in human liver",
+      "doi": "10.1016/j.heliyon.2020.e05031",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Heliyon",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC7429012": {
+      "title": "N8\u2010Acetylspermidine: A Polyamine Biomarker in Ischemic Cardiomyopathy With Reduced Ejection Fraction",
+      "doi": "10.1161/jaha.120.016055",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Journal of the American Heart Association: Cardiovascular and Cerebrovascular Disease",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6904859": {
+      "title": "Alterations in Polyamine Metabolism in Patients With Lymphangioleiomyomatosis and Tuberous Sclerosis Complex 2-Deficient Cells.",
+      "doi": "10.1016/j.chest.2019.05.038",
+      "pmid": "31299246",
+      "year": 2019,
+      "venue": "Chest",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6566626": {
+      "title": "Endothelial Function is improved by Inducing Microbial Polyamine Production in the Gut: A Randomized Placebo-Controlled Trial.",
+      "doi": "10.3390/nu11051188",
+      "pmid": "31137855",
+      "year": 2019,
+      "venue": "Nutrients",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6978435": {
+      "title": "Spermidine in dementia",
+      "doi": "10.1007/s00508-019-01588-7",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Wiener klinische Wochenschrift",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6831702": {
+      "title": "Response of Roses (Rosa hybrida L. \u2018Herbert Stevens\u2019) to Foliar Application of Polyamines on Root Development, Flowering, Photosynthetic Pigments, Antioxidant Enzymes Activity and NPK",
+      "doi": "10.1038/s41598-019-52547-1",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5807879": {
+      "title": "Polyamines: Bio-Molecules with Diverse Functions in Plant and Human Health and Disease",
+      "doi": "10.3389/fchem.2018.00010",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Frontiers in Chemistry",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC6333461": {
+      "title": "Spermidine reduces cancer-related mortality in humans",
+      "doi": "10.1080/15548627.2018.1539592",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Autophagy",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5489339": {
+      "title": "Spermidine Prolongs Lifespan and Prevents Liver Fibrosis and Hepatocellular Carcinoma by Activating MAP1S-Mediated Autophagy",
+      "doi": "10.1158/0008-5472.can-16-3462",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Cancer Research",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5454378": {
+      "title": "Histone deacetylase 10 structure and molecular function as a polyamine deacetylase",
+      "doi": "10.1038/ncomms15368",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Nature Communications",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4515861": {
+      "title": "Dietary polyamine intake and colorectal cancer risk in postmenopausal women.",
+      "doi": "10.3945/ajcn.114.103895",
+      "pmid": "26135350",
+      "year": 2015,
+      "venue": "Am J Clin Nutr",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC5349183": {
+      "title": "New roles for autophagy and spermidine in T cells",
+      "doi": "10.15698/mic2015.03.195",
+      "pmid": null,
+      "year": 2015,
+      "venue": "Microbial Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4227379": {
+      "title": "Exercise Training Preserves Ischemic Preconditioning in Aged Rat Hearts by Restoring the Myocardial Polyamine Pool",
+      "doi": "10.1155/2014/457429",
+      "pmid": null,
+      "year": 2014,
+      "venue": "Oxidative Medicine and Cellular Longevity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3655973": {
+      "title": "Increased Polyamine Intake Inhibits Age-Associated Alteration in Global DNA Methylation and 1,2-Dimethylhydrazine-Induced Tumorigenesis",
+      "doi": "10.1371/journal.pone.0064357",
+      "pmid": null,
+      "year": 2013,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3184975": {
+      "title": "Polyamines in aging and disease",
+      "doi": "10.18632/aging.100361",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12935480": {
+      "title": "Polyamine metabolism in cancer: drivers of immune evasion, ferroptosis and therapy resistance.",
+      "doi": "10.1017/erm.2025.10026",
+      "pmid": "41233302",
+      "year": 2025,
+      "venue": "Expert Rev Mol Med",
+      "sources": [
+        "doaj",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12117157": {
+      "title": "Genetically encoded fluorescent reporter for polyamines.",
+      "doi": "10.1038/s41467-025-60147-z",
+      "pmid": "40425580",
+      "year": 2025,
+      "venue": "Nat Commun",
+      "sources": [
+        "doaj",
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC11750915": {
+      "title": "Role of polyamines in intestinal mucosal barrier function.",
+      "doi": "10.1007/s00281-024-01035-4",
+      "pmid": "39836273",
+      "year": 2025,
+      "venue": "Semin Immunopathol",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC7238090": {
+      "title": "Plant Polyamines",
+      "doi": "10.3390/plants9040511",
+      "pmid": null,
+      "year": 2020,
+      "venue": "Plants",
+      "sources": [
+        "doaj",
+        "openalex"
+      ]
+    },
+    "PMC2756025": {
+      "title": "Polyamine catabolism and disease.",
+      "doi": "10.1042/bj20090598",
+      "pmid": "19589128",
+      "year": 2009,
+      "venue": "Biochem J",
+      "sources": [
+        "openalex",
+        "pubmed"
+      ]
+    },
+    "PMC12917199": {
+      "title": "The role of spermidine in plants and humans: a pathway from climate change adaptation to health benefits",
+      "doi": "10.1038/s41538-025-00695-2",
+      "pmid": null,
+      "year": 2026,
+      "venue": "npj Science of Food",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC12183340": {
+      "title": "Di\u2010 p \u2010Coumaroyl Spermidine From Bee Pollen Alleviates Chronic Nonbacterial Prostatitis",
+      "doi": "10.1002/fsn3.70467",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Food Science & Nutrition",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9964041": {
+      "title": "Spermidine-Eugenol Supplement Preserved Inflammation-Challenged Intestinal Cells by Stimulating Autophagy",
+      "doi": "10.3390/ijms24044131",
+      "pmid": null,
+      "year": 2023,
+      "venue": "International Journal of Molecular Sciences",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10272464": {
+      "title": "Genetic portrait of polyamine transporters in barley: insights in the regulation of leaf senescence",
+      "doi": "10.3389/fpls.2023.1194737",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Frontiers in Plant Science",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC10652861": {
+      "title": "Polyamines and hypusination are important for Clostridioides difficile toxin B (TcdB)-mediated activation of group 3 innate lymphocytes (ILC3s)",
+      "doi": "10.1128/iai.00236-23",
+      "pmid": null,
+      "year": 2023,
+      "venue": "Infection and Immunity",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9575633": {
+      "title": "The Role of Polyamines in the Mechanisms of Cognitive Impairment",
+      "doi": "10.1134/s1819712422030059",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Neurochemical Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9775183": {
+      "title": "One-Carbon and Polyamine Metabolism as Cancer Therapy Targets",
+      "doi": "10.3390/biom12121902",
+      "pmid": null,
+      "year": 2022,
+      "venue": "Biomolecules",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC8156773": {
+      "title": "Characterising the Response of Human Breast Cancer Cells to Polyamine Modulation",
+      "doi": "10.3390/biom11050743",
+      "pmid": null,
+      "year": 2021,
+      "venue": "Biomolecules",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1218558": {
+      "title": "Interactions of polyamines with ion channels",
+      "doi": "10.1042/bj3250289",
+      "pmid": null,
+      "year": 1997,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC1146560": {
+      "title": "Recent advances in the biochemistry of polyamines in eukaryotes",
+      "doi": "10.1042/bj2340249",
+      "pmid": null,
+      "year": 1986,
+      "venue": "Biochemical Journal",
+      "sources": [
+        "openalex"
+      ]
+    }
+  }
+}

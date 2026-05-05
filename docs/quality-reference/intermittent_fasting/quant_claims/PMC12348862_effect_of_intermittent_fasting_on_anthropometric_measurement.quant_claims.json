@@ -1,0 +1,1619 @@
+{
+  "paper_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement",
+  "doi": "10.3390/nu17152436",
+  "extracted_at": "2026-05-05T22:11:20+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 15,
+    "confidence_interval": 20,
+    "p_value": 32,
+    "percentage": 19,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-978",
+      "claim_type": "unit_value",
+      "raw_text": "4.25 kg",
+      "numeric_values": [
+        4.25
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 978,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "usion criteria. IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 ,",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-987",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -7.71, -0.79",
+      "numeric_values": [
+        -7.71,
+        -0.79
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 987,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "teria. IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85;",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1009",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1009,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "y reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-1031",
+      "claim_type": "unit_value",
+      "raw_text": "2.05 kg",
+      "numeric_values": [
+        2.05
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "(MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood gluc",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1045",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -3.26, -0.85",
+      "numeric_values": [
+        -3.26,
+        -0.85
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1045,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": ", 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL,",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1067",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1067,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-1114",
+      "claim_type": "unit_value",
+      "raw_text": "2.86 mg/dL",
+      "numeric_values": [
+        2.86
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1114,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (F",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1126",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -4.83, -0.89",
+      "numeric_values": [
+        -4.83,
+        -0.89
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1126,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL,",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1148",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1148,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1206",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -5.18, -1.16",
+      "numeric_values": [
+        -5.18,
+        -1.16
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1206,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% C",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1228",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1228,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1281",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.39, -0.50",
+      "numeric_values": [
+        -1.39,
+        -0.5
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1281,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "-1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1303",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1303,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "ulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-1341",
+      "claim_type": "unit_value",
+      "raw_text": "40.71 mg/dL",
+      "numeric_values": [
+        40.71
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 1341,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosteron",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1354",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -61.53, -19.90",
+      "numeric_values": [
+        -61.53,
+        -19.9
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1354,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": ", -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD =",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1378",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1378,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "iglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1450",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -57.29, -9.13",
+      "numeric_values": [
+        -57.29,
+        -9.13
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1473",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1473,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-1517",
+      "claim_type": "percentage",
+      "raw_text": "1.61%",
+      "numeric_values": [
+        1.61
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1517,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "-57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1524",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -2.76, -0.45",
+      "numeric_values": [
+        -2.76,
+        -0.45
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1524,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": ", -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L,",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1546",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1546,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "ree androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-1593",
+      "claim_type": "unit_value",
+      "raw_text": "2.00 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 1593,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex h",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1604",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -3.15, -0.85",
+      "numeric_values": [
+        -3.15,
+        -0.85
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1604,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1626",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1626,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "active protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-1703",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.22, 0.77",
+      "numeric_values": [
+        0.22,
+        0.77
+      ],
+      "units": "95%CI",
+      "source_section": "abstract",
+      "source_offset": 1703,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004). No significant changes were observed in waist-",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-1723",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1723,
+      "sentence": "IF significantly reduced body weight (MD = -4.25 kg, 95% CI: -7.71, -0.79; p = 0.02), BMI (MD = -2.05 kg/m 2 , 95% CI: -3.26, -0.85; p = 0.0008), fasting blood glucose (FBG; MD = -2.86 mg/dL, 95% CI: -4.83, -0.89; p = 0.004), fasting blood insulin (FBI; MD = -3.17 \u03bcU/mL, 95% CI: -5.18, -1.16; p = 0.002), insulin resistance (HOMA-IR; MD = -0.94, 95% CI: -1.39, -0.50; p < 0.0001), triglycerides (TG; MD = -40.71 mg/dL, 95% CI: -61.53, -19.90; p = 0.0001), dehydroepiandrosterone sulfate (DHEA-S; MD = -33.21 \u03bcg/dL, 95% CI: -57.29, -9.13; p = 0.007), free androgen index (FAI; MD = -1.61%, 95% CI: -2.76, -0.45; p = 0.006), and C-reactive protein (CRP; MD = -2.00 mg/L, 95% CI: -3.15, -0.85; p = 0.006), while increasing sex hormone-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004).",
+      "context_window": "one-binding globulin (SHBG; SMD = 0.50, 95% CI: 0.22, 0.77; p = 0.004). No significant changes were observed in waist-to-hip rati",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-332",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 332,
+      "sentence": "Affecting approximately 20% of women of reproductive age, PCOS manifests as a complex endocrinopathy characterized by morphological, hormonal, and metabolic abnormalities [ 1 , 3 ].",
+      "context_window": "ic ovary syndrome (PCOS) [ 1 , 2 ]. Affecting approximately 20% of women of reproductive age, PCOS manifests as a complex e",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-1658",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1658,
+      "sentence": "Studies indicate that a substantial proportion of females diagnosed with PCOS, reaching up to 88%, fall either into overweight or obese categories [ 8 ].",
+      "context_window": "l proportion of females diagnosed with PCOS, reaching up to 88%, fall either into overweight or obese categories [ 8 ]. It",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-1831",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1831,
+      "sentence": "Studies were eligible for inclusion if they met the following criteria: (1) interventional studies (randomized or non-randomized) conducted in human adult female participants (\u226518 years) diagnosed with PCOS according to Rotterdam criteria; (2) evaluated the impact of IF (including time-restricted eating or alternate-day fasting) on at least one of the following outcomes: anthropometric measures, metabolic parameters, hormonal markers, and inflammatory biomarkers; (3) reported pre- and post-intervention mean \u00b1 standard deviation (SD) values for eligible outcomes; and (4) published in peer-reviewed journals and written in English.",
+      "context_window": "-randomized) conducted in human adult female participants (\u226518 years) diagnosed with PCOS according to Rotterdam criteria; (2) e",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5870",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5870,
+      "sentence": "I 2 \u2265 50% indicates substantial heterogeneity, and I 2 \u2265 75% indicates considerable heterogeneity [ 30 ]. p -values were considered statistically significant at <0.05.",
+      "context_window": "quantitatively using Cochran\u2019s Q and I 2 statistics. I 2 \u2265 50% indicates substantial heterogeneity, and I 2 \u2265 75% indicate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5921",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5921,
+      "sentence": "I 2 \u2265 50% indicates substantial heterogeneity, and I 2 \u2265 75% indicates considerable heterogeneity [ 30 ]. p -values were considered statistically significant at <0.05.",
+      "context_window": "s. I 2 \u2265 50% indicates substantial heterogeneity, and I 2 \u2265 75% indicates considerable heterogeneity [ 30 ]. p -values were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-2792",
+      "claim_type": "unit_value",
+      "raw_text": "5 weeks",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2792,
+      "sentence": "The duration of trial interventions ranged from 5 weeks to 8 months.",
+      "context_window": "dan [ 35 ]. The duration of trial interventions ranged from 5 weeks to 8 months. All the studies included participants who were",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-2803",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2803,
+      "sentence": "The duration of trial interventions ranged from 5 weeks to 8 months.",
+      "context_window": "The duration of trial interventions ranged from 5 weeks to 8 months. All the studies included participants who were overweight",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-4534",
+      "claim_type": "unit_value",
+      "raw_text": "4.25 kg",
+      "numeric_values": [
+        4.25
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 4534,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "ges. There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-4543",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.79, 7.71",
+      "numeric_values": [
+        0.79,
+        7.71
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4543,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "e was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4563",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4563,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.00",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-4579",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4579,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "ght loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 =",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-4603",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.85, 3.26",
+      "numeric_values": [
+        0.85,
+        3.26
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4603,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ). In addition, a signif",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4623",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0008",
+      "numeric_values": [
+        0.0008
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4623,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": "p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ). In addition, a significant reduct",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-4641",
+      "claim_type": "percentage",
+      "raw_text": "51%",
+      "numeric_values": [
+        51.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4641,
+      "sentence": "There was a significant reduction in weight loss (MD = 4.25 kg, 95% CI: 0.79, 7.71, p = 0.02, I 2 = 0%) and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ).",
+      "context_window": ") and BMI (MD = 2.05, 95% CI: 0.85, 3.26, p = 0.0008, I 2 = 51%) ( Figure 2 ). In addition, a significant reduction in body",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4715",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4715,
+      "sentence": "In addition, a significant reduction in body FM (kg) ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) was achieved [ 33 , 35 ].",
+      "context_window": "2 ). In addition, a significant reduction in body FM (kg) ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4741",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4741,
+      "sentence": "In addition, a significant reduction in body FM (kg) ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) was achieved [ 33 , 35 ].",
+      "context_window": "icant reduction in body FM (kg) ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) was achieved [ 33 , 35 ]. In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4771",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4771,
+      "sentence": "In addition, a significant reduction in body FM (kg) ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) was achieved [ 33 , 35 ].",
+      "context_window": ") ( p = 0.01), body fat (%) ( p = 0.01), and visceral fat ( p = 0.01) was achieved [ 33 , 35 ]. In contrast, there was a signifi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4862",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4862,
+      "sentence": "In contrast, there was a significant increase in FFM ( p = 0.01), and body muscle ( p = 0.001) [ 35 ].",
+      "context_window": "5 ]. In contrast, there was a significant increase in FFM ( p = 0.01), and body muscle ( p = 0.001) [ 35 ]. However, Li et al. [",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4891",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4891,
+      "sentence": "In contrast, there was a significant increase in FFM ( p = 0.01), and body muscle ( p = 0.001) [ 35 ].",
+      "context_window": "significant increase in FFM ( p = 0.01), and body muscle ( p = 0.001) [ 35 ]. However, Li et al. [ 33 ] found no effect of IF on",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4984",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4984,
+      "sentence": "However, Li et al. [ 33 ] found no effect of IF on skeletal muscle mass ( p = 0.06).",
+      "context_window": "al. [ 33 ] found no effect of IF on skeletal muscle mass ( p = 0.06). Despite these improvements, our analysis did not find a r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5070",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.25",
+      "numeric_values": [
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5070,
+      "sentence": "Despite these improvements, our analysis did not find a reduction in WHR ( p = 0.25).",
+      "context_window": "mprovements, our analysis did not find a reduction in WHR ( p = 0.25). Moreover, IF exerted a significant decrease in FBG (MD =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-5138",
+      "claim_type": "unit_value",
+      "raw_text": "2.86 mg/dL",
+      "numeric_values": [
+        2.86
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5138,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "). Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5150",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.89, 4.83",
+      "numeric_values": [
+        0.89,
+        4.83
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5150,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16,",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5170",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5170,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "icant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p =",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5187",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5187,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5215",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.16, 5.18",
+      "numeric_values": [
+        1.16,
+        5.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5215,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "I: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5235",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5235,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": ".004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5252",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5252,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 =",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5277",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.50, 1.39",
+      "numeric_values": [
+        0.5,
+        1.39
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5277,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 1",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5297",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5297,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "= 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53,",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5315",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5315,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": ", HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.000",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-5333",
+      "claim_type": "unit_value",
+      "raw_text": "40.71 mg/dL",
+      "numeric_values": [
+        40.71
+      ],
+      "units": "mg/dL",
+      "source_section": "results",
+      "source_offset": 5333,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%). On the other",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5346",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 19.90, 61.53",
+      "numeric_values": [
+        19.9,
+        61.53
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5346,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": ".50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%). On the other hand, IF did not affec",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5368",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5368,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%). On the other hand, IF did not affect TC, LDL, a",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5386",
+      "claim_type": "percentage",
+      "raw_text": "0%",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5386,
+      "sentence": "Moreover, IF exerted a significant decrease in FBG (MD = 2.86 mg/dL, 95% CI: 0.89, 4.83, p = 0.004, I 2 = 49%), FBI (MD = 3.17 \u03bcU/mL, 95% CI: 1.16, 5.18, p = 0.002, I 2 = 0%), HOMA-IR (MD = 0.94, 95% CI: 0.50, 1.39, p < 0.0001, I 2 = 0%), and TG (MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%).",
+      "context_window": "(MD = 40.71 mg/dL, 95% CI: 19.90, 61.53, p = 0.0001, I 2 = 0%). On the other hand, IF did not affect TC, LDL, and HDL ( F",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5560",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.22",
+      "numeric_values": [
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5560,
+      "sentence": "Three studies assessed the effect of IF on TT, and no effect was observed ( p = 0.22).",
+      "context_window": "sessed the effect of IF on TT, and no effect was observed ( p = 0.22). However, DHEA-s was significantly decreased (MD = 33.21 \u00b5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5634",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 9.13, 57.29",
+      "numeric_values": [
+        9.13,
+        57.29
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5634,
+      "sentence": "However, DHEA-s was significantly decreased (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%).",
+      "context_window": "ever, DHEA-s was significantly decreased (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%). SHBG was significantly lower before",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5655",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5655,
+      "sentence": "However, DHEA-s was significantly decreased (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%).",
+      "context_window": "ificantly decreased (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%). SHBG was significantly lower before IF compare",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5672",
+      "claim_type": "percentage",
+      "raw_text": "48%",
+      "numeric_values": [
+        48.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5672,
+      "sentence": "However, DHEA-s was significantly decreased (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%).",
+      "context_window": "ed (MD = 33.21 \u00b5g/dL, 95% CI: 9.13, 57.29, p = 0.007, I 2 = 48%). SHBG was significantly lower before IF compared to after",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5751",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -0.77, -0.22",
+      "numeric_values": [
+        -0.77,
+        -0.22
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5751,
+      "sentence": "SHBG was significantly lower before IF compared to after IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%).",
+      "context_window": "ificantly lower before IF compared to after IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%). Subsequently, FAI was significantly",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5773",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5773,
+      "sentence": "SHBG was significantly lower before IF compared to after IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%).",
+      "context_window": "IF compared to after IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%). Subsequently, FAI was significantly reduced (M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5790",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5790,
+      "sentence": "SHBG was significantly lower before IF compared to after IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%).",
+      "context_window": "fter IF (SMD = 0.50, 95% CI: -0.77, -0.22, p = 0.004, I 2 = 41%). Subsequently, FAI was significantly reduced (MD = 1.61%,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5846",
+      "claim_type": "percentage",
+      "raw_text": "1.61%",
+      "numeric_values": [
+        1.61
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5846,
+      "sentence": "Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ).",
+      "context_window": "2 = 41%). Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ). No",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-5853",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.45, 2.76",
+      "numeric_values": [
+        0.45,
+        2.76
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5853,
+      "sentence": "Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ).",
+      "context_window": "). Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ). No statistical signifi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5873",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5873,
+      "sentence": "Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ).",
+      "context_window": "was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ). No statistical significance on AM",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5890",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5890,
+      "sentence": "Subsequently, FAI was significantly reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ).",
+      "context_window": "y reduced (MD = 1.61%, 95% CI: 0.45, 2.76, p = 0.006, I 2 = 35%) ( Figure 5 ). No statistical significance on AMH was found",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5956",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5956,
+      "sentence": "No statistical significance on AMH was found ( p = 0.10) ( Figure 3 ).",
+      "context_window": "Figure 5 ). No statistical significance on AMH was found ( p = 0.10) ( Figure 3 ). Regarding LH and FSH, contradictory results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-6423",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 6423,
+      "sentence": "As a result, there was a significant reduction at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "context_window": "e was a significant reduction at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-ci-6431",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.85, 3.15",
+      "numeric_values": [
+        0.85,
+        3.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 6431,
+      "sentence": "As a result, there was a significant reduction at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "context_window": "significant reduction at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-6451",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6451,
+      "sentence": "As a result, there was a significant reduction at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "context_window": "n at the end of the study (MD = 2 mg/L, 95% CI: 0.85, 3.15, p = 0.006, I 2 = 0) ( Figure 3 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-1317",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1317,
+      "sentence": "In addition, obesity and overweight are the most common (88%) characteristics among PCOS patients in which a bidirectional relationship was reported in the literature [ 8 ].",
+      "context_window": "]. In addition, obesity and overweight are the most common (88%) characteristics among PCOS patients in which a bidirection",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-2148",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2148,
+      "sentence": "However, even when LH was not reduced, the menstrual cycle was normalized in 70% of patients [ 33 ].",
+      "context_window": "n LH was not reduced, the menstrual cycle was normalized in 70% of patients [ 33 ]. Our analysis shows a statistically sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-2246",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 2246,
+      "sentence": "Our analysis shows a statistically significant reduction in CRP levels by 2 mg/L.",
+      "context_window": "hows a statistically significant reduction in CRP levels by 2 mg/L. In PCOS rats, a reduction in CRP resulted in decreased l",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-4111",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 4111,
+      "sentence": "Despite this, the IF + probiotic group had a significant decrease in homa-b ( p = 0.009) indicating a potentially positive impact of probiotic combined with IF, although all the groups had similar results at the end of the study.",
+      "context_window": "IF + probiotic group had a significant decrease in homa-b ( p = 0.009) indicating a potentially positive impact of probiotic comb",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-4557",
+      "claim_type": "unit_value",
+      "raw_text": "9.2 kg",
+      "numeric_values": [
+        9.2
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4557,
+      "sentence": "For instance, the IF group lost 9.2 kg while the CR group lost 2.4 kg during the study.",
+      "context_window": "etric measurements in PCOS. For instance, the IF group lost 9.2 kg while the CR group lost 2.4 kg during the study. A similar",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-u-4588",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 kg",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "kg",
+      "source_section": "discussion",
+      "source_offset": 4588,
+      "sentence": "For instance, the IF group lost 9.2 kg while the CR group lost 2.4 kg during the study.",
+      "context_window": "instance, the IF group lost 9.2 kg while the CR group lost 2.4 kg during the study. A similar trend was observed in BMI and F",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5401",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5401,
+      "sentence": "Despite this, even under isocaloric state, IF produced a significant reduction in HOMA-IR ( p = 0.02) and a considerable reduction in FBI ( p = 0.08) which are key factors of PCOS progression [ 53 ].",
+      "context_window": "ric state, IF produced a significant reduction in HOMA-IR ( p = 0.02) and a considerable reduction in FBI ( p = 0.08) which are",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-p-5449",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5449,
+      "sentence": "Despite this, even under isocaloric state, IF produced a significant reduction in HOMA-IR ( p = 0.02) and a considerable reduction in FBI ( p = 0.08) which are key factors of PCOS progression [ 53 ].",
+      "context_window": "n HOMA-IR ( p = 0.02) and a considerable reduction in FBI ( p = 0.08) which are key factors of PCOS progression [ 53 ]. Combini",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5707",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5707,
+      "sentence": "Moderate weight loss (5-10%) has been shown to significantly improve insulin sensitivity and beta cell function which, in turn, decreases IR and FBG [ 54 , 55 ].",
+      "context_window": "c intake, resulting in weight loss. Moderate weight loss (5-10%) has been shown to significantly improve insulin sensitivit",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-pct-5882",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5882,
+      "sentence": "Interestingly, in PCOS women, even a 2% weight loss resulted in significant improvements in menstrual irregularities [ 55 ].",
+      "context_window": "R and FBG [ 54 , 55 ]. Interestingly, in PCOS women, even a 2% weight loss resulted in significant improvements in menstru",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-n-576",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 576,
+      "sentence": "The number of included studies ( n = 5) and participants ( n = 176) were very low, which limits the generalizability.",
+      "context_window": "onsidered in this article. The number of included studies ( n = 5) and participants ( n = 176) were very low, which limits th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12348862_effect_of_intermittent_fasting_on_anthropometric_measurement-n-602",
+      "claim_type": "sample_size",
+      "raw_text": "n = 176",
+      "numeric_values": [
+        176.0
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 602,
+      "sentence": "The number of included studies ( n = 5) and participants ( n = 176) were very low, which limits the generalizability.",
+      "context_window": "The number of included studies ( n = 5) and participants ( n = 176) were very low, which limits the generalizability. In addit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}
