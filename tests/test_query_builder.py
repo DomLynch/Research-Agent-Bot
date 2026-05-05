@@ -100,20 +100,27 @@ def test_pubmed_query_size_under_3000_chars():
 
 # ---------- Europe PMC builder --------------------------------------
 
-def test_europepmc_uses_kw_pubtype_lang_pubyear():
+def test_europepmc_uses_pubtype_lang_pubyear_no_kw_field_tag():
+    """Slice 6 step 5 finding: KW: tag is too strict (controlled-
+    vocabulary only). Topic + scope terms run bare; only structural
+    filters carry tags."""
     q = build_europepmc_query(_spec())
-    assert "KW:alpha" in q
+    # No KW: field tag on topic terms
+    assert "KW:alpha" not in q
+    assert "alpha" in q  # but term still present
+    # Structural filters still use field tags
     assert 'PUB_TYPE:"clinical trial"' in q
     assert "LANG:eng" in q
     assert "PUB_YEAR:[2010 TO 2100]" in q
 
 
-def test_europepmc_quotes_multiword_kw():
+def test_europepmc_quotes_multiword_topic_terms():
     q = build_europepmc_query(_spec(
         topic_terms=("mTOR inhibitor", "rapamycin"),
     ))
-    assert 'KW:"mTOR inhibitor"' in q
-    assert "KW:rapamycin" in q
+    # Multi-word terms still quoted (so EPMC parses as phrase)
+    assert '"mTOR inhibitor"' in q
+    assert "rapamycin" in q
 
 
 def test_europepmc_humans_emits_has_human_available():
@@ -121,12 +128,14 @@ def test_europepmc_humans_emits_has_human_available():
     assert "HAS_HUMAN_AVAILABLE:Y" in q
 
 
-def test_europepmc_excludes_with_NOT():
+def test_europepmc_excludes_with_NOT_no_kw_tag():
+    """Excludes also use bare terms (same KW: avoidance)."""
     q = build_europepmc_query(_spec(
         exclude_terms=("transplant rejection",),
     ))
     assert ' NOT ' in q
-    assert 'KW:"transplant rejection"' in q
+    assert "KW:" not in q
+    assert '"transplant rejection"' in q
 
 
 # ---------- Keyword fallback ----------------------------------------

@@ -29,7 +29,7 @@ class ClinicalTrialsClient:
     ) -> list[RawHit]:
         params = {
             "query.term": clean_text(query, limit=3000),
-            "pageSize": str(max(1, min(limit, 25))),
+            "pageSize": str(max(1, min(limit, 1000))),
             "format": "json",
         }
         data = await safe_get_json(client, CTGOV_STUDIES_URL, params=params)

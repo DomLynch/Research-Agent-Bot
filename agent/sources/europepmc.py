@@ -29,7 +29,11 @@ class EuropePMCClient:
         params = {
             "query": clean_text(query, limit=3000),
             "format": "json",
-            "pageSize": str(max(1, min(limit, 25))),
+            # Europe PMC pageSize ceiling is 1000 per call (verified
+            # in their API docs). Bumped from 25 (Slice 6 step 5
+            # validation found this was capping retrieval at 25
+            # per source even when caller asked for 1000).
+            "pageSize": str(max(1, min(limit, 1000))),
             # 'core' is required to get abstractText. 'lite' omits it which
             # would cause every result to be silently dropped.
             "resultType": "core",

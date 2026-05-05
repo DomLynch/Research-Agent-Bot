@@ -63,7 +63,7 @@ class OpenAlexClient:
     ) -> list[RawHit]:
         params = {
             "search": clean_text(query, limit=3000),
-            "per-page": str(max(1, min(limit, 25))),
+            "per-page": str(max(1, min(limit, 200))),
             "select": SELECT_FIELDS,
         }
         params.update(self._auth_params())

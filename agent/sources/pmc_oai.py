@@ -45,7 +45,7 @@ class PmcOaiClient:
                 "AND SRC:PMC AND OPEN_ACCESS:Y"
             ),
             "format": "json",
-            "pageSize": str(max(1, min(limit, 25))),
+            "pageSize": str(max(1, min(limit, 100))),
             "resultType": "core",
         }
         data = await safe_get_json(client, _EUROPEPMC_URL, params=params)

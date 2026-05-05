@@ -29,7 +29,7 @@ class DoajClient:
         q = urllib.parse.quote(clean_text(query, limit=3000))
         url = (
             f"{_DOAJ_URL}{q}"
-            f"?pageSize={max(1, min(limit, 25))}"
+            f"?pageSize={max(1, min(limit, 100))}"
         )
         data = await safe_get_json(client, url, timeout=15.0)
         if data is None:

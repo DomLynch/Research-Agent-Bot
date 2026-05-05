@@ -93,7 +93,7 @@ class ArxivClient:
     ) -> list[RawHit]:
         params = {
             "search_query": _build_search_query(query),
-            "max_results": str(max(1, min(limit, 25))),
+            "max_results": str(max(1, min(limit, 1000))),
             "sortBy": "relevance",
             "sortOrder": "descending",
         }

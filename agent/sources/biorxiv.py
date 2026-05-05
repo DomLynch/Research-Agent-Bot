@@ -47,7 +47,7 @@ class BioRxivClient:
                 "AND (PUB_TYPE:Preprint)"
             ),
             "format": "json",
-            "pageSize": str(max(1, min(limit, 25))),
+            "pageSize": str(max(1, min(limit, 100))),
             "resultType": "core",
         }
         data = await safe_get_json(client, _BIORXIV_SEARCH_URL, params=params)

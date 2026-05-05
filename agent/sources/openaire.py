@@ -30,7 +30,7 @@ class OpenAireClient:
     ) -> list[RawHit]:
         params = {
             "keywords": clean_text(query, limit=3000),
-            "size": str(max(1, min(limit, 25))),
+            "size": str(max(1, min(limit, 100))),
             "format": "json",
         }
         data = await safe_get_json(client, _OPENAIRE_URL, params=params)

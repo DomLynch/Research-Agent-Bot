@@ -38,7 +38,7 @@ class CrossrefClient:
     ) -> list[RawHit]:
         params = {
             "query": clean_text(query, limit=3000),
-            "rows": str(max(1, min(limit, 25))),
+            "rows": str(max(1, min(limit, 1000))),
             "filter": "type:journal-article,has-abstract:true",
             "select": "DOI,title,abstract,issued,container-title,author",
         }

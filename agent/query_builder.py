@@ -98,19 +98,20 @@ def build_pubmed_query(spec: RetrievalSpec) -> str:
 # ---------- Europe PMC ----------------------------------------------
 
 def build_europepmc_query(spec: RetrievalSpec) -> str:
-    """Compose a Europe PMC query using KW: + PUB_TYPE: + LANG: +
-    PUB_YEAR:[a TO b] + HAS_HUMAN_AVAILABLE:Y."""
+    """Compose a Europe PMC query.
+
+    Europe PMC's default field search hits title + abstract +
+    keywords + body — that's what we want for free-text terms. The
+    explicit `KW:` field tag is a strict CONTROLLED-VOCABULARY match
+    that would drop ~7x of relevant hits (verified live: rapamycin
+    KW: 175, no-tag: 1178). So topic + scope + exclude terms run
+    bare; only structural filters (PUB_TYPE / LANG / PUB_YEAR /
+    HAS_HUMAN_AVAILABLE) carry tags."""
     parts: list[str] = []
     if spec.topic_terms:
-        parts.append(_or_group(
-            tuple(f"KW:{_quote_if_phrase(t)}" for t in spec.topic_terms),
-            field_tag="", quote=False,
-        ))
+        parts.append(_or_group(spec.topic_terms))
     if spec.scope_terms:
-        parts.append(_or_group(
-            tuple(f"KW:{_quote_if_phrase(t)}" for t in spec.scope_terms),
-            field_tag="", quote=False,
-        ))
+        parts.append(_or_group(spec.scope_terms))
     if spec.evidence_types:
         parts.append(_or_group(
             tuple(
@@ -131,12 +132,7 @@ def build_europepmc_query(spec: RetrievalSpec) -> str:
         parts.append(f"PUB_YEAR:[{a} TO {b}]")
     main = " AND ".join(p for p in parts if p)
     if spec.exclude_terms:
-        excl = _or_group(
-            tuple(
-                f"KW:{_quote_if_phrase(t)}" for t in spec.exclude_terms
-            ),
-            field_tag="", quote=False,
-        )
+        excl = _or_group(spec.exclude_terms)
         if excl:
             main = f"{main} NOT {excl}" if main else f"NOT {excl}"
     return main

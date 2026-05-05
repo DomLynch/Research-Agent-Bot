@@ -42,7 +42,7 @@ class CoreClient:
             return []
         params = {
             "q": clean_text(query, limit=3000),
-            "limit": str(max(1, min(limit, 25))),
+            "limit": str(max(1, min(limit, 100))),
         }
         data = await safe_get_json(
             client, _CORE_URL,

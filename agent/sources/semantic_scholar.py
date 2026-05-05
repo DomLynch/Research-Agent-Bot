@@ -70,7 +70,7 @@ class SemanticScholarClient:
     ) -> list[RawHit]:
         params = {
             "query": clean_text(query, limit=3000),
-            "limit": str(max(1, min(limit, 25))),
+            "limit": str(max(1, min(limit, 100))),
             "fields": _FIELDS,
         }
         # Rate-limit gate (1 req per 1.1s cumulative)
