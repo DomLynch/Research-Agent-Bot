@@ -67,14 +67,10 @@ class SemanticScholarClient:
         query: str,
         *,
         limit: int,
-        offset: int = 0,
     ) -> list[RawHit]:
-        """Slice 8 step A: `offset` enables Semantic Scholar's
-        native offset pagination."""
         params = {
             "query": clean_text(query, limit=3000),
             "limit": str(max(1, min(limit, 100))),
-            "offset": str(max(0, offset)),
             "fields": _FIELDS,
         }
         # Rate-limit gate (1 req per 1.1s cumulative)

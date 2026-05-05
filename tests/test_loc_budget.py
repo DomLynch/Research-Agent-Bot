@@ -140,45 +140,6 @@ breakdown (retrieved → classified_keep / drop → extractable_core
 / extractable_background) that Slice 6 step 4d dashboard reads
 (2026-05-05).
 
-Wave 7 cont. — Slice 8 step A (16,200 → 16,400): TRUE pagination
-+ resume cursor. agent/paginated_retrieval.py (~200 cloc) —
-per-source paginator with cursor state files in runs/.cursors/.
-PAGEABLE_SOURCES allowlist is explicit (pubmed/crossref/
-semantic_scholar today; cursor adapters extend later). Honors
-GLOBAL_SAFETY_CAP across the union of all sources combined.
-Resumable: an interrupted 6-hour pull picks up at the last saved
-offset on restart. Universal across topics (2026-05-05).
-
-Wave 7 cont. — Slice 8 step C (16,400 → 16,600): extraction queue
-+ funnel telemetry. agent/extraction_queue.py (~150 cloc) —
-classify-before-extract gate. Drops reject + off_thesis from CPU
-queue (already done classification); only kept entries hit
-quant_claim_extract. ExtractionFunnel carries 9 stages:
-retrieved → classified_keep / drop → extracted_ok / cached /
-failed → spar_accepted → clustered_into_n → synthesized. Sidecar
-manifest persists state for the dashboard. Universal across
-topics + domains (2026-05-05).
-
-Wave 7 cont. — Slice 8 step D (16,600 → 16,800): evidence clusterer.
-agent/evidence_clusters.py (~150 cloc) — groups receipts by
-outcome × design; composite score (tier + directness + recency +
-claim density) ranks within cluster; top_n_per_cluster=3 cap
-prevents 45-receipt corpus → 23K-word body bloat. Domain-driven
-hierarchy passed in (no biomedical hardcoding). Slice 8 E writer
-consumes cluster summaries instead of paper-by-paper dumps —
-keeps Q13 strict at 15% (2026-05-05).
-
-Wave 7 cont. — Slice 8 step E (16,800 → 17,000): large-corpus
-writer mode. agent/large_corpus_writer.py (~120 cloc) —
-build_results_section_clustered emits Results as O(n_clusters)
-prose (one paragraph per cluster) instead of O(n_receipts)
-paper-by-paper dump. Q13 stays strict at 15%; body length is
-controlled by composition, not by relaxing the audit.
-build_methods_section_clustered grounds Methods in the actual
-funnel + cluster summary (not boilerplate). LARGE_CORPUS_THRESHOLD
-= 20 receipts triggers the mode. Universal across topics + domains
-(2026-05-05).
-
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -186,7 +147,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 17000
+TOTAL_LIMIT = 16200
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

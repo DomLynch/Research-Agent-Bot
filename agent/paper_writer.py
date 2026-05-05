@@ -642,24 +642,16 @@ async def render_full_paper(
         "quantitative_results_table (deterministic)",
         sections["quantitative_results_table"],
     )
-    # Slice 8 step E wire-up: large-corpus writer mode dispatches
-    # via agent/large_corpus_writer.py:dispatch_methods_and_results
-    # to keep paper_writer.py under per-file LOC ceiling.
-    from agent.large_corpus_writer import (
-        dispatch_methods_and_results,
+    sections["methods"] = build_methods_section(
+        receipts, topic=topic, submission_id=submission_id,
     )
-    sections["methods"], sections["results"], _log_label = (
-        await dispatch_methods_and_results(
-            accepted=accepted, rejected=rejected,
-            receipts=receipts, matrix=matrix, thesis=thesis,
-            topic=topic, submission_id=submission_id,
-            chain=chain, client=client, ledger=ledger, seed=seed,
-            background_lit_entries=background_lit_entries,
-            legacy_results_writer=write_results_section,
-            legacy_methods_writer=build_methods_section,
-        )
+    _log_section_done("methods (deterministic)", sections["methods"])
+    sections["results"] = await write_results_section(
+        accepted, rejected, matrix, thesis,
+        topic=topic, chain=chain, client=client, ledger=ledger, seed=seed,
+        background_lit_entries=background_lit_entries,
     )
-    _log_section_done(_log_label, sections["methods"])
+    _log_section_done("results", sections["results"])
     sections["cross_domain_synthesis"] = await _write_anchored_section(
         name="cross_domain_synthesis",
         heading="## Cross-Domain Synthesis",

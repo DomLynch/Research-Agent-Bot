@@ -25,13 +25,7 @@ class EuropePMCClient:
         query: str,
         *,
         limit: int,
-        cursor: str | None = None,
     ) -> list[RawHit]:
-        """Slice 8 step A: `cursor` enables Europe PMC's native
-        cursorMark pagination. First call passes None (auto-resolves
-        to '*'); subsequent calls pass the nextCursorMark from the
-        previous response. The aggregator's paginator manages the
-        cursor lifecycle."""
         params = {
             "query": clean_text(query, limit=3000),
             "format": "json",
@@ -43,7 +37,6 @@ class EuropePMCClient:
             # 'core' is required to get abstractText. 'lite' omits it which
             # would cause every result to be silently dropped.
             "resultType": "core",
-            "cursorMark": cursor or "*",
         }
         data = await safe_get_json(client, EUROPEPMC_SEARCH_URL, params=params)
         if data is None:

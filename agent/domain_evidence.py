@@ -1,160 +1,186 @@
-"""Domain adapter — Slice 8 step B (2026-05-05) refactor.
+"""Domain evidence adapters — Wave 7 Evidence Factory slice 5
+(2026-05-05).
 
-Reads `domains/<name>.toml` files at load time. Topic packs reference
-a domain via `domain = "..."` at the top level; the loader resolves
-to a frozen DomainAdapter instance.
+Decouples the corpus classifier from biomedical-specific signal
+lists so the pipeline can synthesize across other research domains
+with their own evidence hierarchies. Four built-in profiles ship
+with the platform; topic packs reference a profile by `name`.
 
-Hard rule (Slice 8 acceptance gate): NO topic / drug / journal /
-field-specific values in this file or in any other Python module.
-Every domain-shape decision lives in domains/*.toml. The same
-engine services biomedical, management, economics, cs_ai, legal,
-and any future domain by adding a TOML file.
+  biomedical    A1=Cochrane/large RCT > A2=meta-analysis > B1=cohort
+                > B2=case-control > C=expert opinion. Direct =
+                clinical trial; mechanism = preclinical / in vitro.
 
-Backward compatibility: BIOMEDICAL / ECONOMICS / MANAGEMENT / CS_AI
-constants still resolve via the same get_profile / get_adapter
-entry points (Slice 5 callers keep working).
+  economics     A1=well-identified RCT > A2=diff-in-diff /
+                synthetic-control > B1=instrumental variables >
+                B2=observational > C=theoretical model. Direct =
+                causal estimate; mechanism = theory paper.
+
+  management    A1=field experiment > A2=multi-firm panel >
+                B1=case study > B2=expert survey > C=consultant
+                report. Direct = field study; mechanism = theory.
+
+  cs_ai         A1=ablation+benchmark+held-out test > A2=multi-
+                benchmark replication > B1=single benchmark >
+                B2=qualitative demo > C=position paper. Direct =
+                empirical, mechanism = theoretical.
+
+Universal: a topic pack picks ONE profile via `domain = "..."`. The
+corpus classifier, role classifier, and evidence-tier guards all
+read from that profile so the same pipeline code services every
+domain. No per-domain `if` ladders in the runtime.
 """
 from __future__ import annotations
 
-import tomllib
 from dataclasses import dataclass, field
-from pathlib import Path
-from types import MappingProxyType
-from typing import Mapping
-
-_DOMAINS_DIR = Path(__file__).resolve().parent.parent / "domains"
 
 
 @dataclass(frozen=True, slots=True)
-class DomainAdapter:
-    """Universal domain shape — every field comes from TOML data,
-    no hardcoded biomedical assumptions.
-
-    Slice 5 'DomainProfile' callers can use this same object via
-    the legacy alias (see bottom of file)."""
+class DomainProfile:
     name: str
-    evidence_hierarchy: tuple[str, ...]
-    outcome_classes: tuple[str, ...]
-    required_context_fields: tuple[str, ...]
+    tier_hierarchy: tuple[str, ...]   # ordered strongest → weakest
+    directness_levels: tuple[str, ...]
     core_clinical_signals: tuple[str, ...]
     mechanism_signals: tuple[str, ...]
     reject_signals: tuple[str, ...] = field(default_factory=tuple)
 
     def is_high_tier(self, tier: str) -> bool:
-        """True if `tier` is in the top two slots of the hierarchy."""
+        """True if `tier` is in the top two slots of the hierarchy
+        (A1/A2 in biomedical, equivalent strongest tiers elsewhere)."""
         if not tier:
             return False
-        for i, t in enumerate(self.evidence_hierarchy):
+        for i, t in enumerate(self.tier_hierarchy):
             if t == tier and i < 2:
                 return True
         return False
 
-    @property
-    def tier_hierarchy(self) -> tuple[str, ...]:
-        """Slice 5 back-compat alias."""
-        return self.evidence_hierarchy
 
-    @property
-    def directness_levels(self) -> tuple[str, ...]:
-        """Slice 5 back-compat: directness ≈ first 4 hierarchy slots."""
-        return self.evidence_hierarchy[:4]
+# ---------- Biomedical profile (default) -----------------------------
 
-
-def _load_domain_toml(path: Path) -> DomainAdapter:
-    with path.open("rb") as fh:
-        data = tomllib.load(fh)
-    block = data.get("domain") or {}
-    return DomainAdapter(
-        name=str(block.get("name", path.stem)),
-        evidence_hierarchy=tuple(block.get("evidence_hierarchy", ())),
-        outcome_classes=tuple(block.get("outcome_classes", ())),
-        required_context_fields=tuple(
-            block.get("required_context_fields", ())
-        ),
-        core_clinical_signals=tuple(
-            block.get("core_clinical_signals", ())
-        ),
-        mechanism_signals=tuple(block.get("mechanism_signals", ())),
-        reject_signals=tuple(block.get("reject_signals", ())),
-    )
-
-
-def _build_registry() -> Mapping[str, DomainAdapter]:
-    """Discover every domains/*.toml at module import time. Returns
-    a read-only mapping name → DomainAdapter."""
-    out: dict[str, DomainAdapter] = {}
-    if _DOMAINS_DIR.exists():
-        for p in sorted(_DOMAINS_DIR.glob("*.toml")):
-            try:
-                ad = _load_domain_toml(p)
-            except (OSError, ValueError, tomllib.TOMLDecodeError):
-                continue
-            out[ad.name.lower()] = ad
-    return MappingProxyType(out)
+BIOMEDICAL = DomainProfile(
+    name="biomedical",
+    tier_hierarchy=("A1", "A2", "B1", "B2", "C1", "C2"),
+    directness_levels=("direct", "indirect", "review", "mechanistic"),
+    core_clinical_signals=(
+        "randomized controlled trial", "randomised controlled trial",
+        " rct ", "(rct)", "cohort study", "case-control study",
+        "meta-analysis", "systematic review",
+        "all-cause mortality", "primary prevention",
+        "secondary prevention", "incident cancer",
+        "incidence of", "real-world evidence", "trial emulation",
+        "biobank", "registry-based",
+    ),
+    mechanism_signals=(
+        "in vitro", "cell culture", "molecular mechanism",
+        "signaling pathway", "kinase activity", "expression of",
+        "transcriptional", "protein interaction", "receptor binding",
+        "knockout mouse", "transgenic mouse", "pharmacokinetics",
+        "pharmacodynamics", "wistar rat", "wistar rats",
+        "drosophila", "c. elegans", "yeast",
+    ),
+    reject_signals=(
+        "traumatic brain injury", " tbi ", "tbi-",
+        "burn wound", "cerebral cavernous malformation",
+        "atrial fibrillation", "cardioversion", "stroke patients",
+        "neurovascular unit", "blood-brain barrier",
+    ),
+)
 
 
-_REGISTRY: Mapping[str, DomainAdapter] = _build_registry()
+# ---------- Economics profile ----------------------------------------
+
+ECONOMICS = DomainProfile(
+    name="economics",
+    tier_hierarchy=("RCT", "DiD", "IV", "Obs", "Theory"),
+    directness_levels=(
+        "causal_estimate", "quasi_experimental", "observational",
+        "theoretical",
+    ),
+    core_clinical_signals=(
+        "randomized field experiment", "randomized experiment",
+        "difference-in-differences", "diff-in-diff",
+        "synthetic control", "instrumental variable",
+        "regression discontinuity", "rdd",
+        "natural experiment", "policy experiment",
+        "causal effect", "treatment effect estimate",
+    ),
+    mechanism_signals=(
+        "theoretical model", "structural model", "calibration",
+        "general equilibrium", "agent-based model",
+        "simulation", "stylized fact",
+    ),
+)
 
 
-def get_adapter(name: str | None) -> DomainAdapter:
-    """Resolve a domain name to its adapter. Falls back to
-    'biomedical' when name is None / empty / unknown — preserves
-    Slice 5 default for legacy topic packs without [domain] /
-    `domain = "..."` field."""
-    key = (name or "biomedical").strip().lower()
-    if key in _REGISTRY:
-        return _REGISTRY[key]
-    bio = _REGISTRY.get("biomedical")
-    if bio is None:
-        # Defensive: even if domains/biomedical.toml is missing,
-        # return a minimal stub so callers don't crash.
-        return DomainAdapter(
-            name="biomedical-fallback",
-            evidence_hierarchy=("rct", "cohort", "review"),
-            outcome_classes=("primary", "secondary"),
-            required_context_fields=("population", "outcome"),
-            core_clinical_signals=(),
-            mechanism_signals=(),
-        )
-    return bio
+# ---------- Management profile ---------------------------------------
+
+MANAGEMENT = DomainProfile(
+    name="management",
+    tier_hierarchy=("FieldExp", "Panel", "Case", "Survey", "Opinion"),
+    directness_levels=(
+        "field_experiment", "panel_study", "case_study",
+        "survey", "opinion",
+    ),
+    core_clinical_signals=(
+        "field experiment", "field study",
+        "multi-firm panel", "longitudinal study",
+        "treatment effect", "quasi-experiment",
+        "controlled trial", "randomized assignment",
+    ),
+    mechanism_signals=(
+        "theoretical framework", "conceptual model",
+        "literature review", "narrative synthesis",
+        "consultant report", "white paper",
+    ),
+)
 
 
-def list_domains() -> tuple[str, ...]:
-    return tuple(sorted(_REGISTRY.keys()))
+# ---------- CS / AI profile ------------------------------------------
+
+CS_AI = DomainProfile(
+    name="cs_ai",
+    tier_hierarchy=(
+        "AblationBench", "MultiBench", "SingleBench", "Demo",
+        "Position",
+    ),
+    directness_levels=(
+        "empirical_full", "empirical_partial", "empirical_demo",
+        "theoretical",
+    ),
+    core_clinical_signals=(
+        "ablation study", "ablation analysis",
+        "held-out test set", "benchmark evaluation",
+        "leaderboard", "multi-benchmark",
+        "reproducibility", "statistical significance",
+        "confidence interval",
+    ),
+    mechanism_signals=(
+        "theoretical analysis", "complexity bound",
+        "convergence proof", "lemma", "proposition",
+        "qualitative example", "case study",
+    ),
+)
 
 
-def reload_registry() -> None:
-    """Re-read domains/*.toml. Useful for tests that write new TOMLs."""
-    global _REGISTRY
-    _REGISTRY = _build_registry()
+_PROFILES: dict[str, DomainProfile] = {
+    p.name: p for p in (BIOMEDICAL, ECONOMICS, MANAGEMENT, CS_AI)
+}
 
 
-# ---------- Slice 5 back-compat aliases -------------------------------
-# Callers from Slice 5 still import BIOMEDICAL / ECONOMICS / MANAGEMENT
-# / CS_AI as module-level constants. Resolve them on first access.
+def get_profile(name: str | None) -> DomainProfile:
+    """Resolve a profile name to a DomainProfile. Falls back to
+    BIOMEDICAL when name is None or unknown — that's the platform's
+    default and the historical assumption.
+    """
+    if not name:
+        return BIOMEDICAL
+    return _PROFILES.get(name.lower(), BIOMEDICAL)
 
-def __getattr__(attr: str):
-    """Lazy resolution of legacy constant names to TOML-loaded
-    adapters. BIOMEDICAL → get_adapter('biomedical') etc.
-    Raises AttributeError for unknown names so test discovery / IDE
-    autocomplete behave normally."""
-    if attr.lower() in _REGISTRY:
-        return _REGISTRY[attr.lower()]
-    if attr in ("BIOMEDICAL", "ECONOMICS", "MANAGEMENT", "CS_AI"):
-        return get_adapter(attr.lower())
-    if attr == "DomainProfile":
-        # Slice 5 alias kept for back-compat
-        return DomainAdapter
-    if attr == "get_profile":
-        return get_adapter
-    if attr == "list_profiles":
-        return list_domains
-    raise AttributeError(attr)
+
+def list_profiles() -> tuple[str, ...]:
+    return tuple(_PROFILES.keys())
 
 
 __all__ = [
-    "DomainAdapter",
-    "get_adapter",
-    "list_domains",
-    "reload_registry",
+    "DomainProfile", "BIOMEDICAL", "ECONOMICS", "MANAGEMENT", "CS_AI",
+    "get_profile", "list_profiles",
 ]
