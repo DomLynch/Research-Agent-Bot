@@ -1,6 +1,7 @@
 # Researka Multi-Topic Dashboard
 
 **Topics attempted:** 6
+**Topics at L5 (Journal-Ready):** 0
 **Topics with ≥1 AAA run:** 4
 **Topics with consecutive-AAA cert:** 2
 **Total runs across all topics:** 88
@@ -9,21 +10,22 @@
 
 ## Per-Topic Status
 
-| Topic | Best verdict | Cert | n_runs | AAA-runs | Stage1 | Stage2 P1/P2 | Q2 trace | Words | Cost |
-|---|---|---|---|---|---|---|---|---|---|
-| metformin | AAA | 🏆 | 48 | 22 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
-| rapamycin | AAA | 🏆 | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
-| aspirin | AAA | ✅ | 7 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
-| statins | AAA | ✅ | 10 | 1 | 13/13 | 0/0 | 100% | 8,720 | $0.231 |
-| glp1 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
-| senolytics | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
+| Topic | Maturity | Best verdict | Journal | n_runs | AAA | Stage1 | S2 P1/P2 | Q2 | Words | Cost |
+|---|---|---|---|---|---|---|---|---|---|---|
+| metformin | L? — pre-Wave-7 | AAA | — | 48 | 22 | 13/13 | 0/0 | 100% | 12,487 | $0.361 |
+| rapamycin | L? — pre-Wave-7 | AAA | — | 20 | 5 | 13/13 | 0/0 | 100% | 9,002 | $0.306 |
+| aspirin | L? — pre-Wave-7 | AAA | — | 7 | 1 | 13/13 | 0/0 | 100% | 7,553 | $0.236 |
+| statins | L? — pre-Wave-7 | AAA | — | 10 | 1 | 13/13 | 0/0 | 100% | 8,720 | $0.231 |
+| glp1 | L? — pre-Wave-7 | SHIP-BLOCKED | — | 2 | 0 | 8/13 | 0/0 | 100% | 4,732 | $0.269 |
+| senolytics | L? — pre-Wave-7 | SHIP-BLOCKED | — | 1 | 0 | 10/13 | 1/0 | 100% | 6,462 | $0.178 |
 
 ## Best Run per Topic
 
-### aspirin
+### aspirin — L? — pre-Wave-7
 
 - **Best run:** `synthesis-aspirin-v06-AAA4-2026-05-04T17-30-00Z`
 - **Verdict:** AAA
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -33,10 +35,11 @@
 - **LLM cost:** $0.236
 - **Patches applied:** 4 (0 via repair loop)
 
-### metformin
+### metformin — L? — pre-Wave-7
 
 - **Best run:** `synthesis-metformin-v06-AAA2-2026-05-04T15-22-03Z`
 - **Verdict:** AAA
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** PASS 🏆
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -46,10 +49,11 @@
 - **LLM cost:** $0.361
 - **Patches applied:** 19 (0 via repair loop)
 
-### rapamycin
+### rapamycin — L? — pre-Wave-7
 
 - **Best run:** `synthesis-rapamycin-v06-AAA4-2026-05-04T15-50-14Z`
 - **Verdict:** AAA
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** PASS 🏆
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -59,10 +63,11 @@
 - **LLM cost:** $0.306
 - **Patches applied:** 8 (0 via repair loop)
 
-### statins
+### statins — L? — pre-Wave-7
 
 - **Best run:** `synthesis-statins-v06-RESTAB3-2026-05-04T22-48-00Z`
 - **Verdict:** AAA
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 13/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -72,10 +77,11 @@
 - **LLM cost:** $0.231
 - **Patches applied:** 1 (0 via repair loop)
 
-### glp1
+### glp1 — L? — pre-Wave-7
 
 - **Best run:** `synthesis-glp1-v06-proof004-2026-05-04T12-04-29Z`
 - **Verdict:** SHIP-BLOCKED
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 8/13
 - **Stage-2 consistency:** P1=0 P2=0
@@ -85,10 +91,11 @@
 - **LLM cost:** $0.269
 - **Patches applied:** 13 (1 via repair loop)
 
-### senolytics
+### senolytics — L? — pre-Wave-7
 
 - **Best run:** `synthesis-senolytics-v06-proof005-2026-05-04T12-17-51Z`
 - **Verdict:** SHIP-BLOCKED
+- **Journal-Ready:** no
 - **Cert (consecutive-AAA gate):** pending
 - **Stage-1 audit:** 10/13
 - **Stage-2 consistency:** P1=1 P2=0

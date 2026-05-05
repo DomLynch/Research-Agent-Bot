@@ -46,6 +46,14 @@ class TopicSummary:
     cost_usd: float = 0.0
     n_patches_applied: int = 0
     n_patches_repaired: int = 0
+    # Wave 7 / Slice 4 (Evidence Factory): maturity ladder + expansion
+    # targets surfaced per-topic so the dashboard becomes the living
+    # status of the platform, not just an after-the-fact verdict log.
+    maturity_level: int = 0
+    maturity_label: str = "L0 — UNSEEDED"
+    journal_ready: bool = False
+    corpus_gaps: tuple[str, ...] = field(default_factory=tuple)
+    expansion_targets: tuple[str, ...] = field(default_factory=tuple)
 
 
 def _read_json(p: Path) -> dict | None:
@@ -195,6 +203,18 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         patches_raw.get("cost_usd", 0.0)
     )
 
+    # Slice 4 fields (back-compat: old runs without these keys
+    # fall back to L0 / empty tuples — they predate the verdict
+    # extension, so the dashboard renders them as 'unknown maturity'
+    # rather than crashing).
+    maturity_level = int(verdict_doc.get("maturity_level", 0))
+    maturity_label = verdict_doc.get(
+        "maturity_label", "L? — pre-Wave-7",
+    )
+    journal_ready = bool(verdict_doc.get("journal_ready", False))
+    corpus_gaps = tuple(verdict_doc.get("corpus_gaps") or [])
+    expansion_targets = tuple(verdict_doc.get("expansion_targets") or [])
+
     return TopicSummary(
         topic=topic,
         n_runs=len(runs),
@@ -214,6 +234,11 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
         cost_usd=cost,
         n_patches_applied=int(patch_log.get("n_applied", 0)),
         n_patches_repaired=n_repaired,
+        maturity_level=maturity_level,
+        maturity_label=maturity_label,
+        journal_ready=journal_ready,
+        corpus_gaps=corpus_gaps,
+        expansion_targets=expansion_targets,
     )
 
 
@@ -221,6 +246,7 @@ def render_md(summaries: list[TopicSummary]) -> str:
     """Render the human-readable dashboard."""
     n_topics = len(summaries)
     n_aaa = sum(1 for s in summaries if s.aaa_runs)
+    n_journal_ready = sum(1 for s in summaries if s.journal_ready)
     n_certified = sum(1 for s in summaries if s.certified)
     total_cost = sum(s.cost_usd for s in summaries)
     total_patches = sum(s.n_patches_applied for s in summaries)
@@ -231,6 +257,7 @@ def render_md(summaries: list[TopicSummary]) -> str:
         "# Researka Multi-Topic Dashboard",
         "",
         f"**Topics attempted:** {n_topics}",
+        f"**Topics at L5 (Journal-Ready):** {n_journal_ready}",
         f"**Topics with ≥1 AAA run:** {n_aaa}",
         f"**Topics with consecutive-AAA cert:** {n_certified}",
         f"**Total runs across all topics:** {total_runs}",
@@ -241,26 +268,24 @@ def render_md(summaries: list[TopicSummary]) -> str:
         "",
         "## Per-Topic Status",
         "",
-        "| Topic | Best verdict | Cert | n_runs "
-        "| AAA-runs | Stage1 | Stage2 P1/P2 | Q2 trace "
-        "| Words | Cost |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Topic | Maturity | Best verdict | Journal | n_runs "
+        "| AAA | Stage1 | S2 P1/P2 | Q2 | Words | Cost |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for s in sorted(
         summaries,
         key=lambda x: (
+            -x.maturity_level,
             -1 if x.certified else 0,
             -len(x.aaa_runs),
             -_verdict_rank(x.best_verdict),
             x.topic,
         ),
     ):
-        cert_badge = "🏆" if s.certified else (
-            "✅" if s.aaa_runs else "—"
-        )
+        journal_badge = "📰" if s.journal_ready else "—"
         lines.append(
-            f"| {s.topic} | {s.best_verdict} | {cert_badge} "
-            f"| {s.n_runs} | {len(s.aaa_runs)} "
+            f"| {s.topic} | {s.maturity_label} | {s.best_verdict} "
+            f"| {journal_badge} | {s.n_runs} | {len(s.aaa_runs)} "
             f"| {s.stage1_pass} | {s.stage2_p1}/{s.stage2_p2} "
             f"| {s.q2_traceability_pct:.0f}% | {s.word_count:,} "
             f"| ${s.cost_usd:.3f} |"
@@ -272,13 +297,19 @@ def render_md(summaries: list[TopicSummary]) -> str:
     ]
     for s in sorted(
         summaries,
-        key=lambda x: (-_verdict_rank(x.best_verdict), x.topic),
+        key=lambda x: (
+            -x.maturity_level,
+            -_verdict_rank(x.best_verdict),
+            x.topic,
+        ),
     ):
         lines += [
-            f"### {s.topic}",
+            f"### {s.topic} — {s.maturity_label}",
             "",
             f"- **Best run:** `{s.best_run_id}`",
             f"- **Verdict:** {s.best_verdict}",
+            f"- **Journal-Ready:** "
+            f"{'yes 📰' if s.journal_ready else 'no'}",
             f"- **Cert (consecutive-AAA gate):** "
             f"{'PASS 🏆' if s.certified else 'pending'}",
             f"- **Stage-1 audit:** {s.stage1_pass}",
@@ -289,8 +320,21 @@ def render_md(summaries: list[TopicSummary]) -> str:
             f"- **LLM cost:** ${s.cost_usd:.3f}",
             f"- **Patches applied:** {s.n_patches_applied} "
             f"({s.n_patches_repaired} via repair loop)",
-            "",
         ]
+        if s.corpus_gaps:
+            lines.append("- **Next expansion targets** "
+                         "(from corpus_gaps):")
+            n = max(len(s.corpus_gaps), len(s.expansion_targets))
+            for i in range(min(n, 5)):  # cap at 5 per topic to keep readable
+                gap = (
+                    s.corpus_gaps[i] if i < len(s.corpus_gaps) else ""
+                )
+                tgt = (
+                    s.expansion_targets[i]
+                    if i < len(s.expansion_targets) else ""
+                )
+                lines.append(f"  - **{gap}** → {tgt}")
+        lines.append("")
     lines += [
         "## What this dashboard demonstrates",
         "",
