@@ -81,6 +81,16 @@ gate). Universal: same module classifies metformin (L4/L5),
 rapamycin (L3), statins (L2). Plays into Slice 4 dashboard which
 reads maturity_level from the verdict per topic (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 2 full (15,050 → 15,250):
+agent/corpus_classifier.py (~187 cloc — 5-class corpus classifier
+core_on_thesis / background_mechanism / adjacent_clinical /
+off_thesis / reject) with score_paper combining base score + tier
+bonus + directness bonus + recency bump. Replaces binary
+scripts/corpus_filter.py with a structured classification + reason
+log so the synthesis engine knows WHY each paper sits in the
+corpus and which citation pool it belongs to. Pure heuristic, no
+LLM, universal across topics (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -88,7 +98,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 15050
+TOTAL_LIMIT = 15250
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 
