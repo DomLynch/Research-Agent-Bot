@@ -1,0 +1,1760 @@
+{
+  "paper_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice",
+  "doi": "10.7554/eLife.54318",
+  "extracted_at": "2026-05-05T15:22:51+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 33,
+    "percentage": 19,
+    "p_value": 44,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-807",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 807,
+      "sentence": "In mice, rapamycin extends lifespan when administered beginning at 9 or 20 months of age ( Harrison et al., 2009 ), and short-term treatments ranging from 6 to 12 weeks during adulthood have been shown to increase lifespan ( Bitto et al., 2016 ), improve cardiac function ( Flynn et al., 2013 ; Dai et al., 2014 ) and restore immune function as measured by vaccine response ( Chen et al., 2009 ).",
+      "context_window": "amycin extends lifespan when administered beginning at 9 or 20 months of age ( Harrison et al., 2009 ), and short-term treatments",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-895",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 895,
+      "sentence": "In mice, rapamycin extends lifespan when administered beginning at 9 or 20 months of age ( Harrison et al., 2009 ), and short-term treatments ranging from 6 to 12 weeks during adulthood have been shown to increase lifespan ( Bitto et al., 2016 ), improve cardiac function ( Flynn et al., 2013 ; Dai et al., 2014 ) and restore immune function as measured by vaccine response ( Chen et al., 2009 ).",
+      "context_window": "et al., 2009 ), and short-term treatments ranging from 6 to 12 weeks during adulthood have been shown to increase lifespan ( Bit",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-1858",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1858,
+      "sentence": "Most recent epidemiologic data in the U.S. population suggests that more than 60% of adults aged 65 years and older have periodontitis ( Eke et al., 2012 ; Eke et al., 2015 ), and diagnosis with periodontal disease is associated with increased risk for other age-related conditions including heart disease, diabetes, and Alzheimer\u2019s disease ( Gil-Montoya et al., 2015 ; Kim and Amar, 2006 ; Razak et al., 2014 ).",
+      "context_window": "iologic data in the U.S. population suggests that more than 60% of adults aged 65 years and older have periodontitis ( Eke",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1877",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1877,
+      "sentence": "Most recent epidemiologic data in the U.S. population suggests that more than 60% of adults aged 65 years and older have periodontitis ( Eke et al., 2012 ; Eke et al., 2015 ), and diagnosis with periodontal disease is associated with increased risk for other age-related conditions including heart disease, diabetes, and Alzheimer\u2019s disease ( Gil-Montoya et al., 2015 ; Kim and Amar, 2006 ; Razak et al., 2014 ).",
+      "context_window": "U.S. population suggests that more than 60% of adults aged 65 years and older have periodontitis ( Eke et al., 2012 ; Eke et al",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-3021",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 3021,
+      "sentence": "Here we report that 8 weeks of treatment with rapamycin in aged mice is sufficient to regrow periodontal bone, reduce inflammation in both gingival tissue and periodontal bone, and revert the composition of the oral microbiome back toward a more youthful state.",
+      "context_window": "d pathogenic changes to the microbiome. Here we report that 8 weeks of treatment with rapamycin in aged mice is sufficient to r",
+      "claim_role": "protocol",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1456",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1456,
+      "sentence": "For this study, young, adult, and old mice were 6, 13, and 20 months of age, respectively.",
+      "context_window": "For this study, young, adult, and old mice were 6, 13, and 20 months of age, respectively. Twenty NIA-UW mice (10 on eudragit,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1579",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1579,
+      "sentence": "Twenty NIA-UW mice (10 on eudragit, 10 on rapamycin) received assigned diet treatments at 20 months of age, lasting for 8 weeks, along with five young and five adult mice as normative aging controls.",
+      "context_window": "agit, 10 on rapamycin) received assigned diet treatments at 20 months of age, lasting for 8 weeks, along with five young and five",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1609",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1609,
+      "sentence": "Twenty NIA-UW mice (10 on eudragit, 10 on rapamycin) received assigned diet treatments at 20 months of age, lasting for 8 weeks, along with five young and five adult mice as normative aging controls.",
+      "context_window": "d assigned diet treatments at 20 months of age, lasting for 8 weeks, along with five young and five adult mice as normative agi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-2304",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2304,
+      "sentence": "Animals were fed standard Lab Diet 6% 5K52 with eRapa at 42 mg/kg/day or control.",
+      "context_window": "CUC)-approved protocols. Animals were fed standard Lab Diet 6% 5K52 with eRapa at 42 mg/kg/day or control. Animals had ad",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2326",
+      "claim_type": "unit_value",
+      "raw_text": "42 mg/kg/day",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "mg/kg/day",
+      "source_section": "methods",
+      "source_offset": 2326,
+      "sentence": "Animals were fed standard Lab Diet 6% 5K52 with eRapa at 42 mg/kg/day or control.",
+      "context_window": "s. Animals were fed standard Lab Diet 6% 5K52 with eRapa at 42 mg/kg/day or control. Animals had ad libitum access to food and water",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-2774",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2774,
+      "sentence": "Prior to scanning, the weight of each mouse was recorded and anesthesia induced with 2-3% isoflurane.",
+      "context_window": "ht of each mouse was recorded and anesthesia induced with 2-3% isoflurane. The mice were then placed in a prone position i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-2936",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2936,
+      "sentence": "The mice were then placed in a prone position in the CT scanner and kept anesthetized for the duration of the scan with an isoflurane level of 1.2-1.5%.",
+      "context_window": "or the duration of the scan with an isoflurane level of 1.2-1.5%. A whole head scan was performed with bone mineral density",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-3780",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3780,
+      "sentence": "300 ml of 1% agar melted in sterile water, and 200 ml of sterile distilled water were added per kilogram of powdered chow in order to make pellets.",
+      "context_window": "d and mixed with encapsulated rapamycin at 42ppm. 300 ml of 1% agar melted in sterile water, and 200 ml of sterile distill",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-6279",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6279,
+      "sentence": "10-20 \u03bcg of total protein was separated by SDS-PAGE on 10% or 12% (w/v) polyacrylamide gel, then transferred to PVDF membrane using Trans-Blot Turbo Transfer System (Bio-Rad, CA, USA).",
+      "context_window": "ic). 10-20 \u03bcg of total protein was separated by SDS-PAGE on 10% or 12% (w/v) polyacrylamide gel, then transferred to PVDF m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-6286",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6286,
+      "sentence": "10-20 \u03bcg of total protein was separated by SDS-PAGE on 10% or 12% (w/v) polyacrylamide gel, then transferred to PVDF membrane using Trans-Blot Turbo Transfer System (Bio-Rad, CA, USA).",
+      "context_window": "-20 \u03bcg of total protein was separated by SDS-PAGE on 10% or 12% (w/v) polyacrylamide gel, then transferred to PVDF membrane",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-8991",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8991,
+      "sentence": "PCR products were verified using gel electrophoresis (1% agarose gel) and cleaned with AMPure XP beads (Agencourt, Beckman Coulter Inc, Pasadena, CA, USA).",
+      "context_window": "min. PCR products were verified using gel electrophoresis (1% agarose gel) and cleaned with AMPure XP beads (Agencourt, B",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-9733",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9733,
+      "sentence": "The final pooled library was then loaded on to an Illumina MiSeq sequencer with 10% PhiX spike, which served as an internal control to balance for possible low diversity and base bias present in the 16S amplicon samples, and was run for 478 cycles and generated a total of 5.68 million paired-end reads (2 \u00d7 239 bp).",
+      "context_window": "rary was then loaded on to an Illumina MiSeq sequencer with 10% PhiX spike, which served as an internal control to balance",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-12288",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 12288,
+      "sentence": "For the 16 s rRNA sequencing, to identify statistically significant differences among agglomerated and normalized amplicon sequence variants (ASV) between samples as well as differences in alpha and beta diversity measures, we applied both the unpaired Wilcoxon rank-sum test as well as the two-tailed paired t-test - both with a 95% confidence interval (\u03b1 = 0.05).",
+      "context_window": "test as well as the two-tailed paired t-test - both with a 95% confidence interval (\u03b1 = 0.05). Alpha diversity was assesse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-239",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 239,
+      "sentence": "In order to understand potential mechanisms by which aging and mTOR activity influence oral health, we carried out two parallel longitudinal studies at two sites in which aged mice were treated with either vehicle control or rapamycin for 8 weeks.",
+      "context_window": "e were treated with either vehicle control or rapamycin for 8 weeks. NIA-UW mice were housed at the University of Washington an",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-502",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 502,
+      "sentence": "We used microCT (\u03bcCT) imaging to measure the amount of periodontal bone present in the maxilla and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW cohort ( Figure 1A ).",
+      "context_window": "iodontal bone present in the maxilla and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-519",
+      "claim_type": "unit_value",
+      "raw_text": "13 month",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 519,
+      "sentence": "We used microCT (\u03bcCT) imaging to measure the amount of periodontal bone present in the maxilla and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW cohort ( Figure 1A ).",
+      "context_window": "sent in the maxilla and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW cohort ( Figure 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-539",
+      "claim_type": "unit_value",
+      "raw_text": "20 month",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 539,
+      "sentence": "We used microCT (\u03bcCT) imaging to measure the amount of periodontal bone present in the maxilla and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW cohort ( Figure 1A ).",
+      "context_window": "and mandible of young (6 month), adult (13 month), and old (20 month) mice from the NIA-UW cohort ( Figure 1A ). The amount of p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1074",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1074,
+      "sentence": "Mice treated with rapamycin for 8 weeks had significantly more bone at the end of the treatment period compared to mice that received the control diet (eudragit) ( Figure 2C ).",
+      "context_window": "ohort ( Figure 2, A to C ). Mice treated with rapamycin for 8 weeks had significantly more bone at the end of the treatment per",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-1638",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1638,
+      "sentence": "After 8 weeks, the rapamycin treated mice had significantly more periodontal bone compared to eudragit controls and also compared to the pre-treatment levels for the same animals ( Figure 2 , D to F).",
+      "context_window": "ung mice prior to the treatment period ( Figure 2F ). After 8 weeks, the rapamycin treated mice had significantly more periodon",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2100",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2100,
+      "sentence": "The presence of new bone following rapamycin treatment can be observed by comparison of \u03bcCT images from the same animals before and after treatment ( Figure 2, D and E ).\n\n( A ) The NIA-UW colonies were received directly from the NIA Aged Rodent Colony at 4, 11, and 18 months, then acclimated for two months within the UW facilities (ARCF) until they reached 6 (Young), 13 (Adult), and 20 months (Old).",
+      "context_window": "ived directly from the NIA Aged Rodent Colony at 4, 11, and 18 months, then acclimated for two months within the UW facilities (A",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2220",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2220,
+      "sentence": "The presence of new bone following rapamycin treatment can be observed by comparison of \u03bcCT images from the same animals before and after treatment ( Figure 2, D and E ).\n\n( A ) The NIA-UW colonies were received directly from the NIA Aged Rodent Colony at 4, 11, and 18 months, then acclimated for two months within the UW facilities (ARCF) until they reached 6 (Young), 13 (Adult), and 20 months (Old).",
+      "context_window": "lities (ARCF) until they reached 6 (Young), 13 (Adult), and 20 months (Old). The Young and Adult cohorts were harvested for oral",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2406",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2406,
+      "sentence": "The Old cohorts were randomized and either given Eudragit or 42ppm eRAPA within the food for 8 weeks.",
+      "context_window": "nd either given Eudragit or 42ppm eRAPA within the food for 8 weeks. For the JAX colonies, an initial microCT image was taken p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2485",
+      "claim_type": "unit_value",
+      "raw_text": "8 week",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "week",
+      "source_section": "results",
+      "source_offset": 2485,
+      "sentence": "For the JAX colonies, an initial microCT image was taken prior to the 8 week treatment and then a final microCT before harvest.",
+      "context_window": "X colonies, an initial microCT image was taken prior to the 8 week treatment and then a final microCT before harvest. All anim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2584",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2584,
+      "sentence": "All animals were harvested at the end of 8 weeks, ~22 months old. ( B ) Representative image of a mandible is shown.",
+      "context_window": "CT before harvest. All animals were harvested at the end of 8 weeks, ~22 months old. ( B ) Representative image of a mandible i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-2594",
+      "claim_type": "unit_value",
+      "raw_text": "22 months",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2594,
+      "sentence": "All animals were harvested at the end of 8 weeks, ~22 months old. ( B ) Representative image of a mandible is shown.",
+      "context_window": "harvest. All animals were harvested at the end of 8 weeks, ~22 months old. ( B ) Representative image of a mandible is shown. Per",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-3147",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3147,
+      "sentence": "8 weeks of rapamycin attenuated periodontal bone loss. ( C ) Box-and-whiskers plots shows median, 25 th and 75 th percentile with whiskers at the 5 th and 95 th percentile.",
+      "context_window": "(rapamycin) revealing age-associated periodontal bone loss. 8 weeks of rapamycin attenuated periodontal bone loss. ( C ) Box-an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-3442",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3442,
+      "sentence": "Statistical analysis was completed using unpaired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D ) maxillary and ( E ) mandibular teeth from the same animal in the JAX cohort before treatment (labeled Old) and after 8 weeks of 42ppm eRAPA (labeled Old+Rapamycin).",
+      "context_window": "p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-3452",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3452,
+      "sentence": "Statistical analysis was completed using unpaired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D ) maxillary and ( E ) mandibular teeth from the same animal in the JAX cohort before treatment (labeled Old) and after 8 weeks of 42ppm eRAPA (labeled Old+Rapamycin).",
+      "context_window": "<0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D )",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-3463",
+      "claim_type": "p_value",
+      "raw_text": "p<0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3463,
+      "sentence": "Statistical analysis was completed using unpaired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D ) maxillary and ( E ) mandibular teeth from the same animal in the JAX cohort before treatment (labeled Old) and after 8 weeks of 42ppm eRAPA (labeled Old+Rapamycin).",
+      "context_window": "considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D ) maxillary an",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-3635",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3635,
+      "sentence": "Statistical analysis was completed using unpaired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005 ( D and E ) Representative images of the ( D ) maxillary and ( E ) mandibular teeth from the same animal in the JAX cohort before treatment (labeled Old) and after 8 weeks of 42ppm eRAPA (labeled Old+Rapamycin).",
+      "context_window": "in the JAX cohort before treatment (labeled Old) and after 8 weeks of 42ppm eRAPA (labeled Old+Rapamycin). On both the maxilla",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-3792",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3792,
+      "sentence": "On both the maxilla and mandible, there is periodontal bone loss around and in-between the molars, but after 8 weeks of 42ppm eRAPA the bone loss is reversed.",
+      "context_window": "ontal bone loss around and in-between the molars, but after 8 weeks of 42ppm eRAPA the bone loss is reversed. White arrowheads",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-4108",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4108,
+      "sentence": "Longitudinal comparison was completed with the same animal at baseline or after 8 weeks with either eudragit (control) or 42ppm eRAPA (rapamycin).",
+      "context_window": "son was completed with the same animal at baseline or after 8 weeks with either eudragit (control) or 42ppm eRAPA (rapamycin).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-4295",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4295,
+      "sentence": "Statistical analysis was completed using paired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005. Normal bone homeostasis results fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-4305",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4305,
+      "sentence": "Statistical analysis was completed using paired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "<0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005. Normal bone homeostasis results from a balanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-4316",
+      "claim_type": "p_value",
+      "raw_text": "p<0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4316,
+      "sentence": "Statistical analysis was completed using paired t-test, with p-values <0.05 were considered statistically significant. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "considered statistically significant. *p<0.05, **p<0.01, ***p<0.005. Normal bone homeostasis results from a balance between ne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-5777",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5777,
+      "sentence": "Together, our data indicate that rapamycin reverses periodontal bone loss in the aging murine oral cavity at least in part through inhibition of bone resorption.\n\n( A and B ) RANKL and OPG expression was determined by western blot analysis of total lysates from the periodontal bone of aged animals (Young, Adult, and Old) and Old animals treated for 8 weeks with 42ppm rapamycin (eRAPA).",
+      "context_window": "animals (Young, Adult, and Old) and Old animals treated for 8 weeks with 42ppm rapamycin (eRAPA). The periodontal bone within b",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-5922",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5922,
+      "sentence": "The periodontal bone within both the NIA-UW and JAX Colonies showed an increased expression of RANKL while 8 weeks of rapamycin treatment ameliorated the increased RANKL expression.",
+      "context_window": "JAX Colonies showed an increased expression of RANKL while 8 weeks of rapamycin treatment ameliorated the increased RANKL expr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-6539",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6539,
+      "sentence": "Statistical analysis was completed with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "as completed with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005. Along with bone loss, ging",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-6548",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6548,
+      "sentence": "Statistical analysis was completed with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "ted with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005. Along with bone loss, gingival infl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-6558",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6558,
+      "sentence": "Statistical analysis was completed with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "npaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005. Along with bone loss, gingival inflammation i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-6569",
+      "claim_type": "p_value",
+      "raw_text": "p<0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6569,
+      "sentence": "Statistical analysis was completed with unpaired t-test, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005.",
+      "context_window": "est, with significance set to p<0.05. *p<0.05, **p<0.01, ***p<0.005. Along with bone loss, gingival inflammation is a defining",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-8729",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8729,
+      "sentence": "NF-\u03baB p65 and I\u03baB\u03b1 expression was determined by western blot analysis of total lysates from the gingiva ( A,C ) and periodontal bone ( B,D ) of control animals (Young, Adult, and Old) and Old animals treated for 8 weeks with rapamycin (42ppm eRAPA).",
+      "context_window": "animals (Young, Adult, and Old) and Old animals treated for 8 weeks with rapamycin (42ppm eRAPA). GAPDH was used a loading cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-8952",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 8952,
+      "sentence": "8 weeks of 42ppm eRAPA treatment attenuates the changes seen with age.",
+      "context_window": "NF-\u03baB p65 with corresponding alteration of I\u03baB\u03b1 or p-I\u03baB\u03b1. 8 weeks of 42ppm eRAPA treatment attenuates the changes seen with a",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-n-9093",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9093,
+      "sentence": "For the gingiva, each lane represents gingiva from animals co-housed (n = 2), and each lane for the periodontal bone western blot represents individual animals. ( E and F ) Protein expression levels of mouse cytokines and chemokines was determined by a spotted nitrocellulose membrane assay (Proteome Profiler Mouse, R and D Systems) by loading pooled samples from ( E ) gingiva and ( F ) periodontal bone of Young and Old (Control, Eudragit), and Old animals treated for 8 weeks with rapamycin (42ppm eRAPA).",
+      "context_window": "ngiva, each lane represents gingiva from animals co-housed (n = 2), and each lane for the periodontal bone western blot repre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-9495",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9495,
+      "sentence": "For the gingiva, each lane represents gingiva from animals co-housed (n = 2), and each lane for the periodontal bone western blot represents individual animals. ( E and F ) Protein expression levels of mouse cytokines and chemokines was determined by a spotted nitrocellulose membrane assay (Proteome Profiler Mouse, R and D Systems) by loading pooled samples from ( E ) gingiva and ( F ) periodontal bone of Young and Old (Control, Eudragit), and Old animals treated for 8 weeks with rapamycin (42ppm eRAPA).",
+      "context_window": "ng and Old (Control, Eudragit), and Old animals treated for 8 weeks with rapamycin (42ppm eRAPA). Data are shown per manufactur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-9697",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9697,
+      "sentence": "All changes shown are statistically significant (p<0.05).",
+      "context_window": "ean \u00b1 SEM. All changes shown are statistically significant (p<0.05). CXCL16 and MCSF expression levels in ( E ) were not stati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-10975",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10975,
+      "sentence": "Old animals treated with rapamycin in the JAX cohort had even lower levels of Bacteroidetes than young untreated mice (p<0.05), whereas in the UW cohort rapamycin treatment lowered the levels of Bacteroidetes to the level of the young mice ( Figure 5-figure supplement 2 ).",
+      "context_window": "en lower levels of Bacteroidetes than young untreated mice (p<0.05), whereas in the UW cohort rapamycin treatment lowered the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-12626",
+      "claim_type": "p_value",
+      "raw_text": "p=0.34",
+      "numeric_values": [
+        0.34
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12626,
+      "sentence": "Despite differences in animal facility and diet composition, no batch effect was detected when comparing the JAX and NIA-UW cohorts (PERMANOVA, nperm = 999, p=0.34) ( Figure 5-figure supplement 4 ).\n\n( A ) Alpha diversity for all samples reveal significant differences between young (Y) and old (O) mice without rapamycin treatment (p<0.05). ( B ) Phylum level abundance using normalized agglomerated data show significant difference for the Bacteroidetes (p<0.001) in old (O) mice and old mice with rapamycin treatment (R) for all samples.",
+      "context_window": "mparing the JAX and NIA-UW cohorts (PERMANOVA, nperm = 999, p=0.34) ( Figure 5-figure supplement 4 ). ( A ) Alpha diversity f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-12802",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12802,
+      "sentence": "Despite differences in animal facility and diet composition, no batch effect was detected when comparing the JAX and NIA-UW cohorts (PERMANOVA, nperm = 999, p=0.34) ( Figure 5-figure supplement 4 ).\n\n( A ) Alpha diversity for all samples reveal significant differences between young (Y) and old (O) mice without rapamycin treatment (p<0.05). ( B ) Phylum level abundance using normalized agglomerated data show significant difference for the Bacteroidetes (p<0.001) in old (O) mice and old mice with rapamycin treatment (R) for all samples.",
+      "context_window": "een young (Y) and old (O) mice without rapamycin treatment (p<0.05). ( B ) Phylum level abundance using normalized agglomerate",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-12926",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12926,
+      "sentence": "Despite differences in animal facility and diet composition, no batch effect was detected when comparing the JAX and NIA-UW cohorts (PERMANOVA, nperm = 999, p=0.34) ( Figure 5-figure supplement 4 ).\n\n( A ) Alpha diversity for all samples reveal significant differences between young (Y) and old (O) mice without rapamycin treatment (p<0.05). ( B ) Phylum level abundance using normalized agglomerated data show significant difference for the Bacteroidetes (p<0.001) in old (O) mice and old mice with rapamycin treatment (R) for all samples.",
+      "context_window": "ted data show significant difference for the Bacteroidetes (p<0.001) in old (O) mice and old mice with rapamycin treatment (R)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13068",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13068,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": ". Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13103",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13103,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "erved in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Princip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13111",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13111,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coord",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13415",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13415,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "ation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-13431",
+      "claim_type": "percentage",
+      "raw_text": "70.3%",
+      "numeric_values": [
+        70.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13431,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "d (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13552",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13552,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "ung (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001. Figure 5-figure supplement 1. Indepe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13562",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13562,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "d rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001. Figure 5-figure supplement 1. Independent Alph",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-13572",
+      "claim_type": "p_value",
+      "raw_text": "p<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13572,
+      "sentence": "Also, significant changes are observed in the Firmicutes (p<0.05) and Proteobacteria phylum (p<0.05, p<0.01) that is age and treatment dependent. ( C ) Principal coordinate analysis using weighted Unifrac distances reveal beta diversity in the rapamycin-treated old (R) groups clustered with the young (Y). ( C , inner panel) A significant separation between old (O) and rapamycin-treated old (R) groups (p<0.01; Axis 1, 70.3%) was observed, but no significant difference between young (Y) and rapamycin-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001.",
+      "context_window": "n-treated old (R) groups was observed. *p<0.05, **p<0.01,***p<0.001. Figure 5-figure supplement 1. Independent Alpha Diversity",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-13739",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 13739,
+      "sentence": "Independent Alpha Diversity Analysis for JAX and UW-NIA animals. ( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-13758",
+      "claim_type": "unit_value",
+      "raw_text": "22 month",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 13758,
+      "sentence": "Independent Alpha Diversity Analysis for JAX and UW-NIA animals. ( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-14244",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14244,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.\n\n( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "ult was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01. ( A ) Alpha Diversity measures for JAX Lab anim",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-14254",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14254,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.\n\n( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "so observed independently in the UW-NIA animals. *p<0.05, **p<0.01. ( A ) Alpha Diversity measures for JAX Lab animals, inclu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-14325",
+      "claim_type": "unit_value",
+      "raw_text": "6 month",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 14325,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.\n\n( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treate",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-u-14344",
+      "claim_type": "unit_value",
+      "raw_text": "22 month",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 14344,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.\n\n( A ) Alpha Diversity measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R). ( B ) Alpha Diversity Measures for UW-NIA animals, including Y, O, and R mice.",
+      "context_window": "measures for JAX Lab animals, including 6 month old ( Y ), 22 month old ( O ), and 22-month-old mice treated with rapamycin (R)",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-14830",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14830,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "ult was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01. Figure 5-figure supplement 2. Independent phylu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-14840",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14840,
+      "sentence": "This result was also observed independently in the UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "so observed independently in the UW-NIA animals. *p<0.05, **p<0.01. Figure 5-figure supplement 2. Independent phylum level ab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-15410",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15410,
+      "sentence": "Normalized agglomerated data were used to evaluate phylum level abundances using an amplicon sequence variant (ASV) approach for both JAX and UW-NIA animals independently. ( A ) Significant differences in Bacteroidetes , Firmicutes , and Proteobacteria was observed in JAX animals, including 6- month-old (Y), 22-month-old (O), and 22-month-old mice treated with rapamycin (R). ( B ) Significant differences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "ferences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01. Normalized agglomerated data were used to evalu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-15420",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15420,
+      "sentence": "Normalized agglomerated data were used to evaluate phylum level abundances using an amplicon sequence variant (ASV) approach for both JAX and UW-NIA animals independently. ( A ) Significant differences in Bacteroidetes , Firmicutes , and Proteobacteria was observed in JAX animals, including 6- month-old (Y), 22-month-old (O), and 22-month-old mice treated with rapamycin (R). ( B ) Significant differences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "n Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01. Normalized agglomerated data were used to evaluate phylum",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-15888",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15888,
+      "sentence": "Normalized agglomerated data were used to evaluate phylum level abundances using an amplicon sequence variant (ASV) approach for both JAX and UW-NIA animals independently. ( A ) Significant differences in Bacteroidetes , Firmicutes , and Proteobacteria was observed in JAX animals, including 6- month-old (Y), 22-month-old (O), and 22-month-old mice treated with rapamycin (R). ( B ) Significant differences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "ferences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01. Figure 5-figure supplement 3. Independent beta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-15898",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15898,
+      "sentence": "Normalized agglomerated data were used to evaluate phylum level abundances using an amplicon sequence variant (ASV) approach for both JAX and UW-NIA animals independently. ( A ) Significant differences in Bacteroidetes , Firmicutes , and Proteobacteria was observed in JAX animals, including 6- month-old (Y), 22-month-old (O), and 22-month-old mice treated with rapamycin (R). ( B ) Significant differences in Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01.",
+      "context_window": "n Bacteroidetes were observed in UW-NIA animals. *p<0.05, **p<0.01. Figure 5-figure supplement 3. Independent beta diversity",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16150",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16150,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "X samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16166",
+      "claim_type": "percentage",
+      "raw_text": "69.8%",
+      "numeric_values": [
+        69.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16166,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16208",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16208,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "(p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW sample",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16224",
+      "claim_type": "percentage",
+      "raw_text": "9.0%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16224,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": ", 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16335",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16335,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16351",
+      "claim_type": "percentage",
+      "raw_text": "76.5%",
+      "numeric_values": [
+        76.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16351,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "nificant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. ( A ) Beta dive",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16358",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16358,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "t difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. ( A ) Beta diversity fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16374",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16374,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "ween Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. ( A ) Beta diversity for only JAX sam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16382",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16382,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "nd O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. ( A ) Beta diversity for only JAX samples there",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16392",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16392,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "s (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. ( A ) Beta diversity for only JAX samples there was signi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16493",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16493,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "X samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16509",
+      "claim_type": "percentage",
+      "raw_text": "69.8%",
+      "numeric_values": [
+        69.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16509,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16551",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16551,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "(p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW sample",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16567",
+      "claim_type": "percentage",
+      "raw_text": "9.0%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16567,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": ", 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16678",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16678,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16694",
+      "claim_type": "percentage",
+      "raw_text": "76.5%",
+      "numeric_values": [
+        76.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16694,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "nificant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. Figure 5-figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16701",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16701,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "t difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. Figure 5-figure supplem",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-pct-16717",
+      "claim_type": "percentage",
+      "raw_text": "7.7%",
+      "numeric_values": [
+        7.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16717,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "ween Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. Figure 5-figure supplement 4. Combine",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16725",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16725,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "nd O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. Figure 5-figure supplement 4. Combined beta div",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-16735",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16735,
+      "sentence": "Independent beta diversity for JAX and UW-NIA animals by principal coordinate analysis using weighted unifrac distances. ( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.\n\n( A ) Beta diversity for only JAX samples there was significant separation between O and R (p<0.01; Axis 1, 69.8%) as well as between Y and O groups (p<0.05; Axis 2, 9.0%). ( B ) Beta diversity for only the UW samples also reveal significant difference between Y and O groups (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01.",
+      "context_window": "s (p<0.05; Axis 1, 76.5%; p<0.05; Axis 2, 7.7%). *p<0.05, **p<0.01. Figure 5-figure supplement 4. Combined beta diversity for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-17278",
+      "claim_type": "p_value",
+      "raw_text": "p=0.341",
+      "numeric_values": [
+        0.341
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17278,
+      "sentence": "A PERMANOVA (nperm = 999) analysis was performed using the Adonis package (v 2.5-6) as part of the R suite comparing site location (JAX, NIA-UW) and group designation (Y = Young, O = Old, R = Old + Rapa) between JAX and NIA-UW mice used in this study via Bray Curtis Distances (p=0.341).",
+      "context_window": "d NIA-UW mice used in this study via Bray Curtis Distances (p=0.341). No distinct differences in clustering by site location w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7220376_rapamycin_rejuvenates_oral_health_in_aging_mice-p-17636",
+      "claim_type": "p_value",
+      "raw_text": "p=0.341",
+      "numeric_values": [
+        0.341
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17636,
+      "sentence": "A PERMANOVA (nperm = 999) analysis was performed using the Adonis package (v 2.5-6) as part of the R suite comparing site location (JAX, NIA-UW) and group designation (Y = Young, O = Old, R = Old + Rapa) between JAX and NIA-UW mice used in this study via Bray Curtis Distances (p=0.341).",
+      "context_window": "d NIA-UW mice used in this study via Bray Curtis Distances (p=0.341).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

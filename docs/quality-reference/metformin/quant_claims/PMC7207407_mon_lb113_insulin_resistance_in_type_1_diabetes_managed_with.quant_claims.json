@@ -1,0 +1,120 @@
+{
+  "paper_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with",
+  "doi": "10.1210/jendso/bvaa046.2038",
+  "extracted_at": "2026-05-05T15:32:41+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 5,
+    "percentage": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-u-624",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 624,
+      "sentence": "Methods: Forty adults aged 20-50 years with T1D, and 20 age- gender- and BMI- matched non-diabetic controls will be studied.",
+      "context_window": "ed trial of metformin in T1D. Methods: Forty adults aged 20-50 years with T1D, and 20 age- gender- and BMI- matched non-diabetic",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-u-758",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 758,
+      "sentence": "T1D inclusion criteria are diagnosis > 10 years, HbA1c 9.5% and fasting C-peptide < 0.3nmol/L.",
+      "context_window": "ols will be studied. T1D inclusion criteria are diagnosis > 10 years, HbA1c 9.5% and fasting C-peptide < 0.3nmol/L. Liver and mu",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-pct-774",
+      "claim_type": "percentage",
+      "raw_text": "9.5%",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 774,
+      "sentence": "T1D inclusion criteria are diagnosis > 10 years, HbA1c 9.5% and fasting C-peptide < 0.3nmol/L.",
+      "context_window": "ied. T1D inclusion criteria are diagnosis > 10 years, HbA1c 9.5% and fasting C-peptide < 0.3nmol/L. Liver and muscle insulin",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-u-933",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 mmol",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 933,
+      "sentence": "Liver and muscle insulin sensitivity will be determined by the 2-stage hyperinsulinemic (20 and 60 mUm 2 )-euglycemic (5.5 mmol/L) clamp method with deuterated glucose.",
+      "context_window": "the 2-stage hyperinsulinemic (20 and 60 mUm 2 )-euglycemic (5.5 mmol/L) clamp method with deuterated glucose. Subjects with T1D",
+      "claim_role": "unknown",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-u-1050",
+      "claim_type": "unit_value",
+      "raw_text": "1500mg/d",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/d",
+      "source_section": "abstract",
+      "source_offset": 1050,
+      "sentence": "Subjects with T1D will be randomised to metformin extended-release 1500mg/d or matched placebo for 26 weeks.",
+      "context_window": "s with T1D will be randomised to metformin extended-release 1500mg/d or matched placebo for 26 weeks. The primary endpoint is th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7207407_mon_lb113_insulin_resistance_in_type_1_diabetes_managed_with-u-1082",
+      "claim_type": "unit_value",
+      "raw_text": "26 weeks",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 1082,
+      "sentence": "Subjects with T1D will be randomised to metformin extended-release 1500mg/d or matched placebo for 26 weeks.",
+      "context_window": "metformin extended-release 1500mg/d or matched placebo for 26 weeks. The primary endpoint is the change in hepatic insulin sens",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

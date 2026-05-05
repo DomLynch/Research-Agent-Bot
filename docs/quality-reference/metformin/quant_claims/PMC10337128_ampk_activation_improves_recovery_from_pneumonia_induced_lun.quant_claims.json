@@ -1,0 +1,716 @@
+{
+  "paper_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun",
+  "doi": "10.1186/s12931-023-02483-6",
+  "extracted_at": "2026-05-05T15:32:35+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "percentage": 3,
+    "sample_size": 14,
+    "p_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-326",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 326,
+      "sentence": "Mice 10 to 12 weeks of age were used for bacterial lung infections.",
+      "context_window": "ad libitum and kept on a 12-h light-dark cycle. Mice 10 to 12 weeks of age were used for bacterial lung infections. The animal",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-926",
+      "claim_type": "unit_value",
+      "raw_text": "65 mg",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 926,
+      "sentence": "Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) 24 h post infections, once a day, every other day.",
+      "context_window": "2.5 \u00d7 10 6 /mouse) in PBS (50 \u00b5l). Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) 24 h post infectio",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-957",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 957,
+      "sentence": "Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) 24 h post infections, once a day, every other day.",
+      "context_window": "l). Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) 24 h post infections, once a day, every other day",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-pct-1953",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1953,
+      "sentence": "In brief, lungs were inflated with 1 ml paraformaldehyde in PBS (4%) and embedded with paraffin.",
+      "context_window": "ief, lungs were inflated with 1 ml paraformaldehyde in PBS (4%) and embedded with paraffin. Prior to staining, lung Sect.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-pct-2402",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2402,
+      "sentence": "Next, lung sections washed with PBS and blocked with BSA (3%) for 90 min were incubated with anti-CHOP and anti-T-1\u03b1 antibody overnight, at 4 \u00b0C.",
+      "context_window": ". Next, lung sections washed with PBS and blocked with BSA (3%) for 90 min were incubated with anti-CHOP and anti-T-1\u03b1 ant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-1234",
+      "claim_type": "unit_value",
+      "raw_text": "65 mg",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1234,
+      "sentence": "Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) during an established pneumonia-induced ALI, i.e., 24 h after exposure to PAK.",
+      "context_window": "ls for Alzheimer\u2019s disease [ 40 ]. Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) during an establis",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-1265",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 1265,
+      "sentence": "Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) during an established pneumonia-induced ALI, i.e., 24 h after exposure to PAK.",
+      "context_window": "]. Mice received metformin (65 mg/kg; i.p.) or Tideglusib (50 mg/kg; i.p.) during an established pneumonia-induced ALI, i.e.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-2953",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2953,
+      "sentence": "Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA)\n\nAMPK activation improved recovery from lung injury in mice subjected to P. aeruginosa infection. ( a ) Representative images depicted lung sections (H&E) from control and groups of mice exposed to PAK for 0 (control), 24, 28, 72 and 96 h.",
+      "context_window": "for indicated groups of mice. Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA) AMPK activation improved re",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-2973",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2973,
+      "sentence": "Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA)\n\nAMPK activation improved recovery from lung injury in mice subjected to P. aeruginosa infection. ( a ) Representative images depicted lung sections (H&E) from control and groups of mice exposed to PAK for 0 (control), 24, 28, 72 and 96 h.",
+      "context_window": "s of mice. Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA) AMPK activation improved recovery from lung injury",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-3680",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3680,
+      "sentence": "Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA)\n\nFig.",
+      "context_window": "for indicated groups of mice. Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA) Fig. 2 Metformin and Tidegl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-3700",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3700,
+      "sentence": "Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA)\n\nFig.",
+      "context_window": "s of mice. Data presented as Box plots, n = 5 mice/group. * P < 0.05 (ANOVA) Fig. 2 Metformin and Tideglusib reduced immune cel",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-4010",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4010,
+      "sentence": "Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA)\n\nMetformin and Tideglusib reduced immune cell flux and diminished lung barrier permeability in mice subjected to PAK-induced lung injury. ( a ) BAL white cell, ( b ) BAL fluid protein content, and ( c ) IgM in BAL fluids from indicated groups of mice.",
+      "context_window": "indicated groups of mice. Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA) Metformin and Tideglusib re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-4030",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4030,
+      "sentence": "Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA)\n\nMetformin and Tideglusib reduced immune cell flux and diminished lung barrier permeability in mice subjected to PAK-induced lung injury. ( a ) BAL white cell, ( b ) BAL fluid protein content, and ( c ) IgM in BAL fluids from indicated groups of mice.",
+      "context_window": "mice. Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA) Metformin and Tideglusib reduced immune cell flux",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-4333",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4333,
+      "sentence": "Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA)\n\nAMPK phosphorylation is significantly reduced in mice treated with PAK for 24, 48, and 72 h, as compared to control (untreated) mice (Fig.",
+      "context_window": "indicated groups of mice. Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA) AMPK phosphorylation is sig",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-4353",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4353,
+      "sentence": "Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA)\n\nAMPK phosphorylation is significantly reduced in mice treated with PAK for 24, 48, and 72 h, as compared to control (untreated) mice (Fig.",
+      "context_window": "mice. Data presented as Box plots, with n = 5 mice/group. * P < 0.05 (ANOVA) AMPK phosphorylation is significantly reduced in m",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-5264",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5264,
+      "sentence": "Immunoblots consist 2 samples from individual lung homogenates per group, while quantitative data included n = 5 per indicated groups of mice.",
+      "context_window": "ung homogenates per group, while quantitative data included n = 5 per indicated groups of mice. Data presented as Box plots,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-5368",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5368,
+      "sentence": "Data presented as Box plots, fold changes of control (untreated), * P < 0.05 (ANOVA)\n\nMetformin and Tideglusib-dependent recovery of AMPK phosphorylation (activity) in lungs of mice subjected to PAK-induced lung injury. ( a ) Representative western blots and ( b ) quantitative analysis of AMPK phosphorylation (pThr172-AMPK) and total amounts of AMPK and \u03b2-actin in lung homogenates from indicated groups of mice.",
+      "context_window": "sented as Box plots, fold changes of control (untreated), * P < 0.05 (ANOVA) Metformin and Tideglusib-dependent recovery of AMP",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-5822",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5822,
+      "sentence": "Immunoblots consist 2 samples from individual lung homogenates per group, while quantitative data included n = 5 per indicated groups of mice.",
+      "context_window": "ung homogenates per group, while quantitative data included n = 5 per indicated groups of mice. Data presented as Box plots,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-5926",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5926,
+      "sentence": "Data presented as Box plots, fold changes of control (untreated), * P < 0.05 (ANOVA)\n\nExposure to PAK resulted in significant and persistent (i.e., 24-96 h time period) damage of AECs, as indicated by the accumulation of alveolar epithelial type I cell surface membrane marker T-1\u03b1 in the BAL fluids (Fig.",
+      "context_window": "sented as Box plots, fold changes of control (untreated), * P < 0.05 (ANOVA) Exposure to PAK resulted in significant and persis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-7540",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7540,
+      "sentence": "Box plots are showed, * P < 0.05 (ANOVA)\n\nAMPK activation reduces the accumulation of AEC surface marker T-1\u03b1 in BAL fluids of PAK-treated mice. ( a-c ) Representative immunoblots and quantitative analysis of T-1\u03b1 in BAL fluids from control and mice treated with ( a ) PAK alone or PAK and subsequent treatment with ( b ) metformin or ( c ) Tideglusib.",
+      "context_window": "T-1\u03b1 in PAK-treated mice for 24 h. Box plots are showed, * P < 0.05 (ANOVA) AMPK activation reduces the accumulation of AEC su",
+      "claim_role": "dose",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-8113",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8113,
+      "sentence": "Box plots are showed, * P < 0.05 (ANOVA)\n\nER stress is typically associated with the accumulation of CCAAT/enhancer-binding protein-homologous protein (CHOP).",
+      "context_window": "T-1\u03b1 in PAK-treated mice for 24 h. Box plots are showed, * P < 0.05 (ANOVA) ER stress is typically associated with the accumul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-pct-8775",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8775,
+      "sentence": "This assay is not exclusive for AECs, although important given nearly 70% of lung cells are AECs.",
+      "context_window": "is not exclusive for AECs, although important given nearly 70% of lung cells are AECs. We found that metformin and Tideglu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-9792",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9792,
+      "sentence": "Data presented as Scattered plot with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA)\n\nPAK-induces ER-stress in AECs is reduced upon therapeutic administration of AMPK activators. ( a ) Representative images show fluorescence patterns of CHOP (red), T-1\u03b1 (green; AECs Type 1 marker) and nuclei (blue) in lung sections from control and mice exposed to PAK for 72 h.",
+      "context_window": "with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA) PA",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-9837",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9837,
+      "sentence": "Data presented as Scattered plot with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA)\n\nPAK-induces ER-stress in AECs is reduced upon therapeutic administration of AMPK activators. ( a ) Representative images show fluorescence patterns of CHOP (red), T-1\u03b1 (green; AECs Type 1 marker) and nuclei (blue) in lung sections from control and mice exposed to PAK for 72 h.",
+      "context_window": ", mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA) PAK-induces ER-stress in AECs is reduced upon ther",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-10609",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10609,
+      "sentence": "Data presented as Scattered plot with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA)\n\nFig.",
+      "context_window": "with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA) Fi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-10654",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10654,
+      "sentence": "Data presented as Scattered plot with fold changes of control (untreated) mice, mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA)\n\nFig.",
+      "context_window": ", mean \u00b1 s.d., n = 7 images/per indicated groups of mice. * P < 0.05 (ANOVA) Fig. 6 Metformin and Tideglusib decrease of ER-str",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-12190",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12190,
+      "sentence": "Immunoblots consist samples from two lung homogenates/group, while quantitative data included samples from n = 5 mice/group.",
+      "context_window": "enates/group, while quantitative data included samples from n = 5 mice/group. Data presented as Box plots with fold changes o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-12280",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12280,
+      "sentence": "Data presented as Box plots with fold changes of control (untreated), * P < 0.05 (ANOVA)\n\nMetformin and Tideglusib reduced CHOP accumulation in lung homogenates from mice with PAK-induced lung injury. ( a ) Representative immunoblots and ( b ) optical bends densitometry of CHOP, p-eIF2\u03b1, HO-1 and \u03b2-actin (loading control) were from lung homogenates of control, mice treated with PAK alone and PAK followed by treatment with metformin or Tideglusib.",
+      "context_window": "ed as Box plots with fold changes of control (untreated), * P < 0.05 (ANOVA) Metformin and Tideglusib reduced CHOP accumulation",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-12766",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12766,
+      "sentence": "Immunoblots consist samples from two lung homogenates/group, while quantitative data included samples from n = 5 mice/group.",
+      "context_window": "enates/group, while quantitative data included samples from n = 5 mice/group. Data presented as Box plots with fold changes o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-12856",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12856,
+      "sentence": "Data presented as Box plots with fold changes of control (untreated), * P < 0.05 (ANOVA)\n\nGiven that lung injury is associated with ER stress-related cell death, we investigated if AMPK activators affect AECs apoptosis.",
+      "context_window": "ed as Box plots with fold changes of control (untreated), * P < 0.05 (ANOVA) Given that lung injury is associated with ER stres",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-15284",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15284,
+      "sentence": "Scatter dot plot with data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on macrophage-dependent continuous clearance of apoptotic AECs. ( c ) Representative flow cytometry charts, and ( d ) quantitative analysis of apoptotic AECs uptake by macrophages, ex vivo.",
+      "context_window": "th data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-15332",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15332,
+      "sentence": "Scatter dot plot with data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on macrophage-dependent continuous clearance of apoptotic AECs. ( c ) Representative flow cytometry charts, and ( d ) quantitative analysis of apoptotic AECs uptake by macrophages, ex vivo.",
+      "context_window": "ean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-15818",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15818,
+      "sentence": "Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)\n\nDelayed activation of AMPK reduces AECs apoptosis in PAK-infected mice. ( a ) Representative images depicted fluorescence patterns of apoptotic cells (TUNEL) and AECs (T-1\u03b1) in the lung sections from indicted groups of mice, T-1\u03b1 (green), TUNEL (red), nucleus (blue).",
+      "context_window": "Box plot. Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA) Delayed acti",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-15853",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15853,
+      "sentence": "Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)\n\nDelayed activation of AMPK reduces AECs apoptosis in PAK-infected mice. ( a ) Representative images depicted fluorescence patterns of apoptotic cells (TUNEL) and AECs (T-1\u03b1) in the lung sections from indicted groups of mice, T-1\u03b1 (green), TUNEL (red), nucleus (blue).",
+      "context_window": "d changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA) Delayed activation of AMPK reduces AECs apoptosis",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-16284",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16284,
+      "sentence": "Scatter dot plot with data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on macrophage-dependent continuous clearance of apoptotic AECs. ( c ) Representative flow cytometry charts, and ( d ) quantitative analysis of apoptotic AECs uptake by macrophages, ex vivo.",
+      "context_window": "th data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-16332",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16332,
+      "sentence": "Scatter dot plot with data presented as fold control (untreated), mean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on macrophage-dependent continuous clearance of apoptotic AECs. ( c ) Representative flow cytometry charts, and ( d ) quantitative analysis of apoptotic AECs uptake by macrophages, ex vivo.",
+      "context_window": "ean \u00b1 s.d., n = 4-14 images/per indicated groups of mice. * P < 0.05 (ANOVA). ( c,d ) The effects of metformin and Tideglusib on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-n-16818",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16818,
+      "sentence": "Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)",
+      "context_window": "Box plot. Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-p-16853",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16853,
+      "sentence": "Data are presented as fold changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)",
+      "context_window": "d changes of control for n = 6 independent samples/group. * P < 0.05 (ANOVA)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10337128_ampk_activation_improves_recovery_from_pneumonia_induced_lun-u-1868",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1868,
+      "sentence": "Our current study suggests that therapeutic interventions targeting AMPK activation can also improve mitochondria-ER crosstalk, thereby preserving AEC viability that declines significantly over 3-5 days post infection.",
+      "context_window": "preserving AEC viability that declines significantly over 3-5 days post infection. This is a plausible concept, given that the",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "paper_id": "PMC7760915_statins_hmg_coa_reductase_inhibitors_as_potential_anticancer",
+  "doi": "10.3390/ph13120422",
+  "extracted_at": "2026-05-05T15:32:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 1,
+    "unit_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7760915_statins_hmg_coa_reductase_inhibitors_as_potential_anticancer-pct-96",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 96,
+      "sentence": "Cardiovascular diseases (CVDs) are the main cause of death worldwide, responsible for more than 75% of all deaths in low- and middle-income countries.",
+      "context_window": "he main cause of death worldwide, responsible for more than 75% of all deaths in low- and middle-income countries. Accordin",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7760915_statins_hmg_coa_reductase_inhibitors_as_potential_anticancer-u-2979",
+      "claim_type": "unit_value",
+      "raw_text": "50 years",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2979,
+      "sentence": "Nevertheless, as far as statins are concerned, the history of their isolation, synthesis and further development goes back nearly 50 years, and is briefly described in the next section.",
+      "context_window": "olation, synthesis and further development goes back nearly 50 years, and is briefly described in the next section. The similar",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

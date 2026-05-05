@@ -1,0 +1,644 @@
+{
+  "paper_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness",
+  "doi": "10.3390/pharmaceutics14050906",
+  "extracted_at": "2026-05-05T15:32:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 15,
+    "sample_size": 1,
+    "unit_value": 11,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-85",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 85,
+      "sentence": "Breast cancer is the most common cancer among women worldwide, accounting for nearly 11.7% of new cancer cases in 2020; its incidence is projected to increase by more than 46% by 2040 [ 1 ].",
+      "context_window": "common cancer among women worldwide, accounting for nearly 11.7% of new cancer cases in 2020; its incidence is projected to",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-172",
+      "claim_type": "percentage",
+      "raw_text": "46%",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 172,
+      "sentence": "Breast cancer is the most common cancer among women worldwide, accounting for nearly 11.7% of new cancer cases in 2020; its incidence is projected to increase by more than 46% by 2040 [ 1 ].",
+      "context_window": "n 2020; its incidence is projected to increase by more than 46% by 2040 [ 1 ]. Many treatment strategies have been establis",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-999",
+      "claim_type": "percentage",
+      "raw_text": "4.39%",
+      "numeric_values": [
+        4.39
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 999,
+      "sentence": "In a previous study, we revealed that MCF-7SCs were the small population (4.39%) that were sorted from MCF-7 cells using the CD44 + and CD24 - marker.",
+      "context_window": "study, we revealed that MCF-7SCs were the small population (4.39%) that were sorted from MCF-7 cells using the CD44 + and CD2",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-403",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 403,
+      "sentence": "MCF-7 cells and MCF-7SCs were cultured in Dulbecco\u2019s modified Eagle\u2019s medium (DMEM) and Roswell Park Memorial Institute (RPMI) medium, respectively, supplemented with 10% heat-activated fetal bovine serum (FBS), 100 U/mL penicillin, and 100 \u00b5g/mL streptomycin.",
+      "context_window": "al Institute (RPMI) medium, respectively, supplemented with 10% heat-activated fetal bovine serum (FBS), 100 U/mL penicilli",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-537",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 537,
+      "sentence": "All cells were maintained at 37 \u00b0C in a 5% CO 2 atmosphere.",
+      "context_window": "\u00b5g/mL streptomycin. All cells were maintained at 37 \u00b0C in a 5% CO 2 atmosphere. Cells were sub-cultured upon reaching 70-8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-598",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 598,
+      "sentence": "Cells were sub-cultured upon reaching 70-80% confluence.",
+      "context_window": "% CO 2 atmosphere. Cells were sub-cultured upon reaching 70-80% confluence. Six-week-old athymic BALB/c male nude mice ( n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-n-660",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 660,
+      "sentence": "Six-week-old athymic BALB/c male nude mice ( n = 4/group) were maintained under conditions recommended by the Institutional Animal Care and Use Committee of Jeju National University (IACUC, Jeju, Korea), which approved the animal experiments (approval no.",
+      "context_window": "% confluence. Six-week-old athymic BALB/c male nude mice ( n = 4/group) were maintained under conditions recommended by the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-1324",
+      "claim_type": "unit_value",
+      "raw_text": "31 days",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1324,
+      "sentence": "After 31 days, mice were euthanized, and the tumors were collected and weighed.",
+      "context_window": "d on days 10, 17, 24, 27, 29, and 31 after injection. After 31 days, mice were euthanized, and the tumors were collected and we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-1930",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1930,
+      "sentence": "Following 24 and 48 h of incubation, 100 \u00b5L of MTT (0.5 mg/mL) was added to each well, with further incubation for 2-3 h at 37 \u00b0C.",
+      "context_window": "00 \u00b5M). Following 24 and 48 h of incubation, 100 \u00b5L of MTT (0.5 mg/mL) was added to each well, with further incubation for 2-3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-2356",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2356,
+      "sentence": "The upper chambers were coated with 1 mg/mL Matrigel and incubated at 37 \u00b0C for 20 min.",
+      "context_window": "asive ability of cells. The upper chambers were coated with 1 mg/mL Matrigel and incubated at 37 \u00b0C for 20 min. Following in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-2620",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2620,
+      "sentence": "The lower chamber was filled with RPMI supplemented with 10% FBS.",
+      "context_window": "). The lower chamber was filled with RPMI supplemented with 10% FBS. After incubation for 24 h at 37 \u00b0C, cells were fixed w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-2687",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2687,
+      "sentence": "After incubation for 24 h at 37 \u00b0C, cells were fixed with 4% paraformaldehyde followed by methanol at room temperature for 20 min.",
+      "context_window": ". After incubation for 24 h at 37 \u00b0C, cells were fixed with 4% paraformaldehyde followed by methanol at room temperature f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-2797",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2797,
+      "sentence": "Finally, the cells were stained with 2% crystal violet for 30 min at room temperature and observed under a phase-contrast microscope (magnification, 100\u00d7).",
+      "context_window": "emperature for 20 min. Finally, the cells were stained with 2% crystal violet for 30 min at room temperature and observed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-3025",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3025,
+      "sentence": "Upon reaching 90% confluence, a 200 \u00b5L sterile pipette tip was used to make scratches.",
+      "context_window": "l cell culture plates and incubated for 24 h. Upon reaching 90% confluence, a 200 \u00b5L sterile pipette tip was used to make s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-3241",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3241,
+      "sentence": "Next, cells were rinsed with PBS to remove detached cells, followed by exposure (or not) to nootkatone (0, 12.5, 25, 50 \u03bcM) in RPMI containing 5% FBS [ 22 ].",
+      "context_window": "not) to nootkatone (0, 12.5, 25, 50 \u03bcM) in RPMI containing 5% FBS [ 22 ]. After incubation for 24 h, the wound areas were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-3422",
+      "claim_type": "unit_value",
+      "raw_text": "60 mm",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3422,
+      "sentence": "Cells (1 \u00d7 10 6 /mL) were seeded into 60 mm plates and treated (or not) with nootkatone.",
+      "context_window": "magnification, 40\u00d7). Cells (1 \u00d7 10 6 /mL) were seeded into 60 mm plates and treated (or not) with nootkatone. After 24 h of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-4305",
+      "claim_type": "unit_value",
+      "raw_text": "60 mm",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 4305,
+      "sentence": "Cells (3 \u00d7 10 4 /mL) were loaded into 60 mm dishes.",
+      "context_window": "bed previously [ 3 ]. Cells (3 \u00d7 10 4 /mL) were loaded into 60 mm dishes. Then, the cells were treated with nootkatone (50 \u03bcM",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-6130",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6130,
+      "sentence": "Proteins (20-40 \u00b5g) were resolved by sodium dodecyl sulfate polyacrylamide gel electrophoresis (7.5-15% gels) and electrophoretically transferred to a PVDF membrane.",
+      "context_window": "ium dodecyl sulfate polyacrylamide gel electrophoresis (7.5-15% gels) and electrophoretically transferred to a PVDF membran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-6216",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6216,
+      "sentence": "After blocking with 5% skim milk at 4 \u00b0C overnight, the membranes were incubated with primary antibodies at 4 \u00b0C overnight.",
+      "context_window": "tically transferred to a PVDF membrane. After blocking with 5% skim milk at 4 \u00b0C overnight, the membranes were incubated w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-7782",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7782,
+      "sentence": "After 24 h, cells were treated (or not) with nootkatone (50 or 100 \u03bcM) in RPMI medium supplemented with 10% FBS.",
+      "context_window": "nootkatone (50 or 100 \u03bcM) in RPMI medium supplemented with 10% FBS. After 24 h, the original medium was replaced with warm",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-732",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 732,
+      "sentence": "As shown in Figure 1 C, MCF-7SCs could form the tumors within 10 days after injection, and all tumors remained for up to 31 days.",
+      "context_window": "shown in Figure 1 C, MCF-7SCs could form the tumors within 10 days after injection, and all tumors remained for up to 31 days.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-791",
+      "claim_type": "unit_value",
+      "raw_text": "31 days",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 791,
+      "sentence": "As shown in Figure 1 C, MCF-7SCs could form the tumors within 10 days after injection, and all tumors remained for up to 31 days.",
+      "context_window": "10 days after injection, and all tumors remained for up to 31 days. However, parental MCF-7 cells formed four tumors within 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-856",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 856,
+      "sentence": "However, parental MCF-7 cells formed four tumors within 10 days post-injection, which decreased to two tumors by 31 days post-injection ( Figure 1 C).",
+      "context_window": "ys. However, parental MCF-7 cells formed four tumors within 10 days post-injection, which decreased to two tumors by 31 days po",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-913",
+      "claim_type": "unit_value",
+      "raw_text": "31 days",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 913,
+      "sentence": "However, parental MCF-7 cells formed four tumors within 10 days post-injection, which decreased to two tumors by 31 days post-injection ( Figure 1 C).",
+      "context_window": "in 10 days post-injection, which decreased to two tumors by 31 days post-injection ( Figure 1 C). Notably, at the end of the ex",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-1680",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1680,
+      "sentence": "MCF-7SCs exerted higher tumorigenic capacity. ( A ) Representative tumors isolated from BALB/C nude mice injected with MCF-7 cells and MCF-7SCs (5 \u00d7 10 6 cells per tumor). ( B ) Weight of BALB/C nude mice after injection of MCF-7 cells and MCF-7SCs at days 10, 17, 24, 27, 29, and 31. ( C ) Tumor volume at days 10, 17, 24, 27, 29, and 31. ( D ) Tumor weight and ( E ) tumor volume at day 31 after euthanizing the mice; * p < 0.05 vs. control; statistical values represent data from three biologically independent experiments.",
+      "context_window": "( E ) tumor volume at day 31 after euthanizing the mice; * p < 0.05 vs. control; statistical values represent data from three b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-2007",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2007,
+      "sentence": "As shown in Figure 2 B, transcriptome analysis identified 2436 upregulated and 2321 downregulated genes ( p < 0.05; fold difference > 2) in MCF-7SCs compared with MCF-7 cells.",
+      "context_window": "identified 2436 upregulated and 2321 downregulated genes ( p < 0.05; fold difference > 2) in MCF-7SCs compared with MCF-7 cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-3591",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "Transcriptome analysis of cultured MCF-7SCs. ( A ) Heat map of one-way hierarchical clustering using Z-score for normalized value (log2-based). ( B ) Volcano plot comparison of MCF-7 cells (fold change (FC) \u2264 2, p < 0.05) and MCF-7SCs (FC \u2265 2, p < 0.05). ( C ) Venn diagram showing the number of overlapped genes between upregulated and downregulated genes with stemness markers from a published database. ( D ) Representative stemness-related signaling pathways in MCF-7SCs compared with MCF-7 cells.",
+      "context_window": "lcano plot comparison of MCF-7 cells (fold change (FC) \u2264 2, p < 0.05) and MCF-7SCs (FC \u2265 2, p < 0.05). ( C ) Venn diagram showin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-3623",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3623,
+      "sentence": "Transcriptome analysis of cultured MCF-7SCs. ( A ) Heat map of one-way hierarchical clustering using Z-score for normalized value (log2-based). ( B ) Volcano plot comparison of MCF-7 cells (fold change (FC) \u2264 2, p < 0.05) and MCF-7SCs (FC \u2265 2, p < 0.05). ( C ) Venn diagram showing the number of overlapped genes between upregulated and downregulated genes with stemness markers from a published database. ( D ) Representative stemness-related signaling pathways in MCF-7SCs compared with MCF-7 cells.",
+      "context_window": "ells (fold change (FC) \u2264 2, p < 0.05) and MCF-7SCs (FC \u2265 2, p < 0.05). ( C ) Venn diagram showing the number of overlapped genes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-6506",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6506,
+      "sentence": "GAPDH was used as a loading control. ( H ) Quantification of p-AMPK/AMPK, and p-mTOR/mTOR expression normalized to GAPDH. * p < 0.05 vs. control; statistical values represent data from three biologically independent experiments.",
+      "context_window": "MPK/AMPK, and p-mTOR/mTOR expression normalized to GAPDH. * p < 0.05 vs. control; statistical values represent data from three b",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-10471",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10471,
+      "sentence": "GAPDH was used as a loading control. ( C ) Quantification of AMPK, p-AMPK, mTOR, p-mTOR, STAT3, and p-STAT3 expression normalized to GAPDH. ( D ) Image of the 30 nootkatone-AMPK complexes. ( E ) Interactions between nootkatone and AMPK analyzed using the LigPlot program. ( F ) Nootkatone-AMPK complex generated using the PyMol program. * p < 0.05 vs. control; statistical values represent data from three biologically independent experiments.",
+      "context_window": "ootkatone-AMPK complex generated using the PyMol program. * p < 0.05 vs. control; statistical values represent data from three b",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-12112",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12112,
+      "sentence": "Nootkatone impaired glucose metabolism in MCF-7SCs. ( A ) Oxygen consumption rate (OCR) (pmol/min) was assessed following nootkatone treatment for 48 h. ( B ) Basal respiration, maximal respiration, and ATP production were obtained from OCR results. ( C ) The extracellular acidification rate (ECAR) (mpH/min) was measured following incubation for 48 h with nootkatone. ( D ) Glycolysis, glycolytic capacity, and glycolytic reverse obtained from ECAR results. ( E ) Expression of oxidative phosphorylation (OXPHOS)-related genes and ( F ) glycolysis-related genes was analyzed by RT-qPCR following nootkatone treatment for 48 h. * p < 0.05 vs. control; statistical values represent data from three biologically independent experiments.",
+      "context_window": "lyzed by RT-qPCR following nootkatone treatment for 48 h. * p < 0.05 vs. control; statistical values represent data from three b",
+      "claim_role": "unknown",
+      "endpoint": "mitochondrial respiration",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-13202",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 13202,
+      "sentence": "Nootkatone reduced the stemness of MCF-7SCs. ( A , B ) CD44 + /CD24 - populations were measured by FACS following nootkatone treatment for 48 h. ( C ) Mammospheres were cultured in complete MammoCult Human Medium (magnification, 100\u00d7) for 10 days. ( D ) The aldehyde dehydrogenase (ALDH + ) population was determined using an ALDEFLUOR assay kit following nootkatone treatment for 48 h.",
+      "context_window": "n complete MammoCult Human Medium (magnification, 100\u00d7) for 10 days. ( D ) The aldehyde dehydrogenase (ALDH + ) population was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-p-13647",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13647,
+      "sentence": "Cells were treated with or without 50 \u03bcM nootkatone for 48 h (100\u00d7 magnification). ( F , G ) Migration capacity was evaluated using a wound-healing assay following nootkatone treatment for 24 h and 48 h. * p < 0.05 vs. control; statistical values represent data from three biologically independent experiments.",
+      "context_window": "g assay following nootkatone treatment for 24 h and 48 h. * p < 0.05 vs. control; statistical values represent data from three b",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-u-4891",
+      "claim_type": "unit_value",
+      "raw_text": "200 mg",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 4891,
+      "sentence": "Notably, administration of nootkatone at a concentration of 200 mg/kg in a mouse model dramatically induced AMPK activation together with LKB1 and ACC phosphorylation in the liver and muscle of mice [ 18 ].",
+      "context_window": "Notably, administration of nootkatone at a concentration of 200 mg/kg in a mouse model dramatically induced AMPK activation to",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9145028_impairment_of_glucose_metabolism_and_suppression_of_stemness-pct-8215",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8215,
+      "sentence": "Moreover, there was a positive correlation between type 2 diabetes mellitus and breast cancer, as there was 15% of diabetes mellitus women patients could subsequently develop advanced stage of breast cancer [ 53 ].",
+      "context_window": "en type 2 diabetes mellitus and breast cancer, as there was 15% of diabetes mellitus women patients could subsequently deve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

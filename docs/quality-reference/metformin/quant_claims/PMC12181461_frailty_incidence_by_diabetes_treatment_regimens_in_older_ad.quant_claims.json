@@ -1,0 +1,662 @@
+{
+  "paper_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad",
+  "doi": "10.1007/s11357-025-01598-6",
+  "extracted_at": "2026-05-05T15:32:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 14,
+    "unit_value": 13,
+    "percentage": 7,
+    "hazard_ratio": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-399",
+      "claim_type": "sample_size",
+      "raw_text": "N = 2045",
+      "numeric_values": [
+        2045.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 399,
+      "sentence": "Diabetes at baseline ( N = 2045) was defined as self-reported diabetes, fasting blood glucose levels > 125 mg/dL, or use of diabetes medication.",
+      "context_window": "vents in the Elderly (ASPREE) study. Diabetes at baseline ( N = 2045) was defined as self-reported diabetes, fasting blood gluco",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-479",
+      "claim_type": "unit_value",
+      "raw_text": "125 mg/dL",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "mg/dL",
+      "source_section": "abstract",
+      "source_offset": 479,
+      "sentence": "Diabetes at baseline ( N = 2045) was defined as self-reported diabetes, fasting blood glucose levels > 125 mg/dL, or use of diabetes medication.",
+      "context_window": "d as self-reported diabetes, fasting blood glucose levels > 125 mg/dL, or use of diabetes medication. Diabetes medication exposur",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-619",
+      "claim_type": "sample_size",
+      "raw_text": "N = 545",
+      "numeric_values": [
+        545.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 619,
+      "sentence": "Diabetes medication exposure at baseline was categorized as use of metformin only (monotherapy) ( N = 545), metformin combined with other diabetes medications ( N = 420), other diabetes medications only ( N = 200), or no diabetes medications ( N = 880).",
+      "context_window": "ne was categorized as use of metformin only (monotherapy) ( N = 545), metformin combined with other diabetes medications ( N =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-682",
+      "claim_type": "sample_size",
+      "raw_text": "N = 420",
+      "numeric_values": [
+        420.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 682,
+      "sentence": "Diabetes medication exposure at baseline was categorized as use of metformin only (monotherapy) ( N = 545), metformin combined with other diabetes medications ( N = 420), other diabetes medications only ( N = 200), or no diabetes medications ( N = 880).",
+      "context_window": "545), metformin combined with other diabetes medications ( N = 420), other diabetes medications only ( N = 200), or no diabete",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-726",
+      "claim_type": "sample_size",
+      "raw_text": "N = 200",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 726,
+      "sentence": "Diabetes medication exposure at baseline was categorized as use of metformin only (monotherapy) ( N = 545), metformin combined with other diabetes medications ( N = 420), other diabetes medications only ( N = 200), or no diabetes medications ( N = 880).",
+      "context_window": "s medications ( N = 420), other diabetes medications only ( N = 200), or no diabetes medications ( N = 880). Frailty was define",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-765",
+      "claim_type": "sample_size",
+      "raw_text": "N = 880",
+      "numeric_values": [
+        880.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 765,
+      "sentence": "Diabetes medication exposure at baseline was categorized as use of metformin only (monotherapy) ( N = 545), metformin combined with other diabetes medications ( N = 420), other diabetes medications only ( N = 200), or no diabetes medications ( N = 880).",
+      "context_window": "s medications only ( N = 200), or no diabetes medications ( N = 880). Frailty was defined using a modified Fried frailty phenot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-73",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 73,
+      "sentence": "ASPREE was a double-blind, placebo-controlled trial of low-dose aspirin (100 mg) vs. placebo for the prevention of dementia-free and physical disability-free survival in a population of relatively healthy community-dwelling older adults.",
+      "context_window": "double-blind, placebo-controlled trial of low-dose aspirin (100 mg) vs. placebo for the prevention of dementia-free and physic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-412",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 412,
+      "sentence": "ASPREE enrolled adults aged 70 years or older (65 years or older for US ethnic minorities), in the USA and Australia, without overt cardiovascular disease, dementia, and independence-limiting physical disability, and expected survival for at least 5 years.",
+      "context_window": "eviously described [ 23 - 25 ]. ASPREE enrolled adults aged 70 years or older (65 years or older for US ethnic minorities), in t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-431",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 431,
+      "sentence": "ASPREE enrolled adults aged 70 years or older (65 years or older for US ethnic minorities), in the USA and Australia, without overt cardiovascular disease, dementia, and independence-limiting physical disability, and expected survival for at least 5 years.",
+      "context_window": "[ 23 - 25 ]. ASPREE enrolled adults aged 70 years or older (65 years or older for US ethnic minorities), in the USA and Australi",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-632",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 632,
+      "sentence": "ASPREE enrolled adults aged 70 years or older (65 years or older for US ethnic minorities), in the USA and Australia, without overt cardiovascular disease, dementia, and independence-limiting physical disability, and expected survival for at least 5 years.",
+      "context_window": "ing physical disability, and expected survival for at least 5 years. Participants were followed in-person annually to conduct a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-830",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 830,
+      "sentence": "Telephone follow-up was also conducted every 6 months between in-person visits.",
+      "context_window": "cribed [ 23 ]. Telephone follow-up was also conducted every 6 months between in-person visits. The study was approved by the Ins",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-1714",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1714,
+      "sentence": "Chronic kidney disease (CKD) was defined in ASPREE as urine albumin creatinine ratio of 3 mg/mmol or more, or estimated glomerular filtration rate (eGFR) of less than 60 mL per minute per 1.73 m 2 . eGFR was calculated using serum creatinine assessed from clinical laboratory measures as previously described [ 26 ].",
+      "context_window": "was defined in ASPREE as urine albumin creatinine ratio of 3 mg/mmol or more, or estimated glomerular filtration rate (eGFR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-1793",
+      "claim_type": "unit_value",
+      "raw_text": "60 mL",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1793,
+      "sentence": "Chronic kidney disease (CKD) was defined in ASPREE as urine albumin creatinine ratio of 3 mg/mmol or more, or estimated glomerular filtration rate (eGFR) of less than 60 mL per minute per 1.73 m 2 . eGFR was calculated using serum creatinine assessed from clinical laboratory measures as previously described [ 26 ].",
+      "context_window": "or estimated glomerular filtration rate (eGFR) of less than 60 mL per minute per 1.73 m 2 . eGFR was calculated using serum c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-2056",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2045",
+      "numeric_values": [
+        2045.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2056,
+      "sentence": "Diabetes mellitus ( n = 2045) was defined in ASPREE as self-reported diabetes, elevated fasting blood glucose levels (> 125 mg/dL), or use of a diabetes medication at baseline as described [ 28 ].",
+      "context_window": "-Mental State examination (3MS) [ 27 ]. Diabetes mellitus ( n = 2045) was defined in ASPREE as self-reported diabetes, elevated",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-2156",
+      "claim_type": "unit_value",
+      "raw_text": "125 mg/dL",
+      "numeric_values": [
+        125.0
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 2156,
+      "sentence": "Diabetes mellitus ( n = 2045) was defined in ASPREE as self-reported diabetes, elevated fasting blood glucose levels (> 125 mg/dL), or use of a diabetes medication at baseline as described [ 28 ].",
+      "context_window": "reported diabetes, elevated fasting blood glucose levels (> 125 mg/dL), or use of a diabetes medication at baseline as described",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-2502",
+      "claim_type": "unit_value",
+      "raw_text": "20 kg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2502,
+      "sentence": "A modified Fried frailty phenotype was defined at baseline and each annual visit (from baseline to a maximum of seven annual visits) based on the following criteria: slow gait speed based on 3-m walk; weak grip strength assessed by dynamometer; low body mass index (< 20 kg/m 2 ); self-reported feelings of exhaustion based on a question from the Center for Epidemiologic Studies Depression (CES-D 10) 10-item scale; and low physical activity (either from no reported walking outside home, or less than 10 min walking outside home without sitting down), as previously described [ 29 ].",
+      "context_window": "ip strength assessed by dynamometer; low body mass index (< 20 kg/m 2 ); self-reported feelings of exhaustion based on a ques",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-7182",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7182,
+      "sentence": "Only baseline diabetes medication exposure was considered because 75% of participants with diabetes remained within their diabetes medication exposure group from baseline to the end of follow-up.",
+      "context_window": "aseline diabetes medication exposure was considered because 75% of participants with diabetes remained within their diabete",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-9972",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 9972,
+      "sentence": "Interaction effects between diabetes exposure and time/years/annual visit (0 [baseline], 1, 3, 4, 5, 6 years) were also included to assess whether the odds of being in higher frailty categories by metformin exposure changed over time.",
+      "context_window": "sure and time/years/annual visit (0 [baseline], 1, 3, 4, 5, 6 years) were also included to assess whether the odds of being in",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-10209",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10209,
+      "sentence": "The mixed effects ordinal logistic regression models were adjusted for baseline age, sex, education (\u2265 12 years, < 12 years), ethnicity, alcohol use (current, former, never), antihypertensive use, SBP, DBP, triglycerides, HDL, LDL, statins use (yes, no), hemoglobin, eGFR, polypharmacy (5 + medications) (yes, no), 3MS, fasting blood glucose, and BMI.",
+      "context_window": "on models were adjusted for baseline age, sex, education (\u2265 12 years, < 12 years), ethnicity, alcohol use (current, former, neve",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-u-10221",
+      "claim_type": "unit_value",
+      "raw_text": "12 years",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 10221,
+      "sentence": "The mixed effects ordinal logistic regression models were adjusted for baseline age, sex, education (\u2265 12 years, < 12 years), ethnicity, alcohol use (current, former, never), antihypertensive use, SBP, DBP, triglycerides, HDL, LDL, statins use (yes, no), hemoglobin, eGFR, polypharmacy (5 + medications) (yes, no), 3MS, fasting blood glucose, and BMI.",
+      "context_window": "re adjusted for baseline age, sex, education (\u2265 12 years, < 12 years), ethnicity, alcohol use (current, former, never), antihype",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-155",
+      "claim_type": "percentage",
+      "raw_text": "43.0%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 155,
+      "sentence": "Of these participants, 43.0% were not using any diabetes medications (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with other diabetes medications,\u2019 and 9.8% used \u2018other diabetes medications only.\u2019 The most commonly used other diabetes medication classes were insulin, then sulfonylureas (gliclazide), followed by sitagliptin, or a dipeptidyl peptidase-4 inhibitor (Supplemental Table 1 ).",
+      "context_window": "n this study (Supplemental Fig. 1 ). Of these participants, 43.0% were not using any diabetes medications (\u2018no diabetes medic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-230",
+      "claim_type": "percentage",
+      "raw_text": "26.7%",
+      "numeric_values": [
+        26.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 230,
+      "sentence": "Of these participants, 43.0% were not using any diabetes medications (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with other diabetes medications,\u2019 and 9.8% used \u2018other diabetes medications only.\u2019 The most commonly used other diabetes medication classes were insulin, then sulfonylureas (gliclazide), followed by sitagliptin, or a dipeptidyl peptidase-4 inhibitor (Supplemental Table 1 ).",
+      "context_window": "using any diabetes medications (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-259",
+      "claim_type": "percentage",
+      "raw_text": "20.5%",
+      "numeric_values": [
+        20.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 259,
+      "sentence": "Of these participants, 43.0% were not using any diabetes medications (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with other diabetes medications,\u2019 and 9.8% used \u2018other diabetes medications only.\u2019 The most commonly used other diabetes medication classes were insulin, then sulfonylureas (gliclazide), followed by sitagliptin, or a dipeptidyl peptidase-4 inhibitor (Supplemental Table 1 ).",
+      "context_window": "s (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with other diabetes medications,\u2019",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-328",
+      "claim_type": "percentage",
+      "raw_text": "9.8%",
+      "numeric_values": [
+        9.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 328,
+      "sentence": "Of these participants, 43.0% were not using any diabetes medications (\u2018no diabetes medications\u2019), 26.7% used \u2018metformin only,\u2019 20.5% used \u2018metformin combined with other diabetes medications,\u2019 and 9.8% used \u2018other diabetes medications only.\u2019 The most commonly used other diabetes medication classes were insulin, then sulfonylureas (gliclazide), followed by sitagliptin, or a dipeptidyl peptidase-4 inhibitor (Supplemental Table 1 ).",
+      "context_window": "d \u2018metformin combined with other diabetes medications,\u2019 and 9.8% used \u2018other diabetes medications only.\u2019 The most commonly u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-hr-a-2587",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.79",
+      "numeric_values": [
+        0.79
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2587,
+      "sentence": "In the fully adjusted Cox proportional hazards regression models (Table 2 ), \u2018metformin only\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes medications only\u2019.",
+      "context_window": "tformin only\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-2598",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2598,
+      "sentence": "In the fully adjusted Cox proportional hazards regression models (Table 2 ), \u2018metformin only\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes medications only\u2019.",
+      "context_window": "y\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-hr-a-2639",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR = 0.87",
+      "numeric_values": [
+        0.87
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2639,
+      "sentence": "In the fully adjusted Cox proportional hazards regression models (Table 2 ), \u2018metformin only\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes medications only\u2019.",
+      "context_window": "ty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-pct-2650",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2650,
+      "sentence": "In the fully adjusted Cox proportional hazards regression models (Table 2 ), \u2018metformin only\u2019 users had similar rates of Fried frailty (Adj HR = 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes medications only\u2019.",
+      "context_window": "= 0.79, 95% CI = 0.52, 1.21) and FI frailty (Adj HR = 0.87, 95% CI = 0.60, 1.28), compared to those on \u2018other diabetes medi",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3756",
+      "claim_type": "sample_size",
+      "raw_text": "N = 517",
+      "numeric_values": [
+        517.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3756,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "t baseline Number of events (rates per 1000 person-years) N = 517 75 (51.99) N = 825 111 (47.08) N = 393 65 (58.23) N =",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3777",
+      "claim_type": "sample_size",
+      "raw_text": "N = 825",
+      "numeric_values": [
+        825.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3777,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "events (rates per 1000 person-years) N = 517 75 (51.99) N = 825 111 (47.08) N = 393 65 (58.23) N = 179 42 (90.42) N =",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3799",
+      "claim_type": "sample_size",
+      "raw_text": "N = 393",
+      "numeric_values": [
+        393.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3799,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "0 person-years) N = 517 75 (51.99) N = 825 111 (47.08) N = 393 65 (58.23) N = 179 42 (90.42) N = 449 117 (84.58) N =",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3820",
+      "claim_type": "sample_size",
+      "raw_text": "N = 179",
+      "numeric_values": [
+        179.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3820,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "517 75 (51.99) N = 825 111 (47.08) N = 393 65 (58.23) N = 179 42 (90.42) N = 449 117 (84.58) N = 750 178 (74.38) N",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3841",
+      "claim_type": "sample_size",
+      "raw_text": "N = 449",
+      "numeric_values": [
+        449.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3841,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "825 111 (47.08) N = 393 65 (58.23) N = 179 42 (90.42) N = 449 117 (84.58) N = 750 178 (74.38) N = 324 91 (86.95) N",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3863",
+      "claim_type": "sample_size",
+      "raw_text": "N = 750",
+      "numeric_values": [
+        750.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3863,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "393 65 (58.23) N = 179 42 (90.42) N = 449 117 (84.58) N = 750 178 (74.38) N = 324 91 (86.95) N = 141 44 (103.71) a",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3885",
+      "claim_type": "sample_size",
+      "raw_text": "N = 324",
+      "numeric_values": [
+        324.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3885,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "79 42 (90.42) N = 449 117 (84.58) N = 750 178 (74.38) N = 324 91 (86.95) N = 141 44 (103.71) a Imputed fried frail en",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12181461_frailty_incidence_by_diabetes_treatment_regimens_in_older_ad-n-3906",
+      "claim_type": "sample_size",
+      "raw_text": "N = 141",
+      "numeric_values": [
+        141.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3906,
+      "sentence": "P values were calculated using Logrank test\n\nResults of time to frailty event analysis by diabetes medication usage status\n\nN = sample size of those who are not-frail or pre-frail at baseline\n\nNumber of events (rates per 1000 person-years)\n\nN = 517\n\n75 (51.99)\n\nN = 825\n\n111 (47.08)\n\nN = 393\n\n65 (58.23)\n\nN = 179\n\n42 (90.42)\n\nN = 449\n\n117 (84.58)\n\nN = 750\n\n178 (74.38)\n\nN = 324\n\n91 (86.95)\n\nN = 141\n\n44 (103.71)\n\na Imputed fried frail endpoint is defined as the presence of three or more Fried frailty phenotype criteria.",
+      "context_window": "49 117 (84.58) N = 750 178 (74.38) N = 324 91 (86.95) N = 141 44 (103.71) a Imputed fried frail endpoint is defined as",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

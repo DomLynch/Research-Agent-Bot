@@ -1,0 +1,319 @@
+{
+  "paper_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu",
+  "doi": "10.3389/fnut.2026.1747820",
+  "extracted_at": "2026-05-05T15:22:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 3,
+    "unit_value": 10,
+    "p_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-pct-619",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 619,
+      "sentence": "Tumor tissue exhibited a 5% reduction in Ki-67 staining, indicating decreased cell proliferation.",
+      "context_window": "and 86 nmol/g for its metabolites. Tumor tissue exhibited a 5% reduction in Ki-67 staining, indicating decreased cell prol",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-1591",
+      "claim_type": "unit_value",
+      "raw_text": "80 mg/day",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "mg/day",
+      "source_section": "limitations",
+      "source_offset": 1591,
+      "sentence": "This trial evaluated the effects of plant-derived resveratrol (20 or 80 mg/day) and resveratrol-rich grape powder (80 or 120 g/day) administered over 14 days before surgery.",
+      "context_window": "l evaluated the effects of plant-derived resveratrol (20 or 80 mg/day) and resveratrol-rich grape powder (80 or 120 g/day) admini",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-1672",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "limitations",
+      "source_offset": 1672,
+      "sentence": "This trial evaluated the effects of plant-derived resveratrol (20 or 80 mg/day) and resveratrol-rich grape powder (80 or 120 g/day) administered over 14 days before surgery.",
+      "context_window": "atrol-rich grape powder (80 or 120 g/day) administered over 14 days before surgery. While isolated resveratrol produced minimal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-p-1873",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 1873,
+      "sentence": "While isolated resveratrol produced minimal changes, grape powder significantly inhibited Wnt pathway gene expression-including cyclin D1 and axin II-in normal colonic mucosa ( p < 0.001), although no such effect was observed in tumor tissue.",
+      "context_window": "-including cyclin D1 and axin II-in normal colonic mucosa ( p < 0.001), although no such effect was observed in tumor tissue. Int",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-2708",
+      "claim_type": "unit_value",
+      "raw_text": "400 mg/day",
+      "numeric_values": [
+        400.0
+      ],
+      "units": "mg/day",
+      "source_section": "limitations",
+      "source_offset": 2708,
+      "sentence": "While the use of grape powder in colon cancer patients has demonstrated potential benefits for early-stage prevention, a randomized open-label trial assessed the effects of liposomal resveratrol (400 mg/day) in 40 patients with head and neck cancer (HNC) receiving home enteral nutrition (HEN) over 12 weeks.",
+      "context_window": "-label trial assessed the effects of liposomal resveratrol (400 mg/day) in 40 patients with head and neck cancer (HNC) receiving h",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-2811",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 2811,
+      "sentence": "While the use of grape powder in colon cancer patients has demonstrated potential benefits for early-stage prevention, a randomized open-label trial assessed the effects of liposomal resveratrol (400 mg/day) in 40 patients with head and neck cancer (HNC) receiving home enteral nutrition (HEN) over 12 weeks.",
+      "context_window": "ck cancer (HNC) receiving home enteral nutrition (HEN) over 12 weeks. The treatment group showed a significant increase in gluta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-p-2914",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 2914,
+      "sentence": "The treatment group showed a significant increase in glutathione peroxidase (GPx) activity ( p = 0.02) and an improved phase angle (PhA) ( p = 0.004), indicating enhanced antioxidant defense and cellular integrity.",
+      "context_window": "ificant increase in glutathione peroxidase (GPx) activity ( p = 0.02) and an improved phase angle (PhA) ( p = 0.004), indicating",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-p-2960",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 2960,
+      "sentence": "The treatment group showed a significant increase in glutathione peroxidase (GPx) activity ( p = 0.02) and an improved phase angle (PhA) ( p = 0.004), indicating enhanced antioxidant defense and cellular integrity.",
+      "context_window": "x) activity ( p = 0.02) and an improved phase angle (PhA) ( p = 0.004), indicating enhanced antioxidant defense and cellular inte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-4010",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "limitations",
+      "source_offset": 4010,
+      "sentence": "In a Phase I study involving nine colorectal cancer patients with liver metastases, oral administration of SRT501 (5 g/day for 14 days) achieved plasma levels 3.6 times higher (Cmax = 1,942 ng/mL) than those of standard resveratrol and penetrated liver tumors at concentrations up to 2,287 ng/g.",
+      "context_window": "iver metastases, oral administration of SRT501 (5 g/day for 14 days) achieved plasma levels 3.6 times higher (Cmax = 1,942 ng/m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-4069",
+      "claim_type": "unit_value",
+      "raw_text": "942 ng/mL",
+      "numeric_values": [
+        942.0
+      ],
+      "units": "ng/mL",
+      "source_section": "limitations",
+      "source_offset": 4069,
+      "sentence": "In a Phase I study involving nine colorectal cancer patients with liver metastases, oral administration of SRT501 (5 g/day for 14 days) achieved plasma levels 3.6 times higher (Cmax = 1,942 ng/mL) than those of standard resveratrol and penetrated liver tumors at concentrations up to 2,287 ng/g.",
+      "context_window": "14 days) achieved plasma levels 3.6 times higher (Cmax = 1,942 ng/mL) than those of standard resveratrol and penetrated liver tu",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-pct-4195",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 4195,
+      "sentence": "Additionally, a 39% increase in cleaved caspase-3 ( p = 0.038) confirmed apoptotic activity in the tumor tissue ( 137 ).",
+      "context_window": "tumors at concentrations up to 2,287 ng/g. Additionally, a 39% increase in cleaved caspase-3 ( p = 0.038) confirmed apopto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-p-4231",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.038",
+      "numeric_values": [
+        0.038
+      ],
+      "units": "",
+      "source_section": "limitations",
+      "source_offset": 4231,
+      "sentence": "Additionally, a 39% increase in cleaved caspase-3 ( p = 0.038) confirmed apoptotic activity in the tumor tissue ( 137 ).",
+      "context_window": "7 ng/g. Additionally, a 39% increase in cleaved caspase-3 ( p = 0.038) confirmed apoptotic activity in the tumor tissue ( 137 ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-pct-4483",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "limitations",
+      "source_offset": 4483,
+      "sentence": "In another Phase II trial involving 24 patients with multiple myeloma, SRT501 combined with bortezomib demonstrated limited efficacy, with an overall response rate ranging from 8 to 22%.",
+      "context_window": "d efficacy, with an overall response rate ranging from 8 to 22%. The study was associated with renal toxicity in five patie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-5066",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "limitations",
+      "source_offset": 5066,
+      "sentence": "For example, supplementation with 50 mg twice daily for 12 weeks reduced DNA methylation of the tumor suppressor gene Ras association domain-containing protein 1 (RASSF1A) in the breast tissue of women at increased risk of breast cancer ( 139 ).",
+      "context_window": "isk of developing cancer. For example, supplementation with 50 mg twice daily for 12 weeks reduced DNA methylation of the tum",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-5088",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 5088,
+      "sentence": "For example, supplementation with 50 mg twice daily for 12 weeks reduced DNA methylation of the tumor suppressor gene Ras association domain-containing protein 1 (RASSF1A) in the breast tissue of women at increased risk of breast cancer ( 139 ).",
+      "context_window": "er. For example, supplementation with 50 mg twice daily for 12 weeks reduced DNA methylation of the tumor suppressor gene Ras as",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-5334",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 5334,
+      "sentence": "Furthermore, resveratrol supplementation at 1 g/day for 12 weeks increased concentrations of sex hormone-binding globulin (SHBG), which has been associated with a reduced risk of breast cancer ( 140 ), and positively influenced estrogen metabolism.",
+      "context_window": "). Furthermore, resveratrol supplementation at 1 g/day for 12 weeks increased concentrations of sex hormone-binding globulin (S",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12926459_targeting_cancer_hallmarks_using_resveratrol_isolation_formu-u-6020",
+      "claim_type": "unit_value",
+      "raw_text": "29 days",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "days",
+      "source_section": "limitations",
+      "source_offset": 6020,
+      "sentence": "Brown et al. demonstrated that administering resveratrol at 2.5 g/day for 29 days reduced the circulating levels of IGF-1 and IGFBP-3 in healthy volunteers ( 59 ).",
+      "context_window": "emonstrated that administering resveratrol at 2.5 g/day for 29 days reduced the circulating levels of IGF-1 and IGFBP-3 in heal",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

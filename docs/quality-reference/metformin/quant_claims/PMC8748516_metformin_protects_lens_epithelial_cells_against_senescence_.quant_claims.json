@@ -1,0 +1,793 @@
+{
+  "paper_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_",
+  "doi": "10.1038/s41420-021-00800-w",
+  "extracted_at": "2026-05-05T15:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 13,
+    "sample_size": 6,
+    "percentage": 12,
+    "mean_sd": 4,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-552",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 552,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "ded into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-566",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 566,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-606",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 606,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60). Mice i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-617",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 617,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "ths old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60). Mice in the co",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-649",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 649,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60). Mice in the control and the naturally aged groups",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-660",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 660,
+      "sentence": "Male C57BL/6 mice were divided into three groups: the control group having young mice (3 months old, n = 40), the naturally aged group (aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60).",
+      "context_window": "(aged 20 months, n = 60) and the MET group (MET, 20 months, n = 60). Mice in the control and the naturally aged groups were fe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-845",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 845,
+      "sentence": "Mice in the control and the naturally aged groups were fed a standard purified mouse diet ad libitum and water, whereas those in the MET group were fed chows supplemented with 0.1% MET for 10 months.",
+      "context_window": "eas those in the MET group were fed chows supplemented with 0.1% MET for 10 months. The transparency of the lens and age-ass",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-858",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 858,
+      "sentence": "Mice in the control and the naturally aged groups were fed a standard purified mouse diet ad libitum and water, whereas those in the MET group were fed chows supplemented with 0.1% MET for 10 months.",
+      "context_window": "the MET group were fed chows supplemented with 0.1% MET for 10 months. The transparency of the lens and age-associated proteins p",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-440",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 440,
+      "sentence": "Male C57BL6J mice that were 3 and 8 months old were purchased from Beijing Vital River Laboratory Animal Technology Co., Ltd. (Beijing, China).",
+      "context_window": "ng Technology (MA, USA). Male C57BL6J mice that were 3 and 8 months old were purchased from Beijing Vital River Laboratory Anim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-msd-643",
+      "claim_type": "mean_sd",
+      "raw_text": "55 \u00b1 15",
+      "numeric_values": [
+        55.0,
+        15.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 643,
+      "sentence": "The mice were housed in temperature-controlled (temperature, 20-25 \u00b0C and relative humidity, 55 \u00b1 15%) conditions with a 12 h light/dark cycle, with free access to food and water.",
+      "context_window": "re-controlled (temperature, 20-25 \u00b0C and relative humidity, 55 \u00b1 15%) conditions with a 12 h light/dark cycle, with free access",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-648",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 648,
+      "sentence": "The mice were housed in temperature-controlled (temperature, 20-25 \u00b0C and relative humidity, 55 \u00b1 15%) conditions with a 12 h light/dark cycle, with free access to food and water.",
+      "context_window": "ntrolled (temperature, 20-25 \u00b0C and relative humidity, 55 \u00b1 15%) conditions with a 12 h light/dark cycle, with free access",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 945,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "ollowing three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-msd-972",
+      "claim_type": "mean_sd",
+      "raw_text": "29.72 \u00b1 1.66",
+      "numeric_values": [
+        29.72,
+        1.66
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 972,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and wate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-988",
+      "claim_type": "sample_size",
+      "raw_text": "n = 40",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 988,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "ving young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libit",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-1077",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1077,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "urified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: natura",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-1215",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1215,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standa",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-msd-1243",
+      "claim_type": "mean_sd",
+      "raw_text": "32.98 \u00b1 1.93",
+      "numeric_values": [
+        32.98,
+        1.93
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1243,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "turally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and wate",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-1259",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1259,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "up (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libit",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-1346",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1346,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-msd-1374",
+      "claim_type": "mean_sd",
+      "raw_text": "31.21 \u00b1 2.81",
+      "numeric_values": [
+        31.21,
+        2.81
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1374,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "er ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-n-1390",
+      "claim_type": "sample_size",
+      "raw_text": "n = 60",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1390,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-1480",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1480,
+      "sentence": "The mice were divided into the following three groups: (i) control group having young mice (3 months old, bodyweight = 29.72 \u00b1 1.66 g, n = 40) received a standard purified mouse diet and water ad libitum; When the mice were 10 months old, 120 mice were randomly divided into two groups: naturally aged group and MET group. (ii) naturally aged group (older mice, 20 months old, bodyweight = 32.98 \u00b1 1.93 g, n = 60) received a standard purified mouse diet and water ad libitum; (iii) MET group (20 months old, bodyweight = 31.21 \u00b1 2.81 g, n = 60) was maintained on a standard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated.",
+      "context_window": "andard purified mouse diet and water until the mice reached 10 months of age; after which, the treatments were initiated. Mice in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-1598",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1598,
+      "sentence": "Mice in the MET group were fed a diet supplemented with 0.1% MET (Bristol Myers Squibb, China) and water freely for 10 months.",
+      "context_window": "ed. Mice in the MET group were fed a diet supplemented with 0.1% MET (Bristol Myers Squibb, China) and water freely for 10 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-1658",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1658,
+      "sentence": "Mice in the MET group were fed a diet supplemented with 0.1% MET (Bristol Myers Squibb, China) and water freely for 10 months.",
+      "context_window": "0.1% MET (Bristol Myers Squibb, China) and water freely for 10 months. The mice were euthanised via cervical dislocation. The wh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-2202",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2202,
+      "sentence": "Photos of the fresh lens were immediately taken, and the lens was quickly fixed with 4% paraformaldehyde at room temperature.",
+      "context_window": "were immediately taken, and the lens was quickly fixed with 4% paraformaldehyde at room temperature. The entire lens capsu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-2435",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2435,
+      "sentence": "The fresh lens was immediately fixed with 4% paraformaldehyde at room temperature and embedded in paraffin.",
+      "context_window": "ent experiments. The fresh lens was immediately fixed with 4% paraformaldehyde at room temperature and embedded in paraff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-2719",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2719,
+      "sentence": "After deparaffinisation and rehydration, the prepared paraffin sections were stained with haematoxylin (H) solution for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with distilled water.",
+      "context_window": "haematoxylin (H) solution for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with disti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-2736",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2736,
+      "sentence": "After deparaffinisation and rehydration, the prepared paraffin sections were stained with haematoxylin (H) solution for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with distilled water.",
+      "context_window": "solution for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with distilled water. Subse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-2746",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2746,
+      "sentence": "After deparaffinisation and rehydration, the prepared paraffin sections were stained with haematoxylin (H) solution for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with distilled water.",
+      "context_window": "for 8 min, followed by 5 dips in 1% acid ethanol (1% HCl in 70% ethanol) and rinsing with distilled water. Subsequently, th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-4915",
+      "claim_type": "percentage",
+      "raw_text": "0.3%",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4915,
+      "sentence": "After washing three times with PBS, the samples were soaked with 0.3% H 2 O 2 to inhibit endogenous peroxidase activity.",
+      "context_window": "washing three times with PBS, the samples were soaked with 0.3% H 2 O 2 to inhibit endogenous peroxidase activity. Subseque",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-581",
+      "claim_type": "percentage",
+      "raw_text": "95.23%",
+      "numeric_values": [
+        95.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 581,
+      "sentence": "1b , the incidence of cataract in the naturally aged group was 95.23%.",
+      "context_window": ", the incidence of cataract in the naturally aged group was 95.23%. H&E staining assay indicated that the LECs in the control",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-2351",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2351,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young.",
+      "context_window": "SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young. The bar represents 20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-2365",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2365,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young.",
+      "context_window": "presentative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young. The bar represents 20 \u03bcm. Before we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-2578",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2578,
+      "sentence": "After MET treatment for 10 months, 28 mice (18 in the naturally aged group and 10 in the MET group) died of natural causes.",
+      "context_window": "ET administration is safe for mice. After MET treatment for 10 months, 28 mice (18 in the naturally aged group and 10 in the MET",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-3559",
+      "claim_type": "percentage",
+      "raw_text": "95.23%",
+      "numeric_values": [
+        95.23
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3559,
+      "sentence": "The incidence of cataract in the naturally aged group was 95.23%, whereas that in the MET group was 19.00% (Fig.",
+      "context_window": ". The incidence of cataract in the naturally aged group was 95.23%, whereas that in the MET group was 19.00% (Fig. 2b ). H&E s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-pct-3601",
+      "claim_type": "percentage",
+      "raw_text": "19.00%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3601,
+      "sentence": "The incidence of cataract in the naturally aged group was 95.23%, whereas that in the MET group was 19.00% (Fig.",
+      "context_window": "ly aged group was 95.23%, whereas that in the MET group was 19.00% (Fig. 2b ). H&E staining assay revealed that the density of",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-5332",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5332,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged.",
+      "context_window": "SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged. The bar represents 20",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-5346",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5346,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged.",
+      "context_window": "presentative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged. The bar represents 20 \u03bcm. An overwhe",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-7228",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7228,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young.",
+      "context_window": "SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young. The bar represents 20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-7242",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7242,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young.",
+      "context_window": "presentative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Young. The bar represents 20 \u03bcm. Previous",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-9070",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9070,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged.",
+      "context_window": "SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged. The bar represents 20",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-p-9084",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9084,
+      "sentence": "Data were shown as mean \u00b1 SD and are representative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged.",
+      "context_window": "presentative of 3 independent experiments. ** p < 0.01; *** p < 0.001 compared to the Aged. The bar represents 20 \u03bcm.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8748516_metformin_protects_lens_epithelial_cells_against_senescence_-u-2394",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2394,
+      "sentence": "In humans, MET has been used in clinical practice for more than 60 years; it has a high safety profile and is uniquely positioned to intervene in several crucial pathways responsible for ageing and age-related diseases.",
+      "context_window": "umans, MET has been used in clinical practice for more than 60 years; it has a high safety profile and is uniquely positioned to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

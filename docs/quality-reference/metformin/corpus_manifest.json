@@ -1,0 +1,94 @@
+{
+  "topic": "metformin",
+  "funnel": {
+    "retrieved": 1962,
+    "classified_keep": 378,
+    "classified_drop": 1584,
+    "extractable_core": 146,
+    "extractable_background": 232,
+    "class_off_thesis": 1558,
+    "class_reject": 26,
+    "class_adjacent_clinical": 132,
+    "class_background_mechanism": 195,
+    "class_core_on_thesis": 51,
+    "cap_triggered": 0
+  },
+  "per_wave_stats": [
+    {
+      "wave": "precision",
+      "target_pool": "core",
+      "raw_total": 1644,
+      "wave_unique": 1644,
+      "new_to_corpus": 1644,
+      "cumulative": 1644,
+      "stats": {
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_semanticscholar": 0,
+        "raw_doaj": 100,
+        "raw_pmc_oai": 0,
+        "raw_biorxiv": 5,
+        "raw_medrxiv": 16,
+        "raw_clinicaltrials": 1000,
+        "raw_pubmed": 0,
+        "raw_openalex": 153,
+        "raw_crossref": 370,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 1644,
+        "unique_keys_post_dedupe": 1644,
+        "aggregated_total": 1644
+      }
+    },
+    {
+      "wave": "recall",
+      "target_pool": "core",
+      "raw_total": 1644,
+      "wave_unique": 1644,
+      "new_to_corpus": 0,
+      "cumulative": 1644,
+      "stats": {
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_doaj": 100,
+        "raw_semanticscholar": 0,
+        "raw_biorxiv": 5,
+        "raw_medrxiv": 16,
+        "raw_pmc_oai": 0,
+        "raw_clinicaltrials": 1000,
+        "raw_pubmed": 0,
+        "raw_openalex": 153,
+        "raw_crossref": 370,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 1644,
+        "unique_keys_post_dedupe": 1644,
+        "aggregated_total": 1644
+      }
+    },
+    {
+      "wave": "background",
+      "target_pool": "background",
+      "raw_total": 585,
+      "wave_unique": 585,
+      "new_to_corpus": 318,
+      "cumulative": 1962,
+      "stats": {
+        "raw_clinicaltrials": 0,
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_doaj": 0,
+        "raw_medrxiv": 0,
+        "raw_biorxiv": 0,
+        "raw_pmc_oai": 0,
+        "raw_semanticscholar": 0,
+        "raw_pubmed": 1,
+        "raw_openalex": 188,
+        "raw_crossref": 396,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 585,
+        "unique_keys_post_dedupe": 585,
+        "aggregated_total": 585
+      }
+    }
+  ],
+  "n_kept": 378
+}

@@ -1,0 +1,939 @@
+{
+  "paper_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin",
+  "doi": "10.1038/s41598-023-35146-z",
+  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 26,
+    "unit_value": 2,
+    "sample_size": 8,
+    "hazard_ratio": 3,
+    "confidence_interval": 2,
+    "p_value": 8,
+    "mean_sd": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-654",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 654,
+      "sentence": "Real-world data showed an association between QT prolongation and the use of rosuvastatin (OR [95% CI], 1.30 [1.21-1.39]) but not for atorvastatin (OR [95% CI], 0.98 [0.89-1.07]).",
+      "context_window": "on between QT prolongation and the use of rosuvastatin (OR [95% CI], 1.30 [1.21-1.39]) but not for atorvastatin (OR [95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-711",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 711,
+      "sentence": "Real-world data showed an association between QT prolongation and the use of rosuvastatin (OR [95% CI], 1.30 [1.21-1.39]) but not for atorvastatin (OR [95% CI], 0.98 [0.89-1.07]).",
+      "context_window": "R [95% CI], 1.30 [1.21-1.39]) but not for atorvastatin (OR [95% CI], 0.98 [0.89-1.07]). Rosuvastatin also affected the sodi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-931",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 931,
+      "sentence": "However, rosuvastatin exposure was not associated with a high risk of all-cause mortality (HR [95% CI], 0.95 [0.89-1.01]).",
+      "context_window": "not associated with a high risk of all-cause mortality (HR [95% CI], 0.95 [0.89-1.01]). Overall, these results suggest that",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-u-2372",
+      "claim_type": "unit_value",
+      "raw_text": "22 years",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2372,
+      "sentence": "First, we assessed the risk of rosuvastatin-induced QT prolongation using a real-world setting by retrospectively analyzing data from a medical database spanning 22 years containing electrocardiogram (ECG) data from a tertiary teaching hospital.",
+      "context_window": "ospectively analyzing data from a medical database spanning 22 years containing electrocardiogram (ECG) data from a tertiary tea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-u-2692",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2692,
+      "sentence": "Third, we used data spanning 15 years from the National Health Insurance Service (NHIS) database of South Korea to evaluate the effect of rosuvastatin or atorvastatin on the hard endpoint of all-cause mortality.",
+      "context_window": "calcium, and sodium channels. Third, we used data spanning 15 years from the National Health Insurance Service (NHIS) database",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4297",
+      "claim_type": "sample_size",
+      "raw_text": "n = 331",
+      "numeric_values": [
+        331.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4297,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "nd May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorva",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4349",
+      "claim_type": "sample_size",
+      "raw_text": "n = 450",
+      "numeric_values": [
+        450.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4349,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "mation (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4371",
+      "claim_type": "sample_size",
+      "raw_text": "n = 254",
+      "numeric_values": [
+        254.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4371,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "ing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (ro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4449",
+      "claim_type": "sample_size",
+      "raw_text": "n = 45",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4449,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "ced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring wit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4470",
+      "claim_type": "sample_size",
+      "raw_text": "n = 47",
+      "numeric_values": [
+        47.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4470,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "efore using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last d",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4559",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4559,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "G monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded. QT prolongation was de",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-4580",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4580,
+      "sentence": "While selecting the subject group among the patients administered rosuvastatin in the ICU between March 2017 and May 2018, patients with missing sex and age information (n = 331), missing ECG monitoring data (rosuvastatin n = 450, atorvastatin n = 254), experienced QT prolongation before using rosuvastatin (rosuvastatin n = 45, atorvastatin n = 47), and those without ECG monitoring within 6 h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded.",
+      "context_window": "h of the last drug use (rosuvastatin, n = 9; atorvastatin, n = 9) were excluded. QT prolongation was defined as QTc (calcula",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-6537",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6537,
+      "sentence": "For manual patch clamp recording, hiPSC-CMs were thawed and plated onto coverslips coated with 0.1% gelatin solution.",
+      "context_window": "iPSC-CMs were thawed and plated onto coverslips coated with 0.1% gelatin solution. After incubation at 37 \u00b0C and 5% CO 2 for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-6590",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6590,
+      "sentence": "After incubation at 37 \u00b0C and 5% CO 2 for 4 h, the plating medium was replaced with maintenance medium, which was changed every 2 d.",
+      "context_window": "d with 0.1% gelatin solution. After incubation at 37 \u00b0C and 5% CO 2 for 4 h, the plating medium was replaced with maintena",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-7965",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7965,
+      "sentence": "AP parameters, including maximum diastolic potential (MDP), action potential amplitude (APA), maximum upstroke velocity (dV/dt max ), APD at 50% repolarization (APD 50 ), and APD at 90% repolarization (APD 90 ), were analyzed and quantified.",
+      "context_window": "itude (APA), maximum upstroke velocity (dV/dt max ), APD at 50% repolarization (APD 50 ), and APD at 90% repolarization (AP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-8006",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8006,
+      "sentence": "AP parameters, including maximum diastolic potential (MDP), action potential amplitude (APA), maximum upstroke velocity (dV/dt max ), APD at 50% repolarization (APD 50 ), and APD at 90% repolarization (APD 90 ), were analyzed and quantified.",
+      "context_window": "V/dt max ), APD at 50% repolarization (APD 50 ), and APD at 90% repolarization (APD 90 ), were analyzed and quantified. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-170",
+      "claim_type": "percentage",
+      "raw_text": "13.15%",
+      "numeric_values": [
+        13.15
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 170,
+      "sentence": "1 ), of which 58,505 (13.15%) and 386,077 (86.84%) patients belonged to the QT prolongation and control groups, respectively.",
+      "context_window": "f included patients was 444,582 (Fig. 1 ), of which 58,505 (13.15%) and 386,077 (86.84%) patients belonged to the QT prolongat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-191",
+      "claim_type": "percentage",
+      "raw_text": "86.84%",
+      "numeric_values": [
+        86.84
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 191,
+      "sentence": "1 ), of which 58,505 (13.15%) and 386,077 (86.84%) patients belonged to the QT prolongation and control groups, respectively.",
+      "context_window": "as 444,582 (Fig. 1 ), of which 58,505 (13.15%) and 386,077 (86.84%) patients belonged to the QT prolongation and control group",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-437",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 437,
+      "sentence": "The proportion of patients using rosuvastatin within 7 d prior to the ECG measurement date in the QT prolongation group was higher than that in the control group (2.7% vs .",
+      "context_window": "olongation group was higher than that in the control group (2.7% vs . 0.9%). The proportion of subjects using atorvastatin i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-447",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 447,
+      "sentence": "0.9%).",
+      "context_window": "group was higher than that in the control group (2.7% vs . 0.9%). The proportion of subjects using atorvastatin in the QT p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-572",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 572,
+      "sentence": "The proportion of subjects using atorvastatin in the QT prolongation group was higher than that in the control group (1.3% vs .",
+      "context_window": "olongation group was higher than that in the control group (1.3% vs . 0.6%) but lesser than that in the rosuvastatin group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-582",
+      "claim_type": "percentage",
+      "raw_text": "0.6%",
+      "numeric_values": [
+        0.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 582,
+      "sentence": "0.6%) but lesser than that in the rosuvastatin group.",
+      "context_window": "group was higher than that in the control group (1.3% vs . 0.6%) but lesser than that in the rosuvastatin group. The propor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-1001",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1001,
+      "sentence": "Rosuvastatin use was more likely to be associated with QT prolongation (OR [95% CI], 1.30 [1.21-1.39]), whereas atorvastatin use was not associated with QT prolongation (OR [95% CI], 0.98 [0.89-1.07]).",
+      "context_window": "was more likely to be associated with QT prolongation (OR [95% CI], 1.30 [1.21-1.39]), whereas atorvastatin use was not as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-1099",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1099,
+      "sentence": "Rosuvastatin use was more likely to be associated with QT prolongation (OR [95% CI], 1.30 [1.21-1.39]), whereas atorvastatin use was not associated with QT prolongation (OR [95% CI], 0.98 [0.89-1.07]).",
+      "context_window": "orvastatin use was not associated with QT prolongation (OR [95% CI], 0.98 [0.89-1.07]). Results of multiple logistic regre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-hr-a-1609",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 2.54",
+      "numeric_values": [
+        2.54
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1609,
+      "sentence": "The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75).",
+      "context_window": "of counts in each analysis. The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-ci-1619",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.94-6.82",
+      "numeric_values": [
+        0.94,
+        6.82
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1619,
+      "sentence": "The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75).",
+      "context_window": "in each analysis. The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-hr-a-1677",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 0.57",
+      "numeric_values": [
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1677,
+      "sentence": "The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75).",
+      "context_window": ", 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75). Although these results were not statis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-ci-1687",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.19-1.75",
+      "numeric_values": [
+        0.19,
+        1.75
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1687,
+      "sentence": "The HR of rosuvastatin was > 1 (HR: 2.54, 95% CI: 0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75).",
+      "context_window": "0.94-6.82), whereas that of atorvastatin was < 1 (HR: 0.57, 95% CI: 0.19-1.75). Although these results were not statistically significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-1898",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0647",
+      "numeric_values": [
+        0.0647
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1898,
+      "sentence": "Although these results were not statistically significant due to insufficient patient numbers, QT interval prolongation risk was associated with rosuvastatin use with marginal significance ( p = 0.0647).",
+      "context_window": "sociated with rosuvastatin use with marginal significance ( p = 0.0647). Results of cox regression analysis for rosuvastatin and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-2399",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2399,
+      "sentence": "Rosuvastatin treatment did not affect the APA, MDP, and action potential duration at 90% repolarization (APD 90 ) but increased the maximum upstroke velocity (dV/dt max ) from 3 \u00b5M (Fig.",
+      "context_window": "d not affect the APA, MDP, and action potential duration at 90% repolarization (APD 90 ) but increased the maximum upstroke",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3240",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3240,
+      "sentence": "APA, action potential amplitude; dV/dt max , maximum upstroke velocity; MDP, maximum diastolic potential; APD 50 , action potential duration at 50% repolarization; APD 90 , action potential duration at 90% repolarization; n = 5 independent cultures for each condition.",
+      "context_window": "diastolic potential; APD 50 , action potential duration at 50% repolarization; APD 90 , action potential duration at 90% r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3298",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3298,
+      "sentence": "APA, action potential amplitude; dV/dt max , maximum upstroke velocity; MDP, maximum diastolic potential; APD 50 , action potential duration at 50% repolarization; APD 90 , action potential duration at 90% repolarization; n = 5 independent cultures for each condition.",
+      "context_window": "t 50% repolarization; APD 90 , action potential duration at 90% repolarization; n = 5 independent cultures for each conditi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-n-3318",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3318,
+      "sentence": "APA, action potential amplitude; dV/dt max , maximum upstroke velocity; MDP, maximum diastolic potential; APD 50 , action potential duration at 50% repolarization; APD 90 , action potential duration at 90% repolarization; n = 5 independent cultures for each condition.",
+      "context_window": "; APD 90 , action potential duration at 90% repolarization; n = 5 independent cultures for each condition. Statistical signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-3574",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3574,
+      "sentence": "Data are expressed as percentage inhibition concentration and are shown as mean \u00b1 standard error of the mean. ** p < 0.01 and *** p < 0.001 compared to the control.",
+      "context_window": "tion and are shown as mean \u00b1 standard error of the mean. ** p < 0.01 and *** p < 0.001 compared to the control. Table S6 lists",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-3591",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3591,
+      "sentence": "Data are expressed as percentage inhibition concentration and are shown as mean \u00b1 standard error of the mean. ** p < 0.01 and *** p < 0.001 compared to the control.",
+      "context_window": "n as mean \u00b1 standard error of the mean. ** p < 0.01 and *** p < 0.001 compared to the control. Table S6 lists the baseline chara",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3766",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3766,
+      "sentence": "Among 1,056,572 patients, 28% received rosuvastatin, and 2.21% died following exposure to either drug.",
+      "context_window": "in or atorvastatin based on NHIS. Among 1,056,572 patients, 28% received rosuvastatin, and 2.21% died following exposure to",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3797",
+      "claim_type": "percentage",
+      "raw_text": "2.21%",
+      "numeric_values": [
+        2.21
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3797,
+      "sentence": "Among 1,056,572 patients, 28% received rosuvastatin, and 2.21% died following exposure to either drug.",
+      "context_window": "S. Among 1,056,572 patients, 28% received rosuvastatin, and 2.21% died following exposure to either drug. The number of patie",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3915",
+      "claim_type": "percentage",
+      "raw_text": "1.4%",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3915,
+      "sentence": "The number of patients who died after receiving rosuvastatin was 4,279 (1.4%), and the number of patients who died after receiving atorvastatin was 19,050 (2.5%).",
+      "context_window": "f patients who died after receiving rosuvastatin was 4,279 (1.4%), and the number of patients who died after receiving atorv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-3999",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3999,
+      "sentence": "The number of patients who died after receiving rosuvastatin was 4,279 (1.4%), and the number of patients who died after receiving atorvastatin was 19,050 (2.5%).",
+      "context_window": "patients who died after receiving atorvastatin was 19,050 (2.5%). Liver and cerebrovascular diseases were the most common c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-4253",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4253,
+      "sentence": "Rosuvastatin treatment did not show significant HR with p > 0.05 (HR [95% CI], 0.95 [0.89-1.01]).",
+      "context_window": "el. Rosuvastatin treatment did not show significant HR with p > 0.05 (HR [95% CI], 0.95 [0.89-1.01]). However, the greater the n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-4267",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4267,
+      "sentence": "Rosuvastatin treatment did not show significant HR with p > 0.05 (HR [95% CI], 0.95 [0.89-1.01]).",
+      "context_window": "in treatment did not show significant HR with p > 0.05 (HR [95% CI], 0.95 [0.89-1.01]). However, the greater the number of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-4453",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4453,
+      "sentence": "However, the greater the number of drugs from the CredibleMeds drug list that a patient receives, the more likely they are to experience QT prolongation (HR [95% CI], 1.01 [1.01-1.01], p < 0.001).",
+      "context_window": "the more likely they are to experience QT prolongation (HR [95% CI], 1.01 [1.01-1.01], p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-4480",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4480,
+      "sentence": "However, the greater the number of drugs from the CredibleMeds drug list that a patient receives, the more likely they are to experience QT prolongation (HR [95% CI], 1.01 [1.01-1.01], p < 0.001).",
+      "context_window": "experience QT prolongation (HR [95% CI], 1.01 [1.01-1.01], p < 0.001).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-1301",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 1301,
+      "sentence": "Rosuvastatin showed a significant association with the risk of QT prolongation ( p < 0.05), whereas atorvastatin showed no such association 24 , 25 .",
+      "context_window": "significant association with the risk of QT prolongation ( p < 0.05), whereas atorvastatin showed no such association 24 , 25 .",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-5852",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5852,
+      "sentence": "The renal disease showed the highest HR with a significant p -value (HR [95% CI], 2.22 [2.04-2.43]; p < 0.001).",
+      "context_window": "ease showed the highest HR with a significant p -value (HR [95% CI], 2.22 [2.04-2.43]; p < 0.001). This study has some lim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-5879",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 5879,
+      "sentence": "The renal disease showed the highest HR with a significant p -value (HR [95% CI], 2.22 [2.04-2.43]; p < 0.001).",
+      "context_window": "with a significant p -value (HR [95% CI], 2.22 [2.04-2.43]; p < 0.001). This study has some limitations. First, we used data fro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-hr-a-6183",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR: 2.54",
+      "numeric_values": [
+        2.54
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6183,
+      "sentence": "First, we used data from only one institution for the real-world data analysis, which limited the number of patients in the study; we found no significant HR for rosuvastatin in the retrospective cohort design study; however, the p -value was close to 0.05 (HR: 2.54, p -value: 0.0647).",
+      "context_window": "hort design study; however, the p -value was close to 0.05 (HR: 2.54, p -value: 0.0647). We observed a trend for increased risk",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-pct-7683",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7683,
+      "sentence": "However, according to previous reports that tried to measure the effect size of rosuvastatin with guinea pigs, the effect size on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 .",
+      "context_window": "effect size on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 . Another limitat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-msd-7692",
+      "claim_type": "mean_sd",
+      "raw_text": "201 \u00b1 1",
+      "numeric_values": [
+        201.0,
+        1.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7692,
+      "sentence": "However, according to previous reports that tried to measure the effect size of rosuvastatin with guinea pigs, the effect size on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 .",
+      "context_window": "ze on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 . Another limitation of our stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-msd-7703",
+      "claim_type": "mean_sd",
+      "raw_text": "210 \u00b1 2",
+      "numeric_values": [
+        210.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7703,
+      "sentence": "However, according to previous reports that tried to measure the effect size of rosuvastatin with guinea pigs, the effect size on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 .",
+      "context_window": "rolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 . Another limitation of our study is that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10199059_evaluation_of_rosuvastatin_induced_qt_prolongation_risk_usin-p-7715",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7715,
+      "sentence": "However, according to previous reports that tried to measure the effect size of rosuvastatin with guinea pigs, the effect size on QTc prolongation of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 .",
+      "context_window": "of rosuvastatin was about 4-5% (from 201 \u00b1 1 to 210 \u00b1 2 ms, p < 0.05) 11 . Another limitation of our study is that we could not",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

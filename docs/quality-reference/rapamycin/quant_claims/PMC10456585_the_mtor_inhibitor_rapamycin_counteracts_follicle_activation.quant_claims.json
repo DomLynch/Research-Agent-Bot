@@ -1,0 +1,914 @@
+{
+  "paper_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation",
+  "doi": "10.3390/medicina59081474",
+  "extracted_at": "2026-05-05T15:22:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7,
+    "unit_value": 16,
+    "sample_size": 15,
+    "p_value": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-1007",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1007,
+      "sentence": "Currently, more than 130 live births have taken place after the use of OTCTP, with a live birth rate between 25 and 42% and mean graft longevity of 27 months [ 4 , 5 , 6 , 7 , 8 ].",
+      "context_window": "ter the use of OTCTP, with a live birth rate between 25 and 42% and mean graft longevity of 27 months [ 4 , 5 , 6 , 7 , 8 ]",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-1039",
+      "claim_type": "unit_value",
+      "raw_text": "27 months",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 1039,
+      "sentence": "Currently, more than 130 live births have taken place after the use of OTCTP, with a live birth rate between 25 and 42% and mean graft longevity of 27 months [ 4 , 5 , 6 , 7 , 8 ].",
+      "context_window": "e birth rate between 25 and 42% and mean graft longevity of 27 months [ 4 , 5 , 6 , 7 , 8 ]. A major advantage of OTCTP is the po",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-93",
+      "claim_type": "sample_size",
+      "raw_text": "n = 27",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 93,
+      "sentence": "For the first aim, female C57BL/6 mice ( n = 27, 4 weeks old) were obtained from Charles River Laboratories (France) and maintained at the accredited Mouse Facility and Transgenics GIGA platform of the University of Li\u00e8ge (Belgium).",
+      "context_window": "ound in Figure 1 . For the first aim, female C57BL/6 mice ( n = 27, 4 weeks old) were obtained from Charles River Laboratories",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-101",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 101,
+      "sentence": "For the first aim, female C57BL/6 mice ( n = 27, 4 weeks old) were obtained from Charles River Laboratories (France) and maintained at the accredited Mouse Facility and Transgenics GIGA platform of the University of Li\u00e8ge (Belgium).",
+      "context_window": "Figure 1 . For the first aim, female C57BL/6 mice ( n = 27, 4 weeks old) were obtained from Charles River Laboratories (France)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-693",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 693,
+      "sentence": "4 w = 4 weeks old, Fresh = ovaries transplanted directly after oophorectomy, SFct = slow-freezing in control medium, SFra = slow-freezing with rapamycin, IHC = immunohistochemistry, IP = intraperitoneal, CT = control injection, LY = injection with LY294002.",
+      "context_window": "ayers of the ears and under the kidney capsule ( B ). 4 w = 4 weeks old, Fresh = ovaries transplanted directly after oophorecto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-1104",
+      "claim_type": "sample_size",
+      "raw_text": "n = 18",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1104,
+      "sentence": "Ovaries collected from these mice, either fresh, SF with control medium (SFct), or SF with rapamycin (SFra), were autotransplanted under the kidney capsule ( n = 18 ovaries per group with 2 grafts per mouse).",
+      "context_window": "in (SFra), were autotransplanted under the kidney capsule ( n = 18 ovaries per group with 2 grafts per mouse). For the second",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-1210",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1210,
+      "sentence": "For the second aim, fresh ovaries from C57BL/6 mice ( n = 10, 4 weeks old) were autotransplanted either under the kidney capsule or between the skin layers of the ears ( n = 7-10 ovaries per group with 2 grafts per mouse).",
+      "context_window": "se). For the second aim, fresh ovaries from C57BL/6 mice ( n = 10, 4 weeks old) were autotransplanted either under the kidney",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-1218",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1218,
+      "sentence": "For the second aim, fresh ovaries from C57BL/6 mice ( n = 10, 4 weeks old) were autotransplanted either under the kidney capsule or between the skin layers of the ears ( n = 7-10 ovaries per group with 2 grafts per mouse).",
+      "context_window": "r the second aim, fresh ovaries from C57BL/6 mice ( n = 10, 4 weeks old) were autotransplanted either under the kidney capsule",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-1326",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1326,
+      "sentence": "For the second aim, fresh ovaries from C57BL/6 mice ( n = 10, 4 weeks old) were autotransplanted either under the kidney capsule or between the skin layers of the ears ( n = 7-10 ovaries per group with 2 grafts per mouse).",
+      "context_window": "the kidney capsule or between the skin layers of the ears ( n = 7-10 ovaries per group with 2 grafts per mouse). Furthermore,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-1533",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1533,
+      "sentence": "Furthermore, as a follow-up to test the treatment administration after transplantation, autotransplantation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by injection with LY294002 or vehicle control locally for ovaries transplanted into the ear (injected in both ears), or systemically (intraperitoneally; IP) for ovaries transplanted under the kidney capsule ( n = 8-10 ovaries per group with 2 grafts per mouse; injections given every other day with a total of 4 injections; 16.67 mg/kg LY294002 per injection).",
+      "context_window": "ansplantation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-1541",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1541,
+      "sentence": "Furthermore, as a follow-up to test the treatment administration after transplantation, autotransplantation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by injection with LY294002 or vehicle control locally for ovaries transplanted into the ear (injected in both ears), or systemically (intraperitoneally; IP) for ovaries transplanted under the kidney capsule ( n = 8-10 ovaries per group with 2 grafts per mouse; injections given every other day with a total of 4 injections; 16.67 mg/kg LY294002 per injection).",
+      "context_window": "ation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by injection",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-1804",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1804,
+      "sentence": "Furthermore, as a follow-up to test the treatment administration after transplantation, autotransplantation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by injection with LY294002 or vehicle control locally for ovaries transplanted into the ear (injected in both ears), or systemically (intraperitoneally; IP) for ovaries transplanted under the kidney capsule ( n = 8-10 ovaries per group with 2 grafts per mouse; injections given every other day with a total of 4 injections; 16.67 mg/kg LY294002 per injection).",
+      "context_window": "ly; IP) for ovaries transplanted under the kidney capsule ( n = 8-10 ovaries per group with 2 grafts per mouse; injections gi",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-1919",
+      "claim_type": "unit_value",
+      "raw_text": "16.67 mg",
+      "numeric_values": [
+        16.67
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1919,
+      "sentence": "Furthermore, as a follow-up to test the treatment administration after transplantation, autotransplantation of fresh C57BL/6 mice ovaries was performed ( n = 20, 4 weeks old) to either transplantation site, followed by injection with LY294002 or vehicle control locally for ovaries transplanted into the ear (injected in both ears), or systemically (intraperitoneally; IP) for ovaries transplanted under the kidney capsule ( n = 8-10 ovaries per group with 2 grafts per mouse; injections given every other day with a total of 4 injections; 16.67 mg/kg LY294002 per injection).",
+      "context_window": "ections given every other day with a total of 4 injections; 16.67 mg/kg LY294002 per injection). The weight and behavior of the",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-2022",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2022,
+      "sentence": "The weight and behavior of the mice were monitored for a total of 3 weeks to assess the side effects of LY294002 treatment.",
+      "context_window": "ight and behavior of the mice were monitored for a total of 3 weeks to assess the side effects of LY294002 treatment. Behavior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-2301",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2301,
+      "sentence": "Grafted ovaries from all experiments were collected 3 weeks after transplantation and fixed in 4% formaldehyde overnight, after which ovaries were put in 70% ethanol.",
+      "context_window": "51 ]. Grafted ovaries from all experiments were collected 3 weeks after transplantation and fixed in 4% formaldehyde overnigh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-2344",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2344,
+      "sentence": "Grafted ovaries from all experiments were collected 3 weeks after transplantation and fixed in 4% formaldehyde overnight, after which ovaries were put in 70% ethanol.",
+      "context_window": "s were collected 3 weeks after transplantation and fixed in 4% formaldehyde overnight, after which ovaries were put in 70%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-2403",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2403,
+      "sentence": "Grafted ovaries from all experiments were collected 3 weeks after transplantation and fixed in 4% formaldehyde overnight, after which ovaries were put in 70% ethanol.",
+      "context_window": "4% formaldehyde overnight, after which ovaries were put in 70% ethanol. Fixed ovaries were embedded in paraffin and cut in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-2954",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2954,
+      "sentence": "For all experiments, bilateral oophorectomy was performed on the mice under gas anesthesia (Isoflurane, Dechra, Northwich, UK), and the ovaries were placed in Leibovitz L-15 medium (Lonza, Verviers, Belgium) supplemented with 10% Fetal Bovine Serum (FBS; Thermo Fisher Scientific, Gibco, Waltham, MA, USA), a transport solution.",
+      "context_window": "tz L-15 medium (Lonza, Verviers, Belgium) supplemented with 10% Fetal Bovine Serum (FBS; Thermo Fisher Scientific, Gibco, W",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-3483",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3483,
+      "sentence": "Briefly, whole ovaries were put in a freezing solution containing Leibovitz L-15 medium supplemented with 10% FBS, 10% dimethylsulfoxide (DMSO; Merck, Darmstadt, Germany), and 0.1 M sucrose, and equilibrated for 30 min at 4 \u00b0C.",
+      "context_window": "solution containing Leibovitz L-15 medium supplemented with 10% FBS, 10% dimethylsulfoxide (DMSO; Merck, Darmstadt, Germany",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-3492",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3492,
+      "sentence": "Briefly, whole ovaries were put in a freezing solution containing Leibovitz L-15 medium supplemented with 10% FBS, 10% dimethylsulfoxide (DMSO; Merck, Darmstadt, Germany), and 0.1 M sucrose, and equilibrated for 30 min at 4 \u00b0C.",
+      "context_window": "containing Leibovitz L-15 medium supplemented with 10% FBS, 10% dimethylsulfoxide (DMSO; Merck, Darmstadt, Germany), and 0.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-pct-6720",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6720,
+      "sentence": "After cooling down for 20 min, endogenous peroxidase activity was blocked using 3% hydrogen peroxide for 20 min at RT.",
+      "context_window": "or 20 min, endogenous peroxidase activity was blocked using 3% hydrogen peroxide for 20 min at RT. Non-specific binding si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-10068",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 10068,
+      "sentence": "For both tests, p < 0.05 was considered statistically significant.",
+      "context_window": "roups, the Mann-Whitney test was performed. For both tests, p < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-1655",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1655,
+      "sentence": "Follicle density assessment in fresh, SFct, or SFra mice ovaries autotransplanted under the kidney capsule of C57BL/6 mice (4 weeks old) for three weeks.",
+      "context_window": "autotransplanted under the kidney capsule of C57BL/6 mice (4 weeks old) for three weeks. Representative images of LHX8 stainin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-2202",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2202,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( D ) or as the total number of each follicle type per mm 2 ( E ) (median with interquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "icle type per mm 2 ( E ) (median with interquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. RAPA = rapamy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-2231",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2231,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( D ) or as the total number of each follicle type per mm 2 ( E ) (median with interquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "ian with interquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. RAPA = rapamycin. To further analyze whether",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-2244",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2244,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( D ) or as the total number of each follicle type per mm 2 ( E ) (median with interquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "rquartile range). n = 5-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. RAPA = rapamycin. To further analyze whether adding rapam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-3499",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 3499,
+      "sentence": "Effects of adding rapamycin to the freezing medium on follicle activation and proliferation in fresh, SFct, or SFra mice ovaries autotransplanted under the kidney capsule of C57BL/6 mice (4 weeks old) for three weeks.",
+      "context_window": "autotransplanted under the kidney capsule of C57BL/6 mice (4 weeks old) for three weeks. Immunohistochemistry (IHC)-assisted q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-3915",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3915,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. SF = slow-frozen/thawed ovaries, RAPA = rapam",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-3928",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3928,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "icle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. SF = slow-frozen/thawed ovaries, RAPA = rapamycin. ( A , B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-3999",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3999,
+      "sentence": "SF = slow-frozen/thawed ovaries, RAPA = rapamycin. ( A , B ) n = 5-8 ovaries per group, ( C ) n = 12-17 ovaries per group.",
+      "context_window": "F = slow-frozen/thawed ovaries, RAPA = rapamycin. ( A , B ) n = 5-8 ovaries per group, ( C ) n = 12-17 ovaries per group. No",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-4032",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4032,
+      "sentence": "SF = slow-frozen/thawed ovaries, RAPA = rapamycin. ( A , B ) n = 5-8 ovaries per group, ( C ) n = 12-17 ovaries per group.",
+      "context_window": "APA = rapamycin. ( A , B ) n = 5-8 ovaries per group, ( C ) n = 12-17 ovaries per group. No apoptosis was observed three week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-5947",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5947,
+      "sentence": "Comparison of follicle densities between fresh mice ovaries autotransplanted either between the skin layers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old).",
+      "context_window": "ers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old). Representative images of LHX8 staining of fresh mice",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-6503",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6503,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( C ) or as the total number of each follicle type per mm 2 ( D ) (median with interquartile range). n = 7-10 ovaries per group. * p \u2264 0.05.",
+      "context_window": "icle type per mm 2 ( D ) (median with interquartile range). n = 7-10 ovaries per group. * p \u2264 0.05. E = transplantation of ov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-6533",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6533,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( C ) or as the total number of each follicle type per mm 2 ( D ) (median with interquartile range). n = 7-10 ovaries per group. * p \u2264 0.05.",
+      "context_window": "an with interquartile range). n = 7-10 ovaries per group. * p \u2264 0.05. E = transplantation of ovaries between skin layers of ears",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-6848",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6848,
+      "sentence": "Comparison of apoptosis and vascular endothelial cells between fresh mice ovaries autotransplanted either between the skin layers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old).",
+      "context_window": "ers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old). Representative images of cleaved caspase-3 ( A ) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-7065",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7065,
+      "sentence": "Green staining = CD31. n = 7-10 ovaries per group.",
+      "context_window": "he ears or under the kidney capsule. Green staining = CD31. n = 7-10 ovaries per group. The percentage of primordial and pri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-7707",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 7707,
+      "sentence": "Comparison of follicle activation and proliferation between fresh mice ovaries autotransplanted either between the skin layers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old).",
+      "context_window": "ers of the ear or under the kidney capsule of C57BL/6 mice (4 weeks old). IHC-assisted quantification (median + min to max) of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-8102",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8102,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05. n = 5-10 ovaries per group.",
+      "context_window": "-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05. n = 5-10 ovaries per group. E = transplantation of ovaries",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-8112",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8112,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05. n = 5-10 ovaries per group.",
+      "context_window": "ollicle, orange arrow = green-stained follicle. * p \u2264 0.05. n = 5-10 ovaries per group. E = transplantation of ovaries betwee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-9066",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 9066,
+      "sentence": "Effect of LY294002 (LY) injection on weight gain and mice behavior after ovarian autotransplantation into C57BL/6 mice (4 weeks old).",
+      "context_window": "havior after ovarian autotransplantation into C57BL/6 mice (4 weeks old). Ears were injected locally and the kidney capsule was",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-9361",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9361,
+      "sentence": "Weight gain (in grams; median + min to max) ( A ) and behavior score (0 = least active, 5 = most active; mean \u00b1 SEM) ( B ) of treated or control mice monitored for three weeks after transplantation. n = 4-5 mice per group. **** p \u2264 0.0001.",
+      "context_window": "ntrol mice monitored for three weeks after transplantation. n = 4-5 mice per group. **** p \u2264 0.0001. CT = vehicle control, LY",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-9390",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9390,
+      "sentence": "Weight gain (in grams; median + min to max) ( A ) and behavior score (0 = least active, 5 = most active; mean \u00b1 SEM) ( B ) of treated or control mice monitored for three weeks after transplantation. n = 4-5 mice per group. **** p \u2264 0.0001.",
+      "context_window": "e weeks after transplantation. n = 4-5 mice per group. **** p \u2264 0.0001. CT = vehicle control, LY = LY294002. Primordial, primary,",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-10149",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10149,
+      "sentence": "Comparison of follicle densities for LY injection after ovarian autotransplantation into C57BL/6 mice (4 weeks old) either locally in the ears or intraperitoneally (IP) when ovaries were transplanted under the kidney capsule. ( A ) Representative images of LHX8 staining of fresh mice ovaries transplanted either between the skin layers of the ears or under the kidney capsule, followed by local injection with LY or vehicle control for ovaries transplanted between skin layers of the ears, or IP for ovaries transplanted under the kidney capsule.",
+      "context_window": "ection after ovarian autotransplantation into C57BL/6 mice (4 weeks old) either locally in the ears or intraperitoneally (IP) w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-10978",
+      "claim_type": "sample_size",
+      "raw_text": "n = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10978,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( B ) or as the total number of each follicle type per mm 2 ( C ) (median with interquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "icle type per mm 2 ( C ) (median with interquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. CT = control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-11007",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11007,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( B ) or as the total number of each follicle type per mm 2 ( C ) (median with interquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "ian with interquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. CT = control injection, LY = injection with L",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-11020",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11020,
+      "sentence": "Follicle density was either expressed in the percentage of primordial, primary, and secondary or more growing follicles relevant to the total amount per section ( B ) or as the total number of each follicle type per mm 2 ( C ) (median with interquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01.",
+      "context_window": "rquartile range). n = 7-8 ovaries per group. * p \u2264 0.05, ** p \u2264 0.01. CT = control injection, LY = injection with LY. Furthermo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-u-11824",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 11824,
+      "sentence": "Comparison of follicle activation and proliferation for LY injection after ovarian autotransplantation into C57BL/6 mice (4 weeks old).",
+      "context_window": "ection after ovarian autotransplantation into C57BL/6 mice (4 weeks old). Ears were injected locally and the kidney capsule was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-12338",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12338,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group.",
+      "context_window": "-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group. CT = vehicle contr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-p-12351",
+      "claim_type": "p_value",
+      "raw_text": "p \u2264 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12351,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group.",
+      "context_window": "icle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group. CT = vehicle control, LY = LY29",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10456585_the_mtor_inhibitor_rapamycin_counteracts_follicle_activation-n-12361",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12361,
+      "sentence": "White arrow = non-green-stained follicle, orange arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group.",
+      "context_window": "ge arrow = green-stained follicle. * p \u2264 0.05, ** p \u2264 0.01. n = 6-8 ovaries per group. CT = vehicle control, LY = LY294002.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

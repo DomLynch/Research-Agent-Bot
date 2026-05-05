@@ -1,0 +1,624 @@
+{
+  "paper_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t",
+  "doi": "10.18632/aging.104096",
+  "extracted_at": "2026-05-05T15:32:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 30,
+    "percentage": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-245",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 245,
+      "sentence": "Previously, we completed a clinical trial testing the effects of 14 weeks of PRT + metformin (metPRT) compared to PRT with placebo (plaPRT) on muscle hypertrophy in older adults.",
+      "context_window": "ously, we completed a clinical trial testing the effects of 14 weeks of PRT + metformin (metPRT) compared to PRT with placebo (p",
+      "claim_role": "duration",
+      "endpoint": "muscle hypertrophy",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-pct-477",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 477,
+      "sentence": "In the western population, >40% of adults over the age of 60 have difficulties with daily activities such as walking or standing up from a chair etc. and >30% suffer from some kind of physical disability [ 5 ].",
+      "context_window": "oor physical performance [ 4 ]. In the western population, >40% of adults over the age of 60 have difficulties with daily a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-pct-604",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 604,
+      "sentence": "In the western population, >40% of adults over the age of 60 have difficulties with daily activities such as walking or standing up from a chair etc. and >30% suffer from some kind of physical disability [ 5 ].",
+      "context_window": "ities such as walking or standing up from a chair etc. and >30% suffer from some kind of physical disability [ 5 ]. After t",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-pct-809",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 809,
+      "sentence": "After the age of 60, striking changes occur in muscle physiology, corresponding to a decline in muscle mass and deterioration of muscle strength by ~2% each year [ 6 ].",
+      "context_window": "ine in muscle mass and deterioration of muscle strength by ~2% each year [ 6 ]. The pathophysiology of age-related decline",
+      "claim_role": "background",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-4353",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 4353,
+      "sentence": "However, in the MASTERS Trial, metformin plus PRT inhibited muscle growth after 14 weeks of training [ 35 ].",
+      "context_window": "ERS Trial, metformin plus PRT inhibited muscle growth after 14 weeks of training [ 35 ]. In vitro, acute metformin treatment of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-196",
+      "claim_type": "unit_value",
+      "raw_text": "14 week",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 196,
+      "sentence": "The Metformin to Augment Strength Training Effective Response in Seniors (MASTERS) Trial is a randomized, controlled, double blind trial comparing the effects of metformin versus placebo during a 14 week progressive resistance exercise training (PRT) intervention in healthy men and women \u2265 65 years of age.",
+      "context_window": "comparing the effects of metformin versus placebo during a 14 week progressive resistance exercise training (PRT) intervention",
+      "claim_role": "duration",
+      "endpoint": "muscle strength",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-291",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 291,
+      "sentence": "The Metformin to Augment Strength Training Effective Response in Seniors (MASTERS) Trial is a randomized, controlled, double blind trial comparing the effects of metformin versus placebo during a 14 week progressive resistance exercise training (PRT) intervention in healthy men and women \u2265 65 years of age.",
+      "context_window": "cise training (PRT) intervention in healthy men and women \u2265 65 years of age. Participants were recruited at University of Kentuc",
+      "claim_role": "protocol",
+      "endpoint": "muscle strength",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-800",
+      "claim_type": "unit_value",
+      "raw_text": "850 mg",
+      "numeric_values": [
+        850.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 800,
+      "sentence": "Those who were randomized to metformin were titrated up to the target dose by taking 1 tablet per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for the remainder of the trial.",
+      "context_window": "titrated up to the target dose by taking 1 tablet per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for th",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-812",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 812,
+      "sentence": "Those who were randomized to metformin were titrated up to the target dose by taking 1 tablet per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for the remainder of the trial.",
+      "context_window": "to the target dose by taking 1 tablet per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for the remainder",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-851",
+      "claim_type": "unit_value",
+      "raw_text": "1700 mg",
+      "numeric_values": [
+        1700.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 851,
+      "sentence": "Those who were randomized to metformin were titrated up to the target dose by taking 1 tablet per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for the remainder of the trial.",
+      "context_window": "per day (850 mg) for 7 days, followed by 2 tablets per day (1700 mg) for the remainder of the trial. All study subjects underw",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-922",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 922,
+      "sentence": "All study subjects underwent 14 weeks of PRT, supervised by trained personnel.",
+      "context_window": "r the remainder of the trial. All study subjects underwent 14 weeks of PRT, supervised by trained personnel. We employed a vari",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-1311",
+      "claim_type": "unit_value",
+      "raw_text": "2 week",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1311,
+      "sentence": "Vastus lateralis muscle biopsies were obtained prior to drug initiation, after the 2 week wash-in period and 3 days after the final bout of training.",
+      "context_window": "biopsies were obtained prior to drug initiation, after the 2 week wash-in period and 3 days after the final bout of training.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-1337",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1337,
+      "sentence": "Vastus lateralis muscle biopsies were obtained prior to drug initiation, after the 2 week wash-in period and 3 days after the final bout of training.",
+      "context_window": "ior to drug initiation, after the 2 week wash-in period and 3 days after the final bout of training. Primary outcomes of the t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-1851",
+      "claim_type": "unit_value",
+      "raw_text": "71 years",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1851,
+      "sentence": "Total RNA was isolated from baseline muscle biopsies in 37 plaPRT and 28 metPRT participants and from 16-week post-training muscle biopsies from 26 plaPRT and 24 metPRT participants (average age 71 years old).",
+      "context_window": "sies from 26 plaPRT and 24 metPRT participants (average age 71 years old). Of these, 24 plaPRT and 23 metPRT participants had bi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-2044",
+      "claim_type": "unit_value",
+      "raw_text": "24 years",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2044,
+      "sentence": "Additionally, total RNA was isolated from muscle biopsies in 21 young healthy donors (average age 24 years old).",
+      "context_window": "rom muscle biopsies in 21 young healthy donors (average age 24 years old). Approximately 35 mg of muscle was subjected to bead h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-2073",
+      "claim_type": "unit_value",
+      "raw_text": "35 mg",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2073,
+      "sentence": "Approximately 35 mg of muscle was subjected to bead homogenization in Qiazol (Qiagen, Valencia, CA) and RNA purified using miRNeasy Mini Kits (Qiagen) and stored at -80\u00b0 C.",
+      "context_window": "ng healthy donors (average age 24 years old). Approximately 35 mg of muscle was subjected to bead homogenization in Qiazol (Q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-4779",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 4779,
+      "sentence": "A linear model was fit on the voom-normalized data, while adjusting for the study arm (placebo vs metformin) and biopsy time (baseline, 14 weeks of PRT with treatment and young).",
+      "context_window": "study arm (placebo vs metformin) and biopsy time (baseline, 14 weeks of PRT with treatment and young). Due to the paired nature",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-5110",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5110,
+      "sentence": "Differential gene expression was measured using an Empirical Bayes statistic in limma for the following comparisons -plaPRT vs Baseline, metPRT vs Baseline, Young vs Old Baseline, Young vs plaPRT (16 weeks), and Young vs metPRT (16 weeks).",
+      "context_window": "metPRT vs Baseline, Young vs Old Baseline, Young vs plaPRT (16 weeks), and Young vs metPRT (16 weeks). The raw P-values were adj",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-5142",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 5142,
+      "sentence": "Differential gene expression was measured using an Empirical Bayes statistic in limma for the following comparisons -plaPRT vs Baseline, metPRT vs Baseline, Young vs Old Baseline, Young vs plaPRT (16 weeks), and Young vs metPRT (16 weeks).",
+      "context_window": "Baseline, Young vs plaPRT (16 weeks), and Young vs metPRT (16 weeks). The raw P-values were adjusted for multiple comparisons u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-pct-5734",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5734,
+      "sentence": "A hypergeometric test was run and pathways with a gene overlap threshold of 10% of all input genes and the p-value cutoff of 0.01 were included in the output.",
+      "context_window": "test was run and pathways with a gene overlap threshold of 10% of all input genes and the p-value cutoff of 0.01 were incl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-92",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 92,
+      "sentence": "Research participants were randomized in a double-blind fashion to placebo or metformin for 2 weeks followed by 14 weeks of PRT with continued drug treatment.",
+      "context_window": "mized in a double-blind fashion to placebo or metformin for 2 weeks followed by 14 weeks of PRT with continued drug treatment.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-112",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 112,
+      "sentence": "Research participants were randomized in a double-blind fashion to placebo or metformin for 2 weeks followed by 14 weeks of PRT with continued drug treatment.",
+      "context_window": "ind fashion to placebo or metformin for 2 weeks followed by 14 weeks of PRT with continued drug treatment. Vastus lateralis biop",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-244",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 244,
+      "sentence": "Vastus lateralis biopsies were obtained at baseline (prior to drug treatment) and at 16 weeks (following 14 weeks of training) [ 35 ].",
+      "context_window": "were obtained at baseline (prior to drug treatment) and at 16 weeks (following 14 weeks of training) [ 35 ]. Fourteen weeks of",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-264",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 264,
+      "sentence": "Vastus lateralis biopsies were obtained at baseline (prior to drug treatment) and at 16 weeks (following 14 weeks of training) [ 35 ].",
+      "context_window": "seline (prior to drug treatment) and at 16 weeks (following 14 weeks of training) [ 35 ]. Fourteen weeks of placebo plus PRT (pl",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-1615",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1615,
+      "sentence": "Metformin blunts the global transcriptomic changes induced by PRT in human skeletal muscle. ( A ) Volcano plot of 2048 DEG (q-value < 0.01) with plaPRT between 16 weeks and baseline; ( B ) Volcano plot of 1435 DEG (q-value < 0.01) with metPRT intervention between 16 weeks and baseline; ( C ) Principal component analysis on DEG shared between plaPRT (orange) and metPRT (green) compared to baseline (blue); ( D ) Venn diagram showing an overlap of DEG common between plaPRT and metPRT vs baseline; ( E ) Correlation plot between the fold changes of DEG common between plaPRT and metPRT.",
+      "context_window": "lcano plot of 2048 DEG (q-value < 0.01) with plaPRT between 16 weeks and baseline; ( B ) Volcano plot of 1435 DEG (q-value < 0.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-1719",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 1719,
+      "sentence": "Metformin blunts the global transcriptomic changes induced by PRT in human skeletal muscle. ( A ) Volcano plot of 2048 DEG (q-value < 0.01) with plaPRT between 16 weeks and baseline; ( B ) Volcano plot of 1435 DEG (q-value < 0.01) with metPRT intervention between 16 weeks and baseline; ( C ) Principal component analysis on DEG shared between plaPRT (orange) and metPRT (green) compared to baseline (blue); ( D ) Venn diagram showing an overlap of DEG common between plaPRT and metPRT vs baseline; ( E ) Correlation plot between the fold changes of DEG common between plaPRT and metPRT.",
+      "context_window": "1435 DEG (q-value < 0.01) with metPRT intervention between 16 weeks and baseline; ( C ) Principal component analysis on DEG sha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-4783",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4783,
+      "sentence": "Following 14 weeks of PRT, the week 16 time point from plaPRT compared to young demonstrated a dramatic decrease in DEG that were previously observed at baseline (2898 DEG), with 1089 new DEG apparent following 14 weeks of plaPRT ( Figure 3B and Supplementary Table 5 ).",
+      "context_window": "egulated ( Figure 3A and Supplementary Table 5 ). Following 14 weeks of PRT, the week 16 time point from plaPRT compared to youn",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-4984",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 4984,
+      "sentence": "Following 14 weeks of PRT, the week 16 time point from plaPRT compared to young demonstrated a dramatic decrease in DEG that were previously observed at baseline (2898 DEG), with 1089 new DEG apparent following 14 weeks of plaPRT ( Figure 3B and Supplementary Table 5 ).",
+      "context_window": "t baseline (2898 DEG), with 1089 new DEG apparent following 14 weeks of plaPRT ( Figure 3B and Supplementary Table 5 ). MetPRT f",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-5177",
+      "claim_type": "unit_value",
+      "raw_text": "14 weeks",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 5177,
+      "sentence": "MetPRT further reduced the number of DEG compared to young muscle to 2705, however, the number of unique DEG that were present after 14 weeks of PRT was also lower compared to placebo (837 DEG), consistent with our initial findings that metformin blunts the overall transcriptomic response to PRT ( Figure 3B and Supplementary Table 5 ).",
+      "context_window": ", however, the number of unique DEG that were present after 14 weeks of PRT was also lower compared to placebo (837 DEG), consis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-6308",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 6308,
+      "sentence": "PRT reverts aging transcriptome towards that of young resting muscle and the effects of metformin are additive. ( A ) Volcano plot of 4654 DEG (q-value < 0.01) between young and old muscle at baseline; ( B ) Number of DEG observed when comparing young baseline skeletal muscle to old baseline skeletal muscle (4654 DEG) and young baseline to old 16 weeks with either plaPRT (3987 DEG) or metPRT (3542 DEG).",
+      "context_window": "seline skeletal muscle (4654 DEG) and young baseline to old 16 weeks with either plaPRT (3987 DEG) or metPRT (3542 DEG). Dark bl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-3571",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3571,
+      "sentence": "Following 6 months of resistance exercise training a total of 179 of the 596 were no longer significantly different to that of young.",
+      "context_window": "ally expressed at baseline between young and old. Following 6 months of resistance exercise training a total of 179 of the 596 w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-5576",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 5576,
+      "sentence": "A few limitations reduce the scope of our interpretation of the data, including the time between the last bout of exercise and tissue collection (3 days).",
+      "context_window": "me between the last bout of exercise and tissue collection (3 days). It is possible that metformin inhibited mTOR signaling ac",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-5836",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5836,
+      "sentence": "Although we reported down-regulation of mTOR-associated pathways in muscle following 6 weeks of metformin alone in a crossover study design in older adults [ 51 ], chronic effects of metformin on mTOR regulated pathways were less apparent within the context of exercise training.",
+      "context_window": "-regulation of mTOR-associated pathways in muscle following 6 weeks of metformin alone in a crossover study design in older adu",
+      "claim_role": "duration",
+      "endpoint": "mTOR signaling",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7655218_metformin_alters_skeletal_muscle_transcriptome_adaptations_t-u-6154",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6154,
+      "sentence": "Another limitation acknowledged in our primary outcomes paper is the lack of a sedentary control group given metformin for 16 weeks.",
+      "context_window": "s the lack of a sedentary control group given metformin for 16 weeks. We attempted to extrapolate metformin-specific effects, bu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "paper_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s",
+  "doi": "10.1111/acel.12723",
+  "extracted_at": "2026-05-05T15:32:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 1,
+    "unit_value": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s-n-438",
+      "claim_type": "sample_size",
+      "raw_text": "n = 14",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 438,
+      "sentence": "We studied ~70\u2010year\u2010old participants ( n = 14) in a randomized, double\u2010blind, placebo\u2010controlled, crossover trial in which they were treated with 6 weeks each of metformin and placebo.",
+      "context_window": "ve not been studied. We studied ~70\u2010year\u2010old participants ( n = 14) in a randomized, double\u2010blind, placebo\u2010controlled, crossov",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s-u-545",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 545,
+      "sentence": "We studied ~70\u2010year\u2010old participants ( n = 14) in a randomized, double\u2010blind, placebo\u2010controlled, crossover trial in which they were treated with 6 weeks each of metformin and placebo.",
+      "context_window": "controlled, crossover trial in which they were treated with 6 weeks each of metformin and placebo. Following each treatment per",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s-u-500",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 500,
+      "sentence": "Metformin, a biguanide derived from Galega officinalis , has been used to treat diabetes for over 60 years.",
+      "context_window": "lega officinalis , has been used to treat diabetes for over 60 years. It is the first line treatment for type 2 diabetes because",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s-u-2204",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 2204,
+      "sentence": "In this crossover study design, each subject serves as their own placebo\u2010treated control, increasing our power to detect metformin\u2010associated changes in a small sample of adults and allowing us to address the following questions: (i) Does exposure to 6 weeks of metformin induce relevant physiological and transcriptomic changes in human muscle and adipose tissues? (ii) Are these changes tissue\u2010specific? (iii) What biological pathways are affected by metformin action? (iv) Are there common upstream regulators that are responsible for these transcriptomic changes?",
+      "context_window": "us to address the following questions: (i) Does exposure to 6 weeks of metformin induce relevant physiological and transcriptom",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5847877_metformin_regulates_metabolic_and_nonmetabolic_pathways_in_s-u-8669",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 8669,
+      "sentence": "In summary, this study showed that 6 weeks of metformin can improve age\u2010associated metabolic derangements in glucose intolerant older adults.",
+      "context_window": ", & Kaeberlein, 2013 ). In summary, this study showed that 6 weeks of metformin can improve age\u2010associated metabolic derangeme",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

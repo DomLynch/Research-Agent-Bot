@@ -1,0 +1,304 @@
+{
+  "paper_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun",
+  "doi": "10.1093/geroni/igac059.2117",
+  "extracted_at": "2026-05-05T15:32:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 6,
+    "mean_sd": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-444",
+      "claim_type": "unit_value",
+      "raw_text": "000 mg/day",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 444,
+      "sentence": "Older adults (65+ years) are studied in this randomized, double-blind, placebo-controlled trial of metformin (max 2,000 mg/day).",
+      "context_window": "double-blind, placebo-controlled trial of metformin (max 2,000 mg/day). Pre-diabetes, required for inclusion, is assessed by 2-ho",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-599",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "abstract",
+      "source_offset": 599,
+      "sentence": "Individuals with glomerular filtration rate < 45 mL/min and frail individuals (Fried criteria) are excluded.",
+      "context_window": "test (OGTT). Individuals with glomerular filtration rate < 45 mL/min and frail individuals (Fried criteria) are excluded. The pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-1099",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1099,
+      "sentence": "Subjects are followed for 2 years with safety assessments every 3 months and frailty assessment and OGTT every 6 months.",
+      "context_window": "ual-energy x-ray absorptiometry). Subjects are followed for 2 years with safety assessments every 3 months and frailty assessme",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-1137",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1137,
+      "sentence": "Subjects are followed for 2 years with safety assessments every 3 months and frailty assessment and OGTT every 6 months.",
+      "context_window": "ects are followed for 2 years with safety assessments every 3 months and frailty assessment and OGTT every 6 months. 145 partic",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-1184",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1184,
+      "sentence": "Subjects are followed for 2 years with safety assessments every 3 months and frailty assessment and OGTT every 6 months.",
+      "context_window": "sments every 3 months and frailty assessment and OGTT every 6 months. 145 participants (49% female, 35% Hispanic) are randomize",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1213",
+      "claim_type": "percentage",
+      "raw_text": "49%",
+      "numeric_values": [
+        49.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1213,
+      "sentence": "145 participants (49% female, 35% Hispanic) are randomized.",
+      "context_window": "ilty assessment and OGTT every 6 months. 145 participants (49% female, 35% Hispanic) are randomized. Mean age is 71.8 \u00b1 5.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1225",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1225,
+      "sentence": "145 participants (49% female, 35% Hispanic) are randomized.",
+      "context_window": "ent and OGTT every 6 months. 145 participants (49% female, 35% Hispanic) are randomized. Mean age is 71.8 \u00b1 5.4 years (ran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-msd-1267",
+      "claim_type": "mean_sd",
+      "raw_text": "71.8 \u00b1 5.4",
+      "numeric_values": [
+        71.8,
+        5.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1267,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "ants (49% female, 35% Hispanic) are randomized. Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-1274",
+      "claim_type": "unit_value",
+      "raw_text": "5.4 years",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1274,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "9% female, 35% Hispanic) are randomized. Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemog",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-msd-1319",
+      "claim_type": "mean_sd",
+      "raw_text": "30.8 \u00b16",
+      "numeric_values": [
+        30.8,
+        6.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1319,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%. Using Fried criteri",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-u-1325",
+      "claim_type": "unit_value",
+      "raw_text": "6 kg/m2",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "kg/m2",
+      "source_section": "abstract",
+      "source_offset": 1325,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "s 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%. Using Fried criteria, 63.",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-msd-1356",
+      "claim_type": "mean_sd",
+      "raw_text": "5.6 \u00b10.4",
+      "numeric_values": [
+        5.6,
+        0.4
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1356,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "8), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%. Using Fried criteria, 63.4% have frailty score of 0, 30.3",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1361",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1361,
+      "sentence": "Mean age is 71.8 \u00b1 5.4 years (range: 65-88), body mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%.",
+      "context_window": "ody mass index is 30.8 \u00b16 kg/m2, and Hemoglobin A1c is 5.6 \u00b10.4%. Using Fried criteria, 63.4% have frailty score of 0, 30.3%",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1389",
+      "claim_type": "percentage",
+      "raw_text": "63.4%",
+      "numeric_values": [
+        63.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1389,
+      "sentence": "Using Fried criteria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a score of 2.",
+      "context_window": "/m2, and Hemoglobin A1c is 5.6 \u00b10.4%. Using Fried criteria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a sco",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1420",
+      "claim_type": "percentage",
+      "raw_text": "30.3%",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1420,
+      "sentence": "Using Fried criteria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a score of 2.",
+      "context_window": "\u00b10.4%. Using Fried criteria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a score of 2. Metformin is being ex",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9766609_clinical_trial_of_metformin_for_frailty_prevention_in_commun-pct-1444",
+      "claim_type": "percentage",
+      "raw_text": "6.2%",
+      "numeric_values": [
+        6.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1444,
+      "sentence": "Using Fried criteria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a score of 2.",
+      "context_window": "ria, 63.4% have frailty score of 0, 30.3% a score of 1, and 6.2% a score of 2. Metformin is being examined as a potential t",
+      "claim_role": "unknown",
+      "endpoint": "frailty",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

@@ -1,0 +1,950 @@
+{
+  "paper_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go",
+  "doi": "10.3389/fonc.2022.781093",
+  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 28,
+    "unit_value": 8,
+    "p_value": 15,
+    "hazard_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-478",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 478,
+      "sentence": "Although considerable improvements have been made in the early diagnosis and novel treatments (such as targeted drugs and individualized therapy plans) and decreased mortality rates by \u226430% in the past 25 years, the prognosis of breast cancer is still unsatisfactory ( 2 , 3 ).",
+      "context_window": "vidualized therapy plans) and decreased mortality rates by \u226430% in the past 25 years, the prognosis of breast cancer is sti",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-494",
+      "claim_type": "unit_value",
+      "raw_text": "25 years",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 494,
+      "sentence": "Although considerable improvements have been made in the early diagnosis and novel treatments (such as targeted drugs and individualized therapy plans) and decreased mortality rates by \u226430% in the past 25 years, the prognosis of breast cancer is still unsatisfactory ( 2 , 3 ).",
+      "context_window": "py plans) and decreased mortality rates by \u226430% in the past 25 years, the prognosis of breast cancer is still unsatisfactory ( 2",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-39",
+      "claim_type": "unit_value",
+      "raw_text": "79 years",
+      "numeric_values": [
+        79.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 39,
+      "sentence": "In total, 160 patients aged from 29 to 79 years with breast cancer who underwent surgical resection between January 2013 and December 2015 were retrospectively reviewed.",
+      "context_window": "In total, 160 patients aged from 29 to 79 years with breast cancer who underwent surgical resection between",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-261",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 261,
+      "sentence": "The inclusion criteria were as follows: i) Diagnosed with primary breast cancer; ii) aged >18 years; iii) complete clinicopathological data before surgery and complete follow-up data were accessible; iv) tumor tissue and paired-adjacent tissues were accessible, and v) had not received neoadjuvant therapy.",
+      "context_window": "follows: i) Diagnosed with primary breast cancer; ii) aged >18 years; iii) complete clinicopathological data before surgery and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-1046",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1046,
+      "sentence": "The slices were then transparentized using polybutylene terephthalate and soaked in a solution of 1% bovine serum albumin plus 0.1% Triton for 30 min.",
+      "context_window": "sing polybutylene terephthalate and soaked in a solution of 1% bovine serum albumin plus 0.1% Triton for 30 min. Antigen r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-1075",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1075,
+      "sentence": "The slices were then transparentized using polybutylene terephthalate and soaked in a solution of 1% bovine serum albumin plus 0.1% Triton for 30 min.",
+      "context_window": "te and soaked in a solution of 1% bovine serum albumin plus 0.1% Triton for 30 min. Antigen retrieval was performed in a mic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-1152",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1152,
+      "sentence": "Antigen retrieval was performed in a microwave using 3% hydrogen peroxide, after which the slices were blocked with 10% goat serum (cat. no.",
+      "context_window": "0 min. Antigen retrieval was performed in a microwave using 3% hydrogen peroxide, after which the slices were blocked with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-1215",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1215,
+      "sentence": "Antigen retrieval was performed in a microwave using 3% hydrogen peroxide, after which the slices were blocked with 10% goat serum (cat. no.",
+      "context_window": "hydrogen peroxide, after which the slices were blocked with 10% goat serum (cat. no. 16210064, Gibco, USA) and incubated wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-3191",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3191,
+      "sentence": "The staining intensity was scored as 0 (no staining), 1 (week staining), 2 (moderate staining), 3 (intense staining), and the staining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%).",
+      "context_window": "), and the staining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%). The total IHC score ran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-3203",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3203,
+      "sentence": "The staining intensity was scored as 0 (no staining), 1 (week staining), 2 (moderate staining), 3 (intense staining), and the staining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%).",
+      "context_window": "taining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%). The total IHC score ranged from 0 t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-3215",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3215,
+      "sentence": "The staining intensity was scored as 0 (no staining), 1 (week staining), 2 (moderate staining), 3 (intense staining), and the staining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%).",
+      "context_window": "ity was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%). The total IHC score ranged from 0 to 12. IHC sc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-3225",
+      "claim_type": "percentage",
+      "raw_text": "76%",
+      "numeric_values": [
+        76.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3225,
+      "sentence": "The staining intensity was scored as 0 (no staining), 1 (week staining), 2 (moderate staining), 3 (intense staining), and the staining density was scored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%).",
+      "context_window": "ored as 0 (negative), 1 (\u226425%), 2 (26-50%), 3 (51-75%), 4 (\u226576%). The total IHC score ranged from 0 to 12. IHC score >3 was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-4264",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4264,
+      "sentence": "The cells were cultured in 90% Dulbecco\u2019s modified Eagles medium (DMEM; cat. no.",
+      "context_window": ", using lentiviral transfection. The cells were cultured in 90% Dulbecco\u2019s modified Eagles medium (DMEM; cat. no. A4192101)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-4346",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4346,
+      "sentence": "A4192101) supplemented with 10% fetal bovine serum (FBS; cat. no.",
+      "context_window": "d Eagles medium (DMEM; cat. no. A4192101) supplemented with 10% fetal bovine serum (FBS; cat. no. 12483020) (both Gibco; Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-4496",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4496,
+      "sentence": "12483020) (both Gibco; Thermo Fisher Scientific, Inc.), 100 U/ml penicillin and 100 \u03bcg/ml streptomycin at 37\u02daC (5% CO 2 , 95% air). ii) A total of 150 ml peripheral blood was obtained from 30 patients newly diagnosed with breast cancer (5 ml per patient) after the ethics approval of our hospital and the signed informed consents, and the peripheral blood mononuclear cells (PBMCs) were isolated; CD19 + cells (primary B cells) were obtained using CD19 + magnetic beads (cat. no.",
+      "context_window": ".), 100 U/ml penicillin and 100 \u03bcg/ml streptomycin at 37\u02daC (5% CO 2 , 95% air). ii) A total of 150 ml peripheral blood was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-4506",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4506,
+      "sentence": "12483020) (both Gibco; Thermo Fisher Scientific, Inc.), 100 U/ml penicillin and 100 \u03bcg/ml streptomycin at 37\u02daC (5% CO 2 , 95% air). ii) A total of 150 ml peripheral blood was obtained from 30 patients newly diagnosed with breast cancer (5 ml per patient) after the ethics approval of our hospital and the signed informed consents, and the peripheral blood mononuclear cells (PBMCs) were isolated; CD19 + cells (primary B cells) were obtained using CD19 + magnetic beads (cat. no.",
+      "context_window": "ml penicillin and 100 \u03bcg/ml streptomycin at 37\u02daC (5% CO 2 , 95% air). ii) A total of 150 ml peripheral blood was obtained f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-4920",
+      "claim_type": "percentage",
+      "raw_text": "88%",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4920,
+      "sentence": "130-050-301; Miltenyi Biotec GmbH) and then cultured in 88% Iscove\u2019s Modified Dulbecco\u2019s Medium (cat. no.",
+      "context_window": "no. 130-050-301; Miltenyi Biotec GmbH) and then cultured in 88% Iscove\u2019s Modified Dulbecco\u2019s Medium (cat. no. 12440061; Gib",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-5037",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5037,
+      "sentence": "12440061; Gibco; Thermo Fisher Scientific, Inc.) supplemented with 10% FBS, 2% insulin, transferrin and selenium (ITS) additive, 100 U/ml IL-2 (cat. no.",
+      "context_window": "1; Gibco; Thermo Fisher Scientific, Inc.) supplemented with 10% FBS, 2% insulin, transferrin and selenium (ITS) additive, 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-5046",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5046,
+      "sentence": "12440061; Gibco; Thermo Fisher Scientific, Inc.) supplemented with 10% FBS, 2% insulin, transferrin and selenium (ITS) additive, 100 U/ml IL-2 (cat. no.",
+      "context_window": "Thermo Fisher Scientific, Inc.) supplemented with 10% FBS, 2% insulin, transferrin and selenium (ITS) additive, 100 U/ml",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-8089",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8089,
+      "sentence": "TCHu-74), and cultured in 90% MEM (cat. no.",
+      "context_window": "ences (Shanghai, China) (cat. no. TCHu-74), and cultured in 90% MEM (cat. no. 12492013; Gibco; Thermo Fisher Scientific, In",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-8161",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8161,
+      "sentence": "12492013; Gibco; Thermo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air).",
+      "context_window": ". no. 12492013; Gibco; Thermo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air). BCSCs were then prepared b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-8178",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8178,
+      "sentence": "12492013; Gibco; Thermo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air).",
+      "context_window": "ibco; Thermo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air). BCSCs were then prepared by establishing d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-8188",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8188,
+      "sentence": "12492013; Gibco; Thermo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air).",
+      "context_window": "mo Fisher Scientific, Inc.) with 10% FBS at 37\u02daC (5% CO 2 , 95% air). BCSCs were then prepared by establishing drug-resista",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-8384",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 \u03bcmol",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 8384,
+      "sentence": "R-MCF7 cells were constructed as follows: MCF7 cells were treated with 2.4 \u03bcmol/l Adriamycin (cat. no.",
+      "context_window": "s were constructed as follows: MCF7 cells were treated with 2.4 \u03bcmol/l Adriamycin (cat. no. D1515; Sigma-Aldrich; Merck KGaA) fo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-8816",
+      "claim_type": "unit_value",
+      "raw_text": "4.8 \u03bcmol",
+      "numeric_values": [
+        4.8
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 8816,
+      "sentence": "The entire treatment process was then repeated using 4.8 \u03bcmol/l Adriamycin.",
+      "context_window": "table. The entire treatment process was then repeated using 4.8 \u03bcmol/l Adriamycin. MCF7 cells treated with 2.4 \u03bcmol/l Adriamycin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-8863",
+      "claim_type": "unit_value",
+      "raw_text": "2.4 \u03bcmol",
+      "numeric_values": [
+        2.4
+      ],
+      "units": "\u03bcmol",
+      "source_section": "methods",
+      "source_offset": 8863,
+      "sentence": "MCF7 cells treated with 2.4 \u03bcmol/l Adriamycin only (non-resistant cells) served as the positive control.",
+      "context_window": "peated using 4.8 \u03bcmol/l Adriamycin. MCF7 cells treated with 2.4 \u03bcmol/l Adriamycin only (non-resistant cells) served as the posit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-9139",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9139,
+      "sentence": "A4192002) supplemented with 2% B27 (cat. no.",
+      "context_window": "n serum-free DMEM/F12 (cat. no. A4192002) supplemented with 2% B27 (cat. no. 0080085SA; both Gibco; Thermo Fisher Scientif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-10781",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10781,
+      "sentence": "The cytotoxic activity of CTLs was calculated as follows: CFSE + PI + /(CFSE + PI + + CFSE + PI - ) x 100%.",
+      "context_window": "ted as follows: CFSE + PI + /(CFSE + PI + + CFSE + PI - ) x 100%. Various concentrations of nivolumab (0, 2, 4, 8, 16, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-11565",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 11565,
+      "sentence": "Specific pathogen-free nude mice (age, 4-6 weeks; weight, 15-20 g) were purchased from Shanghai Laboratory Animal Center (Shanghai, China).",
+      "context_window": "s aforementioned. Specific pathogen-free nude mice (age, 4-6 weeks; weight, 15-20 g) were purchased from Shanghai Laboratory A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-u-11684",
+      "claim_type": "unit_value",
+      "raw_text": "26 mg",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 11684,
+      "sentence": "After anesthesia by 26 mg/kg propofol via intravenous tail injection, 2x10 6 MCF7 BCSCs were injected into the right dorsal flanks of the mice, and magnetic resonance imaging (MRI) was performed to assess tumor establishment one week post-implantation.",
+      "context_window": "ratory Animal Center (Shanghai, China). After anesthesia by 26 mg/kg propofol via intravenous tail injection, 2x10 6 MCF7 BCS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-13738",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13738,
+      "sentence": "The tumor inhibition rate was calculated as follows: Tumor inhibition rate = (tumor weight of control group - tumor weight of experimental group)/tumor weight of control group x 100%; and iv) tumor tissues were fixed using 10% formaldehyde solution at four \u00b0C for 24 h and embedded in paraffin for terminal deoxynucleotidyl transferase-mediated dUTP-biotin nick end labeling assays (TUNEL) (cat. no.",
+      "context_window": "ight of experimental group)/tumor weight of control group x 100%; and iv) tumor tissues were fixed using 10% formaldehyde so",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-13783",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 13783,
+      "sentence": "The tumor inhibition rate was calculated as follows: Tumor inhibition rate = (tumor weight of control group - tumor weight of experimental group)/tumor weight of control group x 100%; and iv) tumor tissues were fixed using 10% formaldehyde solution at four \u00b0C for 24 h and embedded in paraffin for terminal deoxynucleotidyl transferase-mediated dUTP-biotin nick end labeling assays (TUNEL) (cat. no.",
+      "context_window": "ontrol group x 100%; and iv) tumor tissues were fixed using 10% formaldehyde solution at four \u00b0C for 24 h and embedded in p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-15756",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15756,
+      "sentence": "A total of 20 \u03bcg protein was then fractionated by SDS-PAGE using 10% Bis-Tris Protein Gels (cat. no.",
+      "context_window": "al of 20 \u03bcg protein was then fractionated by SDS-PAGE using 10% Bis-Tris Protein Gels (cat. no. NP0335BOX; Invitrogen; Ther",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-15974",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15974,
+      "sentence": "The membrane was subsequently blocked in 5% skim milk at 37\u00b0C for 90 mins and incubated with rabbit anti-human CD44 (1:2,000; cat. no. ab216647), CD133 (1:2,000; cat. no. ab226355), CT4 (1:1,000; cat. no. ab109183), SOX2 (1:1,000; cat. no. ab93689) and GAPDH (1:1,000; cat. no. ab128915) antibodies (all Abcam) at 4\u02daC overnight.",
+      "context_window": "3; EMD Millipore). The membrane was subsequently blocked in 5% skim milk at 37\u00b0C for 90 mins and incubated with rabbit ant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-17245",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 17245,
+      "sentence": "P<0.05 was considered to indicate a statistically significant difference.",
+      "context_window": "an-Meier (K-M) curves and compared using the log-rank test. P<0.05 was considered to indicate a statistically significant diff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-417",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 417,
+      "sentence": "Notably, both OCT4 [hazard ratio (HR)=4.748, 95%confidence interval (CI)=1.780-12.660] and SOX2 high expressions (HR=4.053, 95%CI=1.504-10.920) were associated with worse OS ( Figures 1B, C ).",
+      "context_window": "n ( Table 2 ). Notably, both OCT4 [hazard ratio (HR)=4.748, 95%confidence interval (CI)=1.780-12.660] and SOX2 high express",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-hr-a-486",
+      "claim_type": "hazard_ratio",
+      "raw_text": "HR=4.053",
+      "numeric_values": [
+        4.053
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 486,
+      "sentence": "Notably, both OCT4 [hazard ratio (HR)=4.748, 95%confidence interval (CI)=1.780-12.660] and SOX2 high expressions (HR=4.053, 95%CI=1.504-10.920) were associated with worse OS ( Figures 1B, C ).",
+      "context_window": "ence interval (CI)=1.780-12.660] and SOX2 high expressions (HR=4.053, 95%CI=1.504-10.920) were associated with worse OS ( Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-pct-496",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 496,
+      "sentence": "Notably, both OCT4 [hazard ratio (HR)=4.748, 95%confidence interval (CI)=1.780-12.660] and SOX2 high expressions (HR=4.053, 95%CI=1.504-10.920) were associated with worse OS ( Figures 1B, C ).",
+      "context_window": "val (CI)=1.780-12.660] and SOX2 high expressions (HR=4.053, 95%CI=1.504-10.920) were associated with worse OS ( Figures 1B,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-2276",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2276,
+      "sentence": "Cytotoxic activity against MCF7 BCSCs among Blank control, OCT4&SOX2 CTLs, CMV pp65 CTLs (negative control) and Control CTLs (normal control) groups (A, B) . ** meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compared with CMV pp65 CTLs group.",
+      "context_window": "and Control CTLs (normal control) groups (A, B) . ** meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-2328",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2328,
+      "sentence": "Cytotoxic activity against MCF7 BCSCs among Blank control, OCT4&SOX2 CTLs, CMV pp65 CTLs (negative control) and Control CTLs (normal control) groups (A, B) . ** meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compared with CMV pp65 CTLs group.",
+      "context_window": "* meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-2380",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2380,
+      "sentence": "Cytotoxic activity against MCF7 BCSCs among Blank control, OCT4&SOX2 CTLs, CMV pp65 CTLs (negative control) and Control CTLs (normal control) groups (A, B) . ** meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compared with CMV pp65 CTLs group.",
+      "context_window": "* meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-2433",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2433,
+      "sentence": "Cytotoxic activity against MCF7 BCSCs among Blank control, OCT4&SOX2 CTLs, CMV pp65 CTLs (negative control) and Control CTLs (normal control) groups (A, B) . ** meant P <0.01 compared with Control CTLs group; *** meant P <0.001 compared with Control CTLs group; ## meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compared with CMV pp65 CTLs group.",
+      "context_window": "meant P <0.01 compared with CMV pp65 CTLs group; ### meant P <0.001 compared with CMV pp65 CTLs group. PD-1 inhibitor (nivolum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-3171",
+      "claim_type": "p_value",
+      "raw_text": "P >0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3171,
+      "sentence": "NS, meant P >0.05; * meant P <0.05; ** meant P <0.01.",
+      "context_window": "ivolumab) group and OCT4&SOX2 CTLs group (B, C) . NS, meant P >0.05; * meant P <0.05; ** meant P <0.01. No difference was obse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-3188",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3188,
+      "sentence": "NS, meant P >0.05; * meant P <0.05; ** meant P <0.01.",
+      "context_window": "nd OCT4&SOX2 CTLs group (B, C) . NS, meant P >0.05; * meant P <0.05; ** meant P <0.01. No difference was observed in survival",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-3206",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3206,
+      "sentence": "NS, meant P >0.05; * meant P <0.05; ** meant P <0.01.",
+      "context_window": "group (B, C) . NS, meant P >0.05; * meant P <0.05; ** meant P <0.01. No difference was observed in survival among OCT4&SOX2 CT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4516",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4516,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "ows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4560",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4560,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4605",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4605,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "roup; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4649",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4649,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "roup; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4706",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4706,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "nt P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4764",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4764,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "t P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8987438_oct4_and_sox2_specific_cytotoxic_t_cells_exhibit_not_only_go-p-4821",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4821,
+      "sentence": "Blank arrows indicate some examples of TUNEL positive cells. * meant P <0.05 compared to Control group; ** meant P <0.01 compared to Control group; *** meant P <0.001 compared to Control group. # meant P <0.05 compared to PD-1 inhibitor (nivolumab); ## meant P <0.01 compared to PD-1 inhibitor (nivolumab); ### meant P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group.",
+      "context_window": "nt P <0.001 compared to PD-1 inhibitor (nivolumab); T meant P <0.05 compared to OCT4&SOX2 CTLs group. OCT4 and SOX2 expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

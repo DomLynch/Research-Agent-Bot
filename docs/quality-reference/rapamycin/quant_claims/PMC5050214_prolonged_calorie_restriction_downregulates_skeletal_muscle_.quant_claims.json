@@ -1,0 +1,2141 @@
+{
+  "paper_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_",
+  "doi": "10.3389/fphys.2016.00445",
+  "extracted_at": "2026-05-05T15:22:52+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 7,
+    "percentage": 49,
+    "p_value": 21,
+    "mean_sd": 20,
+    "sample_size": 20
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-14",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 14,
+      "sentence": "Short-term (5-10 days) calorie restriction (CR) downregulates muscle protein synthesis, with consumption of a high protein-based diet attenuating this decline.",
+      "context_window": "Short-term (5-10 days) calorie restriction (CR) downregulates muscle protein synt",
+      "claim_role": "unknown",
+      "endpoint": "protein synthesis",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-677",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 677,
+      "sentence": "Twelve-week old male Sprague Dawley rats consumed ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks.",
+      "context_window": "ey rats consumed ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-692",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 692,
+      "sentence": "Twelve-week old male Sprague Dawley rats consumed ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks.",
+      "context_window": "d ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 wee",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-715",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 715,
+      "sentence": "Twelve-week old male Sprague Dawley rats consumed ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks.",
+      "context_window": "lorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks. Body composition wa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-749",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 749,
+      "sentence": "Twelve-week old male Sprague Dawley rats consumed ad libitum (AL) or calorie restricted (CR; 40%) adequate (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks.",
+      "context_window": "e (10%, AIN-93M) or high (32%) protein milk-based diets for 16 weeks. Body composition was determined using dual energy X-ray ab",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1173",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1173,
+      "sentence": "Independent of dietary protein intake, muscle protein content was 38% lower ( P < 0.05) in CR compared to AL.",
+      "context_window": "ndent of dietary protein intake, muscle protein content was 38% lower ( P < 0.05) in CR compared to AL. Phosphorylation and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1185",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1185,
+      "sentence": "Independent of dietary protein intake, muscle protein content was 38% lower ( P < 0.05) in CR compared to AL.",
+      "context_window": "tary protein intake, muscle protein content was 38% lower ( P < 0.05) in CR compared to AL. Phosphorylation and total Akt, mTOR,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1284",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1284,
+      "sentence": "Phosphorylation and total Akt, mTOR, rpS6, and p70S6K were lower ( P < 0.05) in CR vs.",
+      "context_window": "rylation and total Akt, mTOR, rpS6, and p70S6K were lower ( P < 0.05) in CR vs. AL, and total rpS6 was associated with muscle pr",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-423",
+      "claim_type": "unit_value",
+      "raw_text": "21 days",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 423,
+      "sentence": "Recent studies have demonstrated that CR, particularly short-term CR (\u2264 21 days), downregulates fasting MPS and blunts anabolic sensitivity to a protein-containing meal (Pasiakos et al., 2010 ; Areta et al., 2014 ; Hector et al., 2015 ; Murphy et al., 2015 ).",
+      "context_window": "es have demonstrated that CR, particularly short-term CR (\u2264 21 days), downregulates fasting MPS and blunts anabolic sensitivity",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-138",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 138,
+      "sentence": "Following the 16-week feeding intervention a time-by-energy interaction was observed, with change in total body and fat mass were lower ( P < 0.05) for CR compared to AL, regardless of protein intake (Figures 1A,B ).",
+      "context_window": "served, with change in total body and fat mass were lower ( P < 0.05) for CR compared to AL, regardless of protein intake (Figur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-243",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "Fat-free mass increased ( P < 0.05) from baseline to week 16 in all rats, with no effect of energy or protein intake (Figure 1C ).",
+      "context_window": "f protein intake (Figures 1A,B ). Fat-free mass increased ( P < 0.05) from baseline to week 16 in all rats, with no effect of en",
+      "claim_role": "effect",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-495",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 495,
+      "sentence": "Though fat-free mass was statistically similar between CR and AL at the conclusion of the 16-week feeding intervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ).",
+      "context_window": "he 16-week feeding intervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ). Mean",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-506",
+      "claim_type": "mean_sd",
+      "raw_text": "7 \u00b1 2",
+      "numeric_values": [
+        7.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 506,
+      "sentence": "Though fat-free mass was statistically similar between CR and AL at the conclusion of the 16-week feeding intervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ).",
+      "context_window": "feeding intervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ). Mean (\u00b1 SEM) [ n",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-515",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 515,
+      "sentence": "Though fat-free mass was statistically similar between CR and AL at the conclusion of the 16-week feeding intervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ).",
+      "context_window": "ntervention, muscle protein content was 38% lower (7 \u00b1 2 g; P < 0.05) in CR than AL (Figure 1D ). Mean (\u00b1 SEM) [ n = 10 (AL 10%",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-569",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 569,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "2 g; P < 0.05) in CR than AL (Figure 1D ). Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-580",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 580,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": ".05) in CR than AL (Figure 1D ). Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 1",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-592",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 592,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "han AL (Figure 1D ). Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-603",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 603,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "ure 1D ). Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-615",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 615,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "ean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-626",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 626,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "[ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B)",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-638",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 638,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "L 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-649",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 649,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), and muscle protein content (D) .",
+      "context_window": "), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] body mass (A), fat mass (B), fat-free mass (C), an",
+      "claim_role": "unknown",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-874",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 874,
+      "sentence": "32%) and energy-by-time interactions. \u2020 Week 16 different from Baseline; P < 0.05. + Time-by-energy interaction, CR different from AL at week 16; P < 0.05. * CR different from AL; P < 0.05.",
+      "context_window": "termine main effects of energy (AL vs. CR), protein (10 vs. 32%) and energy-by-time interactions. \u2020 Week 16 different from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-947",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 947,
+      "sentence": "32%) and energy-by-time interactions. \u2020 Week 16 different from Baseline; P < 0.05. + Time-by-energy interaction, CR different from AL at week 16; P < 0.05. * CR different from AL; P < 0.05.",
+      "context_window": "gy-by-time interactions. \u2020 Week 16 different from Baseline; P < 0.05. + Time-by-energy interaction, CR different from AL at week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1020",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1020,
+      "sentence": "32%) and energy-by-time interactions. \u2020 Week 16 different from Baseline; P < 0.05. + Time-by-energy interaction, CR different from AL at week 16; P < 0.05. * CR different from AL; P < 0.05.",
+      "context_window": "ime-by-energy interaction, CR different from AL at week 16; P < 0.05. * CR different from AL; P < 0.05. Phosphorylation status",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1054",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1054,
+      "sentence": "32%) and energy-by-time interactions. \u2020 Week 16 different from Baseline; P < 0.05. + Time-by-energy interaction, CR different from AL at week 16; P < 0.05. * CR different from AL; P < 0.05.",
+      "context_window": "erent from AL at week 16; P < 0.05. * CR different from AL; P < 0.05. Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1162",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1162,
+      "sentence": "Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regardless of protein intake (Figure 2A ).",
+      "context_window": ", mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fol",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1172",
+      "claim_type": "mean_sd",
+      "raw_text": "1.72 \u00b1 0.11",
+      "numeric_values": [
+        1.72,
+        0.11
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1172,
+      "sentence": "Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regardless of protein intake (Figure 2A ).",
+      "context_window": "2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, resp",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1185",
+      "claim_type": "mean_sd",
+      "raw_text": "1.41 \u00b1 0.08",
+      "numeric_values": [
+        1.41,
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1185,
+      "sentence": "Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regardless of protein intake (Figure 2A ).",
+      "context_window": "Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1198",
+      "claim_type": "mean_sd",
+      "raw_text": "1.95 \u00b1 0.05",
+      "numeric_values": [
+        1.95,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1198,
+      "sentence": "Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regardless of protein intake (Figure 2A ).",
+      "context_window": "rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared t",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1215",
+      "claim_type": "mean_sd",
+      "raw_text": "3.47 \u00b1 0.05",
+      "numeric_values": [
+        3.47,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1215,
+      "sentence": "Phosphorylation status of Akt Ser473 , mTOR Ser2448 , p70S6K Thr389 , and rpS6 Ser235/236 were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regardless of protein intake (Figure 2A ).",
+      "context_window": "were ( P < 0.05) 1.72 \u00b1 0.11, 1.41 \u00b1 0.08, 1.95 \u00b1 0.05, and 3.47 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, regard",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1373",
+      "claim_type": "mean_sd",
+      "raw_text": "1.85 \u00b1 0.04",
+      "numeric_values": [
+        1.85,
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1373,
+      "sentence": "Total protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, with no effect of dietary protein intake (Figure 2B ).",
+      "context_window": "ure 2A ). Total protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, resp",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1386",
+      "claim_type": "mean_sd",
+      "raw_text": "1.71 \u00b1 0.08",
+      "numeric_values": [
+        1.71,
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1386,
+      "sentence": "Total protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, with no effect of dietary protein intake (Figure 2B ).",
+      "context_window": "al protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1399",
+      "claim_type": "mean_sd",
+      "raw_text": "2.23 \u00b1 0.05",
+      "numeric_values": [
+        2.23,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1399,
+      "sentence": "Total protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, with no effect of dietary protein intake (Figure 2B ).",
+      "context_window": "Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared t",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1416",
+      "claim_type": "mean_sd",
+      "raw_text": "2.57 \u00b1 0.05",
+      "numeric_values": [
+        2.57,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1416,
+      "sentence": "Total protein of Akt, mTOR, p70S6K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, with no effect of dietary protein intake (Figure 2B ).",
+      "context_window": "K, and rpS6 were 1.85 \u00b1 0.04, 1.71 \u00b1 0.08, 2.23 \u00b1 0.05, and 2.57 \u00b1 0.05 fold lower, respectively, in CR compared to AL rats, with n",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1687",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1687,
+      "sentence": "Energy or dietary protein did not impact the ratio of phosphorylation-to-total protein, except for an energy-by-protein interaction for rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C ).",
+      "context_window": "ept for an energy-by-protein interaction for rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-1699",
+      "claim_type": "mean_sd",
+      "raw_text": "1.98 \u00b1 0.22",
+      "numeric_values": [
+        1.98,
+        0.22
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1699,
+      "sentence": "Energy or dietary protein did not impact the ratio of phosphorylation-to-total protein, except for an energy-by-protein interaction for rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C ).",
+      "context_window": "nergy-by-protein interaction for rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C ). Akt ( r = 0.43, r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1730",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1730,
+      "sentence": "Energy or dietary protein did not impact the ratio of phosphorylation-to-total protein, except for an energy-by-protein interaction for rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C ).",
+      "context_window": "r rpS6, where CR 32% PRO was 1.98 \u00b1 0.22 fold lower than AL 10% PRO (Figure 2C ). Akt ( r = 0.43, r 2 = 0.18; Figure 3A ) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-1866",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1866,
+      "sentence": "Akt ( r = 0.43, r 2 = 0.18; Figure 3A ) and rpS6 ( r = 0.64, r 2 = 0.36; Figure 3B ) were positively associated ( P < 0.05) with protein content.",
+      "context_window": "0.64, r 2 = 0.36; Figure 3B ) were positively associated ( P < 0.05) with protein content. No other associations were observed.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-1951",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1951,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "ntent. No other associations were observed. Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1962",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1962,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "ther associations were observed. Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-1972",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1972,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "iations were observed. Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] pho",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1983",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1983,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "e observed. Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphoryla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-1993",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1993,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": ". Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2004",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2004,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-2014",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2014,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2025",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2025,
+      "sentence": "Mean (\u00b1 SEM) [ n = 10 (AL 10% PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH, and phosphorylation relative to total (C) .",
+      "context_window": "PRO), n = 10 (AL 32% PRO), n = 10 (CR 10% PRO), n = 10 (CR 32% PRO)] phosphorylation (A) and totals (B) relative to GAPDH,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2264",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2264,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05.",
+      "context_window": "termine main effects of energy (AL vs. CR), protein (10 vs. 32%) and energy-by-protein interactions. * CR body mass differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-2339",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2339,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05.",
+      "context_window": "-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than A",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2383",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2383,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05.",
+      "context_window": "ferent from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05. Association of to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2409",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2409,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05.",
+      "context_window": "Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05. Association of total Akt (A) and rpS6 (B) t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-2418",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2418,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05.+Energy-by-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05.",
+      "context_window": "-protein interaction, CR 32% PRO different than AL 32% PRO; P < 0.05. Association of total Akt (A) and rpS6 (B) to muscle prote",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-2499",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2499,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "n of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2510",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2510,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-2522",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2522,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2533",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2533,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] . Data",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-2544",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2544,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "tein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] . Data analyzed using",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2555",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2555,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "t [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] . Data analyzed using a spear",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-2566",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2566,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "(AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] . Data analyzed using a spearman rho correl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2577",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2577,
+      "sentence": "Association of total Akt (A) and rpS6 (B) to muscle protein content [ n = 10 (AL 10% PRO \u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] .",
+      "context_window": "\u2666), n = 10 (AL 32% PRO ), n = 10 (CR 10% PRO ), n = 10 (CR 32% PRO \u25e6)] . Data analyzed using a spearman rho correlation co",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-2695",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2695,
+      "sentence": "Significant associations were determined as P < 0.05.",
+      "context_window": "on coefficient. Significant associations were determined as P < 0.05. Energy and protein intake altered the expression of genes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-2921",
+      "claim_type": "mean_sd",
+      "raw_text": "1.19 \u00b1 0.08",
+      "numeric_values": [
+        1.19,
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2921,
+      "sentence": "Regardless of energy intake, amino acid transporter Slc38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs.",
+      "context_window": "nergy intake, amino acid transporter Slc38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs. 10% PRO. No effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-2947",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2947,
+      "sentence": "Regardless of energy intake, amino acid transporter Slc38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs.",
+      "context_window": "ransporter Slc38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs. 10% PRO. No effect of energy or protein in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2961",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2961,
+      "sentence": "Regardless of energy intake, amino acid transporter Slc38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs.",
+      "context_window": "38a2 expression was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs. 10% PRO. No effect of energy or protein intake was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2973",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2973,
+      "sentence": "10% PRO.",
+      "context_window": "ion was 1.19 \u00b1 0.08 fold higher ( P < 0.05) for 32% PRO vs. 10% PRO. No effect of energy or protein intake was observed for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-3099",
+      "claim_type": "mean_sd",
+      "raw_text": "1.28 \u00b1 0.06",
+      "numeric_values": [
+        1.28,
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3099,
+      "sentence": "Expression of amino acid sensing Map4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, independent of dietary protein.",
+      "context_window": "c7a5. Expression of amino acid sensing Map4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, inde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-3115",
+      "claim_type": "mean_sd",
+      "raw_text": "1.28 \u00b1 0.08",
+      "numeric_values": [
+        1.28,
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3115,
+      "sentence": "Expression of amino acid sensing Map4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, independent of dietary protein.",
+      "context_window": "of amino acid sensing Map4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, independent of dieta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-3140",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3140,
+      "sentence": "Expression of amino acid sensing Map4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, independent of dietary protein.",
+      "context_window": "p4k3 and Lars were 1.28 \u00b1 0.06 and 1.28 \u00b1 0.08 fold lower ( P < 0.05) for CR than AL, independent of dietary protein. No effects",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-3312",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3312,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "n the expression of any miR (Figure 4B ). Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3323",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3323,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "ssion of any miR (Figure 4B ). Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-3335",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3335,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "miR (Figure 4B ). Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3346",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3346,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "e 4B ). Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-3358",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3358,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "ian (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3369",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3369,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "[ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expres",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-3381",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3381,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "L 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression . Data ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3392",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3392,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression .",
+      "context_window": "), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and miR (B) expression . Data analyzed us",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3570",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3570,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05.",
+      "context_window": "termine main effects of energy (AL vs. CR), protein (10 vs. 32%) and energy-by-protein interactions. * CR body mass differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-3645",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3645,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05.",
+      "context_window": "-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05. Regardless of pro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3657",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3657,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05.",
+      "context_window": "interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05. Regardless of protein in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3680",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3680,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05.",
+      "context_window": "mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05. Regardless of protein intake, Ppargc1a expressi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-3685",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3685,
+      "sentence": "32%) and energy-by-protein interactions. * CR body mass different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05.",
+      "context_window": "different from AL; P < 0.05. + 32% PRO different than 10%; P < 0.05. Regardless of protein intake, Ppargc1a expression was 1.7",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-3750",
+      "claim_type": "mean_sd",
+      "raw_text": "1.74 \u00b1 0.20",
+      "numeric_values": [
+        1.74,
+        0.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3750,
+      "sentence": "Regardless of protein intake, Ppargc1a expression was 1.74 \u00b1 0.20 fold higher ( P < 0.05) in CR compared to AL (Figure 5A ).",
+      "context_window": ".05. Regardless of protein intake, Ppargc1a expression was 1.74 \u00b1 0.20 fold higher ( P < 0.05) in CR compared to AL (Figure 5A ).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-3776",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3776,
+      "sentence": "Regardless of protein intake, Ppargc1a expression was 1.74 \u00b1 0.20 fold higher ( P < 0.05) in CR compared to AL (Figure 5A ).",
+      "context_window": "n intake, Ppargc1a expression was 1.74 \u00b1 0.20 fold higher ( P < 0.05) in CR compared to AL (Figure 5A ). No effect of energy or",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-4252",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4252,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "expression and citrate synthase activity. Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4263",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4263,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "and citrate synthase activity. Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-4275",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4275,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "synthase activity. Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4286",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4286,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "tivity. Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-4298",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4298,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "ian (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4309",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4309,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "[ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-n-4321",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4321,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "L 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4332",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4332,
+      "sentence": "Median (\u00b1 SEM) [ n = 10 (AL 10% PRO; ), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (B) expression and citrate synthase activity (C) .",
+      "context_window": "), n = 10 (AL 32% PRO; ), n = 10 (CR 10% PRO; ), n = 10 (CR 32% PRO; \u25a1)] mRNA (A) and mean (\u00b1 SEM) total AMPK\u03b1 and PGC-1\u03b1 (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4576",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4576,
+      "sentence": "32%) and energy-by-protein interactions. * CR different from AL; P < 0.05.",
+      "context_window": "termine main effects of energy (AL vs. CR), protein (10 vs. 32%) and energy-by-protein interactions. * CR different from AL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-4641",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4641,
+      "sentence": "32%) and energy-by-protein interactions. * CR different from AL; P < 0.05.",
+      "context_window": "and energy-by-protein interactions. * CR different from AL; P < 0.05. A main effect of energy was observed for plasma branched-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-4779",
+      "claim_type": "mean_sd",
+      "raw_text": "25.9 \u00b1 5.0",
+      "numeric_values": [
+        25.9,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4779,
+      "sentence": "A main effect of energy was observed for plasma branched-chain amino acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ).",
+      "context_window": "o acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-4791",
+      "claim_type": "mean_sd",
+      "raw_text": "19.2 \u00b1 3.1",
+      "numeric_values": [
+        19.2,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4791,
+      "sentence": "A main effect of energy was observed for plasma branched-chain amino acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ).",
+      "context_window": "cine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-4807",
+      "claim_type": "mean_sd",
+      "raw_text": "27.3 \u00b1 5.5",
+      "numeric_values": [
+        27.3,
+        5.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4807,
+      "sentence": "A main effect of energy was observed for plasma branched-chain amino acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ).",
+      "context_window": "and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ). A mai",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-4814",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 \u03bcmol",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 4814,
+      "sentence": "A main effect of energy was observed for plasma branched-chain amino acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ).",
+      "context_window": "line concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ). A main eff",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-4836",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4836,
+      "sentence": "A main effect of energy was observed for plasma branched-chain amino acids; leucine, isoleucine and valine concentrations were 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ).",
+      "context_window": "re 25.9 \u00b1 5.0, 19.2 \u00b1 3.1, and 27.3 \u00b1 5.5 \u03bcmol.L -1 lower ( P < 0.05) in CR than AL (Table 2 ). A main effect of protein was als",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-4999",
+      "claim_type": "mean_sd",
+      "raw_text": "12.5 \u00b1 5.0",
+      "numeric_values": [
+        12.5,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4999,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": "acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-5011",
+      "claim_type": "mean_sd",
+      "raw_text": "6.6 \u00b1 3.1",
+      "numeric_values": [
+        6.6,
+        3.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5011,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": "ine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consum",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-msd-5026",
+      "claim_type": "mean_sd",
+      "raw_text": "19.6 \u00b1 5.5",
+      "numeric_values": [
+        19.6,
+        5.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5026,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": ", and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-5033",
+      "claim_type": "unit_value",
+      "raw_text": "5.5 \u03bcmol",
+      "numeric_values": [
+        5.5
+      ],
+      "units": "\u03bcmol",
+      "source_section": "results",
+      "source_offset": 5033,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": "aline concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs. 10% P",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-p-5056",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5056,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": "re 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs. 10% PRO. No energy-by-protei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-5084",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5084,
+      "sentence": "A main effect of protein was also observed for branched-chain amino acids; leucine, isoleucine, and valine concentrations were 12.5 \u00b1 5.0, 6.6 \u00b1 3.1, and 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs.",
+      "context_window": "d 19.6 \u00b1 5.5 \u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs. 10% PRO. No energy-by-protein interactions were obs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-5096",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5096,
+      "sentence": "10% PRO.",
+      "context_window": "\u03bcmol.L -1 higher ( P < 0.05) in rats consuming 32% PRO vs. 10% PRO. No energy-by-protein interactions were observed. Plas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-79",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 79,
+      "sentence": "The primary findings from this investigation were that prolonged CR (16-weeks; 40% total energy requirements) led to downregulation of fasting mTORC1 signaling activity and inhibition of protein translation and phosphorylation (i.e., activity) of Akt, mTOR, p70S6K, and rpS6 under fasted conditions.",
+      "context_window": "s from this investigation were that prolonged CR (16-weeks; 40% total energy requirements) led to downregulation of fasting",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-1512",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 1512,
+      "sentence": "In short-term human studies, fasting and postprandial MPS rates are downregulated within 5-10 days of 40% CR (Pasiakos et al., 2010 ; Areta et al., 2014 ; Hector et al., 2015 ; Murphy et al., 2015 ).",
+      "context_window": "sting and postprandial MPS rates are downregulated within 5-10 days of 40% CR (Pasiakos et al., 2010 ; Areta et al., 2014 ; Hec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-1523",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1523,
+      "sentence": "In short-term human studies, fasting and postprandial MPS rates are downregulated within 5-10 days of 40% CR (Pasiakos et al., 2010 ; Areta et al., 2014 ; Hector et al., 2015 ; Murphy et al., 2015 ).",
+      "context_window": "ostprandial MPS rates are downregulated within 5-10 days of 40% CR (Pasiakos et al., 2010 ; Areta et al., 2014 ; Hector et",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2226",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2226,
+      "sentence": "Interestingly, Miller et al. ( 2013 ) observed a tissue specific decline in mTORC1 signaling, as rpS6 phosphorylation and total protein were lower in both heart and liver, but not skeletal muscle after 6-weeks of CR (40% total energy requirements).",
+      "context_window": "art and liver, but not skeletal muscle after 6-weeks of CR (40% total energy requirements). In the present 16-week study, w",
+      "claim_role": "duration",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2307",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2307,
+      "sentence": "In the present 16-week study, we observed that a 40% CR downregulated skeletal mTORC1 protein translation and phosphorylation, regardless of dietary protein intake.",
+      "context_window": "irements). In the present 16-week study, we observed that a 40% CR downregulated skeletal mTORC1 protein translation and ph",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-u-2587",
+      "claim_type": "unit_value",
+      "raw_text": "10 days",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2587,
+      "sentence": "More specifically, short-term CR may induce (5-10 days, 40% restriction) reductions in MPS, to conserve energy and substrate availability, but this does not elicit concomitant adaptations in mTORC1.",
+      "context_window": "nderfeeding. More specifically, short-term CR may induce (5-10 days, 40% restriction) reductions in MPS, to conserve energy and",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-2596",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2596,
+      "sentence": "More specifically, short-term CR may induce (5-10 days, 40% restriction) reductions in MPS, to conserve energy and substrate availability, but this does not elicit concomitant adaptations in mTORC1.",
+      "context_window": "ng. More specifically, short-term CR may induce (5-10 days, 40% restriction) reductions in MPS, to conserve energy and subs",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-3698",
+      "claim_type": "percentage",
+      "raw_text": "36%",
+      "numeric_values": [
+        36.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3698,
+      "sentence": "Downregulated expression of rpS6, the downstream target of mTORC1 that triggers translation initiation and cellular growth (Magnuson et al., 2012 ), explained 36% of the variability in muscle protein content after the 16-week intervention, with lower total rpS6 indicative of lower muscle protein content.",
+      "context_window": "ion and cellular growth (Magnuson et al., 2012 ), explained 36% of the variability in muscle protein content after the 16-w",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-4186",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4186,
+      "sentence": "However, CR fed rats accrued 38% less muscle protein than AL fed rats during the 16-week intervention, suggesting DXA may not be the best tool for estimating muscle protein mass in this model.",
+      "context_window": "lly similar between AL and CR. However, CR fed rats accrued 38% less muscle protein than AL fed rats during the 16-week int",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-6261",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6261,
+      "sentence": "Consistent with this explanation, branched-chain amino acid levels for the high protein CR fed rats were lower than AL 10% PRO fed rats.",
+      "context_window": "levels for the high protein CR fed rats were lower than AL 10% PRO fed rats. The lower circulating BCAA were observed desp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-6345",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6345,
+      "sentence": "The lower circulating BCAA were observed despite the fact that CR 32% PRO fed rats consumed twice (4.9 g.d -1 ) the amount of dietary protein per day than AL 10% PRO (2.4 g.d -1 ).",
+      "context_window": "wer circulating BCAA were observed despite the fact that CR 32% PRO fed rats consumed twice (4.9 g.d -1 ) the amount of die",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5050214_prolonged_calorie_restriction_downregulates_skeletal_muscle_-pct-6437",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6437,
+      "sentence": "The lower circulating BCAA were observed despite the fact that CR 32% PRO fed rats consumed twice (4.9 g.d -1 ) the amount of dietary protein per day than AL 10% PRO (2.4 g.d -1 ).",
+      "context_window": "(4.9 g.d -1 ) the amount of dietary protein per day than AL 10% PRO (2.4 g.d -1 ). Furthermore, that no physiologically rel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

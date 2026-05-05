@@ -1,0 +1,949 @@
+{
+  "paper_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_",
+  "doi": "10.1177/10732748221134090",
+  "extracted_at": "2026-05-05T15:32:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 2,
+    "percentage": 34,
+    "unit_value": 16
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-n-297",
+      "claim_type": "sample_size",
+      "raw_text": "n = 2252",
+      "numeric_values": [
+        2252.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 297,
+      "sentence": "A cohort (n = 2252) of persons with pre-existing T2D diagnosed with incident CC between 1998 and 2011 was identified from several Finnish registers.",
+      "context_window": "ons (ADM), insulin, and statins in T2D patients. A cohort (n = 2252) of persons with pre-existing T2D diagnosed with incident C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-554",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 554,
+      "sentence": "Cox models were fitted for cause-specific mortality rates to obtain adjusted estimates of the hazard ratios (HR) with 95% confidence intervals (CI) in relation to use of ADM and statins before the CC diagnosis.",
+      "context_window": "to obtain adjusted estimates of the hazard ratios (HR) with 95% confidence intervals (CI) in relation to use of ADM and sta",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-810",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "abstract",
+      "source_offset": 810,
+      "sentence": "Cox models were also fitted for mortality in relation to post-diagnostic use of the medications treating these as time-dependent exposures, and starting follow-up 1 year after the CC diagnosis\n\nPre- and post-diagnostic metformin use was weakly associated with the risk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) compared to the use of other oral ADMs.",
+      "context_window": "g these as time-dependent exposures, and starting follow-up 1 year after the CC diagnosis Pre- and post-diagnostic metformin",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-945",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 945,
+      "sentence": "Cox models were also fitted for mortality in relation to post-diagnostic use of the medications treating these as time-dependent exposures, and starting follow-up 1 year after the CC diagnosis\n\nPre- and post-diagnostic metformin use was weakly associated with the risk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) compared to the use of other oral ADMs.",
+      "context_window": "eakly associated with the risk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) comp",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-973",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 973,
+      "sentence": "Cox models were also fitted for mortality in relation to post-diagnostic use of the medications treating these as time-dependent exposures, and starting follow-up 1 year after the CC diagnosis\n\nPre- and post-diagnostic metformin use was weakly associated with the risk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) compared to the use of other oral ADMs.",
+      "context_window": "sk of CC-related death (HR .75; 95% CI .58-.99, and HR .78; 95% CI .54-1.14, respectively) compared to the use of other ora",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1134",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1134,
+      "sentence": "Pre- and post-diagnostic statin use predicted a reduced risk of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively).",
+      "context_window": "n use predicted a reduced risk of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively). Ad",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1163",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1163,
+      "sentence": "Pre- and post-diagnostic statin use predicted a reduced risk of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively).",
+      "context_window": "k of CC-related death (HR .83; 95% CI .71- .98, and HR .69; 95% CI .54-.89, respectively). Additional evidence was found f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-2144",
+      "claim_type": "percentage",
+      "raw_text": "96%",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2144,
+      "sentence": "22 The completeness of the records is estimated to be 96% for solid tumors.",
+      "context_window": "logy. 22 The completeness of the records is estimated to be 96% for solid tumors. 21 The Finnish Cancer Registry receives f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-3086",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3086,
+      "sentence": "We excluded persons with T2D diagnosed prior to the 40 th birthday (to minimize the inclusion of hereditary CC cases and T1D cases mislabeled as T2D), persons with CC diagnosed before 1998 or after 2011, persons with another previous cancer diagnosis (except non-melanoma skin cancers ICD-O-3 codes C44 plus M-8090-8095/3, M-8097-8098/3, M-8102/3 and M-8110/3), persons with T2D diagnosed <180 days before the CC diagnosis (inadequate time to assess the effects of T2D and medication use), and CC cases diagnosed at autopsy.",
+      "context_window": "8098/3, M-8102/3 and M-8110/3), persons with T2D diagnosed <180 days before the CC diagnosis (inadequate time to assess the effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-3521",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3521,
+      "sentence": "For descriptive analyses and modelling based on pre-diagnostic medications, persons in the cohort were divided into 5 distinct groups according to their ADM usage during the 3 years before the diagnosis of CC: (1) metformin only, (2) other oral ADM only, (3) metformin and other oral ADM, (4) insulin, and (5) no history of regular ADM use.",
+      "context_window": "o 5 distinct groups according to their ADM usage during the 3 years before the diagnosis of CC: (1) metformin only, (2) other o",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-3864",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3864,
+      "sentence": "Cumulative medication use was assessed as defined daily doses (DDD) for 3 years prior to the cancer diagnosis.",
+      "context_window": "edication use was assessed as defined daily doses (DDD) for 3 years prior to the cancer diagnosis. The criterion for oral ADM a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-3991",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3991,
+      "sentence": "The criterion for oral ADM and statin usage was purchase of the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis.",
+      "context_window": "nd statin usage was purchase of the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4021",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 4021,
+      "sentence": "The criterion for oral ADM and statin usage was purchase of the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis.",
+      "context_window": "f the medication for at least 180 days or longer during the 3 years prior to the cancer diagnosis. Purchase periods of ADM or s",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4100",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4100,
+      "sentence": "Purchase periods of ADM or statin under 180 days prior to the diagnosis placed the person in the group of \u201cno history of regular ADM use\u201d or \u201cstatin nonuser,\u201d respectively.",
+      "context_window": "e cancer diagnosis. Purchase periods of ADM or statin under 180 days prior to the diagnosis placed the person in the group of \u201cn",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4419",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 4419,
+      "sentence": "Statin use was classified as \u201cyes\u201d if a patient used a statin for at least 180 days.",
+      "context_window": "classified as \u201cyes\u201d if a patient used a statin for at least 180 days. The correctness of personal identity codes, complete name,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-350",
+      "claim_type": "unit_value",
+      "raw_text": "3.1 years",
+      "numeric_values": [
+        3.1
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 350,
+      "sentence": "A total of 2252 CC cases were collected, with a median follow-up time of 3.1 years and an interquartile range of 1.2 to 6.0 years.",
+      "context_window": "52 CC cases were collected, with a median follow-up time of 3.1 years and an interquartile range of 1.2 to 6.0 years. Most cancer",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-397",
+      "claim_type": "unit_value",
+      "raw_text": "6.0 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 397,
+      "sentence": "A total of 2252 CC cases were collected, with a median follow-up time of 3.1 years and an interquartile range of 1.2 to 6.0 years.",
+      "context_window": "w-up time of 3.1 years and an interquartile range of 1.2 to 6.0 years. Most cancers were diagnosed in the 70-79-year age group (4",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-465",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 465,
+      "sentence": "Most cancers were diagnosed in the 70-79-year age group (41% of the cases), reflecting the high median age of the study cohort (75 years).",
+      "context_window": "s. Most cancers were diagnosed in the 70-79-year age group (41% of the cases), reflecting the high median age of the study",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-536",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 536,
+      "sentence": "Most cancers were diagnosed in the 70-79-year age group (41% of the cases), reflecting the high median age of the study cohort (75 years).",
+      "context_window": "cases), reflecting the high median age of the study cohort (75 years). Over half of the cases were staged as \u201cmetastasized\u201d (52%",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-601",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 601,
+      "sentence": "Over half of the cases were staged as \u201cmetastasized\u201d (52%).",
+      "context_window": "ars). Over half of the cases were staged as \u201cmetastasized\u201d (52%). Metformin users were slightly younger, had a shorter dia",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1195",
+      "claim_type": "percentage",
+      "raw_text": "91.2%",
+      "numeric_values": [
+        91.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1195,
+      "sentence": "The most used other oral ADMs were sulfonylureas, with 279 users that accounted for 91.2% of the other oral ADM group ( supplementary Table 2 ).",
+      "context_window": "ADMs were sulfonylureas, with 279 users that accounted for 91.2% of the other oral ADM group ( supplementary Table 2 ). Dur",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1351",
+      "claim_type": "percentage",
+      "raw_text": "60.8%",
+      "numeric_values": [
+        60.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1351,
+      "sentence": "During the follow-up, a total of 1365 deaths occurred in the cohort, with 830 deaths from CC (60.8%) ( Table 2 ).",
+      "context_window": "365 deaths occurred in the cohort, with 830 deaths from CC (60.8%) ( Table 2 ). No large differences were noted in the unadju",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "38%",
+      "numeric_values": [
+        38.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1497,
+      "sentence": "No large differences were noted in the unadjusted 10-year cumulative mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ).",
+      "context_window": "ve mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin an",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1516",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1516,
+      "sentence": "No large differences were noted in the unadjusted 10-year cumulative mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ).",
+      "context_window": "C between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 4",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1540",
+      "claim_type": "percentage",
+      "raw_text": "39%",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1540,
+      "sentence": "No large differences were noted in the unadjusted 10-year cumulative mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ).",
+      "context_window": "stic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41%",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1578",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1578,
+      "sentence": "No large differences were noted in the unadjusted 10-year cumulative mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ).",
+      "context_window": "% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Fi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1599",
+      "claim_type": "percentage",
+      "raw_text": "41%",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1599,
+      "sentence": "No large differences were noted in the unadjusted 10-year cumulative mortality from CC between the pre-diagnostic ADM groups: 38% for metformin, 41% for other oral ADM, 39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ).",
+      "context_window": "39% for metformin and other oral ADM, 40% for insulin, and 41% for no history of regular ADM use ( Figure 2 ). A clear dif",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1771",
+      "claim_type": "percentage",
+      "raw_text": "34%",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1771,
+      "sentence": "A clear difference in the 10-year cumulative mortality from CC was found between the users and non-users of statins, at 34% compared to 43%, respectively.",
+      "context_window": "CC was found between the users and non-users of statins, at 34% compared to 43%, respectively. No difference was observed i",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1787",
+      "claim_type": "percentage",
+      "raw_text": "43%",
+      "numeric_values": [
+        43.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1787,
+      "sentence": "A clear difference in the 10-year cumulative mortality from CC was found between the users and non-users of statins, at 34% compared to 43%, respectively.",
+      "context_window": "ween the users and non-users of statins, at 34% compared to 43%, respectively. No difference was observed in the cumulative",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-1940",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1940,
+      "sentence": "Estimated hazard ratios with 95% confidence intervals related to mortality from colon cancer and from other causes in different sex, year of diagnosis, age, stage, and antidiabetic medication, and statin medication groups during the follow-up for pre-diagnostic medication use.",
+      "context_window": "etween the medication groups. Estimated hazard ratios with 95% confidence intervals related to mortality from colon cancer",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-2349",
+      "claim_type": "unit_value",
+      "raw_text": "180 days",
+      "numeric_values": [
+        180.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 2349,
+      "sentence": "Abbreviation: ADM, antidiabetic medication.\n\na Medication duration >180 days except for insulin which is classified as user or nonuser.\n\nb No history of regular ADM use.\n\nc Adjusted for the effects of age, year, duration of diabetes, and stage.",
+      "context_window": "tion: ADM, antidiabetic medication. a Medication duration >180 days except for insulin which is classified as user or nonuser.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-2983",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2983,
+      "sentence": "In the Cox models for pre-diagnostic medication, metformin use predicted a reduced CC mortality (HR .75; 95% CI .58-.99) when compared to other oral ADM use.",
+      "context_window": "on, metformin use predicted a reduced CC mortality (HR .75; 95% CI .58-.99) when compared to other oral ADM use. Statin use",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3102",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3102,
+      "sentence": "Statin use predicted a similar reduction in CC mortality (HR .83; 95% CI .71-.98) when compared to statin nonuse.",
+      "context_window": "use predicted a similar reduction in CC mortality (HR .83; 95% CI .71-.98) when compared to statin nonuse. No evidence was",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3242",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3242,
+      "sentence": "No evidence was found for an association between insulin use and mortality from CC (HR .95; 95% CI .74-1.22).",
+      "context_window": "ociation between insulin use and mortality from CC (HR .95; 95% CI .74-1.22). For other causes of deaths, the results were",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3329",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3329,
+      "sentence": "For other causes of deaths, the results were inconclusive, with wide 95% CIs obtained due to the small number of deaths for metformin use compared to the use of other ADMs (HR .88; 95% CI .62-1.24), as well as for statin use compared to non-use (HR 1.06; 95% CI .88-1.29).",
+      "context_window": "causes of deaths, the results were inconclusive, with wide 95% CIs obtained due to the small number of deaths for metformi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3441",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3441,
+      "sentence": "For other causes of deaths, the results were inconclusive, with wide 95% CIs obtained due to the small number of deaths for metformin use compared to the use of other ADMs (HR .88; 95% CI .62-1.24), as well as for statin use compared to non-use (HR 1.06; 95% CI .88-1.29).",
+      "context_window": "or metformin use compared to the use of other ADMs (HR .88; 95% CI .62-1.24), as well as for statin use compared to non-use",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3515",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3515,
+      "sentence": "For other causes of deaths, the results were inconclusive, with wide 95% CIs obtained due to the small number of deaths for metformin use compared to the use of other ADMs (HR .88; 95% CI .62-1.24), as well as for statin use compared to non-use (HR 1.06; 95% CI .88-1.29).",
+      "context_window": "4), as well as for statin use compared to non-use (HR 1.06; 95% CI .88-1.29). Some increased mortality from other causes of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-3633",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3633,
+      "sentence": "Some increased mortality from other causes of death was indicated among the insulin users (HR 1.32 (95% CI .98-1.77)).",
+      "context_window": "es of death was indicated among the insulin users (HR 1.32 (95% CI .98-1.77)). The results for the hazard ratios of interes",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-n-3867",
+      "claim_type": "sample_size",
+      "raw_text": "n = 760",
+      "numeric_values": [
+        760.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3867,
+      "sentence": "When restricted to those patients only, who presented non-metastasized tumor at diagnosed (n = 760), the point estimates of the hazard ratios of interest changed to some degree, but the error margins became substantially wider due to small numbers of cases in this patient group (data not shown).",
+      "context_window": "ts only, who presented non-metastasized tumor at diagnosed (n = 760), the point estimates of the hazard ratios of interest chan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-4637",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4637,
+      "sentence": "Estimated hazard ratios (with pointwise 95% confidence limits) of colon cancer (CC) mortality by cumulative defined daily dose amount of antidiabetic medications and statins during the 3 years preceding CC diagnosis in selected medication groups.",
+      "context_window": "(data not shown). Estimated hazard ratios (with pointwise 95% confidence limits) of colon cancer (CC) mortality by cumula",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-4782",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4782,
+      "sentence": "Estimated hazard ratios (with pointwise 95% confidence limits) of colon cancer (CC) mortality by cumulative defined daily dose amount of antidiabetic medications and statins during the 3 years preceding CC diagnosis in selected medication groups.",
+      "context_window": "e amount of antidiabetic medications and statins during the 3 years preceding CC diagnosis in selected medication groups. Out",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-5070",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 5070,
+      "sentence": "The analyses of mortality in relation to use of post-diagnostic medications comprised these patients only, their follow-up starting 1 year after cancer diagnosis.",
+      "context_window": "ons comprised these patients only, their follow-up starting 1 year after cancer diagnosis. The results concerning post-diagnos",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-5405",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5405,
+      "sentence": "The contrast between use of metformin and that of other oral ADMs, although pointing to the same direction as with pre-diagnostic use, had a wider error margin (HR .78; 95% CI .54-1.14).",
+      "context_window": "with pre-diagnostic use, had a wider error margin (HR .78; 95% CI .54-1.14). For post-diagnostic statin use, evidence was",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-5528",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5528,
+      "sentence": "For post-diagnostic statin use, evidence was found for an association with reduced CC mortality (HR .69; 95% CI .54-.89), concordant with that for pre-diagnostic use.",
+      "context_window": "found for an association with reduced CC mortality (HR .69; 95% CI .54-.89), concordant with that for pre-diagnostic use. F",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6397",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6397,
+      "sentence": "For instance, no discernible contrast between metformin use and use of other oral ADMs was found either in CC mortality (HR .92; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI .54-1.70) among these patients.",
+      "context_window": "f other oral ADMs was found either in CC mortality (HR .92; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6454",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6454,
+      "sentence": "For instance, no discernible contrast between metformin use and use of other oral ADMs was found either in CC mortality (HR .92; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI .54-1.70) among these patients.",
+      "context_window": "2; 95% CI .34-2.45) or mortality from other causes (HR .96; 95% CI .54-1.70) among these patients. When analyzing the morta",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6686",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6686,
+      "sentence": "Hazard ratios with 95% confidence intervals in parentheses, for mortality associated with colon cancer and other causes associated with post-diagnostic medication use.",
+      "context_window": "trend could be found (data not shown). Hazard ratios with 95% confidence intervals in parentheses, for mortality associat",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6898",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6898,
+      "sentence": "Abbreviation: CC, colon cancer, ADM, antidiabetic medication, 95% CI, 95% confidence interval.\n\n*Number of deaths when being exposed to the pertinent medication.",
+      "context_window": "breviation: CC, colon cancer, ADM, antidiabetic medication, 95% CI, 95% confidence interval. *Number of deaths when being",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-6906",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6906,
+      "sentence": "Abbreviation: CC, colon cancer, ADM, antidiabetic medication, 95% CI, 95% confidence interval.\n\n*Number of deaths when being exposed to the pertinent medication.",
+      "context_window": "on: CC, colon cancer, ADM, antidiabetic medication, 95% CI, 95% confidence interval. *Number of deaths when being exposed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-pct-7688",
+      "claim_type": "percentage",
+      "raw_text": "52%",
+      "numeric_values": [
+        52.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7688,
+      "sentence": "Our population had a high proportion of metastasized cancers (52%).",
+      "context_window": "r population had a high proportion of metastasized cancers (52%). The proportion was similar in the other large registry st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-9033",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 9033,
+      "sentence": "We required at least 6 months of medication use for both ADMs and statins during the 3 years prior to the CC diagnosis and for post-diagnostic exposure.",
+      "context_window": "rmin use in the inclusion of patients. We required at least 6 months of medication use for both ADMs and statins during the 3 ye",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9703554_the_association_of_metformin_other_antidiabetic_medications_-u-9097",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 9097,
+      "sentence": "We required at least 6 months of medication use for both ADMs and statins during the 3 years prior to the CC diagnosis and for post-diagnostic exposure.",
+      "context_window": "nths of medication use for both ADMs and statins during the 3 years prior to the CC diagnosis and for post-diagnostic exposure.",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

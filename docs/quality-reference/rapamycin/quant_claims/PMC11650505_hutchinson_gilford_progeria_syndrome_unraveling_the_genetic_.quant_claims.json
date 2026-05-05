@@ -1,0 +1,47 @@
+{
+  "paper_id": "PMC11650505_hutchinson_gilford_progeria_syndrome_unraveling_the_genetic_",
+  "doi": "10.1177/26330040241305144",
+  "extracted_at": "2026-05-05T15:22:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11650505_hutchinson_gilford_progeria_syndrome_unraveling_the_genetic_-u-712",
+      "claim_type": "unit_value",
+      "raw_text": "15 years",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 712,
+      "sentence": "3 , 4\n\nHGPS presents with a wide range of symptoms, and the hallmark of the disease is very early aging 5 with an expected average life span of about 15 years.",
+      "context_window": "y early aging 5 with an expected average life span of about 15 years. HGPS is progressive, and death from vascular events may oc",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11650505_hutchinson_gilford_progeria_syndrome_unraveling_the_genetic_-u-791",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 791,
+      "sentence": "HGPS is progressive, and death from vascular events may occur before 10 years.",
+      "context_window": "rogressive, and death from vascular events may occur before 10 years. 6 , 7 The exact pathophysiology of HGPS is poorly understo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

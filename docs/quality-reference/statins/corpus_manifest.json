@@ -1,0 +1,94 @@
+{
+  "topic": "statins",
+  "funnel": {
+    "retrieved": 2612,
+    "classified_keep": 1162,
+    "classified_drop": 1450,
+    "extractable_core": 873,
+    "extractable_background": 289,
+    "class_adjacent_clinical": 662,
+    "class_off_thesis": 1385,
+    "class_core_on_thesis": 235,
+    "class_background_mechanism": 265,
+    "class_reject": 65,
+    "cap_triggered": 0
+  },
+  "per_wave_stats": [
+    {
+      "wave": "precision",
+      "target_pool": "core",
+      "raw_total": 1783,
+      "wave_unique": 1783,
+      "new_to_corpus": 1783,
+      "cumulative": 1783,
+      "stats": {
+        "raw_semanticscholar": 0,
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_doaj": 97,
+        "raw_clinicaltrials": 1000,
+        "raw_pubmed": 0,
+        "raw_pmc_oai": 2,
+        "raw_biorxiv": 17,
+        "raw_medrxiv": 32,
+        "raw_crossref": 501,
+        "raw_openalex": 134,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 1783,
+        "unique_keys_post_dedupe": 1783,
+        "aggregated_total": 1783
+      }
+    },
+    {
+      "wave": "recall",
+      "target_pool": "core",
+      "raw_total": 1783,
+      "wave_unique": 1783,
+      "new_to_corpus": 0,
+      "cumulative": 1783,
+      "stats": {
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_doaj": 97,
+        "raw_semanticscholar": 0,
+        "raw_medrxiv": 32,
+        "raw_biorxiv": 17,
+        "raw_pmc_oai": 2,
+        "raw_pubmed": 0,
+        "raw_clinicaltrials": 1000,
+        "raw_crossref": 501,
+        "raw_openalex": 134,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 1783,
+        "unique_keys_post_dedupe": 1783,
+        "aggregated_total": 1783
+      }
+    },
+    {
+      "wave": "background",
+      "target_pool": "background",
+      "raw_total": 1005,
+      "wave_unique": 1005,
+      "new_to_corpus": 829,
+      "cumulative": 2612,
+      "stats": {
+        "raw_semanticscholar": 0,
+        "raw_clinicaltrials": 0,
+        "raw_openaire": 0,
+        "raw_europepmc": 0,
+        "raw_doaj": 0,
+        "raw_medrxiv": 0,
+        "raw_biorxiv": 0,
+        "raw_pmc_oai": 0,
+        "raw_pubmed": 0,
+        "raw_openalex": 5,
+        "raw_crossref": 1000,
+        "raw_arxiv": 0,
+        "raw_total_pre_dedupe": 1005,
+        "unique_keys_post_dedupe": 1005,
+        "aggregated_total": 1005
+      }
+    }
+  ],
+  "n_kept": 1162
+}

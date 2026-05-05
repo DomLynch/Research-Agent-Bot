@@ -1,0 +1,2624 @@
+{
+  "paper_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell",
+  "doi": "10.1097/TP.0000000000000965",
+  "extracted_at": "2026-05-05T15:22:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 45,
+    "percentage": 84,
+    "p_value": 14,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-348",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 348,
+      "sentence": "In a prospective-randomized open-label international trial, 525 LTx recipients with HCC initially receiving mammalian target of rapamycin inhibitor-free immunosuppression were randomized 4 to 6 weeks after transplantation into a group on mammalian target of rapamycin inhibitor-free immunosuppression (group A: 264 patients) or a group incorporating sirolimus (group B: 261).",
+      "context_window": "mycin inhibitor-free immunosuppression were randomized 4 to 6 weeks after transplantation into a group on mammalian target of r",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-643",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 643,
+      "sentence": "The primary endpoint was recurrence-free survival (RFS); intention-to-treat (ITT) analysis was conducted after 8 years.",
+      "context_window": "RFS); intention-to-treat (ITT) analysis was conducted after 8 years. Overall survival (OS) was a secondary endpoint. Recurrenc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-730",
+      "claim_type": "percentage",
+      "raw_text": "64.5%",
+      "numeric_values": [
+        64.5
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 730,
+      "sentence": "Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15).",
+      "context_window": "OS) was a secondary endpoint. Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this differen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-751",
+      "claim_type": "percentage",
+      "raw_text": "70.2%",
+      "numeric_values": [
+        70.2
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 751,
+      "sentence": "Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15).",
+      "context_window": "ndpoint. Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-820",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.28",
+      "numeric_values": [
+        0.28
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 820,
+      "sentence": "Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15).",
+      "context_window": "group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI],",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-855",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 855,
+      "sentence": "Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15).",
+      "context_window": "ce was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15). In a planned ana",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-880",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 880,
+      "sentence": "Recurrence-free survival was 64.5% in group A and 70.2% in group B at study end, this difference was not significant ( P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15).",
+      "context_window": "P = 0.28; hazard ratio [HR], 0.84; 95% confidence interval [95% CI], 0.62; 1.15). In a planned analysis of RFS rates at yea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-989",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 989,
+      "sentence": "In a planned analysis of RFS rates at yearly intervals, group B showed better outcomes 3 years after transplantation (HR, 0.7; 95% CI, 0.48-1.00).",
+      "context_window": "S rates at yearly intervals, group B showed better outcomes 3 years after transplantation (HR, 0.7; 95% CI, 0.48-1.00). Similar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1029",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1029,
+      "sentence": "In a planned analysis of RFS rates at yearly intervals, group B showed better outcomes 3 years after transplantation (HR, 0.7; 95% CI, 0.48-1.00).",
+      "context_window": "wed better outcomes 3 years after transplantation (HR, 0.7; 95% CI, 0.48-1.00). Similarly, OS ( P = 0.21; HR, 0.81; 95% CI,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-1065",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.21",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1065,
+      "sentence": "Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better in group B at study end, but yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00).",
+      "context_window": "ansplantation (HR, 0.7; 95% CI, 0.48-1.00). Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1085",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1085,
+      "sentence": "Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better in group B at study end, but yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00).",
+      "context_window": ".7; 95% CI, 0.48-1.00). Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better in group B at s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1204",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1204,
+      "sentence": "Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better in group B at study end, but yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00).",
+      "context_window": "at study end, but yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00). Interestingly, subgroup (Mila",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1222",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1222,
+      "sentence": "Similarly, OS ( P = 0.21; HR, 0.81; 95% CI, 0.58-1.13) was not statistically better in group B at study end, but yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00).",
+      "context_window": "yearly analyses showed improvement out to 5 years (HR, 0.7; 95% CI, 0.49-1.00). Interestingly, subgroup (Milan Criteria-bas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1631",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1631,
+      "sentence": "Sirolimus in LTx recipients with HCC does not improve long-term RFS beyond 5 years.",
+      "context_window": "x recipients with HCC does not improve long-term RFS beyond 5 years. However, a RFS and OS benefit is evident in the first 3 to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1699",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1699,
+      "sentence": "However, a RFS and OS benefit is evident in the first 3 to 5 years, especially in low-risk patients.",
+      "context_window": "However, a RFS and OS benefit is evident in the first 3 to 5 years, especially in low-risk patients. This trial provides the f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-679",
+      "claim_type": "unit_value",
+      "raw_text": "18 years",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 679,
+      "sentence": "The study included all patients eligible for LTx, with the inclusion criteria being 18 years or older, histologically proven HCC before randomization and signed written informed consent.",
+      "context_window": "atients eligible for LTx, with the inclusion criteria being 18 years or older, histologically proven HCC before randomization an",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-889",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 889,
+      "sentence": "The main exclusion criteria were the presence of extrahepatic HCC and non-HCC malignancies within the past 5 years (excluding successfully treated nonmelanoma skin cancer).",
+      "context_window": "f extrahepatic HCC and non-HCC malignancies within the past 5 years (excluding successfully treated nonmelanoma skin cancer). M",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1611",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1611,
+      "sentence": "This control group of patients was compared to a second group (group B) that received mTOR inhibitor-free immunosuppression for the first 4 to 6 weeks, at which time, sirolimus was incorporated into the regime (target range, 4-10 ng/mL) either as a monotherapy or as a combination therapy with non-mTOR inhibitor-based drugs.",
+      "context_window": "ed mTOR inhibitor-free immunosuppression for the first 4 to 6 weeks, at which time, sirolimus was incorporated into the regime",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1695",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 1695,
+      "sentence": "This control group of patients was compared to a second group (group B) that received mTOR inhibitor-free immunosuppression for the first 4 to 6 weeks, at which time, sirolimus was incorporated into the regime (target range, 4-10 ng/mL) either as a monotherapy or as a combination therapy with non-mTOR inhibitor-based drugs.",
+      "context_window": "sirolimus was incorporated into the regime (target range, 4-10 ng/mL) either as a monotherapy or as a combination therapy with n",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-4684",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 4684,
+      "sentence": "In the first year after LTx, patients were followed up at months 1, 3, 6, 9, and 12; thereafter, patients had scheduled visits every 6 months until study end.",
+      "context_window": "9, and 12; thereafter, patients had scheduled visits every 6 months until study end. Main secondary endpoints of the study wer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5364",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5364,
+      "sentence": "A 5-year RFS rate of 60% in patients treated with mTOR inhibitor-free immunosuppression was expected.",
+      "context_window": "ank test at a 0.05 significance level. A 5-year RFS rate of 60% in patients treated with mTOR inhibitor-free immunosuppress",
+      "claim_role": "dose",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5481",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5481,
+      "sentence": "An increase to a 5-year RFS rate of 72% due to sirolimus-containing immunosuppression was assumed.",
+      "context_window": "ppression was expected. An increase to a 5-year RFS rate of 72% due to sirolimus-containing immunosuppression was assumed.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5588",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5588,
+      "sentence": "The improvement in the 5-year RFS rate from 60% to 72% corresponds to a hazard ratio (HR) of 0.643.",
+      "context_window": "on was assumed. The improvement in the 5-year RFS rate from 60% to 72% corresponds to a hazard ratio (HR) of 0.643. For det",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5595",
+      "claim_type": "percentage",
+      "raw_text": "72%",
+      "numeric_values": [
+        72.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5595,
+      "sentence": "The improvement in the 5-year RFS rate from 60% to 72% corresponds to a hazard ratio (HR) of 0.643.",
+      "context_window": "assumed. The improvement in the 5-year RFS rate from 60% to 72% corresponds to a hazard ratio (HR) of 0.643. For detecting",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6123",
+      "claim_type": "unit_value",
+      "raw_text": "2.5 years",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6123,
+      "sentence": "Assuming a planned accrual time of 2.5 years and a follow-up time of at least 5 years from the last patient recruited, a total of 405 patients were expected to yield the necessary number of events.",
+      "context_window": "analyses, respectively. Assuming a planned accrual time of 2.5 years and a follow-up time of at least 5 years from the last pati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6166",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6166,
+      "sentence": "Assuming a planned accrual time of 2.5 years and a follow-up time of at least 5 years from the last patient recruited, a total of 405 patients were expected to yield the necessary number of events.",
+      "context_window": "accrual time of 2.5 years and a follow-up time of at least 5 years from the last patient recruited, a total of 405 patients we",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6325",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6325,
+      "sentence": "With a lost to follow-up rate of about 20%, 255 patients per treatment group were required.",
+      "context_window": "ry number of events. With a lost to follow-up rate of about 20%, 255 patients per treatment group were required. The prima",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6854",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 6854,
+      "sentence": "According to the statistical analysis plan, patients with major eligibility violations were to be excluded from the ITT analysis: (1) extrahepatic tumor (N1, N2, or M1) manifestation in histology, (2) no histologically proven HCC, and (3) primary malignancy other than HCC or skin cancer within 5 years prior to LTx.",
+      "context_window": "(3) primary malignancy other than HCC or skin cancer within 5 years prior to LTx. The RFS was defined as the time interval bet",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-355",
+      "claim_type": "percentage",
+      "raw_text": "56.4%",
+      "numeric_values": [
+        56.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 355,
+      "sentence": "At end of the trial, a total of 149 (56.4%) patients in group A and 138 (52.9%) patients in group B remained in the study.",
+      "context_window": "A and 261 to group B. At end of the trial, a total of 149 (56.4%) patients in group A and 138 (52.9%) patients in group B re",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-391",
+      "claim_type": "percentage",
+      "raw_text": "52.9%",
+      "numeric_values": [
+        52.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 391,
+      "sentence": "At end of the trial, a total of 149 (56.4%) patients in group A and 138 (52.9%) patients in group B remained in the study.",
+      "context_window": "trial, a total of 149 (56.4%) patients in group A and 138 (52.9%) patients in group B remained in the study. A total of 238",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-499",
+      "claim_type": "percentage",
+      "raw_text": "43.6%",
+      "numeric_values": [
+        43.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 499,
+      "sentence": "A total of 238 patients ended the study prematurely: 115 (43.6%) in group A and 123 (47.1%) in group B.",
+      "context_window": ". A total of 238 patients ended the study prematurely: 115 (43.6%) in group A and 123 (47.1%) in group B. The most common rea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-526",
+      "claim_type": "percentage",
+      "raw_text": "47.1%",
+      "numeric_values": [
+        47.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 526,
+      "sentence": "A total of 238 patients ended the study prematurely: 115 (43.6%) in group A and 123 (47.1%) in group B.",
+      "context_window": "nded the study prematurely: 115 (43.6%) in group A and 123 (47.1%) in group B. The most common reason for premature withdrawa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-616",
+      "claim_type": "percentage",
+      "raw_text": "31.1%",
+      "numeric_values": [
+        31.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 616,
+      "sentence": "The most common reason for premature withdrawal was patient death: 82 (31.1%) in group A and 64 (24.5%) in group B.",
+      "context_window": "mmon reason for premature withdrawal was patient death: 82 (31.1%) in group A and 64 (24.5%) in group B. A total of 93 patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-642",
+      "claim_type": "percentage",
+      "raw_text": "24.5%",
+      "numeric_values": [
+        24.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 642,
+      "sentence": "The most common reason for premature withdrawal was patient death: 82 (31.1%) in group A and 64 (24.5%) in group B.",
+      "context_window": "withdrawal was patient death: 82 (31.1%) in group A and 64 (24.5%) in group B. A total of 93 patients (33 in group A and 60 i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1214",
+      "claim_type": "percentage",
+      "raw_text": "1.9%",
+      "numeric_values": [
+        1.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1214,
+      "sentence": "From the 525 randomized patients a total of 17 patients were excluded from the ITT population according to preset criteria in the statistical analysis plan due to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; these cases were evenly distributed between groups A (3.0%) and B (3.4%).",
+      "context_window": "e to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1267",
+      "claim_type": "percentage",
+      "raw_text": "1.0%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1267,
+      "sentence": "From the 525 randomized patients a total of 17 patients were excluded from the ITT population according to preset criteria in the statistical analysis plan due to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; these cases were evenly distributed between groups A (3.0%) and B (3.4%).",
+      "context_window": "ients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1328",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1328,
+      "sentence": "From the 525 randomized patients a total of 17 patients were excluded from the ITT population according to preset criteria in the statistical analysis plan due to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; these cases were evenly distributed between groups A (3.0%) and B (3.4%).",
+      "context_window": ".0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1443",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1443,
+      "sentence": "From the 525 randomized patients a total of 17 patients were excluded from the ITT population according to preset criteria in the statistical analysis plan due to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; these cases were evenly distributed between groups A (3.0%) and B (3.4%).",
+      "context_window": "ncer; these cases were evenly distributed between groups A (3.0%) and B (3.4%). A summary of the demographic data is given",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1456",
+      "claim_type": "percentage",
+      "raw_text": "3.4%",
+      "numeric_values": [
+        3.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1456,
+      "sentence": "From the 525 randomized patients a total of 17 patients were excluded from the ITT population according to preset criteria in the statistical analysis plan due to violations of major eligibility criteria: 10 patients (1.9%) without histologically proven HCC, 5 patients (1.0%) with extrahepatic tumor manifestation, and 2 patients (0.4%) with primary malignancy other than HCC or skin cancer; these cases were evenly distributed between groups A (3.0%) and B (3.4%).",
+      "context_window": "ases were evenly distributed between groups A (3.0%) and B (3.4%). A summary of the demographic data is given in Table 1 fo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1584",
+      "claim_type": "percentage",
+      "raw_text": "86.1%",
+      "numeric_values": [
+        86.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1584,
+      "sentence": "Notably, most patients were men (86.1%) and white (95.8%).",
+      "context_window": "l 525 randomized patients. Notably, most patients were men (86.1%) and white (95.8%). Approximately 60% of recipients were 60",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1602",
+      "claim_type": "percentage",
+      "raw_text": "95.8%",
+      "numeric_values": [
+        95.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1602,
+      "sentence": "Notably, most patients were men (86.1%) and white (95.8%).",
+      "context_window": "atients. Notably, most patients were men (86.1%) and white (95.8%). Approximately 60% of recipients were 60 years or younger,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-1624",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1624,
+      "sentence": "Approximately 60% of recipients were 60 years or younger, with a mean age of 57.7 years.",
+      "context_window": "patients were men (86.1%) and white (95.8%). Approximately 60% of recipients were 60 years or younger, with a mean age of",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1647",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1647,
+      "sentence": "Approximately 60% of recipients were 60 years or younger, with a mean age of 57.7 years.",
+      "context_window": "1%) and white (95.8%). Approximately 60% of recipients were 60 years or younger, with a mean age of 57.7 years. Mean time on the",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1687",
+      "claim_type": "unit_value",
+      "raw_text": "57.7 years",
+      "numeric_values": [
+        57.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1687,
+      "sentence": "Approximately 60% of recipients were 60 years or younger, with a mean age of 57.7 years.",
+      "context_window": "of recipients were 60 years or younger, with a mean age of 57.7 years. Mean time on the waiting list for LTx was 0.53 years. Over",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-1741",
+      "claim_type": "unit_value",
+      "raw_text": "0.53 years",
+      "numeric_values": [
+        0.53
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1741,
+      "sentence": "Mean time on the waiting list for LTx was 0.53 years.",
+      "context_window": "ge of 57.7 years. Mean time on the waiting list for LTx was 0.53 years. Overall, the treatment groups were well balanced with rega",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2628",
+      "claim_type": "percentage",
+      "raw_text": "64.2%",
+      "numeric_values": [
+        64.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2628,
+      "sentence": "A total of 326 patients (64.2%) were within Milan Criteria, whereas 182 patients (35.8%) had tumors outside Milan Criteria.",
+      "context_window": "C, http://links.lww.com/TP/B206 ). A total of 326 patients (64.2%) were within Milan Criteria, whereas 182 patients (35.8%) h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2685",
+      "claim_type": "percentage",
+      "raw_text": "35.8%",
+      "numeric_values": [
+        35.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2685,
+      "sentence": "A total of 326 patients (64.2%) were within Milan Criteria, whereas 182 patients (35.8%) had tumors outside Milan Criteria.",
+      "context_window": "s (64.2%) were within Milan Criteria, whereas 182 patients (35.8%) had tumors outside Milan Criteria. For most patients (64.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2746",
+      "claim_type": "percentage",
+      "raw_text": "64.3%",
+      "numeric_values": [
+        64.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2746,
+      "sentence": "For most patients (64.3%), the number of lesions was 1 or 2, whereas 35.7% of patients had 3 lesions or more.",
+      "context_window": "5.8%) had tumors outside Milan Criteria. For most patients (64.3%), the number of lesions was 1 or 2, whereas 35.7% of patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2796",
+      "claim_type": "percentage",
+      "raw_text": "35.7%",
+      "numeric_values": [
+        35.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2796,
+      "sentence": "For most patients (64.3%), the number of lesions was 1 or 2, whereas 35.7% of patients had 3 lesions or more.",
+      "context_window": "patients (64.3%), the number of lesions was 1 or 2, whereas 35.7% of patients had 3 lesions or more. The maximum tumor size w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-2874",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 2874,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "had 3 lesions or more. The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2883",
+      "claim_type": "percentage",
+      "raw_text": "45.7%",
+      "numeric_values": [
+        45.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2883,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "ions or more. The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of pa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-2895",
+      "claim_type": "unit_value",
+      "raw_text": "5 cm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 2895,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": ". The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2904",
+      "claim_type": "percentage",
+      "raw_text": "43.9%",
+      "numeric_values": [
+        43.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2904,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "imum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-2928",
+      "claim_type": "unit_value",
+      "raw_text": "5 cm",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "cm",
+      "source_section": "results",
+      "source_offset": 2928,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell gra",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-2937",
+      "claim_type": "percentage",
+      "raw_text": "10.4%",
+      "numeric_values": [
+        10.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2937,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "m for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3005",
+      "claim_type": "percentage",
+      "raw_text": "46.3%",
+      "numeric_values": [
+        46.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3005,
+      "sentence": "The maximum tumor size was less than 3 cm for 45.7%, 3 to 5 cm for 43.9%, and greater than 5 cm for 10.4% of patients, and the most frequent tumor cell grading was G2 (46.3%).",
+      "context_window": "patients, and the most frequent tumor cell grading was G2 (46.3%). Overall, the treatment groups were well balanced for HCC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3219",
+      "claim_type": "percentage",
+      "raw_text": "71.1%",
+      "numeric_values": [
+        71.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3219,
+      "sentence": "Regarding HCC treatment before LTx, there was no appreciable difference in the proportion of patients that received treatment in group A (71.1%) versus group B (72.6%), or in the frequency distribution of treatment types (eg, transarterial chemoembolization, radiofrequency ablation) among the 2 groups ( Table S5, SDC, http://links.lww.com/TP/B206 ).",
+      "context_window": "proportion of patients that received treatment in group A (71.1%) versus group B (72.6%), or in the frequency distribution o",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3242",
+      "claim_type": "percentage",
+      "raw_text": "72.6%",
+      "numeric_values": [
+        72.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3242,
+      "sentence": "Regarding HCC treatment before LTx, there was no appreciable difference in the proportion of patients that received treatment in group A (71.1%) versus group B (72.6%), or in the frequency distribution of treatment types (eg, transarterial chemoembolization, radiofrequency ablation) among the 2 groups ( Table S5, SDC, http://links.lww.com/TP/B206 ).",
+      "context_window": "that received treatment in group A (71.1%) versus group B (72.6%), or in the frequency distribution of treatment types (eg,",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3534",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3534,
+      "sentence": "Regarding compliance to the group assignments concerning mTOR inhibitor use, it is notable that 30 (11.4%) patients in group A received mTOR inhibitors (sirolimus or everolimus) at some time before HCC recurrence during the trial, and this was due in most cases to calcineurin inhibitor toxicity.",
+      "context_window": "ments concerning mTOR inhibitor use, it is notable that 30 (11.4%) patients in group A received mTOR inhibitors (sirolimus or",
+      "claim_role": "duration",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-3786",
+      "claim_type": "unit_value",
+      "raw_text": "2 years",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3786,
+      "sentence": "As a measure of adherence in group B, during the first 2 years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or greater of this period.",
+      "context_window": "ity. As a measure of adherence in group B, during the first 2 years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3809",
+      "claim_type": "percentage",
+      "raw_text": "78.9%",
+      "numeric_values": [
+        78.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3809,
+      "sentence": "As a measure of adherence in group B, during the first 2 years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or greater of this period.",
+      "context_window": "herence in group B, during the first 2 years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or greater of this peri",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3847",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3847,
+      "sentence": "As a measure of adherence in group B, during the first 2 years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or greater of this period.",
+      "context_window": "years post-LTx, 206 (78.9%) patients were on sirolimus for 50% or greater of this period. At 3, 4, 5, 6, and 7 years after",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-3897",
+      "claim_type": "unit_value",
+      "raw_text": "7 years",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3897,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": "limus for 50% or greater of this period. At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaini",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3916",
+      "claim_type": "percentage",
+      "raw_text": "70.1%",
+      "numeric_values": [
+        70.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3916,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": "eater of this period. At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in gr",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3923",
+      "claim_type": "percentage",
+      "raw_text": "66.3%",
+      "numeric_values": [
+        66.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3923,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": "f this period. At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B w",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3930",
+      "claim_type": "percentage",
+      "raw_text": "66.9%",
+      "numeric_values": [
+        66.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3930,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": "period. At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3937",
+      "claim_type": "percentage",
+      "raw_text": "70.0%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3937,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolim",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3948",
+      "claim_type": "percentage",
+      "raw_text": "68.8%",
+      "numeric_values": [
+        68.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3948,
+      "sentence": "At 3, 4, 5, 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatment, respectively, suggesting that at least 2 of 3 patients consistently remained on study medication during the course of the trial.",
+      "context_window": ", 6, and 7 years after LTx, 70.1%, 66.3%, 66.9%, 70.0%, and 68.8% of remaining patients in group B were on sirolimus treatmen",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-4847",
+      "claim_type": "percentage",
+      "raw_text": "15.8%",
+      "numeric_values": [
+        15.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4847,
+      "sentence": "Monitoring of the sites confirmed that the actual number of RFS events was 67: 42 patients (15.8%) and 25 patients (9.6%) in groups A and B, respectively.",
+      "context_window": "d that the actual number of RFS events was 67: 42 patients (15.8%) and 25 patients (9.6%) in groups A and B, respectively. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-4871",
+      "claim_type": "percentage",
+      "raw_text": "9.6%",
+      "numeric_values": [
+        9.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4871,
+      "sentence": "Monitoring of the sites confirmed that the actual number of RFS events was 67: 42 patients (15.8%) and 25 patients (9.6%) in groups A and B, respectively.",
+      "context_window": "of RFS events was 67: 42 patients (15.8%) and 25 patients (9.6%) in groups A and B, respectively. The nonstratified log-ran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-5004",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0269",
+      "numeric_values": [
+        0.0269
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5004,
+      "sentence": "The nonstratified log-rank test did not reveal a statistically significant difference in RFS (P = 0.0269 at a significance level of \u03b1 = 0.0002 in the first interim analysis).",
+      "context_window": "d not reveal a statistically significant difference in RFS (P = 0.0269 at a significance level of \u03b1 = 0.0002 in the first interim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5168",
+      "claim_type": "percentage",
+      "raw_text": "25.4%",
+      "numeric_values": [
+        25.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5168,
+      "sentence": "The second interim analysis was performed after 119 confirmed events: 67 patients (25.4%) and 52 patients (19.9%) in groups A and B, respectively.",
+      "context_window": "ysis was performed after 119 confirmed events: 67 patients (25.4%) and 52 patients (19.9%) in groups A and B, respectively. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5192",
+      "claim_type": "percentage",
+      "raw_text": "19.9%",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5192,
+      "sentence": "The second interim analysis was performed after 119 confirmed events: 67 patients (25.4%) and 52 patients (19.9%) in groups A and B, respectively.",
+      "context_window": "119 confirmed events: 67 patients (25.4%) and 52 patients (19.9%) in groups A and B, respectively. The nonstratified log-ran",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-5308",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.1493",
+      "numeric_values": [
+        0.1493
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5308,
+      "sentence": "The nonstratified log-rank test revealed no significant difference in RFS ( P = 0.1493).",
+      "context_window": "d log-rank test revealed no significant difference in RFS ( P = 0.1493). In the final analysis of the ITT population, the primary",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5410",
+      "claim_type": "percentage",
+      "raw_text": "64.5%",
+      "numeric_values": [
+        64.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5410,
+      "sentence": "In the final analysis of the ITT population, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end.",
+      "context_window": "ITT population, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-n-5417",
+      "claim_type": "sample_size",
+      "raw_text": "n = 165",
+      "numeric_values": [
+        165.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5417,
+      "sentence": "In the final analysis of the ITT population, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end.",
+      "context_window": "pulation, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end. No s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5439",
+      "claim_type": "percentage",
+      "raw_text": "70.2%",
+      "numeric_values": [
+        70.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5439,
+      "sentence": "In the final analysis of the ITT population, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end.",
+      "context_window": "endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end. No significant differenc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-n-5457",
+      "claim_type": "sample_size",
+      "raw_text": "n = 177",
+      "numeric_values": [
+        177.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5457,
+      "sentence": "In the final analysis of the ITT population, the primary endpoint of RFS in group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end.",
+      "context_window": "group A was 64.5% (n = 165 patients) and 70.2% in group B (n = 177) at study end. No significant difference in RFS was observe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-5590",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.2796",
+      "numeric_values": [
+        0.2796
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5590,
+      "sentence": "No significant difference in RFS was observed among the treatment groups by the nonstratified log-rank test ( P = 0.2796).",
+      "context_window": "g the treatment groups by the nonstratified log-rank test ( P = 0.2796). The HR was 0.84 (95% confidence interval [95% CI], 0.62-1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5620",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5620,
+      "sentence": "The HR was 0.84 (95% confidence interval [95% CI], 0.62-1.15).",
+      "context_window": "nonstratified log-rank test ( P = 0.2796). The HR was 0.84 (95% confidence interval [95% CI], 0.62-1.15). A Kaplan-Meier pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-5645",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5645,
+      "sentence": "The HR was 0.84 (95% confidence interval [95% CI], 0.62-1.15).",
+      "context_window": "st ( P = 0.2796). The HR was 0.84 (95% confidence interval [95% CI], 0.62-1.15). A Kaplan-Meier plot for RFS is provided in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-5991",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5991,
+      "sentence": "Within the first 3 years after transplantation, a higher RFS rate was observed after 1 and 3 years ( P \u2264 0.0499) in group B compared to group A, and later on, this treatment difference was no longer apparent (Figure 2 B, top).",
+      "context_window": "hat was observed in the Kaplan-Meier plot. Within the first 3 years after transplantation, a higher RFS rate was observed after",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6065",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6065,
+      "sentence": "Within the first 3 years after transplantation, a higher RFS rate was observed after 1 and 3 years ( P \u2264 0.0499) in group B compared to group A, and later on, this treatment difference was no longer apparent (Figure 2 B, top).",
+      "context_window": "transplantation, a higher RFS rate was observed after 1 and 3 years ( P \u2264 0.0499) in group B compared to group A, and later on,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-6075",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.0499",
+      "numeric_values": [
+        0.0499
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6075,
+      "sentence": "Within the first 3 years after transplantation, a higher RFS rate was observed after 1 and 3 years ( P \u2264 0.0499) in group B compared to group A, and later on, this treatment difference was no longer apparent (Figure 2 B, top).",
+      "context_window": "ation, a higher RFS rate was observed after 1 and 3 years ( P \u2264 0.0499) in group B compared to group A, and later on, this treatme",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6233",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6233,
+      "sentence": "Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top).",
+      "context_window": "apparent (Figure 2 B, top). Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6258",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 6258,
+      "sentence": "Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top).",
+      "context_window": "). Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6274",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6274,
+      "sentence": "Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top).",
+      "context_window": "ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top). In general,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-6299",
+      "claim_type": "unit_value",
+      "raw_text": "6 years",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6299,
+      "sentence": "Hazard ratios ranged from 0.50 (95% CI, 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top).",
+      "context_window": ", 0.29-0.87) after 1 year to 0.88 (95% CI, 0.65-1.21) after 6 years (Figure 2 B, top). In general, the anatomical location of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6843",
+      "claim_type": "percentage",
+      "raw_text": "68.4%",
+      "numeric_values": [
+        68.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6843,
+      "sentence": "At study end, the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which did not reach statistical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13).",
+      "context_window": "alive. At study end, the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6864",
+      "claim_type": "percentage",
+      "raw_text": "74.6%",
+      "numeric_values": [
+        74.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6864,
+      "sentence": "At study end, the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which did not reach statistical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13).",
+      "context_window": "the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which did not reach statis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-6950",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.2096",
+      "numeric_values": [
+        0.2096
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6950,
+      "sentence": "At study end, the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which did not reach statistical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13).",
+      "context_window": "A, bottom), which did not reach statistical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13). However, addi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-6987",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6987,
+      "sentence": "At study end, the OS rate in the ITT population was 68.4% in group A and 74.6% in group B (Figure 2 A, bottom), which did not reach statistical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13).",
+      "context_window": "istical significance ( P = 0.2096, log-rank test; HR, 0.81; 95% CI, 0.58-1.13). However, additional planned analysis of OS",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7136",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7136,
+      "sentence": "However, additional planned analysis of OS rates over years showed better OS rates in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significance at 2 and 3 years; this difference was not significant after 5 years (Figure 2 B, bottom).",
+      "context_window": "tter OS rates in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-7146",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.0479",
+      "numeric_values": [
+        0.0479
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7146,
+      "sentence": "However, additional planned analysis of OS rates over years showed better OS rates in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significance at 2 and 3 years; this difference was not significant after 5 years (Figure 2 B, bottom).",
+      "context_window": "tes in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significance at 2 and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7216",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7216,
+      "sentence": "However, additional planned analysis of OS rates over years showed better OS rates in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significance at 2 and 3 years; this difference was not significant after 5 years (Figure 2 B, bottom).",
+      "context_window": ") after LTx, with values bordering on significance at 2 and 3 years; this difference was not significant after 5 years (Figure",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7267",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7267,
+      "sentence": "However, additional planned analysis of OS rates over years showed better OS rates in group B compared with group A at 1, 4, and 5 years ( P \u2264 0.0479) after LTx, with values bordering on significance at 2 and 3 years; this difference was not significant after 5 years (Figure 2 B, bottom).",
+      "context_window": "at 2 and 3 years; this difference was not significant after 5 years (Figure 2 B, bottom). Hazard ratios ranged from 0.47 (95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7329",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7329,
+      "sentence": "Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom).",
+      "context_window": "years (Figure 2 B, bottom). Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7354",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 7354,
+      "sentence": "Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom).",
+      "context_window": "). Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7370",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7370,
+      "sentence": "Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom).",
+      "context_window": "ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom). Int",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7400",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7400,
+      "sentence": "Hazard ratios ranged from 0.47 (95% CI, 0.22-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom).",
+      "context_window": "2-0.99) after 1 year to 0.81 (95% CI, 0.58-1.13) after 7 or 8 years (Figure 2 B, bottom). Interestingly, prespecified subgroup",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7600",
+      "claim_type": "percentage",
+      "raw_text": "37.8%",
+      "numeric_values": [
+        37.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7600,
+      "sentence": "Interestingly, prespecified subgroup analyses revealed that patients without prior treatment of lesions demonstrated a significantly higher death rate in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test) over the study period.",
+      "context_window": "trated a significantly higher death rate in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test)",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7631",
+      "claim_type": "percentage",
+      "raw_text": "20.3%",
+      "numeric_values": [
+        20.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7631,
+      "sentence": "Interestingly, prespecified subgroup analyses revealed that patients without prior treatment of lesions demonstrated a significantly higher death rate in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test) over the study period.",
+      "context_window": "eath rate in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test) over the study period. Additio",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-7639",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0381",
+      "numeric_values": [
+        0.0381
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7639,
+      "sentence": "Interestingly, prespecified subgroup analyses revealed that patients without prior treatment of lesions demonstrated a significantly higher death rate in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test) over the study period.",
+      "context_window": "e in group A (28/74 [37.8%]) versus group B (14/69 [20.3%], P = 0.0381, log-rank test) over the study period. Additionally, furthe",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-7773",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 7773,
+      "sentence": "Additionally, further prespecified subgroup analyses showed that younger patients (\u226460 years) had a significantly higher death rate in group A (44/155 [28.4%]) over the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test).",
+      "context_window": "especified subgroup analyses showed that younger patients (\u226460 years) had a significantly higher death rate in group A (44/155 [",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7841",
+      "claim_type": "percentage",
+      "raw_text": "28.4%",
+      "numeric_values": [
+        28.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7841,
+      "sentence": "Additionally, further prespecified subgroup analyses showed that younger patients (\u226460 years) had a significantly higher death rate in group A (44/155 [28.4%]) over the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test).",
+      "context_window": ") had a significantly higher death rate in group A (44/155 [28.4%]) over the study duration compared to group B (25/145 [17.2",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-7902",
+      "claim_type": "percentage",
+      "raw_text": "17.2%",
+      "numeric_values": [
+        17.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7902,
+      "sentence": "Additionally, further prespecified subgroup analyses showed that younger patients (\u226460 years) had a significantly higher death rate in group A (44/155 [28.4%]) over the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test).",
+      "context_window": "8.4%]) over the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test). Causes of death in groups A a",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-7910",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0386",
+      "numeric_values": [
+        0.0386
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7910,
+      "sentence": "Additionally, further prespecified subgroup analyses showed that younger patients (\u226460 years) had a significantly higher death rate in group A (44/155 [28.4%]) over the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test).",
+      "context_window": "ver the study duration compared to group B (25/145 [17.2%], P = 0.0386, log-rank test). Causes of death in groups A and B, includi",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-8367",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8367,
+      "sentence": "This analysis revealed that group B patients overall were not disproportionately susceptible to cardiovascular or infectious death causes, or other causes of death; however, consistent with the OS subgroup analysis, tumor-associated deaths were fewer in group B patients transplanted at 60 years or younger.",
+      "context_window": "iated deaths were fewer in group B patients transplanted at 60 years or younger. A similar pre-LTx comorbidity distribution over",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-8463",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8463,
+      "sentence": "A similar pre-LTx comorbidity distribution overall, and for the recipients 60 years or younger ( Table S9, SDC, http://links.lww.com/TP/B206 ), suggests that the decrease in deaths observed in the younger age group is not due to randomization skewing.",
+      "context_window": "Tx comorbidity distribution overall, and for the recipients 60 years or younger ( Table S9, SDC, http://links.lww.com/TP/B206 ),",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-9093",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.0383",
+      "numeric_values": [
+        0.0383
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9093,
+      "sentence": "More specifically, RFS rates over the years showed a significant ( P \u2264 0.0383) treatment difference in low-risk group B patients compared with group A recipients during the first 4 years after LTx (Figure 3 B, top); no statistically significant benefit was observed in group B in high-risk patients (Figure 3 B, top); moreover, after 1 year, the groups A and B Kaplan-Meier curves for the high-risk patients cross and overlap (Figure 3 A, top).",
+      "context_window": "ecifically, RFS rates over the years showed a significant ( P \u2264 0.0383) treatment difference in low-risk group B patients compared",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-9205",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9205,
+      "sentence": "More specifically, RFS rates over the years showed a significant ( P \u2264 0.0383) treatment difference in low-risk group B patients compared with group A recipients during the first 4 years after LTx (Figure 3 B, top); no statistically significant benefit was observed in group B in high-risk patients (Figure 3 B, top); moreover, after 1 year, the groups A and B Kaplan-Meier curves for the high-risk patients cross and overlap (Figure 3 A, top).",
+      "context_window": "patients compared with group A recipients during the first 4 years after LTx (Figure 3 B, top); no statistically significant b",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-9360",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9360,
+      "sentence": "More specifically, RFS rates over the years showed a significant ( P \u2264 0.0383) treatment difference in low-risk group B patients compared with group A recipients during the first 4 years after LTx (Figure 3 B, top); no statistically significant benefit was observed in group B in high-risk patients (Figure 3 B, top); moreover, after 1 year, the groups A and B Kaplan-Meier curves for the high-risk patients cross and overlap (Figure 3 A, top).",
+      "context_window": "B in high-risk patients (Figure 3 B, top); moreover, after 1 year, the groups A and B Kaplan-Meier curves for the high-risk p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-9592",
+      "claim_type": "unit_value",
+      "raw_text": "4 years",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 9592,
+      "sentence": "Likewise, Kaplan-Meier curves were plotted for OS (Figure 3 A, bottom), and analysis showed a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom).",
+      "context_window": ", bottom), and analysis showed a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-9623",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.0231",
+      "numeric_values": [
+        0.0231
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9623,
+      "sentence": "Likewise, Kaplan-Meier curves were plotted for OS (Figure 3 A, bottom), and analysis showed a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom).",
+      "context_window": "a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-9667",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "results",
+      "source_offset": 9667,
+      "sentence": "Likewise, Kaplan-Meier curves were plotted for OS (Figure 3 A, bottom), and analysis showed a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom).",
+      "context_window": "risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom).",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-9676",
+      "claim_type": "p_value",
+      "raw_text": "P \u2264 0.0361",
+      "numeric_values": [
+        0.0361
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9676,
+      "sentence": "Likewise, Kaplan-Meier curves were plotted for OS (Figure 3 A, bottom), and analysis showed a survival advantage at 2 to 4 years in low-risk patients ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom).",
+      "context_window": "ents ( P \u2264 0.0231), but only a slight advantage at 1 year ( P \u2264 0.0361) in the high-risk group (Figure 3 B, bottom). Efficacy dat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-9910",
+      "claim_type": "percentage",
+      "raw_text": "82.9%",
+      "numeric_values": [
+        82.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9910,
+      "sentence": "Finally, when a subgroup analysis of those patients mainly on sirolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy population versus combination therapy patients (68.2% and 72.3%, respectively).",
+      "context_window": "ts mainly on sirolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy popu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-9925",
+      "claim_type": "percentage",
+      "raw_text": "85.4%",
+      "numeric_values": [
+        85.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 9925,
+      "sentence": "Finally, when a subgroup analysis of those patients mainly on sirolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy population versus combination therapy patients (68.2% and 72.3%, respectively).",
+      "context_window": "rolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy population versus c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10019",
+      "claim_type": "percentage",
+      "raw_text": "68.2%",
+      "numeric_values": [
+        68.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10019,
+      "sentence": "Finally, when a subgroup analysis of those patients mainly on sirolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy population versus combination therapy patients (68.2% and 72.3%, respectively).",
+      "context_window": "monotherapy population versus combination therapy patients (68.2% and 72.3%, respectively). Sirolimus monotherapy was defined",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10029",
+      "claim_type": "percentage",
+      "raw_text": "72.3%",
+      "numeric_values": [
+        72.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10029,
+      "sentence": "Finally, when a subgroup analysis of those patients mainly on sirolimus monotherapy was performed, high RFS (82.9%) and OS (85.4%) rates were observed in the monotherapy population versus combination therapy patients (68.2% and 72.3%, respectively).",
+      "context_window": "y population versus combination therapy patients (68.2% and 72.3%, respectively). Sirolimus monotherapy was defined by patien",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10158",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10158,
+      "sentence": "Sirolimus monotherapy was defined by patients on sirolimus immunosuppression alone at the time of at least 50% of their protocol visits.",
+      "context_window": "n sirolimus immunosuppression alone at the time of at least 50% of their protocol visits. However, this analysis is restric",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10247",
+      "claim_type": "percentage",
+      "raw_text": "19.2%",
+      "numeric_values": [
+        19.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10247,
+      "sentence": "However, this analysis is restricted by the fact that only 19.2% of group B patients received sirolimus monotherapy.",
+      "context_window": "However, this analysis is restricted by the fact that only 19.2% of group B patients received sirolimus monotherapy. Overal",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10371",
+      "claim_type": "percentage",
+      "raw_text": "97.5%",
+      "numeric_values": [
+        97.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10371,
+      "sentence": "Overall, there were 8013 adverse events (AE), with 512 patients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in group B (Table 2 , top).",
+      "context_window": "ll, there were 8013 adverse events (AE), with 512 patients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10403",
+      "claim_type": "percentage",
+      "raw_text": "97.3%",
+      "numeric_values": [
+        97.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10403,
+      "sentence": "Overall, there were 8013 adverse events (AE), with 512 patients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in group B (Table 2 , top).",
+      "context_window": "ts (AE), with 512 patients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in group B (Table 2 , top). The freque",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10424",
+      "claim_type": "percentage",
+      "raw_text": "97.7%",
+      "numeric_values": [
+        97.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10424,
+      "sentence": "Overall, there were 8013 adverse events (AE), with 512 patients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in group B (Table 2 , top).",
+      "context_window": "ients (97.5%) reporting at least 1 AE, 97.3% in group A and 97.7% in group B (Table 2 , top). The frequencies of high-interes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10635",
+      "claim_type": "percentage",
+      "raw_text": "86.2%",
+      "numeric_values": [
+        86.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10635,
+      "sentence": "On an individual patient basis, the percentage of patients reporting related AEs was higher in group B (86.2%) compared with group A (61.0%) ( Table S10, SDC, http://links.lww.com/TP/B206 ).",
+      "context_window": "ge of patients reporting related AEs was higher in group B (86.2%) compared with group A (61.0%) ( Table S10, SDC, http://lin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10665",
+      "claim_type": "percentage",
+      "raw_text": "61.0%",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10665,
+      "sentence": "On an individual patient basis, the percentage of patients reporting related AEs was higher in group B (86.2%) compared with group A (61.0%) ( Table S10, SDC, http://links.lww.com/TP/B206 ).",
+      "context_window": "ed AEs was higher in group B (86.2%) compared with group A (61.0%) ( Table S10, SDC, http://links.lww.com/TP/B206 ). Adverse",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10785",
+      "claim_type": "percentage",
+      "raw_text": "31.1%",
+      "numeric_values": [
+        31.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10785,
+      "sentence": "Adverse events leading to death were reported for 82 patients (31.1%) in group A and 64 patients (24.5%) in group B.",
+      "context_window": "erse events leading to death were reported for 82 patients (31.1%) in group A and 64 patients (24.5%) in group B. Adverse eve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10820",
+      "claim_type": "percentage",
+      "raw_text": "24.5%",
+      "numeric_values": [
+        24.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10820,
+      "sentence": "Adverse events leading to death were reported for 82 patients (31.1%) in group A and 64 patients (24.5%) in group B.",
+      "context_window": "eported for 82 patients (31.1%) in group A and 64 patients (24.5%) in group B. Adverse events related specifically to immunos",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10966",
+      "claim_type": "percentage",
+      "raw_text": "3.0%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10966,
+      "sentence": "Adverse events related specifically to immunosuppression in the treatment group that led to death were reported in 8 patients (3.0%) in group A and 7 patients (2.7%) in group B.",
+      "context_window": "atment group that led to death were reported in 8 patients (3.0%) in group A and 7 patients (2.7%) in group B. All AEs were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-10999",
+      "claim_type": "percentage",
+      "raw_text": "2.7%",
+      "numeric_values": [
+        2.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10999,
+      "sentence": "Adverse events related specifically to immunosuppression in the treatment group that led to death were reported in 8 patients (3.0%) in group A and 7 patients (2.7%) in group B.",
+      "context_window": "re reported in 8 patients (3.0%) in group A and 7 patients (2.7%) in group B. All AEs were classified by primary system orga",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-11306",
+      "claim_type": "percentage",
+      "raw_text": "30.3%",
+      "numeric_values": [
+        30.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11306,
+      "sentence": "Number and distribution of selected relevant AEs (randomized population)\n\nFinally, 80 patients (30.3%) in group A and 84 patients (32.2%) in group B reported at least 1 episode of acute rejection.",
+      "context_window": "relevant AEs (randomized population) Finally, 80 patients (30.3%) in group A and 84 patients (32.2%) in group B reported at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-11341",
+      "claim_type": "percentage",
+      "raw_text": "32.2%",
+      "numeric_values": [
+        32.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11341,
+      "sentence": "Number and distribution of selected relevant AEs (randomized population)\n\nFinally, 80 patients (30.3%) in group A and 84 patients (32.2%) in group B reported at least 1 episode of acute rejection.",
+      "context_window": ") Finally, 80 patients (30.3%) in group A and 84 patients (32.2%) in group B reported at least 1 episode of acute rejection.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-11632",
+      "claim_type": "percentage",
+      "raw_text": "23.4%",
+      "numeric_values": [
+        23.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11632,
+      "sentence": "Considering only rejections after randomization, the proportion of patients with at least one episode was slightly higher in group B (23.4%) compared with group A (17.0%), but this difference did not reach statistical significance ( P = 0.0710, \u03c7 2 test).",
+      "context_window": "s with at least one episode was slightly higher in group B (23.4%) compared with group A (17.0%), but this difference did not",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-11662",
+      "claim_type": "percentage",
+      "raw_text": "17.0%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 11662,
+      "sentence": "Considering only rejections after randomization, the proportion of patients with at least one episode was slightly higher in group B (23.4%) compared with group A (17.0%), but this difference did not reach statistical significance ( P = 0.0710, \u03c7 2 test).",
+      "context_window": "s slightly higher in group B (23.4%) compared with group A (17.0%), but this difference did not reach statistical significanc",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-p-11731",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0710",
+      "numeric_values": [
+        0.071
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11731,
+      "sentence": "Considering only rejections after randomization, the proportion of patients with at least one episode was slightly higher in group B (23.4%) compared with group A (17.0%), but this difference did not reach statistical significance ( P = 0.0710, \u03c7 2 test).",
+      "context_window": "ut this difference did not reach statistical significance ( P = 0.0710, \u03c7 2 test).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-206",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 206,
+      "sentence": "In this long-term prospective clinical trial, broad-based practical incorporation of sirolimus into an immunosuppressive regime for LTx recipients with HCC improved recurrence-free and OS in the first 3 to 5 years after transplantation, but thereafter did not indefinitely improve the usual morbidity and mortality associated with use of conventional, generally calcineurin inhibitor-based immunosuppression.",
+      "context_window": "with HCC improved recurrence-free and OS in the first 3 to 5 years after transplantation, but thereafter did not indefinitely",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-2027",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2027,
+      "sentence": "Consistent with the observation of sirolimus being most beneficial for lower risk patients, a predetermined subgroup analysis showed that younger recipients (\u226460 years) have a greater advantage.",
+      "context_window": "termined subgroup analysis showed that younger recipients (\u226460 years) have a greater advantage. From these results, we surmise t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-3220",
+      "claim_type": "unit_value",
+      "raw_text": "6.4 months",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3220,
+      "sentence": "Indeed, a post hoc exploratory \u201carea between the curves\u201d statistical analysis revealed that patients in group B (including all patients: high and low risk) had an average gain of RFS of 6.4 months versus group A patients; the gain in OS in the sirolimus group was 7.0 months.",
+      "context_window": "patients: high and low risk) had an average gain of RFS of 6.4 months versus group A patients; the gain in OS in the sirolimus gr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-3298",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 3298,
+      "sentence": "Indeed, a post hoc exploratory \u201carea between the curves\u201d statistical analysis revealed that patients in group B (including all patients: high and low risk) had an average gain of RFS of 6.4 months versus group A patients; the gain in OS in the sirolimus group was 7.0 months.",
+      "context_window": "group A patients; the gain in OS in the sirolimus group was 7.0 months. Sirolimus monotherapy may also offer a further advantage.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3479",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3479,
+      "sentence": "When a planned subgroup analysis of those patients on sirolimus monotherapy was performed, it did show roughly 13% to 15% higher RFS and OS rates, versus combination therapy patients, but the low proportion (one fifth) of patients on sirolimus monotherapy makes it difficult to know whether monotherapy offers reliable advantages.",
+      "context_window": "on sirolimus monotherapy was performed, it did show roughly 13% to 15% higher RFS and OS rates, versus combination therapy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-pct-3486",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 3486,
+      "sentence": "When a planned subgroup analysis of those patients on sirolimus monotherapy was performed, it did show roughly 13% to 15% higher RFS and OS rates, versus combination therapy patients, but the low proportion (one fifth) of patients on sirolimus monotherapy makes it difficult to know whether monotherapy offers reliable advantages.",
+      "context_window": "limus monotherapy was performed, it did show roughly 13% to 15% higher RFS and OS rates, versus combination therapy patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-4284",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 4284,
+      "sentence": "To reduce possible reported issues of wound healing problems 34 and occurrence of hepatic vessel thrombotic events, 35 sirolimus introduction was delayed until 4 to 6 weeks after LTx.",
+      "context_window": "ic events, 35 sirolimus introduction was delayed until 4 to 6 weeks after LTx. Although wound healing problems did occur more o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-5004",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5004,
+      "sentence": "In conclusion, results from this unprecedented trial in HCC patients undergoing LTx show that although flexible incorporation of sirolimus into an immunosuppressive regimen does not improve long-term HCC recurrence free and OS outcomes after 5 years in patients undergoing LTx, outcomes were improved in the first few years after transplantation, especially in patients with tumor features within Milan Criteria.",
+      "context_window": "improve long-term HCC recurrence free and OS outcomes after 5 years in patients undergoing LTx, outcomes were improved in the f",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC4683033_sirolimus_use_in_liver_transplant_recipients_with_hepatocell-u-5270",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5270,
+      "sentence": "Although the outcome advantage is eventually lost with time, the window of benefit spans up to 5 years and besides the well-known side effects of this medication, no contraindicative overall disadvantage of sirolimus therapy became apparent over the long term.",
+      "context_window": "ventually lost with time, the window of benefit spans up to 5 years and besides the well-known side effects of this medication,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

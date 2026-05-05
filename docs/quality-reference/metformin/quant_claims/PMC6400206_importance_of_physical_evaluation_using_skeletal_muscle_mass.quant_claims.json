@@ -1,0 +1,1783 @@
+{
+  "paper_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass",
+  "doi": "10.1111/jdi.12908",
+  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 35,
+    "percentage": 33,
+    "p_value": 25,
+    "mean_sd": 4,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-240",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 240,
+      "sentence": "A total of 267 diabetes patients (159 men, 108 women) aged >65 years were recruited in the present study.",
+      "context_window": "A total of 267 diabetes patients (159 men, 108 women) aged >65 years were recruited in the present study. Skeletal muscle mass i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-765",
+      "claim_type": "percentage",
+      "raw_text": "18.7%",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 765,
+      "sentence": "The prevalence of sarcopenia in all participants was 18.7% and increased with age.",
+      "context_window": "tors. The prevalence of sarcopenia in all participants was 18.7% and increased with age. Sarcopenia decreased as BMI increas",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-835",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 835,
+      "sentence": "Sarcopenia decreased as BMI increased ( P < 0.01, Cochran-Armitage test).",
+      "context_window": "increased with age. Sarcopenia decreased as BMI increased ( P < 0.01, Cochran-Armitage test). In contrast, the third quartile bo",
+      "claim_role": "effect",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1239",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1239,
+      "sentence": "Multiple logistic regression analysis showed that sarcopenia was associated with lower BMI , non\u2010use of metformin and lower bone mineral content in men ( P < 0.05), and lower bone mineral content, lower serum levels of albumin and older age in women ( P < 0.05).",
+      "context_window": "on\u2010use of metformin and lower bone mineral content in men ( P < 0.05), and lower bone mineral content, lower serum levels of alb",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1337",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1337,
+      "sentence": "Multiple logistic regression analysis showed that sarcopenia was associated with lower BMI , non\u2010use of metformin and lower bone mineral content in men ( P < 0.05), and lower bone mineral content, lower serum levels of albumin and older age in women ( P < 0.05).",
+      "context_window": "ent, lower serum levels of albumin and older age in women ( P < 0.05). The present study suggests that diabetes patients with a",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-483",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 483,
+      "sentence": "Limb skeletal muscles from older men and women are 25-35% smaller than limb muscles from younger individuals 10 .",
+      "context_window": ", 9 . Limb skeletal muscles from older men and women are 25-35% smaller than limb muscles from younger individuals 10 . Sa",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2062",
+      "claim_type": "percentage",
+      "raw_text": "16.5%",
+      "numeric_values": [
+        16.5
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2062,
+      "sentence": "The prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 .",
+      "context_window": "e prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2079",
+      "claim_type": "percentage",
+      "raw_text": "19.9%",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2079,
+      "sentence": "The prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 .",
+      "context_window": "arcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 d",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2100",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2100,
+      "sentence": "The prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 .",
+      "context_window": "andards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >6",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2127",
+      "claim_type": "percentage",
+      "raw_text": "14.8%",
+      "numeric_values": [
+        14.8
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2127,
+      "sentence": "The prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 .",
+      "context_window": "in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 . Di",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2167",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2167,
+      "sentence": "The prevalence of sarcopenia per AWGS standards is reportedly 16.5% in men and 19.9% in women aged >65 years in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 .",
+      "context_window": "s in Japan 18 , and 14.8% in type 2 diabetes patients aged >60 years in China 19 . Diabetes patients were reportedly at a threef",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2682",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 2682,
+      "sentence": "It is important to maintain a patient's activities of daily living through appropriate evaluation and intervention, but few studies to date have evaluated sarcopenia in diabetes patients, particularly those aged >75 years.",
+      "context_window": "d sarcopenia in diabetes patients, particularly those aged >75 years. The purposes of the present study were to investigate the",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-163",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 163,
+      "sentence": "The present cross\u2010sectional observational study investigated the prevalence and related factors of sarcopenia by examining 267 patients (159 men, 108 women) aged >65 years.",
+      "context_window": "openia by examining 267 patients (159 men, 108 women) aged >65 years. All patients provided written informed consent before part",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-312",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 312,
+      "sentence": "Participants included in the present study were all outpatients aged >65 years who visited the Diabetes and Endocrinology/Geriatric Medicine Unit of Akita University Hospital between February and July 2015.",
+      "context_window": "ts included in the present study were all outpatients aged >65 years who visited the Diabetes and Endocrinology/Geriatric Medici",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-1093",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1093,
+      "sentence": "The Akita prefecture, which has a population of 1 million, where Akita University Hospital is located, has an aged proportion (people aged \u226565 years) of 35.5%, an unprecedented statistic.",
+      "context_window": "y Hospital is located, has an aged proportion (people aged \u226565 years) of 35.5%, an unprecedented statistic. Here, we measured t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1106",
+      "claim_type": "percentage",
+      "raw_text": "35.5%",
+      "numeric_values": [
+        35.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1106,
+      "sentence": "The Akita prefecture, which has a population of 1 million, where Akita University Hospital is located, has an aged proportion (people aged \u226565 years) of 35.5%, an unprecedented statistic.",
+      "context_window": "located, has an aged proportion (people aged \u226565 years) of 35.5%, an unprecedented statistic. Here, we measured the limb sk",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-1622",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1622,
+      "sentence": "Skeletal muscle mass index (SMI) was calculated by dividing the limb skeletal muscle mass (kg) by the square of the height (m 2 ), and low muscle mass was defined as SMI <7.0 kg/m 2 in men and <5.7 kg/m 2 in women.",
+      "context_window": "the height (m 2 ), and low muscle mass was defined as SMI <7.0 kg/m 2 in men and <5.7 kg/m 2 in women. Grip strength was meas",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-1645",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 kg",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1645,
+      "sentence": "Skeletal muscle mass index (SMI) was calculated by dividing the limb skeletal muscle mass (kg) by the square of the height (m 2 ), and low muscle mass was defined as SMI <7.0 kg/m 2 in men and <5.7 kg/m 2 in women.",
+      "context_window": "low muscle mass was defined as SMI <7.0 kg/m 2 in men and <5.7 kg/m 2 in women. Grip strength was measured with a Smedley\u2010typ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2010",
+      "claim_type": "unit_value",
+      "raw_text": "26 kg",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2010,
+      "sentence": "The cut\u2010off value for reduced grip strength was set at 26 kg for men and 18 kg for women.",
+      "context_window": "lue. The cut\u2010off value for reduced grip strength was set at 26 kg for men and 18 kg for women. Usual gait speed was measured",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2028",
+      "claim_type": "unit_value",
+      "raw_text": "18 kg",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 2028,
+      "sentence": "The cut\u2010off value for reduced grip strength was set at 26 kg for men and 18 kg for women.",
+      "context_window": "alue for reduced grip strength was set at 26 kg for men and 18 kg for women. Usual gait speed was measured at the 6\u2010m mark of",
+      "claim_role": "effect",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2179",
+      "claim_type": "unit_value",
+      "raw_text": "0.8 m/s",
+      "numeric_values": [
+        0.8
+      ],
+      "units": "m/s",
+      "source_section": "methods",
+      "source_offset": 2179,
+      "sentence": "Usual gait speed was measured at the 6\u2010m mark of a 12\u2010m walking test, and the cut\u2010off value of usual gait speed reduction was set at \u22640.8 m/s.",
+      "context_window": "the cut\u2010off value of usual gait speed reduction was set at \u22640.8 m/s. Sarcopenia was diagnosed as a condition in which skeletal",
+      "claim_role": "unknown",
+      "endpoint": "walk speed",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-4006",
+      "claim_type": "unit_value",
+      "raw_text": "10 ng/mL",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4006,
+      "sentence": "Vitamin D deficiency was defined as a 25\u2010OHD of <10 ng/mL, and insufficiency was defined as a 25\u2010OHD of 10.0-19.9 ng/mL 22 .",
+      "context_window": "ctuations. Vitamin D deficiency was defined as a 25\u2010OHD of <10 ng/mL, and insufficiency was defined as a 25\u2010OHD of 10.0-19.9 ng/",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-4066",
+      "claim_type": "unit_value",
+      "raw_text": "19.9 ng/mL",
+      "numeric_values": [
+        19.9
+      ],
+      "units": "ng/mL",
+      "source_section": "methods",
+      "source_offset": 4066,
+      "sentence": "Vitamin D deficiency was defined as a 25\u2010OHD of <10 ng/mL, and insufficiency was defined as a 25\u2010OHD of 10.0-19.9 ng/mL 22 .",
+      "context_window": "10 ng/mL, and insufficiency was defined as a 25\u2010OHD of 10.0-19.9 ng/mL 22 . The use of angiotensin receptor blocker, calcium chann",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-5286",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5286,
+      "sentence": "All statistical analysis was carried out using Statflex version 6.0 (Artech Co., Ltd., Osaka, Japan) and JMP Pro version 12 (SAS Institute Inc., Cary, NC, USA), and the significance level was <5%.",
+      "context_window": "itute Inc., Cary, NC, USA), and the significance level was <5%.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-msd-124",
+      "claim_type": "mean_sd",
+      "raw_text": "73.7 \u00b1 6.3",
+      "numeric_values": [
+        73.7,
+        6.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 124,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "zed in Table 1 . The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-131",
+      "claim_type": "unit_value",
+      "raw_text": "6.3 years",
+      "numeric_values": [
+        6.3
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 131,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "Table 1 . The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-msd-155",
+      "claim_type": "mean_sd",
+      "raw_text": "24.0 \u00b1 3.3",
+      "numeric_values": [
+        24.0,
+        3.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 155,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "f the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diab",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-162",
+      "claim_type": "unit_value",
+      "raw_text": "3.3 kg",
+      "numeric_values": [
+        3.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 162,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "tudy participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabete",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-msd-184",
+      "claim_type": "mean_sd",
+      "raw_text": "24.3 \u00b1 4.7",
+      "numeric_values": [
+        24.3,
+        4.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 184,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-191",
+      "claim_type": "unit_value",
+      "raw_text": "4.7 kg",
+      "numeric_values": [
+        4.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 191,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 yea",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-msd-243",
+      "claim_type": "mean_sd",
+      "raw_text": "14.3 \u00b1 9.5",
+      "numeric_values": [
+        14.3,
+        9.5
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years. Sarcopenia was present in 18.7% (50/267) of all pati",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-250",
+      "claim_type": "unit_value",
+      "raw_text": "9.5 years",
+      "numeric_values": [
+        9.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 250,
+      "sentence": "The mean age of the study participants was 73.7 \u00b1 6.3 years; mean BMI was 24.0 \u00b1 3.3 kg/m 2 in men and 24.3 \u00b1 4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years.",
+      "context_window": "4.7 kg/m 2 in women; and mean diabetes duration was 14.3 \u00b1 9.5 years. Sarcopenia was present in 18.7% (50/267) of all patients.",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-287",
+      "claim_type": "percentage",
+      "raw_text": "18.7%",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 287,
+      "sentence": "Sarcopenia was present in 18.7% (50/267) of all patients.",
+      "context_window": "es duration was 14.3 \u00b1 9.5 years. Sarcopenia was present in 18.7% (50/267) of all patients. Pre\u2010sarcopenia was present in 13.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-349",
+      "claim_type": "percentage",
+      "raw_text": "13.9%",
+      "numeric_values": [
+        13.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 349,
+      "sentence": "Pre\u2010sarcopenia was present in 13.9%, whereas severe sarcopenia was present in 4.9% (Figure 1 a).",
+      "context_window": ".7% (50/267) of all patients. Pre\u2010sarcopenia was present in 13.9%, whereas severe sarcopenia was present in 4.9% (Figure 1 a)",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-397",
+      "claim_type": "percentage",
+      "raw_text": "4.9%",
+      "numeric_values": [
+        4.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 397,
+      "sentence": "Pre\u2010sarcopenia was present in 13.9%, whereas severe sarcopenia was present in 4.9% (Figure 1 a).",
+      "context_window": "present in 13.9%, whereas severe sarcopenia was present in 4.9% (Figure 1 a). When the prevalence of sarcopenia was evaluat",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-516",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 516,
+      "sentence": "When the prevalence of sarcopenia was evaluated by age group, it significantly increased with age ( P < 0.0001, Cochran-Armitage test; Figure 1 b).",
+      "context_window": "aluated by age group, it significantly increased with age ( P < 0.0001, Cochran-Armitage test; Figure 1 b). Regarding the relation",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-759",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 759,
+      "sentence": "Regarding the relationship between age and sarcopenia, in the receiver operating characteristic curve of sarcopenia prevalence, sensitivity and specificity were the highest at a cut\u2010off value of 75 years (sensitivity 0.660, specificity 0.682).",
+      "context_window": "vity and specificity were the highest at a cut\u2010off value of 75 years (sensitivity 0.660, specificity 0.682). The prevalence of s",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-883",
+      "claim_type": "percentage",
+      "raw_text": "45.0%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 883,
+      "sentence": "In men, it was 45.0% in the first quartile group and 2.5% in the fourth quartile group.",
+      "context_window": "of sarcopenia was examined by BMI quartiles. In men, it was 45.0% in the first quartile group and 2.5% in the fourth quartile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-921",
+      "claim_type": "percentage",
+      "raw_text": "2.5%",
+      "numeric_values": [
+        2.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 921,
+      "sentence": "In men, it was 45.0% in the first quartile group and 2.5% in the fourth quartile group.",
+      "context_window": "tiles. In men, it was 45.0% in the first quartile group and 2.5% in the fourth quartile group. In women, it was 37.0% in the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-973",
+      "claim_type": "percentage",
+      "raw_text": "37.0%",
+      "numeric_values": [
+        37.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 973,
+      "sentence": "In women, it was 37.0% in the first quartile group and 7.4% in the fourth quartile group.",
+      "context_window": "oup and 2.5% in the fourth quartile group. In women, it was 37.0% in the first quartile group and 7.4% in the fourth quartile",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1011",
+      "claim_type": "percentage",
+      "raw_text": "7.4%",
+      "numeric_values": [
+        7.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1011,
+      "sentence": "In women, it was 37.0% in the first quartile group and 7.4% in the fourth quartile group.",
+      "context_window": "oup. In women, it was 37.0% in the first quartile group and 7.4% in the fourth quartile group. The prevalence of sarcopenia",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1137",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1137,
+      "sentence": "The prevalence of sarcopenia showed a decreasing trend as BMI increased in both sexes (men P < 0.0001, women P = 0.0030; Figure 1 c).",
+      "context_window": "owed a decreasing trend as BMI increased in both sexes (men P < 0.0001, women P = 0.0030; Figure 1 c). The prevalence of sarcopeni",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1155",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0030",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1155,
+      "sentence": "The prevalence of sarcopenia showed a decreasing trend as BMI increased in both sexes (men P < 0.0001, women P = 0.0030; Figure 1 c).",
+      "context_window": "trend as BMI increased in both sexes (men P < 0.0001, women P = 0.0030; Figure 1 c). The prevalence of sarcopenia by body fat perc",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1381",
+      "claim_type": "percentage",
+      "raw_text": "30.0%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1381,
+      "sentence": "In men, the first quartile group had a significantly higher prevalence of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis).",
+      "context_window": "her prevalence of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis). In wome",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1390",
+      "claim_type": "percentage",
+      "raw_text": "5.0%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1390,
+      "sentence": "In men, the first quartile group had a significantly higher prevalence of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis).",
+      "context_window": "lence of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis). In women, the t",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1396",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0018",
+      "numeric_values": [
+        0.0018
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1396,
+      "sentence": "In men, the first quartile group had a significantly higher prevalence of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis).",
+      "context_window": "of sarcopenia than the third quartile group (30.0% vs 5.0%, P = 0.0018; univariate logistic analysis). In women, the third quartil",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1528",
+      "claim_type": "percentage",
+      "raw_text": "11.1%",
+      "numeric_values": [
+        11.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1528,
+      "sentence": "In women, the third quartile group also had the lowest prevalence of sarcopenia ratio of 11.1%, but no significant difference was observed between the groups.",
+      "context_window": "group also had the lowest prevalence of sarcopenia ratio of 11.1%, but no significant difference was observed between the gro",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1825",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1825,
+      "sentence": "Categorical variables: \u03c7 2 \u2010test. * P < 0.05, ** P < 0.01.DPP4, dipeptidyl peptidase 4; GLP\u20101RA, glucagon\u2010like peptide\u20101 receptor agonists; SGLT2, sodium-glucose cotransporter 2.",
+      "context_window": ": Mann-Whitney U \u2010test. Categorical variables: \u03c7 2 \u2010test. * P < 0.05, ** P < 0.01.DPP4, dipeptidyl peptidase 4; GLP\u20101RA, glucago",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-1838",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1838,
+      "sentence": "Categorical variables: \u03c7 2 \u2010test. * P < 0.05, ** P < 0.01.DPP4, dipeptidyl peptidase 4; GLP\u20101RA, glucagon\u2010like peptide\u20101 receptor agonists; SGLT2, sodium-glucose cotransporter 2.",
+      "context_window": "y U \u2010test. Categorical variables: \u03c7 2 \u2010test. * P < 0.05, ** P < 0.01.DPP4, dipeptidyl peptidase 4; GLP\u20101RA, glucagon\u2010like peptid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2143",
+      "claim_type": "unit_value",
+      "raw_text": "22.1 kg",
+      "numeric_values": [
+        22.1
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2143,
+      "sentence": "In men: Q1, first quartile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 .",
+      "context_window": "ody mass index quartile. In men: Q1, first quartile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, thi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2189",
+      "claim_type": "unit_value",
+      "raw_text": "23.9 kg",
+      "numeric_values": [
+        23.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2189,
+      "sentence": "In men: Q1, first quartile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 .",
+      "context_window": "rtile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, four",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2234",
+      "claim_type": "unit_value",
+      "raw_text": "26.3 kg",
+      "numeric_values": [
+        26.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2234,
+      "sentence": "In men: Q1, first quartile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 .",
+      "context_window": "le group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 . In women: Q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2276",
+      "claim_type": "unit_value",
+      "raw_text": "26.3 kg",
+      "numeric_values": [
+        26.3
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2276,
+      "sentence": "In men: Q1, first quartile group, <22.1 kg/m 2 ; Q2, second quartile group, 22.1-23.9 kg/m 2 ; Q3, third quartile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 .",
+      "context_window": "rtile group, 24.0-26.3 kg/m 2 ; Q4, fourth quartile group, >26.3 kg/m 2 . In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2305",
+      "claim_type": "unit_value",
+      "raw_text": "21.0 kg",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2305,
+      "sentence": "In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by body fat percentage quartile.",
+      "context_window": "; Q4, fourth quartile group, >26.3 kg/m 2 . In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2328",
+      "claim_type": "unit_value",
+      "raw_text": "24.0 kg",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2328,
+      "sentence": "In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by body fat percentage quartile.",
+      "context_window": "group, >26.3 kg/m 2 . In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluat",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2351",
+      "claim_type": "unit_value",
+      "raw_text": "26.9 kg",
+      "numeric_values": [
+        26.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2351,
+      "sentence": "In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by body fat percentage quartile.",
+      "context_window": "n women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by bo",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-2370",
+      "claim_type": "unit_value",
+      "raw_text": "26.9 kg",
+      "numeric_values": [
+        26.9
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 2370,
+      "sentence": "In women: Q1, <21.0 kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by body fat percentage quartile.",
+      "context_window": "kg/m 2 ; Q2, 21.0-24.0 kg/m 2 ; Q3, 24.1-26.9 kg/m 2 ; Q4, >26.9 kg/m 2 . (d) Evaluation of sarcopenia by body fat percentage q",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2459",
+      "claim_type": "percentage",
+      "raw_text": "21.1%",
+      "numeric_values": [
+        21.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2459,
+      "sentence": "In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%.",
+      "context_window": "of sarcopenia by body fat percentage quartile. In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2475",
+      "claim_type": "percentage",
+      "raw_text": "25.2%",
+      "numeric_values": [
+        25.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2475,
+      "sentence": "In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%.",
+      "context_window": "body fat percentage quartile. In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2491",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2491,
+      "sentence": "In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%.",
+      "context_window": "tage quartile. In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2503",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2503,
+      "sentence": "In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%.",
+      "context_window": "e. In men: Q1, <21.1%; Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2525",
+      "claim_type": "percentage",
+      "raw_text": "28.5%",
+      "numeric_values": [
+        28.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2525,
+      "sentence": "In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%.",
+      "context_window": "Q2, 22.1-25.2%; Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%. SP , diagnosis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2541",
+      "claim_type": "percentage",
+      "raw_text": "33.0%",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2541,
+      "sentence": "In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%.",
+      "context_window": "Q3, 25.3-30.2%; Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%. SP , diagnosis of sarcopenia.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2557",
+      "claim_type": "percentage",
+      "raw_text": "38.7%",
+      "numeric_values": [
+        38.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2557,
+      "sentence": "In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%.",
+      "context_window": "Q4, >30.2%. In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%. SP , diagnosis of sarcopenia. Table 1 compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-2569",
+      "claim_type": "percentage",
+      "raw_text": "38.7%",
+      "numeric_values": [
+        38.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2569,
+      "sentence": "In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%.",
+      "context_window": "In women: Q1, <28.5%; Q2, 28.5-33.0%; Q3, 33.1-38.7%; Q4, >38.7%. SP , diagnosis of sarcopenia. Table 1 compares the sarcop",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-2756",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2756,
+      "sentence": "In the sarcopenia group compared with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.01).",
+      "context_window": "ed with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height",
+      "claim_role": "population",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-2807",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2807,
+      "sentence": "In the sarcopenia group compared with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.01).",
+      "context_window": "higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P <",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-2872",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2872,
+      "sentence": "In the sarcopenia group compared with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.01).",
+      "context_window": ".01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bo",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-2923",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2923,
+      "sentence": "In the sarcopenia group compared with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.01).",
+      "context_window": "lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-2985",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2985,
+      "sentence": "In the sarcopenia group compared with the non\u2010sarcopenia group, the mean age was higher ( P < 0.01); the mean diabetes duration was longer ( P < 0.01); height, bodyweight and BMI were significantly lower ( P < 0.01); body fat percentage was higher in men ( P < 0.01); and bone mineral content was lower in both sexes ( P < 0.01).",
+      "context_window": "< 0.01); and bone mineral content was lower in both sexes ( P < 0.01). Metformin use was significantly lower in the sarcopenia g",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-3060",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3060,
+      "sentence": "Metformin use was significantly lower in the sarcopenia group ( P < 0.01), but the usage rates of other oral antidiabetes drugs and insulin did not differ significantly.",
+      "context_window": "ormin use was significantly lower in the sarcopenia group ( P < 0.01), but the usage rates of other oral antidiabetes drugs and",
+      "claim_role": "effect",
+      "endpoint": "sarcopenia",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-3736",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3736,
+      "sentence": "Blood and biochemical parameters\n\nData are presented as mean \u00b1 standard deviation. * P < 0.05, ** P < 0.01.",
+      "context_window": "ameters Data are presented as mean \u00b1 standard deviation. * P < 0.05, ** P < 0.01. Comparison of non\u2010sarcopenia and sarcopenia.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-3749",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3749,
+      "sentence": "Blood and biochemical parameters\n\nData are presented as mean \u00b1 standard deviation. * P < 0.05, ** P < 0.01.",
+      "context_window": "are presented as mean \u00b1 standard deviation. * P < 0.05, ** P < 0.01. Comparison of non\u2010sarcopenia and sarcopenia. 25\u2010OHD, 25\u2010hy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4393",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4393,
+      "sentence": "SMI, grip strength and usual gait speed were lower in the sarcopenia group than in the non\u2010sarcopenia group ( P < 0.01), except for usual gait speed in men (not significantly different).",
+      "context_window": "in the sarcopenia group than in the non\u2010sarcopenia group ( P < 0.01), except for usual gait speed in men (not significantly dif",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4559",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4559,
+      "sentence": "Factors for diagnosis of sarcopenia\n\nData are presented as mean \u00b1 standard deviation. * P < 0.01.",
+      "context_window": "copenia Data are presented as mean \u00b1 standard deviation. * P < 0.01. Comparison of non\u2010sarcopenia and sarcopenia. SMI, skeletal",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4799",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4799,
+      "sentence": "SMI showed a strong positive correlation with BMI (men R = 0.70, P < 0.001; women R = 0.68, P < 0.001).",
+      "context_window": "howed a strong positive correlation with BMI (men R = 0.70, P < 0.001; women R = 0.68, P < 0.001). SMI decreased with age (men R",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4826",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4826,
+      "sentence": "SMI showed a strong positive correlation with BMI (men R = 0.70, P < 0.001; women R = 0.68, P < 0.001).",
+      "context_window": "relation with BMI (men R = 0.70, P < 0.001; women R = 0.68, P < 0.001). SMI decreased with age (men R = -0.22, P < 0.01; women R",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4877",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4877,
+      "sentence": "SMI decreased with age (men R = -0.22, P < 0.01; women R = -0.26, P < 0.01).",
+      "context_window": "= 0.68, P < 0.001). SMI decreased with age (men R = -0.22, P < 0.01; women R = -0.26, P < 0.01). Correlation of skeletal muscl",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-4904",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4904,
+      "sentence": "SMI decreased with age (men R = -0.22, P < 0.01; women R = -0.26, P < 0.01).",
+      "context_window": "creased with age (men R = -0.22, P < 0.01; women R = -0.26, P < 0.01). Correlation of skeletal muscle mass index ( SMI ) and bo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-5564",
+      "claim_type": "unit_value",
+      "raw_text": "7.0 kg",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5564,
+      "sentence": "The SMI cut\u2010off was determined according to the Asia Working Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is the fourth quartile level in the present study (>30.2% in men, >38.7% in women).",
+      "context_window": "ording to the Asia Working Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is t",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-5584",
+      "claim_type": "unit_value",
+      "raw_text": "5.7 kg",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 5584,
+      "sentence": "The SMI cut\u2010off was determined according to the Asia Working Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is the fourth quartile level in the present study (>30.2% in men, >38.7% in women).",
+      "context_window": "orking Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is the fourth quartile l",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-5678",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5678,
+      "sentence": "The SMI cut\u2010off was determined according to the Asia Working Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is the fourth quartile level in the present study (>30.2% in men, >38.7% in women).",
+      "context_window": "of BFP is the fourth quartile level in the present study (>30.2% in men, >38.7% in women). The numbers show the proportion o",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-5693",
+      "claim_type": "percentage",
+      "raw_text": "38.7%",
+      "numeric_values": [
+        38.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5693,
+      "sentence": "The SMI cut\u2010off was determined according to the Asia Working Group for Sarcopenia standards (<7.0 kg/m 2 in men, <5.7 kg/m 2 in women), whereas that of BFP is the fourth quartile level in the present study (>30.2% in men, >38.7% in women).",
+      "context_window": "fourth quartile level in the present study (>30.2% in men, >38.7% in women). The numbers show the proportion of each group.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-6391",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6391,
+      "sentence": "In men, the prevalence of sarcopenia was correlated with lower BMI, non\u2010use of metformin and lower bone mineral content ( P < 0.05).",
+      "context_window": "BMI, non\u2010use of metformin and lower bone mineral content ( P < 0.05). In women, the prevalence of sarcopenia was correlated wit",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-p-6536",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6536,
+      "sentence": "In women, the prevalence of sarcopenia was correlated with lower bone mineral content, lower serum levels of albumin and higher age ( P < 0.05).",
+      "context_window": "ral content, lower serum levels of albumin and higher age ( P < 0.05). Multiple logistic regression with objective variables of",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-74",
+      "claim_type": "percentage",
+      "raw_text": "18.7%",
+      "numeric_values": [
+        18.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 74,
+      "sentence": "In the present study, the prevalence of sarcopenia among all patients was 18.7%, similar to that of a previous report after the European Working Group on Sarcopenia in Older People definition was announced.",
+      "context_window": "study, the prevalence of sarcopenia among all patients was 18.7%, similar to that of a previous report after the European Wo",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 288,
+      "sentence": "Evaluated by age, the prevalence of sarcopenia has been increasing over the past 75 years.",
+      "context_window": "prevalence of sarcopenia has been increasing over the past 75 years. Compared with the report that the prevalence of sarcopenia",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-415",
+      "claim_type": "percentage",
+      "raw_text": "18.8%",
+      "numeric_values": [
+        18.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 415,
+      "sentence": "Compared with the report that the prevalence of sarcopenia in the average 75\u2010year\u2010old Asian non\u2010diabetes patient was 18.8% 13 , the prevalence in patients aged >75 years in the present study was higher.",
+      "context_window": "a in the average 75\u2010year\u2010old Asian non\u2010diabetes patient was 18.8% 13 , the prevalence in patients aged >75 years in the prese",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-459",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 459,
+      "sentence": "Compared with the report that the prevalence of sarcopenia in the average 75\u2010year\u2010old Asian non\u2010diabetes patient was 18.8% 13 , the prevalence in patients aged >75 years in the present study was higher.",
+      "context_window": "tes patient was 18.8% 13 , the prevalence in patients aged >75 years in the present study was higher. The reduction in skeletal",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-763",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 763,
+      "sentence": "There have been few reports extracting diabetes for individuals aged >75 years, and future follow\u2010up investigations are necessary.",
+      "context_window": "been few reports extracting diabetes for individuals aged >75 years, and future follow\u2010up investigations are necessary. A BMI",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1371",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1371,
+      "sentence": "However, an evaluation of body fat percentage showed that the third quartile group (men 25.3-30.2%, women 33.1-38.7%) had the lowest prevalence of sarcopenia, whereas the fourth quartile group tended to have a higher prevalence of sarcopenia than the third group.",
+      "context_window": "t percentage showed that the third quartile group (men 25.3-30.2%, women 33.1-38.7%) had the lowest prevalence of sarcopenia,",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-1389",
+      "claim_type": "percentage",
+      "raw_text": "38.7%",
+      "numeric_values": [
+        38.7
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 1389,
+      "sentence": "However, an evaluation of body fat percentage showed that the third quartile group (men 25.3-30.2%, women 33.1-38.7%) had the lowest prevalence of sarcopenia, whereas the fourth quartile group tended to have a higher prevalence of sarcopenia than the third group.",
+      "context_window": "d that the third quartile group (men 25.3-30.2%, women 33.1-38.7%) had the lowest prevalence of sarcopenia, whereas the fourt",
+      "claim_role": "background",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-6502",
+      "claim_type": "unit_value",
+      "raw_text": "20 ng/mL",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 6502,
+      "sentence": "A study investigating serum 25\u2010OHD levels in postmenopausal women with type 2 diabetes mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 .",
+      "context_window": "ype 2 diabetes mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 . These values were si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-6514",
+      "claim_type": "percentage",
+      "raw_text": "50.0%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6514,
+      "sentence": "A study investigating serum 25\u2010OHD levels in postmenopausal women with type 2 diabetes mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 .",
+      "context_window": "es mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 . These values were similar to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-6527",
+      "claim_type": "unit_value",
+      "raw_text": "29 ng/mL",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 6527,
+      "sentence": "A study investigating serum 25\u2010OHD levels in postmenopausal women with type 2 diabetes mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 .",
+      "context_window": "n Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 . These values were similar to the mean values",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-pct-6539",
+      "claim_type": "percentage",
+      "raw_text": "41.8%",
+      "numeric_values": [
+        41.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6539,
+      "sentence": "A study investigating serum 25\u2010OHD levels in postmenopausal women with type 2 diabetes mellitus in Japan reported that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 .",
+      "context_window": "rted that levels were <20 ng/mL in 50.0% and 20-29 ng/mL in 41.8% 30 . These values were similar to the mean values of the wo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-u-6678",
+      "claim_type": "unit_value",
+      "raw_text": "4.0 ng/mL",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "ng/mL",
+      "source_section": "discussion",
+      "source_offset": 6678,
+      "sentence": "These values were similar to the mean values of the women in the present study, whereas the mean value in men was approximately 4.0 ng/mL higher than that of women regardless of sarcopenia status.",
+      "context_window": "sent study, whereas the mean value in men was approximately 4.0 ng/mL higher than that of women regardless of sarcopenia status.",
+      "claim_role": "unknown",
+      "endpoint": "sarcopenia",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC6400206_importance_of_physical_evaluation_using_skeletal_muscle_mass-n-6857",
+      "claim_type": "sample_size",
+      "raw_text": "n = 267",
+      "numeric_values": [
+        267.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6857,
+      "sentence": "It is undeniable that the sample number of this study was small ( n = 267).",
+      "context_window": "undeniable that the sample number of this study was small ( n = 267). The study was carried out in a single facility, and large",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

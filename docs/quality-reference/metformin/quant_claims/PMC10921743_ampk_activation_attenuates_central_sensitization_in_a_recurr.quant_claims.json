@@ -1,0 +1,1457 @@
+{
+  "paper_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr",
+  "doi": "10.1186/s10194-024-01739-w",
+  "extracted_at": "2026-05-05T15:32:40+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 19,
+    "mean_sd": 2,
+    "unit_value": 5,
+    "sample_size": 16,
+    "p_value": 38
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-167",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 167,
+      "sentence": "According to the 2019 Global Burden of Disease Study (GBD), approximately 8-15% of individuals with migraine experience at least one attack per year [ 1 ].",
+      "context_window": "2019 Global Burden of Disease Study (GBD), approximately 8-15% of individuals with migraine experience at least one attack",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-777",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 777,
+      "sentence": "It has been estimated that up to 5% of EM patients may progress to CM [ 4 ].",
+      "context_window": "edition (ICHD-III) [ 4 ]. It has been estimated that up to 5% of EM patients may progress to CM [ 4 ]. The severity of CM",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-892",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 892,
+      "sentence": "The severity of CM is significantly higher than that of EM, with up to 45% of patients seeking treatment at headache clinics experiencing daily or near-daily headaches [ 5 ].",
+      "context_window": "y of CM is significantly higher than that of EM, with up to 45% of patients seeking treatment at headache clinics experienc",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-msd-236",
+      "claim_type": "mean_sd",
+      "raw_text": "23 \u00b1 2",
+      "numeric_values": [
+        23.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 236,
+      "sentence": "The mice were individually housed in cages under specific conditions, including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and provided with ad libitum access to food and water.",
+      "context_window": "under specific conditions, including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and prov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-msd-259",
+      "claim_type": "mean_sd",
+      "raw_text": "50 \u00b1 10",
+      "numeric_values": [
+        50.0,
+        10.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 259,
+      "sentence": "The mice were individually housed in cages under specific conditions, including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and provided with ad libitum access to food and water.",
+      "context_window": "ons, including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and provided with ad libitum acc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-264",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 264,
+      "sentence": "The mice were individually housed in cages under specific conditions, including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and provided with ad libitum access to food and water.",
+      "context_window": "including a room temperature of 23 \u00b1 2 \u00b0C, humidity of 50 \u00b1 10%, a 12-h light-dark cycle, and provided with ad libitum acce",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-u-863",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 863,
+      "sentence": "NTG was obtained at a concentration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glycol, and water (Beijing Reagent, China).",
+      "context_window": "nitroglycerin (NTG). NTG was obtained at a concentration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glyc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-896",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 896,
+      "sentence": "NTG was obtained at a concentration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glycol, and water (Beijing Reagent, China).",
+      "context_window": "ined at a concentration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glycol, and water (Beijing Reagent,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-909",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 909,
+      "sentence": "NTG was obtained at a concentration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glycol, and water (Beijing Reagent, China).",
+      "context_window": "centration of 5 mg/mL in a solution containing 30% alcohol, 30% propylene glycol, and water (Beijing Reagent, China). Prior",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-1019",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1019,
+      "sentence": "Prior to administration, NTG was freshly diluted in 0.9% saline (normal saline, NS) to a concentration of 1 mg/mL.",
+      "context_window": "China). Prior to administration, NTG was freshly diluted in 0.9% saline (normal saline, NS) to a concentration of 1 mg/mL. T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-u-1073",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1073,
+      "sentence": "Prior to administration, NTG was freshly diluted in 0.9% saline (normal saline, NS) to a concentration of 1 mg/mL.",
+      "context_window": "ed in 0.9% saline (normal saline, NS) to a concentration of 1 mg/mL. The mice were intraperitoneally (i.p.) injected with ei",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-u-1142",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1142,
+      "sentence": "The mice were intraperitoneally (i.p.) injected with either 10 mg/kg NTG or an equal volume of vehicle (NS) every second day for a total of 9 days (five injections in total).",
+      "context_window": "The mice were intraperitoneally (i.p.) injected with either 10 mg/kg NTG or an equal volume of vehicle (NS) every second day",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-u-1222",
+      "claim_type": "unit_value",
+      "raw_text": "9 days",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1222,
+      "sentence": "The mice were intraperitoneally (i.p.) injected with either 10 mg/kg NTG or an equal volume of vehicle (NS) every second day for a total of 9 days (five injections in total).",
+      "context_window": "qual volume of vehicle (NS) every second day for a total of 9 days (five injections in total). The experiment was conducted i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-2147",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2147,
+      "sentence": "NTG: nitroglycerin, NS: 0.9% saline, AICAR: AMPK activator 5-aminoimidazole-4-carboxamide1-\u03b2-D-ribofuranoside, Compound C: AMPK inhibitor, DMSO: solvent dimethyl sulfoxide, D: day\n\nIn the next step, we aimed to intervene with AMPK and investigate the mechanism by which AMPK regulates neuroinflammation in CM mice.",
+      "context_window": "ating neuroinflammation in CM mice. NTG: nitroglycerin, NS: 0.9% saline, AICAR: AMPK activator 5-aminoimidazole-4-carboxamid",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-3138",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3138,
+      "sentence": "AICAR was dissolved in 10% dimethyl sulfoxide (DMSO) to prepare a concentration of 25 \u03bcg/\u03bcL in phosphate-buffered saline (PBS, 0.1 M).",
+      "context_window": "/g, 10 \u03bcg/g, and 5 \u03bcg/g [ 32 , 38 ]. AICAR was dissolved in 10% dimethyl sulfoxide (DMSO) to prepare a concentration of 25",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-3417",
+      "claim_type": "percentage",
+      "raw_text": "0.9%",
+      "numeric_values": [
+        0.9
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3417,
+      "sentence": "Both AICAR and compound C were administered intraperitoneally (i.p.) 5 min after the injection of NTG or 0.9% NS.",
+      "context_window": "ntraperitoneally (i.p.) 5 min after the injection of NTG or 0.9% NS. After one week of acclimatization, the mice were random",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-u-5320",
+      "claim_type": "unit_value",
+      "raw_text": "40 cm",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 5320,
+      "sentence": "The experiment took place in a 30 \u00d7 40 cm box.",
+      "context_window": "illumination of 30 lx. The experiment took place in a 30 \u00d7 40 cm box. Prior to the NTG injection, the mice were brought into",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-5971",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5971,
+      "sentence": "To maintain cleanliness and prevent any potential interference, the field was cleaned using 75% ethanol between tests.",
+      "context_window": "ent any potential interference, the field was cleaned using 75% ethanol between tests. For recording and behavioral analysi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-7825",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7825,
+      "sentence": "On the day of sample collection, between 8:00 and 18:00, the mice in each group were sacrificed under deep anesthesia using 1% pentobarbital sodium.",
+      "context_window": "e in each group were sacrificed under deep anesthesia using 1% pentobarbital sodium. Blood samples were collected from a v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-8171",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8171,
+      "sentence": "After cardiac perfusion with PBS or 4% paraformaldehyde (PFA), the effluence became clear, and the liver was stopped after complete blood loss.",
+      "context_window": "or subsequent analysis. After cardiac perfusion with PBS or 4% paraformaldehyde (PFA), the effluence became clear, and the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-8565",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8565,
+      "sentence": "Additionally, the TNC tissues of mice injected with 4% PFA were also removed.",
+      "context_window": "-80 \u00b0C. Additionally, the TNC tissues of mice injected with 4% PFA were also removed. To prepare the tissue for further an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-8755",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8755,
+      "sentence": "The tissue was successively transferred to PFA solutions containing 15% and 30% sucrose.",
+      "context_window": "ue was successively transferred to PFA solutions containing 15% and 30% sucrose. Once the tissue sank to the bottom, it was",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-8763",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8763,
+      "sentence": "The tissue was successively transferred to PFA solutions containing 15% and 30% sucrose.",
+      "context_window": "uccessively transferred to PFA solutions containing 15% and 30% sucrose. Once the tissue sank to the bottom, it was embedde",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-9961",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9961,
+      "sentence": "Subsequently, the membrane was blocked with 5% fetal bovine serum (BSA) at 37 \u00b0C for 2 h.",
+      "context_window": "PVDF) membrane. Subsequently, the membrane was blocked with 5% fetal bovine serum (BSA) at 37 \u00b0C for 2 h. Primary antibodi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-10670",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10670,
+      "sentence": "The sections were then sealed with a blocking buffer (10% normal goat serum, 0.5% Triton X100, dissolved in 0.1 M PBS) at room temperature for 2 h.",
+      "context_window": "0 M). The sections were then sealed with a blocking buffer (10% normal goat serum, 0.5% Triton X100, dissolved in 0.1 M PBS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-pct-10693",
+      "claim_type": "percentage",
+      "raw_text": "0.5%",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 10693,
+      "sentence": "The sections were then sealed with a blocking buffer (10% normal goat serum, 0.5% Triton X100, dissolved in 0.1 M PBS) at room temperature for 2 h.",
+      "context_window": "then sealed with a blocking buffer (10% normal goat serum, 0.5% Triton X100, dissolved in 0.1 M PBS) at room temperature fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-12159",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 12159,
+      "sentence": "Briefly, after administration of NTG or NS, the TNC regions of mice in each group ( n = 5) were collected in the same manner.",
+      "context_window": "ation of NTG or NS, the TNC regions of mice in each group ( n = 5) were collected in the same manner. According to the manufa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-13131",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13131,
+      "sentence": "Both the serum and TNC areas were examined in each group of mice ( n = 4).",
+      "context_window": "e serum and TNC areas were examined in each group of mice ( n = 4). The sample sizes were determined based on previous exper",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-14021",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 14021,
+      "sentence": "Statistical significance was set at P < 0.05.",
+      "context_window": "ze the behavioral data. Statistical significance was set at P < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-298",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 298,
+      "sentence": "The basal mechanical thresholds of the periorbital region and hindpaw plantar area of the mice in both groups exhibited a decreasing trend after administration of NTG or NS, and the mechanical thresholds in the CM group were significantly lower than those in the VEH group on days 3, 5, 7, and 9 ( P < 0.05), indicating hyperalgesia in the CM group mice (Fig.",
+      "context_window": "lower than those in the VEH group on days 3, 5, 7, and 9 ( P < 0.05), indicating hyperalgesia in the CM group mice (Fig. 2 a).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-552",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 552,
+      "sentence": "In comparison with the VEH group, IF and WB results in the TNC region of mice in the CM group revealed a significant upregulation of CGRP fluorescence intensity and protein expression ( P < 0.05) (Fig.",
+      "context_window": "ion of CGRP fluorescence intensity and protein expression ( P < 0.05) (Fig. 2 b, c). Establishment and evaluation of recurrent",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-780",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 780,
+      "sentence": "Establishment and evaluation of recurrent NTG-induced CM mouse model. a Basal mechanical thresholds in the periorbital region and hindpaw plantar area were assessed in the CM and control (VEH) groups ( n = 9). b Representative photos of calcitonin gene-related peptide (CGRP) immunoreactive staining in the trigeminal nucleus caudalis (TNC) of each group (scale bar = 200 \u03bcm) and mean CGRP fluorescence intensity were compared ( n = 6). c Representative western blotting (WB) results for CGRP in each group ( n = 5).",
+      "context_window": "tar area were assessed in the CM and control (VEH) groups ( n = 9). b Representative photos of calcitonin gene-related peptid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-1007",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1007,
+      "sentence": "Establishment and evaluation of recurrent NTG-induced CM mouse model. a Basal mechanical thresholds in the periorbital region and hindpaw plantar area were assessed in the CM and control (VEH) groups ( n = 9). b Representative photos of calcitonin gene-related peptide (CGRP) immunoreactive staining in the trigeminal nucleus caudalis (TNC) of each group (scale bar = 200 \u03bcm) and mean CGRP fluorescence intensity were compared ( n = 6). c Representative western blotting (WB) results for CGRP in each group ( n = 5).",
+      "context_window": "00 \u03bcm) and mean CGRP fluorescence intensity were compared ( n = 6). c Representative western blotting (WB) results for CGRP i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-1087",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1087,
+      "sentence": "Establishment and evaluation of recurrent NTG-induced CM mouse model. a Basal mechanical thresholds in the periorbital region and hindpaw plantar area were assessed in the CM and control (VEH) groups ( n = 9). b Representative photos of calcitonin gene-related peptide (CGRP) immunoreactive staining in the trigeminal nucleus caudalis (TNC) of each group (scale bar = 200 \u03bcm) and mean CGRP fluorescence intensity were compared ( n = 6). c Representative western blotting (WB) results for CGRP in each group ( n = 5).",
+      "context_window": "tive western blotting (WB) results for CGRP in each group ( n = 5). All data were presented as mean \u00b1 SEM (standard error of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-1354",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1354,
+      "sentence": "IF and WB data were assessed by the independent sample t-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the changes in AMPK activity in the NTG-induced CM mouse model during the modeling process, we analyzed the expression changes in NTGx1, NTGx3, CM, and the control group (VEH).",
+      "context_window": "by the independent sample t-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the changes in",
+      "claim_role": "duration",
+      "endpoint": "AMPK signaling",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-1367",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1367,
+      "sentence": "IF and WB data were assessed by the independent sample t-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the changes in AMPK activity in the NTG-induced CM mouse model during the modeling process, we analyzed the expression changes in NTGx1, NTGx3, CM, and the control group (VEH).",
+      "context_window": "ndent sample t-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the changes in AMPK activit",
+      "claim_role": "duration",
+      "endpoint": "AMPK signaling",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-1381",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1381,
+      "sentence": "IF and WB data were assessed by the independent sample t-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the changes in AMPK activity in the NTG-induced CM mouse model during the modeling process, we analyzed the expression changes in NTGx1, NTGx3, CM, and the control group (VEH).",
+      "context_window": "-test or Mann-Whitney U test. (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the changes in AMPK activity in the NTG-in",
+      "claim_role": "duration",
+      "endpoint": "AMPK signaling",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-1954",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1954,
+      "sentence": "Furthermore, the protein expression in the CM group was significantly decreased ( P < 0.05) compared with that in the VEH group (Fig.",
+      "context_window": "in expression in the CM group was significantly decreased ( P < 0.05) compared with that in the VEH group (Fig. 3 b, d). Change",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-2328",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2328,
+      "sentence": "The mean AMPK fluorescence intensity was compared between the groups ( n = 6). c , d Representative WB results for AMPK and PAMPK in each group ( n = 5).",
+      "context_window": "PK fluorescence intensity was compared between the groups ( n = 6). c , d Representative WB results for AMPK and PAMPK in eac",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-2403",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2403,
+      "sentence": "The mean AMPK fluorescence intensity was compared between the groups ( n = 6). c , d Representative WB results for AMPK and PAMPK in each group ( n = 5).",
+      "context_window": "epresentative WB results for AMPK and PAMPK in each group ( n = 5). All data are presented as the mean \u00b1 SEM, and significanc",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-2624",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2624,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way analysis of variance (ANOVA) with Dunnett\u2019s post hoc test or the Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the cause of this decrease in AMPK activity, we analyzed the positive and negative regulators of AMPK.",
+      "context_window": "al-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the cause of t",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-2637",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2637,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way analysis of variance (ANOVA) with Dunnett\u2019s post hoc test or the Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the cause of this decrease in AMPK activity, we analyzed the positive and negative regulators of AMPK.",
+      "context_window": "est with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the cause of this decrease",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-2651",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2651,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way analysis of variance (ANOVA) with Dunnett\u2019s post hoc test or the Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the cause of this decrease in AMPK activity, we analyzed the positive and negative regulators of AMPK.",
+      "context_window": "Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the cause of this decrease in AMPK activit",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-2968",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2968,
+      "sentence": "The concentrations of AMP, ADP, and ATP in the CM group were not significantly different from those in the VEH group, whereas the ADP/ATP ratio was significantly higher in the CM group ( P < 0.05) (Fig.",
+      "context_window": "he ADP/ATP ratio was significantly higher in the CM group ( P < 0.05) (Fig. 4 a), which could activate AMPK. However, the WB res",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-3110",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3110,
+      "sentence": "However, the WB results for UHRF1 expression showed a significant increase in the CM group ( P < 0.05) (Fig.",
+      "context_window": "expression showed a significant increase in the CM group ( P < 0.05) (Fig. 4 b), which could inhibit AMPK. Energy status and U",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-3370",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3370,
+      "sentence": "Energy status and UHRF1 protein levels in the TNC region of mice in the CM and VEH groups. a Comparison of AMP, ADP, ATP contents and ADP/ATP, and AMP/ADP ratio in the TNC region between the CM and VEH groups ( n = 5). b Representative WB results for UHRF1 in the TNC region of the mice in each group ( n = 5).",
+      "context_window": "ADP ratio in the TNC region between the CM and VEH groups ( n = 5). b Representative WB results for UHRF1 in the TNC region o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-3462",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3462,
+      "sentence": "Energy status and UHRF1 protein levels in the TNC region of mice in the CM and VEH groups. a Comparison of AMP, ADP, ATP contents and ADP/ATP, and AMP/ADP ratio in the TNC region between the CM and VEH groups ( n = 5). b Representative WB results for UHRF1 in the TNC region of the mice in each group ( n = 5).",
+      "context_window": "lts for UHRF1 in the TNC region of the mice in each group ( n = 5). All data are presented as the mean \u00b1 SEM, and significanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-3616",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3616,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by the independent sample t-test or Mann-Whitney U test between groups (* P < 0.05)\n\nThe effects of AICAR and compound C were explored early in the experiment (Supplementary Material 2 ).",
+      "context_window": "dent sample t-test or Mann-Whitney U test between groups (* P < 0.05) The effects of AICAR and compound C were explored early i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4052",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4052,
+      "sentence": "In terms of mechanical thresholds, multiple NTG injections significantly reduced the basic and post-treatment mechanical pain thresholds of the periorbital region and hindpaw plantar region in the NTG + DMSO group ( P < 0.05) compared with the NS + DMSO group on days 3, 5, 7, and 9.",
+      "context_window": "region and hindpaw plantar region in the NTG + DMSO group ( P < 0.05) compared with the NS + DMSO group on days 3, 5, 7, and 9.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4226",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4226,
+      "sentence": "However, the NTG + AICAR group mitigated the decrease in basal and post-treatment mechanical thresholds ( P < 0.05) compared to the NTG + DMSO group, suggesting that the AMPK activator AICAR could alleviate pain hyperalgesia induced by NTG.",
+      "context_window": "ecrease in basal and post-treatment mechanical thresholds ( P < 0.05) compared to the NTG + DMSO group, suggesting that the AMPK",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4535",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4535,
+      "sentence": "Additionally, the baseline and post-treatment mechanical thresholds of the mice in the NTG + Compound C group decreased quicker than those in the NTG + DMSO group on day 3 ( P < 0.05) (Fig.",
+      "context_window": "eased quicker than those in the NTG + DMSO group on day 3 ( P < 0.05) (Fig. 5 a). Behavioral results after AMPK intervention. a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-4821",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4821,
+      "sentence": "Behavioral results after AMPK intervention. a Comparison of basal and post-treatment mechanical pain thresholds of the periorbital region and the hindpaw plantar area in different groups (NTG + AICAR 250 \u03bcg/g, NTG + Compound C 10 \u03bcg/g, NTG + DMSO, and NS + DMSO, n = 9).",
+      "context_window": "\u03bcg/g, NTG + Compound C 10 \u03bcg/g, NTG + DMSO, and NS + DMSO, n = 9). Significance was assessed by two-way repeated-measures AN",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4934",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4934,
+      "sentence": "Significance was assessed by two-way repeated-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG + Compound C). b Representative trajectory of each group on days 1 and 9. c , d Comparison of travel distance, time, speed, total grooming time, number of head scratches, and cage climbing in each group.",
+      "context_window": "-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4947",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4947,
+      "sentence": "Significance was assessed by two-way repeated-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG + Compound C). b Representative trajectory of each group on days 1 and 9. c , d Comparison of travel distance, time, speed, total grooming time, number of head scratches, and cage climbing in each group.",
+      "context_window": "VA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-4961",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4961,
+      "sentence": "Significance was assessed by two-way repeated-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG + Compound C). b Representative trajectory of each group on days 1 and 9. c , d Comparison of travel distance, time, speed, total grooming time, number of head scratches, and cage climbing in each group.",
+      "context_window": "oc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P <",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-5027",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5027,
+      "sentence": "Significance was assessed by two-way repeated-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG + Compound C). b Representative trajectory of each group on days 1 and 9. c , d Comparison of travel distance, time, speed, total grooming time, number of head scratches, and cage climbing in each group.",
+      "context_window": "001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-5089",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5089,
+      "sentence": "Significance was assessed by two-way repeated-measures ANOVA with post hoc comparison between groups. (* P < 0.05, ** P < 0.01, *** P < 0.001 compared between NTG + AICAR and NTG + DMSO groups, ### P < 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG + Compound C). b Representative trajectory of each group on days 1 and 9. c , d Comparison of travel distance, time, speed, total grooming time, number of head scratches, and cage climbing in each group.",
+      "context_window": "< 0.001 compared between NTG + DMSO and NS + DMSO groups, ^ P < 0.05, ns: not significant compared between NTG + DMSO and NTG +",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-5502",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5502,
+      "sentence": "Significance was assessed using one-way ANOVA with Dunnett\u2019s post-hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8).",
+      "context_window": "al-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8). All da",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-5515",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5515,
+      "sentence": "Significance was assessed using one-way ANOVA with Dunnett\u2019s post-hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8).",
+      "context_window": "est with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8). All data are presen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-5556",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5556,
+      "sentence": "Significance was assessed using one-way ANOVA with Dunnett\u2019s post-hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8).",
+      "context_window": "on (* P < 0.05, ** P < 0.01, compared to NTG + AICAR group, n = 8). All data are presented as the mean \u00b1 SEM Consistent with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-5944",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5944,
+      "sentence": "Mice in the NTG + DMSO and NTG + Compound C groups displayed a significant decrease in travel distance, time, and speed both before and 2 h after injection, when compared to the NS + DMSO group ( P < 0.05).",
+      "context_window": "2 h after injection, when compared to the NS + DMSO group ( P < 0.05). In contrast, mice in the NTG + AICAR group exhibited enha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-6092",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6092,
+      "sentence": "In contrast, mice in the NTG + AICAR group exhibited enhanced activity compared to those in the NTG + DMSO and NTG + Compound C groups ( P < 0.05).",
+      "context_window": "ed to those in the NTG + DMSO and NTG + Compound C groups ( P < 0.05). However, no significant changes were observed between the",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-6614",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6614,
+      "sentence": "In contrast to the NTG + AICAR group, the NTG + DMSO and NTG + Compound C groups exhibited a significant increase in pain-like behaviors, such as total grooming and the number of head-scratches, both before and 2 h after injection ( P < 0.05).",
+      "context_window": "er of head-scratches, both before and 2 h after injection ( P < 0.05). However, there was a significant decrease in cage-climbin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-6707",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6707,
+      "sentence": "However, there was a significant decrease in cage-climbing exploration behavior ( P < 0.05).",
+      "context_window": "ignificant decrease in cage-climbing exploration behavior ( P < 0.05). Importantly, these pain-like behaviors were not significa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-8127",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8127,
+      "sentence": "Validation of AMPK expression and CGRP and cytokine responses after activation or inhibition of AMPK. a , b Representative WB results and comparison of AMPK, PAMPK, and CGRP levels in the TNC region of mice in each group ( n = 5). c , d Representative images of AMPK immunoreactive staining (scale bar = 100 \u03bcm) and comparison of the mean CGRP fluorescence intensity in each group ( n = 6). e Comparison of the levels of IL-1\u03b2, IL-4, IL-6, IL-10, TNF-\u03b1, IFN-\u03b3, and GM-CSF in the serum and TNC tissues of mice ( n = 4).",
+      "context_window": ", and CGRP levels in the TNC region of mice in each group ( n = 5). c , d Representative images of AMPK immunoreactive staini",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-8287",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8287,
+      "sentence": "Validation of AMPK expression and CGRP and cytokine responses after activation or inhibition of AMPK. a , b Representative WB results and comparison of AMPK, PAMPK, and CGRP levels in the TNC region of mice in each group ( n = 5). c , d Representative images of AMPK immunoreactive staining (scale bar = 100 \u03bcm) and comparison of the mean CGRP fluorescence intensity in each group ( n = 6). e Comparison of the levels of IL-1\u03b2, IL-4, IL-6, IL-10, TNF-\u03b1, IFN-\u03b3, and GM-CSF in the serum and TNC tissues of mice ( n = 4).",
+      "context_window": "son of the mean CGRP fluorescence intensity in each group ( n = 6). e Comparison of the levels of IL-1\u03b2, IL-4, IL-6, IL-10, T",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-8415",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8415,
+      "sentence": "Validation of AMPK expression and CGRP and cytokine responses after activation or inhibition of AMPK. a , b Representative WB results and comparison of AMPK, PAMPK, and CGRP levels in the TNC region of mice in each group ( n = 5). c , d Representative images of AMPK immunoreactive staining (scale bar = 100 \u03bcm) and comparison of the mean CGRP fluorescence intensity in each group ( n = 6). e Comparison of the levels of IL-1\u03b2, IL-4, IL-6, IL-10, TNF-\u03b1, IFN-\u03b3, and GM-CSF in the serum and TNC tissues of mice ( n = 4).",
+      "context_window": "\u03b1, IFN-\u03b3, and GM-CSF in the serum and TNC tissues of mice ( n = 4). All data are presented as the mean \u00b1 SEM, and significanc",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-8609",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8609,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nIn addition, we collected peripheral serum and TNC tissues from the mice to measure the levels of anti-inflammatory and pro-inflammatory cytokines.",
+      "context_window": "al-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) In addition, we collected per",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-8622",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8622,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nIn addition, we collected peripheral serum and TNC tissues from the mice to measure the levels of anti-inflammatory and pro-inflammatory cytokines.",
+      "context_window": "est with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) In addition, we collected peripheral serum",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-8636",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8636,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nIn addition, we collected peripheral serum and TNC tissues from the mice to measure the levels of anti-inflammatory and pro-inflammatory cytokines.",
+      "context_window": "Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) In addition, we collected peripheral serum and TNC tissue",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-10739",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10739,
+      "sentence": "WB analysis revealed a significant increase in Iba1 protein expression in the NTG + AICAR, NTG + DMSO, and NTG + Compound C groups compared to the NS + DMSO group ( P < 0.05), indicating microglial activation.",
+      "context_window": "d NTG + Compound C groups compared to the NS + DMSO group ( P < 0.05), indicating microglial activation. Moreover, the NTG + AIC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-11123",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11123,
+      "sentence": "Conversely, the expression of iNOS protein was significantly lower in the NTG + AICAR group compared to the NTG + DMSO and NTG + Compound C groups, with statistically significant differences ( P < 0.05) (Fig.",
+      "context_window": "ound C groups, with statistically significant differences ( P < 0.05) (Fig. 8 a, b). Representative IF staining results for Iba1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-11469",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11469,
+      "sentence": "Effect on microglia after activation or inhibition of AMPK expression. a , b Representative WB results and comparison of Iba1, Arg1, and inducible NO synthase (iNOS) expression in the TNC region of mice in each group ( n = 5). c , d Representative images of double IF labeling Iba1 (green) with Arg1 (red) and iNOS (red) (upper row scale bar = 50 \u03bcm, the next three rows scale bar = 20 \u03bcm).",
+      "context_window": "(iNOS) expression in the TNC region of mice in each group ( n = 5). c , d Representative images of double IF labeling Iba1 (g",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-11830",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11830,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed using one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the mechanism underlying microglia M2 polarization, we performed WB analysis to assess the protein expression of NF-\u03baB p65 and p-NF-\u03baB p65 in the TNC region of mice in the NTG + AICAR, NTG + Compound C, NTG + DMSO, and NS + DMSO groups.",
+      "context_window": "al-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the mechanism",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-11843",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11843,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed using one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the mechanism underlying microglia M2 polarization, we performed WB analysis to assess the protein expression of NF-\u03baB p65 and p-NF-\u03baB p65 in the TNC region of mice in the NTG + AICAR, NTG + Compound C, NTG + DMSO, and NS + DMSO groups.",
+      "context_window": "est with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the mechanism underlying mi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-11857",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11857,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed using one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)\n\nTo investigate the mechanism underlying microglia M2 polarization, we performed WB analysis to assess the protein expression of NF-\u03baB p65 and p-NF-\u03baB p65 in the TNC region of mice in the NTG + AICAR, NTG + Compound C, NTG + DMSO, and NS + DMSO groups.",
+      "context_window": "Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001) To investigate the mechanism underlying microglia M2 pola",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-n-12970",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12970,
+      "sentence": "Effect on the NF-\u03baB signaling pathway after activation or inhibition of AMPK expression. a Representative WB results and comparison of NF-\u03baB p65 and p-NF-\u03baB p65 in TNC region of mice in each group ( n = 5). b Representative images of IF co-localization staining of NF-\u03baB (red) with Iba1 (green) and DAP1 (blue) (upper row scale bar = 50 \u03bcm, the next three rows scale bar = 2 \u03bcm).",
+      "context_window": "B p65 and p-NF-\u03baB p65 in TNC region of mice in each group ( n = 5). b Representative images of IF co-localization staining of",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-13337",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13337,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "context_window": "al-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-13350",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13350,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "context_window": "est with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10921743_ampk_activation_attenuates_central_sensitization_in_a_recurr-p-13364",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13364,
+      "sentence": "All data are presented as the mean \u00b1 SEM, and significance was assessed by one-way ANOVA with Dunnett\u2019s post hoc test or Kruskal-Wallis H test with Mann-Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "context_window": "Whitney U post hoc comparison (* P < 0.05, ** P < 0.01, *** P < 0.001)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

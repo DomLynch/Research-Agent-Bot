@@ -1,0 +1,1581 @@
+{
+  "paper_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_",
+  "doi": "10.18632/aging.100273",
+  "extracted_at": "2026-05-05T15:32:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 54,
+    "percentage": 24,
+    "mean_sd": 1,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-386",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 386,
+      "sentence": "Here we showed that chronic treatment of female outbred SHR mice with metformin started at the age of 3, 9 or 15 months decreased body temperature and postponed age-related switch-off of estrous function.",
+      "context_window": "tbred SHR mice with metformin started at the age of 3, 9 or 15 months decreased body temperature and postponed age-related switch",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-632",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 632,
+      "sentence": "Treatment with metformin started at the age of 3 months increased mean life span by 14% and maximum life span by 1 month.",
+      "context_window": "and insulin. Treatment with metformin started at the age of 3 months increased mean life span by 14% and maximum life span by 1",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-669",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 669,
+      "sentence": "Treatment with metformin started at the age of 3 months increased mean life span by 14% and maximum life span by 1 month.",
+      "context_window": "started at the age of 3 months increased mean life span by 14% and maximum life span by 1 month. The treatment started at",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-698",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "abstract",
+      "source_offset": 698,
+      "sentence": "Treatment with metformin started at the age of 3 months increased mean life span by 14% and maximum life span by 1 month.",
+      "context_window": "hs increased mean life span by 14% and maximum life span by 1 month. The treatment started at the age of 9 months insignificant",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-743",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 743,
+      "sentence": "The treatment started at the age of 9 months insignificantly increased mean life span by only 6%, whereas the treatment started at the age of 15 months failed to increase life span.",
+      "context_window": "m life span by 1 month. The treatment started at the age of 9 months insignificantly increased mean life span by only 6%, wherea",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-801",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 801,
+      "sentence": "The treatment started at the age of 9 months insignificantly increased mean life span by only 6%, whereas the treatment started at the age of 15 months failed to increase life span.",
+      "context_window": "f 9 months insignificantly increased mean life span by only 6%, whereas the treatment started at the age of 15 months fail",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-849",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 849,
+      "sentence": "The treatment started at the age of 9 months insignificantly increased mean life span by only 6%, whereas the treatment started at the age of 15 months failed to increase life span.",
+      "context_window": "pan by only 6%, whereas the treatment started at the age of 15 months failed to increase life span. The mean life span of tumor-f",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-944",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 944,
+      "sentence": "The mean life span of tumor-free mice was increased by 21% in \u2018the youngest group\u2019, by 7% in \u2018middle-aged group\u2019 and in contrast was reduced by 13% in \u2018the oldest group\u2019.",
+      "context_window": "pan. The mean life span of tumor-free mice was increased by 21% in \u2018the youngest group\u2019, by 7% in \u2018middle-aged group\u2019 and i",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-976",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 976,
+      "sentence": "The mean life span of tumor-free mice was increased by 21% in \u2018the youngest group\u2019, by 7% in \u2018middle-aged group\u2019 and in contrast was reduced by 13% in \u2018the oldest group\u2019.",
+      "context_window": "-free mice was increased by 21% in \u2018the youngest group\u2019, by 7% in \u2018middle-aged group\u2019 and in contrast was reduced by 13% i",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-1033",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1033,
+      "sentence": "The mean life span of tumor-free mice was increased by 21% in \u2018the youngest group\u2019, by 7% in \u2018middle-aged group\u2019 and in contrast was reduced by 13% in \u2018the oldest group\u2019.",
+      "context_window": "by 7% in \u2018middle-aged group\u2019 and in contrast was reduced by 13% in \u2018the oldest group\u2019. When started at the age of 3 and 9 m",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1093",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1093,
+      "sentence": "When started at the age of 3 and 9 months, metformin delayed the first tumor detection by 22% and 25%, correspondingly.",
+      "context_window": "13% in \u2018the oldest group\u2019. When started at the age of 3 and 9 months, metformin delayed the first tumor detection by 22% and 25%",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-1150",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1150,
+      "sentence": "When started at the age of 3 and 9 months, metformin delayed the first tumor detection by 22% and 25%, correspondingly.",
+      "context_window": "nd 9 months, metformin delayed the first tumor detection by 22% and 25%, correspondingly. Thus, in female SHR mice, metform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-1158",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "When started at the age of 3 and 9 months, metformin delayed the first tumor detection by 22% and 25%, correspondingly.",
+      "context_window": "ths, metformin delayed the first tumor detection by 22% and 25%, correspondingly. Thus, in female SHR mice, metformin incre",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2457",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2457,
+      "sentence": "In this paper we present the results of treatments with the antidiabetic biguanide metformin which were started at the age of 3, 9 or 15 months in female outbred SHR mice.",
+      "context_window": "iguanide metformin which were started at the age of 3, 9 or 15 months in female outbred SHR mice.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-208",
+      "claim_type": "unit_value",
+      "raw_text": "10 cm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 208,
+      "sentence": "The mice were kept in groups of 5-7 animals in polypropylene cages (30 \u00d7 21 \u00d7 10 cm) under standard light/dark regimen (12 hours light:12 hours darkness) at 22 \u00b1 2 \u00b0 C, and received standard laboratory chow [ 43 ] and tap water ad libitum.",
+      "context_window": "in groups of 5-7 animals in polypropylene cages (30 \u00d7 21 \u00d7 10 cm) under standard light/dark regimen (12 hours light:12 hours",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-msd-287",
+      "claim_type": "mean_sd",
+      "raw_text": "22 \u00b1 2",
+      "numeric_values": [
+        22.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 287,
+      "sentence": "The mice were kept in groups of 5-7 animals in polypropylene cages (30 \u00d7 21 \u00d7 10 cm) under standard light/dark regimen (12 hours light:12 hours darkness) at 22 \u00b1 2 \u00b0 C, and received standard laboratory chow [ 43 ] and tap water ad libitum.",
+      "context_window": "rd light/dark regimen (12 hours light:12 hours darkness) at 22 \u00b1 2 \u00b0 C, and received standard laboratory chow [ 43 ] and tap w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-631",
+      "claim_type": "unit_value",
+      "raw_text": "100 mg",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 631,
+      "sentence": "Other mice were treated with metformin (1, 1-Dimethylbiguanide hydrochloride, Biomedicals, France) with drinking water (100 mg/kg of body weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice).",
+      "context_window": "de hydrochloride, Biomedicals, France) with drinking water (100 mg/kg of body weight) daily starting at the age of 3 months (6",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-686",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 686,
+      "sentence": "Other mice were treated with metformin (1, 1-Dimethylbiguanide hydrochloride, Biomedicals, France) with drinking water (100 mg/kg of body weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice).",
+      "context_window": "ter (100 mg/kg of body weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice). The",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-706",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 706,
+      "sentence": "Other mice were treated with metformin (1, 1-Dimethylbiguanide hydrochloride, Biomedicals, France) with drinking water (100 mg/kg of body weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice).",
+      "context_window": "dy weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice). The dose of metformin is",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-729",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 729,
+      "sentence": "Other mice were treated with metformin (1, 1-Dimethylbiguanide hydrochloride, Biomedicals, France) with drinking water (100 mg/kg of body weight) daily starting at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice).",
+      "context_window": "ng at the age of 3 months (61 mice), 9 months (55 mice) and 15 months (43 mice). The dose of metformin is similar to used in our",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-883",
+      "claim_type": "unit_value",
+      "raw_text": "300 mg",
+      "numeric_values": [
+        300.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 883,
+      "sentence": "The dose of metformin is similar to used in our earlier experiments with SHR, 129/Sv or HER-2/neu mice [ 10 , 18 - 21 ] and equal to 300 mg/m2 of the surface area.",
+      "context_window": "SHR, 129/Sv or HER-2/neu mice [ 10 , 18 - 21 ] and equal to 300 mg/m2 of the surface area. Recalculation for humans gives in a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-956",
+      "claim_type": "unit_value",
+      "raw_text": "510 mg",
+      "numeric_values": [
+        510.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 956,
+      "sentence": "Recalculation for humans gives in average 510 mg/m 2 , that are less than commonly used in clinical practice in diabetics (1.0 - 2.5 g per day).",
+      "context_window": "the surface area. Recalculation for humans gives in average 510 mg/m 2 , that are less than commonly used in clinical practice",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1415",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1415,
+      "sentence": "Every 3 months, vaginal smears of the animals were examined cytologically daily for 2 weeks to estimate the estrous function.",
+      "context_window": "s per mouse and per body weight unit were calculated. Every 3 months, vaginal smears of the animals were examined cytologically",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1493",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1493,
+      "sentence": "Every 3 months, vaginal smears of the animals were examined cytologically daily for 2 weeks to estimate the estrous function.",
+      "context_window": "smears of the animals were examined cytologically daily for 2 weeks to estimate the estrous function. In the same period, recta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1852",
+      "claim_type": "unit_value",
+      "raw_text": "3 mm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1852,
+      "sentence": "Progressively growing masses of >3 mm in mean diameter were regarded as tumors.",
+      "context_window": "o perpendicular diameters. Progressively growing masses of >3 mm in mean diameter were regarded as tumors. At the age of 16.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1913",
+      "claim_type": "unit_value",
+      "raw_text": "16.5 months",
+      "numeric_values": [
+        16.5
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1913,
+      "sentence": "At the age of 16.5 months 10 mice from each group were sacrificed by decapitation after overnight fasting.",
+      "context_window": "mm in mean diameter were regarded as tumors. At the age of 16.5 months 10 mice from each group were sacrificed by decapitation aft",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-2255",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2255,
+      "sentence": "The date of each death was registered, and the mean life span, median, the age at which 90% of the animals died, and the maximum life span were estimated.",
+      "context_window": "egistered, and the mean life span, median, the age at which 90% of the animals died, and the maximum life span were estimat",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-2890",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2890,
+      "sentence": "All tumors, as well as the tissues and organs with suspected tumor development were excised and fixed in 10% neutral formalin.",
+      "context_window": "with suspected tumor development were excised and fixed in 10% neutral formalin. After the routine histological processing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-102",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 102,
+      "sentence": "The body weight of mice in both control and metformin-treated groups increased with age, exceeding by 16 months the body weight of 3-month-old animals by 34.31%.",
+      "context_window": "d metformin-treated groups increased with age, exceeding by 16 months the body weight of 3-month-old animals by 34.31%. There was",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-154",
+      "claim_type": "percentage",
+      "raw_text": "34.31%",
+      "numeric_values": [
+        34.31
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 154,
+      "sentence": "The body weight of mice in both control and metformin-treated groups increased with age, exceeding by 16 months the body weight of 3-month-old animals by 34.31%.",
+      "context_window": "ding by 16 months the body weight of 3-month-old animals by 34.31%. There was no difference in the mean body weight of mice ex",
+      "claim_role": "effect",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-271",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 271,
+      "sentence": "There was no difference in the mean body weight of mice exposed and non-exposed to the drug until the age of 20 months, and a tendency to a decrease of the body weight was observed in metformin treated groups after this age ( Fig.",
+      "context_window": "f mice exposed and non-exposed to the drug until the age of 20 months, and a tendency to a decrease of the body weight was observ",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-636",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 636,
+      "sentence": "Age-related dynamics of body weight ( A ), food consumption ( B ), body temperature ( C) and of the incidence of mice with irregular estrous cycles ( D ) in SHR mice not treated and treated with metformin starting at the age of 3, 9 or 15 months.",
+      "context_window": "d and treated with metformin starting at the age of 3, 9 or 15 months. The difference with the controls is significant, p<0.05: \u0430",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-696",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 696,
+      "sentence": "The difference with the controls is significant, p<0.05: \u0430- metformin 3 m; b - metformin 9 m; c - metformin 15 m)\n\nThe amount of food consumed daily by mice during the period of observation was similar in the control group and in metformin-treated groups ( Fig.",
+      "context_window": "15 months. The difference with the controls is significant, p<0.05: \u0430- metformin 3 m; b - metformin 9 m; c - metformin 15 m)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1265",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1265,
+      "sentence": "The length of estrous cycles in the control female SHR mice was not significantly changed with age, whereas it was significantly decreased at various age in mice exposed to metformin from the age of 3, 9 or 15 months in comparison with the estrous cycle status in controls of corresponding age ( Table 1 ).The fraction of mice with irregular estrous cycles increased with age in thecontrol mice but not in mice treated with metformin until the age of 15 months ( Table 1 , Fig.",
+      "context_window": "us age in mice exposed to metformin from the age of 3, 9 or 15 months in comparison with the estrous cycle status in controls of",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1509",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1509,
+      "sentence": "The length of estrous cycles in the control female SHR mice was not significantly changed with age, whereas it was significantly decreased at various age in mice exposed to metformin from the age of 3, 9 or 15 months in comparison with the estrous cycle status in controls of corresponding age ( Table 1 ).The fraction of mice with irregular estrous cycles increased with age in thecontrol mice but not in mice treated with metformin until the age of 15 months ( Table 1 , Fig.",
+      "context_window": "ice but not in mice treated with metformin until the age of 15 months ( Table 1 , Fig. 1D ), independently on the time of the sta",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-1678",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1678,
+      "sentence": "The difference with the controls of corresponding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001.",
+      "context_window": "ce with the controls of corresponding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001. There was no significant age-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-1691",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1691,
+      "sentence": "The difference with the controls of corresponding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001.",
+      "context_window": "ontrols of corresponding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001. There was no significant age-related chang",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-1705",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1705,
+      "sentence": "The difference with the controls of corresponding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001.",
+      "context_window": "responding age is significant: * p < 0.05; ** p < 0.01; *** p < 0.001. There was no significant age-related changes in average b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1858",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1858,
+      "sentence": "Treatment with metformin started at the age of 3 months decreased body temperature at the age of 15 months as compared with age-matched controls.",
+      "context_window": "ontrol mice. Treatment with metformin started at the age of 3 months decreased body temperature at the age of 15 months as compa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1908",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1908,
+      "sentence": "Treatment with metformin started at the age of 3 months decreased body temperature at the age of 15 months as compared with age-matched controls.",
+      "context_window": "he age of 3 months decreased body temperature at the age of 15 months as compared with age-matched controls. Also, body temperatu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2078",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2078,
+      "sentence": "Also, body temperature was decreased between the 11th and 18th months of life in mice treated with the drug from the age 9 months.",
+      "context_window": "h months of life in mice treated with the drug from the age 9 months. Metformin administration started at the age of 15 months f",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2135",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2135,
+      "sentence": "Metformin administration started at the age of 15 months failed influence the average body temperature in mice ( Fig.",
+      "context_window": "ge 9 months. Metformin administration started at the age of 15 months failed influence the average body temperature in mice ( Fig",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2268",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2268,
+      "sentence": "Treatment with metformin started at the age of 3, 9 or 15 months failed influence levels of glucose, total cholesterol, triglycerides, and insulin in the serum estimated when mice were 16.5 month old ( Table 2 ).",
+      "context_window": "). Treatment with metformin started at the age of 3, 9 or 15 months failed influence levels of glucose, total cholesterol, trig",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2398",
+      "claim_type": "unit_value",
+      "raw_text": "16.5 month",
+      "numeric_values": [
+        16.5
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 2398,
+      "sentence": "Treatment with metformin started at the age of 3, 9 or 15 months failed influence levels of glucose, total cholesterol, triglycerides, and insulin in the serum estimated when mice were 16.5 month old ( Table 2 ).",
+      "context_window": "ycerides, and insulin in the serum estimated when mice were 16.5 month old ( Table 2 ). Treatment with metformin started at the a",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2474",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2474,
+      "sentence": "Treatment with metformin started at the age of 3 months shifted to the right the survival curve as compared with the controls ( Fig.",
+      "context_window": "Table 2 ). Treatment with metformin started at the age of 3 months shifted to the right the survival curve as compared with th",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2616",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2616,
+      "sentence": "The effect of the treatment started at the age of 9 months was less expressed ( Fig.",
+      "context_window": "ig. 2A ). The effect of the treatment started at the age of 9 months was less expressed ( Fig. 2C ) and it was absent in the gro",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2871",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2871,
+      "sentence": "According to the log-rank test the difference in survival of female SHR mice subjected to metformin treatment from the age of 3, 9 or 15 months, compared to the age-matched control groups, is insignificant (p-value is 0.181; 0.97 and 0.478, correspondingly).",
+      "context_window": "ce subjected to metformin treatment from the age of 3, 9 or 15 months, compared to the age-matched control groups, is insignifica",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3101",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3101,
+      "sentence": "According to the estimated parameters of the Cox's regression, metformin treatment started at the age of 3 months decreased the relative risk of death compared to the control group (\u03b2 = -0.227; exp (\u03b2 = 0.797; se (\u03b2)= 0.169; p = 0.173).",
+      "context_window": "Cox's regression, metformin treatment started at the age of 3 months decreased the relative risk of death compared to the contro",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-3221",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.173",
+      "numeric_values": [
+        0.173
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3221,
+      "sentence": "According to the estimated parameters of the Cox's regression, metformin treatment started at the age of 3 months decreased the relative risk of death compared to the control group (\u03b2 = -0.227; exp (\u03b2 = 0.797; se (\u03b2)= 0.169; p = 0.173).",
+      "context_window": "e control group (\u03b2 = -0.227; exp (\u03b2 = 0.797; se (\u03b2)= 0.169; p = 0.173). Metformin treatment started at the age of 9 or 15 months",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3280",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3280,
+      "sentence": "Metformin treatment started at the age of 9 or 15 months produced no effect on the relative risk of death in SHR female mice compared to the control group.",
+      "context_window": "p = 0.173). Metformin treatment started at the age of 9 or 15 months produced no effect on the relative risk of death in SHR fem",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3539",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3539,
+      "sentence": "Survival curves and tumor yield curves in female in SHR mice not treated and treated with metformin starting at the age of 3 ( A, B ), 9 ( C, D ) or 15 months ( E, F ).",
+      "context_window": "metformin starting at the age of 3 ( A, B ), 9 ( C, D ) or 15 months ( E, F ). The differences in survival were reflected in pa",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3678",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3678,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "f longevity. Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly,",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-3714",
+      "claim_type": "percentage",
+      "raw_text": "14.1%",
+      "numeric_values": [
+        14.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3714,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "rted at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-3724",
+      "claim_type": "percentage",
+      "raw_text": "6.1%",
+      "numeric_values": [
+        6.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3724,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "e age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, corres",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-3747",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3747,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practicall",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-3766",
+      "claim_type": "percentage",
+      "raw_text": "17.5%",
+      "numeric_values": [
+        17.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3766,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influenc",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-3776",
+      "claim_type": "percentage",
+      "raw_text": "6.6%",
+      "numeric_values": [
+        6.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3776,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": ".1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when st",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3860",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 3860,
+      "sentence": "Metformin treatment started at the age of 3 or 9 months increased mean life span (+14.1% and 6.1%, correspondingly, p>0.05), median by 17.5% and 6.6%, correspondingly, but practically did not influence when started at the age of 15 months.",
+      "context_window": "ut practically did not influence when started at the age of 15 months. Maximum life span was increased by 1 month only in mice tr",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-3906",
+      "claim_type": "unit_value",
+      "raw_text": "1 month",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 3906,
+      "sentence": "Maximum life span was increased by 1 month only in mice treated from youngest age ( Table 3 ).",
+      "context_window": "at the age of 15 months. Maximum life span was increased by 1 month only in mice treated from youngest age ( Table 3 ). It is w",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-4047",
+      "claim_type": "percentage",
+      "raw_text": "20.7%",
+      "numeric_values": [
+        20.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4047,
+      "sentence": "It is worthy to note that the mean life span of tumor-free mice has increased by 20.7% in \u2018the youngest age started\u2019 group, by +7.1% in \u2018middle-age started\u2019 group and was reduced by 12.8% in the \u2018old age started\u2019 group.",
+      "context_window": "that the mean life span of tumor-free mice has increased by 20.7% in \u2018the youngest age started\u2019 group, by +7.1% in \u2018middle-ag",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-4094",
+      "claim_type": "percentage",
+      "raw_text": "7.1%",
+      "numeric_values": [
+        7.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4094,
+      "sentence": "It is worthy to note that the mean life span of tumor-free mice has increased by 20.7% in \u2018the youngest age started\u2019 group, by +7.1% in \u2018middle-age started\u2019 group and was reduced by 12.8% in the \u2018old age started\u2019 group.",
+      "context_window": "increased by 20.7% in \u2018the youngest age started\u2019 group, by +7.1% in \u2018middle-age started\u2019 group and was reduced by 12.8% in t",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-4148",
+      "claim_type": "percentage",
+      "raw_text": "12.8%",
+      "numeric_values": [
+        12.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4148,
+      "sentence": "It is worthy to note that the mean life span of tumor-free mice has increased by 20.7% in \u2018the youngest age started\u2019 group, by +7.1% in \u2018middle-age started\u2019 group and was reduced by 12.8% in the \u2018old age started\u2019 group.",
+      "context_window": ", by +7.1% in \u2018middle-age started\u2019 group and was reduced by 12.8% in the \u2018old age started\u2019 group. Parameter \u03b1 of the Gompertz",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-4306",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4306,
+      "sentence": "Parameter \u03b1 of the Gompertz model was higher by 1.4 times in the group subjected to metformin treatment from the age of 3 months and by 1.9 times in the middle-age started group as compared with the controls (p < 0.05).",
+      "context_window": "the group subjected to metformin treatment from the age of 3 months and by 1.9 times in the middle-age started group as compare",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-4395",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4395,
+      "sentence": "Parameter \u03b1 of the Gompertz model was higher by 1.4 times in the group subjected to metformin treatment from the age of 3 months and by 1.9 times in the middle-age started group as compared with the controls (p < 0.05).",
+      "context_window": "the middle-age started group as compared with the controls (p < 0.05). At the same time, it was slightly reduced in the old age",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-4652",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4652,
+      "sentence": "MRDT, mortality rate doubling time; in brackets - 95% confidential interval.",
+      "context_window": "ble 3 ). MRDT, mortality rate doubling time; in brackets - 95% confidential interval. The difference with the relevant co",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-p-4738",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4738,
+      "sentence": "The difference with the relevant controls is significant, p < 0.05.",
+      "context_window": "The difference with the relevant controls is significant, p < 0.05. According to the long-rank test there were no significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-5000",
+      "claim_type": "unit_value",
+      "raw_text": "246 days",
+      "numeric_values": [
+        246.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 5000,
+      "sentence": "The first tumor-bearing mice (malignant lymphoma) died at the age of 246 days in the control group and at the 300th day (+22%) in the group of mice treated with metformin starting at 3 mo, while at the 363rd day (+24.7%) in the group exposed to metformin starting from middle-age and at 482nd day (+5.2%) in the oldest metformin-treated group as compared to the age-matched controls ( Table 4 ).",
+      "context_window": "tumor-bearing mice (malignant lymphoma) died at the age of 246 days in the control group and at the 300th day (+22%) in the gro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5053",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5053,
+      "sentence": "The first tumor-bearing mice (malignant lymphoma) died at the age of 246 days in the control group and at the 300th day (+22%) in the group of mice treated with metformin starting at 3 mo, while at the 363rd day (+24.7%) in the group exposed to metformin starting from middle-age and at 482nd day (+5.2%) in the oldest metformin-treated group as compared to the age-matched controls ( Table 4 ).",
+      "context_window": "age of 246 days in the control group and at the 300th day (+22%) in the group of mice treated with metformin starting at 3",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5145",
+      "claim_type": "percentage",
+      "raw_text": "24.7%",
+      "numeric_values": [
+        24.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5145,
+      "sentence": "The first tumor-bearing mice (malignant lymphoma) died at the age of 246 days in the control group and at the 300th day (+22%) in the group of mice treated with metformin starting at 3 mo, while at the 363rd day (+24.7%) in the group exposed to metformin starting from middle-age and at 482nd day (+5.2%) in the oldest metformin-treated group as compared to the age-matched controls ( Table 4 ).",
+      "context_window": "d with metformin starting at 3 mo, while at the 363rd day (+24.7%) in the group exposed to metformin starting from middle-age",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5230",
+      "claim_type": "percentage",
+      "raw_text": "5.2%",
+      "numeric_values": [
+        5.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5230,
+      "sentence": "The first tumor-bearing mice (malignant lymphoma) died at the age of 246 days in the control group and at the 300th day (+22%) in the group of mice treated with metformin starting at 3 mo, while at the 363rd day (+24.7%) in the group exposed to metformin starting from middle-age and at 482nd day (+5.2%) in the oldest metformin-treated group as compared to the age-matched controls ( Table 4 ).",
+      "context_window": "ed to metformin starting from middle-age and at 482nd day (+5.2%) in the oldest metformin-treated group as compared to the a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5401",
+      "claim_type": "percentage",
+      "raw_text": "7.9%",
+      "numeric_values": [
+        7.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5401,
+      "sentence": "The mean life spans of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9 and 15 months respectively.\n\na, number of mice surviving the first tumor bearing animal death.\n\nb, TBM, tumor-bearing mice.",
+      "context_window": "spans of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the ag",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5407",
+      "claim_type": "percentage",
+      "raw_text": "7.3%",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5407,
+      "sentence": "The mean life spans of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9 and 15 months respectively.\n\na, number of mice surviving the first tumor bearing animal death.\n\nb, TBM, tumor-bearing mice.",
+      "context_window": "of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-pct-5416",
+      "claim_type": "percentage",
+      "raw_text": "5.4%",
+      "numeric_values": [
+        5.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5416,
+      "sentence": "The mean life spans of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9 and 15 months respectively.\n\na, number of mice surviving the first tumor bearing animal death.\n\nb, TBM, tumor-bearing mice.",
+      "context_window": "bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9 and 15 m",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-5476",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5476,
+      "sentence": "The mean life spans of tumor-bearing mice were similar being increased by 7.9%, 7.3% and 5.4% in groups treated with metformin from the age 3, 9 and 15 months respectively.\n\na, number of mice surviving the first tumor bearing animal death.\n\nb, TBM, tumor-bearing mice.",
+      "context_window": "5.4% in groups treated with metformin from the age 3, 9 and 15 months respectively. a, number of mice surviving the first tumor",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-6141",
+      "claim_type": "unit_value",
+      "raw_text": "15 months",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 6141,
+      "sentence": "There were no cases of lung adenocarcinomas in the mice treated with metformin from the age of 3 or 15 months whereas 3 cases of this malignancy were detected in the relevant controls.",
+      "context_window": "mas in the mice treated with metformin from the age of 3 or 15 months whereas 3 cases of this malignancy were detected in the rel",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1428",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1428,
+      "sentence": "Thus, Lipman et al. [ 30 ] reported that CR does not extend life span of F344xBNF1 rats when initiated in late middle age (18 months) or in old age (26 months).",
+      "context_window": "e span of F344xBNF1 rats when initiated in late middle age (18 months) or in old age (26 months). They had reported similar findi",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1454",
+      "claim_type": "unit_value",
+      "raw_text": "26 months",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1454,
+      "sentence": "Thus, Lipman et al. [ 30 ] reported that CR does not extend life span of F344xBNF1 rats when initiated in late middle age (18 months) or in old age (26 months).",
+      "context_window": "hen initiated in late middle age (18 months) or in old age (26 months). They had reported similar findings for the Long-Evans rat",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1640",
+      "claim_type": "unit_value",
+      "raw_text": "19 months",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1640,
+      "sentence": "In contrast, Dhabbi et al. [ 32 ] found that CR increases life span of B6C3F1 mice when initiated at 19 months of age.",
+      "context_window": "hat CR increases life span of B6C3F1 mice when initiated at 19 months of age. In their turn, Weindruch and Walford [ 28 ] reporte",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1879",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 1879,
+      "sentence": "Yu et al. [57] initiated CR in rats at the age of 6 weeks or 6 months.",
+      "context_window": "weaning. Yu et al. [57] initiated CR in rats at the age of 6 weeks or 6 months. It was found that when CR was limited to the r",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-1890",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1890,
+      "sentence": "Yu et al. [57] initiated CR in rats at the age of 6 weeks or 6 months.",
+      "context_window": "u et al. [57] initiated CR in rats at the age of 6 weeks or 6 months. It was found that when CR was limited to the rapid growth",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2187",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 2187,
+      "sentence": "When CR was initiated after the rapid growth period, it was almost as effective in increasing the age of the 10th percentile survivors as CR initiated at 6 weeks of age [ 33 ].",
+      "context_window": "the age of the 10th percentile survivors as CR initiated at 6 weeks of age [ 33 ]. Harrison et al. [ 34 ] and Miller et al. [",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2329",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2329,
+      "sentence": "Harrison et al. [ 34 ] and Miller et al. [ 35 ] studied effect of treatment with rapamycin started at the age of 9 or 20 months.",
+      "context_window": "fect of treatment with rapamycin started at the age of 9 or 20 months. The two data sets were not produced simul-taneously, but t",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2533",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 2533,
+      "sentence": "The two data sets were not produced simul-taneously, but they do represent work done using the same conditions of drug preparation, diet, water source, housing, and genetic stocks, with only a 1 year lag between start dates.",
+      "context_window": "iet, water source, housing, and genetic stocks, with only a 1 year lag between start dates. For male mice, starting rapamycin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2602",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2602,
+      "sentence": "For male mice, starting rapamycin at 9 months rather than at 20 months did not lead to any improvement in survival.",
+      "context_window": "g between start dates. For male mice, starting rapamycin at 9 months rather than at 20 months did not lead to any improvement in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2626",
+      "claim_type": "unit_value",
+      "raw_text": "20 months",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2626,
+      "sentence": "For male mice, starting rapamycin at 9 months rather than at 20 months did not lead to any improvement in survival.",
+      "context_window": "or male mice, starting rapamycin at 9 months rather than at 20 months did not lead to any improvement in survival. For female mic",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2758",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 2758,
+      "sentence": "For female mice, there was a suggestion that treatment started at the age of 9 months may lead to some slight decline in mortality risk before 1000 days of age, but comprehensive statistical treatment of the results failed to reveal any significance in the differences [ 35 ].",
+      "context_window": "there was a suggestion that treatment started at the age of 9 months may lead to some slight decline in mortality risk before 10",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC3082009_if_started_early_in_life_metformin_treatment_increases_life_-u-2824",
+      "claim_type": "unit_value",
+      "raw_text": "1000 days",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2824,
+      "sentence": "For female mice, there was a suggestion that treatment started at the age of 9 months may lead to some slight decline in mortality risk before 1000 days of age, but comprehensive statistical treatment of the results failed to reveal any significance in the differences [ 35 ].",
+      "context_window": "hs may lead to some slight decline in mortality risk before 1000 days of age, but comprehensive statistical treatment of the resu",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

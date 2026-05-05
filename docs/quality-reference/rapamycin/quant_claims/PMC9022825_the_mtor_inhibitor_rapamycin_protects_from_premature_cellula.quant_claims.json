@@ -1,0 +1,860 @@
+{
+  "paper_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula",
+  "doi": "10.1371/journal.pone.0266319",
+  "extracted_at": "2026-05-05T15:22:45+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 12,
+    "percentage": 8,
+    "sample_size": 12,
+    "p_value": 15
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-472",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 472,
+      "sentence": "Rapamycin was applied to a rat kidney transplantation model (3 mg/kg bodyweight loading dose, 1.5 mg/kg bodyweight daily dose) for 7 days.",
+      "context_window": "apamycin was applied to a rat kidney transplantation model (3 mg/kg bodyweight loading dose, 1.5 mg/kg bodyweight daily dose",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-505",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 505,
+      "sentence": "Rapamycin was applied to a rat kidney transplantation model (3 mg/kg bodyweight loading dose, 1.5 mg/kg bodyweight daily dose) for 7 days.",
+      "context_window": "ney transplantation model (3 mg/kg bodyweight loading dose, 1.5 mg/kg bodyweight daily dose) for 7 days. Low Rapamycin trough",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-542",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 542,
+      "sentence": "Rapamycin was applied to a rat kidney transplantation model (3 mg/kg bodyweight loading dose, 1.5 mg/kg bodyweight daily dose) for 7 days.",
+      "context_window": "dyweight loading dose, 1.5 mg/kg bodyweight daily dose) for 7 days. Low Rapamycin trough levels (2.1-6.8 ng/mL) prevented the",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-583",
+      "claim_type": "unit_value",
+      "raw_text": "6.8 ng/mL",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "ng/mL",
+      "source_section": "abstract",
+      "source_offset": 583,
+      "sentence": "Low Rapamycin trough levels (2.1-6.8 ng/mL) prevented the accumulation of p16 INK4a positive cells in tubules, interstitium, and glomerula.",
+      "context_window": "ht daily dose) for 7 days. Low Rapamycin trough levels (2.1-6.8 ng/mL) prevented the accumulation of p16 INK4a positive cells in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-606",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 606,
+      "sentence": "For surgery and organ harvesting, all rats were anesthetized with isoflurane (2% for induction, 1.5% thereafter; Abbott, Wiesbaden, Germany).",
+      "context_window": "gan harvesting, all rats were anesthetized with isoflurane (2% for induction, 1.5% thereafter; Abbott, Wiesbaden, Germany)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-624",
+      "claim_type": "percentage",
+      "raw_text": "1.5%",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 624,
+      "sentence": "For surgery and organ harvesting, all rats were anesthetized with isoflurane (2% for induction, 1.5% thereafter; Abbott, Wiesbaden, Germany).",
+      "context_window": "l rats were anesthetized with isoflurane (2% for induction, 1.5% thereafter; Abbott, Wiesbaden, Germany). Kidney grafts were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-1075",
+      "claim_type": "unit_value",
+      "raw_text": "5 mL",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1075,
+      "sentence": "Prior to ablation of the artery and the vein with microaneurysm clips and iris microscissors, kidneys were perfused in situ with 5 mL cold University of Wisconsin (UW) solution via the aorta.",
+      "context_window": "and iris microscissors, kidneys were perfused in situ with 5 mL cold University of Wisconsin (UW) solution via the aorta. K",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-1465",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 mg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1465,
+      "sentence": "Postoperative analgesia was achieved with 0.5 mg/mL tramadol (Gr\u00fcnenthal, Stolberg, Germany) in drinking water for 3 days.",
+      "context_window": "ithin 30 minutes. Postoperative analgesia was achieved with 0.5 mg/mL tramadol (Gr\u00fcnenthal, Stolberg, Germany) in drinking wat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-1538",
+      "claim_type": "unit_value",
+      "raw_text": "3 days",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1538,
+      "sentence": "Postoperative analgesia was achieved with 0.5 mg/mL tramadol (Gr\u00fcnenthal, Stolberg, Germany) in drinking water for 3 days.",
+      "context_window": "madol (Gr\u00fcnenthal, Stolberg, Germany) in drinking water for 3 days. Animals were monitored at least once daily for clinical an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-1729",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1729,
+      "sentence": "Survival until the planned endpoint was 100%.",
+      "context_window": "tive complications. Survival until the planned endpoint was 100%. In total, 40 animals were used as experimental units. The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-2453",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2453,
+      "sentence": "For Rapa treatment, the commercially available 1 mg/mL Rapa solution for oral application in patients was used (Wyeth, Madison, NJ).",
+      "context_window": "[ 28 - 33 ]. For Rapa treatment, the commercially available 1 mg/mL Rapa solution for oral application in patients was used",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-2571",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2571,
+      "sentence": "Rats received a loading dose of 3 mg/kg bodyweight on day 0 and daily maintenance doses of 1.5 mg/kg bodyweight thereafter by gavage.",
+      "context_window": "used (Wyeth, Madison, NJ). Rats received a loading dose of 3 mg/kg bodyweight on day 0 and daily maintenance doses of 1.5 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-2630",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2630,
+      "sentence": "Rats received a loading dose of 3 mg/kg bodyweight on day 0 and daily maintenance doses of 1.5 mg/kg bodyweight thereafter by gavage.",
+      "context_window": "3 mg/kg bodyweight on day 0 and daily maintenance doses of 1.5 mg/kg bodyweight thereafter by gavage. Rats in the vehicle gro",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-3668",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3668,
+      "sentence": "The sections were immersed in 3% H 2 O 2 /methanol to inactivate endogenous peroxidase.",
+      "context_window": "deparaffinized and hydrated. The sections were immersed in 3% H 2 O 2 /methanol to inactivate endogenous peroxidase. Slid",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-3751",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3751,
+      "sentence": "Slides were blocked with 20% normal goat serum overnight.",
+      "context_window": "inactivate endogenous peroxidase. Slides were blocked with 20% normal goat serum overnight. Tissue sections were then incu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-351",
+      "claim_type": "unit_value",
+      "raw_text": "2.3 ng/mL",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 351,
+      "sentence": "Rapa trough levels were 2.1-2.3 ng/mL on days 1 and 2 and increased to 6.5-6.8 ng/mL on days 5 and 7 ( Table 1 ) reaching the target range of modern immunosuppressive regimens [ 37 ].",
+      "context_window": "eatment was initiated on day 0. Rapa trough levels were 2.1-2.3 ng/mL on days 1 and 2 and increased to 6.5-6.8 ng/mL on days 5 an",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-u-398",
+      "claim_type": "unit_value",
+      "raw_text": "6.8 ng/mL",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "ng/mL",
+      "source_section": "results",
+      "source_offset": 398,
+      "sentence": "Rapa trough levels were 2.1-2.3 ng/mL on days 1 and 2 and increased to 6.5-6.8 ng/mL on days 5 and 7 ( Table 1 ) reaching the target range of modern immunosuppressive regimens [ 37 ].",
+      "context_window": "els were 2.1-2.3 ng/mL on days 1 and 2 and increased to 6.5-6.8 ng/mL on days 5 and 7 ( Table 1 ) reaching the target range of mo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-1213",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1213,
+      "sentence": "Quantitative assessment of positive cells in tubuli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehicle and Rapa treated animals on day 7 after transplantation.",
+      "context_window": "lls in tubuli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-1223",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1223,
+      "sentence": "Quantitative assessment of positive cells in tubuli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehicle and Rapa treated animals on day 7 after transplantation.",
+      "context_window": "uli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-1233",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1233,
+      "sentence": "Quantitative assessment of positive cells in tubuli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehicle and Rapa treated animals on day 7 after transplantation.",
+      "context_window": "he interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-1244",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1244,
+      "sentence": "Quantitative assessment of positive cells in tubuli (A), the interstitium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehicle and Rapa treated animals on day 7 after transplantation.",
+      "context_window": "tium (B), and glomerula (C). n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (D) Representative photomicrographs from vehicle and Rapa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-2326",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2326,
+      "sentence": "On day 7, 20% of tubular cells in control animals expressed IL-1\u03b2 in contrast to only 11.6% in Rapa treated rats ( Fig 2E ).",
+      "context_window": "lls, we performed immunohistochemistry for IL-1\u03b2. On day 7, 20% of tubular cells in control animals expressed IL-1\u03b2 in cont",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-2402",
+      "claim_type": "percentage",
+      "raw_text": "11.6%",
+      "numeric_values": [
+        11.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2402,
+      "sentence": "On day 7, 20% of tubular cells in control animals expressed IL-1\u03b2 in contrast to only 11.6% in Rapa treated rats ( Fig 2E ).",
+      "context_window": "ells in control animals expressed IL-1\u03b2 in contrast to only 11.6% in Rapa treated rats ( Fig 2E ). Whole tissue lysates from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-2923",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2923,
+      "sentence": "Representative photomicrographs and quantification as percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "fication as percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. While senescent cells pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-2933",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2933,
+      "sentence": "Representative photomicrographs and quantification as percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "s percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. While senescent cells promote infla",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-2943",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2943,
+      "sentence": "Representative photomicrographs and quantification as percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "ge of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. While senescent cells promote inflammatory pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-2954",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2954,
+      "sentence": "Representative photomicrographs and quantification as percentage of positive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "ive tubular cells are shown. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. While senescent cells promote inflammatory processes via",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-4593",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4593,
+      "sentence": "Representative photomicrographs are shown. n = 3. (C) Comparison of ED1 and ED2 positive infiltrating cells on day 7 in vehicle and Rapa treated rats.",
+      "context_window": "ohistochemistry. Representative photomicrographs are shown. n = 3. (C) Comparison of ED1 and ED2 positive infiltrating cells",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-4750",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4750,
+      "sentence": "Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts of inducible NO synthase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "ated rats. Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-4897",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4897,
+      "sentence": "Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts of inducible NO synthase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "ase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001. CD8 positive T-cells in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-4907",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4907,
+      "sentence": "Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts of inducible NO synthase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001. CD8 positive T-cells in the cortex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-4917",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4917,
+      "sentence": "Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts of inducible NO synthase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001. CD8 positive T-cells in the cortex calculated",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-4928",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4928,
+      "sentence": "Cortex and outer medulla were analyzed together. n = 6-8. (D) Semi-quantitative real-time PCR for mRNA transcripts of inducible NO synthase (iNOS) in whole tissue extracts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001.",
+      "context_window": "acts from kidney allografts. n = 4-6. *P<0.05, **P<0.01, ***P<0.001. CD8 positive T-cells in the cortex calculated as percenta",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-5097",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5097,
+      "sentence": "Representative photomicrographs are shown. n = 3. ***P<0.001.",
+      "context_window": "ohistochemistry. Representative photomicrographs are shown. n = 3. ***P<0.001. On a functional level, proteinuria was lower",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-5107",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5107,
+      "sentence": "Representative photomicrographs are shown. n = 3. ***P<0.001.",
+      "context_window": "istry. Representative photomicrographs are shown. n = 3. ***P<0.001. On a functional level, proteinuria was lower with Rapa tr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-5674",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5674,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "ent ( Fig 5D and 5E ). (A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-5739",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5739,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine co",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-5814",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5814,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "eatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mea",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-6077",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6077,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photom",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-6087",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6087,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "g, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-6097",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6097,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hemat",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-6108",
+      "claim_type": "p_value",
+      "raw_text": "P<0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6108,
+      "sentence": "However, the AKI score did not differ according to treatment ( Fig 5D and 5E ).\n\n(A) Proteinuria measured over 24 h. n = 4-5. (B) Fractional excretion of sodium (FE Na ) given in %. n = 4-6. (C) Creatinine clearance calculated from a 24-h urine collection. n = 3-5. (D) Acute kidney injury (AKI) score representing the mean percentage of tubular cross sections affected with tubular dilatation, basal membrane denudation, loss of the brush border, tubular cell flattening, tubular cell vacuolization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and eosin (H&E) stained kidney sections from vehicle and Rapa treated animals on day 1 after transplantation.",
+      "context_window": "lization, and tubular casts. n = 3-6. *P<0.05, **P<0.01, ***P<0.001. (E) Representative photomicrographs from hematoxylin and e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-pct-7000",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7000,
+      "sentence": "Bodyweight remained stable in Rapa treated rats whereas it increased by 23% until day 7 in rats allocated to vehicle ( Fig 6B ).",
+      "context_window": "emained stable in Rapa treated rats whereas it increased by 23% until day 7 in rats allocated to vehicle ( Fig 6B ). Measu",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-7201",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7201,
+      "sentence": "Measurements were performed at the end of the observation period on the indicated time points after transplantation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "context_window": "ime points after transplantation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-n-7227",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7227,
+      "sentence": "Measurements were performed at the end of the observation period on the indicated time points after transplantation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "context_window": "tation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-7237",
+      "claim_type": "p_value",
+      "raw_text": "P<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7237,
+      "sentence": "Measurements were performed at the end of the observation period on the indicated time points after transplantation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "context_window": ") Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9022825_the_mtor_inhibitor_rapamycin_protects_from_premature_cellula-p-7247",
+      "claim_type": "p_value",
+      "raw_text": "P<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7247,
+      "sentence": "Measurements were performed at the end of the observation period on the indicated time points after transplantation. (A) Blood glucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "context_window": "ucose levels. n = 3-5. (B) Body weight. n = 3-5. *P<0.05, **P<0.01.",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

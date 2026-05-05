@@ -1,0 +1,2180 @@
+{
+  "paper_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease",
+  "doi": "10.3390/nu16244282",
+  "extracted_at": "2026-05-05T15:22:48+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 18,
+    "p_value": 22,
+    "percentage": 26,
+    "sample_size": 4,
+    "mean_sd": 6,
+    "confidence_interval": 33,
+    "odds_ratio": 9
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-456",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 456,
+      "sentence": "Methods: Forty-seven male C57BL/6J mice were fed a high-fat diet (HFD) for 12 weeks to induce NAFLD, followed by quercetin treatment for 4 weeks.",
+      "context_window": "seven male C57BL/6J mice were fed a high-fat diet (HFD) for 12 weeks to induce NAFLD, followed by quercetin treatment for 4 week",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-518",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 518,
+      "sentence": "Methods: Forty-seven male C57BL/6J mice were fed a high-fat diet (HFD) for 12 weeks to induce NAFLD, followed by quercetin treatment for 4 weeks.",
+      "context_window": "weeks to induce NAFLD, followed by quercetin treatment for 4 weeks. Mice were divided into baseline, control, and two querceti",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-610",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 610,
+      "sentence": "Mice were divided into baseline, control, and two quercetin groups, receiving low (10 mg/kg) and high (50 mg/kg) doses.",
+      "context_window": "baseline, control, and two quercetin groups, receiving low (10 mg/kg) and high (50 mg/kg) doses. Liver histology was scored u",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-630",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 630,
+      "sentence": "Mice were divided into baseline, control, and two quercetin groups, receiving low (10 mg/kg) and high (50 mg/kg) doses.",
+      "context_window": "nd two quercetin groups, receiving low (10 mg/kg) and high (50 mg/kg) doses. Liver histology was scored using the NAFLD Activ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-891",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 891,
+      "sentence": "Results: Quercetin-treated groups showed significant reductions in NAS compared to controls ( p = 0.011), mainly in steatosis and steatohepatitis.",
+      "context_window": "showed significant reductions in NAS compared to controls ( p = 0.011), mainly in steatosis and steatohepatitis. Immunohistochemi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-499",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 499,
+      "sentence": "NAFLD has a worldwide prevalence that reaches 30% and is predicted to affect more than 100 million people in the Western world by 2030 [ 4 , 5 ].",
+      "context_window": "basis [ 3 ]. NAFLD has a worldwide prevalence that reaches 30% and is predicted to affect more than 100 million people in",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-522",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 522,
+      "sentence": "Forty-seven male C57BL/6J (wild type) mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAFLD [ 26 ].",
+      "context_window": "wild type) mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-531",
+      "claim_type": "percentage",
+      "raw_text": "0.15%",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 531,
+      "sentence": "Forty-seven male C57BL/6J (wild type) mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAFLD [ 26 ].",
+      "context_window": ") mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) fo",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-554",
+      "claim_type": "percentage",
+      "raw_text": "19.5%",
+      "numeric_values": [
+        19.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 554,
+      "sentence": "Forty-seven male C57BL/6J (wild type) mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAFLD [ 26 ].",
+      "context_window": "nd fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAF",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-598",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 598,
+      "sentence": "Forty-seven male C57BL/6J (wild type) mice were recruited and fed a high-fat diet (HFD-21% fat, 0.15% cholesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAFLD [ 26 ].",
+      "context_window": "holesterol, and 19.5% casein; Harland, Teklad, TD88137) for 12 weeks to reach NAFLD [ 26 ]. Afterward, the mice were randomly al",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-n-713",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 713,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "e randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-n-801",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 801,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "anized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD gr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-844",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 844,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD an",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-n-881",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 881,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "ved HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized produc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-1017",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1017,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "tuted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-1070",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1070,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "rcetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which recei",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-n-1117",
+      "claim_type": "sample_size",
+      "raw_text": "n = 12",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1117,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "r additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized produc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-1253",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1253,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "tuted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks. At",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-1306",
+      "claim_type": "unit_value",
+      "raw_text": "4 weeks",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1306,
+      "sentence": "Afterward, the mice were randomly allocated into four groups: baseline group (BSL, n = 11), which was then euthanized under deep sleep anesthesia; control group (CONTROL, n = 12), which received HFD for additional 4 weeks; Que-HP-\u03b2-CD group 1 (QUE 1, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 10 mg/kg) orally by gavage technique, for additional 4 weeks; Que-HP-\u03b2-CD quercetin group 2 (QUE 2, n = 12), which received HFD and the Que-HP-\u03b2-CD lyophilized product reconstituted in water for injection (WFI) (equivalent to quercetin 50 mg/kg) orally by gavage technique, for additional 4 weeks.",
+      "context_window": "rcetin 50 mg/kg) orally by gavage technique, for additional 4 weeks. At the end of the experimental period, all mice were eutha",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-2172",
+      "claim_type": "unit_value",
+      "raw_text": "600 mL",
+      "numeric_values": [
+        600.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2172,
+      "sentence": "Briefly, 4.8 g of HP-\u03b2-CD were placed in a 600 mL beaker and suspended in 500 mL of water.",
+      "context_window": "r ratios of 1:2. Briefly, 4.8 g of HP-\u03b2-CD were placed in a 600 mL beaker and suspended in 500 mL of water. Then, 500 mg of QU",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-2203",
+      "claim_type": "unit_value",
+      "raw_text": "500 mL",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 2203,
+      "sentence": "Briefly, 4.8 g of HP-\u03b2-CD were placed in a 600 mL beaker and suspended in 500 mL of water.",
+      "context_window": "of HP-\u03b2-CD were placed in a 600 mL beaker and suspended in 500 mL of water. Then, 500 mg of QUE was added under continuous st",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-2226",
+      "claim_type": "unit_value",
+      "raw_text": "500 mg",
+      "numeric_values": [
+        500.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2226,
+      "sentence": "Then, 500 mg of QUE was added under continuous stirring and protected from light due to the molecule\u2019s photosensitivity.",
+      "context_window": "in a 600 mL beaker and suspended in 500 mL of water. Then, 500 mg of QUE was added under continuous stirring and protected fr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2358",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2358,
+      "sentence": "Small amounts of 6% ( v / v ) ammonium hydroxide were gradually added until complete dissolution of QUE while maintaining the pH at approximately 9.0-9.5.",
+      "context_window": "ht due to the molecule\u2019s photosensitivity. Small amounts of 6% ( v / v ) ammonium hydroxide were gradually added until com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-2910",
+      "claim_type": "mean_sd",
+      "raw_text": "7.3 \u00b1 0.15",
+      "numeric_values": [
+        7.3,
+        0.15
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2910,
+      "sentence": "The amount of QUE in the lyophilized product was found to be 7.3 \u00b1 0.15 % ( w / w ).",
+      "context_window": "he amount of QUE in the lyophilized product was found to be 7.3 \u00b1 0.15 % ( w / w ). The formation of the Que-HP-\u03b2-CD has been conf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2916",
+      "claim_type": "percentage",
+      "raw_text": "0.15 %",
+      "numeric_values": [
+        0.15
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2916,
+      "sentence": "The amount of QUE in the lyophilized product was found to be 7.3 \u00b1 0.15 % ( w / w ).",
+      "context_window": "unt of QUE in the lyophilized product was found to be 7.3 \u00b1 0.15 % ( w / w ). The formation of the Que-HP-\u03b2-CD has been confir",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-3841",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3841,
+      "sentence": "The minimum criterion for NAFLD is a steatosis greater than 5% [ 30 ].",
+      "context_window": "The minimum criterion for NAFLD is a steatosis greater than 5% [ 30 ]. The diagnosis of NASH is associated with a NAS equa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-5173",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5173,
+      "sentence": "The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions of each specific antibody.",
+      "context_window": "USA), dehydrated, and mounted. The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-5184",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5184,
+      "sentence": "The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions of each specific antibody.",
+      "context_window": "drated, and mounted. The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions of each s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-5198",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5198,
+      "sentence": "The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions of each specific antibody.",
+      "context_window": "unted. The expression of Beclin1 \u2265 10%, LCA \u2265 5%, and P62 \u2265 10% were defined as strong expressions of each specific antibod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-5540",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 5540,
+      "sentence": "Snap-frozen liver tissues were homogenized at 4 \u00b0C using a plastic pestle in a sucrose-based lysis buffer (0.25 M sucrose, 25 mM Tris, pH 7.4) containing protease (#04693159001, Roche Diagnostics GmbH) and phosphatase inhibitors (#524629, Calbiochem) (60 \u03bcL lysis buffer per 10 mg of tissue).",
+      "context_window": "se inhibitors (#524629, Calbiochem) (60 \u03bcL lysis buffer per 10 mg of tissue). Tissue homogenates were incubated for 30 min on",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-6045",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6045,
+      "sentence": "Samples (40 \u03bcg) were loaded on discontinuous SDS gels using 12% separating and 5% stacking gels.",
+      "context_window": "Samples (40 \u03bcg) were loaded on discontinuous SDS gels using 12% separating and 5% stacking gels. PVDF-PSQ membranes (Millip",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-6064",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6064,
+      "sentence": "Samples (40 \u03bcg) were loaded on discontinuous SDS gels using 12% separating and 5% stacking gels.",
+      "context_window": "e loaded on discontinuous SDS gels using 12% separating and 5% stacking gels. PVDF-PSQ membranes (Millipore Corp., Burling",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-6352",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6352,
+      "sentence": "At first, the membranes were blocked with 5% non-fat dry milk in TBS-T (150 mM NaCl, 20 mM Tris, pH 7.5, 0.05% Tween-20) at room temperature for 60 min, and they were then hybridized overnight at 4 \u00b0C with primary anti-LC3A (1:700; #ap1805a, Absepta), anti-LC3B (1:1000; #LC3 5F10, Nanotools) or anti-SQSTM1/p62 (1:10,000, #ab109012, Abcam) antibodies.",
+      "context_window": "LC3B antibodies. At first, the membranes were blocked with 5% non-fat dry milk in TBS-T (150 mM NaCl, 20 mM Tris, pH 7.5,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-6415",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6415,
+      "sentence": "At first, the membranes were blocked with 5% non-fat dry milk in TBS-T (150 mM NaCl, 20 mM Tris, pH 7.5, 0.05% Tween-20) at room temperature for 60 min, and they were then hybridized overnight at 4 \u00b0C with primary anti-LC3A (1:700; #ap1805a, Absepta), anti-LC3B (1:1000; #LC3 5F10, Nanotools) or anti-SQSTM1/p62 (1:10,000, #ab109012, Abcam) antibodies.",
+      "context_window": "non-fat dry milk in TBS-T (150 mM NaCl, 20 mM Tris, pH 7.5, 0.05% Tween-20) at room temperature for 60 min, and they were the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-8006",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8006,
+      "sentence": "Odds ratios (OR) with their 95% confidence intervals (CI) were calculated for the nominal variables implementing the Haldane-Anscombe correction for frequencies equal to zero [ 32 ].",
+      "context_window": "the normality of distribution. Odds ratios (OR) with their 95% confidence intervals (CI) were calculated for the nominal v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-8318",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8318,
+      "sentence": "Regarding Western blot analysis, densitometric data were logarithmically transformed prior to any further analysis and are presented as geometric means with 95% CI.",
+      "context_window": "further analysis and are presented as geometric means with 95% CI. One-way ANOVA (Dunnett\u2019s post hoc test) was employed fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-112",
+      "claim_type": "mean_sd",
+      "raw_text": "5.83 \u00b1 1.27",
+      "numeric_values": [
+        5.83,
+        1.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 112,
+      "sentence": "The control group exhibited the highest NAFLD Activity Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "context_window": "ty Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-144",
+      "claim_type": "mean_sd",
+      "raw_text": "4.75 \u00b1 1.06",
+      "numeric_values": [
+        4.75,
+        1.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 144,
+      "sentence": "The control group exhibited the highest NAFLD Activity Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "context_window": "roups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-165",
+      "claim_type": "mean_sd",
+      "raw_text": "5.17 \u00b1 1.27",
+      "numeric_values": [
+        5.17,
+        1.27
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 165,
+      "sentence": "The control group exhibited the highest NAFLD Activity Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "context_window": "lue of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011). This result was prima",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-188",
+      "claim_type": "mean_sd",
+      "raw_text": "3.73 \u00b1 1.56",
+      "numeric_values": [
+        3.73,
+        1.56
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 188,
+      "sentence": "The control group exhibited the highest NAFLD Activity Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "context_window": "pared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011). This result was primarily driven by the stea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-203",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.011",
+      "numeric_values": [
+        0.011
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 203,
+      "sentence": "The control group exhibited the highest NAFLD Activity Score (NAS) among all study groups, with a mean value of 5.83 \u00b1 1.27, compared to QUE 1 (4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011).",
+      "context_window": "(4.75 \u00b1 1.06), QUE 2 (5.17 \u00b1 1.27), and BSL (3.73 \u00b1 1.56) ( p = 0.011). This result was primarily driven by the steatosis compone",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-msd-345",
+      "claim_type": "mean_sd",
+      "raw_text": "59.17 \u00b1 25.39",
+      "numeric_values": [
+        59.17,
+        25.39
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 345,
+      "sentence": "This result was primarily driven by the steatosis component of the NAS, with the control group demonstrating a steatosis level of 59.17 \u00b1 25.39%, significantly higher than that of the other study groups ( p < 0.001).",
+      "context_window": ", with the control group demonstrating a steatosis level of 59.17 \u00b1 25.39%, significantly higher than that of the other study groups",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-353",
+      "claim_type": "percentage",
+      "raw_text": "25.39%",
+      "numeric_values": [
+        25.39
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 353,
+      "sentence": "This result was primarily driven by the steatosis component of the NAS, with the control group demonstrating a steatosis level of 59.17 \u00b1 25.39%, significantly higher than that of the other study groups ( p < 0.001).",
+      "context_window": "he control group demonstrating a steatosis level of 59.17 \u00b1 25.39%, significantly higher than that of the other study groups (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-420",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 420,
+      "sentence": "This result was primarily driven by the steatosis component of the NAS, with the control group demonstrating a steatosis level of 59.17 \u00b1 25.39%, significantly higher than that of the other study groups ( p < 0.001).",
+      "context_window": "significantly higher than that of the other study groups ( p < 0.001). The detailed NAS characteristics of each study group are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-591",
+      "claim_type": "percentage",
+      "raw_text": "83.33%",
+      "numeric_values": [
+        83.33
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 591,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-618",
+      "claim_type": "percentage",
+      "raw_text": "33.3%",
+      "numeric_values": [
+        33.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 618,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-636",
+      "claim_type": "percentage",
+      "raw_text": "41.67%",
+      "numeric_values": [
+        41.67
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 636,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "eatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-678",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.01-0.69",
+      "numeric_values": [
+        0.01,
+        0.69
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 678,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-697",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.020",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 697,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "1.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-718",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02-0.96",
+      "numeric_values": [
+        0.02,
+        0.96
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 718,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 . No",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-737",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.045",
+      "numeric_values": [
+        0.045
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 737,
+      "sentence": "The control group demonstrated significantly higher rates of steatohepatitis (83.33%) compared to QUE 1 (33.3%) and QUE 2 (41.67%), with an odds ratio (OR) of 0.10 (95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 .",
+      "context_window": "(95% CI: 0.01-0.69; p = 0.020) and 0.14 (95% CI: 0.02-0.96; p = 0.045), respectively, as illustrated in Figure 1 . No significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-1561",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 6.00",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1561,
+      "sentence": "Concerning LCA expression, QUE 1 had a statistically significant stronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also had a stronger expression than the control group, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390).",
+      "context_window": "nificant stronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-1571",
+      "claim_type": "confidence_interval",
+      "raw_text": "95%CI: 1.02-35.38",
+      "numeric_values": [
+        1.02,
+        35.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1571,
+      "sentence": "Concerning LCA expression, QUE 1 had a statistically significant stronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also had a stronger expression than the control group, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390).",
+      "context_window": "tronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also had a stronger expres",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-1724",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.14",
+      "numeric_values": [
+        2.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1724,
+      "sentence": "Concerning LCA expression, QUE 1 had a statistically significant stronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also had a stronger expression than the control group, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390).",
+      "context_window": "ntrol group, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390). All BSL group mice s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-1734",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38-12.20",
+      "numeric_values": [
+        0.38,
+        12.2
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1734,
+      "sentence": "Concerning LCA expression, QUE 1 had a statistically significant stronger expression compared to the control group (OR: 6.00; 95%CI: 1.02-35.38; p -value: 0.048), whereas QUE 2 also had a stronger expression than the control group, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390).",
+      "context_window": "p, but it did not reach statistical significance (OR: 2.14; 95% CI: 0.38-12.20; p -value: 0.390). All BSL group mice showed a strong expre",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-1893",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 62.43",
+      "numeric_values": [
+        62.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1893,
+      "sentence": "All BSL group mice showed a strong expression of LCA, which was statistically significant compared to the control group (OR: 62.43; 95% CI: 2.85-1365.60; p -value: 0.009).",
+      "context_window": "as statistically significant compared to the control group (OR: 62.43; 95% CI: 2.85-1365.60; p -value: 0.009). Regarding P62 expr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-1904",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.85-1365.60",
+      "numeric_values": [
+        2.85,
+        1365.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 1904,
+      "sentence": "All BSL group mice showed a strong expression of LCA, which was statistically significant compared to the control group (OR: 62.43; 95% CI: 2.85-1365.60; p -value: 0.009).",
+      "context_window": "cally significant compared to the control group (OR: 62.43; 95% CI: 2.85-1365.60; p -value: 0.009). Regarding P62 expression, both QUE 1 and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-2099",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 2.00",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2099,
+      "sentence": "Regarding P62 expression, both QUE 1 and QUE 2 had a stronger expression compared to the control group, but it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively.",
+      "context_window": "l group, but it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-2109",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.38-10.41",
+      "numeric_values": [
+        0.38,
+        10.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2109,
+      "sentence": "Regarding P62 expression, both QUE 1 and QUE 2 had a stronger expression compared to the control group, but it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively.",
+      "context_window": "ut it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value:",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-2149",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.43",
+      "numeric_values": [
+        1.43
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2149,
+      "sentence": "Regarding P62 expression, both QUE 1 and QUE 2 had a stronger expression compared to the control group, but it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively.",
+      "context_window": "ance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively. All BSL",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-2159",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.27-7.52",
+      "numeric_values": [
+        0.27,
+        7.52
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2159,
+      "sentence": "Regarding P62 expression, both QUE 1 and QUE 2 had a stronger expression compared to the control group, but it did not reach statistical significance with OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively.",
+      "context_window": "OR: 2.00; 95% CI: 0.38-10.41; p -value: 0.410 and OR: 1.43; 95% CI: 0.27-7.52; p -value: 0.674, respectively. All BSL animals had a stron",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-2324",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 43.44",
+      "numeric_values": [
+        43.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2324,
+      "sentence": "All BSL animals had a strong expression of P62, which was statistically significant compared to the control group (OR: 43.44; 95% CI: 2.05-920.41; p -value: 0.016).",
+      "context_window": "as statistically significant compared to the control group (OR: 43.44; 95% CI: 2.05-920.41; p -value: 0.016). Most mice with ste",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-2335",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 2.05-920.41",
+      "numeric_values": [
+        2.05,
+        920.41
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2335,
+      "sentence": "All BSL animals had a strong expression of P62, which was statistically significant compared to the control group (OR: 43.44; 95% CI: 2.05-920.41; p -value: 0.016).",
+      "context_window": "cally significant compared to the control group (OR: 43.44; 95% CI: 2.05-920.41; p -value: 0.016). Most mice with steatohepatitis showed s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2440",
+      "claim_type": "percentage",
+      "raw_text": "68.42%",
+      "numeric_values": [
+        68.42
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2440,
+      "sentence": "Most mice with steatohepatitis showed strong Beclin1 expression (68.42%), which was similar to the mice with a fatty liver (67.86%), with no statistically significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968).",
+      "context_window": "mice with steatohepatitis showed strong Beclin1 expression (68.42%), which was similar to the mice with a fatty liver (67.86%)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2499",
+      "claim_type": "percentage",
+      "raw_text": "67.86%",
+      "numeric_values": [
+        67.86
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2499,
+      "sentence": "Most mice with steatohepatitis showed strong Beclin1 expression (68.42%), which was similar to the mice with a fatty liver (67.86%), with no statistically significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968).",
+      "context_window": "(68.42%), which was similar to the mice with a fatty liver (67.86%), with no statistically significant difference between the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-2577",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 1.02",
+      "numeric_values": [
+        1.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2577,
+      "sentence": "Most mice with steatohepatitis showed strong Beclin1 expression (68.42%), which was similar to the mice with a fatty liver (67.86%), with no statistically significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968).",
+      "context_window": "tatistically significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968). In contrast, 73.68% o",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-2587",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.29-3.59",
+      "numeric_values": [
+        0.29,
+        3.59
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2587,
+      "sentence": "Most mice with steatohepatitis showed strong Beclin1 expression (68.42%), which was similar to the mice with a fatty liver (67.86%), with no statistically significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968).",
+      "context_window": "ly significant difference between the two groups (OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968). In contrast, 73.68% of the steatohepatit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2637",
+      "claim_type": "percentage",
+      "raw_text": "73.68%",
+      "numeric_values": [
+        73.68
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2637,
+      "sentence": "In contrast, 73.68% of the steatohepatitis group had weak LCA expression, which was significantly different from the fatty liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001).",
+      "context_window": "OR: 1.02; 95% CI: 0.29-3.59; p -value: 0.968). In contrast, 73.68% of the steatohepatitis group had weak LCA expression, which",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-2766",
+      "claim_type": "percentage",
+      "raw_text": "78.57%",
+      "numeric_values": [
+        78.57
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2766,
+      "sentence": "In contrast, 73.68% of the steatohepatitis group had weak LCA expression, which was significantly different from the fatty liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001).",
+      "context_window": "s significantly different from the fatty liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-2806",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2806,
+      "sentence": "In contrast, 73.68% of the steatohepatitis group had weak LCA expression, which was significantly different from the fatty liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001).",
+      "context_window": "liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001). A statistically sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-2816",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.02-0.38",
+      "numeric_values": [
+        0.02,
+        0.38
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 2816,
+      "sentence": "In contrast, 73.68% of the steatohepatitis group had weak LCA expression, which was significantly different from the fatty liver group, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001).",
+      "context_window": "up, where 78.57% exhibited strong LCA expression (OR: 0.10; 95% CI: 0.02-0.38; p -value: <0.001). A statistically significant difference",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-3027",
+      "claim_type": "percentage",
+      "raw_text": "73.68%",
+      "numeric_values": [
+        73.68
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3027,
+      "sentence": "A statistically significant difference was also observed in P62 expression, with mice having steatohepatitis showing weaker expression compared to those with a fatty liver (73.68% vs.",
+      "context_window": "ing weaker expression compared to those with a fatty liver (73.68% vs. 25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-pct-3038",
+      "claim_type": "percentage",
+      "raw_text": "25.00%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3038,
+      "sentence": "25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002).",
+      "context_window": "expression compared to those with a fatty liver (73.68% vs. 25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002). Subcellul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-or-a-3047",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR: 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3047,
+      "sentence": "25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002).",
+      "context_window": "n compared to those with a fatty liver (73.68% vs. 25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002). Subcellular fraction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3057",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.03-0.45",
+      "numeric_values": [
+        0.03,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3057,
+      "sentence": "25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002).",
+      "context_window": "to those with a fatty liver (73.68% vs. 25.00%) (OR: 0.12; 95% CI: 0.03-0.45; p -value: 0.002). Subcellular fractionation enabled us to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3506",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.99-1.72",
+      "numeric_values": [
+        0.99,
+        1.72
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3506,
+      "sentence": "P62 levels were significantly higher in the P fraction compared to the corresponding SP fraction in both QUE 1 (P: 1.30, 95% CI: 0.99-1.72 vs.",
+      "context_window": "ed to the corresponding SP fraction in both QUE 1 (P: 1.30, 95% CI: 0.99-1.72 vs. SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3538",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.70-1.10",
+      "numeric_values": [
+        0.7,
+        1.1
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3538,
+      "sentence": "SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs.",
+      "context_window": "ion in both QUE 1 (P: 1.30, 95% CI: 0.99-1.72 vs. SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs. SP: 0.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-3557",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3557,
+      "sentence": "SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs.",
+      "context_window": "P: 1.30, 95% CI: 0.99-1.72 vs. SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs. SP: 0.92, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3587",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.05-1.58",
+      "numeric_values": [
+        1.05,
+        1.58
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3587,
+      "sentence": "SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs.",
+      "context_window": "SP: 0.88, 95% CI: 0.70-1.10; p < 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs. SP: 0.92, 95% CI: 0.72-1.16; p < 0.05) groups. A signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3619",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.72-1.16",
+      "numeric_values": [
+        0.72,
+        1.16
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3619,
+      "sentence": "SP: 0.92, 95% CI: 0.72-1.16; p < 0.05) groups.",
+      "context_window": "< 0.05) and QUE 2 (P: 1.29, 95% CI: 1.05-1.58 vs. SP: 0.92, 95% CI: 0.72-1.16; p < 0.05) groups. A significant difference between P and S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-3638",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3638,
+      "sentence": "SP: 0.92, 95% CI: 0.72-1.16; p < 0.05) groups.",
+      "context_window": "P: 1.29, 95% CI: 1.05-1.58 vs. SP: 0.92, 95% CI: 0.72-1.16; p < 0.05) groups. A significant difference between P and SP fraction",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3757",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.30-1.86",
+      "numeric_values": [
+        1.3,
+        1.86
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3757,
+      "sentence": "A significant difference between P and SP fractions was also observed in the control group (P: 1.55, 95% CI: 1.30-1.86 vs.",
+      "context_window": "fractions was also observed in the control group (P: 1.55, 95% CI: 1.30-1.86 vs. SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no signif",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3789",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.58-1.14",
+      "numeric_values": [
+        0.58,
+        1.14
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3789,
+      "sentence": "SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no significant difference was noted in the baseline group (P: 1.46, 95% CI: 1.06-2.00 vs.",
+      "context_window": "the control group (P: 1.55, 95% CI: 1.30-1.86 vs. SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no significant difference was noted in th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-3808",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3808,
+      "sentence": "SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no significant difference was noted in the baseline group (P: 1.46, 95% CI: 1.06-2.00 vs.",
+      "context_window": "P: 1.55, 95% CI: 1.30-1.86 vs. SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no significant difference was noted in the baseline",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3893",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.06-2.00",
+      "numeric_values": [
+        1.06,
+        2.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3893,
+      "sentence": "SP: 0.81, 95% CI: 0.58-1.14; p < 0.01), while no significant difference was noted in the baseline group (P: 1.46, 95% CI: 1.06-2.00 vs.",
+      "context_window": "ficant difference was noted in the baseline group (P: 1.46, 95% CI: 1.06-2.00 vs. SP: 1.16, 95% CI: 0.83-1.64; p > 0.05). Concerning LC3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-3925",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.83-1.64",
+      "numeric_values": [
+        0.83,
+        1.64
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 3925,
+      "sentence": "SP: 1.16, 95% CI: 0.83-1.64; p > 0.05).",
+      "context_window": "he baseline group (P: 1.46, 95% CI: 1.06-2.00 vs. SP: 1.16, 95% CI: 0.83-1.64; p > 0.05). Concerning LC3A ( Figure 3 ), LC3A-II was gene",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-3944",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3944,
+      "sentence": "SP: 1.16, 95% CI: 0.83-1.64; p > 0.05).",
+      "context_window": "P: 1.46, 95% CI: 1.06-2.00 vs. SP: 1.16, 95% CI: 0.83-1.64; p > 0.05). Concerning LC3A ( Figure 3 ), LC3A-II was generally unde",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4181",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.24-0.36",
+      "numeric_values": [
+        0.24,
+        0.36
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4181,
+      "sentence": "A significant difference in LC3A-I present in P and SP fractions was detected in QUE 2 (P: 0.30, 95% CI: 0.24-0.36 vs.",
+      "context_window": "esent in P and SP fractions was detected in QUE 2 (P: 0.30, 95% CI: 0.24-0.36 vs. SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control gro",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4213",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.36-0.60",
+      "numeric_values": [
+        0.36,
+        0.6
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4213,
+      "sentence": "SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 vs.",
+      "context_window": "detected in QUE 2 (P: 0.30, 95% CI: 0.24-0.36 vs. SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 v",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4232",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4232,
+      "sentence": "SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 vs.",
+      "context_window": "P: 0.30, 95% CI: 0.24-0.36 vs. SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 vs. SP: 0.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4271",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.21-0.33",
+      "numeric_values": [
+        0.21,
+        0.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4271,
+      "sentence": "SP: 0.46, 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 vs.",
+      "context_window": ", 95% CI: 0.36-0.60; p < 0.01), the control group (P: 0.26, 95% CI: 0.21-0.33 vs. SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baselin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4303",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.34-0.56",
+      "numeric_values": [
+        0.34,
+        0.56
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4303,
+      "sentence": "SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0.35 vs.",
+      "context_window": "the control group (P: 0.26, 95% CI: 0.21-0.33 vs. SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4322",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4322,
+      "sentence": "SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0.35 vs.",
+      "context_window": "P: 0.26, 95% CI: 0.21-0.33 vs. SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0.35 vs. SP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4366",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.20-0.35",
+      "numeric_values": [
+        0.2,
+        0.35
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4366,
+      "sentence": "SP: 0.44, 95% CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0.35 vs.",
+      "context_window": "CI: 0.34-0.56; p < 0.01), and the baseline group (P: 0.26, 95% CI: 0.20-0.35 vs. SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4398",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.30-0.47",
+      "numeric_values": [
+        0.3,
+        0.47
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4398,
+      "sentence": "SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs.",
+      "context_window": "he baseline group (P: 0.26, 95% CI: 0.20-0.35 vs. SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4417",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4417,
+      "sentence": "SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs.",
+      "context_window": "P: 0.26, 95% CI: 0.20-0.35 vs. SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs. SP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4461",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.21-0.34",
+      "numeric_values": [
+        0.21,
+        0.34
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4461,
+      "sentence": "SP: 0.38, 95% CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs.",
+      "context_window": "CI: 0.30-0.47; p < 0.05), but not in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs. SP: 0.39, 95% CI: 0.27-0.57; p > 0.05). Furthermore, LC",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4493",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.27-0.57",
+      "numeric_values": [
+        0.27,
+        0.57
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4493,
+      "sentence": "SP: 0.39, 95% CI: 0.27-0.57; p > 0.05).",
+      "context_window": "ot in QUE 1 group (P: 0.26, 95% CI: 0.21-0.34 vs. SP: 0.39, 95% CI: 0.27-0.57; p > 0.05). Furthermore, LC3A-I expression did not differ s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4512",
+      "claim_type": "p_value",
+      "raw_text": "p > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4512,
+      "sentence": "SP: 0.39, 95% CI: 0.27-0.57; p > 0.05).",
+      "context_window": "P: 0.26, 95% CI: 0.21-0.34 vs. SP: 0.39, 95% CI: 0.27-0.57; p > 0.05). Furthermore, LC3A-I expression did not differ significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4793",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.06-0.15",
+      "numeric_values": [
+        0.06,
+        0.15
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4793,
+      "sentence": "LC3B-I levels differed significantly between fractions only in the baseline group (P: 0.09, 95% CI: 0.06-0.15 vs.",
+      "context_window": "ntly between fractions only in the baseline group (P: 0.09, 95% CI: 0.06-0.15 vs. SP: 0.17, 95% CI: 0.11-0.25; p < 0.05). LC3B-\u0399\u0399 differe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4825",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.11-0.25",
+      "numeric_values": [
+        0.11,
+        0.25
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4825,
+      "sentence": "SP: 0.17, 95% CI: 0.11-0.25; p < 0.05).",
+      "context_window": "he baseline group (P: 0.09, 95% CI: 0.06-0.15 vs. SP: 0.17, 95% CI: 0.11-0.25; p < 0.05). LC3B-\u0399\u0399 differed marginally in the QUE 2 (P: 1.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4844",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4844,
+      "sentence": "SP: 0.17, 95% CI: 0.11-0.25; p < 0.05).",
+      "context_window": "P: 0.09, 95% CI: 0.06-0.15 vs. SP: 0.17, 95% CI: 0.11-0.25; p < 0.05). LC3B-\u0399\u0399 differed marginally in the QUE 2 (P: 1.37, 95% CI",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4906",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.18-1.59",
+      "numeric_values": [
+        1.18,
+        1.59
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4906,
+      "sentence": "LC3B-\u0399\u0399 differed marginally in the QUE 2 (P: 1.37, 95% CI: 1.18-1.59 vs.",
+      "context_window": "< 0.05). LC3B-\u0399\u0399 differed marginally in the QUE 2 (P: 1.37, 95% CI: 1.18-1.59 vs. SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4938",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.85-1.33",
+      "numeric_values": [
+        0.85,
+        1.33
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4938,
+      "sentence": "SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.00 vs.",
+      "context_window": "ally in the QUE 2 (P: 1.37, 95% CI: 1.18-1.59 vs. SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-4957",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4957,
+      "sentence": "SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.00 vs.",
+      "context_window": "P: 1.37, 95% CI: 1.18-1.59 vs. SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.00 vs. SP:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-4999",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 1.15-2.00",
+      "numeric_values": [
+        1.15,
+        2.0
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 4999,
+      "sentence": "SP: 1.06, 95% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.00 vs.",
+      "context_window": "5% CI: 0.85-1.33; p = 0.05) and the control group (P: 1.52, 95% CI: 1.15-2.00 vs. SP: 1.09, 95% CI: 0.87-1.37; p = 0.051). No significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-ci-5031",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: 0.87-1.37",
+      "numeric_values": [
+        0.87,
+        1.37
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 5031,
+      "sentence": "SP: 1.09, 95% CI: 0.87-1.37; p = 0.051).",
+      "context_window": "the control group (P: 1.52, 95% CI: 1.15-2.00 vs. SP: 1.09, 95% CI: 0.87-1.37; p = 0.051). No significant differences were found in LC3B-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-5050",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.051",
+      "numeric_values": [
+        0.051
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5050,
+      "sentence": "SP: 1.09, 95% CI: 0.87-1.37; p = 0.051).",
+      "context_window": "P: 1.52, 95% CI: 1.15-2.00 vs. SP: 1.09, 95% CI: 0.87-1.37; p = 0.051). No significant differences were found in LC3B-I or LC3B-I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-5542",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5542,
+      "sentence": "Further subclassification of animals within each group, depending on the presence or absence of steatohepatitis, revealed that LC3A-I levels were higher in the P fraction of mice exhibiting steatohepatitis compared to mice exhibiting fatty liver disease in the CON group ( p < 0.05).",
+      "context_window": "d to mice exhibiting fatty liver disease in the CON group ( p < 0.05). Apart from this, the expression levels of the membrane-bo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-5878",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5878,
+      "sentence": "In the BSL group, mice exhibiting fatty liver disease demonstrated significantly higher levels of LC3A-I and LC3B-I in the SP than in the P fraction ( p < 0.05) ( Figure 4 ).",
+      "context_window": "els of LC3A-I and LC3B-I in the SP than in the P fraction ( p < 0.05) ( Figure 4 ). Even though statistically insignificant due",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-6183",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6183,
+      "sentence": "High LC3A-I levels in the SP fraction were also apparent in mice with a fatty liver belonging to the QUE 2 group ( p < 0.05).",
+      "context_window": "t in mice with a fatty liver belonging to the QUE 2 group ( p < 0.05). Significantly higher p62 levels in the P fraction were no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-6315",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6315,
+      "sentence": "Significantly higher p62 levels in the P fraction were noticed in mice with a fatty liver belonging to the QUE 1 group ( p < 0.05).",
+      "context_window": "d in mice with a fatty liver belonging to the QUE 1 group ( p < 0.05). As far as steatohepatitis is concerned, mice belonging to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-6455",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6455,
+      "sentence": "As far as steatohepatitis is concerned, mice belonging to the CON group had higher levels of p62 and LC3B-II in the P fraction ( p < 0.01) and higher levels of LC3A-I in the SP fraction ( p < 0.01).",
+      "context_window": "up had higher levels of p62 and LC3B-II in the P fraction ( p < 0.01) and higher levels of LC3A-I in the SP fraction ( p < 0.01)",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-p-6514",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6514,
+      "sentence": "As far as steatohepatitis is concerned, mice belonging to the CON group had higher levels of p62 and LC3B-II in the P fraction ( p < 0.01) and higher levels of LC3A-I in the SP fraction ( p < 0.01).",
+      "context_window": "p < 0.01) and higher levels of LC3A-I in the SP fraction ( p < 0.01). In general, due to, in some cases, the low number of samp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-3112",
+      "claim_type": "unit_value",
+      "raw_text": "10 mg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3112,
+      "sentence": "Our study evaluated the therapeutic effects of quercetin at two doses (10 mg/kg and 50 mg/kg) on NAFLD, but the findings did not demonstrate a clear dose-dependent relationship.",
+      "context_window": "valuated the therapeutic effects of quercetin at two doses (10 mg/kg and 50 mg/kg) on NAFLD, but the findings did not demonst",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-3125",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "discussion",
+      "source_offset": 3125,
+      "sentence": "Our study evaluated the therapeutic effects of quercetin at two doses (10 mg/kg and 50 mg/kg) on NAFLD, but the findings did not demonstrate a clear dose-dependent relationship.",
+      "context_window": "therapeutic effects of quercetin at two doses (10 mg/kg and 50 mg/kg) on NAFLD, but the findings did not demonstrate a clear",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-8723",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 8723,
+      "sentence": "Following immunoblotting analysis of subcellular fractions, it was evident that even though p62 expression was similar in all groups, the presence of p62 inclusion bodies was increased in mice receiving HFD diet for 16 weeks, with or without QUE treatment.",
+      "context_window": "clusion bodies was increased in mice receiving HFD diet for 16 weeks, with or without QUE treatment. Since most mice in the CON",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11678826_the_effect_of_quercetin_on_non_alcoholic_fatty_liver_disease-u-8811",
+      "claim_type": "unit_value",
+      "raw_text": "16 weeks",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 8811,
+      "sentence": "Since most mice in the CON group (HFD diet for 16 weeks) exhibited steatohepatitis, while quercetin-treated mice mostly exhibited fatty liver, the accumulation of p62 in the membrane fraction could indicate its implication in other cellular processes apart from autophagy.",
+      "context_window": "E treatment. Since most mice in the CON group (HFD diet for 16 weeks) exhibited steatohepatitis, while quercetin-treated mice mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

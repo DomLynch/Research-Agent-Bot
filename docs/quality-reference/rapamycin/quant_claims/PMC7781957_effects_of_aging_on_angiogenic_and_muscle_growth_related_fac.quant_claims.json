@@ -1,0 +1,1377 @@
+{
+  "paper_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac",
+  "doi": "10.4235/agmr.20.0077",
+  "extracted_at": "2026-05-05T15:22:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 11,
+    "sample_size": 6,
+    "p_value": 21,
+    "percentage": 25,
+    "mean_sd": 12
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-260",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 260,
+      "sentence": "We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) between them.",
+      "context_window": "tal muscles. We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-274",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 274,
+      "sentence": "We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) between them.",
+      "context_window": "We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle an",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-288",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 288,
+      "sentence": "We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) between them.",
+      "context_window": "Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) b",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-303",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 303,
+      "sentence": "We divided 16 Sprague-Dawley rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) between them.",
+      "context_window": "rats into young (12 weeks old, n=8) and old (24 months old, n=8) groups and compared muscle and body weight (BW) between th",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-768",
+      "claim_type": "p_value",
+      "raw_text": "p=0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 768,
+      "sentence": "EDL/BW was significantly lower in old rats than in young rats (p=0.002).",
+      "context_window": "/BW was significantly lower in old rats than in young rats (p=0.002). The vascular endothelial growth factor level in soleus mu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-897",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 897,
+      "sentence": "The vascular endothelial growth factor level in soleus muscles was significantly lower in old rats than in young rats (p=0.001).",
+      "context_window": "les was significantly lower in old rats than in young rats (p=0.001). Hypoxia-inducible factor 1-alpha and fetal liver kinase 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1030",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1030,
+      "sentence": "Hypoxia-inducible factor 1-alpha and fetal liver kinase 1 levels in EDL muscles were lower in old rats than in young rats (p=0.001).",
+      "context_window": "s in EDL muscles were lower in old rats than in young rats (p=0.001). The mammalian target of rapamycin (mTOR), p70S6K, and 4E-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1196",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1196,
+      "sentence": "The mammalian target of rapamycin (mTOR), p70S6K, and 4E-BP1 levels were significantly lower in the soleus muscles of old rats than in those of young rats (p<0.01).",
+      "context_window": "the soleus muscles of old rats than in those of young rats (p<0.01). Similarly, insulin growth factor-1, Akt, mTOR, and p70S6K",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1351",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1351,
+      "sentence": "Similarly, insulin growth factor-1, Akt, mTOR, and p70S6K levels were significantly lower in EDL muscles of old rats than in those of young rats (p<0.01).",
+      "context_window": "wer in EDL muscles of old rats than in those of young rats (p<0.01). Additionally, myonuclei/fiber, Pax7/fiber, and mean fiber",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1501",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1501,
+      "sentence": "Additionally, myonuclei/fiber, Pax7/fiber, and mean fiber CSAs in both muscle types were significantly lower in old rats than in young rats (p<0.01).",
+      "context_window": "es were significantly lower in old rats than in young rats (p<0.01). These data suggest different regulation of indices of an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-1507",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "introduction",
+      "source_offset": 1507,
+      "sentence": "Recently, mTOR was shown to regulate the proliferation and differentiation of extensor digitorum longus (EDL; fast-twitch) muscle satellite cells in mTOR knockout mice (6 weeks of age).",
+      "context_window": "fast-twitch) muscle satellite cells in mTOR knockout mice (6 weeks of age). 8 ) During aging, the number of satellite cells de",
+      "claim_role": "protocol",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-1599",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1599,
+      "sentence": "8 ) During aging, the number of satellite cells decreases by approximately 50%.",
+      "context_window": "g, the number of satellite cells decreases by approximately 50%. 9 ) However, little is known about aging-related satellite",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-2723",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2723,
+      "sentence": "Notably, VEGF depletion in rats (4 months of age) significantly reduced plantaris muscle weight.",
+      "context_window": "in skeletal muscle cells. Notably, VEGF depletion in rats (4 months of age) significantly reduced plantaris muscle weight. 15 )",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-69",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 69,
+      "sentence": "We divided 16 Sprague-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups.",
+      "context_window": "d 16 Sprague-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups. Two rats per cage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-79",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 79,
+      "sentence": "We divided 16 Sprague-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups.",
+      "context_window": "ue-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups. Two rats per cage were",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-96",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 96,
+      "sentence": "We divided 16 Sprague-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups.",
+      "context_window": "amtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups. Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-107",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 107,
+      "sentence": "We divided 16 Sprague-Dawley rats (Samtako, Osan, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups.",
+      "context_window": "n, Korea) into young (3 months, n=8) and old (20-24 months, n=8) groups. Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C and",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-170",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 170,
+      "sentence": "Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C and 50%-60% humidity with a 12/12-hour light/dark cycle.",
+      "context_window": ") groups. Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C and 50%-60% humidity with a 12/12-hour light/dark cycle. The rats w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-174",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 174,
+      "sentence": "Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C and 50%-60% humidity with a 12/12-hour light/dark cycle.",
+      "context_window": "oups. Two rats per cage were maintained at 22\u00b0C\u00b12\u00b0C and 50%-60% humidity with a 12/12-hour light/dark cycle. The rats were",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-274",
+      "claim_type": "percentage",
+      "raw_text": "67.5%",
+      "numeric_values": [
+        67.5
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 274,
+      "sentence": "The rats were fed with a diet (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein.",
+      "context_window": "k cycle. The rats were fed with a diet (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein. The animals\u2019 d",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-295",
+      "claim_type": "percentage",
+      "raw_text": "11.7%",
+      "numeric_values": [
+        11.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 295,
+      "sentence": "The rats were fed with a diet (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein.",
+      "context_window": "e fed with a diet (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein. The animals\u2019 dietary intake and bod",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-310",
+      "claim_type": "percentage",
+      "raw_text": "20.8%",
+      "numeric_values": [
+        20.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 310,
+      "sentence": "The rats were fed with a diet (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein.",
+      "context_window": "et (Samtako) containing 67.5% carbohydrates, 11.7% fat, and 20.8% protein. The animals\u2019 dietary intake and body weight (BW) w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-996",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 996,
+      "sentence": "The rats were allowed to adapt to the equipment at a rate of 4-10 rpm starting 2 days before the test.",
+      "context_window": "ed to adapt to the equipment at a rate of 4-10 rpm starting 2 days before the test. Motor coordination was tested at 10 rpm fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-1341",
+      "claim_type": "unit_value",
+      "raw_text": "8 mg",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1341,
+      "sentence": "The rats were anesthetized by injecting an anesthetic (xylazine 8 mg/kg and ketamine 40 mg/kg) into the abdominal cavity after 1 week of adaptation.",
+      "context_window": "rats were anesthetized by injecting an anesthetic (xylazine 8 mg/kg and ketamine 40 mg/kg) into the abdominal cavity after 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-1362",
+      "claim_type": "unit_value",
+      "raw_text": "40 mg",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1362,
+      "sentence": "The rats were anesthetized by injecting an anesthetic (xylazine 8 mg/kg and ketamine 40 mg/kg) into the abdominal cavity after 1 week of adaptation.",
+      "context_window": "d by injecting an anesthetic (xylazine 8 mg/kg and ketamine 40 mg/kg) into the abdominal cavity after 1 week of adaptation. S",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-1404",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 1404,
+      "sentence": "The rats were anesthetized by injecting an anesthetic (xylazine 8 mg/kg and ketamine 40 mg/kg) into the abdominal cavity after 1 week of adaptation.",
+      "context_window": "g/kg and ketamine 40 mg/kg) into the abdominal cavity after 1 week of adaptation. Soleus (slow-twitch) and EDL (fast-twitch) m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-1892",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1892,
+      "sentence": "After drying, the muscle tissues were rinsed in T-PBS (0.1% Tween-20; pH 7.4) for 25 minutes, fixed in 4% paraformaldehyde for 15 minutes, and blocked with T-PBS for 30 minutes.",
+      "context_window": "ny). After drying, the muscle tissues were rinsed in T-PBS (0.1% Tween-20; pH 7.4) for 25 minutes, fixed in 4% paraformaldeh",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-1940",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1940,
+      "sentence": "After drying, the muscle tissues were rinsed in T-PBS (0.1% Tween-20; pH 7.4) for 25 minutes, fixed in 4% paraformaldehyde for 15 minutes, and blocked with T-PBS for 30 minutes.",
+      "context_window": "d in T-PBS (0.1% Tween-20; pH 7.4) for 25 minutes, fixed in 4% paraformaldehyde for 15 minutes, and blocked with T-PBS for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-2702",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2702,
+      "sentence": "Muscle tissues were incubated for 30 minutes at 4\u00b0C in lysis buffer containing 25 mM Tris-Cl (pH 7.5), 250 mM NaCl, 5 mM EDTA, 1% NP-40, 1 mM phenylmethylsulfonyl fluoride, and 5 mM dithiothreitol.",
+      "context_window": "containing 25 mM Tris-Cl (pH 7.5), 250 mM NaCl, 5 mM EDTA, 1% NP-40, 1 mM phenylmethylsulfonyl fluoride, and 5 mM dithiot",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3183",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3183,
+      "sentence": "Equal amounts of proteins were mixed with 2X sodium dodecyl sulfate (SDS) loading buffer containing 60 mM Tris (pH 6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromophenol blue.",
+      "context_window": "ulfate (SDS) loading buffer containing 60 mM Tris (pH 6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3197",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3197,
+      "sentence": "Equal amounts of proteins were mixed with 2X sodium dodecyl sulfate (SDS) loading buffer containing 60 mM Tris (pH 6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromophenol blue.",
+      "context_window": "oading buffer containing 60 mM Tris (pH 6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromophenol blue.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3236",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3236,
+      "sentence": "Equal amounts of proteins were mixed with 2X sodium dodecyl sulfate (SDS) loading buffer containing 60 mM Tris (pH 6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromophenol blue.",
+      "context_window": "6.8), 25% glycerol, 2% SDS, 14.4 mM 2-mercaptoethanol, and 0.1% bromophenol blue. The samples were boiled at 100\u00b0C for 10 m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3408",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3408,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "rpm and 4\u00b0C. Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SD",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3428",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3428,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "he proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium pers",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3465",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3465,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3474",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3474,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "parating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3541",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3541,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "onium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3558",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3558,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persul",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3593",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3593,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": ") and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3602",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3602,
+      "sentence": "Then, the proteins (100 \u03bcg) were resolved in a 10% separating gel (30% acrylamide, 1.5 M Tris [pH 8.8], 10% SDS, 10% ammonium persulfate, tetramethylethylenediamine [TEMED]) and a 5% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparatus (Bio-Rad).",
+      "context_window": "% stacking gel (30% acrylamide, 1 M Tris [pH 6.8], 10% SDS, 10% ammonium persulfate, TEMED) using a Mini-PROTEAN II apparat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-3986",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3986,
+      "sentence": "Then, the proteins were transferred onto polyvinylidene difluoride membranes (Bio-Rad) using a Mini Trans-Blot cell system (Bio-Rad) according to the manufacturer\u2019s instructions; the transfer buffer contained 190 mM glycine, 50 mM Tris base, 0.05% SDS, and 20% methanol.",
+      "context_window": "transfer buffer contained 190 mM glycine, 50 mM Tris base, 0.05% SDS, and 20% methanol. Then, the membranes were blocked for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-4001",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4001,
+      "sentence": "Then, the proteins were transferred onto polyvinylidene difluoride membranes (Bio-Rad) using a Mini Trans-Blot cell system (Bio-Rad) according to the manufacturer\u2019s instructions; the transfer buffer contained 190 mM glycine, 50 mM Tris base, 0.05% SDS, and 20% methanol.",
+      "context_window": "r contained 190 mM glycine, 50 mM Tris base, 0.05% SDS, and 20% methanol. Then, the membranes were blocked for 5 minutes wi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-4067",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4067,
+      "sentence": "Then, the membranes were blocked for 5 minutes with 5% w/v bovine serum albumin solution (10 mM Tris base, HCl [pH 7.6], 0.5 M NaCl, 0.05% Tween-20).",
+      "context_window": "thanol. Then, the membranes were blocked for 5 minutes with 5% w/v bovine serum albumin solution (10 mM Tris base, HCl [pH",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-4148",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4148,
+      "sentence": "Then, the membranes were blocked for 5 minutes with 5% w/v bovine serum albumin solution (10 mM Tris base, HCl [pH 7.6], 0.5 M NaCl, 0.05% Tween-20).",
+      "context_window": "lbumin solution (10 mM Tris base, HCl [pH 7.6], 0.5 M NaCl, 0.05% Tween-20). After blocking, the membranes were incubated for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-5355",
+      "claim_type": "p_value",
+      "raw_text": "p<0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5355,
+      "sentence": "The significance level was set to p<0.05.",
+      "context_window": "ependent-samples t-tests. The significance level was set to p<0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-69",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 69,
+      "sentence": "The BW of old rats was significantly higher than that of young rats (p=0.001).",
+      "context_window": "old rats was significantly higher than that of young rats (p=0.001). Although the weight of the EDL muscle did not differ sign",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-162",
+      "claim_type": "p_value",
+      "raw_text": "p=0.699",
+      "numeric_values": [
+        0.699
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 162,
+      "sentence": "Although the weight of the EDL muscle did not differ significantly between groups (p=0.699), the soleus weight was significantly greater in old rats than in young rats (p=0.012).",
+      "context_window": "the EDL muscle did not differ significantly between groups (p=0.699), the soleus weight was significantly greater in old rats t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-248",
+      "claim_type": "p_value",
+      "raw_text": "p=0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 248,
+      "sentence": "Although the weight of the EDL muscle did not differ significantly between groups (p=0.699), the soleus weight was significantly greater in old rats than in young rats (p=0.012).",
+      "context_window": "t was significantly greater in old rats than in young rats (p=0.012). The soleus mass normalized to BW did not differ significa",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-336",
+      "claim_type": "p_value",
+      "raw_text": "p=0.082",
+      "numeric_values": [
+        0.082
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 336,
+      "sentence": "The soleus mass normalized to BW did not differ significantly between groups (p=0.082), whereas the EDL mass normalized to BW was significantly lower in old rats than in young rats (p=0.002).",
+      "context_window": "rmalized to BW did not differ significantly between groups (p=0.082), whereas the EDL mass normalized to BW was significantly l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-440",
+      "claim_type": "p_value",
+      "raw_text": "p=0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 440,
+      "sentence": "The soleus mass normalized to BW did not differ significantly between groups (p=0.082), whereas the EDL mass normalized to BW was significantly lower in old rats than in young rats (p=0.002).",
+      "context_window": "BW was significantly lower in old rats than in young rats (p=0.002). Motor coordination differed significantly between groups,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-590",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 590,
+      "sentence": "Motor coordination differed significantly between groups, with old rats exhibiting a significantly earlier first drop from the rotarod bar (p=0.001) ( Table 1 ).",
+      "context_window": "ng a significantly earlier first drop from the rotarod bar (p=0.001) ( Table 1 ). We assessed the expression levels of differe",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-899",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 899,
+      "sentence": "In the soleus muscle, while HIF-1\u03b1 and FLK-1 levels did not differ between groups, the VEGF level was significantly lower in old rats than in young rats (p=0.001).",
+      "context_window": "vel was significantly lower in old rats than in young rats (p=0.001). In the EDL muscle, VEGF levels did not differ significant",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-985",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 985,
+      "sentence": "In the EDL muscle, VEGF levels did not differ significantly between groups (p>0.05), while HIF-1\u03b1 and FLK-1 levels were significantly lower in old rats than in young rats (both p=0.001) ( Fig.",
+      "context_window": "e, VEGF levels did not differ significantly between groups (p>0.05), while HIF-1\u03b1 and FLK-1 levels were significantly lower in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1086",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1086,
+      "sentence": "In the EDL muscle, VEGF levels did not differ significantly between groups (p>0.05), while HIF-1\u03b1 and FLK-1 levels were significantly lower in old rats than in young rats (both p=0.001) ( Fig.",
+      "context_window": "re significantly lower in old rats than in young rats (both p=0.001) ( Fig. 1A , 1B ). Expression levels of muscle angiogenic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-1225",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1225,
+      "sentence": "Expression levels of muscle angiogenic and synthesis-related proteins in slow-twitch and fast-twitch of young (n=8) and old (n=8) rats. (A) Angiogenic protein expressions in soleus muscle. (B) Angiogenic protein expressions in EDL muscle. (C) Muscle synthesis-related protein expressions in soleus muscle. (D) Muscle synthesis-related protein expressions in EDL muscle.",
+      "context_window": "s-related proteins in slow-twitch and fast-twitch of young (n=8) and old (n=8) rats. (A) Angiogenic protein expressions in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-n-1239",
+      "claim_type": "sample_size",
+      "raw_text": "n=8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1239,
+      "sentence": "Expression levels of muscle angiogenic and synthesis-related proteins in slow-twitch and fast-twitch of young (n=8) and old (n=8) rats. (A) Angiogenic protein expressions in soleus muscle. (B) Angiogenic protein expressions in EDL muscle. (C) Muscle synthesis-related protein expressions in soleus muscle. (D) Muscle synthesis-related protein expressions in EDL muscle.",
+      "context_window": "eins in slow-twitch and fast-twitch of young (n=8) and old (n=8) rats. (A) Angiogenic protein expressions in soleus muscle.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-1984",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1984,
+      "sentence": "In the soleus muscle, IGF-1 and Akt levels did not differ significantly between groups, while phosphorylated mTOR, p70S6K, and 4E-BP1 levels were significantly lower in old rats than in young rats (all p=0.001).",
+      "context_window": "ere significantly lower in old rats than in young rats (all p=0.001). In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-2125",
+      "claim_type": "p_value",
+      "raw_text": "p=0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2125,
+      "sentence": "In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p70S6K levels were significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig.",
+      "context_window": "ere significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ sign",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-2218",
+      "claim_type": "p_value",
+      "raw_text": "p>0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2218,
+      "sentence": "In the EDL muscle, phosphorylated IGF-1, Akt, mTOR, and p70S6K levels were significantly lower in old rats than in young rats (all p=0.001), while the phosphorylated 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig.",
+      "context_window": "d 4E-BP1 level did not differ significantly between groups (p>0.05) ( Fig. D ). Immunofluorescence analysis revealed signific",
+      "claim_role": "effect",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2313",
+      "claim_type": "mean_sd",
+      "raw_text": "2.15\u00b10.25",
+      "numeric_values": [
+        2.15,
+        0.25
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2313,
+      "sentence": "Immunofluorescence analysis revealed significantly lower myonuclei/fiber (2.15\u00b10.25 vs.",
+      "context_window": "ence analysis revealed significantly lower myonuclei/fiber (2.15\u00b10.25 vs. 1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs. 0.01\u00b10.01), and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2327",
+      "claim_type": "mean_sd",
+      "raw_text": "1.66 \u00b1 0.14",
+      "numeric_values": [
+        1.66,
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2327,
+      "sentence": "1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs.",
+      "context_window": "revealed significantly lower myonuclei/fiber (2.15\u00b10.25 vs. 1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs. 0.01\u00b10.01), and muscle (2,169.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2353",
+      "claim_type": "mean_sd",
+      "raw_text": "0.04\u00b10.01",
+      "numeric_values": [
+        0.04,
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2353,
+      "sentence": "1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs.",
+      "context_window": "er myonuclei/fiber (2.15\u00b10.25 vs. 1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs. 0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs. 1,701.2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2367",
+      "claim_type": "mean_sd",
+      "raw_text": "0.01\u00b10.01",
+      "numeric_values": [
+        0.01,
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2367,
+      "sentence": "0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs.",
+      "context_window": "iber (2.15\u00b10.25 vs. 1.66 \u00b1 0.14), Pax7/fiber (0.04\u00b10.01 vs. 0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs. 1,701.23\u00b199.85 \u03bcm 2 ;",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2393",
+      "claim_type": "mean_sd",
+      "raw_text": "169.25\u00b187.77",
+      "numeric_values": [
+        169.25,
+        87.77
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2393,
+      "sentence": "0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs.",
+      "context_window": "0.14), Pax7/fiber (0.04\u00b10.01 vs. 0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs. 1,701.23\u00b199.85 \u03bcm 2 ; p<0.01) CSAs in slow-twitch",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2417",
+      "claim_type": "mean_sd",
+      "raw_text": "701.23\u00b199.85",
+      "numeric_values": [
+        701.23,
+        99.85
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2417,
+      "sentence": "1,701.23\u00b199.85 \u03bcm 2 ; p<0.01) CSAs in slow-twitch muscles of old rats than in those of young rats.",
+      "context_window": "\u00b10.01 vs. 0.01\u00b10.01), and muscle (2,169.25\u00b187.77 \u03bcm 2 vs. 1,701.23\u00b199.85 \u03bcm 2 ; p<0.01) CSAs in slow-twitch muscles of old rats than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-2437",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2437,
+      "sentence": "1,701.23\u00b199.85 \u03bcm 2 ; p<0.01) CSAs in slow-twitch muscles of old rats than in those of young rats.",
+      "context_window": ", and muscle (2,169.25\u00b187.77 \u03bcm 2 vs. 1,701.23\u00b199.85 \u03bcm 2 ; p<0.01) CSAs in slow-twitch muscles of old rats than in those of y",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2555",
+      "claim_type": "mean_sd",
+      "raw_text": "2.49\u00b10.55",
+      "numeric_values": [
+        2.49,
+        0.55
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2555,
+      "sentence": "In fast-twitch muscles, myonuclei/fiber (2.49\u00b10.55 vs.",
+      "context_window": "ose of young rats. In fast-twitch muscles, myonuclei/fiber (2.49\u00b10.55 vs. 1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs. 0.05\u00b10.01), and m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2569",
+      "claim_type": "mean_sd",
+      "raw_text": "1.32\u00b10.14",
+      "numeric_values": [
+        1.32,
+        0.14
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2569,
+      "sentence": "1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs.",
+      "context_window": "ats. In fast-twitch muscles, myonuclei/fiber (2.49\u00b10.55 vs. 1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs. 0.05\u00b10.01), and muscle (2,277.4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2593",
+      "claim_type": "mean_sd",
+      "raw_text": "0.14\u00b10.05",
+      "numeric_values": [
+        0.14,
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2593,
+      "sentence": "1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs.",
+      "context_window": "les, myonuclei/fiber (2.49\u00b10.55 vs. 1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs. 0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs. 1,552.6",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2607",
+      "claim_type": "mean_sd",
+      "raw_text": "0.05\u00b10.01",
+      "numeric_values": [
+        0.05,
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2607,
+      "sentence": "0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs.",
+      "context_window": "/fiber (2.49\u00b10.55 vs. 1.32\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs. 0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs. 1,552.64\u00b124.61 \u03bcm 2 )",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2633",
+      "claim_type": "mean_sd",
+      "raw_text": "277.41\u00b175.75",
+      "numeric_values": [
+        277.41,
+        75.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2633,
+      "sentence": "0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs.",
+      "context_window": "\u00b10.14), Pax7/fiber (0.14\u00b10.05 vs. 0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs. 1,552.64\u00b124.61 \u03bcm 2 ) CSAs were significantly lowe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-msd-2657",
+      "claim_type": "mean_sd",
+      "raw_text": "552.64\u00b124.61",
+      "numeric_values": [
+        552.64,
+        24.61
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2657,
+      "sentence": "1,552.64\u00b124.61 \u03bcm 2 ) CSAs were significantly lower in old rats than in young rats (all p<0.01).",
+      "context_window": "\u00b10.05 vs. 0.05\u00b10.01), and muscle (2,277.41\u00b175.75 \u03bcm 2 vs. 1,552.64\u00b124.61 \u03bcm 2 ) CSAs were significantly lower in old rats than in yo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-p-2743",
+      "claim_type": "p_value",
+      "raw_text": "p<0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2743,
+      "sentence": "1,552.64\u00b124.61 \u03bcm 2 ) CSAs were significantly lower in old rats than in young rats (all p<0.01).",
+      "context_window": "ere significantly lower in old rats than in young rats (all p<0.01).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-pct-2171",
+      "claim_type": "percentage",
+      "raw_text": "11.4%",
+      "numeric_values": [
+        11.4
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2171,
+      "sentence": "In slow-twitch muscles (soleus), HIF-1\u03b1 levels did not change with aging; however, VEGF levels were 11.4% lower in old rats than in young rats.",
+      "context_window": "levels did not change with aging; however, VEGF levels were 11.4% lower in old rats than in young rats. This finding suggests",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7781957_effects_of_aging_on_angiogenic_and_muscle_growth_related_fac-u-2738",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 2738,
+      "sentence": "In VEGF-deficient mice, the plantaris muscle mass was lower at 30 days after functional overload, while the average muscle fiber area was also lower.",
+      "context_window": "VEGF-deficient mice, the plantaris muscle mass was lower at 30 days after functional overload, while the average muscle fiber a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

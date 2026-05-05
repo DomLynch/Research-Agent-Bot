@@ -1,0 +1,556 @@
+{
+  "paper_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat",
+  "doi": "10.1177/20420188251355411",
+  "extracted_at": "2026-05-05T15:32:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 20,
+    "sample_size": 4,
+    "mean_sd": 1,
+    "percentage": 4,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-672",
+      "claim_type": "unit_value",
+      "raw_text": "35 \u03bcg/day",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "\u03bcg/day",
+      "source_section": "abstract",
+      "source_offset": 672,
+      "sentence": "Women with PCOS and AO who fulfilled the Rotterdam Criteria under combined treatment with daily cyclical ethinylestradiol (35 \u03bcg/day) and cyproterone acetate (2 mg/day).",
+      "context_window": "er combined treatment with daily cyclical ethinylestradiol (35 \u03bcg/day) and cyproterone acetate (2 mg/day). Patients were randomi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-708",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 708,
+      "sentence": "Women with PCOS and AO who fulfilled the Rotterdam Criteria under combined treatment with daily cyclical ethinylestradiol (35 \u03bcg/day) and cyproterone acetate (2 mg/day).",
+      "context_window": "lical ethinylestradiol (35 \u03bcg/day) and cyproterone acetate (2 mg/day). Patients were randomized to either combined oral metform",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-780",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 780,
+      "sentence": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks.",
+      "context_window": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-808",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "abstract",
+      "source_offset": 808,
+      "sentence": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks.",
+      "context_window": "either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-n-844",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 844,
+      "sentence": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks.",
+      "context_window": "mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-n-889",
+      "claim_type": "sample_size",
+      "raw_text": "n = 31",
+      "numeric_values": [
+        31.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 889,
+      "sentence": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks.",
+      "context_window": "ous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks. Network pharmacological prediction of",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-907",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "abstract",
+      "source_offset": 907,
+      "sentence": "Patients were randomized to either combined oral metformin (1500 mg/day) and exenatide (2 mg weekly subcutaneous injection, n = 35 women) treatment or metformin alone ( n = 31 women) for 12 weeks.",
+      "context_window": "35 women) treatment or metformin alone ( n = 31 women) for 12 weeks. Network pharmacological prediction of gene expression unde",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-468",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 468,
+      "sentence": "3 They were under combined treatment with cyclical daily doses of EE (35 \u03bcg) and CA (2 mg).",
+      "context_window": "d treatment with cyclical daily doses of EE (35 \u03bcg) and CA (2 mg). The exclusion criteria were as follows: (1) The presence",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1092",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1092,
+      "sentence": "The exclusion criteria were as follows: (1) The presence of endocrine diseases such as diabetes mellitus, adrenal or thyroid pathology, acromegaly, hyperprolactinemia, androgen-secreting tumors, thyroid disorders, multiple endocrine neoplasia type 2, and any other endocrine disorder. (2) Patients with severe or unstable physical disease, including liver, kidney, cardiovascular, respiratory, neurological, hematological, thromboembolic, and tendency toward thrombosis, malignancies, or mental diseases. (3) Women who smoke or drink heavily. (4) Pregnant women or breastfeeding. (5) Patients treated during the past 3 months with statins or other drugs known or suspected to alter reproductive or metabolic functions. (6) Patients with allergy or intolerance to the studied drugs. (7) Women participating in other clinical trials.",
+      "context_window": "omen or breastfeeding. (5) Patients treated during the past 3 months with statins or other drugs known or suspected to alter rep",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-msd-1507",
+      "claim_type": "mean_sd",
+      "raw_text": "2.6 \u00b1 0.5",
+      "numeric_values": [
+        2.6,
+        0.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1507,
+      "sentence": "The sample size was calculated based on the average change in body weight; according to the results of existing literature, the estimated weight loss of the combined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy.",
+      "context_window": "eight loss of the combined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy. 16 To ensure the stability, a",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1513",
+      "claim_type": "unit_value",
+      "raw_text": "0.5 kg",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1513,
+      "sentence": "The sample size was calculated based on the average change in body weight; according to the results of existing literature, the estimated weight loss of the combined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy.",
+      "context_window": "loss of the combined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy. 16 To ensure the stability, accu",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1526",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 1526,
+      "sentence": "The sample size was calculated based on the average change in body weight; according to the results of existing literature, the estimated weight loss of the combined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy.",
+      "context_window": "ombined treatment group was estimated at 2.6 \u00b1 0.5 kg after 12 weeks of therapy. 16 To ensure the stability, accuracy, and relia",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1775",
+      "claim_type": "unit_value",
+      "raw_text": "40 years",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 1775,
+      "sentence": "A total of 78 PCOS patients, aged 18-40 years, with a body mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circumference \u2a7e80 cm) were recruited.",
+      "context_window": "to 35 cases per group. A total of 78 PCOS patients, aged 18-40 years, with a body mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circ",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1815",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 1815,
+      "sentence": "A total of 78 PCOS patients, aged 18-40 years, with a body mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circumference \u2a7e80 cm) were recruited.",
+      "context_window": "S patients, aged 18-40 years, with a body mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circumference \u2a7e80 cm) were recruited. The",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1854",
+      "claim_type": "unit_value",
+      "raw_text": "80 cm",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 1854,
+      "sentence": "A total of 78 PCOS patients, aged 18-40 years, with a body mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circumference \u2a7e80 cm) were recruited.",
+      "context_window": "dy mass index (BMI) \u2a7e25 kg/m 2 and AO (waist circumference \u2a7e80 cm) were recruited. They were under treatment with doses of EE",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1921",
+      "claim_type": "unit_value",
+      "raw_text": "35 \u03bcg/day",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "\u03bcg/day",
+      "source_section": "methods",
+      "source_offset": 1921,
+      "sentence": "They were under treatment with doses of EE (35 \u03bcg/day) and CA (2 mg/day) from the first day of menstruation or progesterone withdrawal bleeding for 21 consecutive days, and the next cycle began after 7 days of steroid hormone treatment withdrawal.",
+      "context_window": "were recruited. They were under treatment with doses of EE (35 \u03bcg/day) and CA (2 mg/day) from the first day of menstruation or pr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-1940",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg/day",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 1940,
+      "sentence": "They were under treatment with doses of EE (35 \u03bcg/day) and CA (2 mg/day) from the first day of menstruation or progesterone withdrawal bleeding for 21 consecutive days, and the next cycle began after 7 days of steroid hormone treatment withdrawal.",
+      "context_window": "y were under treatment with doses of EE (35 \u03bcg/day) and CA (2 mg/day) from the first day of menstruation or progesterone withdra",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-2077",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2077,
+      "sentence": "They were under treatment with doses of EE (35 \u03bcg/day) and CA (2 mg/day) from the first day of menstruation or progesterone withdrawal bleeding for 21 consecutive days, and the next cycle began after 7 days of steroid hormone treatment withdrawal.",
+      "context_window": "ing for 21 consecutive days, and the next cycle began after 7 days of steroid hormone treatment withdrawal. Seventy PCOS pati",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-n-2186",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2186,
+      "sentence": "Seventy PCOS patients were randomized to either metformin ( n = 35, 1500 mg/day) combined with exenatide microsphere injection (2 mg/weekly injection tube (Astra Zeneca Co.",
+      "context_window": "Seventy PCOS patients were randomized to either metformin ( n = 35, 1500 mg/day) combined with exenatide microsphere injection",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-2194",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2194,
+      "sentence": "Seventy PCOS patients were randomized to either metformin ( n = 35, 1500 mg/day) combined with exenatide microsphere injection (2 mg/weekly injection tube (Astra Zeneca Co.",
+      "context_window": "PCOS patients were randomized to either metformin ( n = 35, 1500 mg/day) combined with exenatide microsphere injection (2 mg/weekly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-2254",
+      "claim_type": "unit_value",
+      "raw_text": "2 mg",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 2254,
+      "sentence": "Seventy PCOS patients were randomized to either metformin ( n = 35, 1500 mg/day) combined with exenatide microsphere injection (2 mg/weekly injection tube (Astra Zeneca Co.",
+      "context_window": "1500 mg/day) combined with exenatide microsphere injection (2 mg/weekly injection tube (Astra Zeneca Co. Ltd., AstraZeneca U",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-n-2391",
+      "claim_type": "sample_size",
+      "raw_text": "n = 35",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2391,
+      "sentence": "Ltd., AstraZeneca UK Limited, Cambridge, United Kingdom), or to metformin-alone treatment ( n = 35, 1500 mg/day) and completed the follow-up ( Figure 1 ).",
+      "context_window": "mbridge, United Kingdom), or to metformin-alone treatment ( n = 35, 1500 mg/day) and completed the follow-up ( Figure 1 ). Fin",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-2399",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 2399,
+      "sentence": "Ltd., AstraZeneca UK Limited, Cambridge, United Kingdom), or to metformin-alone treatment ( n = 35, 1500 mg/day) and completed the follow-up ( Figure 1 ).",
+      "context_window": "United Kingdom), or to metformin-alone treatment ( n = 35, 1500 mg/day) and completed the follow-up ( Figure 1 ). Finally, 35 pati",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-pct-2601",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2601,
+      "sentence": "There was a dropout rate of 5.7%.",
+      "context_window": "formin completed the follow-up. There was a dropout rate of 5.7%. Two patients left the study due to nausea and vomiting, on",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-3898",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 3898,
+      "sentence": "The process of study from screening of PCOS patients with AO to completion during the 12 weeks treatment period.",
+      "context_window": "screening of PCOS patients with AO to completion during the 12 weeks treatment period. The diagram exhibits patient allocation i",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-p-7094",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7094,
+      "sentence": "Differences were considered significant for p < 0.05.",
+      "context_window": "i-squared test. Differences were considered significant for p < 0.05. Statistical analysis was performed using the IBM SPSS 26.0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-u-5520",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 5520,
+      "sentence": "29 compared the effect of exenatide, metformin, and the combination therapy for 12 weeks in patients with PCOS and prediabetes, obtaining a remission rate of prediabetes in 64% of women under combined treatment, 56% under exenatide, and 32% under metformin.",
+      "context_window": "ct of exenatide, metformin, and the combination therapy for 12 weeks in patients with PCOS and prediabetes, obtaining a remissio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-pct-5613",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5613,
+      "sentence": "29 compared the effect of exenatide, metformin, and the combination therapy for 12 weeks in patients with PCOS and prediabetes, obtaining a remission rate of prediabetes in 64% of women under combined treatment, 56% under exenatide, and 32% under metformin.",
+      "context_window": "d prediabetes, obtaining a remission rate of prediabetes in 64% of women under combined treatment, 56% under exenatide, and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-pct-5652",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5652,
+      "sentence": "29 compared the effect of exenatide, metformin, and the combination therapy for 12 weeks in patients with PCOS and prediabetes, obtaining a remission rate of prediabetes in 64% of women under combined treatment, 56% under exenatide, and 32% under metformin.",
+      "context_window": "te of prediabetes in 64% of women under combined treatment, 56% under exenatide, and 32% under metformin. In addition, exen",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC12365428_combined_metformin_and_exenatide_versus_only_metformin_treat-pct-5677",
+      "claim_type": "percentage",
+      "raw_text": "32%",
+      "numeric_values": [
+        32.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5677,
+      "sentence": "29 compared the effect of exenatide, metformin, and the combination therapy for 12 weeks in patients with PCOS and prediabetes, obtaining a remission rate of prediabetes in 64% of women under combined treatment, 56% under exenatide, and 32% under metformin.",
+      "context_window": "of women under combined treatment, 56% under exenatide, and 32% under metformin. In addition, exenatide was associated with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

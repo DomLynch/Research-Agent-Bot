@@ -1,0 +1,560 @@
+{
+  "paper_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop",
+  "doi": "10.3390/biom12070943",
+  "extracted_at": "2026-05-05T15:32:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "mean_sd": 5,
+    "unit_value": 5,
+    "percentage": 7,
+    "p_value": 5,
+    "sample_size": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-msd-837",
+      "claim_type": "mean_sd",
+      "raw_text": "72 \u00b1 8",
+      "numeric_values": [
+        72.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 837,
+      "sentence": "Methods: We measured six previously identified plasma ceramides, which have been associated with increased cardiovascular risk [plasma Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0), Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1)], amongst 99 Caucasian postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient service during a 3-month period.",
+      "context_window": "ostmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively a",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-u-842",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 842,
+      "sentence": "Methods: We measured six previously identified plasma ceramides, which have been associated with increased cardiovascular risk [plasma Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0), Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1)], amongst 99 Caucasian postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient service during a 3-month period.",
+      "context_window": "nopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attende",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-msd-871",
+      "claim_type": "mean_sd",
+      "raw_text": "6.9 \u00b1 0.7",
+      "numeric_values": [
+        6.9,
+        0.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 871,
+      "sentence": "Methods: We measured six previously identified plasma ceramides, which have been associated with increased cardiovascular risk [plasma Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0), Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1)], amongst 99 Caucasian postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient service during a 3-month period.",
+      "context_window": "in-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient servi",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-877",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 877,
+      "sentence": "Methods: We measured six previously identified plasma ceramides, which have been associated with increased cardiovascular risk [plasma Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0), Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1)], amongst 99 Caucasian postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient service during a 3-month period.",
+      "context_window": "ated T2DM (mean age 72 \u00b1 8 years, mean hemoglobin A1c 6.9 \u00b1 0.7%), who consecutively attended our diabetes outpatient servic",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-p-1386",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1386,
+      "sentence": "2nd and 3rd tertiles combined) were associated with higher levels of plasma Cer(d18:1/16:0) (standardized \u03b2 coefficient: 0.289, p = 0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0.009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p < 0.001).",
+      "context_window": "plasma Cer(d18:1/16:0) (standardized \u03b2 coefficient: 0.289, p = 0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-p-1450",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1450,
+      "sentence": "2nd and 3rd tertiles combined) were associated with higher levels of plasma Cer(d18:1/16:0) (standardized \u03b2 coefficient: 0.289, p = 0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0.009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p < 0.001).",
+      "context_window": "0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-p-1514",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1514,
+      "sentence": "2nd and 3rd tertiles combined) were associated with higher levels of plasma Cer(d18:1/16:0) (standardized \u03b2 coefficient: 0.289, p = 0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0.009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p < 0.001).",
+      "context_window": "0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0.009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p <",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-p-1580",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1580,
+      "sentence": "2nd and 3rd tertiles combined) were associated with higher levels of plasma Cer(d18:1/16:0) (standardized \u03b2 coefficient: 0.289, p = 0.004), Cer(d18:1/18:0) (standardized \u03b2 coefficient: 0.307, p = 0.002), Cer(d18:1/20:0) (standardized \u03b2 coefficient: 0.261, p = 0.009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p < 0.001).",
+      "context_window": "009) or Cer(d18:1/24:1) (standardized \u03b2 coefficient: 0.343, p < 0.001). These associations remained significant even after adjust",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-u-1207",
+      "claim_type": "unit_value",
+      "raw_text": "90 mmHg",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "mmHg",
+      "source_section": "methods",
+      "source_offset": 1207,
+      "sentence": "Subjects were considered to have arterial hypertension if their blood pressure was \u2265140/90 mmHg or if they were treated with any anti-hypertensive agents.",
+      "context_window": "have arterial hypertension if their blood pressure was \u2265140/90 mmHg or if they were treated with any anti-hypertensive agents.",
+      "claim_role": "dose",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-u-3707",
+      "claim_type": "unit_value",
+      "raw_text": "50 mm",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 3707,
+      "sentence": "Plasma concentrations of Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0, Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1) were quantified with liquid-liquid extraction with 2-propanol:ethyl acetate (4:1 v / v ) and gradient reverse phase chromatography on an Agilent Poroshell 120 C18 column (4.6 \u00d7 50 mm, 2.7 \u00b5m).",
+      "context_window": "hromatography on an Agilent Poroshell 120 C18 column (4.6 \u00d7 50 mm, 2.7 \u00b5m). Cer(d18:1/17:0) was used as an internal standard.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-4047",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4047,
+      "sentence": "Mobile phases consisted of LC/MS grade water (A), acetonitrile with 0.1% formic acid (B) and 10 mM ammonium acetate in 2-propanol (C). [M+H]+\u2192264 MRM (multiple reaction monitoring) transition was selected to quantify each ceramide.",
+      "context_window": "hases consisted of LC/MS grade water (A), acetonitrile with 0.1% formic acid (B) and 10 mM ammonium acetate in 2-propanol (C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-4292",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4292,
+      "sentence": "Calibration standards (six points) were prepared each day in a surrogate matrix (5% bovine serum albumin) at concentrations ranging from 1.0 to 0.031 \u00b5M/L for Cer(d18:1/16:0), Cer(d18:1/18:0) and Cer(d18:1/20:0), and from 10 to 0.31 \u00b5M/L for Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1), respectively.",
+      "context_window": "(six points) were prepared each day in a surrogate matrix (5% bovine serum albumin) at concentrations ranging from 1.0 to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-4702",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4702,
+      "sentence": "Inter-assay and intra-assay coefficients of variation for precision and accuracy for all measured ceramides were <15% [ 2 ].",
+      "context_window": "for precision and accuracy for all measured ceramides were <15% [ 2 ]. No matrix interference or carryover was observed. B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-5250",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5250,
+      "sentence": "Specifically, plasma LRG1 concentrations were measured using the MILLIPLEX \u00ae MAP Human CVD Magnetic Bead kit (Abcam, Cambridge, UK); intra-assay coefficient of variation <5% and inter-assay coefficient of variation <10%, respectively.",
+      "context_window": "bcam, Cambridge, UK); intra-assay coefficient of variation <5% and inter-assay coefficient of variation <10%, respectively",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-5295",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5295,
+      "sentence": "Specifically, plasma LRG1 concentrations were measured using the MILLIPLEX \u00ae MAP Human CVD Magnetic Bead kit (Abcam, Cambridge, UK); intra-assay coefficient of variation <5% and inter-assay coefficient of variation <10%, respectively.",
+      "context_window": "of variation <5% and inter-assay coefficient of variation <10%, respectively. Owing to the exploratory design of the stud",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-6197",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6197,
+      "sentence": "We used the chi-squared test for categorical variables, the one-way analysis of variance (ANOVA) for normally distributed continuous variables, or the Kruskal-Wallis test for non-normally distributed variables (i.e., duration of diabetes, triglycerides, insulin, HOMA-IR score and plasma ceramides) to examine the differences in the main clinical and biochemical characteristics among postmenopausal women with T2DM, stratified by plasma LRG1 tertiles (1st tertile ranging from 4.5 to 7.5 \u00b5g/mL [ n = 33], 2nd tertile from 7.6 to 9.2 \u00b5g/mL [ n = 33] and 3rd tertile from 9.3 to 15.0 \u00b5g/mL [ n = 33], respectively).",
+      "context_window": "LRG1 tertiles (1st tertile ranging from 4.5 to 7.5 \u00b5g/mL [ n = 33], 2nd tertile from 7.6 to 9.2 \u00b5g/mL [ n = 33] and 3rd terti",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-6242",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6242,
+      "sentence": "We used the chi-squared test for categorical variables, the one-way analysis of variance (ANOVA) for normally distributed continuous variables, or the Kruskal-Wallis test for non-normally distributed variables (i.e., duration of diabetes, triglycerides, insulin, HOMA-IR score and plasma ceramides) to examine the differences in the main clinical and biochemical characteristics among postmenopausal women with T2DM, stratified by plasma LRG1 tertiles (1st tertile ranging from 4.5 to 7.5 \u00b5g/mL [ n = 33], 2nd tertile from 7.6 to 9.2 \u00b5g/mL [ n = 33] and 3rd tertile from 9.3 to 15.0 \u00b5g/mL [ n = 33], respectively).",
+      "context_window": "to 7.5 \u00b5g/mL [ n = 33], 2nd tertile from 7.6 to 9.2 \u00b5g/mL [ n = 33] and 3rd tertile from 9.3 to 15.0 \u00b5g/mL [ n = 33], respecti",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-6291",
+      "claim_type": "sample_size",
+      "raw_text": "n = 33",
+      "numeric_values": [
+        33.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 6291,
+      "sentence": "We used the chi-squared test for categorical variables, the one-way analysis of variance (ANOVA) for normally distributed continuous variables, or the Kruskal-Wallis test for non-normally distributed variables (i.e., duration of diabetes, triglycerides, insulin, HOMA-IR score and plasma ceramides) to examine the differences in the main clinical and biochemical characteristics among postmenopausal women with T2DM, stratified by plasma LRG1 tertiles (1st tertile ranging from 4.5 to 7.5 \u00b5g/mL [ n = 33], 2nd tertile from 7.6 to 9.2 \u00b5g/mL [ n = 33] and 3rd tertile from 9.3 to 15.0 \u00b5g/mL [ n = 33], respectively).",
+      "context_window": ".2 \u00b5g/mL [ n = 33] and 3rd tertile from 9.3 to 15.0 \u00b5g/mL [ n = 33], respectively). The associations between each plasma ceram",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-p-7006",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 7006,
+      "sentence": "We also performed a stepwise linear regression analysis with a forward selection of covariates included in model 2, in which the significance level for addition to the model was set at p < 0.05.",
+      "context_window": "the significance level for addition to the model was set at p < 0.05. Covariates included in these regression models were select",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-msd-131",
+      "claim_type": "mean_sd",
+      "raw_text": "72 \u00b1 8",
+      "numeric_values": [
+        72.0,
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 131,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "ostmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% a",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-u-136",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 136,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "nopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and med",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-msd-154",
+      "claim_type": "mean_sd",
+      "raw_text": "29.5 \u00b1 5.0",
+      "numeric_values": [
+        29.5,
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 154,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "h non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabe",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-u-161",
+      "claim_type": "unit_value",
+      "raw_text": "5.0 kg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 161,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "nsulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-msd-185",
+      "claim_type": "mean_sd",
+      "raw_text": "6.9 \u00b1 0.7",
+      "numeric_values": [
+        6.9,
+        0.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 185,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "n age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-pct-191",
+      "claim_type": "percentage",
+      "raw_text": "0.7%",
+      "numeric_values": [
+        0.7
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 191,
+      "sentence": "Table 1 shows the clinical and biochemical characteristics of elderly postmenopausal women with non-insulin-treated T2DM (mean age 72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who were stratified by plasma LRG1 tertiles.",
+      "context_window": "72 \u00b1 8 years, mean BMI 29.5 \u00b1 5.0 kg/m 2 , mean HbA1c 6.9 \u00b1 0.7% and median duration of diabetes 10 [IQR: 6-17] years), who",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-1254",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1254,
+      "sentence": "Sample size, n = 99.",
+      "context_window": "lasma leucine-rich \u03b1-2 glycoprotein-1 levels. Sample size, n = 99. Data are expressed as means \u00b1 SD, medians and interquartil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-2984",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2984,
+      "sentence": "Univariable linear correlations of levels of plasma Cer(d18:1/16:0), Cer(d18:1/18:0), Cer(d18:1/20:0), Cer(d18:1/22:0), Cer(d18:1/24:0) and Cer(d18:1/24:1) with circulating levels of LRG1 in postmenopausal women with non-insulin-treated T2DM ( n = 99).",
+      "context_window": "RG1 in postmenopausal women with non-insulin-treated T2DM ( n = 99). These correlations were tested using the Spearman\u2019s rank-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-4337",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4337,
+      "sentence": "Similar findings were also observed when we repeated the aforementioned analyses after excluding patients treated with pioglitazones ( n = 4) (data not shown).",
+      "context_window": "lyses after excluding patients treated with pioglitazones ( n = 4) (data not shown). Finally, we also performed a stepwise li",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-5141",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5141,
+      "sentence": "Sample size, n = 99.",
+      "context_window": "nopausal women with non-insulin-treated T2DM. Sample size, n = 99. Data are expressed as standardized beta coefficients as te",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9312999_association_between_higher_circulating_leucine_rich_2_glycop-n-6199",
+      "claim_type": "sample_size",
+      "raw_text": "n = 99",
+      "numeric_values": [
+        99.0
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 6199,
+      "sentence": "Secondly, the sample size of the study was small ( n = 99) and comprised Caucasian elderly postmenopausal women with metabolically well-controlled T2DM.",
+      "context_window": "levels. Secondly, the sample size of the study was small ( n = 99) and comprised Caucasian elderly postmenopausal women with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

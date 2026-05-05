@@ -1,0 +1,1851 @@
+{
+  "paper_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p",
+  "doi": "10.1155/2020/6276187",
+  "extracted_at": "2026-05-05T15:32:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 33,
+    "unit_value": 32,
+    "confidence_interval": 13,
+    "mean_sd": 4,
+    "p_value": 18,
+    "odds_ratio": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-819",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 819,
+      "sentence": "Its prevalence is 5-15%, depending on the diagnostic criteria applied [ 3 ].",
+      "context_window": "or polycystic ovarian morphology [ 2 ]. Its prevalence is 5-15%, depending on the diagnostic criteria applied [ 3 ]. PCOS i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-1579",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1579,
+      "sentence": "Insulin action was reduced by 35-40% in both lean and obese women with PCOS compared to control women of similar age and body composition [ 8 ].",
+      "context_window": "he euglycemic clamp [ 7 ]. Insulin action was reduced by 35-40% in both lean and obese women with PCOS compared to control",
+      "claim_role": "effect",
+      "endpoint": "insulin sensitivity",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-2174",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2174,
+      "sentence": "In women with PCOS, dysglycemia typically consists of impaired glucose tolerance [ 12 ], its prevalence being of almost 30% in both adult women [ 13 ] and affected adolescents [ 14 ].",
+      "context_window": "ed glucose tolerance [ 12 ], its prevalence being of almost 30% in both adult women [ 13 ] and affected adolescents [ 14 ].",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-1304",
+      "claim_type": "percentage",
+      "raw_text": "44%",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1304,
+      "sentence": "Reported prevalence of IR in women with PCOS varies from 44% to 70% [ 19 ] mostly because of different methods used to assess it [ 20 ].",
+      "context_window": "n. Reported prevalence of IR in women with PCOS varies from 44% to 70% [ 19 ] mostly because of different methods used to a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-1311",
+      "claim_type": "percentage",
+      "raw_text": "70%",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1311,
+      "sentence": "Reported prevalence of IR in women with PCOS varies from 44% to 70% [ 19 ] mostly because of different methods used to assess it [ 20 ].",
+      "context_window": "rted prevalence of IR in women with PCOS varies from 44% to 70% [ 19 ] mostly because of different methods used to assess i",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-6232",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6232,
+      "sentence": "Particularly for overweight women with PCOS, lowering body mass by 5% can reduce serum insulin and testosterone levels and improve menstrual and reproductive function [ 35 ].",
+      "context_window": "larly for overweight women with PCOS, lowering body mass by 5% can reduce serum insulin and testosterone levels and improv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-6452",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6452,
+      "sentence": "A negative energy balance of approximately 30% to achieve an energy deficit of 500-750 kcal per day is suggested to achieve weight loss through diet modification in women with PCOS [ 34 ].",
+      "context_window": "o consideration. A negative energy balance of approximately 30% to achieve an energy deficit of 500-750 kcal per day is sug",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-8337",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 8337,
+      "sentence": "High intensity aerobic exercise with heart rate >80% improves IR in women with PCOS [ 38 ].",
+      "context_window": "per week. High intensity aerobic exercise with heart rate >80% improves IR in women with PCOS [ 38 ]. However, both high i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-10731",
+      "claim_type": "unit_value",
+      "raw_text": "8 weeks",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 10731,
+      "sentence": "The first trial assessing a beneficial role of metformin has been published in 1994 by Velazquez and Colleagues [ 45 ] who described a significant improvement in systolic blood pressure, insulin sensitivity, androgen, follicle-stimulating hormone (FSH), and SHBG levels after 8 weeks of therapy with metformin 1.5 g per day in 26 patients.",
+      "context_window": ", follicle-stimulating hormone (FSH), and SHBG levels after 8 weeks of therapy with metformin 1.5 g per day in 26 patients. In",
+      "claim_role": "duration",
+      "endpoint": "insulin sensitivity",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-11266",
+      "claim_type": "unit_value",
+      "raw_text": "0.14 mmol",
+      "numeric_values": [
+        0.14
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11266,
+      "sentence": "However, a Cochrane meta-analysis [ 47 ] evaluating as secondary outcome fasting glucose levels has shown a reduction in fasting glucose with metformin compared to placebo or no treatments, with mean difference (MD -0.14 mmol/L; 95% CI -0.21 to -0.07).",
+      "context_window": "ared to placebo or no treatments, with mean difference (MD -0.14 mmol/L; 95% CI -0.21 to -0.07). On the contrary, a second meta-",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-11279",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.21 to -0.07",
+      "numeric_values": [
+        -0.21,
+        -0.07
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11279,
+      "sentence": "However, a Cochrane meta-analysis [ 47 ] evaluating as secondary outcome fasting glucose levels has shown a reduction in fasting glucose with metformin compared to placebo or no treatments, with mean difference (MD -0.14 mmol/L; 95% CI -0.21 to -0.07).",
+      "context_window": "bo or no treatments, with mean difference (MD -0.14 mmol/L; 95% CI -0.21 to -0.07). On the contrary, a second meta-analysis performed by Pat",
+      "claim_role": "effect",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-11632",
+      "claim_type": "unit_value",
+      "raw_text": "1.38 mmol",
+      "numeric_values": [
+        1.38
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 11632,
+      "sentence": "On the contrary, a second meta-analysis performed by Patel and Shah [ 48 ] centred on metabolic outcomes of treatment with metformin versus placebo, synthetizing data on fasting blood glucose (FBG) levels of 13 randomized controlled trials (RCTs) and 506 subjects, reported no impact of metformin on fasting glucose levels (MD -1.38 mmol/L; 95% CI -3.71, 0.94).",
+      "context_window": "orted no impact of metformin on fasting glucose levels (MD -1.38 mmol/L; 95% CI -3.71, 0.94). Another Cochrane meta-analysis [ 4",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-11645",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -3.71, 0.94",
+      "numeric_values": [
+        -3.71,
+        0.94
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 11645,
+      "sentence": "On the contrary, a second meta-analysis performed by Patel and Shah [ 48 ] centred on metabolic outcomes of treatment with metformin versus placebo, synthetizing data on fasting blood glucose (FBG) levels of 13 randomized controlled trials (RCTs) and 506 subjects, reported no impact of metformin on fasting glucose levels (MD -1.38 mmol/L; 95% CI -3.71, 0.94).",
+      "context_window": "ct of metformin on fasting glucose levels (MD -1.38 mmol/L; 95% CI -3.71, 0.94). Another Cochrane meta-analysis [ 49 ] compared metformin",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-12132",
+      "claim_type": "unit_value",
+      "raw_text": "0.38 mmol",
+      "numeric_values": [
+        0.38
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12132,
+      "sentence": "When comparing metformin plus OCP to OCP alone, a better outcome on fasting glucose has been shown by Teede et al. [ 50 ] in favour of metformin plus OCP (MD 0.38 mmol/l; 95% CI0.22 to 0.54).",
+      "context_window": "by Teede et al. [ 50 ] in favour of metformin plus OCP (MD 0.38 mmol/l; 95% CI0.22 to 0.54). A trial performed in obese adolesc",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-12145",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI0.22 to 0.54",
+      "numeric_values": [
+        0.22,
+        0.54
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 12145,
+      "sentence": "When comparing metformin plus OCP to OCP alone, a better outcome on fasting glucose has been shown by Teede et al. [ 50 ] in favour of metformin plus OCP (MD 0.38 mmol/l; 95% CI0.22 to 0.54).",
+      "context_window": "al. [ 50 ] in favour of metformin plus OCP (MD 0.38 mmol/l; 95% CI0.22 to 0.54). A trial performed in obese adolescents with PCOS and imp",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-msd-12533",
+      "claim_type": "mean_sd",
+      "raw_text": "9.1 \u00b1 0.3",
+      "numeric_values": [
+        9.1,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12533,
+      "sentence": "A trial performed in obese adolescents with PCOS and impaired glucose tolerance [ 51 ] evaluated three months of therapy with metformin and showed an improvement in glucose tolerance in this specific population; in fact, 8 out of 15 subjects had a normalization in their oral glucose tolerance test (OGTT) with significant lower posttreatment 2-hour glucose levels (9.1 \u00b1 0.3 vs.",
+      "context_window": "with significant lower posttreatment 2-hour glucose levels (9.1 \u00b1 0.3 vs. 7.4 \u00b1 0.3 mmol/l; p = 0.005). In a retrospective study",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-msd-12547",
+      "claim_type": "mean_sd",
+      "raw_text": "7.4 \u00b1 0.3",
+      "numeric_values": [
+        7.4,
+        0.3
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12547,
+      "sentence": "7.4 \u00b1 0.3 mmol/l; p = 0.005).",
+      "context_window": "nt lower posttreatment 2-hour glucose levels (9.1 \u00b1 0.3 vs. 7.4 \u00b1 0.3 mmol/l; p = 0.005). In a retrospective study of 50 patient",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-12553",
+      "claim_type": "unit_value",
+      "raw_text": "0.3 mmol",
+      "numeric_values": [
+        0.3
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 12553,
+      "sentence": "7.4 \u00b1 0.3 mmol/l; p = 0.005).",
+      "context_window": "er posttreatment 2-hour glucose levels (9.1 \u00b1 0.3 vs. 7.4 \u00b1 0.3 mmol/l; p = 0.005). In a retrospective study of 50 patients wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-12565",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12565,
+      "sentence": "7.4 \u00b1 0.3 mmol/l; p = 0.005).",
+      "context_window": "ment 2-hour glucose levels (9.1 \u00b1 0.3 vs. 7.4 \u00b1 0.3 mmol/l; p = 0.005). In a retrospective study of 50 patients with PCOS [ 52 ]",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-12760",
+      "claim_type": "unit_value",
+      "raw_text": "40.2 months",
+      "numeric_values": [
+        40.2
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 12760,
+      "sentence": "In a retrospective study of 50 patients with PCOS [ 52 ], without diabetes at the baseline and treated with metformin, followed up for at least one year and with a mean follow-up of 40.2 months, researchers classified patients into two groups according to their baseline OGTT: those with (22%) and those without (78%) IGT.",
+      "context_window": "lowed up for at least one year and with a mean follow-up of 40.2 months, researchers classified patients into two groups according",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-12867",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12867,
+      "sentence": "In a retrospective study of 50 patients with PCOS [ 52 ], without diabetes at the baseline and treated with metformin, followed up for at least one year and with a mean follow-up of 40.2 months, researchers classified patients into two groups according to their baseline OGTT: those with (22%) and those without (78%) IGT.",
+      "context_window": "to two groups according to their baseline OGTT: those with (22%) and those without (78%) IGT. Only 5.1% of patients convert",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-12891",
+      "claim_type": "percentage",
+      "raw_text": "78%",
+      "numeric_values": [
+        78.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12891,
+      "sentence": "In a retrospective study of 50 patients with PCOS [ 52 ], without diabetes at the baseline and treated with metformin, followed up for at least one year and with a mean follow-up of 40.2 months, researchers classified patients into two groups according to their baseline OGTT: those with (22%) and those without (78%) IGT.",
+      "context_window": "to their baseline OGTT: those with (22%) and those without (78%) IGT. Only 5.1% of patients converted from normal glucose t",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-12906",
+      "claim_type": "percentage",
+      "raw_text": "5.1%",
+      "numeric_values": [
+        5.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12906,
+      "sentence": "Only 5.1% of patients converted from normal glucose tolerance to IGT and 55% reversed from IGT to normal glucose tolerance.",
+      "context_window": "ne OGTT: those with (22%) and those without (78%) IGT. Only 5.1% of patients converted from normal glucose tolerance to IGT",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-12974",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12974,
+      "sentence": "Only 5.1% of patients converted from normal glucose tolerance to IGT and 55% reversed from IGT to normal glucose tolerance.",
+      "context_window": "patients converted from normal glucose tolerance to IGT and 55% reversed from IGT to normal glucose tolerance. However, in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-13156",
+      "claim_type": "unit_value",
+      "raw_text": "164 mg",
+      "numeric_values": [
+        164.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 13156,
+      "sentence": "However, in the group of nonreversed IGT patients, there was an overall improvement of the OGTT which significantly decreased from 164 mg/dl to 135 mg/dl in the 2-hour plasma glucose level.",
+      "context_window": "improvement of the OGTT which significantly decreased from 164 mg/dl to 135 mg/dl in the 2-hour plasma glucose level. Metfor",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-13169",
+      "claim_type": "unit_value",
+      "raw_text": "135 mg",
+      "numeric_values": [
+        135.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 13169,
+      "sentence": "However, in the group of nonreversed IGT patients, there was an overall improvement of the OGTT which significantly decreased from 164 mg/dl to 135 mg/dl in the 2-hour plasma glucose level.",
+      "context_window": "of the OGTT which significantly decreased from 164 mg/dl to 135 mg/dl in the 2-hour plasma glucose level. Metformin has no kn",
+      "claim_role": "effect",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-14605",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.07, 0.04",
+      "numeric_values": [
+        -0.07,
+        0.04
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14605,
+      "sentence": "A very recent meta-analysis evaluating the effect of metformin before conception and during pregnancy in women with PCOS and adjusting for study methodology, age, and BMI revealed that metformin treatment before or during pregnancy does not decrease the prevalence of GDM ( \u03b2 = -0.05, 95% CI -0.07, 0.04; p = 0.301) [ 62 ].",
+      "context_window": "gnancy does not decrease the prevalence of GDM ( \u03b2 = -0.05, 95% CI -0.07, 0.04; p = 0.301) [ 62 ]. Another recently published RCT on 487 p",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-14625",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.301",
+      "numeric_values": [
+        0.301
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14625,
+      "sentence": "A very recent meta-analysis evaluating the effect of metformin before conception and during pregnancy in women with PCOS and adjusting for study methodology, age, and BMI revealed that metformin treatment before or during pregnancy does not decrease the prevalence of GDM ( \u03b2 = -0.05, 95% CI -0.07, 0.04; p = 0.301) [ 62 ].",
+      "context_window": "ease the prevalence of GDM ( \u03b2 = -0.05, 95% CI -0.07, 0.04; p = 0.301) [ 62 ]. Another recently published RCT on 487 pregnant wom",
+      "claim_role": "background",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-14794",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14794,
+      "sentence": "Another recently published RCT on 487 pregnant women comparing metformin treatment versus placebo, confirmed that metformin use does not prevent GDM (25% in the metformin group vs.",
+      "context_window": "placebo, confirmed that metformin use does not prevent GDM (25% in the metformin group vs. 24% in the placebo group; OR 1.0",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-14825",
+      "claim_type": "percentage",
+      "raw_text": "24%",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 14825,
+      "sentence": "24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75).",
+      "context_window": "in use does not prevent GDM (25% in the metformin group vs. 24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75).",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-14860",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI 0.69-1.66",
+      "numeric_values": [
+        0.69,
+        1.66
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 14860,
+      "sentence": "24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75).",
+      "context_window": "the metformin group vs. 24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75). Through their action on the peroxisome prolife",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-14878",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.75",
+      "numeric_values": [
+        0.75
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14878,
+      "sentence": "24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75).",
+      "context_window": "up vs. 24% in the placebo group; OR 1.09, 95% CI 0.69-1.66; p = 0.75). Through their action on the peroxisome proliferator-acti",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-15917",
+      "claim_type": "unit_value",
+      "raw_text": "0.55 mmol",
+      "numeric_values": [
+        0.55
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 15917,
+      "sentence": "With respect to the placebo, pioglitazone and rosiglitazone were more effective than placebo in reducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031).",
+      "context_window": "re more effective than placebo in reducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031). The same group perfo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-15930",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.06 to -0.05",
+      "numeric_values": [
+        -1.06,
+        -0.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 15930,
+      "sentence": "With respect to the placebo, pioglitazone and rosiglitazone were more effective than placebo in reducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031).",
+      "context_window": "tive than placebo in reducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031). The same group performed another meta-analysi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-15953",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.031",
+      "numeric_values": [
+        0.031
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15953,
+      "sentence": "With respect to the placebo, pioglitazone and rosiglitazone were more effective than placebo in reducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031).",
+      "context_window": "ducing FBG levels (MD: -0.55 mmol/l; 95% CI -1.06 to -0.05; p = 0.031). The same group performed another meta-analysis [ 64 ] in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-16210",
+      "claim_type": "unit_value",
+      "raw_text": "0.21 mmol",
+      "numeric_values": [
+        0.21
+      ],
+      "units": "mmol",
+      "source_section": "results",
+      "source_offset": 16210,
+      "sentence": "Results showed a similar effect of the two drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089).",
+      "context_window": "showed a similar effect of the two drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089). In their study, Aroda",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-16223",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.46 to 0.03",
+      "numeric_values": [
+        -0.46,
+        0.03
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 16223,
+      "sentence": "Results showed a similar effect of the two drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089).",
+      "context_window": "lar effect of the two drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089). In their study, Aroda and colleagues [ 65 ] c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-16245",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.089",
+      "numeric_values": [
+        0.089
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16245,
+      "sentence": "Results showed a similar effect of the two drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089).",
+      "context_window": "drugs on FBG levels (MD: 0.21 mmol/l; 95% CI -0.46 to 0.03; p = 0.089). In their study, Aroda and colleagues [ 65 ] compared 13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-16342",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 16342,
+      "sentence": "In their study, Aroda and colleagues [ 65 ] compared 13 women with PCOS treated for 6 months with pioglitazone 45 mg per day with 10 women treated with placebo.",
+      "context_window": "d colleagues [ 65 ] compared 13 women with PCOS treated for 6 months with pioglitazone 45 mg per day with 10 women treated with",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-16369",
+      "claim_type": "unit_value",
+      "raw_text": "45 mg",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 16369,
+      "sentence": "In their study, Aroda and colleagues [ 65 ] compared 13 women with PCOS treated for 6 months with pioglitazone 45 mg per day with 10 women treated with placebo.",
+      "context_window": "d 13 women with PCOS treated for 6 months with pioglitazone 45 mg per day with 10 women treated with placebo. They observed t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-16617",
+      "claim_type": "percentage",
+      "raw_text": "29%",
+      "numeric_values": [
+        29.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16617,
+      "sentence": "Furthermore, in the placebo group, 29% of the patients with normal OGTT had an impaired glucose response at the end of the observation period, whereas none of the patients with impaired glucose tolerance response reverted to the normality.",
+      "context_window": "up treated with placebo. Furthermore, in the placebo group, 29% of the patients with normal OGTT had an impaired glucose re",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-16858",
+      "claim_type": "percentage",
+      "raw_text": "40%",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 16858,
+      "sentence": "Meanwhile, in the pioglitazone arm, 40% of patients with altered OGTT reverted to normality and no one has experienced a worsening of their glucose tolerance status.",
+      "context_window": "erted to the normality. Meanwhile, in the pioglitazone arm, 40% of patients with altered OGTT reverted to normality and no",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-or-a-17253",
+      "claim_type": "odds_ratio",
+      "raw_text": "OR = 8.88",
+      "numeric_values": [
+        8.88
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17253,
+      "sentence": "A meta-analysis reported a statistically significant difference in adverse effects incidence between PCOS patients taking metformin and those in treatment with thiazolidinediones (OR = 8.88 for metformin vs.",
+      "context_window": "g metformin and those in treatment with thiazolidinediones (OR = 8.88 for metformin vs. TZD, 95% CI = 3.54, 22.27; p < 0.00001) [",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-17286",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17286,
+      "sentence": "TZD, 95% CI = 3.54, 22.27; p < 0.00001) [ 66 ].",
+      "context_window": "t with thiazolidinediones (OR = 8.88 for metformin vs. TZD, 95% CI = 3.54, 22.27; p < 0.00001) [ 66 ]. Since their effect",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-17308",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17308,
+      "sentence": "TZD, 95% CI = 3.54, 22.27; p < 0.00001) [ 66 ].",
+      "context_window": "nes (OR = 8.88 for metformin vs. TZD, 95% CI = 3.54, 22.27; p < 0.00001) [ 66 ]. Since their effect on weight loss and IR, Javed e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17558",
+      "claim_type": "unit_value",
+      "raw_text": "25 mg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 17558,
+      "sentence": "They performed aRCT, comparing hormonal and metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks.",
+      "context_window": "T, comparing hormonal and metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients wit",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17584",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 17584,
+      "sentence": "They performed aRCT, comparing hormonal and metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks.",
+      "context_window": "metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17643",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 17643,
+      "sentence": "They performed aRCT, comparing hormonal and metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks.",
+      "context_window": "1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks. May be because of the short period of obs",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17657",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 17657,
+      "sentence": "They performed aRCT, comparing hormonal and metabolic effect of empagliflozin 25 mg daily vs. metformin 1500 mg daily, treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks.",
+      "context_window": ", treating 40 patients with PCOS and BMI over 25 kg/m 2 for 12 weeks. May be because of the short period of observation or the s",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17969",
+      "claim_type": "unit_value",
+      "raw_text": "1.4 kg",
+      "numeric_values": [
+        1.4
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 17969,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "able effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (em",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-17978",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 17978,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "ct of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empaglifl",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-17998",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 kg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "kg",
+      "source_section": "results",
+      "source_offset": 17998,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-18007",
+      "claim_type": "percentage",
+      "raw_text": "2.3%",
+      "numeric_values": [
+        2.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18007,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "eight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metform",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-18013",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18013,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "(empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-msd-18049",
+      "claim_type": "mean_sd",
+      "raw_text": "1.4 \u00b1 3.2",
+      "numeric_values": [
+        1.4,
+        3.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18049,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "tformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-18055",
+      "claim_type": "percentage",
+      "raw_text": "3.2%",
+      "numeric_values": [
+        3.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18055,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "n: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed. G",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-msd-18075",
+      "claim_type": "mean_sd",
+      "raw_text": "1.1 \u00b1 2.2",
+      "numeric_values": [
+        1.1,
+        2.2
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18075,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "= 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed. Glucagon-like peptide-1 re",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-18081",
+      "claim_type": "percentage",
+      "raw_text": "2.2%",
+      "numeric_values": [
+        2.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18081,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "6) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed. Glucagon-like peptide-1 rec",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-18087",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.006",
+      "numeric_values": [
+        0.006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18087,
+      "sentence": "Only a favourable effect of empagliflozin on body weight (empagliflozin -1.4 kg \u00b1 3.2% vs. metformin: 1.2 kg \u00b1 2.3%; p = 0.006) and BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed.",
+      "context_window": "BMI (empagliflozin: -1.4 \u00b1 3.2% vs. metformin: 1.1 \u00b1 2.2%; p = 0.006) has been observed. Glucagon-like peptide-1 receptor agoni",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-18641",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18641,
+      "sentence": "This marked effect on anthropometric parameters could be beneficial in PCOS women, where a prevalence of obese patients ranging from 50 to 80% has been estimated.",
+      "context_window": "en, where a prevalence of obese patients ranging from 50 to 80% has been estimated. In this perspective, some studies have",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-18960",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 18960,
+      "sentence": "Assuming a synergist effect of liraglutide and metformin on insulin and IR, Jensterle et al. [ 68 ] evaluated 30 obese women with PCOS, randomized to be treated with the combination of metformin 1000 mg twice a day and liraglutide 1.2 mg once a day or liraglutide alone 3 mg once a day.",
+      "context_window": "randomized to be treated with the combination of metformin 1000 mg twice a day and liraglutide 1.2 mg once a day or liraglutid",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-18996",
+      "claim_type": "unit_value",
+      "raw_text": "1.2 mg",
+      "numeric_values": [
+        1.2
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 18996,
+      "sentence": "Assuming a synergist effect of liraglutide and metformin on insulin and IR, Jensterle et al. [ 68 ] evaluated 30 obese women with PCOS, randomized to be treated with the combination of metformin 1000 mg twice a day and liraglutide 1.2 mg once a day or liraglutide alone 3 mg once a day.",
+      "context_window": "ombination of metformin 1000 mg twice a day and liraglutide 1.2 mg once a day or liraglutide alone 3 mg once a day. After 12 w",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19035",
+      "claim_type": "unit_value",
+      "raw_text": "3 mg",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 19035,
+      "sentence": "Assuming a synergist effect of liraglutide and metformin on insulin and IR, Jensterle et al. [ 68 ] evaluated 30 obese women with PCOS, randomized to be treated with the combination of metformin 1000 mg twice a day and liraglutide 1.2 mg once a day or liraglutide alone 3 mg once a day.",
+      "context_window": "day and liraglutide 1.2 mg once a day or liraglutide alone 3 mg once a day. After 12 weeks of treatment, the authors observ",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19058",
+      "claim_type": "unit_value",
+      "raw_text": "12 weeks",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 19058,
+      "sentence": "After 12 weeks of treatment, the authors observed a significant improvement in the OGTT at 0 and 120 min in the combination therapy arm ( p = 0.015).",
+      "context_window": "2 mg once a day or liraglutide alone 3 mg once a day. After 12 weeks of treatment, the authors observed a significant improvemen",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-19190",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.015",
+      "numeric_values": [
+        0.015
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19190,
+      "sentence": "After 12 weeks of treatment, the authors observed a significant improvement in the OGTT at 0 and 120 min in the combination therapy arm ( p = 0.015).",
+      "context_window": "the OGTT at 0 and 120 min in the combination therapy arm ( p = 0.015). Saxagliptin is a selective oral dipeptidyl peptidase-4 (",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19424",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 19424,
+      "sentence": "A recent study [ 69 ] evaluated metabolic parameters of 75 patients diagnosed with both T2D and PCOS randomly assigned to treatment with metformin (2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 weeks.",
+      "context_window": "T2D and PCOS randomly assigned to treatment with metformin (2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 week",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19455",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 19455,
+      "sentence": "A recent study [ 69 ] evaluated metabolic parameters of 75 patients diagnosed with both T2D and PCOS randomly assigned to treatment with metformin (2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 weeks.",
+      "context_window": "to treatment with metformin (2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 weeks. The study showed signific",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19484",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 19484,
+      "sentence": "A recent study [ 69 ] evaluated metabolic parameters of 75 patients diagnosed with both T2D and PCOS randomly assigned to treatment with metformin (2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 weeks.",
+      "context_window": "2000 mg daily) or saxagliptin (5 mg daily) or both, in over 24 weeks. The study showed significant reduction of glycated haemogl",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-19665",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19665,
+      "sentence": "The study showed significant reduction of glycated haemoglobin in all groups, but no differences were detected between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890).",
+      "context_window": "between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin v",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-19675",
+      "claim_type": "percentage",
+      "raw_text": "1.3%",
+      "numeric_values": [
+        1.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19675,
+      "sentence": "The study showed significant reduction of glycated haemoglobin in all groups, but no differences were detected between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890).",
+      "context_window": "oups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metform",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-19685",
+      "claim_type": "percentage",
+      "raw_text": "1.1%",
+      "numeric_values": [
+        1.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 19685,
+      "sentence": "The study showed significant reduction of glycated haemoglobin in all groups, but no differences were detected between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890).",
+      "context_window": "gliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-19705",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19705,
+      "sentence": "The study showed significant reduction of glycated haemoglobin in all groups, but no differences were detected between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890).",
+      "context_window": "ion vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890). Another study [ 69",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-19743",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.890",
+      "numeric_values": [
+        0.89
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19743,
+      "sentence": "The study showed significant reduction of glycated haemoglobin in all groups, but no differences were detected between groups (saxagliptin vs. combination vs. metformin: -1.1% vs. -1.3% vs. -1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890).",
+      "context_window": "-1.1%, respectively, p = 0.016; saxagliptin vs. metformin, p = 0.890). Another study [ 69 ] performed on premenopausal patients",
+      "claim_role": "effect",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19967",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 19967,
+      "sentence": "Another study [ 69 ] performed on premenopausal patients with PCOS and impaired fasting glucose or impaired glucose tolerance randomly assigned patients to three different treatments: metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily.",
+      "context_window": "s to three different treatments: metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combinatio",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-19999",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 19999,
+      "sentence": "Another study [ 69 ] performed on premenopausal patients with PCOS and impaired fasting glucose or impaired glucose tolerance randomly assigned patients to three different treatments: metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily.",
+      "context_window": "metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin an",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-20044",
+      "claim_type": "unit_value",
+      "raw_text": "5 mg",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 20044,
+      "sentence": "Another study [ 69 ] performed on premenopausal patients with PCOS and impaired fasting glucose or impaired glucose tolerance randomly assigned patients to three different treatments: metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily.",
+      "context_window": "y, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily. At the end of",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-20065",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 20065,
+      "sentence": "Another study [ 69 ] performed on premenopausal patients with PCOS and impaired fasting glucose or impaired glucose tolerance randomly assigned patients to three different treatments: metformin extended release 2000 mg once daily, saxagliptin 5 mg once daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily.",
+      "context_window": "nce daily, and the combination of both 5 mg saxagliptin and 2000 mg metformin once daily. At the end of the study, 56% of patie",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-20120",
+      "claim_type": "percentage",
+      "raw_text": "56%",
+      "numeric_values": [
+        56.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20120,
+      "sentence": "At the end of the study, 56% of patients had a glucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination).",
+      "context_window": "and 2000 mg metformin once daily. At the end of the study, 56% of patients had a glucose tolerance normalization (25% in t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-20175",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20175,
+      "sentence": "At the end of the study, 56% of patients had a glucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination).",
+      "context_window": "udy, 56% of patients had a glucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-20203",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20203,
+      "sentence": "At the end of the study, 56% of patients had a glucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination).",
+      "context_window": "lucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination). The arm wi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-20231",
+      "claim_type": "percentage",
+      "raw_text": "91%",
+      "numeric_values": [
+        91.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 20231,
+      "sentence": "At the end of the study, 56% of patients had a glucose tolerance normalization (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination).",
+      "context_window": "on (25% in the metformin group, 55% in the saxagliptin, and 91% in the combination). The arm with saxagliptin plus metformi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-20382",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.007",
+      "numeric_values": [
+        0.007
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 20382,
+      "sentence": "The arm with saxagliptin plus metformin demonstrated superiority versus metformin in fasting glucose and OGTT normalization ( p = 0.007).",
+      "context_window": "ersus metformin in fasting glucose and OGTT normalization ( p = 0.007). Most commonly reported side effect of these classes of dr",
+      "claim_role": "unknown",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-21646",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21646,
+      "sentence": "Myo-inositol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatment increased high-density lipoprotein cholesterol (+22%).",
+      "context_window": "on diet. Myo-inositol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthe",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-21665",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21665,
+      "sentence": "Myo-inositol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatment increased high-density lipoprotein cholesterol (+22%).",
+      "context_window": "tol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatmen",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-21697",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21697,
+      "sentence": "Myo-inositol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatment increased high-density lipoprotein cholesterol (+22%).",
+      "context_window": "essure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatment increased high-density lipopro",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-pct-21779",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 21779,
+      "sentence": "Myo-inositol decreased diastolic blood pressure (-11%), HOMA index (-75%), and serum triglycerides (-20%); furthermore, the treatment increased high-density lipoprotein cholesterol (+22%).",
+      "context_window": "treatment increased high-density lipoprotein cholesterol (+22%). The authors stated that myo-inositol administration may b",
+      "claim_role": "effect",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-22337",
+      "claim_type": "unit_value",
+      "raw_text": "4000 mg",
+      "numeric_values": [
+        4000.0
+      ],
+      "units": "mg",
+      "source_section": "results",
+      "source_offset": 22337,
+      "sentence": "The relevance of these findings is mainly related to the possibility of an effective therapeutic approach in GDM using myo-inositol alone at a dosage of 4000 mg daily, which gave a lower relative risk for an abnormal maternal OGTT [ 80 ].",
+      "context_window": "tic approach in GDM using myo-inositol alone at a dosage of 4000 mg daily, which gave a lower relative risk for an abnormal mat",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24060",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -1.39-0.83",
+      "numeric_values": [
+        -1.39,
+        0.83
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24060,
+      "sentence": "Authors showed that myo-inositol is likely to improve IR because of the lower HOMA index both in the myo-inositol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02).",
+      "context_window": "both in the myo-inositol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24079",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24079,
+      "sentence": "Authors showed that myo-inositol is likely to improve IR because of the lower HOMA index both in the myo-inositol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02).",
+      "context_window": "sitol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estrogen comparis",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24165",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -0.60-0.05",
+      "numeric_values": [
+        -0.6,
+        0.05
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24165,
+      "sentence": "Authors showed that myo-inositol is likely to improve IR because of the lower HOMA index both in the myo-inositol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02).",
+      "context_window": "o-inositol vs. metformin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02). In the myo-inositol vs. placebo subgroup, myo-i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24184",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24184,
+      "sentence": "Authors showed that myo-inositol is likely to improve IR because of the lower HOMA index both in the myo-inositol vs. placebo comparison (WMD -1.11; 95% CI -1.39-0.83; p < 0.00001) and in the myo-inositol vs. metformin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02).",
+      "context_window": "ormin or estrogen comparison (WMD -0.33; 95% CI -0.60-0.05; p = 0.02). In the myo-inositol vs. placebo subgroup, myo-inositol is",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24337",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -5.76, -2.18",
+      "numeric_values": [
+        -5.76,
+        -2.18
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24337,
+      "sentence": "In the myo-inositol vs. placebo subgroup, myo-inositol is likely to improve hyperinsulinemia because of the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or estrogen subgroup, there is not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19).",
+      "context_window": "nsulinemia because of the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24358",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.00001",
+      "numeric_values": [
+        1e-05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24358,
+      "sentence": "In the myo-inositol vs. placebo subgroup, myo-inositol is likely to improve hyperinsulinemia because of the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or estrogen subgroup, there is not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19).",
+      "context_window": "the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or estrogen subgr",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24482",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI -2.43, 0.45",
+      "numeric_values": [
+        -2.43,
+        0.45
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24482,
+      "sentence": "In the myo-inositol vs. placebo subgroup, myo-inositol is likely to improve hyperinsulinemia because of the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or estrogen subgroup, there is not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19).",
+      "context_window": "n subgroup, there is not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19). In each subgroup, there is not enough strong ev",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24502",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.19",
+      "numeric_values": [
+        0.19
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24502,
+      "sentence": "In the myo-inositol vs. placebo subgroup, myo-inositol is likely to improve hyperinsulinemia because of the lower fasting insulin (WMD -3.97; 95% CI -5.76, -2.18; p < 0.00001), while in the myo-inositol vs. metformin or estrogen subgroup, there is not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19).",
+      "context_window": "not enough strong evidence (WMD -0.99; 95% CI -2.43, 0.45; p = 0.19). In each subgroup, there is not enough strong evidence tha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24804",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.791 to -0.251",
+      "numeric_values": [
+        -1.791,
+        -0.251
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24804,
+      "sentence": "The results of quantitative analyses showed a significant decrease of fasting insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol.",
+      "context_window": "gnificant decrease of fasting insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24830",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.009",
+      "numeric_values": [
+        0.009
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24830,
+      "sentence": "The results of quantitative analyses showed a significant decrease of fasting insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol.",
+      "context_window": "ing insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (SMD = -0.58",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-ci-24902",
+      "claim_type": "confidence_interval",
+      "raw_text": "95% CI: -1.145 to -0.025",
+      "numeric_values": [
+        -1.145,
+        -0.025
+      ],
+      "units": "95%CI",
+      "source_section": "results",
+      "source_offset": 24902,
+      "sentence": "The results of quantitative analyses showed a significant decrease of fasting insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol.",
+      "context_window": "nd homeostasis model assessment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol. A meta-",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-p-24928",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.041",
+      "numeric_values": [
+        0.041
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 24928,
+      "sentence": "The results of quantitative analyses showed a significant decrease of fasting insulin (SMD = -1.021 \u03bc U/mL, 95% CI: -1.791 to -0.251, p = 0.009) and homeostasis model assessment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol.",
+      "context_window": "sment (HOMA) index (SMD = -0.585, 95% CI: -1.145 to -0.025, p = 0.041) in the group treated with myo-inositol. A meta-analysis co",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-27458",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 27458,
+      "sentence": "Furthermore, a majority of them have been designed with a small sample size and the observation time is often very short; it does not exceed 24 weeks for longer studies.",
+      "context_window": "he observation time is often very short; it does not exceed 24 weeks for longer studies.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7298266_from_prediabetes_to_type_2_diabetes_mellitus_in_women_with_p-u-619",
+      "claim_type": "unit_value",
+      "raw_text": "24 weeks",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "weeks",
+      "source_section": "limitations",
+      "source_offset": 619,
+      "sentence": "Furthermore, a majority of them have been designed with a small sample size and the observation time is often very short; it does not exceed 24 weeks for longer studies.",
+      "context_window": "he observation time is often very short; it does not exceed 24 weeks for longer studies.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

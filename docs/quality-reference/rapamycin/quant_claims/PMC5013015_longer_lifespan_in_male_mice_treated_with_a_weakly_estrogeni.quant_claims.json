@@ -1,0 +1,2443 @@
+{
+  "paper_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni",
+  "doi": "10.1111/acel.12496",
+  "extracted_at": "2026-05-05T15:22:46+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 70,
+    "unit_value": 35,
+    "p_value": 30
+  },
+  "claims": [
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-1072",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1072,
+      "sentence": "Metformin alone, at a dose of 0.1% in the diet, did not significantly extend lifespan.",
+      "context_window": "edian lifespan in males only. Metformin alone, at a dose of 0.1% in the diet, did not significantly extend lifespan. Metform",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-1140",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1140,
+      "sentence": "Metformin (0.1%) combined with rapamycin (14 ppm) robustly extended lifespan, suggestive of an added benefit, based on historical comparison with earlier studies of rapamycin given alone.",
+      "context_window": "the diet, did not significantly extend lifespan. Metformin (0.1%) combined with rapamycin (14 ppm) robustly extended lifespa",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1534",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1534,
+      "sentence": "The \u03b1\u2010glucosidase inhibitor, acarbose, at a concentration previously tested (1000 ppm), significantly increased median longevity in males and 90th percentile lifespan in both sexes, even when treatment was started at 16 months.",
+      "context_window": "lifespan in both sexes, even when treatment was started at 16 months. Neither fish oil nor UDCA extended lifespan. These results",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-932",
+      "claim_type": "unit_value",
+      "raw_text": "11 years",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 932,
+      "sentence": "Fifty\u2010three lifespan experiments, involving 30 test agents, have been initiated in the first 11 years of the ITP.",
+      "context_window": "involving 30 test agents, have been initiated in the first 11 years of the ITP. Significant effects on longevity, in one or bot",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2621",
+      "claim_type": "percentage",
+      "raw_text": "28%",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2621,
+      "sentence": "We previously reported that treatment with 17aE2, at a concentration of 4.8 ppm in food, increased median lifespan in males using data pooled data from all three sites, but we noted dramatic site\u2010to\u2010site variation, with a 28% increase in median at the UT site but much smaller (3%) increases at the other two sites (Harrison et al ., 2014 ).",
+      "context_window": "sites, but we noted dramatic site\u2010to\u2010site variation, with a 28% increase in median at the UT site but much smaller (3%) inc",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2677",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 2677,
+      "sentence": "We previously reported that treatment with 17aE2, at a concentration of 4.8 ppm in food, increased median lifespan in males using data pooled data from all three sites, but we noted dramatic site\u2010to\u2010site variation, with a 28% increase in median at the UT site but much smaller (3%) increases at the other two sites (Harrison et al ., 2014 ).",
+      "context_window": "h a 28% increase in median at the UT site but much smaller (3%) increases at the other two sites (Harrison et al ., 2014 )",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-3402",
+      "claim_type": "unit_value",
+      "raw_text": "120 days",
+      "numeric_values": [
+        120.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 3402,
+      "sentence": "Previous studies have shown that in healthy humans supplemented orally with Prot over 120 days, superoxide dismutase (SOD) was increased in red blood cells by 30%, and catalase increased by 54% (Nelson et al ., 2006 ).",
+      "context_window": "n that in healthy humans supplemented orally with Prot over 120 days, superoxide dismutase (SOD) was increased in red blood cell",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-3475",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3475,
+      "sentence": "Previous studies have shown that in healthy humans supplemented orally with Prot over 120 days, superoxide dismutase (SOD) was increased in red blood cells by 30%, and catalase increased by 54% (Nelson et al ., 2006 ).",
+      "context_window": "eroxide dismutase (SOD) was increased in red blood cells by 30%, and catalase increased by 54% (Nelson et al ., 2006 ). Fur",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-3506",
+      "claim_type": "percentage",
+      "raw_text": "54%",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 3506,
+      "sentence": "Previous studies have shown that in healthy humans supplemented orally with Prot over 120 days, superoxide dismutase (SOD) was increased in red blood cells by 30%, and catalase increased by 54% (Nelson et al ., 2006 ).",
+      "context_window": "reased in red blood cells by 30%, and catalase increased by 54% (Nelson et al ., 2006 ). Furthermore, biochemical and histo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4927",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4927,
+      "sentence": "More recently, de Cabo and colleagues reported that 0.1% Met in the diet (i.e. at 1000 ppm) increased mean lifespan by 4-6% in male C57BL/6J.Nia mice (Martin\u2010Montalvo et al ., 2013 ) and also improved indices of health.",
+      "context_window": "2005 ). More recently, de Cabo and colleagues reported that 0.1% Met in the diet (i.e. at 1000 ppm) increased mean lifespan",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4996",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 4996,
+      "sentence": "More recently, de Cabo and colleagues reported that 0.1% Met in the diet (i.e. at 1000 ppm) increased mean lifespan by 4-6% in male C57BL/6J.Nia mice (Martin\u2010Montalvo et al ., 2013 ) and also improved indices of health.",
+      "context_window": "in the diet (i.e. at 1000 ppm) increased mean lifespan by 4-6% in male C57BL/6J.Nia mice (Martin\u2010Montalvo et al ., 2013 )",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-7084",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 7084,
+      "sentence": "To test this interpretation, and to define the optimal NDGA concentration for lifespan extension in males, we repeated the study starting at 6 months of age at the dose used in the original study, 2500 ppm, plus doses higher (5000 ppm) and lower (800 ppm) than tested previously.",
+      "context_window": "espan extension in males, we repeated the study starting at 6 months of age at the dose used in the original study, 2500 ppm, pl",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8648",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 8648,
+      "sentence": "In that study, treatment was begun at 4 months of age.",
+      "context_window": "ison et al ., 2014 ). In that study, treatment was begun at 4 months of age. Because it is more clinically relevant to begin ant",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8802",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 8802,
+      "sentence": "Because it is more clinically relevant to begin anti\u2010aging treatments late in life, we initiated a study in which ACA treatment began at 16 months of age.",
+      "context_window": "life, we initiated a study in which ACA treatment began at 16 months of age.",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-439",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 439,
+      "sentence": "Using a two\u2010sided 5% significance level, we performed the log\u2010rank test to determine whether survival curves for mice receiving treatment differ from the survival function for control mice.",
+      "context_window": "the control group and multiplied by 100. Using a two\u2010sided 5% significance level, we performed the log\u2010rank test to deter",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-2305",
+      "claim_type": "p_value",
+      "raw_text": "P > 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2305,
+      "sentence": "If the interaction term was not significant ( P > 0.05), then the interaction was removed from the model.",
+      "context_window": "on average). If the interaction term was not significant ( P > 0.05), then the interaction was removed from the model. In order",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-13",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 13,
+      "sentence": "Beginning at 10 months of age, male and female mice were fed chow containing 17aE2 at a concentration of 14.4 ppm (17aE2).",
+      "context_window": "Beginning at 10 months of age, male and female mice were fed chow containing 17aE2",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-184",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 184,
+      "sentence": "As shown in Table 1 and Figure 1 , median lifespan increased 19% in male mice, calculated from data pooled from the three sites ( P < 0.001).",
+      "context_window": "s shown in Table 1 and Figure 1 , median lifespan increased 19% in male mice, calculated from data pooled from the three si",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-253",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 253,
+      "sentence": "As shown in Table 1 and Figure 1 , median lifespan increased 19% in male mice, calculated from data pooled from the three sites ( P < 0.001).",
+      "context_window": "le mice, calculated from data pooled from the three sites ( P < 0.001). The effects of 17aE2 were significant at all three sites,",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-326",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 326,
+      "sentence": "The effects of 17aE2 were significant at all three sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig.",
+      "context_window": "he effects of 17aE2 were significant at all three sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-374",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 374,
+      "sentence": "The effects of 17aE2 were significant at all three sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig.",
+      "context_window": "e sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig. S1, Supporting inform",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-379",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 379,
+      "sentence": "The effects of 17aE2 were significant at all three sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig.",
+      "context_window": "es, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig. S1, Supporting informatio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-387",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 387,
+      "sentence": "The effects of 17aE2 were significant at all three sites, at P < 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig.",
+      "context_window": "< 0.003, with increases in median survival of 26%, 9%, and 23% at TJL, UM, and UT (Fig. S1, Supporting information). The a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-462",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 462,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "and UT (Fig. S1, Supporting information). The age at which 90% of the mice had died increased on average by 12% (21%, 8%,",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-511",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 511,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "e at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting i",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-516",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 516,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting inform",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-521",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 521,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting informatio",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-529",
+      "claim_type": "percentage",
+      "raw_text": "8%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 529,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-671",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 671,
+      "sentence": "The age at which 90% of the mice had died increased on average by 12% (21%, 8%, and 8% at the three sites; Table S1, Supporting information), and the difference in survival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ).",
+      "context_window": "rvival at the 90th percentile was significantly increased ( P < 0.001 for the pooled data; Table 1 ). 17aE2 treatment had no sign",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-1043",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0006",
+      "numeric_values": [
+        0.0006
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1043,
+      "sentence": "Interestingly, survival of male 17aE2\u2010treated mice was also significantly higher than survival for the female control group ( P < 0.0006) and for the female 17aE2\u2010treated group ( P < 0.0135).",
+      "context_window": "icantly higher than survival for the female control group ( P < 0.0006) and for the female 17aE2\u2010treated group ( P < 0.0135). C20",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-1096",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.0135",
+      "numeric_values": [
+        0.0135
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1096,
+      "sentence": "Interestingly, survival of male 17aE2\u2010treated mice was also significantly higher than survival for the female control group ( P < 0.0006) and for the female 17aE2\u2010treated group ( P < 0.0135).",
+      "context_window": "roup ( P < 0.0006) and for the female 17aE2\u2010treated group ( P < 0.0135). C2011 mice, pooled across sites Survival curves for mic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1364",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1364,
+      "sentence": "C2011 mice, pooled across sites\n\nSurvival curves for mice treated with 17\u2010\u03b1\u2010estradiol (17aE2) or Protandim (Prot) pooled across sites. (A) males treated with 14 ppm 17aE2. (B) females treated with 14 ppm 17aE2. (C) males treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) females treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on).",
+      "context_window": "th 14 ppm 17aE2. (C) males treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) fem",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1404",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1404,
+      "sentence": "C2011 mice, pooled across sites\n\nSurvival curves for mice treated with 17\u2010\u03b1\u2010estradiol (17aE2) or Protandim (Prot) pooled across sites. (A) males treated with 14 ppm 17aE2. (B) females treated with 14 ppm 17aE2. (C) males treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) females treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on).",
+      "context_window": "Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) females treated with Prot at 600 ppm (10-17",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1471",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1471,
+      "sentence": "C2011 mice, pooled across sites\n\nSurvival curves for mice treated with 17\u2010\u03b1\u2010estradiol (17aE2) or Protandim (Prot) pooled across sites. (A) males treated with 14 ppm 17aE2. (B) females treated with 14 ppm 17aE2. (C) males treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) females treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on).",
+      "context_window": "hs of age on). (D) females treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). Each sy",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1511",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 1511,
+      "sentence": "C2011 mice, pooled across sites\n\nSurvival curves for mice treated with 17\u2010\u03b1\u2010estradiol (17aE2) or Protandim (Prot) pooled across sites. (A) males treated with 14 ppm 17aE2. (B) females treated with 14 ppm 17aE2. (C) males treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). (D) females treated with Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on).",
+      "context_window": "Prot at 600 ppm (10-17 months of age) followed by 1200 ppm (17 months of age on). Each symbol represents one mouse. P \u2010values ref",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-1993",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.44",
+      "numeric_values": [
+        0.44
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1993,
+      "sentence": "S2, Supporting information, P = 0.44).",
+      "context_window": "ed to ovariectomized mice (Fig. S2, Supporting information, P = 0.44). However, we considered the possibility that it might be u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-2363",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "results",
+      "source_offset": 2363,
+      "sentence": "As shown in Figure S2 (Supporting information), the 14.4 ppm 17aE2 diet fed to ovariectomized mice for 6 weeks increased uterine weight to a level statistically indistinguishable from that of intact controls.",
+      "context_window": "on), the 14.4 ppm 17aE2 diet fed to ovariectomized mice for 6 weeks increased uterine weight to a level statistically indisting",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-2600",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.0014",
+      "numeric_values": [
+        0.0014
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2600,
+      "sentence": "Additionally, mice fed the high dose had mean uterine weights significantly higher than that of the ovariectomized control group ( P = 0.0014).",
+      "context_window": "ntly higher than that of the ovariectomized control group ( P = 0.0014). Beginning at 10 months of age, one group of mice was fed",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-2627",
+      "claim_type": "unit_value",
+      "raw_text": "10 months",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2627,
+      "sentence": "Beginning at 10 months of age, one group of mice was fed chow containing Prot at 600 ppm, to approximate the intake of humans who consume this commercially available nutritional supplement.",
+      "context_window": "e ovariectomized control group ( P = 0.0014). Beginning at 10 months of age, one group of mice was fed chow containing Prot at 6",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-2878",
+      "claim_type": "unit_value",
+      "raw_text": "17 months",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 2878,
+      "sentence": "The dose of Prot was increased from 600 to 1200 ppm when the mice reached 17 months of age, because testing of mice not included in the longevity cohort had indicated that 600 ppm, contrary to expectation, did not modulate levels of liver mRNA for genes involved in xenobiotic responses.",
+      "context_window": "ot was increased from 600 to 1200 ppm when the mice reached 17 months of age, because testing of mice not included in the longevi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-3160",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.012",
+      "numeric_values": [
+        0.012
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3160,
+      "sentence": "As shown in Figure 1 and Table 1 , there was a significant effect ( P < 0.012) of Prot on survival of male mice in the pooled population, with a 7% increase in median survival.",
+      "context_window": "in Figure 1 and Table 1 , there was a significant effect ( P < 0.012) of Prot on survival of male mice in the pooled population,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-3237",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3237,
+      "sentence": "As shown in Figure 1 and Table 1 , there was a significant effect ( P < 0.012) of Prot on survival of male mice in the pooled population, with a 7% increase in median survival.",
+      "context_window": "t on survival of male mice in the pooled population, with a 7% increase in median survival. There was no significant diffe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-3368",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3368,
+      "sentence": "There was no significant difference in the proportion of control and Prot mice alive at the age at 90% mortality ( P = 0.1 by the \u2018Wang-Allison test\u2019).",
+      "context_window": "the proportion of control and Prot mice alive at the age at 90% mortality ( P = 0.1 by the \u2018Wang-Allison test\u2019). A secondar",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-3384",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.1",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3384,
+      "sentence": "There was no significant difference in the proportion of control and Prot mice alive at the age at 90% mortality ( P = 0.1 by the \u2018Wang-Allison test\u2019).",
+      "context_window": "f control and Prot mice alive at the age at 90% mortality ( P = 0.1 by the \u2018Wang-Allison test\u2019). A secondary analysis of the su",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-3538",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.03",
+      "numeric_values": [
+        0.03
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3538,
+      "sentence": "A secondary analysis of the survival data from individual sites revealed a significant increase in median survival ( P = 0.03) at the UT site but no significant effects at the TJL and UM sites (Fig.",
+      "context_window": "sites revealed a significant increase in median survival ( P = 0.03) at the UT site but no significant effects at the TJL and U",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-4309",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 4309,
+      "sentence": "Beginning at 9 months of age, groups of male and female mice began consuming a diet containing 1000 ppm (0.1%) Met.",
+      "context_window": "st site. See Table 1 for statistical results. Beginning at 9 months of age, groups of male and female mice began consuming a di",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4401",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4401,
+      "sentence": "Beginning at 9 months of age, groups of male and female mice began consuming a diet containing 1000 ppm (0.1%) Met.",
+      "context_window": "and female mice began consuming a diet containing 1000 ppm (0.1%) Met. As shown in Figure 2 and Table 1 , Met led to a 7% in",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4460",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4460,
+      "sentence": "As shown in Figure 2 and Table 1 , Met led to a 7% increase in median lifespan of males when data were pooled across sites, but the effect was not statistically significant ( P = 0.35).",
+      "context_window": "(0.1%) Met. As shown in Figure 2 and Table 1 , Met led to a 7% increase in median lifespan of males when data were pooled",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-4587",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.35",
+      "numeric_values": [
+        0.35
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4587,
+      "sentence": "As shown in Figure 2 and Table 1 , Met led to a 7% increase in median lifespan of males when data were pooled across sites, but the effect was not statistically significant ( P = 0.35).",
+      "context_window": "s sites, but the effect was not statistically significant ( P = 0.35). Males treated with Met had site\u2010specific changes of 13%,",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4650",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4650,
+      "sentence": "Males treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these was statistically significant (Table S1, Supporting information; see Fig.",
+      "context_window": "0.35). Males treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these wa",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4656",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4656,
+      "sentence": "Males treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these was statistically significant (Table S1, Supporting information; see Fig.",
+      "context_window": ". Males treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these was sta",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4664",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4664,
+      "sentence": "Males treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these was statistically significant (Table S1, Supporting information; see Fig.",
+      "context_window": "treated with Met had site\u2010specific changes of 13%, -1%, and 10% at the three test sites, but none of these was statisticall",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-5467",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 5467,
+      "sentence": "Figure 2 shows survival curves of male and female mice that received both Met (1000 ppm) and Rapa (14 ppm) (Met/Rapa) from 9 months of age.",
+      "context_window": "eived both Met (1000 ppm) and Rapa (14 ppm) (Met/Rapa) from 9 months of age. As shown in Table 1 , this combination led to a 23%",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-5532",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5532,
+      "sentence": "As shown in Table 1 , this combination led to a 23% increase in survival compared with controls in both sexes, as well as to significant increases in maximum lifespan ( P < 0.001).",
+      "context_window": "ths of age. As shown in Table 1 , this combination led to a 23% increase in survival compared with controls in both sexes,",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-5653",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5653,
+      "sentence": "As shown in Table 1 , this combination led to a 23% increase in survival compared with controls in both sexes, as well as to significant increases in maximum lifespan ( P < 0.001).",
+      "context_window": ", as well as to significant increases in maximum lifespan ( P < 0.001). Met/Rapa led to a significant increase in lifespan in bot",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6248",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6248,
+      "sentence": "Males given Met/Rapa had a 23% increase in median longevity, higher than the 10% effect produced by Rapa alone in C2006 or the 13% effect in C2009 males.",
+      "context_window": "ble S4 (Supporting information). Males given Met/Rapa had a 23% increase in median longevity, higher than the 10% effect pr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6298",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6298,
+      "sentence": "Males given Met/Rapa had a 23% increase in median longevity, higher than the 10% effect produced by Rapa alone in C2006 or the 13% effect in C2009 males.",
+      "context_window": "apa had a 23% increase in median longevity, higher than the 10% effect produced by Rapa alone in C2006 or the 13% effect in",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6348",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6348,
+      "sentence": "Males given Met/Rapa had a 23% increase in median longevity, higher than the 10% effect produced by Rapa alone in C2006 or the 13% effect in C2009 males.",
+      "context_window": "than the 10% effect produced by Rapa alone in C2006 or the 13% effect in C2009 males. When the results from C2006 and C200",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-6581",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6581,
+      "sentence": "When the results from C2006 and C2009 males were combined for optimal statistical power, and compared with survival in C2011 mice receiving Met/Rapa, the difference did not reach statistical significance ( P = 0.12) using our standard calculation, which stratifies by site.",
+      "context_window": "pa, the difference did not reach statistical significance ( P = 0.12) using our standard calculation, which stratifies by site.",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-6708",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.049",
+      "numeric_values": [
+        0.049
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6708,
+      "sentence": "An alternate analysis, omitting site stratification, found P = 0.049 for the contrast between Met/Rapa and the historical datasets using Rapa alone at the same dose.",
+      "context_window": "An alternate analysis, omitting site stratification, found P = 0.049 for the contrast between Met/Rapa and the historical datase",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6900",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6900,
+      "sentence": "Female mice given Met/Rapa also had a higher percentage increase in median lifespan (23%) than females that had received rapamycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach significance by log\u2010rank testing.",
+      "context_window": "a also had a higher percentage increase in median lifespan (23%) than females that had received rapamycin alone in the prev",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-6993",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6993,
+      "sentence": "Female mice given Met/Rapa also had a higher percentage increase in median lifespan (23%) than females that had received rapamycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach significance by log\u2010rank testing.",
+      "context_window": "ed rapamycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach si",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7001",
+      "claim_type": "percentage",
+      "raw_text": "21%",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7001,
+      "sentence": "Female mice given Met/Rapa also had a higher percentage increase in median lifespan (23%) than females that had received rapamycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach significance by log\u2010rank testing.",
+      "context_window": "ycin alone in the previous C2006 and C2009 cohorts (18% and 21%, respectively), but the difference did not reach significan",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7266",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7266,
+      "sentence": "In a previous study, we tested the effects of NDGA on survival of male and female UM\u2010HET3 mice at a dose of 2500 ppm and reported that median lifespan was increased in males by 12%, with no benefit in female mice (Strong et al ., 2008 ).",
+      "context_window": "and reported that median lifespan was increased in males by 12%, with no benefit in female mice (Strong et al ., 2008 ). In",
+      "claim_role": "effect",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7349",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7349,
+      "sentence": "In the earlier study, 9% of male control mice were alive at the joint 90th percentile age, compared with 13% of NDGA\u2010treated males ( P = 0.12).",
+      "context_window": "female mice (Strong et al ., 2008 ). In the earlier study, 9% of male control mice were alive at the joint 90th percentil",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7432",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 7432,
+      "sentence": "In the earlier study, 9% of male control mice were alive at the joint 90th percentile age, compared with 13% of NDGA\u2010treated males ( P = 0.12).",
+      "context_window": "were alive at the joint 90th percentile age, compared with 13% of NDGA\u2010treated males ( P = 0.12). Female mice given 2500 p",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-7460",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7460,
+      "sentence": "In the earlier study, 9% of male control mice were alive at the joint 90th percentile age, compared with 13% of NDGA\u2010treated males ( P = 0.12).",
+      "context_window": "h percentile age, compared with 13% of NDGA\u2010treated males ( P = 0.12). Female mice given 2500 ppm had lower blood levels of NDGA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-7925",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 7925,
+      "sentence": "In the current study, therefore, we tested the effects of NDGA at 800, 2500, and 5000 ppm in males and at 5000 ppm in females, starting treatment at 6 months.",
+      "context_window": "in males and at 5000 ppm in females, starting treatment at 6 months. Our previous (Harrison et al ., 2014 ) report showed that",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8962",
+      "claim_type": "unit_value",
+      "raw_text": "13 months",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8962,
+      "sentence": "Male mice were given 2500 ppm and females given 5000 ppm from 13 months of age, and then tested at 22 months of age, together with age\u2010matched controls and young (4 month old) control mice.",
+      "context_window": "le mice were given 2500 ppm and females given 5000 ppm from 13 months of age, and then tested at 22 months of age, together with",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8999",
+      "claim_type": "unit_value",
+      "raw_text": "22 months",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 8999,
+      "sentence": "Male mice were given 2500 ppm and females given 5000 ppm from 13 months of age, and then tested at 22 months of age, together with age\u2010matched controls and young (4 month old) control mice.",
+      "context_window": "es given 5000 ppm from 13 months of age, and then tested at 22 months of age, together with age\u2010matched controls and young (4 mon",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-9063",
+      "claim_type": "unit_value",
+      "raw_text": "4 month",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 9063,
+      "sentence": "Male mice were given 2500 ppm and females given 5000 ppm from 13 months of age, and then tested at 22 months of age, together with age\u2010matched controls and young (4 month old) control mice.",
+      "context_window": "onths of age, together with age\u2010matched controls and young (4 month old) control mice. Aging impaired grip strength and grip du",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-9164",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9164,
+      "sentence": "Aging impaired grip strength and grip duration in old male control mice ( P < 0.05) as compared to young males.",
+      "context_window": "grip strength and grip duration in old male control mice ( P < 0.05) as compared to young males. Grip duration of male NDGA mic",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-9529",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9529,
+      "sentence": "In the rotarod tests, using a mixed\u2010effects model that compensated for day of testing, latency to fall in young mice, as expected, was higher than in aged control mice in each sex ( P = 0.01 for males, P < 0.001 for females).",
+      "context_window": "xpected, was higher than in aged control mice in each sex ( P = 0.01 for males, P < 0.001 for females). Fall latency was increas",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-9549",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9549,
+      "sentence": "In the rotarod tests, using a mixed\u2010effects model that compensated for day of testing, latency to fall in young mice, as expected, was higher than in aged control mice in each sex ( P = 0.01 for males, P < 0.001 for females).",
+      "context_window": "than in aged control mice in each sex ( P = 0.01 for males, P < 0.001 for females). Fall latency was increased significantly by N",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-9658",
+      "claim_type": "unit_value",
+      "raw_text": "22 months",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 9658,
+      "sentence": "Fall latency was increased significantly by NDGA in both male and female mice at age 22 months (Fig.",
+      "context_window": "d significantly by NDGA in both male and female mice at age 22 months (Fig. 4 ; P = 0.02 in each sex). Effects of NDGA on grip s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-9678",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.02",
+      "numeric_values": [
+        0.02
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9678,
+      "sentence": "4 ; P = 0.02 in each sex).",
+      "context_window": "DGA in both male and female mice at age 22 months (Fig. 4 ; P = 0.02 in each sex). Effects of NDGA on grip strength and duratio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-10079",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 10079,
+      "sentence": "Results of FO, at 15 000 or 50 000 ppm from 9 months of age, are shown in Figure 5 and Table 2 .",
+      "context_window": "m old control. Results of FO, at 15 000 or 50 000 ppm from 9 months of age, are shown in Figure 5 and Table 2 . Pooling across",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-10428",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10428,
+      "sentence": "Fish oil treatment was associated with a significant ( P < 0.05) dose\u2010dependent increase in body weight in males at 18 months of age, but no significant effects on body weight in females (Fig.",
+      "context_window": "on). Fish oil treatment was associated with a significant ( P < 0.05) dose\u2010dependent increase in body weight in males at 18 mont",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-10489",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 10489,
+      "sentence": "Fish oil treatment was associated with a significant ( P < 0.05) dose\u2010dependent increase in body weight in males at 18 months of age, but no significant effects on body weight in females (Fig.",
+      "context_window": "< 0.05) dose\u2010dependent increase in body weight in males at 18 months of age, but no significant effects on body weight in female",
+      "claim_role": "protocol",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-10693",
+      "claim_type": "percentage",
+      "raw_text": "18%",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10693,
+      "sentence": "It is notable that FO, at the higher dose, led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supporting information), helping to emphasize the value of simultaneous testing with parallel protocols at all three ITP sites and the perils of relying on longevity tests conducted with a single dose at a single site.",
+      "context_window": "ose, led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-10698",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10698,
+      "sentence": "It is notable that FO, at the higher dose, led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supporting information), helping to emphasize the value of simultaneous testing with parallel protocols at all three ITP sites and the perils of relying on longevity tests conducted with a single dose at a single site.",
+      "context_window": "led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male li",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-10745",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10745,
+      "sentence": "It is notable that FO, at the higher dose, led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supporting information), helping to emphasize the value of simultaneous testing with parallel protocols at all three ITP sites and the perils of relying on longevity tests conducted with a single dose at a single site.",
+      "context_window": "at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supp",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-10776",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10776,
+      "sentence": "It is notable that FO, at the higher dose, led to a significant decline in male longevity at UM (-18%, P = 0.003, and that the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supporting information), helping to emphasize the value of simultaneous testing with parallel protocols at all three ITP sites and the perils of relying on longevity tests conducted with a single dose at a single site.",
+      "context_window": "t the lower FO dose led to a 9% increase in male lifespan ( P = 0.06) at UT (Table S2, Supporting information), helping to empha",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-11385",
+      "claim_type": "unit_value",
+      "raw_text": "5 months",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 11385,
+      "sentence": "Beginning at 5 months of age, mice were fed chow containing 5000 ppm UDCA.",
+      "context_window": "st site. See Table 2 for statistical results. Beginning at 5 months of age, mice were fed chow containing 5000 ppm UDCA. The re",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-11996",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11996,
+      "sentence": "Body weighs of UDCA\u2010fed mice were significantly ( P < 0.001) lower than control at 12 and 18 months in male mice and at 12, 18, and 24 months of age in female mice.",
+      "context_window": "rmation). Body weighs of UDCA\u2010fed mice were significantly ( P < 0.001) lower than control at 12 and 18 months in male mice and at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-12036",
+      "claim_type": "unit_value",
+      "raw_text": "18 months",
+      "numeric_values": [
+        18.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 12036,
+      "sentence": "Body weighs of UDCA\u2010fed mice were significantly ( P < 0.001) lower than control at 12 and 18 months in male mice and at 12, 18, and 24 months of age in female mice.",
+      "context_window": "ere significantly ( P < 0.001) lower than control at 12 and 18 months in male mice and at 12, 18, and 24 months of age in female",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-12078",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 12078,
+      "sentence": "Body weighs of UDCA\u2010fed mice were significantly ( P < 0.001) lower than control at 12 and 18 months in male mice and at 12, 18, and 24 months of age in female mice.",
+      "context_window": "control at 12 and 18 months in male mice and at 12, 18, and 24 months of age in female mice. Survival curves for mice treated wi",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-12529",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 12529,
+      "sentence": "Beginning at 16 months of age, mice were fed chow containing 1000 ppm ACA.",
+      "context_window": ". See Tables 1 and 2 for statistical results. Beginning at 16 months of age, mice were fed chow containing 1000 ppm ACA. The res",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12820",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12820,
+      "sentence": "Pooling the data across sites, there was a significant increase in survival for male mice treated with ACA, with a 6% increase in median lifespan and a significant 12% increase in maximal lifespan (see Fig.",
+      "context_window": "increase in survival for male mice treated with ACA, with a 6% increase in median lifespan and a significant 12% increase",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12869",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 12869,
+      "sentence": "Pooling the data across sites, there was a significant increase in survival for male mice treated with ACA, with a 6% increase in median lifespan and a significant 12% increase in maximal lifespan (see Fig.",
+      "context_window": "CA, with a 6% increase in median lifespan and a significant 12% increase in maximal lifespan (see Fig. 6 and Table 2 ). ACA",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-13013",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13013,
+      "sentence": "ACA started at this late age had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "context_window": "age had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increas",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-13017",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13017,
+      "sentence": "ACA started at this late age had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "context_window": "had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maxim",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-13054",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 13054,
+      "sentence": "ACA started at this late age had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "context_window": "fespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-13058",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13058,
+      "sentence": "ACA started at this late age had only a small effect on median lifespan in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "context_window": "an in females (2%, P = 0.07), but led to a significant (6%, P = 0.01) increase in maximal lifespan.",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-355",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 355,
+      "sentence": "17aE2 males live 19% longer than control males and longer than control or 17aE2\u2010treated females.",
+      "context_window": "longevity, but no benefits to female mice. 17aE2 males live 19% longer than control males and longer than control or 17aE2\u2010",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-527",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 527,
+      "sentence": "Prot, a mixture that activates Nrf2, led to a small but statistically significant increase (7%) in males, without a significant improvement in survival to the 90th percentile age.",
+      "context_window": "rf2, led to a small but statistically significant increase (7%) in males, without a significant improvement in survival to",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1507",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1507,
+      "sentence": "ACA, previously shown to increase median and maximal lifespan in both male and female mice when started at 4 months of age (Harrison et al ., 2014 ), was tested again, with treatment started at 16 months of age, and shown to increase median lifespan in males, and maximal lifespan in both sexes.",
+      "context_window": "ximal lifespan in both male and female mice when started at 4 months of age (Harrison et al ., 2014 ), was tested again, with tr",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-1594",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1594,
+      "sentence": "ACA, previously shown to increase median and maximal lifespan in both male and female mice when started at 4 months of age (Harrison et al ., 2014 ), was tested again, with treatment started at 16 months of age, and shown to increase median lifespan in males, and maximal lifespan in both sexes.",
+      "context_window": "t al ., 2014 ), was tested again, with treatment started at 16 months of age, and shown to increase median lifespan in males, and",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2239",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2239,
+      "sentence": "At the higher dose (14 ppm) used in the current study, however, 17aE2 had significant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested in our previous work (Miller et al ., 2014 ).",
+      "context_window": "gnificant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-2259",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.003",
+      "numeric_values": [
+        0.003
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 2259,
+      "sentence": "At the higher dose (14 ppm) used in the current study, however, 17aE2 had significant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested in our previous work (Miller et al ., 2014 ).",
+      "context_window": "male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only sligh",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2273",
+      "claim_type": "percentage",
+      "raw_text": "26%",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2273,
+      "sentence": "At the higher dose (14 ppm) used in the current study, however, 17aE2 had significant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested in our previous work (Miller et al ., 2014 ).",
+      "context_window": "each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2313",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2313,
+      "sentence": "At the higher dose (14 ppm) used in the current study, however, 17aE2 had significant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested in our previous work (Miller et al ., 2014 ).",
+      "context_window": "UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the h",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-2346",
+      "claim_type": "percentage",
+      "raw_text": "23%",
+      "numeric_values": [
+        23.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2346,
+      "sentence": "At the higher dose (14 ppm) used in the current study, however, 17aE2 had significant effects on male mice at each site, ranging from a 9% increase at UM ( P = 0.003) to 26% at TJL, with an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested in our previous work (Miller et al ., 2014 ).",
+      "context_window": "ith an average increase of 19%, only slightly less than the 23% increase produced by the highest dose of rapamycin tested i",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-4218",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 4218,
+      "sentence": "It is not known whether higher doses of 17aE2 might lead to a greater degree of lifespan extension than the 19% increase documented at 14 ppm in this study.",
+      "context_window": "ght lead to a greater degree of lifespan extension than the 19% increase documented at 14 ppm in this study. Studies of the",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-7477",
+      "claim_type": "unit_value",
+      "raw_text": "54 weeks",
+      "numeric_values": [
+        54.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 7477,
+      "sentence": "Metformin (Met) has been reported to increase longevity in male mice of the C57BL/6 inbred stock (Martin\u2010Montalvo et al ., 2013 ) at a dose of 1000 ppm, started at 54 weeks of age, leading to an increase in mean lifespan of 5.8%.",
+      "context_window": "\u2010Montalvo et al ., 2013 ) at a dose of 1000 ppm, started at 54 weeks of age, leading to an increase in mean lifespan of 5.8%. Th",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7537",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7537,
+      "sentence": "Metformin (Met) has been reported to increase longevity in male mice of the C57BL/6 inbred stock (Martin\u2010Montalvo et al ., 2013 ) at a dose of 1000 ppm, started at 54 weeks of age, leading to an increase in mean lifespan of 5.8%.",
+      "context_window": "54 weeks of age, leading to an increase in mean lifespan of 5.8%. This increase was deemed to be significant using the Gehan",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-7944",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 7944,
+      "sentence": "A parallel study of male B6C3F1 mice also suggested a benefit of Met, with a 4% extension of mean lifespan (Gehan-Breslow P = 0.06).",
+      "context_window": "of male B6C3F1 mice also suggested a benefit of Met, with a 4% extension of mean lifespan (Gehan-Breslow P = 0.06). The de",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-7989",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.06",
+      "numeric_values": [
+        0.06
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 7989,
+      "sentence": "A parallel study of male B6C3F1 mice also suggested a benefit of Met, with a 4% extension of mean lifespan (Gehan-Breslow P = 0.06).",
+      "context_window": "of Met, with a 4% extension of mean lifespan (Gehan-Breslow P = 0.06). The de Cabo group did not report any data on female mice",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8131",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8131,
+      "sentence": "Our current study used the same dose of Met (1000 ppm = 0.1%), but differs in several respects: use of genetically heterogeneous mice, initiation of Met treatment at 9 months (rather than 12 months) of age, evaluation of male and female mice, analysis at three independent sites, and use of the log\u2010rank statistic.",
+      "context_window": "et. Our current study used the same dose of Met (1000 ppm = 0.1%), but differs in several respects: use of genetically heter",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8241",
+      "claim_type": "unit_value",
+      "raw_text": "9 months",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8241,
+      "sentence": "Our current study used the same dose of Met (1000 ppm = 0.1%), but differs in several respects: use of genetically heterogeneous mice, initiation of Met treatment at 9 months (rather than 12 months) of age, evaluation of male and female mice, analysis at three independent sites, and use of the log\u2010rank statistic.",
+      "context_window": "etically heterogeneous mice, initiation of Met treatment at 9 months (rather than 12 months) of age, evaluation of male and fema",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-8263",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 8263,
+      "sentence": "Our current study used the same dose of Met (1000 ppm = 0.1%), but differs in several respects: use of genetically heterogeneous mice, initiation of Met treatment at 9 months (rather than 12 months) of age, evaluation of male and female mice, analysis at three independent sites, and use of the log\u2010rank statistic.",
+      "context_window": "mice, initiation of Met treatment at 9 months (rather than 12 months) of age, evaluation of male and female mice, analysis at th",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8657",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8657,
+      "sentence": "The pooled ITP data showed a non\u2010significant effect of Met on median lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable from chance.",
+      "context_window": "showed a non\u2010significant effect of Met on median lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10%",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8702",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8702,
+      "sentence": "The pooled ITP data showed a non\u2010significant effect of Met on median lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable from chance.",
+      "context_window": "dian lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishab",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8708",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8708,
+      "sentence": "The pooled ITP data showed a non\u2010significant effect of Met on median lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable from chance.",
+      "context_window": "ifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable fr",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8716",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8716,
+      "sentence": "The pooled ITP data showed a non\u2010significant effect of Met on median lifespan (7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable from chance.",
+      "context_window": "(7% increase), and the site\u2010specific effects (13%, -1%, and 10% at TJL, UM, and UT) were also indistinguishable from chance",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8850",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8850,
+      "sentence": "In the ITP dataset, the age at 90th percentile mortality declined by 2% in the Met group.",
+      "context_window": "P dataset, the age at 90th percentile mortality declined by 2% in the Met group. In C57BL/6 mice, Met was toxic at a highe",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-8943",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 8943,
+      "sentence": "In C57BL/6 mice, Met was toxic at a higher concentration of 10 000 ppm (1%) (Martin\u2010Montalvo et al ., 2013 ), and it is possible that evaluation of doses higher or lower than the 1000 ppm dose we used might have produced stronger evidence of benefit.",
+      "context_window": "ice, Met was toxic at a higher concentration of 10 000 ppm (1%) (Martin\u2010Montalvo et al ., 2013 ), and it is possible that",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-10392",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.12",
+      "numeric_values": [
+        0.12
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 10392,
+      "sentence": "Our evidence is inconclusive, however, in that the comparisons are to historical rather than to simultaneous cohorts, the effect seen in males is not statistically significant by our standard site\u2010stratified log\u2010rank test ( P = 0.12), and the effect in females is small.",
+      "context_window": "significant by our standard site\u2010stratified log\u2010rank test ( P = 0.12), and the effect in females is small. It is possible that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12326",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12326,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "ncrease in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%,",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12330",
+      "claim_type": "percentage",
+      "raw_text": "16%",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12330,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "ase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%)",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12335",
+      "claim_type": "percentage",
+      "raw_text": "19%",
+      "numeric_values": [
+        19.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12335,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "n median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), whi",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12351",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12351,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "fespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12355",
+      "claim_type": "percentage",
+      "raw_text": "11%",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12355,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "an increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the c",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12360",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12360,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "creases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consis",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12381",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12381,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplaine",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12385",
+      "claim_type": "percentage",
+      "raw_text": "2%",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12385,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "(7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, p",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-12390",
+      "claim_type": "percentage",
+      "raw_text": "7%",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 12390,
+      "sentence": "The percentage increase in median male lifespan increases with dose at TJL (7%, 16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, pattern of higher longevity in UM control males compared with control males at the other two test sites.",
+      "context_window": "16%, 19%) and at UT (5%, 11%, 15%), but not at UM (7%, 2%, -7%), which may reflect the consistent, but unexplained, patter",
+      "claim_role": "dose",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-15944",
+      "claim_type": "unit_value",
+      "raw_text": "4 months",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 15944,
+      "sentence": "We previously reported that ACA increased median and maximal lifespan in both male and female mice when started at 4 months of age (Harrison et al ., 2014 ).",
+      "context_window": "ximal lifespan in both male and female mice when started at 4 months of age (Harrison et al ., 2014 ). We tested ACA again at th",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-16066",
+      "claim_type": "unit_value",
+      "raw_text": "16 months",
+      "numeric_values": [
+        16.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 16066,
+      "sentence": "We tested ACA again at the dose used previously, but with treatment started at 16 months of age.",
+      "context_window": "at the dose used previously, but with treatment started at 16 months of age. We found that starting ACA treatment later in life",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-16326",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 16326,
+      "sentence": "In the previous study, the increase in median survival calculated from the pooled data from male mice was 22%, but was only 6% in the present study.",
+      "context_window": "survival calculated from the pooled data from male mice was 22%, but was only 6% in the present study. Similarly, in female",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-16344",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 16344,
+      "sentence": "In the previous study, the increase in median survival calculated from the pooled data from male mice was 22%, but was only 6% in the present study.",
+      "context_window": "d from the pooled data from male mice was 22%, but was only 6% in the present study. Similarly, in females, there was a si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-16467",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 16467,
+      "sentence": "Similarly, in females, there was a significant increase in survival in the previous study, with a 5% increase in median lifespan, but no significant effect ( P = 0.07) on lifespan in the present study.",
+      "context_window": "nificant increase in survival in the previous study, with a 5% increase in median lifespan, but no significant effect ( P",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-p-16527",
+      "claim_type": "p_value",
+      "raw_text": "P = 0.07",
+      "numeric_values": [
+        0.07
+      ],
+      "units": "",
+      "source_section": "discussion",
+      "source_offset": 16527,
+      "sentence": "Similarly, in females, there was a significant increase in survival in the previous study, with a 5% increase in median lifespan, but no significant effect ( P = 0.07) on lifespan in the present study.",
+      "context_window": "5% increase in median lifespan, but no significant effect ( P = 0.07) on lifespan in the present study. Thus, the effects of ACA",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-u-16764",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 16764,
+      "sentence": "We are currently testing different doses, with treatment initiated at an intermediate time (12 months of age).",
+      "context_window": "nt doses, with treatment initiated at an intermediate time (12 months of age). We are also performing cross\u2010sectional studies, te",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC5013015_longer_lifespan_in_male_mice_treated_with_a_weakly_estrogeni-pct-17651",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 17651,
+      "sentence": "10%) lifespan benefits have now stimulated new ideas and impetus on several biogerontological fronts.",
+      "context_window": "f mice to provide decent statistical power for modest (e.g. 10%) lifespan benefits have now stimulated new ideas and impetu",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

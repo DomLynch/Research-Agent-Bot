@@ -1,0 +1,847 @@
+{
+  "paper_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes",
+  "doi": "10.1111/acel.13936",
+  "extracted_at": "2026-05-05T15:32:36+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 7,
+    "unit_value": 21,
+    "percentage": 7,
+    "p_value": 7,
+    "mean_sd": 4
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-746",
+      "claim_type": "sample_size",
+      "raw_text": "n = 20",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 746,
+      "sentence": "A two\u2010arm controlled trial was utilized in healthy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo or metformin treatment during a two\u2010week run\u2010in and 5 days of bedrest followed by metformin withdrawal during 7 days of recovery.",
+      "context_window": "rial was utilized in healthy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo o",
+      "claim_role": "duration",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-769",
+      "claim_type": "unit_value",
+      "raw_text": "60 years",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 769,
+      "sentence": "A two\u2010arm controlled trial was utilized in healthy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo or metformin treatment during a two\u2010week run\u2010in and 5 days of bedrest followed by metformin withdrawal during 7 days of recovery.",
+      "context_window": "althy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo or metformin treatment dur",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-863",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 863,
+      "sentence": "A two\u2010arm controlled trial was utilized in healthy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo or metformin treatment during a two\u2010week run\u2010in and 5 days of bedrest followed by metformin withdrawal during 7 days of recovery.",
+      "context_window": "placebo or metformin treatment during a two\u2010week run\u2010in and 5 days of bedrest followed by metformin withdrawal during 7 days o",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-921",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "abstract",
+      "source_offset": 921,
+      "sentence": "A two\u2010arm controlled trial was utilized in healthy male and female older adults ( n = 20; BMI: <30, age: 60 years+) randomized into either placebo or metformin treatment during a two\u2010week run\u2010in and 5 days of bedrest followed by metformin withdrawal during 7 days of recovery.",
+      "context_window": "d 5 days of bedrest followed by metformin withdrawal during 7 days of recovery. We found that metformin\u2010treated individuals ha",
+      "claim_role": "population",
+      "endpoint": "body mass index",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-432",
+      "claim_type": "unit_value",
+      "raw_text": "1.5 mg/dL",
+      "numeric_values": [
+        1.5
+      ],
+      "units": "mg/dL",
+      "source_section": "methods",
+      "source_offset": 432,
+      "sentence": "Patients with chronic kidney disease (serum creatinine >1.5 mg/dL) were excluded, and serum creatinine levels were monitored throughout bed rest.",
+      "context_window": "es. Patients with chronic kidney disease (serum creatinine >1.5 mg/dL) were excluded, and serum creatinine levels were monitored",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-2041",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2041,
+      "sentence": "After 2 weeks, participants underwent a muscle biopsy on the first day of bed rest (DAY1), followed by 5 days of bed rest, continuing placebo/metformin during bed rest.",
+      "context_window": "r placebo or metformin during a 2\u2010week run\u2010in period. After 2 weeks, participants underwent a muscle biopsy on the first day of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-2138",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2138,
+      "sentence": "After 2 weeks, participants underwent a muscle biopsy on the first day of bed rest (DAY1), followed by 5 days of bed rest, continuing placebo/metformin during bed rest.",
+      "context_window": "cle biopsy on the first day of bed rest (DAY1), followed by 5 days of bed rest, continuing placebo/metformin during bed rest.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-2210",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2210,
+      "sentence": "After 5 days of bed rest (POST), participants underwent a muscle biopsy and MRI.",
+      "context_window": "d rest, continuing placebo/metformin during bed rest. After 5 days of bed rest (POST), participants underwent a muscle biopsy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-2934",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 2934,
+      "sentence": "Participants were then given placebo or metformin for 2 weeks and stopped taking their treatments 2 days before the start of bed rest.",
+      "context_window": "tion. Participants were then given placebo or metformin for 2 weeks and stopped taking their treatments 2 days before the start",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-2978",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 2978,
+      "sentence": "Participants were then given placebo or metformin for 2 weeks and stopped taking their treatments 2 days before the start of bed rest.",
+      "context_window": "r metformin for 2 weeks and stopped taking their treatments 2 days before the start of bed rest. At the start of the first day",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-3145",
+      "claim_type": "unit_value",
+      "raw_text": "4 days",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 3145,
+      "sentence": "At the start of the first day of bed rest a muscle biopsy was taken (DAY 1), and participants began treatments again for the next 4 days of bed rest.",
+      "context_window": "AY 1), and participants began treatments again for the next 4 days of bed rest. On the 5th day of bed rest (POST), a muscle bi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-3748",
+      "claim_type": "unit_value",
+      "raw_text": "15 cm",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3748,
+      "sentence": "The biopsy site was marked with a skin marker 10-15 cm proximal to the patella, and the biopsy area cleaned with betadine and collected following administration of local anesthetic (1% lidocaine).",
+      "context_window": "., 1982 ). The biopsy site was marked with a skin marker 10-15 cm proximal to the patella, and the biopsy area cleaned with b",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-3881",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3881,
+      "sentence": "The biopsy site was marked with a skin marker 10-15 cm proximal to the patella, and the biopsy area cleaned with betadine and collected following administration of local anesthetic (1% lidocaine).",
+      "context_window": "and collected following administration of local anesthetic (1% lidocaine). Repeated biopsies were conducted 3 cm from prio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-3929",
+      "claim_type": "unit_value",
+      "raw_text": "3 cm",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 3929,
+      "sentence": "Repeated biopsies were conducted 3 cm from prior incision sites.",
+      "context_window": "anesthetic (1% lidocaine). Repeated biopsies were conducted 3 cm from prior incision sites. Muscle collected from the biopsy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-6245",
+      "claim_type": "unit_value",
+      "raw_text": "20 mg",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6245,
+      "sentence": "Total RNA was isolated by homogenizing 10-20 mg of tissue in Qiazol Lysis Reagent (Qiagen, cat# 79306).",
+      "context_window": "emental Methods. Total RNA was isolated by homogenizing 10-20 mg of tissue in Qiazol Lysis Reagent (Qiagen, cat# 79306). The",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-6840",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6840,
+      "sentence": "Differentially expressed genes were identified using a 5% false discovery rate with DESeq2 version 1.30.00 and the hciR package.",
+      "context_window": "rs). Differentially expressed genes were identified using a 5% false discovery rate with DESeq2 version 1.30.00 and the hc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-7084",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7084,
+      "sentence": "KEGG, and REACTOME pathways were identified using the fast gene set enrichment analysis in MSigDB using a 10% FDR.",
+      "context_window": "ing the fast gene set enrichment analysis in MSigDB using a 10% FDR. Real\u2010time quantitative PCR was carried out with a CFX",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-7605",
+      "claim_type": "unit_value",
+      "raw_text": "50 mg",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 7605,
+      "sentence": "Primary myoblasts and fibro\u2010adipogenic progenitor (FAP) cells were isolated from approximately 30-50 mg of fresh muscle tissue.",
+      "context_window": "progenitor (FAP) cells were isolated from approximately 30-50 mg of fresh muscle tissue. Muscle tissue was minced in low glu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-7722",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7722,
+      "sentence": "Muscle tissue was minced in low glucose Dulbecco's Modified Eagle's Medium (DMEM) with 1% penicillin-streptomycin, followed by two washes in Hank's Balanced Salt Solution without Ca 2+ and Mg 2+ .",
+      "context_window": "low glucose Dulbecco's Modified Eagle's Medium (DMEM) with 1% penicillin-streptomycin, followed by two washes in Hank's B",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-8011",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8011,
+      "sentence": "Digested muscle was then plated for 2 h in a 37\u00b0C, 5% CO 2 incubator on a 60 mm tissue culture\u2010treated dish to adhere progenitor fibroblast populations.",
+      "context_window": "er bath. Digested muscle was then plated for 2 h in a 37\u00b0C, 5% CO 2 incubator on a 60 mm tissue culture\u2010treated dish to ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-8034",
+      "claim_type": "unit_value",
+      "raw_text": "60 mm",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 8034,
+      "sentence": "Digested muscle was then plated for 2 h in a 37\u00b0C, 5% CO 2 incubator on a 60 mm tissue culture\u2010treated dish to adhere progenitor fibroblast populations.",
+      "context_window": "e was then plated for 2 h in a 37\u00b0C, 5% CO 2 incubator on a 60 mm tissue culture\u2010treated dish to adhere progenitor fibroblast",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-8285",
+      "claim_type": "unit_value",
+      "raw_text": "2 days",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 8285,
+      "sentence": "On Passage 3, cells were plated and allowed to proliferate for 2 days in low glucose DMEM with 1% penicillin-streptomycin and 10% fetal bovine serum before collection.",
+      "context_window": "Passage 3, cells were plated and allowed to proliferate for 2 days in low glucose DMEM with 1% penicillin-streptomycin and 10%",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-8317",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8317,
+      "sentence": "On Passage 3, cells were plated and allowed to proliferate for 2 days in low glucose DMEM with 1% penicillin-streptomycin and 10% fetal bovine serum before collection.",
+      "context_window": "allowed to proliferate for 2 days in low glucose DMEM with 1% penicillin-streptomycin and 10% fetal bovine serum before c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-pct-8348",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8348,
+      "sentence": "On Passage 3, cells were plated and allowed to proliferate for 2 days in low glucose DMEM with 1% penicillin-streptomycin and 10% fetal bovine serum before collection.",
+      "context_window": "ays in low glucose DMEM with 1% penicillin-streptomycin and 10% fetal bovine serum before collection. FAPs were stained wit",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-9344",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9344,
+      "sentence": "For all statistical comparisons, significance was set at the level of p < 0.05.",
+      "context_window": "atistical comparisons, significance was set at the level of p < 0.05. All analysis and figures were done with GraphPad Prism 9 s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-203",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 203,
+      "sentence": "Mean total myofiber CSA after the 2\u2010week run\u2010in period (DAY 1), 5 days of bed rest (POST), or following 7 days of recovery (REC) was not different between groups (Figure S1 a-i).",
+      "context_window": "total myofiber CSA after the 2\u2010week run\u2010in period (DAY 1), 5 days of bed rest (POST), or following 7 days of recovery (REC) w",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-243",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 243,
+      "sentence": "Mean total myofiber CSA after the 2\u2010week run\u2010in period (DAY 1), 5 days of bed rest (POST), or following 7 days of recovery (REC) was not different between groups (Figure S1 a-i).",
+      "context_window": "\u2010in period (DAY 1), 5 days of bed rest (POST), or following 7 days of recovery (REC) was not different between groups (Figure",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-475",
+      "claim_type": "unit_value",
+      "raw_text": "5 days",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 475,
+      "sentence": "However, the metformin\u2010treated group demonstrated fewer smaller (>3000-<4000 \u03bcm 2 ) and greater larger (>5000-<6000 \u03bcm 2 ; Figure 2b-d ) MyHC I fibers after 5 days of bed rest and after the 2\u2010week run\u2010in (Figure S1 j-l) compared to Placebo, with no differences at REC (Figure S1 m-o).",
+      "context_window": "arger (>5000-<6000 \u03bcm 2 ; Figure 2b-d ) MyHC I fibers after 5 days of bed rest and after the 2\u2010week run\u2010in (Figure S1 j-l) com",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-1675",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1675,
+      "sentence": "Metformin prevented myofiber cross\u2010sectional area reduction after bed rest. (a) Representative image used to determine myofiber type specific CSA. (b, c) Frequency distribution of myosin heavy chain I (MyHC I) PRE and POST. (d) POST delta (\u0394) from PRE\u2010intervention percent fiber frequency of MyHC I myofiber cross\u2010sectional area (CSA) from 250 to 10,000 \u03bcm 2 . (e) Representative MRI image used to determine thigh muscle volume. (f) Correlation of the change in thigh muscle volume (mm 3 ) after bed rest to the change in MyHC I myofiber CSA (\u03bcm 2 ) after bed rest. (g) Correlation of the change in thigh muscle volume (mm 3 ) after bed rest to the change in mean myofiber CSA (\u03bcm 2 ) after bed rest. * p < 0.05.",
+      "context_window": "o the change in mean myofiber CSA (\u03bcm 2 ) after bed rest. * p < 0.05. N = 7-10/group. Scale bar is 50 \u03bcm. Myofiber counts as mea",
+      "claim_role": "unknown",
+      "endpoint": "thigh muscle mass",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-1685",
+      "claim_type": "sample_size",
+      "raw_text": "N = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1685,
+      "sentence": "N = 7-10/group.",
+      "context_window": "ge in mean myofiber CSA (\u03bcm 2 ) after bed rest. * p < 0.05. N = 7-10/group. Scale bar is 50 \u03bcm. Myofiber counts as mean \u00b1 SE:",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-msd-1764",
+      "claim_type": "mean_sd",
+      "raw_text": "555 \u00b1 96",
+      "numeric_values": [
+        555.0,
+        96.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1764,
+      "sentence": "Myofiber counts as mean \u00b1 SE: Placebo PRE: 555 \u00b1 96, POST: 550 \u00b1 53.",
+      "context_window": "le bar is 50 \u03bcm. Myofiber counts as mean \u00b1 SE: Placebo PRE: 555 \u00b1 96, POST: 550 \u00b1 53. Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-msd-1780",
+      "claim_type": "mean_sd",
+      "raw_text": "550 \u00b1 53.",
+      "numeric_values": [
+        550.0,
+        53.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1780,
+      "sentence": "Myofiber counts as mean \u00b1 SE: Placebo PRE: 555 \u00b1 96, POST: 550 \u00b1 53.",
+      "context_window": "Myofiber counts as mean \u00b1 SE: Placebo PRE: 555 \u00b1 96, POST: 550 \u00b1 53. Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55. MyHC fiber distri",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-msd-1805",
+      "claim_type": "mean_sd",
+      "raw_text": "492 \u00b1 68",
+      "numeric_values": [
+        492.0,
+        68.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1805,
+      "sentence": "Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55.",
+      "context_window": "\u00b1 SE: Placebo PRE: 555 \u00b1 96, POST: 550 \u00b1 53. Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55. MyHC fiber distribution displayed MyHC I",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-msd-1821",
+      "claim_type": "mean_sd",
+      "raw_text": "435 \u00b1 55.",
+      "numeric_values": [
+        435.0,
+        55.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1821,
+      "sentence": "Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55.",
+      "context_window": "E: 555 \u00b1 96, POST: 550 \u00b1 53. Metformin PRE: 492 \u00b1 68, POST: 435 \u00b1 55. MyHC fiber distribution displayed MyHC I as the most abund",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-2277",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.08",
+      "numeric_values": [
+        0.08
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2277,
+      "sentence": "Both groups decreased MyHC I & IIa hybrids after bed rest (Figure S2 g), and tended ( p = 0.08) to be lower after recovery (Figure S2 h).",
+      "context_window": "I & IIa hybrids after bed rest (Figure S2 g), and tended ( p = 0.08) to be lower after recovery (Figure S2 h). MyHC IIa & IIx h",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-4158",
+      "claim_type": "sample_size",
+      "raw_text": "N = 7",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4158,
+      "sentence": "N = 7-10/group.",
+      "context_window": "cells after recovery. (h) All labeled cells after recovery. N = 7-10/group. Scale bar is 50 \u03bcm. Given the role of macrophage",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-7254",
+      "claim_type": "sample_size",
+      "raw_text": "N = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7254,
+      "sentence": "N = 8-10/group.",
+      "context_window": "+ cells after recovery to Sirius Red % area after recovery. N = 8-10/group. Scale bars are 50 \u03bcm. To further examine the und",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-7678",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "results",
+      "source_offset": 7678,
+      "sentence": "After 7 days of recovery, the placebo group displayed 3550 changed gene transcripts with collagen isoforms observed as the highly upregulated transcripts (Figure 5c ) whereas, this transcriptional phenotype was remarkably blunted in the metformin group (1386 changed transcripts; Figure 5d ).",
+      "context_window": "metformin group, 377 genes were altered (Figure 5b ). After 7 days of recovery, the placebo group displayed 3550 changed gene",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "placebo",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-9502",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9502,
+      "sentence": "Log10 Adjusted p \u2010value of 1.3 ( p < 0.05) was used to determine significance for volcano plots.",
+      "context_window": "E, at DAY1, POST, and REC. Log10 Adjusted p \u2010value of 1.3 ( p < 0.05) was used to determine significance for volcano plots. N =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-9566",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9566,
+      "sentence": "N = 9-10/group.",
+      "context_window": "0.05) was used to determine significance for volcano plots. N = 9-10/group. The classical senescence markers, cyclin depende",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-13172",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13172,
+      "sentence": "Percent SA\u2010\u03b2\u2010galactosidase + muscle resident FAPs after bed rest (h) and after recovery (i). (j) CDKN2A (p16) gene expression in muscle resident FAPs. (k) Correlation of SA\u2010\u03b2\u2010galactosidase + to the change in Sirius Red percent area after bed rest and (l) recovery. (m) Representative image of after bed rest \u03b1\u2010smooth muscle Actin (\u03b1\u2010SMA) and TCF4 + cells. (n) Percent \u03b1\u2010SMA and TCF4 + cells after bed rest. (o) Representative image of after bed rest BODIPY (lipid droplets) staining. (p) Percent lipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05.",
+      "context_window": "s) staining. (p) Percent lipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05. N = 9-10/group for transcriptiona",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-13186",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13186,
+      "sentence": "Percent SA\u2010\u03b2\u2010galactosidase + muscle resident FAPs after bed rest (h) and after recovery (i). (j) CDKN2A (p16) gene expression in muscle resident FAPs. (k) Correlation of SA\u2010\u03b2\u2010galactosidase + to the change in Sirius Red percent area after bed rest and (l) recovery. (m) Representative image of after bed rest \u03b1\u2010smooth muscle Actin (\u03b1\u2010SMA) and TCF4 + cells. (n) Percent \u03b1\u2010SMA and TCF4 + cells after bed rest. (o) Representative image of after bed rest BODIPY (lipid droplets) staining. (p) Percent lipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05.",
+      "context_window": "p) Percent lipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05. N = 9-10/group for transcriptional data. N = 4",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-p-13198",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13198,
+      "sentence": "Percent SA\u2010\u03b2\u2010galactosidase + muscle resident FAPs after bed rest (h) and after recovery (i). (j) CDKN2A (p16) gene expression in muscle resident FAPs. (k) Correlation of SA\u2010\u03b2\u2010galactosidase + to the change in Sirius Red percent area after bed rest and (l) recovery. (m) Representative image of after bed rest \u03b1\u2010smooth muscle Actin (\u03b1\u2010SMA) and TCF4 + cells. (n) Percent \u03b1\u2010SMA and TCF4 + cells after bed rest. (o) Representative image of after bed rest BODIPY (lipid droplets) staining. (p) Percent lipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05.",
+      "context_window": "ipid droplets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05. N = 9-10/group for transcriptional data. N = 4-5/group for",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-13208",
+      "claim_type": "sample_size",
+      "raw_text": "N = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13208,
+      "sentence": "N = 9-10/group for transcriptional data.",
+      "context_window": "ets after bed rest. *** p < 0.001, ** p < 0.01, * p < 0.05. N = 9-10/group for transcriptional data. N = 4-5/group for muscle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-n-13249",
+      "claim_type": "sample_size",
+      "raw_text": "N = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13249,
+      "sentence": "N = 4-5/group for muscle resident FAP analysis.",
+      "context_window": "0.01, * p < 0.05. N = 9-10/group for transcriptional data. N = 4-5/group for muscle resident FAP analysis. Scale bar is 50 \u03bc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10652302_disuse_induced_muscle_fibrosis_cellular_senescence_and_senes-u-6103",
+      "claim_type": "unit_value",
+      "raw_text": "2 weeks",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "weeks",
+      "source_section": "discussion",
+      "source_offset": 6103,
+      "sentence": "In summary, metformin treatment 2 weeks before and during disuse improved older adult myofiber remodeling during early re\u2010ambulation through alterations in collagen deposition.",
+      "context_window": "ng recovery from bed rest. In summary, metformin treatment 2 weeks before and during disuse improved older adult myofiber remo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

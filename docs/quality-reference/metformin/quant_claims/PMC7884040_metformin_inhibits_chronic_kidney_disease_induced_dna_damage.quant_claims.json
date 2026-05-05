@@ -1,0 +1,607 @@
+{
+  "paper_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage",
+  "doi": "10.1111/acel.13317",
+  "extracted_at": "2026-05-05T15:32:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 2,
+    "sample_size": 14,
+    "p_value": 17
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-pct-68",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 68,
+      "sentence": "Chronic kidney disease (CKD) is a global health burden that affects 10%-15% of the general population (Bikbov et al., 2020 ; Glassock et al., 2017 ).",
+      "context_window": "kidney disease (CKD) is a global health burden that affects 10%-15% of the general population (Bikbov et al., 2020 ; Glasso",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-pct-72",
+      "claim_type": "percentage",
+      "raw_text": "15%",
+      "numeric_values": [
+        15.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 72,
+      "sentence": "Chronic kidney disease (CKD) is a global health burden that affects 10%-15% of the general population (Bikbov et al., 2020 ; Glassock et al., 2017 ).",
+      "context_window": "ey disease (CKD) is a global health burden that affects 10%-15% of the general population (Bikbov et al., 2020 ; Glassock e",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-2089",
+      "claim_type": "sample_size",
+      "raw_text": "n = 10",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2089,
+      "sentence": "Metformin inhibits senescence of chronic kidney disease (CKD) mesenchymal stem cells (MSCs). (a) Representative bright field images of bone marrow\u2010derived MSCs isolated from sham\u2010operated or subtotal nephrectomized mice, scale bar, 200 \u03bcm and 100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control or CKD MSCs were treated with 10 \u03bcM metformin for 24 h. (c) Quantification of bromodeoxyuridine (BrdU) incorporation was shown, n = 9.",
+      "context_window": "00 \u03bcm and 100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-2099",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2099,
+      "sentence": "Metformin inhibits senescence of chronic kidney disease (CKD) mesenchymal stem cells (MSCs). (a) Representative bright field images of bone marrow\u2010derived MSCs isolated from sham\u2010operated or subtotal nephrectomized mice, scale bar, 200 \u03bcm and 100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control or CKD MSCs were treated with 10 \u03bcM metformin for 24 h. (c) Quantification of bromodeoxyuridine (BrdU) incorporation was shown, n = 9.",
+      "context_window": "100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-2116",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2116,
+      "sentence": "Metformin inhibits senescence of chronic kidney disease (CKD) mesenchymal stem cells (MSCs). (a) Representative bright field images of bone marrow\u2010derived MSCs isolated from sham\u2010operated or subtotal nephrectomized mice, scale bar, 200 \u03bcm and 100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control or CKD MSCs were treated with 10 \u03bcM metformin for 24 h. (c) Quantification of bromodeoxyuridine (BrdU) incorporation was shown, n = 9.",
+      "context_window": "h curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control or CKD MSCs were t",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-2295",
+      "claim_type": "sample_size",
+      "raw_text": "n = 9",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2295,
+      "sentence": "Metformin inhibits senescence of chronic kidney disease (CKD) mesenchymal stem cells (MSCs). (a) Representative bright field images of bone marrow\u2010derived MSCs isolated from sham\u2010operated or subtotal nephrectomized mice, scale bar, 200 \u03bcm and 100 \u03bcm. (b) Growth curve of control and CKD MSCs, n = 10. * p < 0.05 and *** p < 0.001 vs. corresponding control. (c-l) Control or CKD MSCs were treated with 10 \u03bcM metformin for 24 h. (c) Quantification of bromodeoxyuridine (BrdU) incorporation was shown, n = 9.",
+      "context_window": "cation of bromodeoxyuridine (BrdU) incorporation was shown, n = 9. Representative Western blots show protein levels of prolif",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-2505",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2505,
+      "sentence": "Representative Western blots show protein levels of proliferating cell nuclear antigen (PCNA) (d), p16 Ink4a (g), cyclin D1 (h), cyclin\u2010dependent kinase 4 (CDK4) (i), phosphor p53 (j), and p21 Cip1 (l), n = 6.",
+      "context_window": "nt kinase 4 (CDK4) (i), phosphor p53 (j), and p21 Cip1 (l), n = 6. Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-2668",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2668,
+      "sentence": "Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010oxo\u2010dG) (e, scale bar, 100 \u03bcm) and p53\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nWe next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activation and senescence\u2010associated secretory phenotype (SASP).",
+      "context_window": "\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-2791",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2791,
+      "sentence": "Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010oxo\u2010dG) (e, scale bar, 100 \u03bcm) and p53\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nWe next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activation and senescence\u2010associated secretory phenotype (SASP).",
+      "context_window": "\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001 We next invest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-2800",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2800,
+      "sentence": "Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010oxo\u2010dG) (e, scale bar, 100 \u03bcm) and p53\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nWe next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activation and senescence\u2010associated secretory phenotype (SASP).",
+      "context_window": "idase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001 We next investigated nucle",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-2813",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2813,
+      "sentence": "Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010oxo\u2010dG) (e, scale bar, 100 \u03bcm) and p53\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nWe next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activation and senescence\u2010associated secretory phenotype (SASP).",
+      "context_window": "al)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001 We next investigated nuclear factor\u2010kap",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-2831",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2831,
+      "sentence": "Immunofluorescence staining of 8\u2010oxo\u20102\u2032\u2010deoxyguanosine (8\u2010oxo\u2010dG) (e, scale bar, 100 \u03bcm) and p53\u2010binding protein 1 (53BP1) (k, scale bar, 50 \u03bcm and 20 \u03bcm), n = 6-7. (f) Representative pictures of senescence\u2010associated\u2010\u03b2\u2010galactosidase (SA\u2010\u03b2\u2010gal)\u2010positive MSCs, scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nWe next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activation and senescence\u2010associated secretory phenotype (SASP).",
+      "context_window": "scale bar, 100 \u03bcm, n = 6. * p < 0.05, ** p < 0.01, and *** p < 0.001 We next investigated nuclear factor\u2010kappa B (NF\u2010\u03baB) activa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-3829",
+      "claim_type": "sample_size",
+      "raw_text": "n = 6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3829,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-3918",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3918,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "n was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-4122",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4122,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-4229",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4229,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001 To investigate",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-4238",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4238,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "sed AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001 To investigate the involve",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-4251",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4251,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "A level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001 To investigate the involvement of the a",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-4269",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4269,
+      "sentence": "Control or CKD MSCs isolated from sham\u2010operated or subtotal nephrectomized mice were treated with 10 \u03bcM metformin for 24 h. (a, e) NF\u2010\u03baB activity was measured in nuclear protein extracts, n = 6. (b) Cytokine expression was evaluated in the supernatants of control or CKD MSCs, n = 3. (c, f) Real\u2010time RT\u2010PCR was performed to measure the mRNA levels of interleukin (IL)\u20101\u03b2, IL\u20106, tumor necrosis factor (TNF)\u2010\u03b1, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), collagen I, and fibronectin, n = 4-5. (d) Quantitative RT\u2010PCR analysis shows a decreased AMPK\u03b1 mRNA level following siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo investigate the involvement of the adenosine monophosphate\u2010activated protein kinase (AMPK) pathway in mediating the effect of metformin on NF\u2010\u03baB activation and SASP, we determined the effect of metformin following small\u2010interfering RNA (siRNA)\u2010mediated AMPK\u03b1 subunit expression knockdown, which abolished the effects of metformin (Figure 2d-f ).",
+      "context_window": "siRNA transfection, n = 8. * p < 0.05, ** p < 0.01, and *** p < 0.001 To investigate the involvement of the adenosine monophosph",
+      "claim_role": "effect",
+      "endpoint": "AMPK signaling",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-6954",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6954,
+      "sentence": "HK2 cells were co\u2010cultured with control or CKD MSCs with or without metformin (10 \u03bcM) and then stimulated with LPS (50 ng/ml) or TGF\u2010\u03b21 (2 ng/ml) for 48 h. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression levels of tumor necrosis factor (TNF)\u2010\u03b1, monocyte chemoattractant protein (MCP)\u20101, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of fibronectin, collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo understand the therapeutic potential of metformin\u2010treated CKD MSCs in alleviating structural and functional damage as compared to control or CKD MSCs, we used a mouse model of kidney fibrosis induced by UUO.",
+      "context_window": "ine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-7090",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7090,
+      "sentence": "HK2 cells were co\u2010cultured with control or CKD MSCs with or without metformin (10 \u03bcM) and then stimulated with LPS (50 ng/ml) or TGF\u2010\u03b21 (2 ng/ml) for 48 h. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression levels of tumor necrosis factor (TNF)\u2010\u03b1, monocyte chemoattractant protein (MCP)\u20101, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of fibronectin, collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo understand the therapeutic potential of metformin\u2010treated CKD MSCs in alleviating structural and functional damage as compared to control or CKD MSCs, we used a mouse model of kidney fibrosis induced by UUO.",
+      "context_window": ", collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001 To understan",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-7101",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7101,
+      "sentence": "HK2 cells were co\u2010cultured with control or CKD MSCs with or without metformin (10 \u03bcM) and then stimulated with LPS (50 ng/ml) or TGF\u2010\u03b21 (2 ng/ml) for 48 h. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression levels of tumor necrosis factor (TNF)\u2010\u03b1, monocyte chemoattractant protein (MCP)\u20101, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of fibronectin, collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo understand the therapeutic potential of metformin\u2010treated CKD MSCs in alleviating structural and functional damage as compared to control or CKD MSCs, we used a mouse model of kidney fibrosis induced by UUO.",
+      "context_window": "IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001 To understand the therapeu",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-7114",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7114,
+      "sentence": "HK2 cells were co\u2010cultured with control or CKD MSCs with or without metformin (10 \u03bcM) and then stimulated with LPS (50 ng/ml) or TGF\u2010\u03b21 (2 ng/ml) for 48 h. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression levels of tumor necrosis factor (TNF)\u2010\u03b1, monocyte chemoattractant protein (MCP)\u20101, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of fibronectin, collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo understand the therapeutic potential of metformin\u2010treated CKD MSCs in alleviating structural and functional damage as compared to control or CKD MSCs, we used a mouse model of kidney fibrosis induced by UUO.",
+      "context_window": "muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001 To understand the therapeutic potential",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-7132",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7132,
+      "sentence": "HK2 cells were co\u2010cultured with control or CKD MSCs with or without metformin (10 \u03bcM) and then stimulated with LPS (50 ng/ml) or TGF\u2010\u03b21 (2 ng/ml) for 48 h. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression levels of tumor necrosis factor (TNF)\u2010\u03b1, monocyte chemoattractant protein (MCP)\u20101, chemokine (C\u2010X\u2010C motif) ligand 1 (CXCL1), and interleukin (IL)\u20108, n = 5-6. (b) Representative Western blots show protein levels of fibronectin, collagen IV, \u03b1\u2010smooth muscle actin (SMA), and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nTo understand the therapeutic potential of metformin\u2010treated CKD MSCs in alleviating structural and functional damage as compared to control or CKD MSCs, we used a mouse model of kidney fibrosis induced by UUO.",
+      "context_window": ", and E\u2010cadherin, n = 5-6. * p < 0.05, ** p < 0.01, and *** p < 0.001 To understand the therapeutic potential of metformin\u2010treat",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-9858",
+      "claim_type": "sample_size",
+      "raw_text": "n = 5",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9858,
+      "sentence": "At the time of UUO surgery, 2 \u00d7 10 6 control or CKD MSCs with or without metformin preconditioning for 24 h were intraperitoneally injected into each mouse. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression of tumor necrosis factor (TNF)\u2010, monocyte chemoattractant protein (MCP)\u20101, nitric oxide synthase (NOS) 2, fibronectin, and collagen I. (b) Fibronectin, collagen I and IV, and E\u2010cadherin protein expression levels were analyzed using Western blot analyses. (c) Representative kidney sections stained with periodic acid-Schiff (scale bar, 100 \u03bcm), Picro Sirius Red (scale bar, 100 \u03bcm), immunohistochemical staining for CD68\u2010positive macrophages (scale bar, 50 \u03bcm), and terminal deoxynucleotidyl transferase dUTP nick end labeling (TUNEL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nThe clinical significance of CKD\u2010associated senescence in MSCs was examined using ADMSCs from healthy kidney donors and patients with CKD.",
+      "context_window": "UTP nick end labeling (TUNEL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.00",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-9884",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9884,
+      "sentence": "At the time of UUO surgery, 2 \u00d7 10 6 control or CKD MSCs with or without metformin preconditioning for 24 h were intraperitoneally injected into each mouse. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression of tumor necrosis factor (TNF)\u2010, monocyte chemoattractant protein (MCP)\u20101, nitric oxide synthase (NOS) 2, fibronectin, and collagen I. (b) Fibronectin, collagen I and IV, and E\u2010cadherin protein expression levels were analyzed using Western blot analyses. (c) Representative kidney sections stained with periodic acid-Schiff (scale bar, 100 \u03bcm), Picro Sirius Red (scale bar, 100 \u03bcm), immunohistochemical staining for CD68\u2010positive macrophages (scale bar, 50 \u03bcm), and terminal deoxynucleotidyl transferase dUTP nick end labeling (TUNEL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nThe clinical significance of CKD\u2010associated senescence in MSCs was examined using ADMSCs from healthy kidney donors and patients with CKD.",
+      "context_window": "EL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001 The clinical significance",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-9897",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9897,
+      "sentence": "At the time of UUO surgery, 2 \u00d7 10 6 control or CKD MSCs with or without metformin preconditioning for 24 h were intraperitoneally injected into each mouse. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression of tumor necrosis factor (TNF)\u2010, monocyte chemoattractant protein (MCP)\u20101, nitric oxide synthase (NOS) 2, fibronectin, and collagen I. (b) Fibronectin, collagen I and IV, and E\u2010cadherin protein expression levels were analyzed using Western blot analyses. (c) Representative kidney sections stained with periodic acid-Schiff (scale bar, 100 \u03bcm), Picro Sirius Red (scale bar, 100 \u03bcm), immunohistochemical staining for CD68\u2010positive macrophages (scale bar, 50 \u03bcm), and terminal deoxynucleotidyl transferase dUTP nick end labeling (TUNEL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nThe clinical significance of CKD\u2010associated senescence in MSCs was examined using ADMSCs from healthy kidney donors and patients with CKD.",
+      "context_window": "(scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001 The clinical significance of CKD\u2010associ",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-9915",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9915,
+      "sentence": "At the time of UUO surgery, 2 \u00d7 10 6 control or CKD MSCs with or without metformin preconditioning for 24 h were intraperitoneally injected into each mouse. (a) Real\u2010time RT\u2010PCR was performed to measure the mRNA expression of tumor necrosis factor (TNF)\u2010, monocyte chemoattractant protein (MCP)\u20101, nitric oxide synthase (NOS) 2, fibronectin, and collagen I. (b) Fibronectin, collagen I and IV, and E\u2010cadherin protein expression levels were analyzed using Western blot analyses. (c) Representative kidney sections stained with periodic acid-Schiff (scale bar, 100 \u03bcm), Picro Sirius Red (scale bar, 100 \u03bcm), immunohistochemical staining for CD68\u2010positive macrophages (scale bar, 50 \u03bcm), and terminal deoxynucleotidyl transferase dUTP nick end labeling (TUNEL) staining (scale bar, 100 \u03bcm). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001\n\nThe clinical significance of CKD\u2010associated senescence in MSCs was examined using ADMSCs from healthy kidney donors and patients with CKD.",
+      "context_window": "). n = 5-7 for each group. * p < 0.05, ** p < 0.01, and *** p < 0.001 The clinical significance of CKD\u2010associated senescence in",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-13344",
+      "claim_type": "sample_size",
+      "raw_text": "n = 11",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13344,
+      "sentence": "Scale bar, 20 \u03bcm. (f) Representative Western blots show protein levels of prelamin A and phosphor ataxia telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "context_window": "a telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-n-13407",
+      "claim_type": "sample_size",
+      "raw_text": "n = 8",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13407,
+      "sentence": "Scale bar, 20 \u03bcm. (f) Representative Western blots show protein levels of prelamin A and phosphor ataxia telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "context_window": "11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-13431",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13431,
+      "sentence": "Scale bar, 20 \u03bcm. (f) Representative Western blots show protein levels of prelamin A and phosphor ataxia telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "context_window": "dent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-13444",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13444,
+      "sentence": "Scale bar, 20 \u03bcm. (f) Representative Western blots show protein levels of prelamin A and phosphor ataxia telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "context_window": "for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7884040_metformin_inhibits_chronic_kidney_disease_induced_dna_damage-p-13462",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 13462,
+      "sentence": "Scale bar, 20 \u03bcm. (f) Representative Western blots show protein levels of prelamin A and phosphor ataxia telangiectasia mutated (ATM)/ATM\u2010 and Rad3\u2010related (ATR). n = 11 biologically independent samples for control ADMSCs and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "context_window": "and n = 8 for CKD ADMSCs. * p < 0.05, ** p < 0.01, and *** p < 0.001",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

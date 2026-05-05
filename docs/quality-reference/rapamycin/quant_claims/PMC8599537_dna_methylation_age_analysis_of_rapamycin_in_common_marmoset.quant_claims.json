@@ -1,0 +1,500 @@
+{
+  "paper_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset",
+  "doi": "10.1007/s11357-021-00438-7",
+  "extracted_at": "2026-05-05T15:22:50+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 7,
+    "unit_value": 12,
+    "sample_size": 6,
+    "p_value": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-1287",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1287,
+      "sentence": "The common marmoset stands out from other mammals in that it is not possible to build accurate estimators of sex based on DNA methylation data: the accuracy of a random forest predictor of sex (66%) was substantially lower than that observed for other mammals (which is close to 100%).",
+      "context_window": "ion data: the accuracy of a random forest predictor of sex (66%) was substantially lower than that observed for other mamma",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-1372",
+      "claim_type": "percentage",
+      "raw_text": "100%",
+      "numeric_values": [
+        100.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1372,
+      "sentence": "The common marmoset stands out from other mammals in that it is not possible to build accurate estimators of sex based on DNA methylation data: the accuracy of a random forest predictor of sex (66%) was substantially lower than that observed for other mammals (which is close to 100%).",
+      "context_window": "wer than that observed for other mammals (which is close to 100%). Overall, the epigenetic clocks developed here for the com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-1049",
+      "claim_type": "percentage",
+      "raw_text": "92%",
+      "numeric_values": [
+        92.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1049,
+      "sentence": "While rhesus macaques are attractive as a model of primate aging due to its high DNA sequence homology with humans (around 92%), the average lifespan of this species in captivity is around 27 years (maximal lifespan is 42 years)[ 1 , 2 ].",
+      "context_window": "g due to its high DNA sequence homology with humans (around 92%), the average lifespan of this species in captivity is arou",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1115",
+      "claim_type": "unit_value",
+      "raw_text": "27 years",
+      "numeric_values": [
+        27.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1115,
+      "sentence": "While rhesus macaques are attractive as a model of primate aging due to its high DNA sequence homology with humans (around 92%), the average lifespan of this species in captivity is around 27 years (maximal lifespan is 42 years)[ 1 , 2 ].",
+      "context_window": "the average lifespan of this species in captivity is around 27 years (maximal lifespan is 42 years)[ 1 , 2 ]. The long lifespans",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1145",
+      "claim_type": "unit_value",
+      "raw_text": "42 years",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1145,
+      "sentence": "While rhesus macaques are attractive as a model of primate aging due to its high DNA sequence homology with humans (around 92%), the average lifespan of this species in captivity is around 27 years (maximal lifespan is 42 years)[ 1 , 2 ].",
+      "context_window": "pecies in captivity is around 27 years (maximal lifespan is 42 years)[ 1 , 2 ]. The long lifespans of rhesus monkeys required de",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1572",
+      "claim_type": "unit_value",
+      "raw_text": "8 years",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1572,
+      "sentence": "Among the usual NHP species maintained for research purposes, the common marmoset ( Callithrix jacchus ), a small NHP native to South America, has one of the shortest natural lifespans among anthropoid primates with an average lifespan in captivity of approximately 7-8 years and maximum lifespans reported between 16 and 21 years[ 7 , 8 ].",
+      "context_window": "es with an average lifespan in captivity of approximately 7-8 years and maximum lifespans reported between 16 and 21 years[ 7 ,",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1626",
+      "claim_type": "unit_value",
+      "raw_text": "21 years",
+      "numeric_values": [
+        21.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1626,
+      "sentence": "Among the usual NHP species maintained for research purposes, the common marmoset ( Callithrix jacchus ), a small NHP native to South America, has one of the shortest natural lifespans among anthropoid primates with an average lifespan in captivity of approximately 7-8 years and maximum lifespans reported between 16 and 21 years[ 7 , 8 ].",
+      "context_window": "ely 7-8 years and maximum lifespans reported between 16 and 21 years[ 7 , 8 ]. Further, marmosets that live in a closed colony h",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-1797",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1797,
+      "sentence": "Further, marmosets that live in a closed colony have a natural adult mortality that drives a decline in their cumulative survival rate from about 85 to 35% that generally occurs between 5 and 10 years of age[ 7 ].",
+      "context_window": "decline in their cumulative survival rate from about 85 to 35% that generally occurs between 5 and 10 years of age[ 7 ]. T",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1837",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1837,
+      "sentence": "Further, marmosets that live in a closed colony have a natural adult mortality that drives a decline in their cumulative survival rate from about 85 to 35% that generally occurs between 5 and 10 years of age[ 7 ].",
+      "context_window": "te from about 85 to 35% that generally occurs between 5 and 10 years of age[ 7 ]. Thus, the significantly shorter lifespan of ma",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1577",
+      "claim_type": "unit_value",
+      "raw_text": "1 mg",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 1577,
+      "sentence": "Once trained, marmosets were treated once daily with a dose of rapamycin roughly equivalent to 1 mg rapamycin/kg body weight.",
+      "context_window": "d once daily with a dose of rapamycin roughly equivalent to 1 mg rapamycin/kg body weight. Animals were dosed Monday-Friday",
+      "claim_role": "dose",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-1941",
+      "claim_type": "unit_value",
+      "raw_text": "2.0 mL",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mL",
+      "source_section": "methods",
+      "source_offset": 1941,
+      "sentence": "Femoral vein blood collection (1.0-2.0 mL) was performed on each animal and blood was placed in to PAXgene blood collection tubes (Qiagen).",
+      "context_window": "ed in a custom assembly. Femoral vein blood collection (1.0-2.0 mL) was performed on each animal and blood was placed in to PA",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-2870",
+      "claim_type": "sample_size",
+      "raw_text": "n = 281",
+      "numeric_values": [
+        281.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2870,
+      "sentence": "To validate the rhesus clock cross species, we utilized n = 281 methylation array profiling blood, skin, omental fat, kidney, lung, skeletal muscle, cortex, and liver samples described in a companion paper [ 26 ].",
+      "context_window": "). To validate the rhesus clock cross species, we utilized n = 281 methylation array profiling blood, skin, omental fat, kidne",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-3170",
+      "claim_type": "sample_size",
+      "raw_text": "n = 240",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3170,
+      "sentence": "To validate the vervet clock cross species, we utilized n = 240 methylation arrays profiling blood, prefrontal brain cortex and liver from the vervet monkey described in a companion paper [ 27 ].",
+      "context_window": "). To validate the vervet clock cross species, we utilized n = 240 methylation arrays profiling blood, prefrontal brain cortex",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-3716",
+      "claim_type": "unit_value",
+      "raw_text": "93 years",
+      "numeric_values": [
+        93.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 3716,
+      "sentence": "To build the human-rhesus macaque clock, we analyzed previously generated methylation data from n = 1211human tissue samples (adipose, blood, bone marrow, dermis, epidermis, heart, keratinocytes, fibroblasts, kidney, liver, lung, lymph node, muscle, pituitary, skin, spleen) from individuals whose ages ranged from 0 to 93 years.",
+      "context_window": "skin, spleen) from individuals whose ages ranged from 0 to 93 years. The tissue samples came from three sources: Tissue and org",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-52",
+      "claim_type": "sample_size",
+      "raw_text": "N = 96",
+      "numeric_values": [
+        96.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 52,
+      "sentence": "We generated high-quality DNA methylation data from N = 96 blood samples taken from marmosets of ages across a large proportion of the lifespan of this species (approximately 0.5-15.5 years of age, Table 1 ).",
+      "context_window": "We generated high-quality DNA methylation data from N = 96 blood samples taken from marmosets of ages across a large p",
+      "claim_role": "duration",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-179",
+      "claim_type": "unit_value",
+      "raw_text": "15.5 years",
+      "numeric_values": [
+        15.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 179,
+      "sentence": "We generated high-quality DNA methylation data from N = 96 blood samples taken from marmosets of ages across a large proportion of the lifespan of this species (approximately 0.5-15.5 years of age, Table 1 ).",
+      "context_window": "oportion of the lifespan of this species (approximately 0.5-15.5 years of age, Table 1 ). A putative outlier (possibly platemap er",
+      "claim_role": "protocol",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-279",
+      "claim_type": "sample_size",
+      "raw_text": "N = 95",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 279,
+      "sentence": "A putative outlier (possibly platemap error) was removed resulting in N = 95 blood samples.",
+      "context_window": "outlier (possibly platemap error) was removed resulting in N = 95 blood samples. The blood samples came from 2 groups of anim",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-2124",
+      "claim_type": "unit_value",
+      "raw_text": "0.72 years",
+      "numeric_values": [
+        0.72
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2124,
+      "sentence": "As indicated by its name, the marmoset blood tissue clock is highly accurate in age estimation of the donors of blood samples ( R = 0.95 and median absolute error 0.72 years, Fig.",
+      "context_window": "onors of blood samples ( R = 0.95 and median absolute error 0.72 years, Fig. 1A ). The human-marmoset clock for relative age is hi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-3225",
+      "claim_type": "sample_size",
+      "raw_text": "n = 240",
+      "numeric_values": [
+        240.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3225,
+      "sentence": "Each panel reports the sample size, correlation coefficient, median absolute error (MAE)\n\nTo determine the cross-tissue performance and the cross-species conservation of the marmoset clocks, we applied the marmoset clocks two Old World primate species, vervet monkeys ( n = 240 from 3 tissues) and rhesus macaque ( n = 281 samples from eight tissues).",
+      "context_window": "oset clocks two Old World primate species, vervet monkeys ( n = 240 from 3 tissues) and rhesus macaque ( n = 281 samples from e",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-n-3270",
+      "claim_type": "sample_size",
+      "raw_text": "n = 281",
+      "numeric_values": [
+        281.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3270,
+      "sentence": "Each panel reports the sample size, correlation coefficient, median absolute error (MAE)\n\nTo determine the cross-tissue performance and the cross-species conservation of the marmoset clocks, we applied the marmoset clocks two Old World primate species, vervet monkeys ( n = 240 from 3 tissues) and rhesus macaque ( n = 281 samples from eight tissues).",
+      "context_window": "rvet monkeys ( n = 240 from 3 tissues) and rhesus macaque ( n = 281 samples from eight tissues). The data from vervet monkeys (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-p-6746",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6746,
+      "sentence": "The direction of associations with p < 0.005 (red dotted line) is highlighted by red (hypermethylated) and blue (hypomethylated) colors.",
+      "context_window": "6v1.100 genome assembly. The direction of associations with p < 0.005 (red dotted line) is highlighted by red (hypermethylated) a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-p-7014",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.005",
+      "numeric_values": [
+        0.005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7014,
+      "sentence": "Top CpGs were selected at p < 0.005 and further filtering based on z score of association with chronological age for up to 500 in a positive or negative direction.",
+      "context_window": "osest transcriptional start site. Top CpGs were selected at p < 0.005 and further filtering based on z score of association with",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-8438",
+      "claim_type": "unit_value",
+      "raw_text": "3.5 years",
+      "numeric_values": [
+        3.5
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 8438,
+      "sentence": "At the time of blood draw, animals had been on daily rapamycin treatment for approximately 2-3.5 years.",
+      "context_window": "s had been on daily rapamycin treatment for approximately 2-3.5 years. After dosing with rapamycin, we found no significant effe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-10363",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10363,
+      "sentence": "Surprisingly, a random forest predictor of sex based on the marmoset methylation data generated relatively low accuracy of 66%, which did not improve after application of a generalized linear regression model.",
+      "context_window": "moset methylation data generated relatively low accuracy of 66%, which did not improve after application of a generalized l",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-10518",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10518,
+      "sentence": "A random assignment of sex would have led to an accuracy of roughly 50% in this dataset.",
+      "context_window": "assignment of sex would have led to an accuracy of roughly 50% in this dataset. Our EWAS of sex corroborates these results",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-u-5041",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5041,
+      "sentence": "However, we believe this explanation is unlikely because the treated animals had a mean age of 10 years at the time of the blood draw (Table 1 ).",
+      "context_window": "n is unlikely because the treated animals had a mean age of 10 years at the time of the blood draw (Table 1 ). It would be of i",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC8599537_dna_methylation_age_analysis_of_rapamycin_in_common_marmoset-pct-5997",
+      "claim_type": "percentage",
+      "raw_text": "66%",
+      "numeric_values": [
+        66.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5997,
+      "sentence": "By contrast, the out-of-bag accuracy of a random forest predictor was only 66% for blood samples from marmosets.",
+      "context_window": "e out-of-bag accuracy of a random forest predictor was only 66% for blood samples from marmosets. We hypothesize that this",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+{
+  "paper_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame",
+  "doi": "10.2174/1871530323666221115091621",
+  "extracted_at": "2026-05-05T15:32:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 17,
+    "percentage": 14,
+    "mean_sd": 5,
+    "p_value": 4,
+    "sample_size": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-292",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 292,
+      "sentence": "We conducted an observational, cross-sectional, multicentric study on metformin in T2DM outpatients older than 65 years who were taking the drug for at least 6 months and referred to Italian Endocrinology and Diabetology Services.",
+      "context_window": "ticentric study on metformin in T2DM outpatients older than 65 years who were taking the drug for at least 6 months and referred",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-339",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 339,
+      "sentence": "We conducted an observational, cross-sectional, multicentric study on metformin in T2DM outpatients older than 65 years who were taking the drug for at least 6 months and referred to Italian Endocrinology and Diabetology Services.",
+      "context_window": "s older than 65 years who were taking the drug for at least 6 months and referred to Italian Endocrinology and Diabetology Servi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-731",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 731,
+      "sentence": "Fifteen Italian centers recruited 751 consecutive participants (42.9% older than 75 years, 48.6% females).",
+      "context_window": "een Italian centers recruited 751 consecutive participants (42.9% older than 75 years, 48.6% females). T2DM duration was 12.9",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-748",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 748,
+      "sentence": "Fifteen Italian centers recruited 751 consecutive participants (42.9% older than 75 years, 48.6% females).",
+      "context_window": "rs recruited 751 consecutive participants (42.9% older than 75 years, 48.6% females). T2DM duration was 12.9 \u00b1 9.7 years (longer",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-758",
+      "claim_type": "percentage",
+      "raw_text": "48.6%",
+      "numeric_values": [
+        48.6
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 758,
+      "sentence": "Fifteen Italian centers recruited 751 consecutive participants (42.9% older than 75 years, 48.6% females).",
+      "context_window": "ed 751 consecutive participants (42.9% older than 75 years, 48.6% females). T2DM duration was 12.9 \u00b1 9.7 years (longer than 1",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-msd-792",
+      "claim_type": "mean_sd",
+      "raw_text": "12.9 \u00b1 9.7",
+      "numeric_values": [
+        12.9,
+        9.7
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 792,
+      "sentence": "T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%).",
+      "context_window": "2.9% older than 75 years, 48.6% females). T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%). Metformin had been u",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-799",
+      "claim_type": "unit_value",
+      "raw_text": "9.7 years",
+      "numeric_values": [
+        9.7
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 799,
+      "sentence": "T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%).",
+      "context_window": "der than 75 years, 48.6% females). T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%). Metformin had been used fo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-822",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 822,
+      "sentence": "T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%).",
+      "context_window": "% females). T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%). Metformin had been used for 10.3 \u00b1 6.8 years (lo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-834",
+      "claim_type": "percentage",
+      "raw_text": "53.8%",
+      "numeric_values": [
+        53.8
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 834,
+      "sentence": "T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%).",
+      "context_window": "T2DM duration was 12.9 \u00b1 9.7 years (longer than 10 years in 53.8%). Metformin had been used for 10.3 \u00b1 6.8 years (longer than",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-msd-870",
+      "claim_type": "mean_sd",
+      "raw_text": "10.3 \u00b1 6.8",
+      "numeric_values": [
+        10.3,
+        6.8
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 870,
+      "sentence": "Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%).",
+      "context_window": "longer than 10 years in 53.8%). Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%). Metformin dose was 1",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-877",
+      "claim_type": "unit_value",
+      "raw_text": "6.8 years",
+      "numeric_values": [
+        6.8
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 877,
+      "sentence": "Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%).",
+      "context_window": "than 10 years in 53.8%). Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%). Metformin dose was 1.6 \u00b1 0",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-900",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 900,
+      "sentence": "Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%).",
+      "context_window": ". Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%). Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day i",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-912",
+      "claim_type": "percentage",
+      "raw_text": "52.4%",
+      "numeric_values": [
+        52.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 912,
+      "sentence": "Metformin had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%).",
+      "context_window": "had been used for 10.3 \u00b1 6.8 years (longer than 10 years in 52.4%). Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day in 63.4%).",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-msd-939",
+      "claim_type": "mean_sd",
+      "raw_text": "1.6 \u00b1 0.9",
+      "numeric_values": [
+        1.6,
+        0.9
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 939,
+      "sentence": "Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day in 63.4%).",
+      "context_window": "8 years (longer than 10 years in 52.4%). Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day in 63.4%). As compared to the youngest, p",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-970",
+      "claim_type": "percentage",
+      "raw_text": "63.4%",
+      "numeric_values": [
+        63.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 970,
+      "sentence": "Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day in 63.4%).",
+      "context_window": "n 52.4%). Metformin dose was 1.6 \u00b1 0.9 g/day (>1.5 g/day in 63.4%). As compared to the youngest, participants older than 75 y",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-1031",
+      "claim_type": "unit_value",
+      "raw_text": "75 years",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1031,
+      "sentence": "As compared to the youngest, participants older than 75 years did not differ for metformin daily dose or number of administrations.",
+      "context_window": "3.4%). As compared to the youngest, participants older than 75 years did not differ for metformin daily dose or number of admini",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-1385",
+      "claim_type": "percentage",
+      "raw_text": "60%",
+      "numeric_values": [
+        60.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1385,
+      "sentence": "According to the last available national data [ 9 ], metformin is the most used anti-diabetic drug in Italy in every age group; over 60% of Italian patients with T2DM are indeed treated with metformin alone or in combination with other anti-diabetic medications, including insulin.",
+      "context_window": "t used anti-diabetic drug in Italy in every age group; over 60% of Italian patients with T2DM are indeed treated with metfo",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-p-3919",
+      "claim_type": "p_value",
+      "raw_text": "p \u22640.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3919,
+      "sentence": "The level of statistical significance was set at p \u22640.05.",
+      "context_window": "analysis. The level of statistical significance was set at p \u22640.05. The calculations were performed using SPSS (IBM SPSS Stati",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-121",
+      "claim_type": "percentage",
+      "raw_text": "51.4%",
+      "numeric_values": [
+        51.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 121,
+      "sentence": "We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo).",
+      "context_window": "istributed throughout Italy. We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-y",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-137",
+      "claim_type": "percentage",
+      "raw_text": "48.6%",
+      "numeric_values": [
+        48.6
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 137,
+      "sentence": "We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo).",
+      "context_window": "ghout Italy. We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo). Table 1 sum",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-msd-157",
+      "claim_type": "mean_sd",
+      "raw_text": "74.1 \u00b1 6.4",
+      "numeric_values": [
+        74.1,
+        6.4
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 157,
+      "sentence": "We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo).",
+      "context_window": "olled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo). Table 1 summarizes the demographic,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-164",
+      "claim_type": "unit_value",
+      "raw_text": "6.4 years",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 164,
+      "sentence": "We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo).",
+      "context_window": "51 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo). Table 1 summarizes the demographic, clinic",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-175",
+      "claim_type": "percentage",
+      "raw_text": "42.9%",
+      "numeric_values": [
+        42.9
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 175,
+      "sentence": "We enrolled 751 participants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo).",
+      "context_window": "ants, 51.4% males and 48.6% females, aged 74.1 \u00b1 6.4 years (42.9% \u226575-yo). Table 1 summarizes the demographic, clinical and",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-n-352",
+      "claim_type": "sample_size",
+      "raw_text": "n = 751",
+      "numeric_values": [
+        751.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 352,
+      "sentence": "Demographic, biochemical and clinical features of the whole series (n = 751).",
+      "context_window": "hic, biochemical and clinical features of the whole series (n = 751). Note: Data are expressed as mean \u00b1 SD or as percentage a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-657",
+      "claim_type": "percentage",
+      "raw_text": "7.3%",
+      "numeric_values": [
+        7.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 657,
+      "sentence": "The renal function was generally preserved; only 7.3% had eGFR <45 mL/min/1.73 m 2 .",
+      "context_window": "c control. The renal function was generally preserved; only 7.3% had eGFR <45 mL/min/1.73 m 2 . Diabetes duration was longer",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-672",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "results",
+      "source_offset": 672,
+      "sentence": "The renal function was generally preserved; only 7.3% had eGFR <45 mL/min/1.73 m 2 .",
+      "context_window": "renal function was generally preserved; only 7.3% had eGFR <45 mL/min/1.73 m 2 . Diabetes duration was longer than 10 years in mo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-727",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 727,
+      "sentence": "Diabetes duration was longer than 10 years in more than half of the participants, with a mean of 12.9 \u00b1 9.7 years.",
+      "context_window": "GFR <45 mL/min/1.73 m 2 . Diabetes duration was longer than 10 years in more than half of the participants, with a mean of 12.9",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-msd-790",
+      "claim_type": "mean_sd",
+      "raw_text": "12.9 \u00b1 9.7",
+      "numeric_values": [
+        12.9,
+        9.7
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 790,
+      "sentence": "Diabetes duration was longer than 10 years in more than half of the participants, with a mean of 12.9 \u00b1 9.7 years.",
+      "context_window": "years in more than half of the participants, with a mean of 12.9 \u00b1 9.7 years. Metformin therapy had been administered for at least",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-797",
+      "claim_type": "unit_value",
+      "raw_text": "9.7 years",
+      "numeric_values": [
+        9.7
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 797,
+      "sentence": "Diabetes duration was longer than 10 years in more than half of the participants, with a mean of 12.9 \u00b1 9.7 years.",
+      "context_window": "n more than half of the participants, with a mean of 12.9 \u00b1 9.7 years. Metformin therapy had been administered for at least 10 ye",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-861",
+      "claim_type": "unit_value",
+      "raw_text": "10 years",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 861,
+      "sentence": "Metformin therapy had been administered for at least 10 years in more than half of the patients, and only 28.8% had been treated for five years or less.",
+      "context_window": "years. Metformin therapy had been administered for at least 10 years in more than half of the patients, and only 28.8% had been",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-914",
+      "claim_type": "percentage",
+      "raw_text": "28.8%",
+      "numeric_values": [
+        28.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 914,
+      "sentence": "Metformin therapy had been administered for at least 10 years in more than half of the patients, and only 28.8% had been treated for five years or less.",
+      "context_window": "least 10 years in more than half of the patients, and only 28.8% had been treated for five years or less. Moreover, anti-dia",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-1040",
+      "claim_type": "percentage",
+      "raw_text": "37.2%",
+      "numeric_values": [
+        37.2
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1040,
+      "sentence": "Moreover, anti-diabetic drugs with increased hypoglycemic risk were ongoing in 37.2% of patients (insulin in 20.4%).",
+      "context_window": "etic drugs with increased hypoglycemic risk were ongoing in 37.2% of patients (insulin in 20.4%). The mean number of co-morbi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-1070",
+      "claim_type": "percentage",
+      "raw_text": "20.4%",
+      "numeric_values": [
+        20.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1070,
+      "sentence": "Moreover, anti-diabetic drugs with increased hypoglycemic risk were ongoing in 37.2% of patients (insulin in 20.4%).",
+      "context_window": "glycemic risk were ongoing in 37.2% of patients (insulin in 20.4%). The mean number of co-morbidities requiring pharmacologic",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-p-2855",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2855,
+      "sentence": "Considering the diabetes duration and the metformin treatment duration highly related (\u00df = 0.807, p < 0.001, VIF > 3), the diabetes duration was then excluded by the multiple regression model.",
+      "context_window": "the metformin treatment duration highly related (\u00df = 0.807, p < 0.001, VIF > 3), the diabetes duration was then excluded by the m",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-p-3068",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.029",
+      "numeric_values": [
+        0.029
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3068,
+      "sentence": "In the multivariate regression analysis, daily metformin dose remained significantly associated with eGFR (\u00df = 0.066, p = 0.029) and with the duration of metformin treatment (\u00df = 0.129, p = 0.001).",
+      "context_window": "ose remained significantly associated with eGFR (\u00df = 0.066, p = 0.029) and with the duration of metformin treatment (\u00df = 0.129, p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-p-3136",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3136,
+      "sentence": "In the multivariate regression analysis, daily metformin dose remained significantly associated with eGFR (\u00df = 0.066, p = 0.029) and with the duration of metformin treatment (\u00df = 0.129, p = 0.001).",
+      "context_window": "9) and with the duration of metformin treatment (\u00df = 0.129, p = 0.001). The correlations were also tested by applying the CKD-EP",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-3373",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 3373,
+      "sentence": "Mahabaleshwarkar and DeSantis [ 10 ] reported that patients older than 65 years had lower odds of receiving 1.5 g/day of metformin at initiation than younger patients.",
+      "context_window": "arkar and DeSantis [ 10 ] reported that patients older than 65 years had lower odds of receiving 1.5 g/day of metformin at initi",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-5572",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "discussion",
+      "source_offset": 5572,
+      "sentence": "A retrospective observational administrative database study in a primary care setting performed in an Italian region [ 24 ] evaluated the utilization patterns of anti-diabetic drugs at initiation and over 1 year of follow-up.",
+      "context_window": "tion patterns of anti-diabetic drugs at initiation and over 1 year of follow-up. It was reported that metformin was the most p",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-5741",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 5741,
+      "sentence": "It was reported that metformin was the most prescribed drug, both as monotherapy and as a fixed combination with other drugs, even in patients over 80 years.",
+      "context_window": "a fixed combination with other drugs, even in patients over 80 years. Most patients persisted on metformin at 12 months after in",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-u-5791",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 5791,
+      "sentence": "Most patients persisted on metformin at 12 months after initiation.",
+      "context_window": "ents over 80 years. Most patients persisted on metformin at 12 months after initiation. The strengths of this study are inherent",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10245800_older_adults_with_type_2_diabetes_treated_with_metformin_ame-pct-6649",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 6649,
+      "sentence": "More than 20% of patients in this study were on concomitant treatment with metformin and insulin, indicating the likely selection of the more severe cases of diabetes.",
+      "context_window": "followed only by general practitioners in Italy. More than 20% of patients in this study were on concomitant treatment wit",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

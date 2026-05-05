@@ -1,0 +1,392 @@
+{
+  "paper_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen",
+  "doi": "10.1016/j.omtn.2024.102413",
+  "extracted_at": "2026-05-05T15:32:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 1,
+    "p_value": 16,
+    "percentage": 2,
+    "sample_size": 2
+  },
+  "claims": [
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-u-1132",
+      "claim_type": "unit_value",
+      "raw_text": "1 year",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "year",
+      "source_section": "introduction",
+      "source_offset": 1132,
+      "sentence": "More than half of the patients may experience local recurrence or distant metastasis after treatment, and the overall survival of patients with recurrent or metastatic HNSCC (R/M HNSCC) is less than 1 year.",
+      "context_window": "with recurrent or metastatic HNSCC (R/M HNSCC) is less than 1 year. 5 , 6 Recently, immunotherapy has rapidly changed the trea",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-1908",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1908,
+      "sentence": "Prognosis-related genes were identified in the entire TCGA cohort using univariable Cox regression analysis with a significance level of p < 0.05.",
+      "context_window": "riable Cox regression analysis with a significance level of p < 0.05. The R package non-negative matrix factorization was employ",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-2467",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 2467,
+      "sentence": "64 We considered adjusted p < 0.05 and q < 0.2 to be statistically significant.",
+      "context_window": "r package to examine GO and KEGG. 64 We considered adjusted p < 0.05 and q < 0.2 to be statistically significant. GSEA using KEG",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-pct-5040",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5040,
+      "sentence": "To exclude low-quality cells and genes with low expression, the following thresholds were applied: (1) each gene had to be expressed in at least three cells; (2) the number of features per cell ranged from 200 to 5,000; and (3) the proportion of mitochondria was required to be less than 20%, and hemoglobin content in each cell was required to be less than 3%.",
+      "context_window": "the proportion of mitochondria was required to be less than 20%, and hemoglobin content in each cell was required to be les",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-pct-5110",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5110,
+      "sentence": "To exclude low-quality cells and genes with low expression, the following thresholds were applied: (1) each gene had to be expressed in at least three cells; (2) the number of features per cell ranged from 200 to 5,000; and (3) the proportion of mitochondria was required to be less than 20%, and hemoglobin content in each cell was required to be less than 3%.",
+      "context_window": "emoglobin content in each cell was required to be less than 3%. Subsequently, data standardization was performed using the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-9824",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9824,
+      "sentence": "Two-tailed tests were performed on statistical p values, with a significance level of p < 0.05.",
+      "context_window": "ormed on statistical p values, with a significance level of p < 0.05.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-n-5290",
+      "claim_type": "sample_size",
+      "raw_text": "n = 658",
+      "numeric_values": [
+        658.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5290,
+      "sentence": "The goal of this analysis was to categorize the HNSCC cohort into clusters of cold ( n = 658) and hot tumors ( n = 390) ( Figure 2 B).",
+      "context_window": "was to categorize the HNSCC cohort into clusters of cold ( n = 658) and hot tumors ( n = 390) ( Figure 2 B). The intergroup di",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-n-5316",
+      "claim_type": "sample_size",
+      "raw_text": "n = 390",
+      "numeric_values": [
+        390.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5316,
+      "sentence": "The goal of this analysis was to categorize the HNSCC cohort into clusters of cold ( n = 658) and hot tumors ( n = 390) ( Figure 2 B).",
+      "context_window": "CC cohort into clusters of cold ( n = 658) and hot tumors ( n = 390) ( Figure 2 B). The intergroup distribution between cold an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-5848",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5848,
+      "sentence": "Patients with cluster hot tumors had significantly longer overall survival than those with cluster cold tumors, as shown by the Kaplan-Meier survival curves ( p < 0.001) ( Figure 2 D).",
+      "context_window": "cold tumors, as shown by the Kaplan-Meier survival curves ( p < 0.001) ( Figure 2 D). The proportion of patients with more advanc",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-7417",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7417,
+      "sentence": "Construction of hot and cold clusters for HNSCC-based CD8 + T cell infiltration-related scores and identification of significant CD8 + T cell infiltration-related genes indicated prognosis in HNSCC\n\n(A) Univariate Cox regression analysis revealed that 33 CD8 + T cell infiltration-related genes were significantly correlated with prognosis. (B) Two-CD8 + T cell-related molecular clusters were identified using NMF clustering analysis. (C) The PCA analysis of distinct CD8 + T cell-related molecular clusters. (D) Kaplan-Meier curves showing the difference in overall survival between hot and cold cluster tumors. (E) The heatmap of clinical TNM stages and HPV status between hot and cold cluster tumors. (F) Volcano plot-based DEGs between cluster hot and cold tumors. (G) Heatmap of the relationship between ESTIMATE scores, GSVA, and different cohorts of the two clusters. (H and I) The biological functions based on GO and KEGG enrichment analyses and GSVA between hot and cold cluster tumors. (J) Differences in the pathways-based GSVA between the two clusters. (K-M) Differences in the expression of immune-infiltrating cells and immune-related functions based on ssGSEA (K and L) and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes (OLR1, SNAPC1, and CLEC10A) based on eight machine learning algorithms. (O-T) Importance of OLR1, SNAPC1, and CLEC10A was assessed using different algorithms. (U) Real-time-qPCR analysis of OLR-1, SNAPC1, and CLEC10A mRNA expression in normal and tumor tissues. (V) Subcellular localization of OLR-1 in A-431 and CACO-2 from the Human Protein Atlas (HPA) database.",
+      "context_window": "SEA (K and L) and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower pl",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-7430",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7430,
+      "sentence": "Construction of hot and cold clusters for HNSCC-based CD8 + T cell infiltration-related scores and identification of significant CD8 + T cell infiltration-related genes indicated prognosis in HNSCC\n\n(A) Univariate Cox regression analysis revealed that 33 CD8 + T cell infiltration-related genes were significantly correlated with prognosis. (B) Two-CD8 + T cell-related molecular clusters were identified using NMF clustering analysis. (C) The PCA analysis of distinct CD8 + T cell-related molecular clusters. (D) Kaplan-Meier curves showing the difference in overall survival between hot and cold cluster tumors. (E) The heatmap of clinical TNM stages and HPV status between hot and cold cluster tumors. (F) Volcano plot-based DEGs between cluster hot and cold tumors. (G) Heatmap of the relationship between ESTIMATE scores, GSVA, and different cohorts of the two clusters. (H and I) The biological functions based on GO and KEGG enrichment analyses and GSVA between hot and cold cluster tumors. (J) Differences in the pathways-based GSVA between the two clusters. (K-M) Differences in the expression of immune-infiltrating cells and immune-related functions based on ssGSEA (K and L) and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes (OLR1, SNAPC1, and CLEC10A) based on eight machine learning algorithms. (O-T) Importance of OLR1, SNAPC1, and CLEC10A was assessed using different algorithms. (U) Real-time-qPCR analysis of OLR-1, SNAPC1, and CLEC10A mRNA expression in normal and tumor tissues. (V) Subcellular localization of OLR-1 in A-431 and CACO-2 from the Human Protein Atlas (HPA) database.",
+      "context_window": "and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing ov",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-7444",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7444,
+      "sentence": "Construction of hot and cold clusters for HNSCC-based CD8 + T cell infiltration-related scores and identification of significant CD8 + T cell infiltration-related genes indicated prognosis in HNSCC\n\n(A) Univariate Cox regression analysis revealed that 33 CD8 + T cell infiltration-related genes were significantly correlated with prognosis. (B) Two-CD8 + T cell-related molecular clusters were identified using NMF clustering analysis. (C) The PCA analysis of distinct CD8 + T cell-related molecular clusters. (D) Kaplan-Meier curves showing the difference in overall survival between hot and cold cluster tumors. (E) The heatmap of clinical TNM stages and HPV status between hot and cold cluster tumors. (F) Volcano plot-based DEGs between cluster hot and cold tumors. (G) Heatmap of the relationship between ESTIMATE scores, GSVA, and different cohorts of the two clusters. (H and I) The biological functions based on GO and KEGG enrichment analyses and GSVA between hot and cold cluster tumors. (J) Differences in the pathways-based GSVA between the two clusters. (K-M) Differences in the expression of immune-infiltrating cells and immune-related functions based on ssGSEA (K and L) and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes (OLR1, SNAPC1, and CLEC10A) based on eight machine learning algorithms. (O-T) Importance of OLR1, SNAPC1, and CLEC10A was assessed using different algorithms. (U) Real-time-qPCR analysis of OLR-1, SNAPC1, and CLEC10A mRNA expression in normal and tumor tissues. (V) Subcellular localization of OLR-1 in A-431 and CACO-2 from the Human Protein Atlas (HPA) database.",
+      "context_window": "(M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-7460",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7460,
+      "sentence": "Construction of hot and cold clusters for HNSCC-based CD8 + T cell infiltration-related scores and identification of significant CD8 + T cell infiltration-related genes indicated prognosis in HNSCC\n\n(A) Univariate Cox regression analysis revealed that 33 CD8 + T cell infiltration-related genes were significantly correlated with prognosis. (B) Two-CD8 + T cell-related molecular clusters were identified using NMF clustering analysis. (C) The PCA analysis of distinct CD8 + T cell-related molecular clusters. (D) Kaplan-Meier curves showing the difference in overall survival between hot and cold cluster tumors. (E) The heatmap of clinical TNM stages and HPV status between hot and cold cluster tumors. (F) Volcano plot-based DEGs between cluster hot and cold tumors. (G) Heatmap of the relationship between ESTIMATE scores, GSVA, and different cohorts of the two clusters. (H and I) The biological functions based on GO and KEGG enrichment analyses and GSVA between hot and cold cluster tumors. (J) Differences in the pathways-based GSVA between the two clusters. (K-M) Differences in the expression of immune-infiltrating cells and immune-related functions based on ssGSEA (K and L) and CIBERSORT (M) between the two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes (OLR1, SNAPC1, and CLEC10A) based on eight machine learning algorithms. (O-T) Importance of OLR1, SNAPC1, and CLEC10A was assessed using different algorithms. (U) Real-time-qPCR analysis of OLR-1, SNAPC1, and CLEC10A mRNA expression in normal and tumor tissues. (V) Subcellular localization of OLR-1 in A-431 and CACO-2 from the Human Protein Atlas (HPA) database.",
+      "context_window": "two clusters. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (N) Flower plot showing overlapping genes (OLR1, SNAPC1, a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-7991",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7991,
+      "sentence": "Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "xpression in normal and tumor tissues. Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. A weighted c",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-8004",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8004,
+      "sentence": "Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "normal and tumor tissues. Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. A weighted co-expression",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-8018",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8018,
+      "sentence": "Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "or tissues. Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. A weighted co-expression network was con",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-8034",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8034,
+      "sentence": "Scale bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001.",
+      "context_window": "e bar, 200 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. A weighted co-expression network was constructed and disp",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-23008",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23008,
+      "sentence": "Upper scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets in normal and tumor tissues. (I) Bubble plot displaying the expression of representative well-known markers across CD8 + T cell subsets identified in HNSCC tissues. (J) The proportion of different CD8 + T cell subsets in normal and tumor tissues. (K) Circle plots showing an overview of cell-cell interaction numbers and strength among macrophages and CD8 + T cells subsets in tumor tissues.",
+      "context_window": "tissues. Upper scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plot",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-23021",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23021,
+      "sentence": "Upper scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets in normal and tumor tissues. (I) Bubble plot displaying the expression of representative well-known markers across CD8 + T cell subsets identified in HNSCC tissues. (J) The proportion of different CD8 + T cell subsets in normal and tumor tissues. (K) Circle plots showing an overview of cell-cell interaction numbers and strength among macrophages and CD8 + T cells subsets in tumor tissues.",
+      "context_window": "r scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-23035",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23035,
+      "sentence": "Upper scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets in normal and tumor tissues. (I) Bubble plot displaying the expression of representative well-known markers across CD8 + T cell subsets identified in HNSCC tissues. (J) The proportion of different CD8 + T cell subsets in normal and tumor tissues. (K) Circle plots showing an overview of cell-cell interaction numbers and strength among macrophages and CD8 + T cells subsets in tumor tissues.",
+      "context_window": "00 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets i",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC11869859_multi_omics_and_machine_learning_driven_cd8_t_cell_heterogen-p-23051",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 23051,
+      "sentence": "Upper scale bar, 500 \u03bcm; lower scale bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets in normal and tumor tissues. (I) Bubble plot displaying the expression of representative well-known markers across CD8 + T cell subsets identified in HNSCC tissues. (J) The proportion of different CD8 + T cell subsets in normal and tumor tissues. (K) Circle plots showing an overview of cell-cell interaction numbers and strength among macrophages and CD8 + T cells subsets in tumor tissues.",
+      "context_window": "le bar, 50 \u03bcm. \u2217 p < 0.05; \u2217\u2217 p < 0.01; \u2217\u2217\u2217 p < 0.001; \u2217\u2217\u2217\u2217 p < 0.0001. (H) UMAP plots for CD8 + T cell subsets in normal and tumo",
+      "claim_role": "unknown",
+      "endpoint": "muscle strength",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    }
+  ]
+}

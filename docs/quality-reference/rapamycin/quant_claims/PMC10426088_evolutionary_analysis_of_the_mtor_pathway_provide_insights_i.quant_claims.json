@@ -1,0 +1,358 @@
+{
+  "paper_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i",
+  "doi": "10.1186/s12864-023-09554-4",
+  "extracted_at": "2026-05-05T15:22:43+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 6,
+    "sample_size": 1,
+    "mean_sd": 1,
+    "percentage": 3,
+    "p_value": 8
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-284",
+      "claim_type": "unit_value",
+      "raw_text": "200 years",
+      "numeric_values": [
+        200.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 284,
+      "sentence": "For example, the bowhead whale ( Balaena mysticetus ) is the longest-lived mammal on the earth with a maximum lifespan (MLS) in excess of 200 years [ 1 ], and the African elephant ( Loxodonta africana ) is the longest-lived terrestrial mammal that can live up to 65 years [ 2 ].",
+      "context_window": "mal on the earth with a maximum lifespan (MLS) in excess of 200 years [ 1 ], and the African elephant ( Loxodonta africana ) is t",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-409",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 409,
+      "sentence": "For example, the bowhead whale ( Balaena mysticetus ) is the longest-lived mammal on the earth with a maximum lifespan (MLS) in excess of 200 years [ 1 ], and the African elephant ( Loxodonta africana ) is the longest-lived terrestrial mammal that can live up to 65 years [ 2 ].",
+      "context_window": "is the longest-lived terrestrial mammal that can live up to 65 years [ 2 ]. The naked mole rat ( Heterocephalus glaber ) lives t",
+      "claim_role": "background",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-702",
+      "claim_type": "unit_value",
+      "raw_text": "41 years",
+      "numeric_values": [
+        41.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 702,
+      "sentence": "Remarkably, bats can live three times more than other mammals of equal size, and the Brandt\u2019s bat ( Myotis brandtii ) with a body mass of about 7 g but with an MLS of 41 years [ 4 ].",
+      "context_window": "brandtii ) with a body mass of about 7 g but with an MLS of 41 years [ 4 ]. Recent studies on these extremely long-lived specie",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-1268",
+      "claim_type": "unit_value",
+      "raw_text": "95 years",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1268,
+      "sentence": "Humpback whale ( Megaptera novaeangliae ), MLS of 95 years, possess large segmental duplications in tumor suppressor genes (such as RPMT2 , SLC25A6 , NOX5 ) and positive selection genes involved in DNA repair, DNA replication, and cell differentiation [ 6 ].",
+      "context_window": "1 , 5 ]. Humpback whale ( Megaptera novaeangliae ), MLS of 95 years, possess large segmental duplications in tumor suppressor g",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-n-2351",
+      "claim_type": "sample_size",
+      "raw_text": "n = 800",
+      "numeric_values": [
+        800.0
+      ],
+      "units": "",
+      "source_section": "introduction",
+      "source_offset": 2351,
+      "sentence": "For example, naked mole rats have the extraordinary cancer resistance, as a long-term observation of naked mole rats ( n = 800) did not detect a single incidence of cancer [ 10 ].",
+      "context_window": "resistance, as a long-term observation of naked mole rats ( n = 800) did not detect a single incidence of cancer [ 10 ]. Thus,",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-msd-206",
+      "claim_type": "mean_sd",
+      "raw_text": "1 \u00b1 0.57",
+      "numeric_values": [
+        1.0,
+        0.57
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 206,
+      "sentence": "In reference to the study of Yu et al. [ 23 ], mean LQ \u00b1 1SD (1 \u00b1 0.57) was used as the standard to classify long-lived species and control group.",
+      "context_window": "reference to the study of Yu et al. [ 23 ], mean LQ \u00b1 1SD (1 \u00b1 0.57) was used as the standard to classify long-lived species an",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-pct-2377",
+      "claim_type": "percentage",
+      "raw_text": "23.61%",
+      "numeric_values": [
+        23.61
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2377,
+      "sentence": "The result revealed that 23.61% of genes (17/72) showed signals of positive selection in at least one long-lived lineage after FDR correction for multiple tests (Table S 2 ).",
+      "context_window": "nted in CODEML from the PAML 4.9e. The result revealed that 23.61% of genes (17/72) showed signals of positive selection in at",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5306",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0318",
+      "numeric_values": [
+        0.0318
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5306,
+      "sentence": "In mTOR pathway, result revealed that evolutionary rates (root-to-tip \u03c9) (Table S 6 ) were significantly related to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig.",
+      "context_window": "ed to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255,",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5342",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5342,
+      "sentence": "In mTOR pathway, result revealed that evolutionary rates (root-to-tip \u03c9) (Table S 6 ) were significantly related to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig.",
+      "context_window": "ng MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5377",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.0001",
+      "numeric_values": [
+        0.0001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5377,
+      "sentence": "In mTOR pathway, result revealed that evolutionary rates (root-to-tip \u03c9) (Table S 6 ) were significantly related to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig.",
+      "context_window": ", LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702,",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5410",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0265",
+      "numeric_values": [
+        0.0265
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5410,
+      "sentence": "In mTOR pathway, result revealed that evolutionary rates (root-to-tip \u03c9) (Table S 6 ) were significantly related to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig.",
+      "context_window": "01), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig. 3 , Table S 7 ).",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5447",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0400",
+      "numeric_values": [
+        0.04
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5447,
+      "sentence": "In mTOR pathway, result revealed that evolutionary rates (root-to-tip \u03c9) (Table S 6 ) were significantly related to MLS at the five genes, including MLST8 (R 2 = 0.6613, p = 0.0318), LAMTOR4 (R 2 = 0.8800, p < 0.0001), EIF4E2 (R 2 = 0.8255, p < 0.0001), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig.",
+      "context_window": "), AKT2 (R 2 = 0.0848, p = 0.0265), and TSC2 (R 2 = 0.0702, p = 0.0400, Fig. 3 , Table S 7 ). Of them, molecular evolution of both",
+      "claim_role": "unknown",
+      "endpoint": "mTOR signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5538",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0013",
+      "numeric_values": [
+        0.0013
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5538,
+      "sentence": "Of them, molecular evolution of both AKT2 (R 2 = 0.1934, p = 0.0013) and MLST8 (R 2 = 0.1595, p = 0.0165) were also significantly correlated with LQ (Fig.",
+      "context_window": "). Of them, molecular evolution of both AKT2 (R 2 = 0.1934, p = 0.0013) and MLST8 (R 2 = 0.1595, p = 0.0165) were also significant",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5575",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0165",
+      "numeric_values": [
+        0.0165
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5575,
+      "sentence": "Of them, molecular evolution of both AKT2 (R 2 = 0.1934, p = 0.0013) and MLST8 (R 2 = 0.1595, p = 0.0165) were also significantly correlated with LQ (Fig.",
+      "context_window": "th AKT2 (R 2 = 0.1934, p = 0.0013) and MLST8 (R 2 = 0.1595, p = 0.0165) were also significantly correlated with LQ (Fig. 3 , Table",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-p-5754",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0043",
+      "numeric_values": [
+        0.0043
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5754,
+      "sentence": "A significant association between evolutionary rates and BM were examined at ATP6V1G2 (R 2 = 0.1555, p = 0.0043) (Fig.",
+      "context_window": "onary rates and BM were examined at ATP6V1G2 (R 2 = 0.1555, p = 0.0043) (Fig. 3 , Table S 7 ). Notably, the evolutionary rates of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-87",
+      "claim_type": "unit_value",
+      "raw_text": "211 years",
+      "numeric_values": [
+        211.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 87,
+      "sentence": "Maximum lifespans differ up to 100-fold between extant mammalian species, ranging from 211 years in the bowhead whale to 2.1 years in the forest shrew ( Myosorex varius ) [ 26 ].",
+      "context_window": "to 100-fold between extant mammalian species, ranging from 211 years in the bowhead whale to 2.1 years in the forest shrew ( Myo",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-u-121",
+      "claim_type": "unit_value",
+      "raw_text": "2.1 years",
+      "numeric_values": [
+        2.1
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 121,
+      "sentence": "Maximum lifespans differ up to 100-fold between extant mammalian species, ranging from 211 years in the bowhead whale to 2.1 years in the forest shrew ( Myosorex varius ) [ 26 ].",
+      "context_window": "ian species, ranging from 211 years in the bowhead whale to 2.1 years in the forest shrew ( Myosorex varius ) [ 26 ]. Recent stud",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-pct-5990",
+      "claim_type": "percentage",
+      "raw_text": "14%",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5990,
+      "sentence": "Overexpression of Tsc1 and Tsc2 in Drosophila extended mean lifespan by 14% and 12%, respectively [ 41 ].",
+      "context_window": "on of Tsc1 and Tsc2 in Drosophila extended mean lifespan by 14% and 12%, respectively [ 41 ]. As observed above, a number o",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10426088_evolutionary_analysis_of_the_mtor_pathway_provide_insights_i-pct-5998",
+      "claim_type": "percentage",
+      "raw_text": "12%",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5998,
+      "sentence": "Overexpression of Tsc1 and Tsc2 in Drosophila extended mean lifespan by 14% and 12%, respectively [ 41 ].",
+      "context_window": "c1 and Tsc2 in Drosophila extended mean lifespan by 14% and 12%, respectively [ 41 ]. As observed above, a number of genes",
+      "claim_role": "unknown",
+      "endpoint": "lifespan",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

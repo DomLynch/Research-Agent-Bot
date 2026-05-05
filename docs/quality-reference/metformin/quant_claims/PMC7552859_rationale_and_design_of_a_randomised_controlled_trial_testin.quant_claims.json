@@ -1,0 +1,2479 @@
+{
+  "paper_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin",
+  "doi": "10.1136/bmjopen-2020-037859",
+  "extracted_at": "2026-05-05T15:32:34+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 34,
+    "unit_value": 98,
+    "sample_size": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-691",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 691,
+      "sentence": "PREDICT is a two-arm, parallel group, single-masked randomised controlled trial in adults with pre-diabetes or early-stage T2DM (with glycated haemoglobin (HbA1c) up to 8.0% (64 mmol/mol)), not treated with glucose-lowering medication.",
+      "context_window": "r early-stage T2DM (with glycated haemoglobin (HbA1c) up to 8.0% (64 mmol/mol)), not treated with glucose-lowering medicatio",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-697",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 697,
+      "sentence": "PREDICT is a two-arm, parallel group, single-masked randomised controlled trial in adults with pre-diabetes or early-stage T2DM (with glycated haemoglobin (HbA1c) up to 8.0% (64 mmol/mol)), not treated with glucose-lowering medication.",
+      "context_window": "y-stage T2DM (with glycated haemoglobin (HbA1c) up to 8.0% (64 mmol/mol)), not treated with glucose-lowering medication. PREDIC",
+      "claim_role": "dose",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1051",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "abstract",
+      "source_offset": 1051,
+      "sentence": "Participants are commenced on metformin (Extended Release, titrated to a target dose of 1500 mg/day) and randomised with equal allocation to either (1) the Personalised Nutrition Project algorithm-based diet or (2) low-fat high-dietary fibre diet, designed to provide caloric restriction (75%) in individuals with body mass index >25 kg/m 2 .",
+      "context_window": "n metformin (Extended Release, titrated to a target dose of 1500 mg/day) and randomised with equal allocation to either (1) the Per",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-1252",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1252,
+      "sentence": "Participants are commenced on metformin (Extended Release, titrated to a target dose of 1500 mg/day) and randomised with equal allocation to either (1) the Personalised Nutrition Project algorithm-based diet or (2) low-fat high-dietary fibre diet, designed to provide caloric restriction (75%) in individuals with body mass index >25 kg/m 2 .",
+      "context_window": "ietary fibre diet, designed to provide caloric restriction (75%) in individuals with body mass index >25 kg/m 2 . Treatment",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1294",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "abstract",
+      "source_offset": 1294,
+      "sentence": "Participants are commenced on metformin (Extended Release, titrated to a target dose of 1500 mg/day) and randomised with equal allocation to either (1) the Personalised Nutrition Project algorithm-based diet or (2) low-fat high-dietary fibre diet, designed to provide caloric restriction (75%) in individuals with body mass index >25 kg/m 2 .",
+      "context_window": "oric restriction (75%) in individuals with body mass index >25 kg/m 2 . Treatment duration is 6 months and participants visit",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1328",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1328,
+      "sentence": "Treatment duration is 6 months and participants visit the Clinical Research Facility five times over approximately 7 months.",
+      "context_window": "als with body mass index >25 kg/m 2 . Treatment duration is 6 months and participants visit the Clinical Research Facility five",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1421",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "abstract",
+      "source_offset": 1421,
+      "sentence": "Treatment duration is 6 months and participants visit the Clinical Research Facility five times over approximately 7 months.",
+      "context_window": "he Clinical Research Facility five times over approximately 7 months. The primary outcome measure is HbA1c. The secondary outcom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1530",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "abstract",
+      "source_offset": 1530,
+      "sentence": "The secondary outcomes are (1) time of interstitial glucose <7.8 mmol/L and (2) glycaemic variability (continuous glucose monitoring), (3) body weight, (4) fat mass and (5) abdominal visceral fat volume (dual-energy X-ray absorptiometry), serum (6) low-density lipoprotein cholesterol (7) high-density lipoprotein cholesterol and (8) triglycerides concentrations, (9) blood pressure, and (10) liver fat (Fibroscan).",
+      "context_window": "he secondary outcomes are (1) time of interstitial glucose <7.8 mmol/L and (2) glycaemic variability (continuous glucose monitor",
+      "claim_role": "unknown",
+      "endpoint": "body weight",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-1445",
+      "claim_type": "percentage",
+      "raw_text": "64%",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1445,
+      "sentence": "10-12 Findings from the Diabetes Prevention Program in individuals with pre-diabetes suggested that the glycaemic efficacy of metformin depends on the magnitude of weight loss, 13 explaining 64% of the diabetes risk reduction, with additional 17% explained by decreases in fasting insulin and pro-insulin at 3 years of follow-up.",
+      "context_window": "rmin depends on the magnitude of weight loss, 13 explaining 64% of the diabetes risk reduction, with additional 17% explain",
+      "claim_role": "duration",
+      "endpoint": "body weight",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-1497",
+      "claim_type": "percentage",
+      "raw_text": "17%",
+      "numeric_values": [
+        17.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 1497,
+      "sentence": "10-12 Findings from the Diabetes Prevention Program in individuals with pre-diabetes suggested that the glycaemic efficacy of metformin depends on the magnitude of weight loss, 13 explaining 64% of the diabetes risk reduction, with additional 17% explained by decreases in fasting insulin and pro-insulin at 3 years of follow-up.",
+      "context_window": "laining 64% of the diabetes risk reduction, with additional 17% explained by decreases in fasting insulin and pro-insulin a",
+      "claim_role": "duration",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1562",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "introduction",
+      "source_offset": 1562,
+      "sentence": "10-12 Findings from the Diabetes Prevention Program in individuals with pre-diabetes suggested that the glycaemic efficacy of metformin depends on the magnitude of weight loss, 13 explaining 64% of the diabetes risk reduction, with additional 17% explained by decreases in fasting insulin and pro-insulin at 3 years of follow-up.",
+      "context_window": "xplained by decreases in fasting insulin and pro-insulin at 3 years of follow-up. 13 14 The current treatment guidelines in T2",
+      "claim_role": "protocol",
+      "endpoint": "mortality",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2607",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 2607,
+      "sentence": "Personally tailored dietary plans based on the algorithm were trialled in a small group of individuals with pre-diabetes and shown to improve glycaemic variability and PPGR over 7 days.",
+      "context_window": "es and shown to improve glycaemic variability and PPGR over 7 days. The primary objective of the Personalised Medicine in Pre",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2812",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "introduction",
+      "source_offset": 2812,
+      "sentence": "The primary objective of the Personalised Medicine in Pre-diabetes-Towards Preventing Diabetes in Individuals at Risk (PREDICT) Study is to compare glycaemic control, measured by HbA1c, following 6 months of metformin, prescribed with either (1) the PNP algorithm-based diet or (2) low-fat high-dietary fibre (LFHF) diet, based on the Australian Healthy Eating Guide 17 and the American Association of Clinical Endocrinologists guide for medical care of patients with obesity, 18 in individuals with pre-diabetes or early-stage T2DM naive to glucose-lowering pharmacotherapy.",
+      "context_window": "to compare glycaemic control, measured by HbA1c, following 6 months of metformin, prescribed with either (1) the PNP algorithm-",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3367",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "introduction",
+      "source_offset": 3367,
+      "sentence": "The secondary objectives of the PREDICT Study are to compare the effect of the PNP diet versus LFHF diet when prescribed with metformin on: (1) time of interstitial glucose <7.8 mmol/L, (2) glycaemic variability, (3) weight, (4) body fat mass, (5) abdominal visceral fat volume, (6) serum low-density lipoprotein (LDL) cholesterol concentration (7) serum high-density lipoprotein cholesterol concentration, (8) serum triglycerides concentration, (9) blood pressure and (10) liver fat.",
+      "context_window": "cribed with metformin on: (1) time of interstitial glucose <7.8 mmol/L, (2) glycaemic variability, (3) weight, (4) body fat mass",
+      "claim_role": "background",
+      "endpoint": "blood pressure",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-333",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 333,
+      "sentence": "Adults with pre-diabetes or early-stage T2DM who are not treated with glucose-lowering medications are randomised, with equal allocation, to either the PNP or LFHF diet arms, in both arms participants are commenced on metformin Extended Release (XR) 1500 mg/day treatment for 6 months.",
+      "context_window": "rticipants are commenced on metformin Extended Release (XR) 1500 mg/day treatment for 6 months. All the study visits are performed",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-359",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 359,
+      "sentence": "Adults with pre-diabetes or early-stage T2DM who are not treated with glucose-lowering medications are randomised, with equal allocation, to either the PNP or LFHF diet arms, in both arms participants are commenced on metformin Extended Release (XR) 1500 mg/day treatment for 6 months.",
+      "context_window": "n metformin Extended Release (XR) 1500 mg/day treatment for 6 months. All the study visits are performed at the Clinical Researc",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "pooled",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-732",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 732,
+      "sentence": "Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ).",
+      "context_window": "in the design or other aspects of the research. Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) d",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-789",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 789,
+      "sentence": "Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ).",
+      "context_window": "20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregn",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-827",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 827,
+      "sentence": "Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ).",
+      "context_window": "recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-833",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 833,
+      "sentence": "Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ).",
+      "context_window": "ly (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during,",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-917",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 917,
+      "sentence": "Adults (20-70 years old) with pre-diabetes or recently (in the last 6 months) diagnosed T2DM with (HbA1c \u22648.0% (64 mmol/mol)), not pregnant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ).",
+      "context_window": "ant or planning to become pregnant during, and for at least 3 months after the study, are recruited ( box 1 ). A wide age range",
+      "claim_role": "population",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-1199",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1199,
+      "sentence": "The HbA1c cap at 8.0% (64 mmol/mol) was selected to ensure that individuals with T2DM are relatively well controlled.",
+      "context_window": "ecruit the sample size in a timely manner. The HbA1c cap at 8.0% (64 mmol/mol) was selected to ensure that individuals with",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1205",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1205,
+      "sentence": "The HbA1c cap at 8.0% (64 mmol/mol) was selected to ensure that individuals with T2DM are relatively well controlled.",
+      "context_window": "the sample size in a timely manner. The HbA1c cap at 8.0% (64 mmol/mol) was selected to ensure that individuals with T2DM are",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-1355",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1355,
+      "sentence": "Blood tests indicative of normo-glycaemia, HbA1c above 8.0% (64 mmol/mol), liver enzymes (alanine aminotransferase and/or aspartate aminotransferase) over three times the normal range limit and estimated glomerular filtration rate (eGFR) 19 lower than 45 mL/min/1.73 m 2 are grounds for exclusion.",
+      "context_window": "led. Blood tests indicative of normo-glycaemia, HbA1c above 8.0% (64 mmol/mol), liver enzymes (alanine aminotransferase and/",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1361",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1361,
+      "sentence": "Blood tests indicative of normo-glycaemia, HbA1c above 8.0% (64 mmol/mol), liver enzymes (alanine aminotransferase and/or aspartate aminotransferase) over three times the normal range limit and estimated glomerular filtration rate (eGFR) 19 lower than 45 mL/min/1.73 m 2 are grounds for exclusion.",
+      "context_window": "lood tests indicative of normo-glycaemia, HbA1c above 8.0% (64 mmol/mol), liver enzymes (alanine aminotransferase and/or aspart",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1552",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 1552,
+      "sentence": "Blood tests indicative of normo-glycaemia, HbA1c above 8.0% (64 mmol/mol), liver enzymes (alanine aminotransferase and/or aspartate aminotransferase) over three times the normal range limit and estimated glomerular filtration rate (eGFR) 19 lower than 45 mL/min/1.73 m 2 are grounds for exclusion.",
+      "context_window": "d estimated glomerular filtration rate (eGFR) 19 lower than 45 mL/min/1.73 m 2 are grounds for exclusion. Individuals treated wit",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1684",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1684,
+      "sentence": "Individuals treated with glucose-lowering medication other than metformin in the last 24 months, or metformin in the last 3 months, will be excluded.",
+      "context_window": "lucose-lowering medication other than metformin in the last 24 months, or metformin in the last 3 months, will be excluded. Indiv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-1720",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1720,
+      "sentence": "Individuals treated with glucose-lowering medication other than metformin in the last 24 months, or metformin in the last 3 months, will be excluded.",
+      "context_window": "n metformin in the last 24 months, or metformin in the last 3 months, will be excluded. Individuals with conditions or treatment",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2074",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2074,
+      "sentence": "Participants who have had a cardiovascular event in the previous 6 months or received an investigational new drug within the last 6 months will be excluded.",
+      "context_window": "cipants who have had a cardiovascular event in the previous 6 months or received an investigational new drug within the last 6 m",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2139",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2139,
+      "sentence": "Participants who have had a cardiovascular event in the previous 6 months or received an investigational new drug within the last 6 months will be excluded.",
+      "context_window": "ths or received an investigational new drug within the last 6 months will be excluded. Participants with conditions that may int",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2431",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2431,
+      "sentence": "Inclusion criteria\n\nMen and women 20-70 years of age.",
+      "context_window": "e excluded ( box 1 ). Inclusion criteria Men and women 20-70 years of age. Pre-diabetes (IFG* or IGT* and/or glycated haemogl",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-2512",
+      "claim_type": "percentage",
+      "raw_text": "5.7%",
+      "numeric_values": [
+        5.7
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2512,
+      "sentence": "Pre-diabetes (IFG* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)).",
+      "context_window": "-diabetes (IFG* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)). Individuals diagnosed with type 2",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-2517",
+      "claim_type": "percentage",
+      "raw_text": "6.4%",
+      "numeric_values": [
+        6.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2517,
+      "sentence": "Pre-diabetes (IFG* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)).",
+      "context_window": "etes (IFG* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)). Individuals diagnosed with type 2 diabe",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2526",
+      "claim_type": "unit_value",
+      "raw_text": "46 mmol",
+      "numeric_values": [
+        46.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 2526,
+      "sentence": "Pre-diabetes (IFG* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)).",
+      "context_window": "* or IGT* and/or glycated haemoglobin (HbA1c) 5.7%-6.4% (39-46 mmol/mol)). Individuals diagnosed with type 2 diabetes mellitus",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2606",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2606,
+      "sentence": "Individuals diagnosed with type 2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol).",
+      "context_window": "viduals diagnosed with type 2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol). Willingness to provide wri",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-2627",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2627,
+      "sentence": "Individuals diagnosed with type 2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol).",
+      "context_window": "h type 2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol). Willingness to provide written informed con",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2633",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 2633,
+      "sentence": "Individuals diagnosed with type 2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol).",
+      "context_window": "2 diabetes mellitus in the last 6 months with HbA1c \u22648.0% (64 mmol/mol). Willingness to provide written informed consent, par",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2802",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2802,
+      "sentence": "Exclusion criteria\n\nWomen planning pregnancy during the study or 3 months after study completion.",
+      "context_window": "sion criteria Women planning pregnancy during the study or 3 months after study completion. Individuals with type 1 diabetes,",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2902",
+      "claim_type": "unit_value",
+      "raw_text": "3 years",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 2902,
+      "sentence": "Individuals with type 1 diabetes, neoplastic disease (in the last 3 years), cardiovascular event (-6 months), chronic gastrointestinal disorders.",
+      "context_window": "duals with type 1 diabetes, neoplastic disease (in the last 3 years), cardiovascular event (-6 months), chronic gastrointestina",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-2935",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 2935,
+      "sentence": "Individuals with type 1 diabetes, neoplastic disease (in the last 3 years), cardiovascular event (-6 months), chronic gastrointestinal disorders.",
+      "context_window": "astic disease (in the last 3 years), cardiovascular event (-6 months), chronic gastrointestinal disorders. Liver enzymes alanin",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3093",
+      "claim_type": "unit_value",
+      "raw_text": "45 mL/min",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 3093,
+      "sentence": "Liver enzymes alanine aminotransferase and/or aspartate aminotransferase >3 times normal range limit.\n\neGFR**<45 mL/min/1.73 m 2 .",
+      "context_window": "rtate aminotransferase >3 times normal range limit. eGFR**<45 mL/min/1.73 m 2 . Normo-glycaemia. HbA1c >8.0% (64 mmol/mol). C",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-3140",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 3140,
+      "sentence": "HbA1c >8.0% (64 mmol/mol).",
+      "context_window": "mit. eGFR**<45 mL/min/1.73 m 2 . Normo-glycaemia. HbA1c >8.0% (64 mmol/mol). Current or recent (within 24 months) treatm",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3146",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3146,
+      "sentence": "HbA1c >8.0% (64 mmol/mol).",
+      "context_window": "eGFR**<45 mL/min/1.73 m 2 . Normo-glycaemia. HbA1c >8.0% (64 mmol/mol). Current or recent (within 24 months) treatment with",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3187",
+      "claim_type": "unit_value",
+      "raw_text": "24 months",
+      "numeric_values": [
+        24.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3187,
+      "sentence": "Current or recent (within 24 months) treatment with a glucose-lowering medication other than metformin, current or recent (within 3 months) treatment with metformin, current treatment with an oral steroid, immunosuppressive medications, antibiotics (within 3 months).",
+      "context_window": "mia. HbA1c >8.0% (64 mmol/mol). Current or recent (within 24 months) treatment with a glucose-lowering medication other than me",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3291",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3291,
+      "sentence": "Current or recent (within 24 months) treatment with a glucose-lowering medication other than metformin, current or recent (within 3 months) treatment with metformin, current treatment with an oral steroid, immunosuppressive medications, antibiotics (within 3 months).",
+      "context_window": "medication other than metformin, current or recent (within 3 months) treatment with metformin, current treatment with an oral s",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3418",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3418,
+      "sentence": "Current or recent (within 24 months) treatment with a glucose-lowering medication other than metformin, current or recent (within 3 months) treatment with metformin, current treatment with an oral steroid, immunosuppressive medications, antibiotics (within 3 months).",
+      "context_window": "steroid, immunosuppressive medications, antibiotics (within 3 months). Alcohol or substance abuse. Participants who had receiv",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3533",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 3533,
+      "sentence": "Participants who had received an investigational new drug within the last 6 months.",
+      "context_window": "ho had received an investigational new drug within the last 6 months. Participants involved in another clinical study. Partici",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-3928",
+      "claim_type": "unit_value",
+      "raw_text": "6.9 mmol",
+      "numeric_values": [
+        6.9
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 3928,
+      "sentence": "Participants with conditions that may interfere with the ability to understand the requirements of the study, refuse treatment with metformin or refuse to use the smartphone application.\n\n*Impaired fasting glucose (IFG): fasting plasma glucose 5.6-6.9 mmol/L and/or impaired glucose tolerance (IGT): 2-hour plasma glucose during 75 g oral glucose tolerance test 7.8-11.0 mmol/L.\n\n**Estimated glomerular filtration rate (eGFR) calculated as reported.",
+      "context_window": "*Impaired fasting glucose (IFG): fasting plasma glucose 5.6-6.9 mmol/L and/or impaired glucose tolerance (IGT): 2-hour plasma gl",
+      "claim_role": "dose",
+      "endpoint": "fasting glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-4046",
+      "claim_type": "unit_value",
+      "raw_text": "11.0 mmol",
+      "numeric_values": [
+        11.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 4046,
+      "sentence": "Participants with conditions that may interfere with the ability to understand the requirements of the study, refuse treatment with metformin or refuse to use the smartphone application.\n\n*Impaired fasting glucose (IFG): fasting plasma glucose 5.6-6.9 mmol/L and/or impaired glucose tolerance (IGT): 2-hour plasma glucose during 75 g oral glucose tolerance test 7.8-11.0 mmol/L.\n\n**Estimated glomerular filtration rate (eGFR) calculated as reported.",
+      "context_window": "plasma glucose during 75 g oral glucose tolerance test 7.8-11.0 mmol/L. **Estimated glomerular filtration rate (eGFR) calculate",
+      "claim_role": "dose",
+      "endpoint": "blood glucose",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-4504",
+      "claim_type": "percentage",
+      "raw_text": "17.3%",
+      "numeric_values": [
+        17.3
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4504,
+      "sentence": "During a hospital screening programme ran between 2016 and 2018, 17.3% and 30.2% of individuals visiting the emergency department (ED) at Blacktown Mt Druitt Hospital have had HbA1c values indicative of diabetes and pre-diabetes, respectively.",
+      "context_window": "g a hospital screening programme ran between 2016 and 2018, 17.3% and 30.2% of individuals visiting the emergency department",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-4514",
+      "claim_type": "percentage",
+      "raw_text": "30.2%",
+      "numeric_values": [
+        30.2
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4514,
+      "sentence": "During a hospital screening programme ran between 2016 and 2018, 17.3% and 30.2% of individuals visiting the emergency department (ED) at Blacktown Mt Druitt Hospital have had HbA1c values indicative of diabetes and pre-diabetes, respectively.",
+      "context_window": "al screening programme ran between 2016 and 2018, 17.3% and 30.2% of individuals visiting the emergency department (ED) at Bl",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-5066",
+      "claim_type": "percentage",
+      "raw_text": "13%",
+      "numeric_values": [
+        13.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5066,
+      "sentence": "Of the 38 participants enrolled, 20 completed, 13 are ongoing, and 5 withdrew before the end of the treatment (13% dropout rate).",
+      "context_window": "re ongoing, and 5 withdrew before the end of the treatment (13% dropout rate). Recruitment of participants is expected to c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-5754",
+      "claim_type": "percentage",
+      "raw_text": "8.0%",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5754,
+      "sentence": "If the blood tests indicate either T2DM (with HbA1c \u22648.0% (64 mmol/mol)), or impaired fasting glucose or impaired glucose tolerance or HbA1c \u22655.7 (39 mmol/mol), they are invited to a screening and enrolment visit at the Garvan Clinical Research Facility.\n\nbmjopen-2020-037859supp001.pdf\n\nA stool collection kit for metagenomics OMNIgene GUT (OMR-200; DNA Genotek) is mailed to participants prior to the screening/enrolment visit.",
+      "context_window": "tests. If the blood tests indicate either T2DM (with HbA1c \u22648.0% (64 mmol/mol)), or impaired fasting glucose or impaired glu",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-5760",
+      "claim_type": "unit_value",
+      "raw_text": "64 mmol",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5760,
+      "sentence": "If the blood tests indicate either T2DM (with HbA1c \u22648.0% (64 mmol/mol)), or impaired fasting glucose or impaired glucose tolerance or HbA1c \u22655.7 (39 mmol/mol), they are invited to a screening and enrolment visit at the Garvan Clinical Research Facility.\n\nbmjopen-2020-037859supp001.pdf\n\nA stool collection kit for metagenomics OMNIgene GUT (OMR-200; DNA Genotek) is mailed to participants prior to the screening/enrolment visit.",
+      "context_window": "If the blood tests indicate either T2DM (with HbA1c \u22648.0% (64 mmol/mol)), or impaired fasting glucose or impaired glucose tole",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-5848",
+      "claim_type": "unit_value",
+      "raw_text": "39 mmol",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 5848,
+      "sentence": "If the blood tests indicate either T2DM (with HbA1c \u22648.0% (64 mmol/mol)), or impaired fasting glucose or impaired glucose tolerance or HbA1c \u22655.7 (39 mmol/mol), they are invited to a screening and enrolment visit at the Garvan Clinical Research Facility.\n\nbmjopen-2020-037859supp001.pdf\n\nA stool collection kit for metagenomics OMNIgene GUT (OMR-200; DNA Genotek) is mailed to participants prior to the screening/enrolment visit.",
+      "context_window": "asting glucose or impaired glucose tolerance or HbA1c \u22655.7 (39 mmol/mol), they are invited to a screening and enrolment visit a",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-7277",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 7277,
+      "sentence": "Glucose monitor (FreeStyle Libre Pro, Abbott, Germany) is attached for a period of 14 days.",
+      "context_window": "yle Libre Pro, Abbott, Germany) is attached for a period of 14 days. A link to download the PNP smartphone application is sent",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-8157",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 8157,
+      "sentence": "The period between the screening/enrolment and the baseline visits (4-6 weeks) serves as the \u2018run-in\u2019 period.",
+      "context_window": "between the screening/enrolment and the baseline visits (4-6 weeks) serves as the \u2018run-in\u2019 period. Randomisation is performed",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-8594",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 8594,
+      "sentence": "21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)).",
+      "context_window": "et al . 21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-8620",
+      "claim_type": "unit_value",
+      "raw_text": "25.1 kg",
+      "numeric_values": [
+        25.1
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8620,
+      "sentence": "21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)).",
+      "context_window": "ified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol))",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-8651",
+      "claim_type": "unit_value",
+      "raw_text": "39 mmol",
+      "numeric_values": [
+        39.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 8651,
+      "sentence": "21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)).",
+      "context_window": "50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)). To avoid bias, the randomisat",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-8668",
+      "claim_type": "percentage",
+      "raw_text": "5.8%",
+      "numeric_values": [
+        5.8
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 8668,
+      "sentence": "21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)).",
+      "context_window": "(<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)). To avoid bias, the randomisation is perform",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-8674",
+      "claim_type": "unit_value",
+      "raw_text": "40 mmol",
+      "numeric_values": [
+        40.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 8674,
+      "sentence": "21 They are stratified by gender, age (20-49 or 50-70 years), BMI (<25.0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)).",
+      "context_window": "0 or >25.1 kg/m 2 ) and HbA1c (<5.7 (39 mmol/mol) or >5.8% (40 mmol/mol)). To avoid bias, the randomisation is performed by a s",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-9122",
+      "claim_type": "unit_value",
+      "raw_text": "6 weeks",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 9122,
+      "sentence": "The baseline visit is performed approximately 4-6 weeks after the screening/enrolment visit ( table 1 ).",
+      "context_window": "llocation. The baseline visit is performed approximately 4-6 weeks after the screening/enrolment visit ( table 1 ). Participan",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-10337",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 10337,
+      "sentence": "25 A physical activity monitor (ActivePal, Pal Technologies) is applied on the thigh for a period of 14 days.",
+      "context_window": ", Pal Technologies) is applied on the thigh for a period of 14 days. At the end of the baseline visit, the participants practic",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-10849",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 10849,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "ressure FreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope) Smartphone app training Stool sam",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-11075",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 11075,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "Indirect calorimetry (REE, RQ) DXA, FibroScan Metformin 3 months\u2019 supply with instructions and logbooks Smartphone app trai",
+      "claim_role": "unknown",
+      "endpoint": "blood pressure",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-11334",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 11334,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "EE, RQ) FreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop) Metformin 3 months\u2019 supply with log",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-11376",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 11376,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "d send back after 14 days in a pre-paid envelop) Metformin 3 months\u2019 supply with logbooks Adverse events recording and monitor",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-11771",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 11771,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "ng Stool sample\u2020 Diet Satisfaction Questionnaire\u2021 HbA1c 12 months questionnaire\u00a7 *Questionnaire includes hunger/fullness, di",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-12054",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 12054,
+      "sentence": "Study timeline of activities and measurements taken at each of the study events and visits\n\nInterview (by an experienced staff)\n\n75 g OGTT and HbA1c tests\n\nInformed consent signed\n\nMedical history, medications and medical examination\n\nBlood (full blood count, liver and kidney function tests)\n\nHeight and weight (BMI calculated)\n\nBIA (RMR)\n\nBlood pressure\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelope)\n\nSmartphone app training\n\nStool sample\n\nStudy entry questionnaire*\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin 3 months\u2019 supply with instructions and logbooks\n\nSmartphone app training, according to study arm allocation\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nFreeStyle Libre Pro (to remove and send back after 14 days in a pre-paid envelop)\n\nMetformin 3 months\u2019 supply with logbooks\n\nAdverse events recording and monitoring\n\nStool sample\u2020\n\nFreeStyle Libre Pro and ActivePal\n\n75 g OGTT and HbA1c\n\nAnthropometry\n\nBlood pressure, pulse wave analysis\n\nBlood (lipids, HbA1c)\n\nIndirect calorimetry (REE, RQ)\n\nDXA, FibroScan\n\nMetformin-unused pills collected and counted\n\nAdverse events recording\n\nStool sample\u2020\n\nDiet Satisfaction Questionnaire\u2021\n\nHbA1c\n\n12 months questionnaire\u00a7\n\n*Questionnaire includes hunger/fullness, dietary habits and dislikes, physical activity, medications, dietary supplements, personal and family history of disease, food-frequency questionnaire.\n\n\u2020Gut microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome).\n\n\u2021The Laboratory for the Study of Human Ingestive Behavior, Pennsylvania State University are the copyright holders of the Diet Satisfaction Questionnaire.",
+      "context_window": "t microbiome features from stool samples collected at 3 and 6 months will be compared with baseline (exploratory outcome). \u2021The",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-n-13334",
+      "claim_type": "sample_size",
+      "raw_text": "n=233",
+      "numeric_values": [
+        233.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13334,
+      "sentence": "A database of recipes of meals (n=233) and smaller meals (\u2018snacks\u2019, n=249) varying in macronutrient composition to generate feedback on the PPGR to pre-consumed meals has been created.",
+      "context_window": "ing each individual\u2019s PPGR. A database of recipes of meals (n=233) and smaller meals (\u2018snacks\u2019, n=249) varying in macronutrie",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-n-13370",
+      "claim_type": "sample_size",
+      "raw_text": "n=249",
+      "numeric_values": [
+        249.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13370,
+      "sentence": "A database of recipes of meals (n=233) and smaller meals (\u2018snacks\u2019, n=249) varying in macronutrient composition to generate feedback on the PPGR to pre-consumed meals has been created.",
+      "context_window": "se of recipes of meals (n=233) and smaller meals (\u2018snacks\u2019, n=249) varying in macronutrient composition to generate feedback",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-n-13976",
+      "claim_type": "sample_size",
+      "raw_text": "n=327",
+      "numeric_values": [
+        327.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 13976,
+      "sentence": "The predictive model, originally trained on data collected in an Israeli adult cohort, 16 has been shown to be predictive of PPGR in a US cohort of healthy adults (n=327) consuming a Western-style diet.",
+      "context_window": "to be predictive of PPGR in a US cohort of healthy adults (n=327) consuming a Western-style diet. 26 Both arms use the PNP",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-15903",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15903,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "nciples. The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 1",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-15965",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15965,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low gly",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-15998",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 15998,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "e from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-16002",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16002,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "om fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% fr",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-16055",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16055,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "t, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre. The diet is",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-16059",
+      "claim_type": "percentage",
+      "raw_text": "25%",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 16059,
+      "sentence": "The LFHF diet is designed to provide approximately 30% of the total daily energy intake from fat, of which up to 10% of the fat is saturated fat, 50%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre.",
+      "context_window": "0%-55% of energy from low glycaemic load carbohydrates, 20%-25% from protein and 30 g/day of dietary fibre. The diet is ric",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-n-16309",
+      "claim_type": "sample_size",
+      "raw_text": "n=110",
+      "numeric_values": [
+        110.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 16309,
+      "sentence": "28 A database of recipes (n=110 meals and n=80 snacks) following the LFHF nutrient content has been created based on the AUSNUT 2013 recipes.",
+      "context_window": "of the average adult Australian. 28 A database of recipes (n=110 meals and n=80 snacks) following the LFHF nutrient content",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-n-16325",
+      "claim_type": "sample_size",
+      "raw_text": "n=80",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 16325,
+      "sentence": "28 A database of recipes (n=110 meals and n=80 snacks) following the LFHF nutrient content has been created based on the AUSNUT 2013 recipes.",
+      "context_window": "adult Australian. 28 A database of recipes (n=110 meals and n=80 snacks) following the LFHF nutrient content has been create",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-17454",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 17454,
+      "sentence": "29 The two values are multiplied by a physical activity factor of 1.4 (lightly active) then averaged, and the value compared with the average daily energy intake of at least 7 days, extracted from the time-stamped meals recorded using the app.",
+      "context_window": "e compared with the average daily energy intake of at least 7 days, extracted from the time-stamped meals recorded using the a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-17550",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 17550,
+      "sentence": "In participants with BMI >25 kg/m 2 , energy target of 75% is prescribed.",
+      "context_window": "ped meals recorded using the app. In participants with BMI >25 kg/m 2 , energy target of 75% is prescribed. Participants of b",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-17579",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 17579,
+      "sentence": "In participants with BMI >25 kg/m 2 , energy target of 75% is prescribed.",
+      "context_window": "app. In participants with BMI >25 kg/m 2 , energy target of 75% is prescribed. Participants of both arms are encouraged to",
+      "claim_role": "unknown",
+      "endpoint": "body mass index",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18065",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 18065,
+      "sentence": "Metformin (XR) is dispensed by the St Vincent\u2019s Hospital (SVH) Pharmacy (Sydney) at baseline (for a period of 3 months) and at the 3 months visit (to last until the end of the study).",
+      "context_window": "spital (SVH) Pharmacy (Sydney) at baseline (for a period of 3 months) and at the 3 months visit (to last until the end of the st",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18086",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 18086,
+      "sentence": "Metformin (XR) is dispensed by the St Vincent\u2019s Hospital (SVH) Pharmacy (Sydney) at baseline (for a period of 3 months) and at the 3 months visit (to last until the end of the study).",
+      "context_window": "(Sydney) at baseline (for a period of 3 months) and at the 3 months visit (to last until the end of the study). The target dose",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18156",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 18156,
+      "sentence": "The target dose (1500 mg/day) is titrated over 3 weeks to minimise gastrointestinal intolerance.",
+      "context_window": "isit (to last until the end of the study). The target dose (1500 mg/day) is titrated over 3 weeks to minimise gastrointestinal into",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18186",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 18186,
+      "sentence": "The target dose (1500 mg/day) is titrated over 3 weeks to minimise gastrointestinal intolerance.",
+      "context_window": "the study). The target dose (1500 mg/day) is titrated over 3 weeks to minimise gastrointestinal intolerance. A target dose of",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18253",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg/day",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 18253,
+      "sentence": "A target dose of 1000 mg/day is set for participants with mild to moderately decreased eGFR (45-59 mL/min/1.73 m 2 ), or participants who cannot tolerate the higher dose.",
+      "context_window": "to minimise gastrointestinal intolerance. A target dose of 1000 mg/day is set for participants with mild to moderately decreased e",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18332",
+      "claim_type": "unit_value",
+      "raw_text": "59 mL/min",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 18332,
+      "sentence": "A target dose of 1000 mg/day is set for participants with mild to moderately decreased eGFR (45-59 mL/min/1.73 m 2 ), or participants who cannot tolerate the higher dose.",
+      "context_window": "for participants with mild to moderately decreased eGFR (45-59 mL/min/1.73 m 2 ), or participants who cannot tolerate the higher",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18430",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 18430,
+      "sentence": "A standardised dose of 1500 mg/day, rather than 2000 mg/day, was selected to suit both participants with pre-diabetes and T2DM, while minimising intolerance.",
+      "context_window": "who cannot tolerate the higher dose. A standardised dose of 1500 mg/day, rather than 2000 mg/day, was selected to suit both partici",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-18455",
+      "claim_type": "unit_value",
+      "raw_text": "2000 mg/day",
+      "numeric_values": [
+        2000.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 18455,
+      "sentence": "A standardised dose of 1500 mg/day, rather than 2000 mg/day, was selected to suit both participants with pre-diabetes and T2DM, while minimising intolerance.",
+      "context_window": "igher dose. A standardised dose of 1500 mg/day, rather than 2000 mg/day, was selected to suit both participants with pre-diabetes a",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-19121",
+      "claim_type": "percentage",
+      "raw_text": "35%",
+      "numeric_values": [
+        35.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19121,
+      "sentence": "In the PNP arm, the score incorporates the proportion of meals achieving the desired (\u2018excellent\u2019 and \u2018good\u2019) scores, while in the LFHF arm, the proportion of days in which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u226515 g.",
+      "context_window": "the LFHF arm, the proportion of days in which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u2265",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-19141",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19141,
+      "sentence": "In the PNP arm, the score incorporates the proportion of meals achieving the desired (\u2018excellent\u2019 and \u2018good\u2019) scores, while in the LFHF arm, the proportion of days in which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u226515 g.",
+      "context_window": "roportion of days in which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u226515 g. The dietician",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-19161",
+      "claim_type": "percentage",
+      "raw_text": "45%",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 19161,
+      "sentence": "In the PNP arm, the score incorporates the proportion of meals achieving the desired (\u2018excellent\u2019 and \u2018good\u2019) scores, while in the LFHF arm, the proportion of days in which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u226515 g.",
+      "context_window": "which dietary fat \u226435%, saturated fat \u226410%, carbohydrates \u226545% and dietary fibre \u226515 g. The dietician contacts individuals",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-19549",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 19549,
+      "sentence": "Satisfaction with the diet is assessed using the Diet Satisfaction Questionnaire 30 at 6 months ( table 1 ).",
+      "context_window": "is assessed using the Diet Satisfaction Questionnaire 30 at 6 months ( table 1 ). Adherence to the metformin is based on pill c",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-19632",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 19632,
+      "sentence": "Adherence to the metformin is based on pill counting at the 6 months\u2019 visit and on logs of daily dose using the app or logbooks.",
+      "context_window": "Adherence to the metformin is based on pill counting at the 6 months\u2019 visit and on logs of daily dose using the app or logbooks.",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-19989",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 19989,
+      "sentence": "The device records time (start and duration) and type (quiet, standing and steps) of activity and 14 days\u2019 worth of data, stored in the device, downloaded on return.",
+      "context_window": "ation) and type (quiet, standing and steps) of activity and 14 days\u2019 worth of data, stored in the device, downloaded on return.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-20447",
+      "claim_type": "unit_value",
+      "raw_text": "7 months",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 20447,
+      "sentence": "Participants attend the Clinical Research Facility five times during the study, over approximately 7 months.",
+      "context_window": "ch Facility five times during the study, over approximately 7 months. Primary and secondary endpoint measures are collected befo",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-20615",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 20615,
+      "sentence": "Primary and secondary endpoint measures are collected before the start of the intervention (across two visits: screening/enrolment and baseline) and at 3 and 6 months of treatment.",
+      "context_window": "two visits: screening/enrolment and baseline) and at 3 and 6 months of treatment. Table 1 outlines the measurements obtained at",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-20782",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 20782,
+      "sentence": "The primary outcome measure is change in HbA1c from baseline to 6 months of treatment.",
+      "context_window": "primary outcome measure is change in HbA1c from baseline to 6 months of treatment. Furthermore, a comprehensive glycaemia assess",
+      "claim_role": "duration",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-20981",
+      "claim_type": "unit_value",
+      "raw_text": "14 days",
+      "numeric_values": [
+        14.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 20981,
+      "sentence": "Interstitial glucose concentrations are recorded every 15 min using CGM for 14 days before the start of the intervention (in the run-in period) and after 3 and 6 months of intervention.",
+      "context_window": "cose concentrations are recorded every 15 min using CGM for 14 days before the start of the intervention (in the run-in period)",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21065",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 21065,
+      "sentence": "Interstitial glucose concentrations are recorded every 15 min using CGM for 14 days before the start of the intervention (in the run-in period) and after 3 and 6 months of intervention.",
+      "context_window": "of the intervention (in the run-in period) and after 3 and 6 months of intervention. The sensor stores the data for the duratio",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21306",
+      "claim_type": "unit_value",
+      "raw_text": "7.8 mmol",
+      "numeric_values": [
+        7.8
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 21306,
+      "sentence": "Time of the day with glucose readings below 7.8 mmol/L before versus after the treatment will be compared.",
+      "context_window": "of the sensor. Time of the day with glucose readings below 7.8 mmol/L before versus after the treatment will be compared. Glyca",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21718",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 21718,
+      "sentence": "Furthermore, fasting plasma glucose, 1-hour and 2-hour plasma glucose post 75 g glucose assessment are repeated after 6 months and will be compared with the baseline values.",
+      "context_window": "sma glucose post 75 g glucose assessment are repeated after 6 months and will be compared with the baseline values. HbA1c test i",
+      "claim_role": "unknown",
+      "endpoint": "blood glucose",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21797",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 21797,
+      "sentence": "HbA1c test is repeated 6 months after treatment cessation (at 12 months, table 1 ), along with a short questionnaire, including weight, diet and medication status.",
+      "context_window": "e compared with the baseline values. HbA1c test is repeated 6 months after treatment cessation (at 12 months, table 1 ), along w",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21836",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 21836,
+      "sentence": "HbA1c test is repeated 6 months after treatment cessation (at 12 months, table 1 ), along with a short questionnaire, including weight, diet and medication status.",
+      "context_window": "A1c test is repeated 6 months after treatment cessation (at 12 months, table 1 ), along with a short questionnaire, including wei",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-21992",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 21992,
+      "sentence": "Weight, waist and hip circumferences are recorded at 3 months and 6 months of treatment and compared with baseline.",
+      "context_window": "atus. Weight, waist and hip circumferences are recorded at 3 months and 6 months of treatment and compared with baseline. Fat,",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-22005",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 22005,
+      "sentence": "Weight, waist and hip circumferences are recorded at 3 months and 6 months of treatment and compared with baseline.",
+      "context_window": ", waist and hip circumferences are recorded at 3 months and 6 months of treatment and compared with baseline. Fat, fat-free mass",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-22163",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 22163,
+      "sentence": "Fat, fat-free mass and android/gynoid fat distribution and visceral fat measurements by DXA are repeated at 6 months of treatment.",
+      "context_window": "bution and visceral fat measurements by DXA are repeated at 6 months of treatment. 24 Similarly, resting energy expenditure and",
+      "claim_role": "protocol",
+      "endpoint": "lean body mass",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-22276",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 22276,
+      "sentence": "24 Similarly, resting energy expenditure and fat/carbohydrate oxidation is measured after 6 months of treatment.",
+      "context_window": "xpenditure and fat/carbohydrate oxidation is measured after 6 months of treatment. Hepatic steatosis is common in pre-diabetes",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-22854",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 22854,
+      "sentence": "34 35 Liver fibroscan measure is repeated after 6 months of treatment.",
+      "context_window": "erwhelming. 34 35 Liver fibroscan measure is repeated after 6 months of treatment. Blood pressure and pulse wave analysis measu",
+      "claim_role": "duration",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-22952",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 22952,
+      "sentence": "Blood pressure and pulse wave analysis measurements are repeated at 3 and 6 months of treatment and serum lipids measured after 6 months of treatment.",
+      "context_window": "and pulse wave analysis measurements are repeated at 3 and 6 months of treatment and serum lipids measured after 6 months of tr",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-23006",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 23006,
+      "sentence": "Blood pressure and pulse wave analysis measurements are repeated at 3 and 6 months of treatment and serum lipids measured after 6 months of treatment.",
+      "context_window": "3 and 6 months of treatment and serum lipids measured after 6 months of treatment. Gastrointestinal side effects are the most c",
+      "claim_role": "duration",
+      "endpoint": "blood pressure",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-23126",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 23126,
+      "sentence": "Gastrointestinal side effects are the most common adverse effects of metformin and may occur in 20%-30% of individuals.",
+      "context_window": "e most common adverse effects of metformin and may occur in 20%-30% of individuals. 36 37 Specifically, abdominal discomfor",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-23130",
+      "claim_type": "percentage",
+      "raw_text": "30%",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 23130,
+      "sentence": "Gastrointestinal side effects are the most common adverse effects of metformin and may occur in 20%-30% of individuals.",
+      "context_window": "st common adverse effects of metformin and may occur in 20%-30% of individuals. 36 37 Specifically, abdominal discomfort, n",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-23313",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 23313,
+      "sentence": "36 While the gastrointestinal adverse effects are transient, in approximately 5% of individuals the symptoms may persist and result in cessation of metformin.",
+      "context_window": "ointestinal adverse effects are transient, in approximately 5% of individuals the symptoms may persist and result in cessa",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-23820",
+      "claim_type": "unit_value",
+      "raw_text": "3 weeks",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "weeks",
+      "source_section": "methods",
+      "source_offset": 23820,
+      "sentence": "Metformin is titrated over 3 weeks to negate the potential gastrointestinal side effects.",
+      "context_window": "e renal impairment are excluded. Metformin is titrated over 3 weeks to negate the potential gastrointestinal side effects. Adve",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-24062",
+      "claim_type": "percentage",
+      "raw_text": "0.4%",
+      "numeric_values": [
+        0.4
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 24062,
+      "sentence": "Based on the primary outcome measure HbA1c, to detect a clinically meaningful difference of 0.4% in the change of HbA1c from baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significance level of 0.05, a sample size of 106 for each arm is required.",
+      "context_window": "sure HbA1c, to detect a clinically meaningful difference of 0.4% in the change of HbA1c from baseline between the study arms",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-24130",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 24130,
+      "sentence": "Based on the primary outcome measure HbA1c, to detect a clinically meaningful difference of 0.4% in the change of HbA1c from baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significance level of 0.05, a sample size of 106 for each arm is required.",
+      "context_window": "the change of HbA1c from baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at tw",
+      "claim_role": "protocol",
+      "endpoint": "HbA1c",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-24155",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 24155,
+      "sentence": "Based on the primary outcome measure HbA1c, to detect a clinically meaningful difference of 0.4% in the change of HbA1c from baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significance level of 0.05, a sample size of 106 for each arm is required.",
+      "context_window": "baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significanc",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-24183",
+      "claim_type": "percentage",
+      "raw_text": "80%",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 24183,
+      "sentence": "Based on the primary outcome measure HbA1c, to detect a clinically meaningful difference of 0.4% in the change of HbA1c from baseline between the study arms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significance level of 0.05, a sample size of 106 for each arm is required.",
+      "context_window": "rms at 6 months, assuming SD of 1% for both groups, 41 with 80% power at two-sided significance level of 0.05, a sample siz",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "pooled",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-24322",
+      "claim_type": "percentage",
+      "raw_text": "20%",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 24322,
+      "sentence": "Hence, with an estimated dropout rate of 20%, we aim to enrol 132 individuals to each arm, totalling 264 individuals in the study.",
+      "context_window": "h arm is required. Hence, with an estimated dropout rate of 20%, we aim to enrol 132 individuals to each arm, totalling 264",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-24640",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 24640,
+      "sentence": "The primary outcome measure HbA1c at baseline, 3 and 6 months will be the dependent variable and intervention by time interaction will be the fixed effects, and participants will be treated as random effect.",
+      "context_window": "lysis. The primary outcome measure HbA1c at baseline, 3 and 6 months will be the dependent variable and intervention by time int",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-24930",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 24930,
+      "sentence": "The primary time specific comparison will be the difference in least square mean between intervention (PNP) and control (LFHF) diet at 6 months\u2019 treatment.",
+      "context_window": "mean between intervention (PNP) and control (LFHF) diet at 6 months\u2019 treatment. The differences between the groups after 3 mont",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-24992",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 24992,
+      "sentence": "The differences between the groups after 3 months of treatment will also be examined.",
+      "context_window": "months\u2019 treatment. The differences between the groups after 3 months of treatment will also be examined. Missing data will be ha",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-25387",
+      "claim_type": "unit_value",
+      "raw_text": "59 mL/min",
+      "numeric_values": [
+        59.0
+      ],
+      "units": "mL/min",
+      "source_section": "methods",
+      "source_offset": 25387,
+      "sentence": "To account for reduced metformin dose due to intolerance or eGFR 45-59 mL/min/1.73 m 2 , metformin dose status (1500 mg/day (normal) dose/reduced dose) will be also adjusted in the model.",
+      "context_window": "nt for reduced metformin dose due to intolerance or eGFR 45-59 mL/min/1.73 m 2 , metformin dose status (1500 mg/day (normal) dose",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-25431",
+      "claim_type": "unit_value",
+      "raw_text": "1500 mg/day",
+      "numeric_values": [
+        1500.0
+      ],
+      "units": "mg/day",
+      "source_section": "methods",
+      "source_offset": 25431,
+      "sentence": "To account for reduced metformin dose due to intolerance or eGFR 45-59 mL/min/1.73 m 2 , metformin dose status (1500 mg/day (normal) dose/reduced dose) will be also adjusted in the model.",
+      "context_window": "ance or eGFR 45-59 mL/min/1.73 m 2 , metformin dose status (1500 mg/day (normal) dose/reduced dose) will be also adjusted in the mo",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-25610",
+      "claim_type": "unit_value",
+      "raw_text": "3 months",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 25610,
+      "sentence": "Piecewise linear mixed model will be used to compare trend change between arms in different periods (0-3 months and 3-6 months).",
+      "context_window": "o compare trend change between arms in different periods (0-3 months and 3-6 months). Different statistical analysis strategies",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-25625",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 25625,
+      "sentence": "Piecewise linear mixed model will be used to compare trend change between arms in different periods (0-3 months and 3-6 months).",
+      "context_window": "change between arms in different periods (0-3 months and 3-6 months). Different statistical analysis strategies including t-tes",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-26629",
+      "claim_type": "unit_value",
+      "raw_text": "25 kg",
+      "numeric_values": [
+        25.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 26629,
+      "sentence": "Subgroup analyses can be further performed to explore the intervention effect in specific subcohorts, for instance, the group of participants who have diabetes at baseline, the group of participants who achieve adherence standard and maintain the desired metformin dose; the group of participants with BMI >25 kg/m 2 at baseline and others.",
+      "context_window": "desired metformin dose; the group of participants with BMI >25 kg/m 2 at baseline and others. The potential impact of the COV",
+      "claim_role": "dose",
+      "endpoint": "body mass index",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-pct-28151",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 28151,
+      "sentence": "44 Mapping is performed using Bowtie 45 and abundance estimated by calculating the mean coverage of unique genomic regions across the 50% most densely covered areas, as previously described.",
+      "context_window": "ting the mean coverage of unique genomic regions across the 50% most densely covered areas, as previously described. 46 Ea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-29517",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 29517,
+      "sentence": "Individual letters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, baseline and post-treatment weight, body fat, liver fat, HbA1c, fasting, 1-hour and 2-hour plasma glucose concentrations).",
+      "context_window": "etters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrol",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-29560",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 29560,
+      "sentence": "Individual letters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, baseline and post-treatment weight, body fat, liver fat, HbA1c, fasting, 1-hour and 2-hour plasma glucose concentrations).",
+      "context_window": "ipants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, b",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-30357",
+      "claim_type": "unit_value",
+      "raw_text": "5 years",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "years",
+      "source_section": "methods",
+      "source_offset": 30357,
+      "sentence": "De-identified participants\u2019 data that underlie the findings reported in the research article will be available immediately following publication, ending 5 years following the article publication, to researchers who provide a methodologically sound proposal with the aim to achieve the aims reported in the approved project proposal.",
+      "context_window": "will be available immediately following publication, ending 5 years following the article publication, to researchers who provi",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-450",
+      "claim_type": "unit_value",
+      "raw_text": "6 months",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 450,
+      "sentence": "Individual letters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, baseline and post-treatment weight, body fat, liver fat, HbA1c, fasting, 1-hour and 2-hour plasma glucose concentrations).",
+      "context_window": "etters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrol",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC7552859_rationale_and_design_of_a_randomised_controlled_trial_testin-u-493",
+      "claim_type": "unit_value",
+      "raw_text": "8 months",
+      "numeric_values": [
+        8.0
+      ],
+      "units": "months",
+      "source_section": "results",
+      "source_offset": 493,
+      "sentence": "Individual letters are disseminated to the study participants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, baseline and post-treatment weight, body fat, liver fat, HbA1c, fasting, 1-hour and 2-hour plasma glucose concentrations).",
+      "context_window": "ipants after the 6 months\u2019 treatment visit (approximately 7-8 months from study enrolment) summarising individual results (eg, b",
+      "claim_role": "unknown",
+      "endpoint": "HbA1c",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

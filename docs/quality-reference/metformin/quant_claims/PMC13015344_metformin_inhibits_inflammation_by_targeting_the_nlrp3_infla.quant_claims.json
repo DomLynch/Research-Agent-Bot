@@ -1,0 +1,65 @@
+{
+  "paper_id": "PMC13015344_metformin_inhibits_inflammation_by_targeting_the_nlrp3_infla",
+  "doi": "10.2147/JIR.S570735",
+  "extracted_at": "2026-05-05T15:32:39+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC13015344_metformin_inhibits_inflammation_by_targeting_the_nlrp3_infla-u-560",
+      "claim_type": "unit_value",
+      "raw_text": "30 mL/min",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mL/min",
+      "source_section": "limitations",
+      "source_offset": 560,
+      "sentence": "108 Current guidelines of the National Institutes of Medicine prohibit the use of metformin in patients with eGFR < 30 mL/min/1.73 m 2 because renal impairment significantly increases the risk of metformin-associated lactic acidosis, which is characterized by elevated blood lactate levels and metformin plasma levels generally higher than 5 mcg/mL.",
+      "context_window": "icine prohibit the use of metformin in patients with eGFR < 30 mL/min/1.73 m 2 because renal impairment significantly increases t",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13015344_metformin_inhibits_inflammation_by_targeting_the_nlrp3_infla-u-851",
+      "claim_type": "unit_value",
+      "raw_text": "44 mL/min",
+      "numeric_values": [
+        44.0
+      ],
+      "units": "mL/min",
+      "source_section": "limitations",
+      "source_offset": 851,
+      "sentence": "107 For patients with moderate renal impairment (eGFR 30-44 mL/min/1.73 m 2 ), metformin treatment is not recommended.",
+      "context_window": "L. 107 For patients with moderate renal impairment (eGFR 30-44 mL/min/1.73 m 2 ), metformin treatment is not recommended. If metf",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC13015344_metformin_inhibits_inflammation_by_targeting_the_nlrp3_infla-u-991",
+      "claim_type": "unit_value",
+      "raw_text": "1000 mg",
+      "numeric_values": [
+        1000.0
+      ],
+      "units": "mg",
+      "source_section": "limitations",
+      "source_offset": 991,
+      "sentence": "If metformin is already in use, the daily dose should be limited to less than 1000 mg, with regular monitoring of renal function.",
+      "context_window": "ready in use, the daily dose should be limited to less than 1000 mg, with regular monitoring of renal function. 136",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

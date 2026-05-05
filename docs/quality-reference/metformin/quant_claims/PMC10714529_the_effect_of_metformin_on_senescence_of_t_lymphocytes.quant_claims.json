@@ -1,0 +1,1700 @@
+{
+  "paper_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes",
+  "doi": "10.1186/s12979-023-00394-0",
+  "extracted_at": "2026-05-05T15:32:42+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "sample_size": 15,
+    "percentage": 15,
+    "unit_value": 10,
+    "p_value": 42,
+    "mean_sd": 11
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-625",
+      "claim_type": "sample_size",
+      "raw_text": "n = 88",
+      "numeric_values": [
+        88.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 625,
+      "sentence": "PBMCs isolation from different age population ( n = 88); Flow Cytometry is applied to determine the phenotypic characterization of senescent T lymphocytes; intracellular staining is applied to determine the function of senescent T cells; Enzyme-Linked Immunosorbent Assay (ELISA) is employed to test the telomerase concentration.",
+      "context_window": "estigated. PBMCs isolation from different age population ( n = 88); Flow Cytometry is applied to determine the phenotypic cha",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-1147",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1147,
+      "sentence": "PBMCs were resuspended in complete RPMI 1640 medium (GIBCO, cat.C11875500BT) supplemented with 10% Foetal Bovine Serum (Biological Industries, cat.04-011-1ACS), 1% Penicillin-Streptomycin (GIBCO, cat.15140-122).",
+      "context_window": "RPMI 1640 medium (GIBCO, cat.C11875500BT) supplemented with 10% Foetal Bovine Serum (Biological Industries, cat.04-011-1ACS",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-1213",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1213,
+      "sentence": "PBMCs were resuspended in complete RPMI 1640 medium (GIBCO, cat.C11875500BT) supplemented with 10% Foetal Bovine Serum (Biological Industries, cat.04-011-1ACS), 1% Penicillin-Streptomycin (GIBCO, cat.15140-122).",
+      "context_window": "etal Bovine Serum (Biological Industries, cat.04-011-1ACS), 1% Penicillin-Streptomycin (GIBCO, cat.15140-122). PBMCs whic",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1291",
+      "claim_type": "unit_value",
+      "raw_text": "0 mmol",
+      "numeric_values": [
+        0.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1291,
+      "sentence": "PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat.",
+      "context_window": "ptomycin (GIBCO, cat.15140-122). PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat. GC60245",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1299",
+      "claim_type": "unit_value",
+      "raw_text": "5 mmol",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1299,
+      "sentence": "PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat.",
+      "context_window": "(GIBCO, cat.15140-122). PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat. GC60245) at 37\u2103",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1307",
+      "claim_type": "unit_value",
+      "raw_text": "10 mmol",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1307,
+      "sentence": "PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat.",
+      "context_window": "cat.15140-122). PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat. GC60245) at 37\u2103 for 24 h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1318",
+      "claim_type": "unit_value",
+      "raw_text": "20 mmol",
+      "numeric_values": [
+        20.0
+      ],
+      "units": "mmol",
+      "source_section": "methods",
+      "source_offset": 1318,
+      "sentence": "PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat.",
+      "context_window": "122). PBMCs which cultured with 0 mmol, 5 mmol, 10 mmol or 20 mmol metformin (GLPBIO, cat. GC60245) at 37\u2103 for 24 h were stain",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-2217",
+      "claim_type": "percentage",
+      "raw_text": "10%",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2217,
+      "sentence": "After metformin treatment, PBMCs were incubated at 2 \u00d7 10 6 cells per well in RP10 media (RPMI, 10% Foetal Bovine Serum, 1% Penicillin-Streptomycin) alone or with 1X Cell Stimulation Cocktail (TONBO biosciences, cat.TNB-4975-UL100) for 4-6 h at 37\u2103.",
+      "context_window": "e incubated at 2 \u00d7 10 6 cells per well in RP10 media (RPMI, 10% Foetal Bovine Serum, 1% Penicillin-Streptomycin) alone or w",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-2242",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 2242,
+      "sentence": "After metformin treatment, PBMCs were incubated at 2 \u00d7 10 6 cells per well in RP10 media (RPMI, 10% Foetal Bovine Serum, 1% Penicillin-Streptomycin) alone or with 1X Cell Stimulation Cocktail (TONBO biosciences, cat.TNB-4975-UL100) for 4-6 h at 37\u2103.",
+      "context_window": "ells per well in RP10 media (RPMI, 10% Foetal Bovine Serum, 1% Penicillin-Streptomycin) alone or with 1X Cell Stimulation",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-3403",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3403,
+      "sentence": "The quality and purity of RNA from middle-age donors ( n = 3) were examined by a NanoDrop\u2122 One/OneC spectrophotometer (Thermo Scientific, Waltham, MA, USA) and Life Invitrogen Qubit RNA BR (Broad-Range) Assay Kit.",
+      "context_window": "ng. The quality and purity of RNA from middle-age donors ( n = 3) were examined by a NanoDrop\u2122 One/OneC spectrophotometer (T",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-4543",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4543,
+      "sentence": "A value of P < 0.05 was considered statistically significant.",
+      "context_window": "e the statistical differences in the two groups. A value of P < 0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-888",
+      "claim_type": "sample_size",
+      "raw_text": "n = 4498",
+      "numeric_values": [
+        4498.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 888,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "ospital of Sun Yat-sen University over the past six years ( n = 4498) * Ordinary one-way ANOVA test; Level of significance: p <",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-953",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 953,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "498) * Ordinary one-way ANOVA test; Level of significance: p < 0.05 To determine the difference in the number of senescent T c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1177",
+      "claim_type": "unit_value",
+      "raw_text": "86 years",
+      "numeric_values": [
+        86.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1177,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1243",
+      "claim_type": "unit_value",
+      "raw_text": "45 years",
+      "numeric_values": [
+        45.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1243,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "rs, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1295",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1295,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "roup (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mea",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-1347",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1347,
+      "sentence": "Lung cancer patient samples from The First Affiliated Hospital of Sun Yat-sen University over the past six years ( n = 4498)\n\n* Ordinary one-way ANOVA test; Level of significance: p < 0.05\n\nTo determine the difference in the number of senescent T cells in the middle-aged group compared to the young and elderly groups, we recruited 88 healthy donors, PBMCs from the 88 donors between the ages of 26 and 86 years, we divided our donors into three groups, young group (< 45 years old,mean age = 34.1), middle-age group (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ].",
+      "context_window": "oup (45-65 years old,mean age = 54.13) and elderly group (> 65 years old,mean age = 75.57) [ 18 ]. All donors were HIV negative",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-1709",
+      "claim_type": "mean_sd",
+      "raw_text": "24.26 \u00b1 3.563",
+      "numeric_values": [
+        24.26,
+        3.563
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1709,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "cells (Fig. 1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group comp",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-1724",
+      "claim_type": "sample_size",
+      "raw_text": "N = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1724,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-1806",
+      "claim_type": "mean_sd",
+      "raw_text": "10.36 \u00b1 1.186",
+      "numeric_values": [
+        10.36,
+        1.186
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1806,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "t increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-1821",
+      "claim_type": "sample_size",
+      "raw_text": "N = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1821,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "iddle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p =",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-1848",
+      "claim_type": "mean_sd",
+      "raw_text": "13.64 \u00b1 1.177",
+      "numeric_values": [
+        13.64,
+        1.177
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1848,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig. 1 b), similar resul",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-1863",
+      "claim_type": "sample_size",
+      "raw_text": "N = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1863,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "p (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig. 1 b), similar results were",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-1873",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.017",
+      "numeric_values": [
+        0.017
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1873,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig. 1 b), similar results were observed in C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-1884",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0115",
+      "numeric_values": [
+        0.0115
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1884,
+      "sentence": "1 a); The frequency of CD8 + senescent T cells (24.26 \u00b1 3.563, N = 34) was significant increase in middle-aged group compare to the young group (10.36 \u00b1 1.186, N = 26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig.",
+      "context_window": "26) and elderly group( 13.64 \u00b1 1.177, N = 28) ( p = 0.017, p = 0.0115) (Fig. 1 b), similar results were observed in CD4 + senesce",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-1974",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0329",
+      "numeric_values": [
+        0.0329
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1974,
+      "sentence": "1 b), similar results were observed in CD4 + senescent T cell subsets ( p = 0.0329,Fig.",
+      "context_window": "r results were observed in CD4 + senescent T cell subsets ( p = 0.0329,Fig. 1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-2003",
+      "claim_type": "mean_sd",
+      "raw_text": "1.075 \u00b1 0.2275",
+      "numeric_values": [
+        1.075,
+        0.2275
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2003,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": "4 + senescent T cell subsets ( p = 0.0329,Fig. 1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.13",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-2018",
+      "claim_type": "sample_size",
+      "raw_text": "N = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2018,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": "cell subsets ( p = 0.0329,Fig. 1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N =",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-2033",
+      "claim_type": "mean_sd",
+      "raw_text": "1.564 \u00b1 0.3059",
+      "numeric_values": [
+        1.564,
+        0.3059
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2033,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": "p = 0.0329,Fig. 1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-2048",
+      "claim_type": "sample_size",
+      "raw_text": "N = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2048,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": ". 1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-2064",
+      "claim_type": "mean_sd",
+      "raw_text": "0.7812 \u00b1 0.1327",
+      "numeric_values": [
+        0.7812,
+        0.1327
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2064,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": ".075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was h",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-2080",
+      "claim_type": "sample_size",
+      "raw_text": "N = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2080,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": "= 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-2191",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2191,
+      "sentence": "1 c) ( young:1.075 \u00b1 0.2275 N = 26; middle:1.564 \u00b1 0.3059 N = 34;elderly: 0.7812 \u00b1 0.1327 N = 28) and the proportion of CD8 + senescent T cells was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig.",
+      "context_window": "ls was higher than that of CD4 + T cell at each age group ( p < 0.001, Supplementary Fig. 1 b). Senescent T cell originated from",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-2595",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2595,
+      "sentence": "Additionally, we found that the frequency of CD8 + Teff cells was higher than that of CD4 + Teff cells at different age group ( p < 0.05, p < 0.001, Supplementary Fig.",
+      "context_window": "gher than that of CD4 + Teff cells at different age group ( p < 0.05, p < 0.001, Supplementary Fig. 1 d). The highest frequency",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-2605",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2605,
+      "sentence": "Additionally, we found that the frequency of CD8 + Teff cells was higher than that of CD4 + Teff cells at different age group ( p < 0.05, p < 0.001, Supplementary Fig.",
+      "context_window": "that of CD4 + Teff cells at different age group ( p < 0.05, p < 0.001, Supplementary Fig. 1 d). The highest frequency of CD8 + s",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-3391",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3391,
+      "sentence": "Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann- Whitney test (two-tailed) and nonpaired Student\u2019s t-test.",
+      "context_window": "e ) at different age groups. Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann- Whitney test (two-tailed) and nonpaired",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-3404",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3404,
+      "sentence": "Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann- Whitney test (two-tailed) and nonpaired Student\u2019s t-test.",
+      "context_window": "ent age groups. Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann- Whitney test (two-tailed) and nonpaired Student\u2019s t-",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-4280",
+      "claim_type": "mean_sd",
+      "raw_text": "12.66 \u00b1 1.439",
+      "numeric_values": [
+        12.66,
+        1.439
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4280,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "D28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.42",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-4294",
+      "claim_type": "sample_size",
+      "raw_text": "N = 26",
+      "numeric_values": [
+        26.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4294,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 2",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-4310",
+      "claim_type": "mean_sd",
+      "raw_text": "21.74 \u00b1 3.794",
+      "numeric_values": [
+        21.74,
+        3.794
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4310,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-4324",
+      "claim_type": "sample_size",
+      "raw_text": "N = 34",
+      "numeric_values": [
+        34.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4324,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "d group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, F",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-4341",
+      "claim_type": "mean_sd",
+      "raw_text": "11.15 \u00b1 1.422",
+      "numeric_values": [
+        11.15,
+        1.422
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4341,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "2.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig. 1 d). The proportion",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-4355",
+      "claim_type": "sample_size",
+      "raw_text": "N = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4355,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "= 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig. 1 d). The proportion of CD4",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-4365",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0494",
+      "numeric_values": [
+        0.0494
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4365,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "dle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig. 1 d). The proportion of CD4 + CD45RO + /C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-4377",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0187",
+      "numeric_values": [
+        0.0187
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4377,
+      "sentence": "1 c), the frequency of CD57 + KLRG1 + double positive cells from CD8 + CD45RO + /CD45RA-CCR7-CD27-CD28- was still the highest in the middle-aged group (young: 12.66 \u00b1 1.439 N = 26; middle: 21.74 \u00b1 3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig.",
+      "context_window": "3.794 N = 34; elderly: 11.15 \u00b1 1.422 N = 28) ( p = 0.0494, p = 0.0187, Fig. 1 d). The proportion of CD4 + CD45RO + /CD45RA-CCR7-C",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-4764",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4764,
+      "sentence": "However, the number of CD4 + Tem was higher than that of CD8 + Tem across age groups ( p < 0.05, p < 0.001, Supplementary Fig.",
+      "context_window": "+ Tem was higher than that of CD8 + Tem across age groups ( p < 0.05, p < 0.001, Supplementary Fig. 1 e). These results indicat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-4774",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4774,
+      "sentence": "However, the number of CD4 + Tem was higher than that of CD8 + Tem across age groups ( p < 0.05, p < 0.001, Supplementary Fig.",
+      "context_window": "higher than that of CD8 + Tem across age groups ( p < 0.05, p < 0.001, Supplementary Fig. 1 e). These results indicate that the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-5877",
+      "claim_type": "percentage",
+      "raw_text": "47.29%",
+      "numeric_values": [
+        47.29
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5877,
+      "sentence": "The number of senescent T cells significantly decreased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig.",
+      "context_window": "cantly decreased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supple",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-5887",
+      "claim_type": "percentage",
+      "raw_text": "34.3%",
+      "numeric_values": [
+        34.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5887,
+      "sentence": "The number of senescent T cells significantly decreased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig.",
+      "context_window": "reased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary F",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-5901",
+      "claim_type": "percentage",
+      "raw_text": "27.5%",
+      "numeric_values": [
+        27.5
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 5901,
+      "sentence": "The number of senescent T cells significantly decreased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig.",
+      "context_window": "reatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig. 2 a). The",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-5926",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5926,
+      "sentence": "The number of senescent T cells significantly decreased after treatment with 10 mM metformin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig.",
+      "context_window": "rmin (from 47.29% to 34.3%, with a 27.5% inhibition rate) ( p < 0.001, Supplementary Fig. 2 a). The frequency of CD8 + senescent",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-6055",
+      "claim_type": "percentage",
+      "raw_text": "36.3%",
+      "numeric_values": [
+        36.3
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6055,
+      "sentence": "The frequency of CD8 + senescent T cells also decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig.",
+      "context_window": "T cells also decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig. 2 a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-6064",
+      "claim_type": "percentage",
+      "raw_text": "22%",
+      "numeric_values": [
+        22.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6064,
+      "sentence": "The frequency of CD8 + senescent T cells also decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig.",
+      "context_window": "lso decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig. 2 a, b). T",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-6076",
+      "claim_type": "percentage",
+      "raw_text": "39.4%",
+      "numeric_values": [
+        39.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6076,
+      "sentence": "The frequency of CD8 + senescent T cells also decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig.",
+      "context_window": "d with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig. 2 a, b). Therefore, a me",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-6101",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.004",
+      "numeric_values": [
+        0.004
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6101,
+      "sentence": "The frequency of CD8 + senescent T cells also decreased with 20 mM metformin treatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig.",
+      "context_window": "eatment (from 36.3% to 22%, with a 39.4% inhibition rate) ( p = 0.004, Fig. 2 a, b). Therefore, a metformin concentration of 20 m",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-6330",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.0005",
+      "numeric_values": [
+        0.0005
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6330,
+      "sentence": "Similar inhibition was observed in subsets of CD8 + CD45RO + CCR7-CD27-CD28-CD57 + KLRG1 + cells from Tem cells ( p = 0.0005, Fig.",
+      "context_window": "45RO + CCR7-CD27-CD28-CD57 + KLRG1 + cells from Tem cells ( p = 0.0005, Fig. 2 a, c, Supplementary Fig. 2 b). Our findings show th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-7089",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7089,
+      "sentence": "Expressed as the mean \u00b1 SEM. *** P < 0.001; Mann-Whitney test (two-tailed) and paired Student\u2019s t-test.",
+      "context_window": "20 mM metformin treatment. Expressed as the mean \u00b1 SEM. *** P < 0.001; Mann-Whitney test (two-tailed) and paired Student\u2019s t-test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-7961",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7961,
+      "sentence": "3 a, b); however, compared with the control group, the average fluorescence intensity (MFI) of IFN-\u03b3 in CD8 + senescent T cells in the treatment group was significantly decreased ( P < 0.01, Fig.",
+      "context_window": "cells in the treatment group was significantly decreased ( P < 0.01, Fig. 3 c). Moreover, the frequency of CD3 + CD8 + CD45RA +",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-8131",
+      "claim_type": "p_value",
+      "raw_text": "p = 0.064",
+      "numeric_values": [
+        0.064
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8131,
+      "sentence": "Moreover, the frequency of CD3 + CD8 + CD45RA + CCR7-CD27- CD28- CD57 + KLRG1 + IFN-\u03b3 + T cells in lymphocytes decreased after metformin treatment ( p = 0.064, Fig.",
+      "context_window": "cells in lymphocytes decreased after metformin treatment ( p = 0.064, Fig. 3 d). For non-senescent T cells (CD3 + CD8 + CD45RA +",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-8291",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8291,
+      "sentence": "For non-senescent T cells (CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57-KLRG1-), the production of IFN-\u03b3 increased with metformin treatment ( P < 0.001, Fig.",
+      "context_window": "he production of IFN-\u03b3 increased with metformin treatment ( P < 0.001, Fig. 3 e, f). Similar results were observed in CD4 + T cel",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-9495",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9495,
+      "sentence": "Expressed as the mean \u00b1 SEM. ** P < 0.01, *** P < 0.001; Paired t test.",
+      "context_window": "-CD57 + / CD57- population. Expressed as the mean \u00b1 SEM. ** P < 0.01, *** P < 0.001; Paired t test. Met, metformin Studies have",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-9509",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9509,
+      "sentence": "Expressed as the mean \u00b1 SEM. ** P < 0.01, *** P < 0.001; Paired t test.",
+      "context_window": "- population. Expressed as the mean \u00b1 SEM. ** P < 0.01, *** P < 0.001; Paired t test. Met, metformin Studies have revealed that",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-9936",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9936,
+      "sentence": "More IFN-\u03b3 production in CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57 + T cells than in CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57-T cells was observed ( P < 0.001, Fig.",
+      "context_window": "+ CD8 + CD45RA + CCR7-CD27-CD28-CD57-T cells was observed ( P < 0.001, Fig. 3 g, h). Together, these results indicate that metfo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-10595",
+      "claim_type": "percentage",
+      "raw_text": "3.8%",
+      "numeric_values": [
+        3.8
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10595,
+      "sentence": "The results showed that the percentage of IL-6 producers in the control group was 3.8% in CD3-cells, whereas it was only 1% in CD3-cells with metformin treatment.",
+      "context_window": "t the percentage of IL-6 producers in the control group was 3.8% in CD3-cells, whereas it was only 1% in CD3-cells with metf",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-10634",
+      "claim_type": "percentage",
+      "raw_text": "1%",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 10634,
+      "sentence": "The results showed that the percentage of IL-6 producers in the control group was 3.8% in CD3-cells, whereas it was only 1% in CD3-cells with metformin treatment.",
+      "context_window": "he control group was 3.8% in CD3-cells, whereas it was only 1% in CD3-cells with metformin treatment. Additionally, the le",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-10796",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10796,
+      "sentence": "Additionally, the levels of IL-6 expression (MFI) in CD3- cells were significantly decreased upon metformin treatment ( P < 0.001, Fig.",
+      "context_window": "lls were significantly decreased upon metformin treatment ( P < 0.001, Fig. 4 a). We also compared the frequency of IL-6-producin",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "metformin",
+      "direction": "decrease",
+      "binding_confidence": "high"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-10969",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 10969,
+      "sentence": "We also compared the frequency of IL-6-producing CD3-CD57- T cells with that of CD3-CD57 + T cells, and found that the former had a higher frequency ( P < 0.001, Fig.",
+      "context_window": "T cells, and found that the former had a higher frequency ( P < 0.001, Fig. 4 b). CD57, recognized as a surface marker of replica",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-11325",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11325,
+      "sentence": "However, it remains unclear whether CD3-CD57 + cells exhibit a cellular senescent as well as CD3 + CD57 + T cells. we examined that the frequencies of IL-6-producing cells were reduced in both CD3-CD57 + cells ( P < 0.001, Fig.",
+      "context_window": "L-6-producing cells were reduced in both CD3-CD57 + cells ( P < 0.001, Fig. 4 c) and CD3-CD57- cells with metformin treatment com",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-11423",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11423,
+      "sentence": "4 c) and CD3-CD57- cells with metformin treatment compared to the control group ( P < 0.001, Fig.",
+      "context_window": "ls with metformin treatment compared to the control group ( P < 0.001, Fig. 4 d). Similarly, a small proportion of IL-6-producing",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-11690",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 11690,
+      "sentence": "This consistent decrease was also observed at the MFI levels of IL-6 ( P < 0.05, Supplementary Fig.",
+      "context_window": "tent decrease was also observed at the MFI levels of IL-6 ( P < 0.05, Supplementary Fig. 4 a, b). Metformin inhibited the produ",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-12157",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12157,
+      "sentence": "Expressed as the mean \u00b1 SEM. *** P < 0.001; Paired t test.",
+      "context_window": "D3-CD57- population ( b ). Expressed as the mean \u00b1 SEM. *** P < 0.001; Paired t test. Met, metformin Taken together, our functio",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-12783",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 12783,
+      "sentence": "Our findings indicate that metformin treatment leads to an increase in GB production ( P < 0.05, Fig.",
+      "context_window": "metformin treatment leads to an increase in GB production ( P < 0.05, Fig. 5 a, b), while there was no significant difference of",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-14545",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 14545,
+      "sentence": "Expressed as the mean \u00b1 SEM. * P < 0.05; Paired t test.",
+      "context_window": "57 + and CD3 + CD57-T cells. Expressed as the mean \u00b1 SEM. * P < 0.05; Paired t test. Met, metformin TNF-\u03b1, tumor necrosis facto",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-15301",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15301,
+      "sentence": "The frequency of CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57 + KLRG1 + TNF-\u03b1 + T cells in lymphocytes also significantly increased ( p < 0.01, Fig.",
+      "context_window": "F-\u03b1 + T cells in lymphocytes also significantly increased ( p < 0.01, Fig. 6 b). Similar results were observed in CD3 + CD8 + CD",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-15412",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15412,
+      "sentence": "Similar results were observed in CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57-KLRG1-T cells ( p < 0.01, Fig.",
+      "context_window": "in CD3 + CD8 + CD45RA + CCR7-CD27-CD28-CD57-KLRG1-T cells ( p < 0.01, Fig. 6 c). As expected, CD8 + CD45RA + CCR7-CD27-CD28-CD57",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-15565",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 15565,
+      "sentence": "As expected, CD8 + CD45RA + CCR7-CD27-CD28-CD57 + T cell subsets secreted significantly more TNF-\u03b1 compared to the CD57- subgroup ( p < 0.01, Fig.",
+      "context_window": "d significantly more TNF-\u03b1 compared to the CD57- subgroup ( p < 0.01, Fig. 6 d). Additionally, CD4 + senescent T cells showed an",
+      "claim_role": "unknown",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-16017",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16017,
+      "sentence": "5 b); instead, the frequency of CD3 + CD4 + CD45RA + CCR7-CD27-CD28-CD57-KLRG1-TNF-\u03b1 + T cells in lymphocytes significantly decreased ( p < 0.05, Supplementary Fig.",
+      "context_window": "G1-TNF-\u03b1 + T cells in lymphocytes significantly decreased ( p < 0.05, Supplementary Fig. 5 c). Overall, our results demonstrate",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-16812",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 16812,
+      "sentence": "Expressed as the mean \u00b1 SEM. ** P < 0.01; Paired t test.",
+      "context_window": "7-CD28-CD57 + /CD57-T cell. Expressed as the mean \u00b1 SEM. ** P < 0.01; Paired t test. Met, metformin Telomere, a DNA-protein com",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-17835",
+      "claim_type": "mean_sd",
+      "raw_text": "0.71 \u00b1 0.07",
+      "numeric_values": [
+        0.71,
+        0.07
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17835,
+      "sentence": "The results showed that the telomerase concentration in the control group was 0.71 ng/ml (0.71 \u00b1 0.07, N = 28).",
+      "context_window": "lomerase concentration in the control group was 0.71 ng/ml (0.71 \u00b1 0.07, N = 28). However, with metformin treatment, the concentrat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-17848",
+      "claim_type": "sample_size",
+      "raw_text": "N = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17848,
+      "sentence": "The results showed that the telomerase concentration in the control group was 0.71 ng/ml (0.71 \u00b1 0.07, N = 28).",
+      "context_window": "entration in the control group was 0.71 ng/ml (0.71 \u00b1 0.07, N = 28). However, with metformin treatment, the concentration of t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "control",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-msd-17949",
+      "claim_type": "mean_sd",
+      "raw_text": "1.33 \u00b1 0.24",
+      "numeric_values": [
+        1.33,
+        0.24
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17949,
+      "sentence": "However, with metformin treatment, the concentration of telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig.",
+      "context_window": "t, the concentration of telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig. 7 a). Immunosenescence is characte",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-17961",
+      "claim_type": "sample_size",
+      "raw_text": "N = 28",
+      "numeric_values": [
+        28.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17961,
+      "sentence": "However, with metformin treatment, the concentration of telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig.",
+      "context_window": "ntration of telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig. 7 a). Immunosenescence is characterized b",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-17971",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 17971,
+      "sentence": "However, with metformin treatment, the concentration of telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig.",
+      "context_window": "f telomerase increased to 1.33 ng/ml (1.33 \u00b1 0.24 N = 28) ( P < 0.05, Fig. 7 a). Immunosenescence is characterized by an increas",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-18269",
+      "claim_type": "percentage",
+      "raw_text": "3%",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18269,
+      "sentence": "Consistent with previous studies, our results also revealed a lower proportion of CD8 + Tn (CD3 + CD8 + CD45RA + CCR7 +) cells in the elderly group (3%) compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig.",
+      "context_window": "n (CD3 + CD8 + CD45RA + CCR7 +) cells in the elderly group (3%) compared to the middle-aged group (6%) and the young group",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-18308",
+      "claim_type": "percentage",
+      "raw_text": "6%",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18308,
+      "sentence": "Consistent with previous studies, our results also revealed a lower proportion of CD8 + Tn (CD3 + CD8 + CD45RA + CCR7 +) cells in the elderly group (3%) compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig.",
+      "context_window": "n the elderly group (3%) compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig. 6",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-pct-18333",
+      "claim_type": "percentage",
+      "raw_text": "9%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 18333,
+      "sentence": "Consistent with previous studies, our results also revealed a lower proportion of CD8 + Tn (CD3 + CD8 + CD45RA + CCR7 +) cells in the elderly group (3%) compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig.",
+      "context_window": "compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig. 6 ). Surprisingly, metformi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-18339",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18339,
+      "sentence": "Consistent with previous studies, our results also revealed a lower proportion of CD8 + Tn (CD3 + CD8 + CD45RA + CCR7 +) cells in the elderly group (3%) compared to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig.",
+      "context_window": "ed to the middle-aged group (6%) and the young group (9%) ( P < 0.05, Supplementary Fig. 6 ). Surprisingly, metformin increased",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-18502",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 18502,
+      "sentence": "Surprisingly, metformin increased the frequency of undifferentiated T cells (CD3 + CD4 + /CD8 + CD45RA + CCR7 + CD27 + CD28 +) ( P < 0.05, Fig.",
+      "context_window": "cells (CD3 + CD4 + /CD8 + CD45RA + CCR7 + CD27 + CD28 +) ( P < 0.05, Fig. 7 b, c). These findings suggest that the increased te",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-19181",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19181,
+      "sentence": "Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann-Whitney test (two-tailed) and paired Student\u2019s t-test.",
+      "context_window": "ormin treatment and control. Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann-Whitney test (two-tailed) and paired Stu",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-p-19194",
+      "claim_type": "p_value",
+      "raw_text": "P < 0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 19194,
+      "sentence": "Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann-Whitney test (two-tailed) and paired Student\u2019s t-test.",
+      "context_window": "nt and control. Expressed as the mean \u00b1 SEM. * P < 0.05, ** P < 0.01; Mann-Whitney test (two-tailed) and paired Student\u2019s t-test",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-n-22496",
+      "claim_type": "sample_size",
+      "raw_text": "n = 3",
+      "numeric_values": [
+        3.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 22496,
+      "sentence": "The RNA -seq analysis of gene expression associated with T cell senescence with metformin treatment. a Venn diagram portraying the intersections and disjunctive unions of differentially expressed genes in metformin treatment group (green) and control group (gray). b The Volcano Plot showed the overall distribution of genes with up-regulated expression (green), down-regulated expression (dark gray) and no significant difference (light gray) in the metformin treatment group compared to the control group. c Expression heatmap of a selection of senescence- and stemness-associated genes in PBMCs from metformin treatment group and control group at middle-age subjects ( n = 3).",
+      "context_window": "treatment group and control group at middle-age subjects ( n = 3). Data are represented as Z-scores. d Representative genome",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "metformin",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-231",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 231,
+      "sentence": "We examined the frequency of senescent T cells across different age groups, and observed that the middle-aged group (45-65 years old) had a higher number of senescent T cells compared to the elderly group (> 65 years old), which has not been previously reported.",
+      "context_window": "ent age groups, and observed that the middle-aged group (45-65 years old) had a higher number of senescent T cells compared to t",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10714529_the_effect_of_metformin_on_senescence_of_t_lymphocytes-u-319",
+      "claim_type": "unit_value",
+      "raw_text": "65 years",
+      "numeric_values": [
+        65.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 319,
+      "sentence": "We examined the frequency of senescent T cells across different age groups, and observed that the middle-aged group (45-65 years old) had a higher number of senescent T cells compared to the elderly group (> 65 years old), which has not been previously reported.",
+      "context_window": "umber of senescent T cells compared to the elderly group (> 65 years old), which has not been previously reported. Our findings",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}

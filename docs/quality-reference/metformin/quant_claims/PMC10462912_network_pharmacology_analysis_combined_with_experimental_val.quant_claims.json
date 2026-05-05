@@ -1,0 +1,683 @@
+{
+  "paper_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val",
+  "doi": "10.1042/BSR20230539",
+  "extracted_at": "2026-05-05T15:32:37+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "percentage": 11,
+    "unit_value": 9,
+    "p_value": 12,
+    "mean_sd": 2,
+    "sample_size": 3
+  },
+  "claims": [
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-866",
+      "claim_type": "percentage",
+      "raw_text": "0.1%",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 866,
+      "sentence": "The incidence of acute mesenteric ischemia has been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ].",
+      "context_window": "idence of acute mesenteric ischemia has been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-906",
+      "claim_type": "percentage",
+      "raw_text": "50%",
+      "numeric_values": [
+        50.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 906,
+      "sentence": "The incidence of acute mesenteric ischemia has been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ].",
+      "context_window": "been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-934",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "introduction",
+      "source_offset": 934,
+      "sentence": "The incidence of acute mesenteric ischemia has been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ].",
+      "context_window": "th an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ]. Owing to the complexi",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-945",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "introduction",
+      "source_offset": 945,
+      "sentence": "The incidence of acute mesenteric ischemia has been reported to be 0.1%, with an overall mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ].",
+      "context_window": "ll mortality rate of 50% and a mortality rate of 71% within 30 days in ICU patients [ 4 ]. Owing to the complexity of the patho",
+      "claim_role": "background",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-1853",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 1853,
+      "sentence": "A filter was set at P <0.05 for further analysis, and the top 20 terms with the highest concentration in GO and KEGG were selected and visualized.",
+      "context_window": "ions (MF) and cellular components (CC). A filter was set at P <0.05 for further analysis, and the top 20 terms with the highest",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-4705",
+      "claim_type": "percentage",
+      "raw_text": "99.99%",
+      "numeric_values": [
+        99.99
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 4705,
+      "sentence": "10338-51-9, purity >99.99%, molecular weight 300.30) is ordered commercially.",
+      "context_window": "alidroside (MedChemExpress, Product No. 10338-51-9, purity >99.99%, molecular weight 300.30) is ordered commercially. Rabbit a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-msd-4989",
+      "claim_type": "mean_sd",
+      "raw_text": "25 \u00b1 2",
+      "numeric_values": [
+        25.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4989,
+      "sentence": "A total of 24 healthy male C57BL/6J mice, weighing 25 \u00b1 2 g, were purchased from the Experimental Animal Center of Lanzhou University for this experiment.",
+      "context_window": ".S.A.). A total of 24 healthy male C57BL/6J mice, weighing 25 \u00b1 2 g, were purchased from the Experimental Animal Center of La",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-msd-5448",
+      "claim_type": "mean_sd",
+      "raw_text": "20 \u00b1 2",
+      "numeric_values": [
+        20.0,
+        2.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5448,
+      "sentence": "The animals were housed in well-ventilated SPF-rated rooms (temperature: 20 \u00b1 2\u00b0C, humidity: 45-55%, 12-h light and dark cycle) and were fed food and water ad libitum.",
+      "context_window": "ere housed in well-ventilated SPF-rated rooms (temperature: 20 \u00b1 2\u00b0C, humidity: 45-55%, 12-h light and dark cycle) and were fe",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-5471",
+      "claim_type": "percentage",
+      "raw_text": "55%",
+      "numeric_values": [
+        55.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 5471,
+      "sentence": "The animals were housed in well-ventilated SPF-rated rooms (temperature: 20 \u00b1 2\u00b0C, humidity: 45-55%, 12-h light and dark cycle) and were fed food and water ad libitum.",
+      "context_window": "ilated SPF-rated rooms (temperature: 20 \u00b1 2\u00b0C, humidity: 45-55%, 12-h light and dark cycle) and were fed food and water ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-5549",
+      "claim_type": "unit_value",
+      "raw_text": "1 week",
+      "numeric_values": [
+        1.0
+      ],
+      "units": "week",
+      "source_section": "methods",
+      "source_offset": 5549,
+      "sentence": "After 1 week of adaptive feeding, the mouse were randomly divided into four groups ( n =6): sham-operated group (Sham group), SAL-treated group (SAL group), model group (IR group) and model + SAL-treated group (IR + SAL group).",
+      "context_window": "d dark cycle) and were fed food and water ad libitum. After 1 week of adaptive feeding, the mouse were randomly divided into f",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-n-5628",
+      "claim_type": "sample_size",
+      "raw_text": "n =6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 5628,
+      "sentence": "After 1 week of adaptive feeding, the mouse were randomly divided into four groups ( n =6): sham-operated group (Sham group), SAL-treated group (SAL group), model group (IR group) and model + SAL-treated group (IR + SAL group).",
+      "context_window": "feeding, the mouse were randomly divided into four groups ( n =6): sham-operated group (Sham group), SAL-treated group (SAL",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-6054",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6054,
+      "sentence": "Mice in the SAL and IR + SAL groups were injected intraperitoneally with SAL (30 mg/kg) for 7 days before operation, and the mice in the Sham and IR groups were injected with equal amounts of saline at the same time point.",
+      "context_window": "d IR + SAL groups were injected intraperitoneally with SAL (30 mg/kg) for 7 days before operation, and the mice in the Sham a",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-6068",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 6068,
+      "sentence": "Mice in the SAL and IR + SAL groups were injected intraperitoneally with SAL (30 mg/kg) for 7 days before operation, and the mice in the Sham and IR groups were injected with equal amounts of saline at the same time point.",
+      "context_window": "ups were injected intraperitoneally with SAL (30 mg/kg) for 7 days before operation, and the mice in the Sham and IR groups we",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-6292",
+      "claim_type": "unit_value",
+      "raw_text": "10 cm",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6292,
+      "sentence": "After the mice in each group were executed, blood specimens and intestinal tissue specimens (10 cm from the ileocecal area) were gathered for examination.",
+      "context_window": "executed, blood specimens and intestinal tissue specimens (10 cm from the ileocecal area) were gathered for examination. Th",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-6425",
+      "claim_type": "unit_value",
+      "raw_text": "30 mg",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "mg",
+      "source_section": "methods",
+      "source_offset": 6425,
+      "sentence": "The mice in model were intraperitoneally injected with pentobarbital (30 mg/kg) to anesthetize the mice, the mice were immobilized in the supine position on a small animal test bench.",
+      "context_window": "n model were intraperitoneally injected with pentobarbital (30 mg/kg) to anesthetize the mice, the mice were immobilized in t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-6616",
+      "claim_type": "percentage",
+      "raw_text": "75%",
+      "numeric_values": [
+        75.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 6616,
+      "sentence": "The abdominal region was prepared for surgery and disinfected by wiping with 75% alcohol.",
+      "context_window": "ion was prepared for surgery and disinfected by wiping with 75% alcohol. An approximately 2 cm long incision was created al",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-6646",
+      "claim_type": "unit_value",
+      "raw_text": "2 cm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "cm",
+      "source_section": "methods",
+      "source_offset": 6646,
+      "sentence": "An approximately 2 cm long incision was created along the midline of the abdomen, and the intestine was exposed in layers, and the SMA was fully exposed and isolated using toothless forceps, dissection forceps, and a glass splitting needle, SMA was clamped with a saline-wetted non-invasive micro-arterial clip to block the blood flow.",
+      "context_window": "nd disinfected by wiping with 75% alcohol. An approximately 2 cm long incision was created along the midline of the abdomen,",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-7975",
+      "claim_type": "percentage",
+      "raw_text": "4%",
+      "numeric_values": [
+        4.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 7975,
+      "sentence": "Intestinal tissues were captured, fixed in 4% paraformaldehyde, and embedded in paraffin blocks.",
+      "context_window": "hou University. Intestinal tissues were captured, fixed in 4% paraformaldehyde, and embedded in paraffin blocks. The degr",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-8587",
+      "claim_type": "unit_value",
+      "raw_text": "10kg",
+      "numeric_values": [
+        10.0
+      ],
+      "units": "kg",
+      "source_section": "methods",
+      "source_offset": 8587,
+      "sentence": "The tissue was sliced into small pieces, placed in Eppendorf tubes, and lysed on ice for 30 min with 100 \u03bcL/10kg lysis buffer, shaking back and forth frequently for adequate lysis.",
+      "context_window": "in Eppendorf tubes, and lysed on ice for 30 min with 100 \u03bcL/10kg lysis buffer, shaking back and forth frequently for adequat",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-9105",
+      "claim_type": "percentage",
+      "raw_text": "0.05%",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9105,
+      "sentence": "After being closed with TBST (triple filament buffered saline with 0.05% Tween 20, pH 7.4) with 5% skim milk for 1 h at room temperature, the membranes were incubated with primary antibodies for TXNIP, AMPK and \u03b2-actin, respectively, overnight at 4\u00b0C.",
+      "context_window": "eing closed with TBST (triple filament buffered saline with 0.05% Tween 20, pH 7.4) with 5% skim milk for 1 h at room tempera",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-9134",
+      "claim_type": "percentage",
+      "raw_text": "5%",
+      "numeric_values": [
+        5.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 9134,
+      "sentence": "After being closed with TBST (triple filament buffered saline with 0.05% Tween 20, pH 7.4) with 5% skim milk for 1 h at room temperature, the membranes were incubated with primary antibodies for TXNIP, AMPK and \u03b2-actin, respectively, overnight at 4\u00b0C.",
+      "context_window": "filament buffered saline with 0.05% Tween 20, pH 7.4) with 5% skim milk for 1 h at room temperature, the membranes were i",
+      "claim_role": "unknown",
+      "endpoint": "AMPK signaling",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-9836",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 9836,
+      "sentence": "P <0.05 was considered statistically significant.",
+      "context_window": "test. One-way ANOVA was used for comparison between groups. P <0.05 was considered statistically significant.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-1537",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 1537,
+      "sentence": "A grand total of 529 BP (Supplementary Table S2), 59 CC (Supplementary Table S3) and 91 MF (Supplementary Table S4) were acquired using P <0.05 as the selection condition.",
+      "context_window": "S3) and 91 MF (Supplementary Table S4) were acquired using P <0.05 as the selection condition. The BP outcomes indicate that t",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-2181",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2181,
+      "sentence": "With P <0.05 as the filtering criterion, a total of 118 KEGG-enriched signaling pathways with 88 targets were retrieved ( Figure 4 D).",
+      "context_window": "onine kinase activity and ATP binding ( Figure 4 A-C). With P <0.05 as the filtering criterion, a total of 118 KEGG-enriched si",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-n-7057",
+      "claim_type": "sample_size",
+      "raw_text": "n =6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7057,
+      "sentence": "All these results indicates that treatment with SAL can apparently reduce the pathological damage of small intestine in intestinal IR mice.\n\n( A ) Pathological results of intestinal tissues of mice in each group (H&E staining, \u00d7200, scale = 100 \u03bcm). ( B ) Comparison of Chiu scores of mice in each group. ( C ) Comparison of serum DAO concentration of mice in each group. ( D ) Comparison of serum I-FABP concentration of mice in each group ( n =6).",
+      "context_window": "rison of serum I-FABP concentration of mice in each group ( n =6). The results are expressed in mean \u00b1 standard deviation. C",
+      "claim_role": "dose",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-7149",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7149,
+      "sentence": "Compared with Sham group, ** P <0.01.",
+      "context_window": "in mean \u00b1 standard deviation. Compared with Sham group, ** P <0.01. Compared with IR group, ## P <0.01. TNF-\u03b1, IL-6 and IL-1\u03b2",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-7185",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7185,
+      "sentence": "Compared with IR group, ## P <0.01.",
+      "context_window": "red with Sham group, ** P <0.01. Compared with IR group, ## P <0.01. TNF-\u03b1, IL-6 and IL-1\u03b2 are essential pro-inflammatory fact",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-7440",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7440,
+      "sentence": "The results of ELISA showed that TNF-\u03b1, IL-6 and IL-1\u03b2 levels were elevated markedly in serum and small intestinal tissues after IR comparison with Sham group ( P <0.01), and SAL treatment obviously decreased the levels of TNF-\u03b1, IL-6 and IL-1\u03b2 in serum and intestinal tissues after intestinal IR ( P <0.01) ( Figure 9 A-C).",
+      "context_window": "ll intestinal tissues after IR comparison with Sham group ( P <0.01), and SAL treatment obviously decreased the levels of TNF-\u03b1",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-7578",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 7578,
+      "sentence": "The results of ELISA showed that TNF-\u03b1, IL-6 and IL-1\u03b2 levels were elevated markedly in serum and small intestinal tissues after IR comparison with Sham group ( P <0.01), and SAL treatment obviously decreased the levels of TNF-\u03b1, IL-6 and IL-1\u03b2 in serum and intestinal tissues after intestinal IR ( P <0.01) ( Figure 9 A-C).",
+      "context_window": "IL-1\u03b2 in serum and intestinal tissues after intestinal IR ( P <0.01) ( Figure 9 A-C). Thus, it can be concluded that SAL can si",
+      "claim_role": "effect",
+      "endpoint": "inflammation",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-n-8020",
+      "claim_type": "sample_size",
+      "raw_text": "N =6",
+      "numeric_values": [
+        6.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8020,
+      "sentence": "N =6 for each group.",
+      "context_window": "issue of mice in each group \u03b2 comparison of concentrations. N =6 for each group. The results are expressed in mean \u00b1 standar",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-8126",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8126,
+      "sentence": "Compared with Sham group, ** P <0.01, Compared with IR group, ## P <0.01.",
+      "context_window": "in mean \u00b1 standard deviation. Compared with Sham group, ** P <0.01, Compared with IR group, ## P <0.01. PPI network and molec",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-8162",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 8162,
+      "sentence": "Compared with Sham group, ** P <0.01, Compared with IR group, ## P <0.01.",
+      "context_window": "red with Sham group, ** P <0.01, Compared with IR group, ## P <0.01. PPI network and molecular docking suggest that TXNIP and",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-9395",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9395,
+      "sentence": "Compared with Sham group, ** P <0.01; ## P <0.01 compared with IR group.",
+      "context_window": "K was measured quantitatively. Compared with Sham group, ** P <0.01; ## P <0.01 compared with IR group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-p-9407",
+      "claim_type": "p_value",
+      "raw_text": "P <0.01",
+      "numeric_values": [
+        0.01
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 9407,
+      "sentence": "Compared with Sham group, ** P <0.01; ## P <0.01 compared with IR group.",
+      "context_window": "ed quantitatively. Compared with Sham group, ** P <0.01; ## P <0.01 compared with IR group.",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-213",
+      "claim_type": "percentage",
+      "raw_text": "55.9%",
+      "numeric_values": [
+        55.9
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 213,
+      "sentence": "It has been reported that the overall mortality rate in patients with acute mesenteric ischemia is 55.9% [ 26 ], and the mortality rate within 30 days in ICU patients is even as high as 71% [ 27 ], and MODS and MOF caused by severe intestinal IR are major clinical factors of death in patients with intestinal IR.",
+      "context_window": "ortality rate in patients with acute mesenteric ischemia is 55.9% [ 26 ], and the mortality rate within 30 days in ICU patien",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-u-257",
+      "claim_type": "unit_value",
+      "raw_text": "30 days",
+      "numeric_values": [
+        30.0
+      ],
+      "units": "days",
+      "source_section": "discussion",
+      "source_offset": 257,
+      "sentence": "It has been reported that the overall mortality rate in patients with acute mesenteric ischemia is 55.9% [ 26 ], and the mortality rate within 30 days in ICU patients is even as high as 71% [ 27 ], and MODS and MOF caused by severe intestinal IR are major clinical factors of death in patients with intestinal IR.",
+      "context_window": "ric ischemia is 55.9% [ 26 ], and the mortality rate within 30 days in ICU patients is even as high as 71% [ 27 ], and MODS and",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC10462912_network_pharmacology_analysis_combined_with_experimental_val-pct-300",
+      "claim_type": "percentage",
+      "raw_text": "71%",
+      "numeric_values": [
+        71.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 300,
+      "sentence": "It has been reported that the overall mortality rate in patients with acute mesenteric ischemia is 55.9% [ 26 ], and the mortality rate within 30 days in ICU patients is even as high as 71% [ 27 ], and MODS and MOF caused by severe intestinal IR are major clinical factors of death in patients with intestinal IR.",
+      "context_window": "lity rate within 30 days in ICU patients is even as high as 71% [ 27 ], and MODS and MOF caused by severe intestinal IR are",
+      "claim_role": "unknown",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "partial"
+    }
+  ]
+}

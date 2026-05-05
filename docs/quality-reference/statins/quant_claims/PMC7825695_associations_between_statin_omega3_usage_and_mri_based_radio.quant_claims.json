@@ -1,0 +1,121 @@
+{
+  "paper_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio",
+  "doi": "10.3390/diagnostics11010085",
+  "extracted_at": "2026-05-05T15:32:44+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 2,
+    "percentage": 3,
+    "p_value": 1
+  },
+  "claims": [
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-u-1299",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 1299,
+      "sentence": "The images were taken using Philips Medical Systems Achieva 1.5 T MRI scanners with a 2 mm slice thickness.",
+      "context_window": "g Philips Medical Systems Achieva 1.5 T MRI scanners with a 2 mm slice thickness. Using Velocity software (Varian Medical Sy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-pct-1671",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "methods",
+      "source_offset": 1671,
+      "sentence": "The whole prostate gland is the most common region reviewed by radiologists and also easy to contour for future studies, while the peripheral zone is where over 90% of prostate cancers develop [ 30 ].",
+      "context_window": "for future studies, while the peripheral zone is where over 90% of prostate cancers develop [ 30 ]. Figure 1 shows the crea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-u-2433",
+      "claim_type": "unit_value",
+      "raw_text": "2 mm",
+      "numeric_values": [
+        2.0
+      ],
+      "units": "mm",
+      "source_section": "methods",
+      "source_offset": 2433,
+      "sentence": "Feature extraction used a resampled voxel size of 2 \u00d7 2 \u00d7 2 mm 3 and a fixed bin width of 25.",
+      "context_window": ". Feature extraction used a resampled voxel size of 2 \u00d7 2 \u00d7 2 mm 3 and a fixed bin width of 25. A kernel size of 5 was used",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-p-4839",
+      "claim_type": "p_value",
+      "raw_text": "p < 0.5",
+      "numeric_values": [
+        0.5
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 4839,
+      "sentence": "Features with a false-discovery-rate-adjusted value of p < 0.5 were kept for the next step.",
+      "context_window": "res. Features with a false-discovery-rate-adjusted value of p < 0.5 were kept for the next step. The selected features with Pea",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-pct-2749",
+      "claim_type": "percentage",
+      "raw_text": "90%",
+      "numeric_values": [
+        90.0
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 2749,
+      "sentence": "The whole prostate gland is the most common region reviewed by radiologists, while the peripheral zone is where over 90% of prostate cancers develop [ 30 ], so the two ROIs were separately analyzed to see if there was a performance difference.",
+      "context_window": "ed by radiologists, while the peripheral zone is where over 90% of prostate cancers develop [ 30 ], so the two ROIs were se",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC7825695_associations_between_statin_omega3_usage_and_mri_based_radio-pct-5031",
+      "claim_type": "percentage",
+      "raw_text": "38.5%",
+      "numeric_values": [
+        38.5
+      ],
+      "units": "%",
+      "source_section": "discussion",
+      "source_offset": 5031,
+      "sentence": "In our cohort, 35 patients (38.5%) reported using ACEIs.",
+      "context_window": "cer development or progression. In our cohort, 35 patients (38.5%) reported using ACEIs. Applying our radiomics data analysis",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    }
+  ]
+}

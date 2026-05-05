@@ -1,0 +1,1490 @@
+{
+  "paper_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr",
+  "doi": "10.1161/JAHA.121.022700",
+  "extracted_at": "2026-05-05T15:22:49+00:00",
+  "extractor_version": "0.6.0",
+  "claims_count_by_type": {
+    "unit_value": 49,
+    "percentage": 13,
+    "p_value": 15,
+    "sample_size": 5
+  },
+  "claims": [
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-445",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 445,
+      "sentence": "From the TICO trial (Ticagrelor Monotherapy After 3 Months in the Patients Treated With New Generation Sirolimus\u2010eluting Stent for Acute Coronary Syndrome), which randomized 3056 patients (median age, 61 years) to the ticagrelor monotherapy after 3\u2010month DAPT group or ticagrelor\u2010based 12\u2010month DAPT group, this post hoc analysis evaluated the age\u2010dependent effect of the treatment strategies on the primary end point (a composite of major bleeding, death, myocardial infarction, stent thrombosis, stroke, or target\u2010vessel revascularization) using the subpopulation treatment effect pattern plot.",
+      "context_window": "nary Syndrome), which randomized 3056 patients (median age, 61 years) to the ticagrelor monotherapy after 3\u2010month DAPT group or",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1158",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1158,
+      "sentence": "The risk reduction effect of ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT on the primary end point gradually increased with age and was more marked from the subpopulation of age 64 years with the change point.",
+      "context_window": "with age and was more marked from the subpopulation of age 64 years with the change point. With this cutoff value of 64 years,",
+      "claim_role": "effect",
+      "endpoint": "mortality",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1216",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1216,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "e 64 years with the change point. With this cutoff value of 64 years, the occurrence of the primary end point was significantly",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-1395",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1395,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "APT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278),",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-1407",
+      "claim_type": "percentage",
+      "raw_text": "9.0%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "abstract",
+      "source_offset": 1407,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "an in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-1413",
+      "claim_type": "p_value",
+      "raw_text": "P =0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1413,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not differ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1441",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1441,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "h DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-n-1451",
+      "claim_type": "sample_size",
+      "raw_text": "n=1278",
+      "numeric_values": [
+        1278.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1451,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "up (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778)",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1500",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "abstract",
+      "source_offset": 1500,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "\u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-n-1510",
+      "claim_type": "sample_size",
+      "raw_text": "n=1778",
+      "numeric_values": [
+        1778.0
+      ],
+      "units": "",
+      "source_section": "abstract",
+      "source_offset": 1510,
+      "sentence": "With this cutoff value of 64 years, the occurrence of the primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (4.4% versus 9.0%; P =0.002) in patients aged \u226564 years (n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036).",
+      "context_window": "(n=1278), but it was not different in those aged <64 years (n=1778) with a significant interaction ( P \u2010interaction=0.036). T",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1129",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "methods",
+      "source_offset": 1129,
+      "sentence": "The primary end point was the occurrence of a net adverse clinical event, defined as a composite of major bleeding and major adverse cardiac and cerebrovascular events (MACCEs) at 12 months after PCI.",
+      "context_window": "ajor adverse cardiac and cerebrovascular events (MACCEs) at 12 months after PCI. 5 Major bleeding was defined according to the TI",
+      "claim_role": "protocol",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1369",
+      "claim_type": "unit_value",
+      "raw_text": "7 days",
+      "numeric_values": [
+        7.0
+      ],
+      "units": "days",
+      "source_section": "methods",
+      "source_offset": 1369,
+      "sentence": "5 Major bleeding was defined according to the TIMI (Thrombolysis in Myocardial Infarction) criteria: intracranial bleeding, hemorrhage with at least 5 g/dL decrease in hemoglobin, or fatal bleeding causing death within 7 days.",
+      "context_window": "rease in hemoglobin, or fatal bleeding causing death within 7 days. 5 MACCE was defined as a composite of all\u2010cause death, myo",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-3226",
+      "claim_type": "p_value",
+      "raw_text": "P <0.10",
+      "numeric_values": [
+        0.1
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3226,
+      "sentence": "Variables found to be significant ( P <0.10) in univariate analysis for ticagrelor monotherapy after 3\u2010month DAPT were included in multivariate analysis.",
+      "context_window": "y secondary end points. Variables found to be significant ( P <0.10) in univariate analysis for ticagrelor monotherapy after 3\u2010",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-3523",
+      "claim_type": "p_value",
+      "raw_text": "P <0.05",
+      "numeric_values": [
+        0.05
+      ],
+      "units": "",
+      "source_section": "methods",
+      "source_offset": 3523,
+      "sentence": "P <0.05 was considered statistically significant.",
+      "context_window": "d at the time of loss to follow\u2010up. All tests were 2 sided. P <0.05 was considered statistically significant. Statistical analy",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-88",
+      "claim_type": "unit_value",
+      "raw_text": "61 years",
+      "numeric_values": [
+        61.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 88,
+      "sentence": "The median age was 61 years (interquartile range, 53-69 years).",
+      "context_window": "3056 patients is presented in Figure 1 . The median age was 61 years (interquartile range, 53-69 years). No significant differen",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-122",
+      "claim_type": "unit_value",
+      "raw_text": "69 years",
+      "numeric_values": [
+        69.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 122,
+      "sentence": "The median age was 61 years (interquartile range, 53-69 years).",
+      "context_window": "re 1 . The median age was 61 years (interquartile range, 53-69 years). No significant differences were observed in age distribut",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-239",
+      "claim_type": "p_value",
+      "raw_text": "P =0.256",
+      "numeric_values": [
+        0.256
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 239,
+      "sentence": "No significant differences were observed in age distribution between the 2 antiplatelet strategy groups ( P =0.256).",
+      "context_window": "e distribution between the 2 antiplatelet strategy groups ( P =0.256). The cubic spline curves revealed that the risks of net ad",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-730",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 730,
+      "sentence": "Notably, this divergence was markedly pronounced from the subpopulation of age 64 years (Figure 3A , upper panel).",
+      "context_window": "gence was markedly pronounced from the subpopulation of age 64 years (Figure 3A , upper panel). Consequently, an age\u2010dependent g",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-994",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 994,
+      "sentence": "Consequently, an age\u2010dependent gradual increasing benefit of ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT for primary end point was observed, and it was more marked from the subpopulation aged 64 years with the change point (Figure 3A , lower panel).",
+      "context_window": "bserved, and it was more marked from the subpopulation aged 64 years with the change point (Figure 3A , lower panel). An additio",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1136",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 1136,
+      "sentence": "An additional exploratory analysis for interaction testing also revealed the age of 64 years as an optimal cutoff for separating age categories for the primary end point from ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT.",
+      "context_window": "y analysis for interaction testing also revealed the age of 64 years as an optimal cutoff for separating age categories for the",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-1662",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 1662,
+      "sentence": "Black curve with gray area indicates unadjusted hazard ratio with 95% CI for net adverse clinical events ( A ), major bleeding ( B ), and major adverse cardiac and cerebrovascular events (MACCEs) ( C ).",
+      "context_window": "curve with gray area indicates unadjusted hazard ratio with 95% CI for net adverse clinical events ( A ), major bleeding (",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-2128",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2128,
+      "sentence": "The red line represents the HRs, and the dotted lines represent the 95% CI.",
+      "context_window": "line represents the HRs, and the dotted lines represent the 95% CI. The supremum P value denotes the interaction term deriv",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-2365",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2365,
+      "sentence": "When the patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years.",
+      "context_window": "patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) pat",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-2381",
+      "claim_type": "percentage",
+      "raw_text": "42%",
+      "numeric_values": [
+        42.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2381,
+      "sentence": "When the patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years.",
+      "context_window": "tegorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-2406",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2406,
+      "sentence": "When the patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years.",
+      "context_window": "the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years. The baseline c",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-2425",
+      "claim_type": "percentage",
+      "raw_text": "58%",
+      "numeric_values": [
+        58.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 2425,
+      "sentence": "When the patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years.",
+      "context_window": "64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years. The baseline characteristics",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-2450",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 2450,
+      "sentence": "When the patients were categorized on the basis of the cutoff age of 64 years, 1278 (42%) patients were aged \u226564 years and 1778 (58%) patients were aged <64 years.",
+      "context_window": "ents were aged \u226564 years and 1778 (58%) patients were aged <64 years. The baseline characteristics according to the age groups a",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-n-2959",
+      "claim_type": "sample_size",
+      "raw_text": "n=635",
+      "numeric_values": [
+        635.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2959,
+      "sentence": "Baseline Characteristics of the Patients According to Age Subgroups\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=635)\n\nTicagrelor\u2010based 12\u2010mo DAPT\n\n(n=643)\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=892)\n\nData are presented as mean\u00b1SD or number (percentage).",
+      "context_window": "to Age Subgroups Ticagrelor monotherapy after 3\u2010mo DAPT (n=635) Ticagrelor\u2010based 12\u2010mo DAPT (n=643) Ticagrelor monother",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-n-2997",
+      "claim_type": "sample_size",
+      "raw_text": "n=643",
+      "numeric_values": [
+        643.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 2997,
+      "sentence": "Baseline Characteristics of the Patients According to Age Subgroups\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=635)\n\nTicagrelor\u2010based 12\u2010mo DAPT\n\n(n=643)\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=892)\n\nData are presented as mean\u00b1SD or number (percentage).",
+      "context_window": "apy after 3\u2010mo DAPT (n=635) Ticagrelor\u2010based 12\u2010mo DAPT (n=643) Ticagrelor monotherapy after 3\u2010mo DAPT (n=892) Data are",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-n-3046",
+      "claim_type": "sample_size",
+      "raw_text": "n=892",
+      "numeric_values": [
+        892.0
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3046,
+      "sentence": "Baseline Characteristics of the Patients According to Age Subgroups\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=635)\n\nTicagrelor\u2010based 12\u2010mo DAPT\n\n(n=643)\n\nTicagrelor monotherapy after 3\u2010mo DAPT\n\n(n=892)\n\nData are presented as mean\u00b1SD or number (percentage).",
+      "context_window": "\u2010mo DAPT (n=643) Ticagrelor monotherapy after 3\u2010mo DAPT (n=892) Data are presented as mean\u00b1SD or number (percentage). CAB",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-3376",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3376,
+      "sentence": "Comparison between patients aged \u226564 years and those aged <64 years.",
+      "context_window": "n myocardial infarction. Comparison between patients aged \u226564 years and those aged <64 years. Table 2 summarizes all relevant",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-3401",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3401,
+      "sentence": "Comparison between patients aged \u226564 years and those aged <64 years.",
+      "context_window": "Comparison between patients aged \u226564 years and those aged <64 years. Table 2 summarizes all relevant outcome data and interact",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-3559",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3559,
+      "sentence": "In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a significant reduction in the primary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ).",
+      "context_window": "eding events, according to age subgroups. In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a si",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-3718",
+      "claim_type": "percentage",
+      "raw_text": "4.4%",
+      "numeric_values": [
+        4.4
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3718,
+      "sentence": "In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a significant reduction in the primary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ).",
+      "context_window": "ary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-3730",
+      "claim_type": "percentage",
+      "raw_text": "9.0%",
+      "numeric_values": [
+        9.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3730,
+      "sentence": "In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a significant reduction in the primary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ).",
+      "context_window": "t compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Tab",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-3761",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 3761,
+      "sentence": "In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a significant reduction in the primary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ).",
+      "context_window": "d 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ). However,",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-3780",
+      "claim_type": "p_value",
+      "raw_text": "P =0.002",
+      "numeric_values": [
+        0.002
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 3780,
+      "sentence": "In patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT resulted in a significant reduction in the primary end point compared with ticagrelor\u2010based 12\u2010month DAPT (4.4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ).",
+      "context_window": "4% versus 9.0%; hazard ratio [HR], 0.49; 95% CI, 0.31-0.76; P =0.002) (Table 2 and Figure 4A ). However, the incidence of primar",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-3896",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 3896,
+      "sentence": "However, the incidence of primary end point was not different in patients aged <64 years (Figure 4B ).",
+      "context_window": "ce of primary end point was not different in patients aged <64 years (Figure 4B ). Moreover, a significant interaction was obser",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-4002",
+      "claim_type": "p_value",
+      "raw_text": "P =0.036",
+      "numeric_values": [
+        0.036
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4002,
+      "sentence": "Moreover, a significant interaction was observed between age and treatment group ( P =0.036) (Table 2 ).",
+      "context_window": "interaction was observed between age and treatment group ( P =0.036) (Table 2 ). Three\u2010month landmark analyses revealed that am",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "treatment",
+      "direction": "",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-4089",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4089,
+      "sentence": "Three\u2010month landmark analyses revealed that among patients aged \u226564 years, the incidence of primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (HR, 0.30; 95% CI, 0.15-0.56; P <0.001) (Figure 4C ).",
+      "context_window": "\u2010month landmark analyses revealed that among patients aged \u226564 years, the incidence of primary end point was significantly lower",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-4273",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4273,
+      "sentence": "Three\u2010month landmark analyses revealed that among patients aged \u226564 years, the incidence of primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (HR, 0.30; 95% CI, 0.15-0.56; P <0.001) (Figure 4C ).",
+      "context_window": "than in the ticagrelor\u2010based 12\u2010month DAPT group (HR, 0.30; 95% CI, 0.15-0.56; P <0.001) (Figure 4C ). Among patients aged",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-4292",
+      "claim_type": "p_value",
+      "raw_text": "P <0.001",
+      "numeric_values": [
+        0.001
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 4292,
+      "sentence": "Three\u2010month landmark analyses revealed that among patients aged \u226564 years, the incidence of primary end point was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group (HR, 0.30; 95% CI, 0.15-0.56; P <0.001) (Figure 4C ).",
+      "context_window": "lor\u2010based 12\u2010month DAPT group (HR, 0.30; 95% CI, 0.15-0.56; P <0.001) (Figure 4C ). Among patients aged <64 years, no significan",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-4337",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4337,
+      "sentence": "Among patients aged <64 years, no significant differences were found between the 2 groups for the incidence of primary end point (HR, 0.41; 95% CI, 0.32-1.60) (Figure 4D ).",
+      "context_window": "CI, 0.15-0.56; P <0.001) (Figure 4C ). Among patients aged <64 years, no significant differences were found between the 2 groups",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-4456",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 4456,
+      "sentence": "Among patients aged <64 years, no significant differences were found between the 2 groups for the incidence of primary end point (HR, 0.41; 95% CI, 0.32-1.60) (Figure 4D ).",
+      "context_window": "2 groups for the incidence of primary end point (HR, 0.41; 95% CI, 0.32-1.60) (Figure 4D ). Clinical Outcomes at 1 Year A",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-4670",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 4670,
+      "sentence": "The cutoff age of 64 years was derived from the subpopulation treatment effect pattern plot where the effect of ticagrelor monotherapy after 3\u2010month DAPT vs ticagrelor\u2010based 12\u2010month DAPT on the net adverse clinical event was markedly pronounced with the change point.",
+      "context_window": "calculated using Kaplan\u2010Meier estimates. The cutoff age of 64 years was derived from the subpopulation treatment effect pattern",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5122",
+      "claim_type": "unit_value",
+      "raw_text": "12 month",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "month",
+      "source_section": "results",
+      "source_offset": 5122,
+      "sentence": "Ticagrelor monotherapy after 3\u2010month dual\u2010antiplatelet therapy (DAPT) significantly reduced the incidence of primary end point compared with ticagrelor\u2010based 12 month\u2010DAPT in patients aged \u226564 years ( A ), unlike in patients aged <64 years ( B ).",
+      "context_window": "cidence of primary end point compared with ticagrelor\u2010based 12 month\u2010DAPT in patients aged \u226564 years ( A ), unlike in patients a",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5154",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5154,
+      "sentence": "Ticagrelor monotherapy after 3\u2010month dual\u2010antiplatelet therapy (DAPT) significantly reduced the incidence of primary end point compared with ticagrelor\u2010based 12 month\u2010DAPT in patients aged \u226564 years ( A ), unlike in patients aged <64 years ( B ).",
+      "context_window": "pared with ticagrelor\u2010based 12 month\u2010DAPT in patients aged \u226564 years ( A ), unlike in patients aged <64 years ( B ). These findi",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5195",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5195,
+      "sentence": "Ticagrelor monotherapy after 3\u2010month dual\u2010antiplatelet therapy (DAPT) significantly reduced the incidence of primary end point compared with ticagrelor\u2010based 12 month\u2010DAPT in patients aged \u226564 years ( A ), unlike in patients aged <64 years ( B ).",
+      "context_window": "in patients aged \u226564 years ( A ), unlike in patients aged <64 years ( B ). These findings are consistent with those of landmark",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5291",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5291,
+      "sentence": "These findings are consistent with those of landmark analyses in patients aged \u226564 years ( C ) and those aged <64 years ( D ).",
+      "context_window": "onsistent with those of landmark analyses in patients aged \u226564 years ( C ) and those aged <64 years ( D ). HR indicates hazard r",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5322",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5322,
+      "sentence": "These findings are consistent with those of landmark analyses in patients aged \u226564 years ( C ) and those aged <64 years ( D ).",
+      "context_window": "k analyses in patients aged \u226564 years ( C ) and those aged <64 years ( D ). HR indicates hazard ratio; and PCI, percutaneous cor",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5594",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5594,
+      "sentence": "For major bleeding, the incidence was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.016).",
+      "context_window": "e ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.016). However, among patients aged <64 years, it was",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-5605",
+      "claim_type": "p_value",
+      "raw_text": "P =0.016",
+      "numeric_values": [
+        0.016
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5605,
+      "sentence": "For major bleeding, the incidence was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.016).",
+      "context_window": "r\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.016). However, among patients aged <64 years, it was not signif",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5646",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5646,
+      "sentence": "However, among patients aged <64 years, it was not significantly higher in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group ( P =0.456).",
+      "context_window": "s aged \u226564 years ( P =0.016). However, among patients aged <64 years, it was not significantly higher in the ticagrelor monother",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-5794",
+      "claim_type": "p_value",
+      "raw_text": "P =0.456",
+      "numeric_values": [
+        0.456
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5794,
+      "sentence": "However, among patients aged <64 years, it was not significantly higher in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group ( P =0.456).",
+      "context_window": "PT group than in the ticagrelor\u2010based 12\u2010month DAPT group ( P =0.456). For MACCE, it was significantly lower in the ticagrelor m",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-5968",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 5968,
+      "sentence": "For MACCE, it was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.022).",
+      "context_window": "e ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.022). However, among patients aged <64 years, it did",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-5979",
+      "claim_type": "p_value",
+      "raw_text": "P =0.022",
+      "numeric_values": [
+        0.022
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 5979,
+      "sentence": "For MACCE, it was significantly lower in the ticagrelor monotherapy after 3\u2010month DAPT group than in the ticagrelor\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.022).",
+      "context_window": "r\u2010based 12\u2010month DAPT group among patients aged \u226564 years ( P =0.022). However, among patients aged <64 years, it did not differ",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-6020",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6020,
+      "sentence": "However, among patients aged <64 years, it did not differ between the 2 groups ( P =0.878).",
+      "context_window": "s aged \u226564 years ( P =0.022). However, among patients aged <64 years, it did not differ between the 2 groups ( P =0.878). For ma",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-6071",
+      "claim_type": "p_value",
+      "raw_text": "P =0.878",
+      "numeric_values": [
+        0.878
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6071,
+      "sentence": "However, among patients aged <64 years, it did not differ between the 2 groups ( P =0.878).",
+      "context_window": "ts aged <64 years, it did not differ between the 2 groups ( P =0.878). For major bleeding or MACCE, no significant interactions",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "no_change",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-6189",
+      "claim_type": "p_value",
+      "raw_text": "P =0.268",
+      "numeric_values": [
+        0.268
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6189,
+      "sentence": "For major bleeding or MACCE, no significant interactions were found between age and treatment strategies ( P =0.268 and P =0.103, respectively).",
+      "context_window": "eractions were found between age and treatment strategies ( P =0.268 and P =0.103, respectively). Predictors of clinical outcom",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-6202",
+      "claim_type": "p_value",
+      "raw_text": "P =0.103",
+      "numeric_values": [
+        0.103
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6202,
+      "sentence": "For major bleeding or MACCE, no significant interactions were found between age and treatment strategies ( P =0.268 and P =0.103, respectively).",
+      "context_window": "e found between age and treatment strategies ( P =0.268 and P =0.103, respectively). Predictors of clinical outcomes according",
+      "claim_role": "unknown",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-6340",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6340,
+      "sentence": "Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be an independent predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047).",
+      "context_window": "groups are shown in Tables S2 and S3 . Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-6481",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6481,
+      "sentence": "Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be an independent predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047).",
+      "context_window": "t predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95%",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-6500",
+      "claim_type": "p_value",
+      "raw_text": "P =0.024",
+      "numeric_values": [
+        0.024
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6500,
+      "sentence": "Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be an independent predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047).",
+      "context_window": "ced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047)",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-pct-6540",
+      "claim_type": "percentage",
+      "raw_text": "95%",
+      "numeric_values": [
+        95.0
+      ],
+      "units": "%",
+      "source_section": "results",
+      "source_offset": 6540,
+      "sentence": "Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be an independent predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047).",
+      "context_window": "95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047). However, ticagrelor monotherapy a",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-p-6559",
+      "claim_type": "p_value",
+      "raw_text": "P =0.047",
+      "numeric_values": [
+        0.047
+      ],
+      "units": "",
+      "source_section": "results",
+      "source_offset": 6559,
+      "sentence": "Among patients aged \u226564 years, ticagrelor monotherapy after 3\u2010month DAPT was found to be an independent predictor of reduced risk of primary end point (HR, 0.58; 95% CI, 0.36-0.93; P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047).",
+      "context_window": "P =0.024) and major bleeding (HR, 0.49; 95% CI, 0.24-0.99; P =0.047). However, ticagrelor monotherapy after 3\u2010month DAPT did no",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-6719",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "results",
+      "source_offset": 6719,
+      "sentence": "However, ticagrelor monotherapy after 3\u2010month DAPT did not have a significant effect on either primary or key secondary end points in patients aged <64 years.",
+      "context_window": "ither primary or key secondary end points in patients aged <64 years.",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1019",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1019,
+      "sentence": "The main findings of our study are as follows: (1) the incidence of net adverse clinical event, major bleeding, and MACCE increases with the age of patients with ACS; (2) the beneficial effect of reduction in a composite end point of major bleeding and cardiovascular events attributable to ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT increased with patient age; (3) the net clinical benefit of ticagrelor monotherapy after 3\u2010month DAPT was more pronounced in elderly patients (aged \u226564 years) than in younger patients (aged <64 years); and (4) multivariate analysis revealed that ticagrelor monotherapy after 3\u2010month DAPT is an independent predictor of reduced risk of net adverse clinical event and major bleeding in elderly patients aged \u226564 years.",
+      "context_window": "3\u2010month DAPT was more pronounced in elderly patients (aged \u226564 years) than in younger patients (aged <64 years); and (4) multiva",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1061",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1061,
+      "sentence": "The main findings of our study are as follows: (1) the incidence of net adverse clinical event, major bleeding, and MACCE increases with the age of patients with ACS; (2) the beneficial effect of reduction in a composite end point of major bleeding and cardiovascular events attributable to ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT increased with patient age; (3) the net clinical benefit of ticagrelor monotherapy after 3\u2010month DAPT was more pronounced in elderly patients (aged \u226564 years) than in younger patients (aged <64 years); and (4) multivariate analysis revealed that ticagrelor monotherapy after 3\u2010month DAPT is an independent predictor of reduced risk of net adverse clinical event and major bleeding in elderly patients aged \u226564 years.",
+      "context_window": "y patients (aged \u226564 years) than in younger patients (aged <64 years); and (4) multivariate analysis revealed that ticagrelor mo",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1277",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1277,
+      "sentence": "The main findings of our study are as follows: (1) the incidence of net adverse clinical event, major bleeding, and MACCE increases with the age of patients with ACS; (2) the beneficial effect of reduction in a composite end point of major bleeding and cardiovascular events attributable to ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT increased with patient age; (3) the net clinical benefit of ticagrelor monotherapy after 3\u2010month DAPT was more pronounced in elderly patients (aged \u226564 years) than in younger patients (aged <64 years); and (4) multivariate analysis revealed that ticagrelor monotherapy after 3\u2010month DAPT is an independent predictor of reduced risk of net adverse clinical event and major bleeding in elderly patients aged \u226564 years.",
+      "context_window": "clinical event and major bleeding in elderly patients aged \u226564 years. Although a potent P2Y 12 inhibitor\u2010based DAPT is currentl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1369",
+      "claim_type": "unit_value",
+      "raw_text": "12 months",
+      "numeric_values": [
+        12.0
+      ],
+      "units": "months",
+      "source_section": "discussion",
+      "source_offset": 1369,
+      "sentence": "Although a potent P2Y 12 inhibitor\u2010based DAPT is currently recommended for up to 12 months in patients with ACS treated with DES, the increased bleeding risks because of prolonged DAPT and the related worse long\u2010term outcomes raise the concerns about the use of DAPT after DES implantation for ACS.",
+      "context_window": "12 inhibitor\u2010based DAPT is currently recommended for up to 12 months in patients with ACS treated with DES, the increased bleedi",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-1969",
+      "claim_type": "unit_value",
+      "raw_text": "70 years",
+      "numeric_values": [
+        70.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 1969,
+      "sentence": "12 , 13 , 14 , 15 , 16 , 17 A recent randomized trial comparing the use of clopidogrel versus a potent P2Y 12 inhibitor in patients aged \u226570 years with non-ST\u2010segment-elevation ACS revealed that clopidogrel leads to fewer bleeding events without an increase in net clinical outcome compared with ticagrelor, indicating that elderly patients with ACS are particularly at great risk for bleeding.",
+      "context_window": "pidogrel versus a potent P2Y 12 inhibitor in patients aged \u226570 years with non-ST\u2010segment-elevation ACS revealed that clopidogrel",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-2416",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2416,
+      "sentence": "15 In accordance with the previous studies in patients with ACS, 16 the current study demonstrated that the overall rates of bleeding and ischemic events were high in elderly patients aged \u226564 years and twice those in patients aged <64 years.",
+      "context_window": "ing and ischemic events were high in elderly patients aged \u226564 years and twice those in patients aged <64 years. In these elderl",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-2459",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 2459,
+      "sentence": "15 In accordance with the previous studies in patients with ACS, 16 the current study demonstrated that the overall rates of bleeding and ischemic events were high in elderly patients aged \u226564 years and twice those in patients aged <64 years.",
+      "context_window": "y patients aged \u226564 years and twice those in patients aged <64 years. In these elderly patients, although new DAPT strategies, s",
+      "claim_role": "background",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-4854",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4854,
+      "sentence": "The effect of ticagrelor monotherapy on net clinical benefit tended to increase with patient age, and it was more pronounced in elderly patients aged \u226564 years.",
+      "context_window": "t age, and it was more pronounced in elderly patients aged \u226564 years. In particular, among the patients aged \u226564 years, the tica",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-4904",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 4904,
+      "sentence": "In particular, among the patients aged \u226564 years, the ticagrelor monotherapy after 3\u2010month DAPT group showed lower occurrence of MACCE as well as bleeding events than the ticagrelor\u2010based 12\u2010month DAPT group.",
+      "context_window": "nts aged \u226564 years. In particular, among the patients aged \u226564 years, the ticagrelor monotherapy after 3\u2010month DAPT group showed",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "decrease",
+      "binding_confidence": "partial"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-7269",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7269,
+      "sentence": "Third, the TICO trial excluded patients aged >80 years.",
+      "context_window": "e conclusion. Third, the TICO trial excluded patients aged >80 years. Elderly patients in this study included only those aged 64",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-7341",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7341,
+      "sentence": "Elderly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged >80 years) should made with caution.",
+      "context_window": "derly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-7410",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "discussion",
+      "source_offset": 7410,
+      "sentence": "Elderly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged >80 years) should made with caution.",
+      "context_window": "generalization of findings to very elderly patients (aged >80 years) should made with caution. Fourth, some patients with high",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-605",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 605,
+      "sentence": "Third, the TICO trial excluded patients aged >80 years.",
+      "context_window": "e conclusion. Third, the TICO trial excluded patients aged >80 years. Elderly patients in this study included only those aged 64",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-677",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 677,
+      "sentence": "Elderly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged >80 years) should made with caution.",
+      "context_window": "derly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-746",
+      "claim_type": "unit_value",
+      "raw_text": "80 years",
+      "numeric_values": [
+        80.0
+      ],
+      "units": "years",
+      "source_section": "limitations",
+      "source_offset": 746,
+      "sentence": "Elderly patients in this study included only those aged 64 to 80 years; generalization of findings to very elderly patients (aged >80 years) should made with caution.",
+      "context_window": "generalization of findings to very elderly patients (aged >80 years) should made with caution. Fourth, some patients with high",
+      "claim_role": "population",
+      "endpoint": "",
+      "arm": "",
+      "direction": "",
+      "binding_confidence": "none"
+    },
+    {
+      "claim_id": "PMC9075234_age_dependent_effect_of_ticagrelor_monotherapy_versus_ticagr-u-241",
+      "claim_type": "unit_value",
+      "raw_text": "64 years",
+      "numeric_values": [
+        64.0
+      ],
+      "units": "years",
+      "source_section": "conclusion",
+      "source_offset": 241,
+      "sentence": "The age\u2010dependent increase in the benefit of ticagrelor monotherapy after 3\u2010month DAPT versus ticagrelor\u2010based 12\u2010month DAPT was observed, and the beneficial treatment effect of this strategy tends to be remarkable in elderly patients aged \u226564 years.",
+      "context_window": "s strategy tends to be remarkable in elderly patients aged \u226564 years. These results suggest that ticagrelor monotherapy after sh",
+      "claim_role": "effect",
+      "endpoint": "",
+      "arm": "",
+      "direction": "increase",
+      "binding_confidence": "partial"
+    }
+  ]
+}
