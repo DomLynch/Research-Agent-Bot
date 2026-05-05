@@ -194,6 +194,7 @@ def test_render_md_surfaces_corpus_funnel():
             "classified_drop": 1500,
             "extractable_core": 2200,
             "extractable_background": 1300,
+            "extractable_adjacent": 0,
         },
     )
     md = dash.render_md([s])
@@ -201,6 +202,7 @@ def test_render_md_surfaces_corpus_funnel():
     assert "5000" in md
     assert "3500" in md
     assert "2200" in md and "1300" in md  # core / background
+    assert "core / background / adjacent" in md
 
 
 def test_render_md_omits_funnel_when_no_data():

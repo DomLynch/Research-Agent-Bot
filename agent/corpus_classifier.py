@@ -8,7 +8,7 @@ citation pool it belongs to:
   core_on_thesis        — primary clinical evidence on the topic
                           (RCT / cohort / meta-analysis directly
                           testing the active intervention)
-  background_mechanism  — mechanism / preclinical citation; kept for
+  background_mechanism  — on-topic mechanism / preclinical citation; kept for
                           background, not as primary evidence
   adjacent_clinical     — clinical but adjacent (e.g. ezetimibe in a
                           statin synthesis); cited cautiously
@@ -24,6 +24,7 @@ a paper was excluded or downweighted.
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
@@ -66,7 +67,9 @@ _MECHANISM_SIGNALS: tuple[str, ...] = (
     "transcriptional", "protein interaction", "receptor binding",
     "knockout mouse", "transgenic mouse", "pharmacokinetics",
     "pharmacodynamics", "wistar rat", "wistar rats",
-    "drosophila", "c. elegans", "yeast",
+    " mouse ", " mice ", " rat ", " rats ", "animal model",
+    "animal models", "preclinical", "drosophila", "c. elegans",
+    "yeast",
 )
 
 # Hard-reject signals — irrelevant species or topics.
@@ -75,6 +78,11 @@ _REJECT_SIGNALS: tuple[str, ...] = (
     "burn wound", "cerebral cavernous malformation",
     "atrial fibrillation", "cardioversion", "stroke patients",
     "neurovascular unit", "blood-brain barrier",
+)
+
+_DEVICE_ONLY_CONTEXT: tuple[str, ...] = (
+    "eluting stent", "drug-eluting stent", "coated stent",
+    "bioresorbable polymer", "coronary stent",
 )
 
 
@@ -94,30 +102,70 @@ def _gather_text(paper: dict[str, Any]) -> str:
     return f" {title} {abstract} ".lower()
 
 
+def _gather_title(paper: dict[str, Any]) -> str:
+    return f" {paper.get('title') or ''} ".lower()
+
+
 def _aliases_match(text: str, aliases: tuple[str, ...]) -> bool:
     """True if any topic alias appears in the title/abstract text."""
-    return any(a in text for a in aliases)
+    for alias in aliases:
+        a = alias.strip().lower()
+        if not a:
+            continue
+        variants = [a]
+        if len(a) >= 4 and a[-1].isalnum() and not a.endswith("s"):
+            variants.append(f"{a}s")
+        for variant in variants:
+            pattern = rf"(?<![a-z0-9]){re.escape(variant)}(?![a-z0-9])"
+            for match in re.finditer(pattern, text):
+                lo = max(0, match.start() - 40)
+                hi = min(len(text), match.end() + 60)
+                context = text[lo:hi]
+                if any(signal in context for signal in _DEVICE_ONLY_CONTEXT):
+                    continue
+                if f"target of {variant}" in context:
+                    continue
+                return True
+    return False
 
 
 def _signal_hits(text: str, signals: tuple[str, ...]) -> tuple[str, ...]:
     return tuple(s for s in signals if s in text)
 
 
+def _exclude_hits(text: str, exclude_terms: tuple[str, ...]) -> tuple[str, ...]:
+    hits: list[str] = []
+    for term in exclude_terms:
+        t = term.strip().lower()
+        if not t:
+            continue
+        variants = {t, t.replace(" only", "")}
+        for variant in variants:
+            if variant and variant in text:
+                hits.append(t)
+                break
+    return tuple(hits)
+
+
 def classify_paper(
     paper: dict[str, Any], *, topic_aliases: tuple[str, ...],
     expected_slots: tuple[str, ...] = (),
     evidence_tier: str = "", directness: str = "",
+    exclude_terms: tuple[str, ...] = (),
 ) -> CorpusClassification:
     """Return a 5-class classification + score + reason. Inputs are
     the parsed paper_sections dict + topic-pack metadata. Pure
     function; no LLM, no IO."""
     text = _gather_text(paper)
+    title_text = _gather_title(paper)
     paper_id = paper.get("paper_id") or paper.get("doi") or "_"
 
     reject_hits = _signal_hits(text, _REJECT_SIGNALS)
     on_topic = _aliases_match(text, topic_aliases)
+    title_on_topic = _aliases_match(title_text, topic_aliases)
     core_hits = _signal_hits(text, _CORE_CLINICAL_SIGNALS)
     mech_hits = _signal_hits(text, _MECHANISM_SIGNALS)
+    exclusion_hits = _exclude_hits(text, exclude_terms)
 
     # Hard reject: irrelevant species/topic AND no topic alias hit
     if reject_hits and not on_topic:
@@ -131,17 +179,50 @@ def classify_paper(
             signals=reject_hits,
         )
 
-    # Off-thesis: not on topic AND not a generic mechanism paper
-    if not on_topic and not mech_hits:
+    # Off-thesis: no topic fit. Mechanism markers alone are not
+    # enough; otherwise unrelated mechanistic papers pollute every
+    # topic's background pool.
+    if not on_topic:
         return CorpusClassification(
             paper_id=paper_id, classification="off_thesis",
             score=_CLASS_BASE_SCORE["off_thesis"],
-            reason="No topic alias hit and no mechanism signals.",
-            signals=(),
+            reason="No topic alias hit; excluded from extraction.",
+            signals=mech_hits,
+        )
+
+    if not title_on_topic:
+        return CorpusClassification(
+            paper_id=paper_id, classification="off_thesis",
+            score=_CLASS_BASE_SCORE["off_thesis"],
+            reason=(
+                "Topic alias appears outside title; excluded from "
+                "extraction."
+            ),
+            signals=core_hits or mech_hits,
         )
 
     # Core clinical evidence: on topic + core clinical signal
     if on_topic and core_hits:
+        if exclusion_hits:
+            return CorpusClassification(
+                paper_id=paper_id, classification="adjacent_clinical",
+                score=_CLASS_BASE_SCORE["adjacent_clinical"],
+                reason=(
+                    "Topic hit has exclusion context; kept adjacent, "
+                    "not core."
+                ),
+                signals=exclusion_hits,
+            )
+        if mech_hits:
+            return CorpusClassification(
+                paper_id=paper_id, classification="background_mechanism",
+                score=_CLASS_BASE_SCORE["background_mechanism"],
+                reason=(
+                    f"On-topic mechanism / preclinical: "
+                    f"{', '.join(mech_hits[:3])}"
+                ),
+                signals=mech_hits,
+            )
         score = _CLASS_BASE_SCORE["core_on_thesis"]
         score = min(100, score)
         return CorpusClassification(
@@ -154,8 +235,8 @@ def classify_paper(
             signals=core_hits,
         )
 
-    # Background mechanism: on topic OR off-topic mechanism markers
-    if mech_hits:
+    # Background mechanism: on topic + mechanism markers
+    if on_topic and mech_hits:
         return CorpusClassification(
             paper_id=paper_id, classification="background_mechanism",
             score=_CLASS_BASE_SCORE["background_mechanism"],

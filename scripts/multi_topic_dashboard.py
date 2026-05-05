@@ -220,7 +220,8 @@ def summarize_topic(topic: str, runs: list[Path]) -> TopicSummary:
 
     # Slice 6 step 4d: read the calibrated-pipeline corpus manifest
     # if it exists. Funnel = {retrieved, classified_keep / drop,
-    # extractable_core / background, class_<each>, cap_triggered}.
+    # extractable_core / background / adjacent, class_<each>,
+    # cap_triggered}.
     corpus_funnel: dict[str, int] = {}
     funnel_path = (
         REPO / "docs" / "quality-reference" / topic
@@ -354,11 +355,12 @@ def render_md(summaries: list[TopicSummary]) -> str:
         if s.corpus_funnel:
             lines.append(
                 f"- **Corpus funnel** "
-                f"(retrieved → keep → core / background): "
+                f"(retrieved → keep → core / background / adjacent): "
                 f"{s.corpus_funnel.get('retrieved', 0)} → "
                 f"{s.corpus_funnel.get('classified_keep', 0)} → "
                 f"{s.corpus_funnel.get('extractable_core', 0)} / "
-                f"{s.corpus_funnel.get('extractable_background', 0)}"
+                f"{s.corpus_funnel.get('extractable_background', 0)} / "
+                f"{s.corpus_funnel.get('extractable_adjacent', 0)}"
             )
         lines.append("")
     lines += [

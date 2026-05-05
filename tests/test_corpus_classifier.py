@@ -139,7 +139,7 @@ def test_classify_corpus_returns_one_entry_per_paper():
         _paper(title="A", paper_id="A"),
         _paper(title="Statin RCT mortality", paper_id="B",
                abstract="randomized controlled trial all-cause mortality"),
-        _paper(title="C", paper_id="C", abstract="in vitro kinase"),
+        _paper(title="Statin kinase", paper_id="C", abstract="in vitro kinase"),
     ]
     out = classify_corpus(papers, topic_aliases=("statin",))
     assert len(out) == 3
@@ -165,6 +165,83 @@ def test_classifier_works_for_any_topic_alias():
     assert c1.classification == "core_on_thesis"
     # mortality is in CORE_CLINICAL_SIGNALS but no alias → off_thesis
     assert c2.classification == "off_thesis"
+
+
+def test_alias_match_is_case_normalized_and_boundary_scoped():
+    """Short aliases must not match inside unrelated words."""
+    p = _paper(
+        title="Age-dependent effect of ticagrelor monotherapy",
+        abstract="A randomized controlled trial of cardiovascular events.",
+    )
+    c = classify_paper(p, topic_aliases=("RAP", "mTOR inhibitor"))
+    assert c.classification == "off_thesis"
+
+
+def test_alias_match_accepts_phrase_with_punctuation():
+    p = _paper(
+        title="Urolithin A improves mitochondrial biomarkers",
+        abstract="A randomized controlled trial in older adults.",
+    )
+    c = classify_paper(p, topic_aliases=("urolithin-a", "urolithin A"))
+    assert c.classification == "core_on_thesis"
+
+
+def test_alias_match_ignores_device_only_context():
+    p = _paper(
+        title="Ticagrelor after sirolimus-eluting stent implantation",
+        abstract="A randomized controlled trial of cardiovascular events.",
+    )
+    c = classify_paper(p, topic_aliases=("sirolimus",))
+    assert c.classification == "off_thesis"
+
+
+def test_off_topic_mechanism_does_not_enter_background_pool():
+    p = _paper(
+        title="Unrelated diabetic swine stent biology",
+        abstract="Expression of inflammatory signaling in animal models.",
+    )
+    c = classify_paper(p, topic_aliases=("everolimus",))
+    assert c.classification == "off_thesis"
+
+
+def test_core_requires_topic_alias_in_title():
+    p = _paper(
+        title="Clinical outcomes of a different intervention",
+        abstract="This randomized controlled trial review mentions sirolimus.",
+    )
+    c = classify_paper(p, topic_aliases=("sirolimus",))
+    assert c.classification == "off_thesis"
+
+
+def test_alias_match_ignores_target_of_eponym_context():
+    p = _paper(
+        title="Branched-chain amino acids signal through mammalian target of rapamycin",
+        abstract="A randomized controlled trial is not about the named treatment.",
+    )
+    c = classify_paper(p, topic_aliases=("rapamycin",))
+    assert c.classification == "off_thesis"
+
+
+def test_animal_core_signal_is_background_not_core():
+    p = _paper(
+        title="Rapamycin slows aging in mice",
+        abstract="A meta-analysis of animal models reported lifespan outcomes.",
+    )
+    c = classify_paper(p, topic_aliases=("rapamycin",))
+    assert c.classification == "background_mechanism"
+
+
+def test_exclusion_terms_downgrade_wrong_indication_from_core():
+    p = _paper(
+        title="Sirolimus in older kidney transplant recipients",
+        abstract="A randomized controlled trial evaluated transplant outcomes.",
+    )
+    c = classify_paper(
+        p,
+        topic_aliases=("sirolimus",),
+        exclude_terms=("transplant only",),
+    )
+    assert c.classification == "adjacent_clinical"
 
 
 def test_classifier_reason_is_human_readable():

@@ -119,7 +119,8 @@ def main(argv: list[str] | None = None) -> int:
         f"[corpus-pipeline] retrieved={f.get('retrieved',0)} | "
         f"keep={f.get('classified_keep',0)} | "
         f"core={f.get('extractable_core',0)} | "
-        f"bg={f.get('extractable_background',0)}",
+        f"bg={f.get('extractable_background',0)} | "
+        f"adj={f.get('extractable_adjacent',0)}",
         file=sys.stderr,
     )
     print(f"  json: {json_path}", file=sys.stderr)

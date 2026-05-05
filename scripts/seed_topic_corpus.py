@@ -51,6 +51,32 @@ from agent.corpus_pipeline import (  # noqa: E402
 )
 
 
+def _manifest_entry_to_dict(entry) -> dict[str, Any]:
+    return {
+        "paper_id": entry.classification.paper_id,
+        "doi": entry.hit.doi,
+        "pmid": entry.hit.pmid,
+        "title": entry.hit.title[:240],
+        "year": entry.hit.year,
+        "n_sources": entry.hit.n_sources,
+        "sources": list(entry.hit.sources),
+        "classification": entry.classification.classification,
+        "score": entry.classification.score,
+        "reason": entry.classification.reason,
+        "pool": entry.pool,
+        "keep_for_extraction": entry.keep_for_extraction,
+    }
+
+
+def _manifest_to_dict(manifest) -> dict[str, Any]:
+    return {
+        "topic": manifest.topic,
+        "funnel": dict(manifest.funnel),
+        "per_wave_stats": [dict(s) for s in manifest.per_wave_stats],
+        "entries": [_manifest_entry_to_dict(e) for e in manifest.entries],
+    }
+
+
 def _topic_pack_path(topic: str) -> Path:
     return REPO / "topic_packs" / f"{topic}.toml"
 
@@ -58,6 +84,16 @@ def _topic_pack_path(topic: str) -> Path:
 def _corpus_paths(topic: str) -> tuple[Path, Path]:
     base = REPO / "docs" / "quality-reference" / topic
     return base / "quant_claims", base / "parsed"
+
+
+def _paper_id_from_parsed_path(path: Path) -> str:
+    return path.stem.replace(".paper_sections", "")
+
+
+def _pmcid_from_parsed_path(path: Path) -> str | None:
+    paper_id = _paper_id_from_parsed_path(path)
+    prefix = paper_id.split("_", 1)[0]
+    return prefix if prefix.startswith("PMC") else None
 
 
 async def _resolve_pmcid(
@@ -135,8 +171,12 @@ async def _do_seed(
         report = await run_waves(pack.retrieval, params=params)
         manifest = classify_and_filter(
             report, topic=topic,
-            topic_aliases=tuple(pack.aliases_display),
+            topic_aliases=tuple(pack.active_arm_synonyms)
+            or tuple(pack.aliases_display),
             expected_slots=pack.expected_evidence_slots,
+            exclude_terms=(
+                pack.retrieval.exclude_terms if pack.retrieval else ()
+            ),
         )
         # Write the corpus manifest for the dashboard / funnel
         manifest_path = (
@@ -144,14 +184,7 @@ async def _do_seed(
             / "corpus_manifest.json"
         )
         manifest_path.parent.mkdir(parents=True, exist_ok=True)
-        manifest_path.write_text(json.dumps({
-            "topic": manifest.topic,
-            "funnel": dict(manifest.funnel),
-            "per_wave_stats": [
-                dict(s) for s in manifest.per_wave_stats
-            ],
-            "n_kept": len(manifest.kept()),
-        }, indent=2))
+        manifest_path.write_text(json.dumps(_manifest_to_dict(manifest), indent=2))
         (REPO / "docs/quality-reference" / topic
          / "corpus_manifest.md").write_text(
             format_funnel_md(manifest),
@@ -161,15 +194,17 @@ async def _do_seed(
             f"  → retrieved={manifest.funnel.get('retrieved', 0)} "
             f"keep={len(kept)} "
             f"core={manifest.funnel.get('extractable_core', 0)} "
-            f"bg={manifest.funnel.get('extractable_background', 0)}",
+            f"bg={manifest.funnel.get('extractable_background', 0)} "
+            f"adj={manifest.funnel.get('extractable_adjacent', 0)}",
             file=sys.stderr,
         )
-        # Truncate to user-supplied --limit (caller can still bound
-        # extraction CPU). 200K+ extraction is impractical without
-        # parallelism that's not built yet.
-        selected = [e.hit for e in kept][:limit]
+        active_pools = {"core", "adjacent"}
+        selected = [
+            e.hit for e in manifest.entries
+            if e.keep_for_extraction and e.pool in active_pools
+        ][:limit]
         print(
-            f"=== Selecting top {len(selected)} kept hits for "
+            f"=== Selecting top {len(selected)} core/adjacent hits for "
             f"fetch (limit={limit}) ===",
             file=sys.stderr,
         )
@@ -282,10 +317,17 @@ async def _do_seed(
         file=sys.stderr,
     )
     n_extracted = 0
-    for pf in parsed_dir.glob("*.paper_sections.json"):
+    selected_pmcids = set(pmcids)
+    active_paper_ids: list[str] = []
+    parsed_files = [
+        pf for pf in parsed_dir.glob("*.paper_sections.json")
+        if _pmcid_from_parsed_path(pf) in selected_pmcids
+    ]
+    for pf in parsed_files:
+        paper_id = _paper_id_from_parsed_path(pf)
+        active_paper_ids.append(paper_id)
         target = quant_dir / (
-            pf.stem.replace(".paper_sections", "")
-            + ".quant_claims.json"
+            paper_id + ".quant_claims.json"
         )
         if target.exists():
             n_extracted += 1
@@ -325,6 +367,10 @@ async def _do_seed(
         "n_selected_for_fetch": len(selected),
         "n_pmcid_resolved": len(pmcids),
         "n_extracted": n_extracted,
+        "active_pools": ["core", "adjacent"]
+        if pack.retrieval is not None else ["legacy"],
+        "active_pmcids": sorted(selected_pmcids),
+        "active_paper_ids": sorted(set(active_paper_ids)),
         "failures": failures,
         "papers_resolved": paper_id_map,
     }

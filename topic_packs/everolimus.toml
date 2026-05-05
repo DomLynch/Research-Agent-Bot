@@ -75,7 +75,6 @@ active_arm_synonyms = [
   "Afinitor",
   "Zortress",
   "RTB101",
-  "mTOR inhibitor",
 ]
 
 placebo_arm_synonyms = [
@@ -116,6 +115,8 @@ evidence_types = [
 exclude_terms  = [
   "oncology only", "renal cell carcinoma only", "breast cancer only",
   "transplant rejection only", "allograft only", "pediatric only",
+  "transplant", "graft", "GVHD", "leukemia", "myeloma",
+  "hepatocellular carcinoma", "tuberous sclerosis",
   "in vitro only", "animal only",
 ]
 date_from      = 2010

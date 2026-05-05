@@ -153,3 +153,37 @@ def test_build_receipts_from_quant_claims_uses_topic_arg(
         f"receipt.topic should be 'rapamycin', got "
         f"{receipts[0].topic!r}"
     )
+
+
+def test_build_receipts_filters_to_active_extract_report(
+    monkeypatch, tmp_path,
+) -> None:
+    """When seed_topic_corpus writes active_paper_ids, synthesis must
+    ignore stale quant_claims left in the topic directory."""
+    import json as _json
+    qdir = tmp_path / "quant_claims"
+    qdir.mkdir()
+    pdir = tmp_path / "parsed"
+    pdir.mkdir()
+    for pid in ("active_paper", "stale_paper"):
+        (qdir / f"{pid}.quant_claims.json").write_text(_json.dumps({
+            "paper_id": pid,
+            "claims": [{
+                "binding_confidence": "high",
+                "claim_type": "p_value",
+                "raw_text": "p < 0.001",
+                "endpoint": "muscle_function",
+                "arm": "topic",
+                "direction": "positive",
+            }],
+        }))
+        (pdir / f"{pid}.paper_sections.json").write_text(_json.dumps({
+            "paper_id": pid, "year": 2024, "title": pid,
+        }))
+    (tmp_path / "_extract_report.json").write_text(_json.dumps({
+        "active_paper_ids": ["active_paper"],
+    }))
+    monkeypatch.setattr(orch, "QUANT_DIR", qdir)
+    monkeypatch.setattr(orch, "PARSED_DIR", pdir)
+    receipts = orch.build_receipts_from_quant_claims(topic="test_topic")
+    assert [r.receipt_id for r in receipts] == ["active_paper"]

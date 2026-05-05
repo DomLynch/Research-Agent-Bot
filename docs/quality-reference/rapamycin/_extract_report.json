@@ -1,37 +1,366 @@
 {
-  "attempted": 15,
-  "pmcid_resolved": 8,
-  "fetched": 8,
-  "extracted": 8,
+  "topic": "rapamycin",
+  "retrieval_mode": "calibrated",
+  "n_queries": 6,
+  "n_unique_candidates": 41,
+  "n_selected_for_fetch": 41,
+  "n_pmcid_resolved": 17,
+  "n_extracted": 14,
+  "active_pools": [
+    "core",
+    "adjacent"
+  ],
+  "active_pmcids": [
+    "PMC12074816",
+    "PMC12226543",
+    "PMC3181168",
+    "PMC3191182",
+    "PMC3643762",
+    "PMC3796212",
+    "PMC4906330",
+    "PMC5216691",
+    "PMC5385881",
+    "PMC5595695",
+    "PMC5723685",
+    "PMC5752566",
+    "PMC5869166",
+    "PMC6343718",
+    "PMC6814615",
+    "PMC9889681",
+    "PMC9983852"
+  ],
+  "active_paper_ids": [
+    "PMC12074816_influence_of_rapamycin_on_safety_and_healthspan_metrics_afte",
+    "PMC12226543_rapamycin_for_longevity_the_pros_the_cons_and_future_perspec",
+    "PMC3181168_progeria_rapamycin_and_normal_aging_recent_breakthrough",
+    "PMC3191182_elimination_of_proliferating_cells_unmasks_the_shift_from_se",
+    "PMC3796212_rapamycin_extends_life_and_health_span_because_it_slows_agin",
+    "PMC5216691_rapamycin_in_aging_and_disease_maximizing_efficacy_while_min",
+    "PMC5385881_progressive_slowdown_prevention_of_cellular_senescence_by_cd",
+    "PMC5595695_anti_aging_pharmacology_in_cutaneous_wound_healing_effects_o",
+    "PMC5723685_towards_natural_mimetics_of_metformin_and_rapamycin",
+    "PMC5752566_while_reinforcing_cell_cycle_arrest_rapamycin_and_torins_sup",
+    "PMC6343718_rapamycin_proliferation_and_geroconversion_to_senescence",
+    "PMC6814615_rapamycin_for_longevity_opinion_article",
+    "PMC9889681_effects_of_sirolimus_treatment_on_patients_with_thalassemia_",
+    "PMC9983852_rapamycin_suppresses_inflammation_and_increases_the_interact"
+  ],
   "failures": [
     {
-      "paper_id": "NCT02874924_2018",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "Rapalog Pharmacology (RAP PAC) Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "NCT05237687_2027",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "Resistance Training and Rapamycin to Enhance Bone Formation in Postmenopausal Wo",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "NCT01649960_2015",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "NCT04629495_2026",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "Impacts of Mechanistic Target of Rapamycin (mTOR) Inhibition on Aged Human Muscl",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "NCT04994561_2023",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "Rapamycin - Effects on Alzheimer's and Cognitive Health",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "NCT04742777_2025",
-      "reason": "no DOI/PMID (trial-only)"
+      "title": "Low Dose Sirolimus in People With Post-Acute Sequelae of COVID-19 (PASC) Long CO",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     },
     {
-      "paper_id": "Metformin_2026_10",
-      "reason": "no PMCID (closed-access)"
+      "title": "Effect of Rapamycin in Ovarian Aging",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and efficacy of rapamycin on healthspan metrics after one year: PEARL Tri",
+      "doi": "10.1101/2024.08.21.24312372",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The bioavailability of compounded and generic rapamycin in normative aging indiv",
+      "doi": "10.1101/2024.08.12.24311432",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Participatory Evaluation (of) Aging (With) Rapamycin (for) Longevity Study",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "The Bioavailability of Compounded and Generic Rapamycin in Normative Aging Indiv",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Effect of Rapamycin to Improve Cardiac Function in Frail Older Adults",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "VIAging Deceleration Trial Using Metformin, Dasatinib, Rapamycin and Nutritional",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Cognition, Age, and RaPamycin Effectiveness - DownregulatIon of thE mTor Pathway",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "CD9 monoclonal antibody-conjugated PEGylated liposomes for targeted delivery of ",
+      "doi": "10.1088/1361-6528/aa57b3",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Safety and Efficacy of Sirolimus for HIV Reservoir Reduction in Individuals on S",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Exercise and Low-Dose Rapamycin in Older Adults With CAD:Cardiac Rehabilitation ",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Centenarian lamins: rapamycin targets in longevity",
+      "doi": "10.1242/jcs.133983",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sirolimus for Advanced Age-Related Macular Degeneration",
+      "doi": null,
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin Reverses Cellular Phenotypes and Enhances Mutant Protein Clearance in ",
+      "doi": "10.1126/scitranslmed.3002346",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Sirolimus and Kidney Growth in Autosomal Dominant Polycystic Kidney Disease",
+      "doi": "10.1056/nejmoa0907419",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Life span extension by resveratrol, rapamycin, and metformin: The promise of die",
+      "doi": "10.1002/biof.127",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Rapamycin decelerates cellular senescence",
+      "doi": "10.4161/cc.8.12.8606",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
+    },
+    {
+      "title": "Synergistic effect of mTOR inhibitor rapamycin and fluorouracil in inducing apop",
+      "doi": "10.4161/cbt.7.3.5366",
+      "pmid": null,
+      "reason": "no PMCID (closed-access or unindexed)"
     }
   ],
-  "papers": []
+  "papers_resolved": {
+    "PMC12074816": {
+      "title": "Influence of rapamycin on safety and healthspan metrics after one year: PEARL trial results.",
+      "doi": "10.18632/aging.206235",
+      "pmid": "40188830",
+      "year": 2025,
+      "venue": "Aging (Albany NY)",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC12226543": {
+      "title": "Rapamycin for longevity: the pros, the cons, and future perspectives",
+      "doi": "10.3389/fragi.2025.1628187",
+      "pmid": null,
+      "year": 2025,
+      "venue": "Frontiers in Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC9889681": {
+      "title": "Effects of Sirolimus treatment on patients with \u03b2-Thalassemia: Lymphocyte immunophenotype and biological activity of memory CD4+ and CD8+ T cells.",
+      "doi": "10.1111/jcmm.17655",
+      "pmid": "36625233",
+      "year": 2023,
+      "venue": "J Cell Mol Med",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC9983852": {
+      "title": "Rapamycin suppresses inflammation and increases the interaction between p65 and I\u03baB\u03b1 in rapamycin-induced fatty livers.",
+      "doi": "10.1371/journal.pone.0281888",
+      "pmid": null,
+      "year": 2023,
+      "venue": "PLoS ONE",
+      "sources": [
+        "doaj"
+      ]
+    },
+    "PMC6814615": {
+      "title": "Rapamycin for longevity: opinion article",
+      "doi": "10.18632/aging.102355",
+      "pmid": null,
+      "year": 2019,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5869166": {
+      "title": "A randomized control trial to establish the feasibility and safety of rapamycin treatment in an older human cohort: Immunological, physical performance, and cognitive effects.",
+      "doi": "10.1016/j.exger.2017.12.026",
+      "pmid": "29408453",
+      "year": 2018,
+      "venue": "Exp Gerontol",
+      "sources": [
+        "pubmed"
+      ]
+    },
+    "PMC6343718": {
+      "title": "Rapamycin, proliferation and geroconversion to senescence",
+      "doi": "10.1080/15384101.2018.1554781",
+      "pmid": null,
+      "year": 2018,
+      "venue": "Cell Cycle",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5595695": {
+      "title": "Anti\u2010aging pharmacology in cutaneous wound healing: effects of metformin, resveratrol, and rapamycin by local application",
+      "doi": "10.1111/acel.12635",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Aging Cell",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5723685": {
+      "title": "Towards natural mimetics of metformin and rapamycin",
+      "doi": "10.18632/aging.101319",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5385881": {
+      "title": "Progressive slowdown/prevention of cellular senescence by CD9-targeted delivery of rapamycin using lactose-wrapped calcium carbonate nanoparticles",
+      "doi": "10.1038/srep43299",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Scientific Reports",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5752566": {
+      "title": "While reinforcing cell cycle arrest, rapamycin and Torins suppress senescence in UVA-irradiated fibroblasts",
+      "doi": "10.18632/oncotarget.17827",
+      "pmid": null,
+      "year": 2017,
+      "venue": "Oncotarget",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC4906330": {
+      "title": "Rapamycin: An InhibiTOR of Aging Emerges From the Soil of Easter Island",
+      "doi": "10.1093/gerona/glw090",
+      "pmid": null,
+      "year": 2016,
+      "venue": "The Journals of Gerontology Series A",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC5216691": {
+      "title": "Rapamycin in aging and disease: maximizing efficacy while minimizing side effects",
+      "doi": "10.18632/oncotarget.10381",
+      "pmid": null,
+      "year": 2016,
+      "venue": "Oncotarget",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3796212": {
+      "title": "Rapamycin extends life- and health span because it slows aging",
+      "doi": "10.18632/aging.100591",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3191182": {
+      "title": "Elimination of Proliferating Cells Unmasks the Shift from Senescence to Quiescence Caused by Rapamycin",
+      "doi": "10.1371/journal.pone.0026126",
+      "pmid": null,
+      "year": 2011,
+      "venue": "PLoS ONE",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3181168": {
+      "title": "Progeria, rapamycin and normal aging: recent breakthrough",
+      "doi": "10.18632/aging.100352",
+      "pmid": null,
+      "year": 2011,
+      "venue": "Aging",
+      "sources": [
+        "openalex"
+      ]
+    },
+    "PMC3643762": {
+      "title": "Murine dendritic cell rapamycin-resistant and rictor-independent mTOR controls IL-10, B7-H1, and regulatory T-cell induction",
+      "doi": "10.1182/blood-2012-08-448290",
+      "pmid": null,
+      "year": 2013,
+      "venue": "Blood",
+      "sources": [
+        "openalex"
+      ]
+    }
+  }
 }

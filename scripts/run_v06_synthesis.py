@@ -519,6 +519,18 @@ def _load_paper_meta_by_id() -> dict[str, dict]:
     return paper_meta_by_id
 
 
+def _load_active_paper_ids() -> set[str] | None:
+    report_path = QUANT_DIR.parent / "_extract_report.json"
+    if not report_path.exists():
+        return None
+    try:
+        report = json.loads(report_path.read_text())
+    except json.JSONDecodeError:
+        return None
+    ids = report.get("active_paper_ids") or []
+    return {str(x) for x in ids if str(x).strip()} or None
+
+
 def build_receipts_from_quant_claims(
     topic: str,
 ) -> list[ReceiptSummary]:
@@ -531,12 +543,15 @@ def build_receipts_from_quant_claims(
     has already been set by `_set_topic(topic)` upstream."""
     receipts: list[ReceiptSummary] = []
     paper_meta_by_id = _load_paper_meta_by_id()
+    active_paper_ids = _load_active_paper_ids()
 
     # Group high-confidence claims by paper_id
     by_paper: dict[str, list[dict]] = defaultdict(list)
     for path in sorted(QUANT_DIR.glob("*.quant_claims.json")):
         d = json.loads(path.read_text())
         pid = d.get("paper_id") or path.stem.replace(".quant_claims", "")
+        if active_paper_ids is not None and pid not in active_paper_ids:
+            continue
         for c in d.get("claims", []):
             if c.get("binding_confidence") == "high":
                 by_paper[pid].append(c)

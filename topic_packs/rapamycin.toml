@@ -73,7 +73,6 @@ active_arm_synonyms = [
   "sirolimus",
   "Rapamune",
   "RAP",
-  "RAD001",
 ]
 
 placebo_arm_synonyms = [
@@ -124,6 +123,9 @@ evidence_types = [
 exclude_terms  = [
   "transplant rejection", "allograft survival", "oncology only",
   "kidney transplant only", "tumor regression", "neoplasm therapy",
+  "transplant", "graft", "GVHD", "leukemia", "myeloma",
+  "hepatocellular carcinoma", "lymphatic malformation",
+  "tuberous sclerosis", "vitiligo",
   "in vitro only", "yeast", "drosophila", "c. elegans",
   "pediatric only",
 ]

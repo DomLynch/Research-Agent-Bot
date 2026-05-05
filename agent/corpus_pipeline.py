@@ -33,7 +33,7 @@ from agent.sources.aggregator import AggregatedHit
 from agent.topic_pack import TopicPack
 from agent.wave_retrieval import WaveReport, run_waves
 
-# Classes that survive the gate (extracted; enter synthesis).
+# Classes that survive the gate.
 _KEEP_CLASSES: frozenset[str] = frozenset((
     "core_on_thesis", "background_mechanism", "adjacent_clinical",
 ))
@@ -94,6 +94,7 @@ def classify_and_filter(
     report: WaveReport, *, topic: str,
     topic_aliases: tuple[str, ...],
     expected_slots: tuple[str, ...] = (),
+    exclude_terms: tuple[str, ...] = (),
 ) -> CorpusManifest:
     """Classify every hit from a WaveReport on title + abstract.
     Drop reject + off_thesis from the extraction pool. Returns a
@@ -108,15 +109,17 @@ def classify_and_filter(
             paper_dict,
             topic_aliases=topic_aliases,
             expected_slots=expected_slots,
+            exclude_terms=exclude_terms,
         )
         keep = cls.classification in _KEEP_CLASSES
-        # Pool from the wave report (core / background) — only
-        # applies to kept entries; dropped entries don't get a pool.
-        pool = report.pool_by_key.get(
-            _key_from_aggregated(hit), "core",
-        )
-        if cls.classification == "background_mechanism":
+        if cls.classification == "core_on_thesis":
+            pool = "core"
+        elif cls.classification == "background_mechanism":
             pool = "background"
+        elif cls.classification == "adjacent_clinical":
+            pool = "adjacent"
+        else:
+            pool = report.pool_by_key.get(_key_from_aggregated(hit), "core")
         entries.append(CorpusEntry(
             hit=hit, classification=cls,
             pool=pool if keep else "_dropped",
@@ -140,6 +143,10 @@ def classify_and_filter(
         "extractable_background": sum(
             1 for e in entries
             if e.keep_for_extraction and e.pool == "background"
+        ),
+        "extractable_adjacent": sum(
+            1 for e in entries
+            if e.keep_for_extraction and e.pool == "adjacent"
         ),
         **{f"class_{k}": v for k, v in class_counts.items()},
         "cap_triggered": int(report.cap_triggered),
@@ -181,6 +188,8 @@ def format_funnel_md(manifest: CorpusManifest) -> str:
         f"{f.get('extractable_core', 0)} |",
         f"| Extractable — background pool | "
         f"{f.get('extractable_background', 0)} |",
+        f"| Extractable — adjacent pool | "
+        f"{f.get('extractable_adjacent', 0)} |",
         "",
         "**Class distribution:**",
         "",
@@ -213,10 +222,13 @@ async def build_corpus_manifest(
         )
     p = params or resolve_params("calibrated")
     report = await run_waves(pack.retrieval, params=p)
-    aliases = tuple(pack.aliases_display)
+    aliases = tuple(pack.active_arm_synonyms) or tuple(pack.aliases_display)
     return classify_and_filter(
         report, topic=pack.topic, topic_aliases=aliases,
         expected_slots=pack.expected_evidence_slots,
+        exclude_terms=(
+            pack.retrieval.exclude_terms if pack.retrieval else ()
+        ),
     )
 
 

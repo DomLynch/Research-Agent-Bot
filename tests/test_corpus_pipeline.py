@@ -6,10 +6,14 @@ emit a corpus manifest with funnel breakdown.
 """
 from __future__ import annotations
 
+import asyncio
+
+import agent.corpus_pipeline as cp
 from agent.corpus_pipeline import (
-    CorpusManifest, classify_and_filter,
+    CorpusManifest, build_corpus_manifest, classify_and_filter,
 )
 from agent.sources.aggregator import AggregatedHit
+from agent.topic_pack import RetrievalSpec, TopicPack
 from agent.wave_retrieval import WaveReport
 
 
@@ -83,6 +87,7 @@ def test_funnel_reports_retrieve_classify_extractable_counts():
     assert f["class_core_on_thesis"] == 5
     assert f["extractable_core"] == 5
     assert f["extractable_background"] == 0
+    assert f["extractable_adjacent"] == 0
 
 
 def test_background_class_lands_in_background_pool():
@@ -100,6 +105,21 @@ def test_background_class_lands_in_background_pool():
     e = manifest.entries[0]
     assert e.classification.classification == "background_mechanism"
     assert e.pool == "background"
+
+
+def test_adjacent_class_lands_in_adjacent_pool():
+    h = _hit(
+        doi="10.1/Z",
+        title="Statin prescribing review",
+        abstract="A narrative review of prescribing patterns.",
+    )
+    manifest = classify_and_filter(
+        _wave_report([h]), topic="statins", topic_aliases=("statin",),
+    )
+    e = manifest.entries[0]
+    assert e.classification.classification == "adjacent_clinical"
+    assert e.pool == "adjacent"
+    assert manifest.funnel["extractable_adjacent"] == 1
 
 
 def test_dropped_entries_have_dropped_pool_label():
@@ -151,7 +171,7 @@ def test_empty_wave_report_produces_empty_manifest():
 
 def test_format_funnel_md_shows_each_stage():
     """The funnel md must surface every stage (retrieved → keep →
-    drop → core / background) so an operator sees where papers
+    drop → core / background / adjacent) so an operator sees where papers
     were dropped."""
     from agent.corpus_pipeline import format_funnel_md
     a = _hit(doi="10.1/A",
@@ -167,6 +187,7 @@ def test_format_funnel_md_shows_each_stage():
     assert "Classified" in md
     assert "core pool" in md
     assert "background pool" in md
+    assert "adjacent pool" in md
     assert "core_on_thesis" in md
 
 
@@ -180,3 +201,34 @@ def test_format_funnel_md_flags_safety_cap_when_triggered():
     )
     md = format_funnel_md(manifest)
     assert "GLOBAL_SAFETY_CAP" in md or "truncated" in md.lower()
+
+
+def test_build_manifest_uses_active_synonyms_not_broad_aliases(monkeypatch):
+    """Broad display aliases can drive prompts/retrieval, but corpus
+    core fit must use active intervention synonyms."""
+    async def fake_run_waves(*_args, **_kwargs):
+        return _wave_report([
+            _hit(
+                doi="10.1/m",
+                title="Molecular mechanisms of metformin action",
+                abstract="The review discusses mTOR inhibitor pathways.",
+            ),
+        ])
+
+    monkeypatch.setattr(cp, "run_waves", fake_run_waves)
+    pack = TopicPack(
+        topic="rapamycin",
+        drug_class="mtor_inhibitor",
+        aliases=frozenset(("mtor inhibitor",)),
+        aliases_display=("mTOR inhibitor",),
+        expected_evidence_slots=(),
+        special_rules=(),
+        forbidden_verbs_for_protocol_role=frozenset(),
+        forbidden_verbs_for_results_role_with_protocol_keywords=frozenset(),
+        canonical_trials=(),
+        known_role_overrides={},
+        active_arm_synonyms=frozenset(("rapamycin", "sirolimus")),
+        retrieval=RetrievalSpec(topic_terms=("rapamycin",)),
+    )
+    manifest = asyncio.run(build_corpus_manifest(pack))
+    assert manifest.entries[0].classification.classification == "off_thesis"
