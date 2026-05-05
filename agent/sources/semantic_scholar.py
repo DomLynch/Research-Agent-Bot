@@ -69,7 +69,7 @@ class SemanticScholarClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "query": clean_text(query, limit=240),
+            "query": clean_text(query, limit=3000),
             "limit": str(max(1, min(limit, 25))),
             "fields": _FIELDS,
         }

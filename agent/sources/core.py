@@ -41,7 +41,7 @@ class CoreClient:
             # Without auth, CORE returns 401. Skip silently.
             return []
         params = {
-            "q": clean_text(query, limit=240),
+            "q": clean_text(query, limit=3000),
             "limit": str(max(1, min(limit, 25))),
         }
         data = await safe_get_json(

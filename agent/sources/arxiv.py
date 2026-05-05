@@ -60,7 +60,7 @@ def _build_search_query(query: str) -> str:
     into arXiv's prefixed query format `all:aspirin+AND+all:aging+...`.
     Words separated by 'AND' get the `all:` prefix; everything else
     falls back to a single `all:<phrase>` query."""
-    cleaned = clean_text(query, limit=240)
+    cleaned = clean_text(query, limit=3000)
     # Split on AND/OR while preserving operators.
     tokens = re.split(r"\s+(AND|OR)\s+", cleaned)
     if len(tokens) == 1:

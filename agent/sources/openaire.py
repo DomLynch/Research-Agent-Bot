@@ -29,7 +29,7 @@ class OpenAireClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "keywords": clean_text(query, limit=240),
+            "keywords": clean_text(query, limit=3000),
             "size": str(max(1, min(limit, 25))),
             "format": "json",
         }

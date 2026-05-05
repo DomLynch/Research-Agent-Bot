@@ -41,7 +41,7 @@ class PmcOaiClient:
     ) -> list[RawHit]:
         params = {
             "query": (
-                f"({clean_text(query, limit=200)}) "
+                f"({clean_text(query, limit=3000)}) "
                 "AND SRC:PMC AND OPEN_ACCESS:Y"
             ),
             "format": "json",

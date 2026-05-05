@@ -26,7 +26,7 @@ class DoajClient:
         *,
         limit: int,
     ) -> list[RawHit]:
-        q = urllib.parse.quote(clean_text(query, limit=240))
+        q = urllib.parse.quote(clean_text(query, limit=3000))
         url = (
             f"{_DOAJ_URL}{q}"
             f"?pageSize={max(1, min(limit, 25))}"
@@ -59,7 +59,7 @@ class DoajClient:
                 break
         # Journal
         journal = bib.get("journal", {}).get("title", "")
-        venue = clean_text(journal, limit=200) or None
+        venue = clean_text(journal, limit=3000) or None
         # Year
         year = bib.get("year")
         if year is not None:

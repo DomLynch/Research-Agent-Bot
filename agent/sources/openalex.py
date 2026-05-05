@@ -62,7 +62,7 @@ class OpenAlexClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "search": clean_text(query, limit=240),
+            "search": clean_text(query, limit=3000),
             "per-page": str(max(1, min(limit, 25))),
             "select": SELECT_FIELDS,
         }
@@ -94,7 +94,7 @@ class OpenAlexClient:
             url=str(url),
             doi=normalize_doi(work.get("doi")),
             venue=venue,
-            raw={"query": clean_text(query, limit=240), "openalex_id": work.get("id")},
+            raw={"query": clean_text(query, limit=3000), "openalex_id": work.get("id")},
         )
 
     @staticmethod

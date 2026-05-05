@@ -28,7 +28,7 @@ class ClinicalTrialsClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "query.term": clean_text(query, limit=240),
+            "query.term": clean_text(query, limit=3000),
             "pageSize": str(max(1, min(limit, 25))),
             "format": "json",
         }
@@ -77,7 +77,7 @@ class ClinicalTrialsClient:
             nct=nct,
             venue=None,
             raw={
-                "query": clean_text(query, limit=240),
+                "query": clean_text(query, limit=3000),
                 "has_results": has_results,
                 "study_type": clean_text(design, limit=40),
             },

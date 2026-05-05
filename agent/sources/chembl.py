@@ -37,7 +37,7 @@ class ChemblClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "q": clean_text(query, limit=240),
+            "q": clean_text(query, limit=3000),
             "limit": str(max(1, min(limit, 10))),
         }
         data = await safe_get_json(

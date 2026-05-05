@@ -111,6 +111,16 @@ so caller code is mode-agnostic. Replaces toy 30/15 defaults
 with principled "calibrated queries do the focusing; 200K is the
 safety bound" architecture (2026-05-05).
 
+Wave 7 cont. — Evidence Factory slice 6 step 3 (15,650 → 15,850):
+agent/query_builder.py (~172 cloc) — per-source advanced query
+translators. Consumes RetrievalSpec from topic_pack.[retrieval]
+and emits PubMed (MeSH+pt+dp) / Europe PMC (KW+PUB_TYPE+LANG+
+PUB_YEAR) / generic boolean keyword queries via a dispatcher that
+routes by source name. Empty-conjunct elision + multi-word
+quoting + NOT-clause exclusion. Required calibrated queries to
+actually reach the sources after the 240→3000 char clip-limit
+bump in every source adapter (2026-05-05).
+
 Every new line earns its life via generic-multi-topic capability or
 hardening, not abstraction theater.
 """
@@ -118,7 +128,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-TOTAL_LIMIT = 15650
+TOTAL_LIMIT = 15850
 PER_FILE_LIMIT = 600
 AGENT_DIR = Path(__file__).resolve().parent.parent / "agent"
 

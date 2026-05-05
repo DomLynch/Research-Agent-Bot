@@ -57,7 +57,7 @@ class PubMedClient:
             # in _efetch, wasting bandwidth and quota for no benefit.
             "retmax": str(max(1, limit)),
             "sort": "relevance",
-            "term": clean_text(query, limit=240),
+            "term": clean_text(query, limit=3000),
         }
         # Add NCBI API key if available (3 req/s → 10 req/s)
         key = _ncbi_key()
@@ -139,7 +139,7 @@ class PubMedClient:
             doi=doi,
             pmid=pmid,
             venue=venue,
-            raw={"query": clean_text(query, limit=240)},
+            raw={"query": clean_text(query, limit=3000)},
         )
 
     @staticmethod

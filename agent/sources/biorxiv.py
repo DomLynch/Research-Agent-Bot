@@ -43,7 +43,7 @@ class BioRxivClient:
     ) -> list[RawHit]:
         params = {
             "query": (
-                f"({clean_text(query, limit=200)}) AND SRC:PPR "
+                f"({clean_text(query, limit=3000)}) AND SRC:PPR "
                 "AND (PUB_TYPE:Preprint)"
             ),
             "format": "json",

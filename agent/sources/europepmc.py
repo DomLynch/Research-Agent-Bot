@@ -27,7 +27,7 @@ class EuropePMCClient:
         limit: int,
     ) -> list[RawHit]:
         params = {
-            "query": clean_text(query, limit=240),
+            "query": clean_text(query, limit=3000),
             "format": "json",
             "pageSize": str(max(1, min(limit, 25))),
             # 'core' is required to get abstractText. 'lite' omits it which
@@ -75,5 +75,5 @@ class EuropePMCClient:
             doi=doi,
             pmid=pmid,
             venue=venue,
-            raw={"query": clean_text(query, limit=240), "ext_id": ext_id, "ext_src": ext_src},
+            raw={"query": clean_text(query, limit=3000), "ext_id": ext_id, "ext_src": ext_src},
         )
