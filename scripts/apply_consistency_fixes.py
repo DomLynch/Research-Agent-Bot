@@ -487,10 +487,9 @@ def apply_fixes(
         })
 
     # Universal Numeric Role Guard auto-fix (2026-05-05): strip P1
-    # sentences flagged for arithmetic_violation or role_mismatch.
-    # Catches the metformin '0.13 m/s falls at or below 0.1 m/s'
-    # pattern and the 'duplicate-subject group' repair artifact.
-    # See scripts/numeric_role_guard.py.
+    # sentences flagged for arithmetic_violation, role_mismatch, OR
+    # source-context drift (Slice 7 step 1, 2026-05-05). Universal
+    # class-level fix subsuming Fixes #54/#57/#58/#58c.
     try:
         from numeric_role_guard import (
             scan_paper as _scan, auto_strip_offending_sentences as _strip,
@@ -498,7 +497,26 @@ def apply_fixes(
     except ImportError:
         _scan = None
     if _scan is not None:
-        nrg_issues = _scan(new_md)
+        # Best-effort: feed bg_lit registry for the drift check.
+        # apply_fixes doesn't receive a manifest argument so the
+        # quant_claims-side of drift fires only via
+        # _check_numeric_role_guard in final_consistency_audit
+        # (which has manifest access via _ACTIVE_MANIFEST). bg_lit
+        # alone still catches drift on canon citations like
+        # "Harrison 2009" / "Mannick 2014" / "Lamming 2012".
+        import json as _json
+        from pathlib import Path as _Path
+        repo = _Path(__file__).resolve().parent.parent
+        bg_lit_path = repo / "docs" / "background_literature.json"
+        bg_lit_registry: dict | None = None
+        if bg_lit_path.exists():
+            try:
+                bg_lit_registry = _json.loads(bg_lit_path.read_text())
+            except (OSError, ValueError):
+                bg_lit_registry = None
+        nrg_issues = _scan(
+            new_md, bg_lit_registry=bg_lit_registry,
+        )
         if nrg_issues:
             new_md, n_stripped = _strip(new_md, nrg_issues)
             if n_stripped:
@@ -508,9 +526,10 @@ def apply_fixes(
                     "description": (
                         "stripped sentences flagged by Numeric Role "
                         "Guard (arithmetic violation, role mismatch, "
-                        "or malformed-subject repair artifact). "
-                        "Universal class-level fix subsuming "
-                        "Fixes #54/#57/#58/#58c."
+                        "malformed-subject repair artifact, or "
+                        "source-context numeric drift). Universal "
+                        "class-level fix subsuming Fixes "
+                        "#54/#57/#58/#58c."
                     ),
                 })
 

@@ -210,3 +210,137 @@ def test_auto_strip_removes_p1_only():
     assert n == 1  # P1 stripped
     assert "0.13 falls at or below" not in new_md
     assert "Good sentence" in new_md
+
+
+# --- Slice 7 step 1: source-context numeric drift -------------------
+
+def test_source_context_drift_flags_unknown_numeric_for_citation(tmp_path):
+    """Prose says 'Mannick 2014 used 50 mg' but the source paper
+    actually has 5 mg. Source-context drift → P1."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_mannick.quant_claims.json").write_text(
+        '{"paper_id":"PMC_mannick","claims":'
+        '[{"raw_text":"5 mg","numeric_values":[5],'
+        '"binding_confidence":"high","claim_type":"unit_value"}]}'
+    )
+    manifest = {
+        "receipts": [{
+            "paper_id": "PMC_mannick",
+            "citation_token": "Mannick 2014",
+        }],
+    }
+    paper = (
+        "Mannick 2014 employed a regimen involving 50 mg "
+        "administered intermittently."
+    )
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    assert any(
+        i.issue_type == "source_context_drift" for i in issues
+    )
+
+
+def test_source_context_drift_passes_correct_attribution(tmp_path):
+    """Prose says 'Mannick 2014 used 5 mg' and the source paper has
+    5 mg → no drift flag."""
+    qc_dir = tmp_path / "quant_claims"
+    qc_dir.mkdir()
+    (qc_dir / "PMC_mannick.quant_claims.json").write_text(
+        '{"paper_id":"PMC_mannick","claims":'
+        '[{"numeric_values":[5],"binding_confidence":"high",'
+        '"claim_type":"unit_value"}]}'
+    )
+    manifest = {
+        "receipts": [{
+            "paper_id": "PMC_mannick",
+            "citation_token": "Mannick 2014",
+        }],
+    }
+    paper = "Mannick 2014 used 5 mg administered intermittently."
+    issues = scan_paper(
+        paper, manifest=manifest, quant_claims_dir=qc_dir,
+    )
+    assert not any(
+        i.issue_type == "source_context_drift" for i in issues
+    )
+
+
+def test_source_context_drift_uses_bg_lit_registry():
+    """Background literature registry numerics are also valid
+    sources of context (Harrison 2009 lifespan increases are in
+    bg_lit, not in receipts)."""
+    bg_lit = {
+        "harrison_lifespan_male": {
+            "citation_token": "Harrison 2009",
+            "numeric": "14",
+            "context": "median lifespan males",
+        },
+    }
+    paper = "Harrison 2009 reported median lifespan increases of 14% in males."
+    issues = scan_paper(
+        paper, manifest={}, bg_lit_registry=bg_lit,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_skips_unknown_citations():
+    """Fail-soft: a citation token that's not in registry/manifest →
+    no flag (we'd rather miss than false-positive on a citation we
+    have no source-context data on)."""
+    paper = "Smith 2099 reported a totally fictional 99% reduction."
+    issues = scan_paper(
+        paper, manifest={}, bg_lit_registry={},
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_skips_year_numerics():
+    """The year '2014' in 'Mannick 2014' must not be flagged as a
+    drift — it's the citation token itself, not a claim."""
+    bg_lit = {
+        "x": {
+            "citation_token": "Mannick 2014",
+            "numeric": "5",
+            "context": "dose",
+        },
+    }
+    paper = "Mannick 2014 reported 5 mg."
+    issues = scan_paper(
+        paper, manifest={}, bg_lit_registry=bg_lit,
+    )
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []
+
+
+def test_source_context_drift_handles_numeric_variants():
+    """'5' / '5.0' / '05' should all match the source's stored 5."""
+    bg_lit = {
+        "x": {
+            "citation_token": "X 2020",
+            "numeric": "5",
+            "context": "dose",
+        },
+    }
+    for prose_num in ("5", "5.0", "5.00"):
+        paper = f"X 2020 used {prose_num} mg."
+        issues = scan_paper(
+            paper, manifest={}, bg_lit_registry=bg_lit,
+        )
+        drift = [
+            i for i in issues if i.issue_type == "source_context_drift"
+        ]
+        assert drift == [], f"failed on {prose_num!r}"
+
+
+def test_scan_paper_back_compat_no_kwargs_works():
+    """Existing callers passing only paper_md (no manifest /
+    bg_lit) keep working — drift check is silently disabled."""
+    paper = "The paper says 5 mg of compound."
+    issues = scan_paper(paper)
+    # No drift check ran (registry empty)
+    drift = [i for i in issues if i.issue_type == "source_context_drift"]
+    assert drift == []

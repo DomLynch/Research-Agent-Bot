@@ -431,12 +431,55 @@ def run_audit(
 #   - malformed_subject: 'the X group <verb> ... for the X group <was>'
 #     repair-artifact pattern
 def _check_numeric_role_guard(paper_md: str) -> list[ConsistencyIssue]:
+    import json as _json
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from numeric_role_guard import scan_paper as _scan
+
+    # Slice 7 step 1: also feed manifest + bg_lit + quant_claims_dir
+    # so the source-context drift check runs in addition to the
+    # arithmetic / role / malformed checks. Best-effort: when
+    # any of the registries are missing, drift simply doesn't fire
+    # (fail-soft, no false positives).
+    repo = Path(__file__).resolve().parent.parent
+    bg_lit_path = repo / "docs" / "background_literature.json"
+    bg_lit_registry: dict | None = None
+    if bg_lit_path.exists():
+        try:
+            bg_lit_registry = _json.loads(bg_lit_path.read_text())
+        except (OSError, ValueError):
+            bg_lit_registry = None
+    # Try to find a manifest sitting next to the paper. The audit
+    # is invoked from various places; if manifest isn't readily
+    # available, drift defers silently.
+    manifest_obj: dict | None = None
+    quant_claims_dir = None
+    # `_topic` resolution: derive from manifest if we can read one
+    # via run_v06_synthesis's _ACTIVE_TOPIC global. Skip if not
+    # available.
+    try:
+        sys.path.insert(0, str(repo / "scripts"))
+        import run_v06_synthesis as _orch
+        topic = getattr(_orch, "_ACTIVE_TOPIC", None)
+        if topic:
+            quant_claims_dir = (
+                repo / "docs" / "quality-reference" / topic
+                / "quant_claims"
+            )
+            mf_obj = getattr(_orch, "_ACTIVE_MANIFEST", None)
+            if isinstance(mf_obj, dict):
+                manifest_obj = mf_obj
+    except (ImportError, AttributeError):
+        pass
+
     out: list[ConsistencyIssue] = []
-    for issue in _scan(paper_md):
+    for issue in _scan(
+        paper_md,
+        manifest=manifest_obj,
+        bg_lit_registry=bg_lit_registry,
+        quant_claims_dir=quant_claims_dir,
+    ):
         out.append(ConsistencyIssue(
             id=f"C14-numeric-role-{abs(hash(issue.sentence)) % 99999:05d}",
             severity=issue.severity,

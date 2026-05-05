@@ -311,11 +311,192 @@ def _check_malformed_subject(sentence: str) -> NumericIssue | None:
     return None
 
 
-def scan_paper(paper_md: str) -> list[NumericIssue]:
+# --- Slice 7 step 1: prose source-context numeric guard --------------
+#
+# The reviewer-flagged class: prose attributes a numeric to a citation
+# but the citation's source paper doesn't actually contain that number.
+# Q2 (numeric-integrity audit) catches "number must exist somewhere
+# in the corpus pool" but not "number must exist in the SPECIFIC
+# cited paper's source context." A drift like:
+#
+#   "Mannick 2014 reported 5 mg weekly dosing"  ← actual paper
+#   "Mannick 2014 reported 50 mg weekly dosing" ← prose drift
+#
+# would pass Q2 (50 mg appears somewhere in the corpus) but fail
+# source-context fidelity.
+
+# Citation token: "Author YYYY" (plus optional [a-z] suffix).
+_CITATION_TOKEN_RE = re.compile(
+    r"\b([A-Z][a-zA-Z]+)\s+(\d{4}[a-z]?)\b",
+)
+
+# Loose numeric extractor for source-context drift check. Picks up
+# every standalone number plus simple unit-bound numerics. Conservative
+# (we'd rather miss a number than false-positive an honest sentence).
+_DRIFT_NUMERIC_RE = re.compile(
+    r"\b(\d+\.?\d*)\s*"
+    r"(?:%|mg|g|kg|mL|L|m/s|months?|years?|weeks?|days?|"
+    r"mmHg|bpm|U/L)?",
+)
+
+# Tolerance for numeric equality — "0.13" vs "0.130" or "5" vs "5.0"
+# count as the same number. Tighter than ±5% to keep this a fidelity
+# check, not a fuzzy match.
+_NUMERIC_EPSILON = 1e-6
+
+
+def _build_citation_allowed_numerics(
+    *, manifest: dict | None,
+    bg_lit_registry: dict | None,
+    quant_claims_dir,
+) -> dict[str, set[str]]:
+    """Build {citation_token: {allowed_numeric_strings, ...}}.
+
+    For each receipt in the manifest, look up its quant_claims.json
+    and extract every numeric_value. For each background_literature
+    entry, register its declared numeric. Caller fails-soft when the
+    registry is sparse (skip checks rather than false-flag)."""
+    import json as _json
+    from pathlib import Path as _Path
+    out: dict[str, set[str]] = {}
+    # Background literature: token → declared numeric
+    if bg_lit_registry:
+        for entry in bg_lit_registry.values():
+            tok = (entry.get("citation_token") or "").strip()
+            num = (entry.get("numeric") or "").strip()
+            if not tok:
+                continue
+            out.setdefault(tok, set())
+            if num:
+                # Accept multiple representations of the same number
+                out[tok].update(_numeric_variants(num))
+    # Receipts: token → all numerics in that paper's quant_claims
+    if manifest is None:
+        return out
+    receipts = manifest.get("receipts") or []
+    qc_dir = _Path(quant_claims_dir) if quant_claims_dir else None
+    for r in receipts:
+        tok = (
+            r.get("citation_token") or r.get("receipt_id") or ""
+        ).strip()
+        if not tok:
+            continue
+        out.setdefault(tok, set())
+        paper_id = (r.get("paper_id") or r.get("receipt_id") or "")
+        if not paper_id or qc_dir is None or not qc_dir.exists():
+            continue
+        qc_path = qc_dir / f"{paper_id}.quant_claims.json"
+        if not qc_path.exists():
+            continue
+        try:
+            data = _json.loads(qc_path.read_text())
+        except (OSError, ValueError):
+            continue
+        for claim in data.get("claims", []) or []:
+            for v in claim.get("numeric_values", []) or []:
+                if isinstance(v, (int, float)):
+                    out[tok].update(_numeric_variants(str(v)))
+                elif isinstance(v, str):
+                    out[tok].update(_numeric_variants(v))
+    return out
+
+
+def _numeric_variants(value: str) -> set[str]:
+    """Return canonical string variants of a numeric so '5' / '5.0' /
+    '0.05' / '0.0500' / '5 mg' / '0.8 m/s' compare equal. Defensive
+    against quant_claims extraction that may store either ints or
+    floats, and bg_lit entries that store numerics with units appended
+    ('0.8 m/s', '14%', '5 mg').
+    """
+    raw = str(value).strip()
+    out: set[str] = {raw}
+    # Strip a trailing unit to extract the bare numeric.
+    m = re.match(r"^(\d+\.?\d*)\s*", raw)
+    bare = m.group(1) if m else raw
+    out.add(bare)
+    try:
+        f = float(bare)
+    except (TypeError, ValueError):
+        return out
+    out.add(str(f))
+    if f.is_integer():
+        out.add(str(int(f)))
+    if "." in str(f):
+        stripped = str(f).rstrip("0").rstrip(".")
+        if stripped:
+            out.add(stripped)
+    return out
+
+
+def _check_source_context_drift(
+    sentence: str,
+    citation_allowed: dict[str, set[str]],
+) -> NumericIssue | None:
+    """For each citation token in the sentence, every nearby numeric
+    must appear in that citation's allowed set. Skipped when token is
+    unknown (fail-soft) or numeric set is empty (registry incomplete)."""
+    if not citation_allowed:
+        return None
+    tokens = _CITATION_TOKEN_RE.findall(sentence)
+    if not tokens:
+        return None
+    # Collect all numerics in the sentence
+    numerics = [m.group(1) for m in _DRIFT_NUMERIC_RE.finditer(sentence)]
+    if not numerics:
+        return None
+    for author, year in tokens:
+        token_key = f"{author} {year}"
+        allowed = citation_allowed.get(token_key)
+        if not allowed:
+            # Unknown citation → fail-soft skip (don't penalize prose
+            # for a token we have no source-context data on)
+            continue
+        for num in numerics:
+            variants = _numeric_variants(num)
+            # Pure year numbers (e.g. "2014") are not claims — skip
+            try:
+                if 1900 <= float(num) <= 2100 and "." not in num:
+                    continue
+            except (TypeError, ValueError):
+                continue
+            if not (variants & allowed):
+                return NumericIssue(
+                    sentence=sentence,
+                    issue_type="source_context_drift",
+                    severity="P1",
+                    detail=(
+                        f"Numeric '{num}' attributed to "
+                        f"'{token_key}' but not present in that "
+                        f"paper's source context "
+                        f"(quant_claims / bg_lit registry)."
+                    ),
+                    suggested_fix=(
+                        "Verify the cited paper or strip the sentence."
+                    ),
+                )
+    return None
+
+
+def scan_paper(
+    paper_md: str, *,
+    manifest: dict | None = None,
+    bg_lit_registry: dict | None = None,
+    quant_claims_dir=None,
+) -> list[NumericIssue]:
     """Run all numeric-role checks across every sentence in the
     paper. Returns flat list of issues — caller decides how to
-    report (audit P1 list, auto-strip, etc.)."""
+    report (audit P1 list, auto-strip, etc.).
+
+    Slice 7 step 1: optional `manifest` + `bg_lit_registry` +
+    `quant_claims_dir` enable the source-context drift check
+    (numeric attributed to citation X must appear in X's source
+    context). Default-None values keep the back-compat call shape."""
     issues: list[NumericIssue] = []
+    citation_allowed = _build_citation_allowed_numerics(
+        manifest=manifest,
+        bg_lit_registry=bg_lit_registry,
+        quant_claims_dir=quant_claims_dir,
+    )
     for sentence in _split_sentences(paper_md):
         for check in (
             _check_arithmetic_violations,
@@ -326,6 +507,14 @@ def scan_paper(paper_md: str) -> list[NumericIssue]:
             if issue:
                 issues.append(issue)
                 break  # one issue per sentence is enough to fail it
+        else:
+            # Only run drift check when the cheaper checks pass —
+            # avoid double-reporting the same sentence.
+            issue = _check_source_context_drift(
+                sentence, citation_allowed,
+            )
+            if issue:
+                issues.append(issue)
     return issues
 
 

@@ -90,6 +90,12 @@ PARSED_DIR: Path = _TOPIC_UNSET
 # _set_topic call.
 _TOPIC_PACK = None
 _ACTIVE_TOPIC: str = ""
+# Slice 7 step 1: published manifest dict for the current run, set
+# during synthesis so downstream consistency-audit hooks (notably the
+# Numeric Role Guard's source-context drift check in
+# scripts/final_consistency_audit.py:_check_numeric_role_guard) can
+# resolve receipt → quant_claims via the same global.
+_ACTIVE_MANIFEST: dict | None = None
 
 
 def _set_topic(topic: str) -> None:
@@ -1025,6 +1031,11 @@ async def _run(
         ),
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    # Slice 7 step 1: publish manifest as module-global so the
+    # consistency audit's _check_numeric_role_guard can resolve
+    # receipts → quant_claims for source-context drift detection.
+    global _ACTIVE_MANIFEST
+    _ACTIVE_MANIFEST = manifest
 
     # ===== Auto-pipeline stages (Layer 1 audit + auto-fix → Grok final
     # review → auto-apply → final audit). No manual step required —
